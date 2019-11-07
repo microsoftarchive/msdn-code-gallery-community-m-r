@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ED2ED08-FC16-467A-BB42-1A53F83ECD53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyShuttle.Client.Core</RootNamespace>
+    <AssemblyName>MyShuttle.Client.Core</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Converters\DateTimeToFormattedDateConverter.cs" />
+    <Compile Include="Converters\DateTimeToTimeConverter.cs" />
+    <Compile Include="Converters\DistanceToStringConverter.cs" />
+    <Compile Include="Converters\EnumEqualityToBooleanConverter.cs" />
+    <Compile Include="Converters\NullToBoolWithOptionalInverseConverter.cs" />
+    <Compile Include="Converters\PriceToStringConverter.cs" />
+    <Compile Include="Converters\RatingToBoolConverter.cs" />
+    <Compile Include="Converters\VehicleStatusToBoolConverter.cs" />
+    <Compile Include="Converters\VehicleStatusToColorConverter.cs" />
+    <Compile Include="CoreResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentResponse\Carrier.cs" />
+    <Compile Include="DocumentResponse\Customer.cs" />
+    <Compile Include="DocumentResponse\Driver.cs" />
+    <Compile Include="DocumentResponse\Employee.cs" />
+    <Compile Include="DocumentResponse\Ride.cs" />
+    <Compile Include="DocumentResponse\RidesAnalyticInfo.cs" />
+    <Compile Include="DocumentResponse\SummaryAnalyticInfo.cs" />
+    <Compile Include="DocumentResponse\Vehicle.cs" />
+    <Compile Include="DocumentResponse\VehicleStatus.cs" />
+    <Compile Include="DocumentResponse\VehicleType.cs" />
+    <Compile Include="Infrastructure\Abstractions\Services\ILocationServiceSingleton.cs" />
+    <Compile Include="Infrastructure\ApplicationSettingServiceSingleton.cs" />
+    <Compile Include="Infrastructure\ApplicationStorageService.cs" />
+    <Compile Include="Infrastructure\Abstractions\Repositories\IApplicationDataRepository.cs" />
+    <Compile Include="Infrastructure\Abstractions\Services\IApplicationSettingServiceSingleton.cs" />
+    <Compile Include="Infrastructure\Abstractions\Services\IApplicationStorageService.cs" />
+    <Compile Include="Infrastructure\LocationServiceSingleton.cs" />
+    <Compile Include="Messages\ReloadDataMessage.cs" />
+    <Compile Include="Model\Enums\RideDetailWorkflow.cs" />
+    <Compile Include="Model\GroupRide.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\LocationCalculatedEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\HumanizedDateProvider.cs" />
+    <Compile Include="ServiceAgents\EmployeesService.cs" />
+    <Compile Include="ServiceAgents\CarriersService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\INotificationsService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\ICustomersService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IDriversService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IEmployeesService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IMyShuttleClient.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IRidesService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IUpdatableUrl.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IVehiclesService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\ICarriersService.cs" />
+    <Compile Include="ServiceAgents\NotificationsService.cs" />
+    <Compile Include="ServiceAgents\RidesAnalyticInfo.cs" />
+    <Compile Include="ServiceAgents\RidesService.cs" />
+    <Compile Include="ServiceAgents\VehiclesService.cs" />
+    <Compile Include="ServiceAgents\CustomersService.cs" />
+    <Compile Include="ServiceAgents\DriversService.cs" />
+    <Compile Include="ServiceAgents\Base\BaseRequest.cs" />
+    <Compile Include="ServiceAgents\Base\IBaseRequest.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IAnalyticsService.cs" />
+    <Compile Include="ServiceAgents\MyShuttleClient.cs" />
+    <Compile Include="ServiceAgents\AnalyticsService.cs" />
+    <Compile Include="Settings\CommonAppSettings.cs" />
+    <Compile Include="ViewModels\Base\NavegableViewModel.cs" />
+    <Compile Include="ViewModels\Behavoirs\ICanGoBackViewModel.cs" />
+    <Compile Include="ViewModels\CompanyRidesViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\ICompanyRidesViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\IMyRidesViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\IVehiclesViewModel.cs" />
+    <Compile Include="ViewModels\LoadingViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MyRidesViewModel.cs" />
+    <Compile Include="ViewModels\RideDetailViewModel.cs" />
+    <Compile Include="ViewModels\VehiclesByDistanceViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\IVehiclesByDistanceViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\IVehiclesInMapViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\IVehiclesByPriceViewModel.cs" />
+    <Compile Include="ViewModels\InterfacesForDependencyInjection\ISettingsViewModel.cs" />
+    <Compile Include="ViewModels\VehiclesInMapViewModel.cs" />
+    <Compile Include="ViewModels\VehiclesByPriceViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\VehicleDetailViewModel.cs" />
+    <Compile Include="ViewModels\VehiclesViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Chance.MvvmCross.Plugins.UserInteraction">
+      <HintPath>..\..\ExternalLibs\Chance.MvvmCross.Plugins.UserInteraction\Debug\Portable\Chance.MvvmCross.Plugins.UserInteraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Color.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Location">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Location.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.MvvmCross.Plugins.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.PhoneCall">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.PhoneCall.3.2.1\lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid\Cirrious.MvvmCross.Plugins.PhoneCall.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile">
+      <HintPath>..\..\packages\WindowsAzure.MobileServices.1.2.5\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CoreResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,159 @@
+﻿/*General fonts*/
+/*General*/
+/*Module*/
+/*List*/
+/*Search*/
+.content-input {
+  float: left;
+  display: inline-block;
+  height: 40px;
+  border: solid 1px;
+  border-color: #dadada;
+  background-color: #fff;
+  line-height: 35px;
+  padding-right: 10px;
+  margin-right: 30px;
+}
+input[type="text"].input-search {
+  margin-bottom: 0px;
+  font-size: 1.07em;
+  padding-left: 8px;
+  padding-right: 26px;
+  width: 230px;
+  color: #9b9b9b;
+  background-color: #fff;
+  background-image: url(Images/search.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  border: none;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+input[type="text"].input-search:focus {
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*End Search*/
+/*Travels*/
+.content-travels {
+  float: left;
+  width: auto;
+}
+.content-travels .content-have-travels {
+  float: left;
+  width: 80px;
+  text-align: right;
+  margin-right: 15px;
+}
+.content-travels .content-have-travels .have-travels {
+  font-size: 1.07em;
+  color: #fa961d;
+}
+.content-travels .travels-number {
+  float: left;
+  font-size: 3.4em;
+  line-height: 36px;
+  color: #fa961d;
+}
+.content-travels .refresh-button {
+  float: left;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin-left: 15px;
+  background-color: #fa961d;
+  background-image: url(Images/refresh.png);
+  background-repeat: no-repeat;
+}
+.content-travels .refresh-button:hover {
+  background-color: #c77e2c;
+}
+/*End Travels*/
+/*Buttons*/
+.padding-newtravel {
+  float: right;
+  padding: 10px 25px 10px 25px;
+}
+/*End Buttons*/
+/*Pagination*/
+.content-pagination {
+  background-color: #dfe0e0;
+  height: 50px;
+  margin-top: 5px;
+}
+.content-pagination ul {
+  float: left;
+  display: inline-block;
+  list-style: none;
+  margin-top: 16px;
+}
+.content-pagination ul li {
+  float: left;
+  width: 45px;
+  height: 30px;
+}
+.content-pagination ul li:first-child {
+  margin-left: 25px;
+}
+.content-pagination ul li a {
+  font-family: "Segoe UI Semibold", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 1.7em;
+  color: #9d9d9d;
+  line-height: 20px;
+}
+.content-pagination ul li a:hover {
+  color: #fa961d;
+  font-size: 2.5em;
+}
+.content-pagination ul > .active > div > a,
+.content-pagination ul > .active > span {
+  color: #fa961d;
+  font-size: 2.5em;
+}
+.content-arrows {
+  float: right;
+  margin-top: 4px;
+}
+.content-arrows .margin-arrow {
+  margin-left: 5px;
+}
+.content-arrows .arrow-type {
+  float: left;
+  width: 70px;
+  text-align: center;
+}
+.content-arrows .arrow-type .arrow {
+  border: none;
+  background-color: transparent;
+  font-family: "Segoe UI Semibold", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 1.7em;
+  color: #9d9d9d;
+}
+/*End Pagination*/
+/* Status Icons*/
+.status {
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 60px;
+  width: 7%;
+  height: 60px;
+  float: right;
+  margin-top: 6px;
+  opacity: 0.7;
+}
+.status.Pending {
+  background-image: url("Images/statusPending.png");
+}
+.status.Approved {
+  background-image: url("Images/statusApproved.png");
+}
+.status.Completed {
+  background-image: url("Images/statusCompleted.png");
+}
+.status.Denied {
+  background-image: url("Images/statusDenied.png");
+}
+/* End Status Icons*/

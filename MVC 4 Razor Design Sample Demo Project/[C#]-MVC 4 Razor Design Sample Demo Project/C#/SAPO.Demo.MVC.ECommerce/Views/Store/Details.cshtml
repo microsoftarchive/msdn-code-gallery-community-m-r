@@ -1,0 +1,90 @@
+﻿@model IEnumerable<SAPO.Demo.MVC.ECommerce.Models.Album>
+@using SAPO.Demo.MVC.Utility
+@using Helper
+
+
+
+@{
+    ViewBag.Title = "Details";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=radio]').live('change', function () {
+            $.ajax({
+                url: 'OnRadioSelectChange/2',
+                success: function (data) {
+                    alert("Bingo");
+                },
+                statusCode: {
+                    404: function (content) { alert('cannot find resource'); },
+                    505: function (content) { alert('internal server error'); }
+                },
+                error: function (req, status, errorObj) {
+                }
+            });
+        });
+        $('#dlt').live('click', function () {            
+            $.ajax({
+                url: 'Delete/2',
+                success: function (data) {
+                        $("img[ID=1]").parent().parent().slideUp("slow", function () {
+                        $("img[ID=1]").parent().parent().remove();
+                    });
+                },
+                statusCode: {
+                    404: function (content) { alert('cannot find resource'); },
+                    505: function (content) { alert('internal server error'); }
+                },
+                error: function (req, status, errorObj) {
+                }
+            });
+        });
+    });
+</script>
+<style>
+.rightBox div{
+	width:450px;
+	border:1px solid #ddd;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	padding-bottom:6px;
+	margin-bottom:20px;
+}
+    .box div
+    {    
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	padding-bottom:6px;
+	margin-bottom:20px;
+    }
+    .innertext p
+    {
+        font-size: 1.3em;
+	    margin-bottom: 10px;
+
+    }
+    .mypages h3
+    {
+	margin-bottom: 4px;
+    color:brown;
+}
+</style>
+<div class="mypages">
+<h3>More Details</h3>
+    </div>
+<div class="rightBox">
+    <div class="innertext">
+        <p>List of options available</p>
+    </div>
+    @foreach (var item in Model)
+    {       
+        <div id="Box">            
+            @Html.Partial("UserControl", item)
+            @* @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { id = "myDelete", @class = "deleteCSS" + item.ID })*@
+           
+        </div>        
+    }
+</div>
+

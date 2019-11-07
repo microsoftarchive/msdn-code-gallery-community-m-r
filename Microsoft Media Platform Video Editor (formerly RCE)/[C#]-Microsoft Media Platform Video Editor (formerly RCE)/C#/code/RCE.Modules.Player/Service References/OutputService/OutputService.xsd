@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/rce/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/rce/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://w7-mb-ejadib/RCE.Web/OutputService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMPTETimecode" />
+  <xs:import schemaLocation="http://w7-mb-ejadib/RCE.Web/OutputService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RCE.Services.Contracts" />
+  <xs:import schemaLocation="http://w7-mb-ejadib/RCE.Web/OutputService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://w7-mb-ejadib/RCE.Web/OutputService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Project">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Container">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdOpportunities" nillable="true" type="tns:ArrayOfAdOpportunity" />
+          <xs:element minOccurs="0" name="AutoSaveInterval" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="tns:ArrayOfComment" />
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Markers" nillable="true" type="tns:ArrayOfMarker" />
+          <xs:element minOccurs="0" name="MediaBin" nillable="true" type="tns:MediaBin" />
+          <xs:element minOccurs="0" name="Metadata" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="ProjectThumbnail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Resolution" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RippleMode" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Sequences" nillable="true" type="tns:ArrayOfSequence" />
+          <xs:element minOccurs="0" name="SmpteFrameRate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartTimeCode" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Titles" nillable="true" type="tns:ArrayOfTitle" />
+          <xs:element minOccurs="0" name="Transitions" nillable="true" type="tns:ArrayOfTransition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Project" nillable="true" type="tns:Project" />
+  <xs:complexType name="Container">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Containers" nillable="true" type="tns:ArrayOfContainer" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfItem" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Container" nillable="true" type="tns:Container" />
+  <xs:complexType name="RceObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="IsLoaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RceObject" nillable="true" type="tns:RceObject" />
+  <xs:complexType name="ArrayOfContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Container" nillable="true" type="tns:Container" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContainer" nillable="true" type="tns:ArrayOfContainer" />
+  <xs:complexType name="ArrayOfItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItem" nillable="true" type="tns:ArrayOfItem" />
+  <xs:complexType name="Item">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Metadata" nillable="true" type="tns:ArrayOfMetadataField" />
+          <xs:element minOccurs="0" name="Resources" nillable="true" type="tns:ArrayOfResource" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Item" nillable="true" type="tns:Item" />
+  <xs:complexType name="ArrayOfMetadataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetadataField" nillable="true" type="tns:MetadataField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetadataField" nillable="true" type="tns:ArrayOfMetadataField" />
+  <xs:complexType name="MetadataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataField" nillable="true" type="tns:MetadataField" />
+  <xs:complexType name="ArrayOfResource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Resource" nillable="true" type="tns:Resource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResource" nillable="true" type="tns:ArrayOfResource" />
+  <xs:complexType name="Resource">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MimeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ref" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResourceType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Resource" nillable="true" type="tns:Resource" />
+  <xs:complexType name="AudioItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MediaItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="IsStereo" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AudioItem" nillable="true" type="tns:AudioItem" />
+  <xs:complexType name="MediaItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Item">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaItem" nillable="true" type="tns:MediaItem" />
+  <xs:complexType name="SmoothStreamingAudioItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AudioItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AudioStreamName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SmoothStreamingAudioItem" nillable="true" type="tns:SmoothStreamingAudioItem" />
+  <xs:complexType name="VideoItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MediaItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:double" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SMPTETimecode" minOccurs="0" name="FrameRate" type="q1:SmpteFrameRate" />
+          <xs:element minOccurs="0" name="Height" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsStereo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ThumbnailSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Width" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VideoItem" nillable="true" type="tns:VideoItem" />
+  <xs:complexType name="ImageItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MediaItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Height" type="xs:int" />
+          <xs:element minOccurs="0" name="Width" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageItem" nillable="true" type="tns:ImageItem" />
+  <xs:complexType name="SmoothStreamingVideoItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VideoItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AudioStreamName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RCE.Services.Contracts" minOccurs="0" name="AudioStreams" nillable="true" type="q2:ArrayOfAudioStreamInfo" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DataStreams" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExternalManifests" nillable="true" type="q4:ArrayOfanyURI" />
+          <xs:element minOccurs="0" name="StartPosition" type="xs:double" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VideoStreams" nillable="true" type="q5:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SmoothStreamingVideoItem" nillable="true" type="tns:SmoothStreamingVideoItem" />
+  <xs:complexType name="SubClipItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MediaItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InPosition" type="xs:double" />
+          <xs:element minOccurs="0" name="OutPosition" type="xs:double" />
+          <xs:element minOccurs="0" name="RelatedItem" nillable="true" type="tns:Item" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RCE.Services.Contracts" minOccurs="0" name="SequenceAudioStreams" nillable="true" type="q6:ArrayOfAudioStreamInfo" />
+          <xs:element minOccurs="0" name="SequenceVideoStream" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubClipItem" nillable="true" type="tns:SubClipItem" />
+  <xs:complexType name="MediaBin">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Container">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MediaBin" nillable="true" type="tns:MediaBin" />
+  <xs:complexType name="ArrayOfAdOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdOpportunity" nillable="true" type="tns:AdOpportunity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdOpportunity" nillable="true" type="tns:ArrayOfAdOpportunity" />
+  <xs:complexType name="AdOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TemplateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdOpportunity" nillable="true" type="tns:AdOpportunity" />
+  <xs:complexType name="ArrayOfComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comment" nillable="true" type="tns:Comment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComment" nillable="true" type="tns:ArrayOfComment" />
+  <xs:complexType name="Comment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Anchor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Comment" nillable="true" type="tns:Comment" />
+  <xs:complexType name="Anchor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MarkIn" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="MarkOut" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Anchor" nillable="true" type="tns:Anchor" />
+  <xs:complexType name="InkComment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Comment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Strokes" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InkComment" nillable="true" type="tns:InkComment" />
+  <xs:complexType name="ArrayOfMarker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Marker" nillable="true" type="tns:Marker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMarker" nillable="true" type="tns:ArrayOfMarker" />
+  <xs:complexType name="Marker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Marker" nillable="true" type="tns:Marker" />
+  <xs:complexType name="ArrayOfSequence">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sequence" nillable="true" type="tns:Sequence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSequence" nillable="true" type="tns:ArrayOfSequence" />
+  <xs:complexType name="Sequence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tracks" nillable="true" type="tns:ArrayOfTrack" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sequence" nillable="true" type="tns:Sequence" />
+  <xs:complexType name="ArrayOfTrack">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Track" nillable="true" type="tns:Track" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrack" nillable="true" type="tns:ArrayOfTrack" />
+  <xs:complexType name="Track">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Container">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Balance" type="xs:double" />
+          <xs:element minOccurs="0" name="Number" type="xs:int" />
+          <xs:element minOccurs="0" name="Shots" nillable="true" type="tns:ArrayOfShot" />
+          <xs:element minOccurs="0" name="TrackType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Volume" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Track" nillable="true" type="tns:Track" />
+  <xs:complexType name="ArrayOfShot">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Shot" nillable="true" type="tns:Shot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShot" nillable="true" type="tns:ArrayOfShot" />
+  <xs:complexType name="Shot">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Item">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Balance" type="xs:double" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="tns:ArrayOfComment" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="tns:Item" />
+          <xs:element minOccurs="0" name="SourceAnchor" nillable="true" type="tns:Anchor" />
+          <xs:element minOccurs="0" name="TrackAnchor" nillable="true" type="tns:Anchor" />
+          <xs:element minOccurs="0" name="Volume" type="xs:decimal" />
+          <xs:element minOccurs="0" name="VolumeNodeCollection" nillable="true" type="tns:ArrayOfVolumeLevelNode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Shot" nillable="true" type="tns:Shot" />
+  <xs:complexType name="ArrayOfVolumeLevelNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VolumeLevelNode" nillable="true" type="tns:VolumeLevelNode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVolumeLevelNode" nillable="true" type="tns:ArrayOfVolumeLevelNode" />
+  <xs:complexType name="VolumeLevelNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Position" type="xs:double" />
+      <xs:element minOccurs="0" name="Volume" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VolumeLevelNode" nillable="true" type="tns:VolumeLevelNode" />
+  <xs:complexType name="ArrayOfTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Title" nillable="true" type="tns:Title" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTitle" nillable="true" type="tns:ArrayOfTitle" />
+  <xs:complexType name="Title">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SequenceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="TextBlockCollection" nillable="true" type="tns:ArrayOfTextBlock" />
+          <xs:element minOccurs="0" name="TitleTemplate" nillable="true" type="tns:TitleTemplate" />
+          <xs:element minOccurs="0" name="TrackAnchor" nillable="true" type="tns:Anchor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Title" nillable="true" type="tns:Title" />
+  <xs:complexType name="ArrayOfTextBlock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TextBlock" nillable="true" type="tns:TextBlock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTextBlock" nillable="true" type="tns:ArrayOfTextBlock" />
+  <xs:complexType name="TextBlock">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextBlock" nillable="true" type="tns:TextBlock" />
+  <xs:complexType name="TitleTemplate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TitleTemplate" nillable="true" type="tns:TitleTemplate" />
+  <xs:complexType name="ArrayOfTransition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transition" nillable="true" type="tns:Transition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransition" nillable="true" type="tns:ArrayOfTransition" />
+  <xs:complexType name="Transition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RceObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Transition" nillable="true" type="tns:Transition" />
+  <xs:complexType name="OutputMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:OutputSettings" />
+      <xs:element minOccurs="0" name="WindowsMediaHeaderProperties" nillable="true" type="tns:WindowsMediaHeaderProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutputMetadata" nillable="true" type="tns:OutputMetadata" />
+  <xs:complexType name="OutputSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AspectRatio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrameRate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResizeMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutputSettings" nillable="true" type="tns:OutputSettings" />
+  <xs:complexType name="WindowsMediaHeaderProperties">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Copyright" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Genre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WindowsMediaHeaderProperties" nillable="true" type="tns:WindowsMediaHeaderProperties" />
+</xs:schema>

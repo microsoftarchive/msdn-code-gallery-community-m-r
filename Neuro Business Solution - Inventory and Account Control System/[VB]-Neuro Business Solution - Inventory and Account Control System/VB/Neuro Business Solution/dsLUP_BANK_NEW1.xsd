@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLUP_BANK_NEW1" targetNamespace="http://tempuri.org/dsLUP_BANK_NEW1.xsd" xmlns:mstns="http://tempuri.org/dsLUP_BANK_NEW1.xsd" xmlns="http://tempuri.org/dsLUP_BANK_NEW1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLUP_BANK_NEW1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsLUP_BANK_NEW1" msprop:Generator_DataSetName="dsLUP_BANK_NEW1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_LUP_BANK" msprop:Generator_UserTableName="V_LUP_BANK" msprop:Generator_RowDeletedName="V_LUP_BANKRowDeleted" msprop:Generator_TableClassName="V_LUP_BANKDataTable" msprop:Generator_RowChangedName="V_LUP_BANKRowChanged" msprop:Generator_RowClassName="V_LUP_BANKRow" msprop:Generator_RowChangingName="V_LUP_BANKRowChanging" msprop:Generator_RowEvArgName="V_LUP_BANKRowChangeEvent" msprop:Generator_RowEvHandlerName="V_LUP_BANKRowChangeEventHandler" msprop:Generator_TablePropName="V_LUP_BANK" msprop:Generator_TableVarName="tableV_LUP_BANK" msprop:Generator_RowDeletingName="V_LUP_BANKRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BANK_ACC" msprop:Generator_UserColumnName="BANK_ACC" msprop:Generator_ColumnPropNameInRow="BANK_ACC" msprop:Generator_ColumnVarNameInTable="columnBANK_ACC" msprop:Generator_ColumnPropNameInTable="BANK_ACCColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BANK_NAME" msprop:Generator_UserColumnName="BANK_NAME" msprop:Generator_ColumnPropNameInRow="BANK_NAME" msprop:Generator_ColumnVarNameInTable="columnBANK_NAME" msprop:Generator_ColumnPropNameInTable="BANK_NAMEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Br_NAME" msprop:Generator_UserColumnName="Br_NAME" msprop:Generator_ColumnPropNameInRow="Br_NAME" msprop:Generator_ColumnVarNameInTable="columnBr_NAME" msprop:Generator_ColumnPropNameInTable="Br_NAMEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Br_CODE" msprop:Generator_UserColumnName="Br_CODE" msprop:Generator_ColumnPropNameInRow="Br_CODE" msprop:Generator_ColumnVarNameInTable="columnBr_CODE" msprop:Generator_ColumnPropNameInTable="Br_CODEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS" msprop:Generator_UserColumnName="ADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTACT1" msprop:Generator_UserColumnName="CONTACT1" msprop:Generator_ColumnPropNameInRow="CONTACT1" msprop:Generator_ColumnVarNameInTable="columnCONTACT1" msprop:Generator_ColumnPropNameInTable="CONTACT1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTACT2" msprop:Generator_UserColumnName="CONTACT2" msprop:Generator_ColumnPropNameInRow="CONTACT2" msprop:Generator_ColumnVarNameInTable="columnCONTACT2" msprop:Generator_ColumnPropNameInTable="CONTACT2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mgr_NAME" msprop:Generator_UserColumnName="Mgr_NAME" msprop:Generator_ColumnPropNameInRow="Mgr_NAME" msprop:Generator_ColumnVarNameInTable="columnMgr_NAME" msprop:Generator_ColumnPropNameInTable="Mgr_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mgr_PH" msprop:Generator_UserColumnName="Mgr_PH" msprop:Generator_ColumnPropNameInRow="Mgr_PH" msprop:Generator_ColumnVarNameInTable="columnMgr_PH" msprop:Generator_ColumnPropNameInTable="Mgr_PHColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mgr_CELL" msprop:Generator_UserColumnName="Mgr_CELL" msprop:Generator_ColumnPropNameInRow="Mgr_CELL" msprop:Generator_ColumnVarNameInTable="columnMgr_CELL" msprop:Generator_ColumnPropNameInTable="Mgr_CELLColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATUS" msprop:Generator_UserColumnName="STATUS" msprop:Generator_ColumnPropNameInRow="STATUS" msprop:Generator_ColumnVarNameInTable="columnSTATUS" msprop:Generator_ColumnPropNameInTable="STATUSColumn" type="xs:boolean" />
+              <xs:element name="OPEN_BAL" msprop:Generator_UserColumnName="OPEN_BAL" msprop:Generator_ColumnPropNameInRow="OPEN_BAL" msprop:Generator_ColumnVarNameInTable="columnOPEN_BAL" msprop:Generator_ColumnPropNameInTable="OPEN_BALColumn" type="xs:decimal" />
+              <xs:element name="BUSINESS_GROUP" msprop:Generator_UserColumnName="BUSINESS_GROUP" msprop:Generator_ColumnPropNameInRow="BUSINESS_GROUP" msprop:Generator_ColumnVarNameInTable="columnBUSINESS_GROUP" msprop:Generator_ColumnPropNameInTable="BUSINESS_GROUPColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_LUP_BANK" />
+      <xs:field xpath="mstns:BANK_ACC" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

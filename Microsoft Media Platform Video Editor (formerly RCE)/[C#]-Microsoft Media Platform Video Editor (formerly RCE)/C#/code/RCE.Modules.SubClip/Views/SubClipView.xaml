@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="RCE.Modules.SubClip.Views.SubClipView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:SubClip="clr-namespace:RCE.Modules.SubClip.Previews"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Previews="clr-namespace:RCE.Modules.SubClip.Previews" 
+    xmlns:DragDrop="clr-namespace:RCE.Infrastructure.DragDrop;assembly=RCE.Infrastructure" 
+    xmlns:Models="clr-namespace:RCE.Modules.SubClip.Models"
+    xmlns:Views="clr-namespace:RCE.Modules.SubClip.Views" 
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    xmlns:Infrastructure="clr-namespace:RCE.Infrastructure;assembly=RCE.Infrastructure" 
+    xmlns:Converters="clr-namespace:RCE.Infrastructure.Converters;assembly=RCE.Infrastructure" 
+    xmlns:Behaviors="clr-namespace:RCE.Modules.SubClip.Behaviors" 
+    xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" mc:Ignorable="d" 
+    DragDrop:DragDropManager.AllowDrop="True" DragDrop:DragDropManager.DropCommand="{Binding DropCommand}"
+    d:DesignHeight="700" d:DesignWidth="700">
+    <UserControl.Resources>
+        <Infrastructure:BindingHelper x:Key="AudioPreviewSelectionChangedCommand"/>
+        <Infrastructure:BindingHelper x:Key="VideoPreviewSelectionChangedCommand"/>
+        <Infrastructure:BindingHelper x:Key="VideoSequenceSelectionChangedCommand"/>
+        <Infrastructure:BindingHelper x:Key="AudioSequenceSelectionChangedCommand"/>
+        <Converters:IntegerToEnabledConverter x:Key="IntegerToEnabledConverter"/>
+        <Converters:BooleanToOppositeVisibilityConverter x:Key="BooleanToOppositeVisibilityConverter"/>
+        <Converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <DataTemplate x:Key="VideoDragTemplate">
+            <SubClip:VideoPreview Asset="{Binding}"/>
+        </DataTemplate>
+
+    </UserControl.Resources>
+    <Interactivity:Interaction.Behaviors>
+        <Behaviors:SubClipKeyboardBehavior Command="{Binding KeyboardActionCommand}"/>
+    </Interactivity:Interaction.Behaviors>
+    <DragDrop:DragDropManager.DropInfo>
+        <Models:SubClipDropInfo/>
+    </DragDrop:DragDropManager.DropInfo>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="406"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="256"/>
+            <ColumnDefinition Width="256"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Previews:PreviewTimeline x:Name="VideoPreview" DragDrop:DragDropManager.IsDragSource="True" DragDrop:DragDropManager.DragData="{Binding VideoAssetInOut}"
+                                  DragDrop:DragDropManager.DragTemplate="{StaticResource VideoDragTemplate}"
+                                       Width="512" Height="406" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Asset="{Binding Asset}"
+                                       IsEnabled="{Binding HasAsset}" VideoInOut="{Binding VideoAssetInOut, Mode=TwoWay}"/>
+        <ContentControl Margin="1,0,0,0" Grid.Row="0" Grid.Column="2" Background="#FF7F7F7F" Grid.RowSpan="2">
+            <Views:MetadataView x:Name="MetadataView" InStreamData="{Binding InStreamData, ElementName=VideoPreview}"/>
+        </ContentControl>
+        <ToggleButton Cursor="Hand" Margin="3,0,0,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top"
+                      VerticalAlignment="Stretch" Height="35" Grid.Row="2" Grid.Column="2"
+                      IsChecked="{Binding Path=VideoAssetInOut.AddMarkersToSequence, Mode=TwoWay}">
+            <ToggleButton.Template>
+                <ControlTemplate>
+                    <Border BorderBrush="#FF2E2E2E" BorderThickness="2" CornerRadius="1,1,1,1">
+                        <Grid>
+                            <TextBlock VerticalAlignment="Center" Text="Copy meta-data to Sequence." Visibility="{Binding Path=IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToOppositeVisibilityConverter}}"
+                                    TextWrapping="Wrap" TextAlignment="Center" Foreground="#FFD4D4D4" FontSize="9"/>
+
+                            <TextBlock VerticalAlignment="Center" Text="Copy meta-data to Sequence." Visibility="{Binding Path=IsChecked, 
+                                RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    FontSize="9" TextWrapping="Wrap" TextAlignment="Center" Foreground="#FFD5A000"/>
+                        </Grid>
+                    </Border>
+
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Background="#FF595959" Margin="0,0,1,0">
+            <TextBlock Foreground="#FFD4D4D4" HorizontalAlignment="Left" Text="Video Streams"/>
+            <Border BorderBrush="#FF2E2E2E" BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="62">
+                    <StackPanel>
+                        <Controls:HeaderedItemsControl IsEnabled="{Binding Path=AvailableVideoStreams.Count, Converter={StaticResource IntegerToEnabledConverter}}" Width="Auto" ItemsSource="{Binding Path=AvailableVideoStreams}">
+                            <Controls:HeaderedItemsControl.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="106"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Foreground="#FFD4D4D4" HorizontalAlignment="Center" Grid.Column="1" Text="Preview"/>
+                                    <TextBlock Foreground="#FFD4D4D4" HorizontalAlignment="Center" Grid.Column="2" Text="Sequence" />
+                                </Grid>
+                            </Controls:HeaderedItemsControl.Header>
+                            <Controls:HeaderedItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="106"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="90"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock  Foreground="White" Grid.Column="0" Text="{Binding Name}" />
+                                        <RadioButton HorizontalAlignment="Center" Grid.Column="1" GroupName="VideoPreviewGroup" IsChecked="{Binding PreviewSelected, Mode=TwoWay}"  Command="{Binding Value, Source={StaticResource VideoPreviewSelectionChangedCommand}}" CommandParameter="{Binding}"/>
+                                        <RadioButton HorizontalAlignment="Center" Grid.Column="2" GroupName="VideoSequenceGroup" IsChecked="{Binding SequenceSelected, Mode=TwoWay}"  Command="{Binding Value, Source={StaticResource VideoSequenceSelectionChangedCommand}}" CommandParameter="{Binding}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </Controls:HeaderedItemsControl.ItemTemplate>
+                        </Controls:HeaderedItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="#FF595959" Margin="1,0,0,0">
+            <TextBlock Foreground="#FFD4D4D4" HorizontalAlignment="Left" Text="Audio Streams"/>
+            <Border BorderBrush="#FF2E2E2E" BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="62">
+                    <StackPanel>
+                        <Controls:HeaderedItemsControl IsEnabled="{Binding Path=AvailableAudioStreams.Count,  Converter={StaticResource IntegerToEnabledConverter}}" Width="Auto" ItemsSource="{Binding Path=AvailableAudioStreams}">
+                            <Controls:HeaderedItemsControl.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="106"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Foreground="#FFD4D4D4" HorizontalAlignment="Center" Grid.Column="1" Text="Preview"/>
+                                    <TextBlock Foreground="#FFD4D4D4" HorizontalAlignment="Center" Grid.Column="2" Text="Sequence" />
+                                </Grid>
+                            </Controls:HeaderedItemsControl.Header>
+                            <Controls:HeaderedItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="106"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="90"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Foreground="White" Grid.Column="0" Text="{Binding Name}"/>
+                                        <RadioButton HorizontalAlignment="Center" Grid.Column="1" GroupName="AudioPreviewGroup" IsChecked="{Binding PreviewSelected, Mode=TwoWay}" Command="{Binding Value, Source={StaticResource AudioPreviewSelectionChangedCommand}}" CommandParameter="{Binding}" />
+                                        <CheckBox HorizontalAlignment="Center" Grid.Column="2" IsChecked="{Binding SequenceSelected, Mode=TwoWay}" Command="{Binding Value, Source={StaticResource AudioSequenceSelectionChangedCommand}}" CommandParameter="{Binding}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </Controls:HeaderedItemsControl.ItemTemplate>
+                        </Controls:HeaderedItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

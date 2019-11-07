@@ -1,0 +1,69 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Model.Session
+@{
+    ViewBag.Title = "my events - " + @Model.Title;
+}
+@section Meta
+{
+    <meta name="title" content="@Model.Title" />
+    <meta name="description" content="@Model.Description" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/Attendee/Session/DetailScripts/")
+}
+
+
+@section Actions
+{
+    @Html.Partial("_ShareMenu")
+}
+
+@Html.HiddenFor(model => model.Title)
+@Html.HiddenFor(model => model.Description)
+@Html.HiddenFor(model => model.TwitterAccount)
+<article id="session-detail" class="detail-page column left">
+    <div class="row">
+        <span class="title">@Model.Title</span>
+    </div>
+    <div class="row">
+        <span class="section-title">description</span>
+        <span>@Model.Description</span>
+    </div>
+    <div class="row">
+        <span class="section-title">speaker</span>
+        <div id="metadata">
+            <div id="organizer" class="icon">
+                <img src="@Url.Content("~/Styles/Images/organizer-icon.png")" />
+                <span>@Model.Speaker</span>
+            </div>
+            <div id="twitter" class="icon">
+                <a href="http://www.twitter.com/@Model.TwitterAccount">
+                    <img src="@Url.Content("~/Styles/Images/twitter-speaker.png")" />
+                    <span><span></span>@Model.TwitterAccount</span>
+                </a>
+            </div>
+            <span>@Model.Biography</span>
+        </div>
+    </div>
+</article>
+
+<section class="column right">
+    <section id="materials">
+        <span class="section-title">materials</span>
+        <div>
+            @foreach (var material in Model.Materials)
+            {
+                <a href="@Url.Action("GetMaterial", "Event", new { materialId = material.MaterialId })" class="material" target="_blanck">
+                    <div class="icon">
+                        <img src="@Url.Content("~/Styles/Images/document.png")" />
+                    </div>
+                    <div class="wrapper">
+                        <span class="ellipsis middle" title="@material.Name">@material.Name</span>
+                    </div>
+                </a>
+            }
+        </div>
+    </section>
+</section>
+

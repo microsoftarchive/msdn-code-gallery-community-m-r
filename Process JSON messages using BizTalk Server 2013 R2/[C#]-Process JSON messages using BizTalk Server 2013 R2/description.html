@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=EC831D2F780A53CF4C404B53E768954F" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/e91fd08e-0db6-4c06-a21c-1dd67e64ad6fCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=DF234F4FF3DA5D35A03D2829D4F99E0D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Process JSON messages using BizTalk Server 2013 R2</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Process JSON messages using BizTalk Server 2013 R2</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            JSON, BizTalk Server
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            JSON messages in BizTalk Server
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/30/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Processing-JSON-messages-0c31fbcc">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>This tutorial demonstrates how to process JSON messages using BizTalk Server. The tutorial uses custom pipeline components, now available with BizTalk Server 2013 R2. These pipeline components convert the JSON message to XML (while receiving the message
+ into BizTalk Server orchestration, and converts the message from XML to JSON while sending the message out.</p>
+<h1>What does this sample do?</h1>
+<ol class="ordered">
+<li>Receives a JSON purchase order and in the receive pipeline, uses a JSON decoder component to transform the JSON message to XML message.<br>
+<br>
+</li><li>Transforms the XML purchase order into an XML invoice using a map.<br>
+<br>
+</li><li>In the send pipeline, uses a JSON encoder to transform the XML invoice into a JSON invoice and sends it out.
+</li></ol>
+<h1>Build the sample</h1>
+<ol class="ordered">
+<li>
+<p>In the Solution Explorer, right-click the BizTalk project name, and then click
+<strong>Properties</strong>.</p>
+</li><li>
+<p>On the Property page, click the Signing tab, select the Sign the assembly check box, and from the drop-down choose the option to create a new strong name key file. Follow the prompts to create the file.</p>
+</li><li>
+<p>Save changes to the project. In Solution Explorer, right-click the solution name, and then click
+<strong>Build Solution</strong>.</p>
+</li><li>
+<p>After project builds successfully, in the Solution Explorer, right-click the solution name, and then click
+<strong>Deploy Solution</strong>.</p>
+</li></ol>
+<p><span style="font-size:20px; font-weight:bold">Configure the application</span></p>
+<p>To configure the application, follow the instructions at&nbsp;<a href="http://msdn.microsoft.com/en-us/library/dn789174(v=bts.80).aspx" >http://msdn.microsoft.com/en-us/library/dn789174(v=bts.80).aspx</a>.</p>
+<p>&nbsp;</p>
+<h1><span style="font-size:medium"><span style="line-height:15px">Test the application</span><em style="font-size:10px">&nbsp;</em></span></h1>
+<ol>
+<em>&nbsp;</em>
+<li><em>From the TestMessage folder (at the location where you downloaded the sample), copy and paste JsonPurchaseOrder.json into the In folder.
+</em></li><li><em>Observe the .json file created in the&nbsp;<strong>Out</strong>&nbsp;folder. This file contains the Json invoice constructed from the input file JsonPurchaseOrder.json. The format of the name of this file is &lt;<em>MessageID</em>&gt;.json, where&nbsp;<em>&lt;MessageID&gt;</em>&nbsp;is
+ the GUID generated to uniquely identify the message.</em> </li></ol>
+<p><em><br>
+</em></p>
+<ul>
+</ul>
+<h1>More Information</h1>
+<p><em>For more information on the tutorial, which is based on this sample, see <a href="http://msdn.microsoft.com/en-us/library/dn789173(v=bts.80).aspx" >
+http://msdn.microsoft.com/en-us/library/dn789173(v=bts.80).aspx</a>.&nbsp;</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+﻿.expensesdetailpage section[role=main] {
+    overflow-y: hidden;
+    display: -ms-grid;
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+.expensesdetailpage .win-container:hover {
+    outline: none;
+    cursor: pointer;
+}
+
+.expensesdetailpage .back {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+.expensesdetailpage .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    font-size: 50pt;
+    color: #C4C331;
+    padding-top: 30px;
+}
+
+#expenseDetail {
+    display: -ms-grid;
+    -ms-grid-rows: 65px 425px 1fr 90px;
+    -ms-grid-columns: 120px 1fr;
+    height: 100%;
+}
+
+    #expenseDetail .title {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        color: #C4C4C4;
+        font-size: 27pt;
+        width: 100%;
+        height: 100%;
+    }
+
+    #expenseDetail .content {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 284px 1fr 586px;
+        background-color: #C4C331;
+        width: calc(100% - 20px);
+        height: 100%;
+    }
+
+        #expenseDetail .content .employee-photo {
+            -ms-grid-column: 1;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: left;
+            background-position-y: top;
+        }
+
+        #expenseDetail .content .expense-detail {
+            -ms-grid-column: 2;
+            display: -ms-grid;
+            -ms-grid-rows: 40px 50px 1fr 75px;
+            -ms-grid-columns: 1fr;
+            padding: 15px;
+			min-width: 300px;
+        }
+
+        #expenseDetail .content .expense-detail .header {
+            -ms-grid-row: 1;
+            display: -ms-grid;
+            -ms-grid-rows: 1fr;
+            -ms-grid-columns: 1fr 30px;
+        }
+
+        #expenseDetail .content .expense-detail .header .expense-title {
+            -ms-grid-column: 1;
+            font-size: 18pt;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #FFFFFF;
+        }
+
+        #expenseDetail .content .expense-detail .header .expenseType {
+            -ms-grid-column: 2;
+            display: inline-block;
+            padding-left: 36px;
+            background-position-x: center;
+            background-position-y: center;
+            background-repeat: no-repeat;
+        }
+
+        #expenseDetail .content .expense-detail .expense-duration {
+            -ms-grid-row: 2;
+            color: #FFFFFF;
+            background-image: url("/images/whiteclock.png");
+            background-repeat: no-repeat;
+            background-position: top 3px left 1px;
+            padding-left: 25px;
+            font-size: 10pt;
+        }
+               
+        #expenseDetail .content .expense-detail .description {
+            -ms-grid-row: 3;
+        }
+
+        #expenseDetail .content .expense-detail .foot {
+            -ms-grid-row: 4;
+            display: -ms-grid;
+            -ms-grid-rows: 1fr;
+            -ms-grid-columns: 90px 1fr;
+        }
+
+
+            #expenseDetail .content .expense-detail .foot .status {
+                -ms-grid-column: 1;
+                background-repeat: no-repeat;
+                background-position-x: left;
+                background-position-y: 60px;
+                padding-left: 25px;
+                padding-top: 57px;
+            }
+
+            #expenseDetail .content .expense-detail .foot .status.status4 {
+                background-position-x: left 2px;
+            }
+
+            #expenseDetail .content .expense-detail .foot .amount {
+                -ms-grid-column: 2;
+                text-align: right;
+                color: #FFFFFF;
+                white-space: nowrap;
+            }
+    
+            #expenseDetail .content .expense-detail .foot .amount .dollar-part{
+                -ms-grid-row: 4;
+                font-size: 50pt;
+                font-weight: bold;
+            }
+
+            #expenseDetail .content .expense-detail .foot .amount .cents-part{
+                -ms-grid-row: 4;
+                font-size: 25pt;
+                font-weight: bold;
+            }
+
+            #expenseDetail .content .expense-detail .foot .amount .dollar-sign{
+                -ms-grid-row: 4;
+                font-size: 25pt;
+                vertical-align: super;
+            }
+
+        #expenseDetail .content .expense-photo {
+            -ms-grid-column: 3;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: right;
+            background-position-y: center;
+            background-color: white;
+            min-width: 500px;
+        }
+
+    #expenseDetail .bar {
+        -ms-grid-row: 4;
+        -ms-grid-column-span: 3;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 80px 80px;
+        background-color: #C4C331;
+        height: 100%;
+        font-size: 10pt;    
+        padding-right: 30px;
+    }
+
+        #expenseDetail .bar .refuse {
+            -ms-grid-column: 2;
+            padding-top: 14px;
+        }
+
+            #expenseDetail .bar .refuse img {
+                margin-left: 2px;
+            }
+
+        #expenseDetail .bar .approve {
+            -ms-grid-column: 3;
+            padding-top: 14px;
+        }
+
+            #expenseDetail .bar .approve img {
+                margin-left: 7px;
+            }
+
+@media screen and (max-width: 1375px) {
+    #expenseDetail .content {
+        -ms-grid-columns: 284px 1fr;
+    }
+
+    .expensesdetailpage .name {
+        font-size: 40pt;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (orientation:portrait) and (min-width: 501px) {
+    #expenseDetail .content {
+        -ms-grid-columns: 284px 1fr;
+    }
+
+    .expensesdetailpage .name {
+        font-size: 40pt;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .expensesdetailpage .back {
+        margin-left: 20px;
+    }
+    #expenseDetail {
+        -ms-grid-rows: 45px 1fr 30px;
+        -ms-grid-columns: 20px 1fr;
+        height: 100%;
+    }
+
+    .expensesdetailpage .back {
+        padding-left: 0px;
+    }
+
+    .expensesdetailpage .name {
+        font-size: 32pt;
+        padding-left: 20px;
+        padding-top: 50px;
+    }
+
+    #expenseDetail .content {
+        -ms-grid-columns: 1fr;
+        background-color: #C4C331;
+        width: calc(100% - 20px);
+        height: 100%;
+    }
+
+        #expenseDetail .content .expense-photo {
+            display: none;
+        }
+
+        #expenseDetail .content .expense-detail {
+            -ms-grid-column: 1;
+            -ms-grid-row: 2;
+            display: -ms-grid;
+            -ms-grid-rows: 40px 50px 1fr 55px;
+            -ms-grid-columns: 1fr;
+            padding: 15px;
+            /*height: 500px;*/
+        }
+
+        #expenseDetail .content .employee-photo {
+            background-size: cover;
+        }
+
+        #expenseDetail .content .expense-detail .foot {
+            display: -ms-grid;
+            -ms-grid-rows: 1fr;
+            -ms-grid-columns: 50px 1fr;
+        }
+
+            #expenseDetail .content .expense-detail .foot .status {
+                padding-top: 37px;
+                background-position-x: 0px;
+                background-position-y: 40px;
+            }
+
+            #expenseDetail .content .expense-detail .foot .status.status4 {
+                background-position-x: left 2px;
+            }
+
+            #expenseDetail .content .expense-detail .foot .amount .dollar-part{
+                -ms-grid-row: 4;
+                font-size: 40pt;
+                font-weight: bold;
+            }
+
+            #expenseDetail .content .expense-detail .foot .amount .cents-part{
+                -ms-grid-row: 4;
+                font-size: 20pt;
+                font-weight: bold;
+            }
+
+            #expenseDetail .content .expense-detail .foot .amount .dollar-sign{
+                -ms-grid-row: 4;
+                font-size: 20pt;
+                vertical-align: super;
+            }
+
+            #expenseDetail .content .expense-detail .foot .status span {
+                display: none;
+            }
+
+            #expenseDetail .content .expense-detail {
+                min-width: 0;
+            }
+}

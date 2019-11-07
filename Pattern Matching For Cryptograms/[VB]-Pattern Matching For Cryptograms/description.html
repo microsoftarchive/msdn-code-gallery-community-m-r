@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Pattern Matching For Cryptograms</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Pattern Matching For Cryptograms</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ, Windows Forms, .NET Framework, Visual Basic .NET, VB.Net, .NET Framework 4.0, Visual Studio 2012
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Encryption, Cryptography, Encryption/Decr<wbr />yption, Crypto
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/18/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Pattern-Matching-For-ae8a302a">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Please Remember To Rate This Contribution!</h1>
+<p>Thanks ;)</p>
+<p><img id="74757" src="description/pattern.png" alt="" width="550" height="397"></p>
+<h1>Pattern Matching For Cryptograms</h1>
+<p><em>Not too long ago, I answered a question in the msdn forums about pattern matching, and how to isolate the realistic possibilites of words, and skip the jibberish. This example does that.</em></p>
+<h1>Description</h1>
+<p><em>This code iterates through each letter of an 'Unknown word', &nbsp;So let's say for example the word is &quot;kdfygrk&quot;.</em></p>
+<p><em>The code will search each letter and do something like this:</em></p>
+<p><span style="text-decoration:underline"><strong><em>First Iteration:(k)</em></strong></span></p>
+<p><em>The letter 'k' has not been assigned an identifier, therefore we will assign the next available identifier( '0' in this case) to the letter k.</em></p>
+<p><em>So far our pattern is 0??????</em></p>
+<p><span style="text-decoration:underline"><strong><em>Next iteration(d)</em></strong></span></p>
+<p><em>The letter 'd' has not been assigned an identifier, therefore we will assign the next available identifier( '1' in this case) to the letter d.</em></p>
+<p><em>So far our pattern is 01?????</em></p>
+<p><span style="text-decoration:underline"><strong><em>Next iteration(f)</em></strong></span></p>
+<p><em>The letter 'f' has not been assigned an identifier, therefore we will assign the next available identifier( '2' in this case) to the letter f.</em></p>
+<p><em>So far our pattern is 012????</em></p>
+<p><span style="text-decoration:underline"><strong><em>Next iteration(y)</em></strong></span></p>
+<p><em>The letter 'm' has not been assigned an identifier, therefore we will assign the next available identifier( '3' in this case) to the letter m.</em></p>
+<p><em>So far our pattern is 0123???</em></p>
+<p><span style="text-decoration:underline"><strong><em>Next iteration(g)</em></strong></span></p>
+<p><em>The letter 'g' has not been assigned an identifier, therefore we will assign the next available identifier( '4' in this case) to the letter g.</em></p>
+<p><em>So far our pattern is 01234??</em></p>
+<p><span style="text-decoration:underline"><strong><em>Next iteration(r)</em></strong></span></p>
+<p><em>The letter 'r' has not been assigned an identifier, therefore we will assign the next available identifier( '5' in this case) to the letter r.</em></p>
+<p><em>So far our pattern is 012345?</em></p>
+<p><span style="text-decoration:underline"><strong><em>Final iteration(k)</em></strong></span></p>
+<p><em>The letter 'k' has already been assigned an identifier, therefore we will use the previously assigned identifier for 'k'('0' in this case)</em></p>
+<p><em>So this leaves us with a pattern of '0123450'</em></p>
+<p>&nbsp;</p>
+<p><em>So now we shrink the dictionary to include only words that meet this criteria:</em></p>
+<ul>
+<li><em>Words of same length(7)</em> </li><li><em>Words that match the specified filter(* by default)</em> </li></ul>
+<p>&nbsp;</p>
+<p><em>So now we loop through each of the shrunken dictionaries words and check each word's pattern against the pattern of the unknown word. If they have like patterns then they are added to the results.</em></p>
+<p>&nbsp;</p>
+<p>This is the code involved with comments, but downloading the project is highly recommended, because the controls are already layed out.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">vb</span>
+<pre class="hidden">''' &lt;summary&gt;
+''' This function calculates likely word matches for cryptogram words.
+''' &lt;/summary&gt;
+''' &lt;param name=&quot;Word&quot;&gt;The encrypted word&lt;/param&gt;
+''' &lt;param name=&quot;Dictionary&quot;&gt;A list of words to match the encrypted word against.&lt;/param&gt;
+''' &lt;param name=&quot;Filter&quot;&gt;A filter pattern for reducing results.&lt;/param&gt;
+''' &lt;param name=&quot;PB&quot;&gt;Optional Progressbar to report progress.&lt;/param&gt;
+''' &lt;param name=&quot;UpdateLabel&quot;&gt;Optional Label to report current match count.&lt;/param&gt;
+''' &lt;returns&gt;&lt;/returns&gt;
+''' &lt;remarks&gt;&lt;/remarks&gt;
+Function GetWordPatternMatches(Word As String, _
+                           Dictionary As List(Of String), _
+                           Optional Filter As String = &quot;*&quot;, _
+                           Optional PB As ProgressBar = Nothing, _
+                           Optional UpdateLabel As Label = Nothing) _
+                    As ListViewItem()
+    'If the user specified a progressbar, then update the values
+    If Not PB Is Nothing Then PB.Value = 0
+    If Not PB Is Nothing Then PB.Maximum = 0
+    'A list of identifications for pattern matching
+    Const Legend As String = &quot;01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+    'return an empty array if there is no word to match
+    If Word.Length = 0 Then Return {}
+    'Create a new pattern table
+    Dim map As New List(Of pt), I = 0, WordPattern As String = &quot;&quot;
+    'If the user specified a progressbar, then update the values
+    If Not PB Is Nothing Then PB.Maximum &#43;= Word.Count
+    'Examine each letter in the encrypted word
+    For Each S As String In Word
+        'If the user specified a progressbar, then update the values
+        If Not PB Is Nothing Then PB.Increment(1)
+        'search the pattern table to see if the letter was already assigned an identification
+        Dim Q1 = From P In map Where P.Letter = S Select P
+        'If it has then use the same identification for that letter
+        If Not Q1.ToArray.Count = 0 Then map.Add(New pt(Q1.ToArray(0).ID, S)) : Continue For
+        'If it has not, then assign a new pattern identification
+        map.Add(New pt((Legend)(I), S))
+        'Increment the next pattern id index number
+        I &#43;= 1
+    Next
+    'If the user specified a progressbar, then update the values
+    If Not PB Is Nothing Then PB.Maximum &#43;= map.Count
+    'Go through each mapped letter
+    For Each P As pt In map
+        'If the user specified a progressbar, then update the values
+        If Not PB Is Nothing Then PB.Increment(1)
+        'Assemble the encrypted word's pattern
+        WordPattern = WordPattern &amp; P.ID : Next
+    'Get all word from the dictionary that are:
+    'A.) The same length of the bord
+    'B.) Match the FILTER specified
+    Dim Q2 = From W In Dictionary Where (W.Length = Word.Length) And (W Like Filter) Select W
+    'Create a list for holding the result
+    Dim results As New List(Of String)
+    'If the user specified a progressbar, then update the values
+    If Not PB Is Nothing Then PB.Maximum &#43;= Q2.ToArray.Count
+    'Go through each dictionary word from the LINQ result
+    For Each W In Q2.ToArray
+        'If the user specified a progressbar, then update the values
+        If Not PB Is Nothing Then PB.Increment(1)
+        'Create a pattern map for each word from the LINQ result, create a
+        ' legend index counter, create a dictionary word pattern to compare against the encrypted word pattern
+        Dim map2 As New List(Of pt), I2 = 0, DictPattern As String = &quot;&quot;
+        'Go through each character, of each word from the LINQ result
+        For Each S As String In W
+            'search the pattern table to see if the letter was already assigned an identification
+            Dim Q3 = From P In map2 Where P.Letter = S Select P
+            'If it has then use the same identification for that letter
+            If Not Q3.ToArray.Count = 0 Then map2.Add(New pt(Q3.ToArray(0).ID, S)) : Continue For
+            'If it has not, then assign a new pattern identification
+            map2.Add(New pt((Legend)(I2), S))
+            'Increment the next pattern id index number
+            I2 &#43;= 1 : Next
+        'Go through each mapped letter
+        For Each P As pt In map2
+            'Assemble the dictionary word's pattern
+            DictPattern = DictPattern &amp; P.ID
+        Next
+        'Compare the encrypted word's pattern to the pattern of each result from the LINQ query(Q2)
+        If DictPattern = WordPattern Then results.Add(W)
+        'If the user provided a label to update status
+        If Not UpdateLabel Is Nothing Then
+            'Change the label's text to reflect the current matches found
+            UpdateLabel.Text = results.Count &amp; &quot; matches found so far...&quot;
+            'refresh the label/app
+            Application.DoEvents()
+        End If
+    Next
+    'Create a list for returning the final results
+    Dim Items As New List(Of ListViewItem)
+    'If the user specified a progressbar, then update the values
+    If Not PB Is Nothing Then PB.Maximum &#43;= results.Count
+    For Each S As String In results
+        'If the user specified a progressbar, then update the values
+        If Not PB Is Nothing Then PB.Increment(1)
+        'Create a new listview item with subitem(0) being the encrypted word
+        Dim Item As New ListViewItem(Word)
+        'Add 2 subitems to the item(Dictionary word, the pattern that they were matched with)
+        Item.SubItems.AddRange({S, WordPattern})
+        'Add the item to the final results
+        Items.Add(Item)
+    Next
+    'convert the resuts and return it as an array of Listviewitem
+    Return Items.ToArray
+End Function
+Private Class pt ' Pattern Table
+    'I.e. The letter can only recieve this ID, this ID can only represent this letter
+    Public ID, Letter As String
+    Sub New(ID As String, Letter As String)
+        'Populate the ID and Letter values of this pattern table
+        Me.ID = ID : Me.Letter = Letter
+    End Sub
+End Class</pre>
+<div class="preview">
+<pre class="vb"><span class="visualBasic__com">'''&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;This&nbsp;function&nbsp;calculates&nbsp;likely&nbsp;word&nbsp;matches&nbsp;for&nbsp;cryptogram&nbsp;words.</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;/summary&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;param&nbsp;name=&quot;Word&quot;&gt;The&nbsp;encrypted&nbsp;word&lt;/param&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;param&nbsp;name=&quot;Dictionary&quot;&gt;A&nbsp;list&nbsp;of&nbsp;words&nbsp;to&nbsp;match&nbsp;the&nbsp;encrypted&nbsp;word&nbsp;against.&lt;/param&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;param&nbsp;name=&quot;Filter&quot;&gt;A&nbsp;filter&nbsp;pattern&nbsp;for&nbsp;reducing&nbsp;results.&lt;/param&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;param&nbsp;name=&quot;PB&quot;&gt;Optional&nbsp;Progressbar&nbsp;to&nbsp;report&nbsp;progress.&lt;/param&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;param&nbsp;name=&quot;UpdateLabel&quot;&gt;Optional&nbsp;Label&nbsp;to&nbsp;report&nbsp;current&nbsp;match&nbsp;count.&lt;/param&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+<span class="visualBasic__com">'''&nbsp;&lt;remarks&gt;&lt;/remarks&gt;</span>&nbsp;
+<span class="visualBasic__keyword">Function</span>&nbsp;GetWordPatternMatches(Word&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dictionary&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;List(<span class="visualBasic__keyword">Of</span>&nbsp;<span class="visualBasic__keyword">String</span>),&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Optional</span>&nbsp;Filter&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;=&nbsp;<span class="visualBasic__string">&quot;*&quot;</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Optional</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;ProgressBar&nbsp;=&nbsp;<span class="visualBasic__keyword">Nothing</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Optional</span>&nbsp;UpdateLabel&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Label&nbsp;=&nbsp;<span class="visualBasic__keyword">Nothing</span>)&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;ListViewItem()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Value&nbsp;=&nbsp;<span class="visualBasic__number">0</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Maximum&nbsp;=&nbsp;<span class="visualBasic__number">0</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'A&nbsp;list&nbsp;of&nbsp;identifications&nbsp;for&nbsp;pattern&nbsp;matching</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Const</span>&nbsp;Legend&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;=&nbsp;<span class="visualBasic__string">&quot;01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'return&nbsp;an&nbsp;empty&nbsp;array&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;word&nbsp;to&nbsp;match</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;Word.Length&nbsp;=&nbsp;<span class="visualBasic__number">0</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;<span class="visualBasic__keyword">Return</span>&nbsp;{}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Create&nbsp;a&nbsp;new&nbsp;pattern&nbsp;table</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;map&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;List(<span class="visualBasic__keyword">Of</span>&nbsp;pt),&nbsp;I&nbsp;=&nbsp;<span class="visualBasic__number">0</span>,&nbsp;WordPattern&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;=&nbsp;<span class="visualBasic__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Maximum&nbsp;&#43;=&nbsp;Word.Count&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Examine&nbsp;each&nbsp;letter&nbsp;in&nbsp;the&nbsp;encrypted&nbsp;word</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;<span class="visualBasic__keyword">Each</span>&nbsp;S&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;Word&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Increment(<span class="visualBasic__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'search&nbsp;the&nbsp;pattern&nbsp;table&nbsp;to&nbsp;see&nbsp;if&nbsp;the&nbsp;letter&nbsp;was&nbsp;already&nbsp;assigned&nbsp;an&nbsp;identification</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;Q1&nbsp;=&nbsp;From&nbsp;P&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;map&nbsp;Where&nbsp;P.Letter&nbsp;=&nbsp;S&nbsp;<span class="visualBasic__keyword">Select</span>&nbsp;P&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;it&nbsp;has&nbsp;then&nbsp;use&nbsp;the&nbsp;same&nbsp;identification&nbsp;for&nbsp;that&nbsp;letter</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;Q1.ToArray.Count&nbsp;=&nbsp;<span class="visualBasic__number">0</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;map.Add(<span class="visualBasic__keyword">New</span>&nbsp;pt(Q1.ToArray(<span class="visualBasic__number">0</span>).ID,&nbsp;S))&nbsp;:&nbsp;<span class="visualBasic__keyword">Continue</span>&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;it&nbsp;has&nbsp;not,&nbsp;then&nbsp;assign&nbsp;a&nbsp;new&nbsp;pattern&nbsp;identification</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map.Add(<span class="visualBasic__keyword">New</span>&nbsp;pt((Legend)(I),&nbsp;S))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Increment&nbsp;the&nbsp;next&nbsp;pattern&nbsp;id&nbsp;index&nbsp;number</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&#43;=&nbsp;<span class="visualBasic__number">1</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Next</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Maximum&nbsp;&#43;=&nbsp;map.Count&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Go&nbsp;through&nbsp;each&nbsp;mapped&nbsp;letter</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;<span class="visualBasic__keyword">Each</span>&nbsp;P&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;pt&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;map&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Increment(<span class="visualBasic__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Assemble&nbsp;the&nbsp;encrypted&nbsp;word's&nbsp;pattern</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WordPattern&nbsp;=&nbsp;WordPattern&nbsp;&amp;&nbsp;P.ID&nbsp;:&nbsp;<span class="visualBasic__keyword">Next</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Get&nbsp;all&nbsp;word&nbsp;from&nbsp;the&nbsp;dictionary&nbsp;that&nbsp;are:</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'A.)&nbsp;The&nbsp;same&nbsp;length&nbsp;of&nbsp;the&nbsp;bord</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'B.)&nbsp;Match&nbsp;the&nbsp;FILTER&nbsp;specified</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;Q2&nbsp;=&nbsp;From&nbsp;W&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;Dictionary&nbsp;Where&nbsp;(W.Length&nbsp;=&nbsp;Word.Length)&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;(W&nbsp;<span class="visualBasic__keyword">Like</span>&nbsp;Filter)&nbsp;<span class="visualBasic__keyword">Select</span>&nbsp;W&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Create&nbsp;a&nbsp;list&nbsp;for&nbsp;holding&nbsp;the&nbsp;result</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;results&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;List(<span class="visualBasic__keyword">Of</span>&nbsp;<span class="visualBasic__keyword">String</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Maximum&nbsp;&#43;=&nbsp;Q2.ToArray.Count&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Go&nbsp;through&nbsp;each&nbsp;dictionary&nbsp;word&nbsp;from&nbsp;the&nbsp;LINQ&nbsp;result</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;<span class="visualBasic__keyword">Each</span>&nbsp;W&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;Q2.ToArray&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Increment(<span class="visualBasic__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Create&nbsp;a&nbsp;pattern&nbsp;map&nbsp;for&nbsp;each&nbsp;word&nbsp;from&nbsp;the&nbsp;LINQ&nbsp;result,&nbsp;create&nbsp;a</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;legend&nbsp;index&nbsp;counter,&nbsp;create&nbsp;a&nbsp;dictionary&nbsp;word&nbsp;pattern&nbsp;to&nbsp;compare&nbsp;against&nbsp;the&nbsp;encrypted&nbsp;word&nbsp;pattern</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;map2&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;List(<span class="visualBasic__keyword">Of</span>&nbsp;pt),&nbsp;I2&nbsp;=&nbsp;<span class="visualBasic__number">0</span>,&nbsp;DictPattern&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;=&nbsp;<span class="visualBasic__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Go&nbsp;through&nbsp;each&nbsp;character,&nbsp;of&nbsp;each&nbsp;word&nbsp;from&nbsp;the&nbsp;LINQ&nbsp;result</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;<span class="visualBasic__keyword">Each</span>&nbsp;S&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;W&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'search&nbsp;the&nbsp;pattern&nbsp;table&nbsp;to&nbsp;see&nbsp;if&nbsp;the&nbsp;letter&nbsp;was&nbsp;already&nbsp;assigned&nbsp;an&nbsp;identification</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;Q3&nbsp;=&nbsp;From&nbsp;P&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;map2&nbsp;Where&nbsp;P.Letter&nbsp;=&nbsp;S&nbsp;<span class="visualBasic__keyword">Select</span>&nbsp;P&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;it&nbsp;has&nbsp;then&nbsp;use&nbsp;the&nbsp;same&nbsp;identification&nbsp;for&nbsp;that&nbsp;letter</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;Q3.ToArray.Count&nbsp;=&nbsp;<span class="visualBasic__number">0</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;map2.Add(<span class="visualBasic__keyword">New</span>&nbsp;pt(Q3.ToArray(<span class="visualBasic__number">0</span>).ID,&nbsp;S))&nbsp;:&nbsp;<span class="visualBasic__keyword">Continue</span>&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;it&nbsp;has&nbsp;not,&nbsp;then&nbsp;assign&nbsp;a&nbsp;new&nbsp;pattern&nbsp;identification</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map2.Add(<span class="visualBasic__keyword">New</span>&nbsp;pt((Legend)(I2),&nbsp;S))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Increment&nbsp;the&nbsp;next&nbsp;pattern&nbsp;id&nbsp;index&nbsp;number</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I2&nbsp;&#43;=&nbsp;<span class="visualBasic__number">1</span>&nbsp;:&nbsp;<span class="visualBasic__keyword">Next</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Go&nbsp;through&nbsp;each&nbsp;mapped&nbsp;letter</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;<span class="visualBasic__keyword">Each</span>&nbsp;P&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;pt&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;map2&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Assemble&nbsp;the&nbsp;dictionary&nbsp;word's&nbsp;pattern</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DictPattern&nbsp;=&nbsp;DictPattern&nbsp;&amp;&nbsp;P.ID&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Next</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Compare&nbsp;the&nbsp;encrypted&nbsp;word's&nbsp;pattern&nbsp;to&nbsp;the&nbsp;pattern&nbsp;of&nbsp;each&nbsp;result&nbsp;from&nbsp;the&nbsp;LINQ&nbsp;query(Q2)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;DictPattern&nbsp;=&nbsp;WordPattern&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;results.Add(W)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;provided&nbsp;a&nbsp;label&nbsp;to&nbsp;update&nbsp;status</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;UpdateLabel&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Change&nbsp;the&nbsp;label's&nbsp;text&nbsp;to&nbsp;reflect&nbsp;the&nbsp;current&nbsp;matches&nbsp;found</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UpdateLabel.Text&nbsp;=&nbsp;results.Count&nbsp;&amp;&nbsp;<span class="visualBasic__string">&quot;&nbsp;matches&nbsp;found&nbsp;so&nbsp;far...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'refresh&nbsp;the&nbsp;label/app</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.DoEvents()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Next</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Create&nbsp;a&nbsp;list&nbsp;for&nbsp;returning&nbsp;the&nbsp;final&nbsp;results</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;Items&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;List(<span class="visualBasic__keyword">Of</span>&nbsp;ListViewItem)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Maximum&nbsp;&#43;=&nbsp;results.Count&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">For</span>&nbsp;<span class="visualBasic__keyword">Each</span>&nbsp;S&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;<span class="visualBasic__keyword">In</span>&nbsp;results&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'If&nbsp;the&nbsp;user&nbsp;specified&nbsp;a&nbsp;progressbar,&nbsp;then&nbsp;update&nbsp;the&nbsp;values</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;PB&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;PB.Increment(<span class="visualBasic__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Create&nbsp;a&nbsp;new&nbsp;listview&nbsp;item&nbsp;with&nbsp;subitem(0)&nbsp;being&nbsp;the&nbsp;encrypted&nbsp;word</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;Item&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;ListViewItem(Word)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Add&nbsp;2&nbsp;subitems&nbsp;to&nbsp;the&nbsp;item(Dictionary&nbsp;word,&nbsp;the&nbsp;pattern&nbsp;that&nbsp;they&nbsp;were&nbsp;matched&nbsp;with)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item.SubItems.AddRange({S,&nbsp;WordPattern})&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Add&nbsp;the&nbsp;item&nbsp;to&nbsp;the&nbsp;final&nbsp;results</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Items.Add(Item)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Next</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'convert&nbsp;the&nbsp;resuts&nbsp;and&nbsp;return&nbsp;it&nbsp;as&nbsp;an&nbsp;array&nbsp;of&nbsp;Listviewitem</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Return</span>&nbsp;Items.ToArray&nbsp;
+<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Function</span>&nbsp;
+<span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Class</span>&nbsp;pt&nbsp;<span class="visualBasic__com">'&nbsp;Pattern&nbsp;Table</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'I.e.&nbsp;The&nbsp;letter&nbsp;can&nbsp;only&nbsp;recieve&nbsp;this&nbsp;ID,&nbsp;this&nbsp;ID&nbsp;can&nbsp;only&nbsp;represent&nbsp;this&nbsp;letter</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Public</span>&nbsp;ID,&nbsp;Letter&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;<span class="visualBasic__keyword">New</span>(ID&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>,&nbsp;Letter&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Populate&nbsp;the&nbsp;ID&nbsp;and&nbsp;Letter&nbsp;values&nbsp;of&nbsp;this&nbsp;pattern&nbsp;table</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Me</span>.ID&nbsp;=&nbsp;ID&nbsp;:&nbsp;<span class="visualBasic__keyword">Me</span>.Letter&nbsp;=&nbsp;Letter&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;
+<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Class</span></pre>
+</div>
+</div>
+</div>
+<p><em>&nbsp;</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

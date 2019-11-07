@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.VEditSessionDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="634" d:DesignWidth="1035"
+             DataContext="{Binding EditSessionDetails, Source={StaticResource Locator}}"
+             xmlns:val="clr-namespace:MyEvents.Client.Organizer.Desktop.Validation">
+    <Grid VerticalAlignment="Top" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="52"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="61"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" Margin="10,2,0,0" TextWrapping="Wrap" Text="{Binding editSession, Source={StaticResource languages}}" HorizontalAlignment="Left" VerticalAlignment="Top"  Style="{DynamicResource SubTitleStyle}" Height="40" Width="144"/>
+        <Border Background="{DynamicResource SessionInfoBrush}" Grid.Row="1"  Grid.RowSpan="6" Grid.ColumnSpan="5" Opacity="0.2" />
+        <StackPanel Margin="1,0,0,0"  Orientation="Vertical" Grid.Row="2" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding title, Mode=OneWay, Source={StaticResource languages}}" Style="{DynamicResource NormalText}"/>
+            <TextBox Name="TitleText" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Justify" Style="{DynamicResource NormalTextBox}">
+                <TextBox.Text>
+                    <Binding Path="TemporalSession.Title" Mode="TwoWay" ValidatesOnDataErrors="True">
+                        <Binding.ValidationRules>
+                            <val:EmpyTextValidation></val:EmpyTextValidation>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Margin="0" Orientation="Vertical" Grid.Row="3" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding description, Mode=OneWay, Source={StaticResource languages}}" Style="{DynamicResource NormalText}"/>
+            <TextBox Name="DescriptionText" TextWrapping="Wrap" Height="282" TextAlignment="Justify" Style="{DynamicResource NormalTextBox}">
+                <TextBox.Text>
+                    <Binding Path="TemporalSession.Description" Mode="TwoWay" ValidatesOnDataErrors="True">
+                        <Binding.ValidationRules>
+                            <val:EmpyTextValidation></val:EmpyTextValidation>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="3" Orientation="Vertical" Grid.Row="2">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding speaker, Mode=OneWay, Source={StaticResource languages}}" Style="{DynamicResource NormalText}"/>
+            <TextBox Name="SpeakerText" TextWrapping="Wrap" Style="{DynamicResource NormalTextBox}">
+                <TextBox.Text>
+                    <Binding Path="TemporalSession.Speaker" Mode="TwoWay" ValidatesOnDataErrors="True">
+                        <Binding.ValidationRules>
+                            <val:EmpyTextValidation></val:EmpyTextValidation>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Orientation="Vertical" Grid.Row="3">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding biography, Mode=OneWay, Source={StaticResource languages}}" Style="{DynamicResource NormalText}"/>
+            <TextBox Name="BiographyText" TextWrapping="Wrap" TextAlignment="Justify" Height="282" Style="{DynamicResource NormalTextBox}">
+                <TextBox.Text>
+                    <Binding Path="TemporalSession.Biography" Mode="TwoWay" ValidatesOnDataErrors="True">
+                        <Binding.ValidationRules>
+                            <val:EmpyTextValidation></val:EmpyTextValidation>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Orientation="Vertical" Grid.Row="4" VerticalAlignment="Top" Height="40">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding twitterAccount, Mode=OneWay, Source={StaticResource languages}}" Style="{DynamicResource NormalText}"/>
+            <TextBox Name="TwitterText" TextWrapping="Wrap" VerticalAlignment="Top" Style="{DynamicResource NormalTextBox}">
+                <TextBox.Text>
+                    <Binding Path="TemporalSession.TwitterAccount" Mode="TwoWay" ValidatesOnDataErrors="True">
+                        <Binding.ValidationRules>
+                            <val:EmpyTextValidation></val:EmpyTextValidation>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,0,0" Height="32" Width="164">
+            <Button Content="{Binding cancelButton, Mode=OneWay, Source={StaticResource languages}}" HorizontalAlignment="Right" Height="30" VerticalAlignment="Top" Width="77" Style="{DynamicResource BlueButtonStyle}" Command="{Binding CancelCommand, Mode=OneWay}"/>
+            <Button Content="{Binding saveButton, Mode=OneWay, Source={StaticResource languages}}" HorizontalAlignment="Right" Height="30" Margin="10,0,0,0" VerticalAlignment="Top" Width="77" Style="{DynamicResource RedButtonStyle}" Command="{Binding SaveCommand, Mode=OneWay}">
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{StaticResource MultiBoolean}">
+                        <Binding ElementName="TitleText" Path="(Validation.HasError)" Converter="{StaticResource InverseBooleanConverter}"/>
+                        <Binding ElementName="SpeakerText" Path="(Validation.HasError)" Converter="{StaticResource InverseBooleanConverter}"/>
+                        <Binding ElementName="DescriptionText" Path="(Validation.HasError)" Converter="{StaticResource InverseBooleanConverter}"/> 
+                        <Binding ElementName="BiographyText" Path="(Validation.HasError)" Converter="{StaticResource InverseBooleanConverter}"/> 
+                        <Binding ElementName="TwitterText" Path="(Validation.HasError)" Converter="{StaticResource InverseBooleanConverter}"/>
+                    </MultiBinding>
+                </Button.IsEnabled>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMSample", "MVVMSample\MVVMSample.csproj", "{51A8DC54-3989-4C8A-8F11-7385267B7155}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203F7A2C-5863-4BE5-ADDB-021937392772} = {203F7A2C-5863-4BE5-ADDB-021937392772}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMSample.Web", "Index.Web\MVVMSample.Web.csproj", "{203F7A2C-5863-4BE5-ADDB-021937392772}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51A8DC54-3989-4C8A-8F11-7385267B7155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A8DC54-3989-4C8A-8F11-7385267B7155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A8DC54-3989-4C8A-8F11-7385267B7155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A8DC54-3989-4C8A-8F11-7385267B7155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203F7A2C-5863-4BE5-ADDB-021937392772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203F7A2C-5863-4BE5-ADDB-021937392772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203F7A2C-5863-4BE5-ADDB-021937392772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203F7A2C-5863-4BE5-ADDB-021937392772}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+@model PhluffyFotos.Web.ViewModels.AlbumViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="lvl2">
+    @if (this.Model.Albums.Count() == 0) { 
+        <p>No albums available</p>
+    } else { 
+        <div id="lvl3">
+            <ul id="itemcontainer" class="photoList">
+                @foreach (var item in this.Model.Albums) { 
+                <li>
+                    <div class="albumTitle">
+                        <h2>@Html.ActionLink(item.Title, "Get", new { owner = item.Owner, album = item.AlbumId }) (by @Html.ActionLink(item.Owner, "Get", new { item.Owner }))</h2> 
+                    </div>
+                
+                    @if (!string.IsNullOrEmpty(item.ThumbnailUrl)) { 
+                        <a href="@Url.Action("Get", "Album", new { owner = item.Owner, album = item.AlbumId })">
+                            <img src="@item.ThumbnailUrl" alt="@item.Title" />
+                        </a>
+                    } 
+                                
+                    <br />
+                    <em>Owner:</em> @item.Owner
+                    @if (User.IsInRole("Administrator") || User.Identity.Name.Equals(item.Owner, StringComparison.InvariantCultureIgnoreCase))
+                    { 
+                        <div class="admin">
+                            @Html.ActionLink(
+                                "Delete", 
+                                "Delete",
+                                "Album", 
+                                new { owner = item.Owner, album = item.AlbumId },
+                                new { onclick = "return confirm('Are you sure you want to delete this album?'); " })
+                        </div>
+                    } 
+                </li>
+                } 
+            </ul>
+        </div>
+    } 
+</div>
+
+

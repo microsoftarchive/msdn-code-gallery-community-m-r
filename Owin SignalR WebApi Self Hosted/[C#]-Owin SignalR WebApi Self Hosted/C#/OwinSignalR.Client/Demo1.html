@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-2.2.0.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+
+    <script src="http://localhost:8014/signalr/hubs"></script>
+
+    <script>
+        var signalrRoot = 'http://localhost:8014';
+    </script>
+
+    <script src="Scripts/OwinSignalR.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['gauge'] });
+        google.charts.setOnLoadCallback(drawChart);
+        var chart;
+        var data;
+        var options;
+
+        function drawChart() {
+
+            data = google.visualization.arrayToDataTable([
+                 ['Label', 'Value'],
+                 ['Memory', 80],
+                 ['CPU', 55],
+                 ['Network', 68]
+            ]);
+
+            options = {
+                width: 200, height: 700,
+                redFrom: 90, redTo: 100,
+                yellowFrom: 75, yellowTo: 90,
+                minorTicks: 5
+            };
+
+            chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        connect('48a2000467394b008938cc77b4529e3a', 'testUser', [{
+            testCallBack: function (args) {
+                $('#activityFeedMessage').hide();
+                $('#activityFeed').prepend('<li class="list-group-item"><label class="label label-success">' + args.createDate + '</label><br />' + args.message + '</li>');
+            },
+            serverLoadNetwork: function (args) {
+                data.setValue(2, 1, args);
+                chart.draw(data, options);
+            },
+            serverLoadCPU: function (args) {
+                data.setValue(1, 1, args);
+                chart.draw(data, options);
+            },
+            serverLoadMemory: function (args) {
+                data.setValue(0, 1, args);
+                chart.draw(data, options);
+            }
+        }]);
+    </script>
+
+    <style type="text/css">
+        .list-group {
+            max-height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Demo</a></li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+                <div id="chart_div"></div>                               
+            </div>
+            <div class="col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Activity feed</div>
+                    <div class="panel-body" id="activityFeedMessage">
+                        <span class="label label-warning">no activity to display</span>
+                    </div>
+                    <ul class="list-group" id="activityFeed"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

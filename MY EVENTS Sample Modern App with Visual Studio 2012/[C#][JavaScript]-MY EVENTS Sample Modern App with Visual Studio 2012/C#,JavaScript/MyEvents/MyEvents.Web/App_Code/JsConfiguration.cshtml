@@ -1,0 +1,9 @@
+﻿@helper SetConfigurations()
+{    
+    <text>
+    <script>
+        myEvents.app.settings.isOffline = @(System.Configuration.ConfigurationManager.AppSettings["OfflineMode"]);
+        myEvents.app.settings.apiAddress = "@(System.Configuration.ConfigurationManager.AppSettings["ApiAddress"])";        
+    </script>
+    </text>
+}

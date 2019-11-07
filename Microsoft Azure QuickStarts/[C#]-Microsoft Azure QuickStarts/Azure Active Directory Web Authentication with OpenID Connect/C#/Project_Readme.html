@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Azure Active Directory: Web Authentication with OpenID Connect</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans Unicode';
+        }
+
+        .subhead {
+            font-style: italic;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Azure Active Directory: Web Authentication with OpenID Connect</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+
+    <p>
+        This sample shows how to build a .Net MVC web application that uses OpenID Connect to sign-in users from a single
+        Azure Active Directory tenant, using the ASP.Net OpenID Connect OWIN middleware.
+    </p>
+
+    <p>
+        For more information about how the protocols work in this scenario and other scenarios, see
+        <a href="http://go.microsoft.com/fwlink/?LinkId=394414">Authentication Scenarios for Azure AD</a>.
+    </p>
+
+    <p>
+        Note: The latest version of this sample is <a href="https://github.com/AzureADSamples/WebApp-OpenIDConnect-DotNet">available on GitHub</a> .
+    </p>
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
+    </p>
+
+    <h2>Running this sample</h2>
+
+
+    <p>Getting started is simple!  To run this sample you will need:</p>
+
+    <ul class="task-list">
+        <li>Visual Studio 2013</li>
+        <li>An Internet connection</li>
+        <li>An Azure subscription (a free trial is sufficient)</li>
+    </ul>
+
+    <p>Every Azure subscription has an associated Azure Active Directory tenant.  If you don't already have an Azure subscription, you can get a free subscription by signing up at <a href="http://www.windowsazure.com">http://www.windowsazure.com</a>.  All of the Azure AD features used by this sample are available free of charge.</p>
+
+
+    <h3>
+        <a id="user-content-step-2--create-a-user-account-in-your-azure-active-directory-tenant" class="anchor" href="#step-2--create-a-user-account-in-your-azure-active-directory-tenant" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1:  Create a user account in your Azure Active Directory tenant
+    </h3>
+
+    <p>If you already have a user account in your Azure Active Directory tenant, you can skip to the next step.  This sample will not work with a Microsoft account, so if you signed in to the Azure portal with a Microsoft account and have never created a user account in your directory before, you need to do that now.  If you create an account and want to use it to sign-in to the Azure portal, don't forget to add the user account as a co-administrator of your Azure subscription.</p>
+
+    <h3>
+        <a id="user-content-step-3--register-the-sample-with-your-azure-active-directory-tenant" class="anchor" href="#step-3--register-the-sample-with-your-azure-active-directory-tenant" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2:  Register the sample with your Azure Active Directory tenant
+    </h3>
+
+    <ol class="task-list">
+        <li>Sign in to the <a href="https://manage.windowsazure.com">Azure management portal</a>.</li>
+        <li>Click on Active Directory in the left hand nav.</li>
+        <li>Click the directory tenant where you wish to register the sample application.</li>
+        <li>Click the Applications tab.</li>
+        <li>In the drawer, click Add.</li>
+        <li>Click "Add an application my organization is developing".</li>
+        <li>Enter a friendly name for the application, for example "WebApp-OpenIDConnect-DotNet", select "Web Application and/or Web API", and click next.</li>
+        <li>For the sign-on URL, enter the base URL for the sample, which is by default <code>https://localhost:44320/</code>.</li>
+        <li>For the App ID URI, enter <code>https://&lt;your_tenant_name&gt;/WebApp-OpenIDConnect-DotNet</code>, replacing <code>&lt;your_tenant_name&gt;</code> with the name of your Azure AD tenant.</li>
+    </ol>
+
+    <p>All done!  Before moving on to the next step, you need to find the Client ID of your application.</p>
+
+    <ol class="task-list">
+        <li>While still in the Azure portal, click the Configure tab of your application.</li>
+        <li>Find the Client ID value and copy it to the clipboard.</li>
+    </ol>
+
+    <h3>
+        <a id="user-content-step-4--configure-the-sample-to-use-your-azure-active-directory-tenant" class="anchor" href="#step-4--configure-the-sample-to-use-your-azure-active-directory-tenant" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3:  Configure the sample to use your Azure Active Directory tenant
+    </h3>
+
+    <ol class="task-list">
+        <li>Open the solution in Visual Studio 2013.</li>
+        <li>Open the <code>web.config</code> file.</li>
+        <li>Find the app key <code>ida:Tenant</code> and replace the value with your AAD tenant name.</li>
+        <li>Find the app key <code>ida:ClientId</code> and replace the value with the Client ID from the Azure portal.</li>
+        <li>If you changed the base URL of the sample, find the app key <code>ida:PostLogoutRedirectUri</code> and replace the value with the new base URL of the sample.</li>
+    </ol>
+
+    <h3>
+        <a id="user-content-step-5--run-the-sample" class="anchor" href="#step-5--run-the-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4:  Run the sample
+    </h3>
+
+    <p>Clean the solution, rebuild the solution, and run it.</p>
+
+    <p>Click the sign-in link on the homepage of the application to sign-in.  On the Azure AD sign-in page, enter the name and password of a user account that is in your Azure AD tenant.</p>
+
+
+
+    <h2>
+        <a id="user-content-about-the-code" class="anchor" href="#about-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>About The Code
+    </h2>
+
+    <p>This sample shows how to use the OpenID Connect ASP.Net OWIN middleware to sign-in users from a single Azure AD tenant.  The middleware is initialized in the <code>Startup.Auth.cs</code> file, by passing it the Client ID of the application and the URL of the Azure AD tenant where the application is registered.  The middleware then takes care of:</p>
+
+    <ul class="task-list">
+        <li>Downloading the Azure AD metadata, finding the signing keys, and finding the issuer name for the tenant.</li>
+        <li>Processing OpenID Connect sign-in responses by validating the signature and issuer in an incoming JWT, extracting the user's claims, and putting them on ClaimsPrincipal.Current.</li>
+        <li>Integrating with the session cookie ASP.Net OWIN middleware to establish a session for the user. </li>
+    </ul>
+
+    <p>You can trigger the middleware to send an OpenID Connect sign-in request by decorating a class or method with the <code>[Authorize]</code> attribute, or by issuing a challenge,</p>
+
+    <div class="highlight highlight-C#">
+        <pre>HttpContext.GetOwinContext().Authentication.Challenge(
+        <span class="pl-s">new</span> AuthenticationProperties { RedirectUri = <span class="pl-s1"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span> },
+    OpenIdConnectAuthenticationDefaults.AuthenticationType);</pre>
+    </div>
+
+    <p>Similarly you can send a signout request,</p>
+
+    <div class="highlight highlight-C#">
+        <pre>HttpContext.GetOwinContext().Authentication.SignOut(
+    OpenIdConnectAuthenticationDefaults.AuthenticationType,
+    CookieAuthenticationDefaults.AuthenticationType);</pre>
+    </div>
+
+    <p>When a user is signed out, they will be redirected to the <code>Post_Logout_Redirect_Uri</code> specified when the OpenID Connect middleware is initialized.</p>
+
+    <p>All of the OWIN middleware in this project is created as a part of the open source <a href="http://katanaproject.codeplex.com">Katana project</a>.  You can read more about OWIN <a href="http://owin.org">here</a>.</p>
+
+    <h2>
+        <a id="user-content-how-to-recreate-this-sample" class="anchor" href="#how-to-recreate-this-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Recreate This Sample
+    </h2>
+
+    <ol class="task-list">
+        <li>In Visual Studio 2013, create a new ASP.Net MVC web application with Authentication set to No Authentication.</li>
+        <li>Set SSL Enabled to be True.  Note the SSL URL.</li>
+        <li>In the project properties, Web properties, set the Project Url to be the SSL URL.</li>
+        <li>Add the following ASP.Net OWIN middleware NuGets: Microsoft.IdentityModel.Protocol.Extensions, System.IdentityModel.Tokens.Jwt, Microsoft.Owin.Security.OpenIdConnect, Microsoft.Owin.Security.Cookies, Microsoft.Owin.Host.SystemWeb.</li>
+        <li>In the <code>App_Start</code> folder, create a class <code>Startup.Auth.cs</code>.  You will need to remove <code>.App_Start</code> from the namespace name.  Replace the code for the <code>Startup</code> class with the code from the same file of the sample app.  Be sure to take the whole class definition!  The definition changes from <code>public class Startup</code> to <code>public partial class Startup</code>.</li>
+        <li>In <code>Startup.Auth.cs</code> resolve missing references by adding <code>using</code> statements for <code>Owin</code>, <code>Microsoft.Owin.Security</code>, <code>Microsoft.Owin.Security.Cookies</code>, <code>Microsoft.Owin.Security.OpenIdConnect</code>, <code>System.Configuration</code>, and <code>System.Globalization</code>.</li>
+        <li>Right-click on the project, select Add, select "OWIN Startup class", and name the class "Startup".  If "OWIN Startup Class" doesn't appear in the menu, instead select "Class", and in the search box enter "OWIN".  "OWIN Startup class" will appear as a selection; select it, and name the class <code>Startup.cs</code>.</li>
+        <li>In <code>Startup.cs</code>, replace the code for the <code>Startup</code> class with the code from the same file of the sample app.  Again, note the definition changes from <code>public class Startup</code> to <code>public partial class Startup</code>.</li>
+        <li>In the <code>Views</code> --&gt; <code>Shared</code> folder, create a new partial view <code>_LoginPartial.cshtml</code>.  Replace the contents of the file with the contents of the file of same name from the sample.</li>
+        <li>In the <code>Views</code> --&gt; <code>Shared</code> folder, replace the contents of <code>_Layout.cshtml</code> with the contents of the file of same name from the sample.  Effectively, all this will do is add a single line, <code>@Html.Partial("_LoginPartial")</code>, that lights up the previously added <code>_LoginPartial</code> view.</li>
+        <li>Create a new empty controller called <code>AccountController</code>.  Replace the implementation with the contents of the file of same name from the sample.</li>
+        <li>If you want the user to be required to sign-in before they can see any page of the app, then in the <code>HomeController</code>, decorate the <code>HomeController</code> class with the <code>[Authorize]</code> attribute.  If you leave this out, the user will be able to see the home page of the app without having to sign-in first, and can click the sign-in link on that page to get signed in.</li>
+        <li>Almost done!  Follow the steps in "Running This Sample" to register the application in your AAD tenant.</li>
+        <li>In <code>web.config</code>, in <code>&lt;appSettings&gt;</code>, create keys for <code>ida:ClientId</code>, <code>ida:AADInstance</code>, <code>ida:Tenant</code>, and <code>ida:PostLogoutRedirectUri</code> and set the values accordingly.  For the public Azure AD, the value of <code>ida:AADInstance</code> is <code>https://login.windows.net/{0}</code>.</li>
+    </ol>
+    <h2>More information</h2>
+    <ul>
+        <li><a href="http://azure.microsoft.com/en-us/documentation/services/active-directory/">Azure Active Directory documentation</a></li>
+        <li><a href="https://github.com/AzureADSamples">Microsoft Azure Active Directory Samples and Documentation</a></li>
+    </ul>
+</body>
+</html>

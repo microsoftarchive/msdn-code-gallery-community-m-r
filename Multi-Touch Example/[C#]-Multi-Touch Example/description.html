@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Multi-Touch Example</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Multi-Touch Example</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, Direct2D, DirectX, Multi-touch, Windows 8 Store App, Windows 8 Store Apps, Windows Store app, SharpDX
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            C#, User Interface, input, Multi-touch
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/22/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Multi-Touch-Example-79c2cbd6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>A example to deal with Windows 8 store app Multi-Touch feature.</p>
+<p><img id="82459" src="description/未命名3.png" alt="" width="760" height="427"></p>
+<p>Touch with 2 fingers</p>
+<p><img id="82460" src="description/未命名.png" alt=""></p>
+<p>Mouse move</p>
+<p><img id="82461" src="description/未命名5.png" alt="" width="760" height="428"></p>
+<h1><strong>Description</strong></h1>
+<p>In Windows 8 Store APP, touch releted events are used below:</p>
+<ul>
+<li><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx"><strong>PointerPressed</strong></a>&nbsp;fires when user press down the screen using finger or mouse
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx"><strong>PointerMoved</strong></a>&nbsp;fires when the finger (or mouse pointer) moved during user press down&nbsp;
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx"><strong>PointerReleased</strong></a>&nbsp;fires when user lifts the finger or release mouse left-button&nbsp;<strong>IN</strong>&nbsp;controls
+</li><li><strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerexited.aspx">PointerExited</a>&nbsp;</strong>fires when user move
+<strong><span style="color:#000000">OUT OFF</span></strong> the controls or lifts the finger
+<strong>WITH-IN</strong> controls&nbsp;&nbsp;&nbsp; </li></ul>
+<p>&nbsp;</p>
+<p>Here is some code&nbsp;snippet,</p>
+<p>With in&nbsp;<strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx"><strong>PointerPressed</strong></a></strong>, system will gave you</p>
+<ul>
+<li><strong>e.GetCurrentPoint(_Rect).Position</strong> &nbsp; &nbsp; Return a <strong>
+<a href="http://msdn.microsoft.com/library/windows/apps/Windows.Foundation.point">Point</a></strong> class presents the Position of user input
+</li><li><strong>e.Pointer.PointerDeviceType</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Return&nbsp;<strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.pointer.pointerdevicetype.aspx">PointerDeviceType</a>&nbsp;</strong>presents
+ type of user input (Mouse/Touch/Pen) </li><li><strong>e.Pointer.PointerId</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Return&nbsp;<strong>a unique
+<a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.pointer.pointerid">
+PointerId</a></strong> except mouse = 1. </li></ul>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private void _Rect_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    // The unique PointerId
+    Debug.WriteLine(&quot;[PointerPressed] Pointer ID:&quot; &#43; e.Pointer.PointerId);
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;_Rect_PointerPressed(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;PointerRoutedEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;The&nbsp;unique&nbsp;PointerId</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Debug.WriteLine(<span class="cs__string">&quot;[PointerPressed]&nbsp;Pointer&nbsp;ID:&quot;</span>&nbsp;&#43;&nbsp;e.Pointer.PointerId);&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<p>With in&nbsp;<strong><strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx"><strong>PointerMoved</strong></a></strong></strong>, try to find the&nbsp;<strong><strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.pointer.pointerid">PointerId</a></strong></strong>&nbsp;you
+ want.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private void _Rect_PointerMoved(object sender, PointerRoutedEventArgs e)
+{
+    if (pData.PointerId == e.Pointer.PointerId)
+    {
+        // ... Do Something with this pointer
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;_Rect_PointerMoved(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;PointerRoutedEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(pData.PointerId&nbsp;==&nbsp;e.Pointer.PointerId)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;...&nbsp;Do&nbsp;Something&nbsp;with&nbsp;this&nbsp;pointer</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">With in&nbsp;<strong><strong><strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx"><strong>PointerReleased</strong></a></strong></strong></strong>:</div>
+<div class="endscriptcode"></div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private void _Rect_PointerReleased(object sender, PointerRoutedEventArgs e)
+{
+     // Find the correct PointerId
+    if (pData.PointerId == e.Pointer.PointerId)
+    {
+          // ... Do Something with this pointer
+    }
+    Debug.WriteLine(&quot;[PointerReleased] Pointer ID:&quot; &#43; e.Pointer.PointerId);
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;_Rect_PointerReleased(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;PointerRoutedEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Find&nbsp;the&nbsp;correct&nbsp;PointerId</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(pData.PointerId&nbsp;==&nbsp;e.Pointer.PointerId)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;...&nbsp;Do&nbsp;Something&nbsp;with&nbsp;this&nbsp;pointer</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Debug.WriteLine(<span class="cs__string">&quot;[PointerReleased]&nbsp;Pointer&nbsp;ID:&quot;</span>&nbsp;&#43;&nbsp;e.Pointer.PointerId);&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">With in&nbsp;<strong><strong><strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerexited.aspx">PointerExited</a></strong></strong></strong>, just do Something same as
+<strong><strong><strong><strong><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx"><strong>PointerReleased</strong></a></strong></strong></strong>
+</strong>at this sample</div>
+<div class="endscriptcode"></div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private void _Rect_PointerExited(object sender, PointerRoutedEventArgs e)
+{
+    // ... Do Something same as PointerReleased
+
+    Debug.WriteLine(&quot;[PointerExited] Pointer ID:&quot; &#43; e.Pointer.PointerId);
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;_Rect_PointerExited(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;PointerRoutedEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;...&nbsp;Do&nbsp;Something&nbsp;same&nbsp;as&nbsp;PointerReleased</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Debug.WriteLine(<span class="cs__string">&quot;[PointerExited]&nbsp;Pointer&nbsp;ID:&quot;</span>&nbsp;&#43;&nbsp;e.Pointer.PointerId);&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"></div>
+<h1>Building the Sample</h1>
+<p>This example using&nbsp;<strong>SharpDX</strong>&nbsp;for drawing.&nbsp;(Direct2D)</p>
+<p>SharpDX is managed lib with Directx</p>
+<p>More infomation about SharpDX, please refer&nbsp;<a title="http://sharpdx.org/" href="http://sharpdx.org/">http://sharpdx.org/</a></p>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><em>App.xaml</em> </li><li><em>App.xaml.cs</em> </li></ul>
+<ul>
+<li><em>MainPage.xaml</em> </li><li><em>MainPage.xaml.cs - Main page for example</em> </li></ul>
+<ul>
+<li><em>PointerData.cs - the&nbsp;data structure to store pointers</em> </li><li><em>ShapeRenderer.cs - the renderer functions tells sharpDX how to paint</em>
+</li></ul>
+<p style="padding-left:30px">Files and DLLs from SharpDX</p>
+<ul>
+<li><em>SurfaceImageSourceTarget.cs</em> </li><li><em>TargetBase.cs</em> </li><li><em>DeviceManager.cs</em> </li><li><em>FpsRenderer.cs</em> </li></ul>
+<ul>
+<li><em>SharpDX.Direct2D1.dll</em> </li><li><em>SharpDX.Direct3D11.dll</em> </li><li><em>SharpDX.dll</em> </li><li><em>SharpDX.DXGI.dll</em> </li></ul>
+<h1>More Information</h1>
+<p><em><a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh465387.aspx">Quickstart: Touch input (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a></em></p>
+<p><em><a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh974457.aspx">Quickstart: Capturing ink data (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a></em></p>
+<p><em><a href="http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.pointer">Pointer class</a><br>
+</em></p>
+<p><strong>Samples</strong></p>
+<p><em><a href="http://code.msdn.microsoft.com/windowsapps/Input-3dff271b">Input: XAML user input events sample</a></em></p>
+<p><em><a href="http://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745">Input: Device capabilities sample</a><br>
+</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

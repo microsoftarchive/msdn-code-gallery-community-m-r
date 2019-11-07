@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<monodoc>
+  <node label="Xamarin Components" name="components" parent="libraries" />
+  <node label="SimpleStorage" name="simple-storage" parent="components" />
+  <source provider="ecma" basefile="simple-storage" path="simple-storage" />
+</monodoc>

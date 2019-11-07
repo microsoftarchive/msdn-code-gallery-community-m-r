@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/VStudio/Content:0&amp;amp;hashKey=5660995EDEB27F21A5D1BD005D4FE8ED" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1a40d7e5-8b7b-474c-b65f-97820f37a290Combined.css,0:sprite;/Areas/Epx/Themes/VStudio/Content:0&amp;amp;hashKey=553B6D1D3C4FBF05C9FD9173862E88CA" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>NetDash Server Monitoring</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/d35b39f4-7b86-4c2f-8bbe-5627a3ab2dbeBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>NetDash Server Monitoring</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, IIS, C# Language, ASP.NET MVC 5
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            C#, ASP.NET, IIS, ASP.NET MVC, Performance, Networking, Storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/16/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><a href="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" ><img src="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" alt="NetDash Logo"></a></p>
+<p><a href="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" ></a>A small web-based monitoring dashboard for your Windows pc/server writen in C#
+ and MVC &#43; Chart.js.</p>
+<p>The dashboard is built using only C# libraries available in the main C# distribution, trying to create a small list of dependencies without the need of installing many packages or libraries.</p>
+<p><strong>Current dependencies</strong>:</p>
+<ul class="task-list">
+<li>Net Framework 4 </li><li>C# MVC </li><li>AttributeRouting </li><li>SQLite </li></ul>
+<p><strong>Localization</strong>:</p>
+<ul class="task-list">
+<li>(1) &quot;App_Data\Localization\en-EN.txt&quot; copy this file and translate the language you want to use.
+</li><li>(2) &quot;App_Data\Setting.ini&quot; LANGUAGE line in the file that you want to use the written language. Example: LANGUAGE=en-EN or LANGUAGE=tr-TR
+</li><li>(3) Started to use in their own language </li></ul>
+<p><strong>Login info</strong></p>
+<pre><code>user: admin
+pass: admin123
+</code></pre>
+<p><a href="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://camo.githubusercontent.com/25acf97487243789a2f982a46e8d5d00f34467bb/687474703a2f2f6935392e74696e797069632e636f6d2f777566316e362e706e67" ><img src="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://camo.githubusercontent.com/25acf97487243789a2f982a46e8d5d00f34467bb/687474703a2f2f6935392e74696e797069632e636f6d2f777566316e362e706e67" alt="NetDash"></a></p>
+<p><strong>NetDash Settings</strong></p>
+<p>The only settings currently available which you can modify are the refresh rates for the different data tables. There are 3 different refresh settings under&nbsp;<em>netdash/App_data/Setting.ini</em>&nbsp;and values are in miliseconds:</p>
+<ul class="task-list">
+<li>TIME_JS_REFRESH = 30000 #30 seconds </li><li>TIME_JS_REFRESH_LONG = 120000 #120 seconds </li><li>TIME_JS_REFRESH_NET = 2000 #2 seconds </li></ul>
+<p>You can modify any of the values to whatever you would like the new refresh rate to be. Restart the webserver after each update to the Setting.ini file.</p>
+<p>The tables and the refresh settings are as follows:</p>
+<ul class="task-list">
+<li>Memory Usage - TIME_JS_REFRESH </li><li>Load Average - TIME_JS_REFRESH </li><li>CPU Usage - TIME_JS_REFRESH </li><li>Traffic Usage - TIME_JS_REFRESH_NET </li><li>Disk Reads/Writes - TIME_JS_REFRESH_NET </li><li>Uptime - TIME_JS_REFRESH_LONG </li><li>Disk Usage - TIME_JS_REFRESH_LONG </li><li>Online Users - TIME_JS_REFRESH_LONG </li><li>Processes - TIME_JS_REFRESH_LONG </li><li>Netstat - TIME_JS_REFRESH_LONG </li></ul>
+<p><strong>Remote data retrieval</strong></p>
+<p>NetDash remote data retrieval</p>
+<p><strong>App_Data\Setting.ini</strong></p>
+<pre><code>; Remote or Local server name (Default local name machine name : .)
+; Sample remote server SERVERNAME=0.0.0.0
+SERVERNAME=ipaddress
+
+; Remote server login info (Ony remote server)
+
+REMOTE_DOMAIN=domain.com
+REMOTE_USERNAME=Administrator
+REMOTE_PASSWORD=password
+</code></pre>
+<p>NetDash will allow you to retrieve data remotely if needed. This can be useful if you want to store any of the data in a database or another application.</p>
+<ul class="task-list">
+<li>/info/uptime/ - Uptime </li><li>/info/platform/hostname/ - Hostname </li><li>/info/platform/osname/ - OS Name </li><li>/info/platform/kernel/ - Kernel </li><li>/info/getcpus/cpucount/ - Number of CPU cores </li><li>/info/getcpus/cputype/ - Type/Name of CPU </li><li>/info/memory/ - Memory Usage </li><li>/info/cpuusage/ - CPU Usage in percentage(%), free and used </li><li>/info/getdisk/ - Disk Usage </li><li>/info/getusers/ - Online Users </li><li>/info/getips/ - IP Addresses </li><li>/info/gettraffic/ - Internet Traffic </li><li>/info/getdiskio/ - Disk Reads/Writes </li><li>/info/proc/ - Running Processes </li><li>/info/loadaverage/ - Load Average </li><li>/info/getnetstat/ - Netstat </li></ul>
+<p>To see the format of the JSON returned datasets or data you can access any of the URLs from your browser ex.&nbsp;<a href="http://domain.com/info/uptime/">http://domain.com/info/uptime/</a></p>
+<p><strong>OS Support</strong></p>
+<ul class="task-list">
+<li>NetDash was tested and runs under the following OSs: </li><li>Windows 2000 NT </li><li>Windows 2003 Server </li><li>Windows 2008 Server </li><li>Windows 2012 Server </li></ul>
+<p><strong>Credits</strong></p>
+<p>Dashboard Template, Bootstrap, Font Awesome</p>
+<p><strong>LICENSE</strong></p>
+<p>The MIT License (MIT)</p>
+<p>Copyright (c) 2014 Yasin Kuyu -&nbsp;<a href="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://twitter.com/yasinkuyu">http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://twitter.com/yasinkuyu</a>&nbsp;-&nbsp;<a href="http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://github.com/yasinkuyu/">http://code.msdn.microsoft.com/vstudio/NetDash-Server-a73dea9d/https://github.com/yasinkuyu/</a></p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy<br>
+of this software and associated documentation files (the &quot;Software&quot;), to deal<br>
+in the Software without restriction, including without limitation the rights<br>
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br>
+copies of the Software, and to permit persons to whom the Software is<br>
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all<br>
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br>
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br>
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br>
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br>
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br>
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br>
+SOFTWARE.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

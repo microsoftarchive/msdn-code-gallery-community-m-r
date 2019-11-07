@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Model.EventDefinition
+
+@{
+    ViewBag.Title = "my events - " + @Model.Name + " event detail";
+}
+@section Meta
+{
+    <meta name="title" content="@Model.Name" />
+    <meta name="description" content="@Model.Description" />
+}
+@section Actions
+{
+    @Html.Partial("_ShareMenu")
+}
+@section Scripts {
+    <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    @Scripts.Render("~/Attendee/Event/DetailScripts/")
+}
+
+<article id="event-detail" class="detail-page column left">
+    <div class="row">
+        <span class="title">@Model.Name</span>
+        @Html.HiddenFor(model => model.Name)
+    </div>
+    <div class="row">
+        <div class="logo">
+            <img src="@Url.Action("EventLogo", "Event", new { eventDefinitionId = Model.EventDefinitionId })"/>
+        </div>
+        <div id="metadata">
+            <span class="date uppercase ellipsis">@(Model.Date.ToString("MMMM")) @(Model.Date.Day). </span>
+            <span class="uppercase ellipsis city" title="@Model.City">@Model.City</span>
+            <div id="organizer" class="icon">
+                <img src="@Url.Content("~/Styles/Images/organizer-icon.png")" />
+                <span class="ellipsis" title="@Model.Organizer.Name">@Model.Organizer.Name</span>
+            </div>
+            <div id="twitter" class="icon">
+                <a href="http://www.twitter.com/@Model.TwitterAccount">
+                    <img src="@Url.Content("~/Styles/Images/twitter-speaker.png")" />
+                    <span class="ellipsis" title="@Model.TwitterAccount"><span></span>@Model.TwitterAccount</span>
+                </a>
+            </div>
+            <div>
+                <a href="@Url.Action("Schedule", new { eventDefinitionId = Model.EventDefinitionId })" id="schedule" class="icon">
+                    <img src="@Url.Content("~/Styles/Images/schedule.png")" />
+                    <span>view event schedule</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <span class="section-title">description</span>
+        <span>@Model.Description</span>
+        @Html.HiddenFor(model => model.Description)
+    </div>
+    <div id="localizationMap" class="row">
+        <span class="section-title">location</span>
+        <div>
+            @Html.HiddenFor(model => model.Latitude)
+            @Html.HiddenFor(model => model.Longitude)
+            <div class="left threeQuarters map"></div>
+            <div class="left quarter">
+                <span>@Model.Address</span>
+                <span>@Model.ZipCode</span>
+            </div>
+        </div>
+    </div>
+</article>
+
+<section class="column right">
+    @if (Model.Registered)
+    {
+        <div id="register" class="button">
+            <span class="big">already registered </span>
+            <span>to this event</span>
+        </div>
+    }
+    else
+    {
+        <a id="register" href="@Url.Action("Register", "Event", new { eventDefinitionId = Model.EventDefinitionId })" class="button">
+            <div>
+                <span>register to this event with</span>
+                <span class="big">Facebook</span>
+            </div>
+        </a>
+    }
+
+    <section id="tweets">
+        <span class="section-title">tweets</span>
+        <img src="@Url.Content("~/Styles/Images/twitter-timeline.png")" />
+        @Html.Hidden("TwitterAccount", Model.TwitterAccount)
+        <div id="last-tweets">
+        </div>
+    </section>
+</section>
+

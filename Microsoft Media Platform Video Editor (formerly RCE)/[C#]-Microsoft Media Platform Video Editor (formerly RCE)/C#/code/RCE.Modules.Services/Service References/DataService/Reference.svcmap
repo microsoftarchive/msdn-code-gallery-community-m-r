@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ab1a182a-c0ad-4c9a-ad24-96c17d61f8b9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="RCE.Services.Contracts.Client" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/RCE.Web/DataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataService1.xsd" MetadataType="Schema" ID="a1cc95bf-b9b1-424b-af81-e5a2051184c3" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataService3.disco" MetadataType="Disco" ID="75e2b130-ea7d-456f-9500-3f4c67ff6765" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?disco" />
+    <MetadataFile FileName="DataService2.xsd" MetadataType="Schema" ID="7b00576a-aa60-485a-8282-fbf22a443f6d" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DataService3.xsd" MetadataType="Schema" ID="dfb52ab9-6312-4225-97e5-826a7a649684" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataService5.wsdl" MetadataType="Wsdl" ID="27c9ef3b-ad90-4281-baef-3a1f5355cae1" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DataService5.xsd" MetadataType="Schema" ID="d0095d35-514f-4789-bffc-53f0f5c87700" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataService6.wsdl" MetadataType="Wsdl" ID="c0dd592e-0d62-4532-ab33-2455be85683a" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?wsdl" />
+    <MetadataFile FileName="DataService6.xsd" MetadataType="Schema" ID="15452b73-14ac-4fab-afa7-bbb313598819" SourceId="1" SourceUrl="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

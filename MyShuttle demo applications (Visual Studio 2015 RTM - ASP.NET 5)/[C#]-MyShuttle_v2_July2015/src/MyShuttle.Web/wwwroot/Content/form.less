@@ -1,0 +1,116 @@
+@import "variables.less";
+
+.ms-form-control {
+    font-style: italic;
+    width: 100%;
+    margin-bottom: 1em;
+    resize: none;
+    padding: 0.5em;
+    font-size: 1.2em;
+    font-weight: 400;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.black-style {
+        background-color: @black-form-control-bg-hover;
+        color: @form-control-text-color;
+        border: solid 1px @text-base-color;
+
+        ::-webkit-input-placeholder {
+            color: @text-base-color;
+            font-weight: 200;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+            color: @text-base-color;
+            font-weight: 200;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            color: @text-base-color;
+            font-weight: 200;
+        }
+
+        :-ms-input-placeholder {
+            color: @text-base-color;
+            font-weight: 200;
+        }
+
+        &:focus {
+            border: solid 1px @white;
+            background-color: @black;
+        }
+    }
+
+    &.green-style {
+        background-color: @green-form-control-bg-hover;
+        color: @white;
+        border: solid 1px @white;
+
+        &:focus {
+            border: solid 1px @green-dark-form;
+            color: @green-dark-form;
+        }
+    }
+
+    &.description-style {
+        margin-bottom: 0.4em;
+    }
+}
+
+.ms-submit-btn {
+    width: 100%;
+    border-radius: 5px;
+    font-style: italic;
+    border: none;
+    padding: 0.4em;
+    font-size: 1.4em;
+
+    &.black-style {
+        color: @white;
+        background-color: @black-form-control-bg;
+
+        &:hover {
+            background-color: @black-input-btn-bg-hover;
+        }
+    }
+
+    &.green-style {
+        color: @white;
+        background-color: @green-dark-form;
+        font-weight: 500;
+
+        &.lg-style {
+            height: 5.2em;
+        }
+
+        &.md-style {
+            width: 14em;
+            height: 3.2em;
+            margin-top: 2.8em;
+        }
+
+        &:hover {
+            background-color: @green-button-bg-hover;
+        }
+
+        &:active {
+            background-color: @green-button-bg-active;
+        }
+    }
+}
+
+@media (max-width: @screen-sm-min) {
+    .ms-submit-btn {
+        &.green-style {
+            margin-top: 1.5em;
+
+            &.md-style {
+                width: 100%;
+                height: 4em;
+            }
+        }
+    }
+}

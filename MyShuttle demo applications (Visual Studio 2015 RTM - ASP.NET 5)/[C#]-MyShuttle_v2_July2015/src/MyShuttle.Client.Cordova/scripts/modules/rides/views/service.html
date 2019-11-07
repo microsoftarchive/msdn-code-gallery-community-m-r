@@ -1,0 +1,28 @@
+﻿<section class="view-wrapper service-content">
+    <div class="employee-row clearfix">
+        <div class="employee-info-col">
+            <img class="employee-img" ng-src="{{employee.picture | imageBase64}}" />
+
+            <div class="employee-data full-row">
+                <p class="employee-name">{{employee.name}}</p>
+                <div>
+                    <span class="employee-data-field">{{employee.email}}</span>
+                </div>
+                <div>
+                    <span class="employee-data-field">Time request:</span>
+                    <span class="employee-data-field data-highlighted">{{timeRequest | amDateFormat:'h:mm:ss a'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bing-map service-bing-map">
+        <ms-bing-maps-routes end-location="position"
+                             track-position-changes="true"></ms-bing-maps-routes>
+    </div>
+
+    <a class="button primary button-bottom" ng-click="notifyEmployee()">
+        <img src="images/notify_client_icon.png" class="button-employee-img" />
+        <span>Notify the client</span>
+    </a>
+</section>

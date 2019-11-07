@@ -1,0 +1,8 @@
+﻿<Window x:Class="ModelessWindow.NormalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NormalWindow" Height="300" Width="300">
+    <Grid>
+        <TextBlock Text="Normal Window"/>
+    </Grid>
+</Window>

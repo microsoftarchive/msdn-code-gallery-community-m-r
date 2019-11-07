@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9673EB3C-6B1A-4700-8E63-82265BE1F9BF}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCE.Infrastructure</RootNamespace>
+    <AssemblyName>RCE.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ExpressionBlendVersion>3.0.1927.0</ExpressionBlendVersion>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Debug\RCE.Infrastructure.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\RCE.Infrastructure.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Composite.Presentation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CompositeAppGuidance\Microsoft.Practices.Composite.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CompositeAppGuidance\Microsoft.Practices.Composite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\ServiceLocation\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SilverlightMediaFramework.Core">
+      <HintPath>..\..\libs\SMF\Microsoft.SilverlightMediaFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins">
+      <HintPath>..\..\libs\SMF\Microsoft.SilverlightMediaFramework.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SilverlightMediaFramework.Plugins.SmoothStreaming">
+      <HintPath>..\..\libs\SMF\Microsoft.SilverlightMediaFramework.Plugins.SmoothStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SilverlightMediaFramework.Utilities">
+      <HintPath>..\..\libs\SMF\Microsoft.SilverlightMediaFramework.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Media.SmoothStreaming, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\libs\SmoothStreaming\Microsoft.Web.Media.SmoothStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\libs\BlendSDK\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\DragDropBehavior.cs" />
+    <Compile Include="Behaviors\KeyboardBehavior.cs" />
+    <Compile Include="Behaviors\TextBoxKeyboardBehavior.cs" />
+    <Compile Include="Controls\MediaErrorView.xaml.cs">
+      <DependentUpon>MediaErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressiveDownloadIndicator.cs" />
+    <Compile Include="Controls\SequenceDataTemplateSelector.cs" />
+    <Compile Include="Converters\BooleanToBrushConverter.cs" />
+    <Compile Include="Converters\DoubleToVisibilityConverter.cs" />
+    <Compile Include="Converters\IntegerToBrushConverter.cs" />
+    <Compile Include="Converters\IntegerToEnabledConverter.cs" />
+    <Compile Include="Converters\IntegerToIsCheckedConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\PlayerStatusToBrushConverter.cs" />
+    <Compile Include="Converters\PositionConverter.cs" />
+    <Compile Include="Converters\ThemedImagePathConverter.cs" />
+    <Compile Include="Converters\TimeSpanToTimeCodeConverter.cs" />
+    <Compile Include="Converters\ViewActiveToFontColorConverter.cs" />
+    <Compile Include="DesignerProperties.cs" />
+    <Compile Include="DragDrop\DragDropControl.xaml.cs">
+      <DependentUpon>DragDropControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BindingHelper.cs" />
+    <Compile Include="Events\TrackMuteStateChangedEvent.cs" />
+    <Compile Include="Events\TrackMuteStateChangedPayload.cs" />
+    <Compile Include="Extensions\MediaPluginExtensions.cs" />
+    <Compile Include="Extensions\ConfigurationServiceExtensions.cs" />
+    <Compile Include="Controls\CustomButton.cs" />
+    <Compile Include="Controls\PlayerControl.xaml.cs">
+      <DependentUpon>PlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Spinner.xaml.cs">
+      <DependentUpon>Spinner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\TimeSpanConverter.cs" />
+    <Compile Include="DataEventArgs.cs" />
+    <Compile Include="DragDrop\AudioDropInfo.cs" />
+    <Compile Include="DragDrop\DragDropManager.cs" />
+    <Compile Include="DragDrop\IDropInfo.cs" />
+    <Compile Include="DragDrop\MediaBinDropInfo.cs" />
+    <Compile Include="DragDrop\OverlayDropInfo.cs" />
+    <Compile Include="DragDrop\PlayerDropInfo.cs" />
+    <Compile Include="DragDrop\TimelineDropInfo.cs" />
+    <Compile Include="Events\AddPreviewEvent.cs" />
+    <Compile Include="Events\AddPreviewPayload.cs" />
+    <Compile Include="Events\AssetDownloadProgressEventArgs.cs" />
+    <Compile Include="Events\AssetsAvailableEvent.cs" />
+    <Compile Include="Events\AssetsLoadingEvent.cs" />
+    <Compile Include="Events\CheckedTreatGapAsErrorEvent.cs" />
+    <Compile Include="Events\DeleteAllPreviewsEvent.cs" />
+    <Compile Include="Events\DeleteAllPreviewsPayload.cs" />
+    <Compile Include="Events\DisplayCommentsViewEvent.cs" />
+    <Compile Include="Events\DisplayMarkerBrowserWindowEvent.cs" />
+    <Compile Include="Events\DurationChangedEvent.cs" />
+    <Compile Include="Events\DurationChangedEventArgs.cs" />
+    <Compile Include="Events\HideMetadataEvent.cs" />
+    <Compile Include="Events\DownloadProgressChangedEvent.cs" />
+    <Compile Include="Events\HidePreviewOverlayEvent.cs" />
+    <Compile Include="Events\MetadaSelectedPayload.cs" />
+    <Compile Include="Events\MetadataEventSelected.cs" />
+    <Compile Include="Events\OperationExecutedInTimelineEvent.cs" />
+    <Compile Include="Events\OperationUndoneInTimelineEvent.cs" />
+    <Compile Include="Events\PickThumbnailEvent.cs" />
+    <Compile Include="Events\PlayClickedEvent.cs" />
+    <Compile Include="Events\PlayEvent.cs" />
+    <Compile Include="Events\RemovePreviewEvent.cs" />
+    <Compile Include="Events\RemovePreviewPayload.cs" />
+    <Compile Include="Events\RubberBandingStateChangedPayload.cs" />
+    <Compile Include="Events\ShowPreviewOverlayEvent.cs" />
+    <Compile Include="Events\PreviewOverlayPayload.cs" />
+    <Compile Include="Events\RequestMarkersBrowserRegionEvent.cs" />
+    <Compile Include="Events\ResetWindowsEvent.cs" />
+    <Compile Include="Events\RubberBandingStateChangedEvent.cs" />
+    <Compile Include="Events\SaveProjectEvent.cs" />
+    <Compile Include="Events\ShowMetadataEvent.cs" />
+    <Compile Include="Events\StatusEvent.cs" />
+    <Compile Include="Events\SubClipMediaElementOpenedEvent.cs" />
+    <Compile Include="Events\ThumbnailEvent.cs" />
+    <Compile Include="Events\ThumbnailEventPayload.cs" />
+    <Compile Include="Events\VideoPreviewTimelineEvent.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="ILogEntryCollection.cs" />
+    <Compile Include="Menu\MenuButtonView.xaml.cs">
+      <DependentUpon>MenuButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseLogEntryCollection.cs" />
+    <Compile Include="Models\DownloaderManagerEventArgs.cs" />
+    <Compile Include="Models\EventDataChangedArgs.cs" />
+    <Compile Include="Models\InManifestLogEntryCollection.cs" />
+    <Compile Include="Models\PollingLogEntryCollection.cs" />
+    <Compile Include="Models\Transition.cs" />
+    <Compile Include="Models\CommentMode.cs" />
+    <Compile Include="Models\AudioAssetInOut.cs" />
+    <Compile Include="Models\AudioStream.cs" />
+    <Compile Include="Models\IAdaptiveAsset.cs" />
+    <Compile Include="Models\ISubClipAsset.cs" />
+    <Compile Include="Models\KeyboardMapping.cs" />
+    <Compile Include="Models\OverlayAsset.cs" />
+    <Compile Include="Models\PlayerStatusType.cs" />
+    <Compile Include="Models\SelectedMarkersBrowserTab.cs" />
+    <Compile Include="Models\SmoothStreamingAudioAsset.cs" />
+    <Compile Include="Models\Sequence.cs" />
+    <Compile Include="Models\ThumbnailType.cs" />
+    <Compile Include="Models\TransitionType.cs" />
+    <Compile Include="Models\UserSettings.cs" />
+    <Compile Include="Services\DownloaderManager.cs" />
+    <Compile Include="Services\IAssetsDataServiceFacade.cs" />
+    <Compile Include="Services\ICodecPrivateDataParser.cs" />
+    <Compile Include="IErrorView.cs" />
+    <Compile Include="Services\IEventDataParser.cs" />
+    <Compile Include="Services\IKeyboardAware.cs" />
+    <Compile Include="Services\IPersistenceService.cs" />
+    <Compile Include="IRCESmoothStreamingMediaPlugin.cs" />
+    <Compile Include="Services\ISequenceRegistry.cs" />
+    <Compile Include="Services\IsolatedStoragePersistenceService.cs" />
+    <Compile Include="Services\IThumbnailService.cs" />
+    <Compile Include="Services\ITimelineBarRegistry.cs" />
+    <Compile Include="KeyboardAction.cs" />
+    <Compile Include="KeyboardActionContext.cs" />
+    <Compile Include="Services\IUserSettingsService.cs" />
+    <Compile Include="Services\KeyboardManagerService.cs" />
+    <Compile Include="Models\CacheItem.cs" />
+    <Compile Include="Models\EventData.cs" />
+    <Compile Include="Models\EventOffset.cs" />
+    <Compile Include="Models\ITimelineBarElementModel.cs" />
+    <Compile Include="Models\SmoothStreamingVideoAsset.cs" />
+    <Compile Include="RCESmoothStreamingMediaPlugin.cs" />
+    <Compile Include="Security\ISecurityTokenService.cs" />
+    <Compile Include="Models\AssetMetadata.cs" />
+    <Compile Include="Models\Audit.cs" />
+    <Compile Include="Models\KeyMappingActionEventArgs.cs" />
+    <Compile Include="Models\ResourceType.cs" />
+    <Compile Include="Models\ScrubPositionChangeEventArgs.cs" />
+    <Compile Include="Models\ScrubShiftType.cs" />
+    <Compile Include="Models\TitleTemplate.cs" />
+    <Compile Include="Controls\WrapPanel.cs" />
+    <Compile Include="Converters\BooleanToOppositeVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\DurationConverter.cs" />
+    <Compile Include="Converters\ImageUriConverter.cs" />
+    <Compile Include="Events\AddAssetEvent.cs" />
+    <Compile Include="Events\AddAssetToTimelineEvent.cs" />
+    <Compile Include="Events\CachedEvent.cs" />
+    <Compile Include="Events\DeleteMediaBinAssetEvent.cs" />
+    <Compile Include="Events\EditModeChangedEvent.cs" />
+    <Compile Include="Events\ElementMovedEvent.cs" />
+    <Compile Include="Events\ElementMovedPayload.cs" />
+    <Compile Include="Events\PlayCommentEvent.cs" />
+    <Compile Include="Events\PlayerEventPayload.cs" />
+    <Compile Include="Events\PlayerMode.cs" />
+    <Compile Include="Events\PlayheadMovedEvent.cs" />
+    <Compile Include="Events\PositionDoubleClickedEvent.cs" />
+    <Compile Include="Events\PositionPayloadEventArgs.cs" />
+    <Compile Include="Events\RefreshElementsEvent.cs" />
+    <Compile Include="Events\RefreshElementsEventArgs.cs" />
+    <Compile Include="Events\SmpteTimeCodeChangedEvent.cs" />
+    <Compile Include="Events\StartTimeCodeChangedEvent.cs" />
+    <Compile Include="Events\PauseEvent.cs" />
+    <Compile Include="Events\PositionUpdatedEvent.cs" />
+    <Compile Include="Services\IProjectService.cs" />
+    <Compile Include="Services\IConfigurationService.cs" />
+    <Compile Include="Models\AspectRatio.cs" />
+    <Compile Include="Events\FullScreenEvent.cs" />
+    <Compile Include="DragDrop\DropPayload.cs" />
+    <Compile Include="Events\KeyMappingEvent.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Services\IDataServiceFacade.cs" />
+    <Compile Include="IHeaderInfoProvider.cs" />
+    <Compile Include="Controls\TemplatedListBox.cs" />
+    <Compile Include="Controls\AssetDataTemplateSelector.cs" />
+    <Compile Include="Controls\DataTemplateSelector.cs" />
+    <Compile Include="Services\ILogger.cs" />
+    <Compile Include="Models\CommentType.cs" />
+    <Compile Include="Models\FullScreenModeEventArgs.cs" />
+    <Compile Include="Models\FullScreenMode.cs" />
+    <Compile Include="Models\EditMode.cs" />
+    <Compile Include="Models\ElementPositionType.cs" />
+    <Compile Include="Models\InkComment.cs" />
+    <Compile Include="Models\InputValidationException.cs" />
+    <Compile Include="Models\ISequenceModel.cs" />
+    <Compile Include="Models\FolderAsset.cs" />
+    <Compile Include="Models\KeyMappingAction.cs" />
+    <Compile Include="Events\AspectRatioChangedEvent.cs" />
+    <Compile Include="Models\AudioAsset.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\MediaBin.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\TimelineElement.cs" />
+    <Compile Include="Models\TimelineElementEventArgs.cs" />
+    <Compile Include="Models\TimelineElementLink.cs" />
+    <Compile Include="Models\SequenceModel.cs" />
+    <Compile Include="Models\TitleAsset.cs" />
+    <Compile Include="Models\Track.cs" />
+    <Compile Include="Models\TrackType.cs" />
+    <Compile Include="Extensions\RegionManagerExtensions.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DownloadStringCompletedEventArgs.cs" />
+    <Compile Include="Downloader.cs" />
+    <Compile Include="Services\ICache.cs" />
+    <Compile Include="Services\ICacheManager.cs" />
+    <Compile Include="Services\IPurgeStrategy.cs" />
+    <Compile Include="Translators\DataServiceTranslator.cs" />
+    <Compile Include="Triggers\DoubleClickTrigger.cs" />
+    <Compile Include="UtilityHelper.cs" />
+    <Compile Include="Models\VideoAsset.cs" />
+    <Compile Include="Events\PlayerEvent.cs" />
+    <Compile Include="Models\VideoAssetInOut.cs" />
+    <Compile Include="Models\Asset.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\ImageAsset.cs" />
+    <Compile Include="ProjectState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionNames.cs" />
+    <Compile Include="Models\TraceEventType.cs" />
+    <Compile Include="Menu\IMenuButtonView.cs" />
+    <Compile Include="Menu\IMenuButtonViewModel.cs" />
+    <Compile Include="Menu\MenuButtonViewModel.cs" />
+    <Compile Include="Extensions\VisualTreeHelperExtensions.cs" />
+    <Compile Include="Windows\Behaviors\DialogActivationBehavior.cs" />
+    <Compile Include="Windows\IWindowAware.cs" />
+    <Compile Include="Windows\IWindowMetadataProvider.cs" />
+    <Compile Include="Windows\Behaviors\RegionWindowBehaviors.cs" />
+    <Compile Include="Windows\ResizeDirection.cs" />
+    <Compile Include="Windows\WindowPosition.cs" />
+    <Compile Include="Windows\FloatableWindow.cs" />
+    <Compile Include="Windows\FloatableWindowAdapter.cs" />
+    <Compile Include="Windows\FloatableWindowAutomationPeer.cs" />
+    <Compile Include="Windows\FloatableWindowManager.cs" />
+    <Compile Include="Windows\IWindow.cs" />
+    <Compile Include="Windows\IWindowManager.cs" />
+    <Compile Include="Windows\OOBWindowAdapter.cs" />
+    <Compile Include="Windows\OOBWindowManager.cs" />
+    <Compile Include="Windows\ResizeMode.cs" />
+    <Compile Include="XmlExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\RCE\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Controls\Spinner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\MediaErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DragDrop\DragDropControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PlayerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <ApplicationDefinition Include="Menu\MenuButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Resources\MainResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Comment.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.EncoderOutput.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Library.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Markers.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Metadata.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Player.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Project.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Settings.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Timeline.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Black\RCE.Modules.Titles.Black.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Comment.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.EncoderOutput.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Library.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Markers.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Metadata.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Player.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Project.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Settings.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Timeline.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\RCE.Modules.Titles.Default.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Comment.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.EncoderOutput.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Library.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Markers.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Metadata.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Player.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Project.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Settings.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Timeline.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\RCE.Modules.Titles.White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Themes\White\White.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMPTETimecode.Client\SMPTETimecode.Client.csproj">
+      <Project>{9BB1BFDA-5A8D-468B-9C42-A053FC24F908}</Project>
+      <Name>SMPTETimecode.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RCE.Services.Contracts.Client\RCE.Services.Contracts.Client.csproj">
+      <Project>{7F14113F-B290-412C-A21C-0C9E66C78C1C}</Project>
+      <Name>RCE.Services.Contracts.Client</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DropAllowed.png" />
+    <Resource Include="Images\DropNotAllowed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes\Black\DropAllowed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes\Black\DropNotAllowed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\audio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\new.png" />
+    <Resource Include="Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes\Black\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes\White\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes\Black\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Themes\White\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Settings.StyleCop">
+      <Link>Settings.StyleCop</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

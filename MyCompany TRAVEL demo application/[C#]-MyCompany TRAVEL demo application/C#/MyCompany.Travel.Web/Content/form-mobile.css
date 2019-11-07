@@ -1,0 +1,172 @@
+﻿/*General fonts*/
+/*General*/
+/*Module*/
+/*List*/
+.form-header {
+  height: 28pt;
+  margin-bottom: 7pt;
+  padding-top: 7pt;
+}
+.form-header .employee-data {
+  float: right;
+  background-color: #fa961d;
+  height: 30pt;
+}
+.form-header .avatar {
+  float: left;
+}
+.form-header .employee-data-text {
+  float: left;
+  height: 35pt;
+  background-color: #fa961d;
+  width: 100pt;
+  white-space: nowrap;
+  color: #ffffff;
+  padding: 5pt;
+}
+.form-header .employee-data-text div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+.form-header .employee-data-text div .big {
+  font-size: 12pt;
+  font-weight: 300;
+  line-height: 15pt;
+}
+.form-body {
+  padding-left: 3pt;
+  padding-right: 3pt;
+}
+.form-body label {
+  font-size: 14pt;
+  color: #9b9b9b;
+  display: block;
+}
+.form-body ul {
+  list-style: none outside none;
+  padding-left: 0px;
+}
+.form-body .row-height {
+  height: 45pt;
+}
+.form-body .row-text {
+  font-size: 10pt;
+  line-height: 12pt;
+}
+.row-text-multiline {
+  height: 35pt;
+  font-size: 10pt;
+  margin-left: 0px !important;
+}
+.attachments-zone {
+  padding-left: 3pt;
+  padding-right: 3pt;
+}
+.attachments-zone label {
+  font-size: 14pt;
+  color: #9b9b9b;
+}
+.attachments-zone .attachments-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+.attachments-zone .attachments-container .attachment {
+  background-color: #FFFFFF;
+  border-left-color: #FFFFFF;
+  border-right-color: #FFFFFF;
+  border-bottom-color: #CCCCCC;
+  border-style: none solid solid;
+  border-width: 0 0px 1px;
+  height: 50px;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+.attachments-zone .attachments-container .attachment .cell {
+  float: none;
+  display: table-cell;
+  height: 25pt;
+  width: 25pt;
+  padding-right: 5pt;
+}
+.attachments-zone .attachments-container .attachment .icon {
+  width: 25pt;
+  height: 25pt;
+  float: none;
+  display: table-cell;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.attachments-zone .attachments-container .attachment .icon.download {
+  background-image: url("images/file-download.png");
+  width: 25pt;
+  padding-right: 10pt;
+}
+.attachments-zone .attachments-container .attachment .icon.delete {
+  background-image: url("images/file-delete.png");
+  padding-right: 5pt;
+}
+.attachments-zone .attachments-container .attachment .text {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: none;
+  display: table-cell;
+  line-height: 50px;
+  padding-left: 5pt;
+}
+.attachments-zone .attachments-container .attachment .text .link-file {
+  color: #2d2d2d;
+}
+/*Buttons*/
+.button-primary {
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 1.07em;
+  background-color: #fa961d;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  padding: 5px 25px 5px 25px;
+  cursor: pointer;
+}
+.button-primary:hover {
+  background-color: #c77e2c;
+}
+.button-box {
+  float: left;
+  margin-top: 20pt;
+  margin-bottom: 15pt;
+  border: none;
+  color: #ffffff;
+  width: 49%;
+  height: 20pt;
+  font-weight: bold;
+}
+.button-delete {
+  background-color: #9e5d26;
+  margin-right: 0px;
+}
+.button-delete:hover {
+  background-color: #6b4535;
+}
+.button-accept {
+  background-color: #fa961d;
+  margin-right: 2%;
+}
+.button-accept:hover {
+  background-color: #c77e2c;
+}
+.modal-msgBox {
+  width: 100% !important;
+}
+.footer-div {
+  height: 20pt;
+  display: block;
+}
+/*End Buttons*/

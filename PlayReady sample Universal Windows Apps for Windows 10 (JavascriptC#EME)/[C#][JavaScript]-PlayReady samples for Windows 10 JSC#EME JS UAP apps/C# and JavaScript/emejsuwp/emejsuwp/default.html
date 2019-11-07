@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>emejsuwp</title>
+
+    <!-- WinJS references -->
+    <link href="WinJS/css/ui-dark.css" rel="stylesheet" />
+    <script src="WinJS/js/base.js"></script>
+    <script src="WinJS/js/ui.js"></script>
+
+    <!-- emejsuwp references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/css/BaseStyles.css" rel="stylesheet" />
+    <link href="/css/DemoTemplate.css" rel="stylesheet" />
+    <link href="/css/ReturnAndShareControls.css" rel="stylesheet" />
+
+    <script src="/js/dash.all.js"></script>
+    <script src="/js/default.js"></script>
+    <script src="/js/playreadymanager.js"></script>
+    <script src="/js/securestop.js"></script>
+    <script src="/js/utils.js"></script>
+</head>
+<body style="overflow: auto; -ms-overflow-style: -ms-autohiding-scrollbar; margin-left:10px; margin-right:10px;">
+
+    <h1 id="DemoTitle">PlayReady UWP Sample Application</h1>
+    <h2>EME with DASH content</h2>
+
+    <table>
+        <tr>
+            <td>
+                <input type="button" id="btnSecureStop" value="Send Secure Stop" disabled title="This button is available for secure stop content only." />
+                <input type="button" id="btnDeleteHDS" value="Delete License Store" style="margin-left: 10px;" />
+                <input type="button" id="btnClearLog" value="Clear Log" style="margin-left: 10px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div title="Playback uses PlayReady software DRM.  This button is available after app launched and before the first playback.">
+                    <input type="checkbox" id="cbOptOutHWDRM" value="Opt_Out HWDRM" style="margin-left: 10px;" />
+                    <b id="bOptOutHWDRM" class="label">Opt Out HWDRM</b>
+                </div>
+                <div title="Use either the inbox dash media source or dash.all.js">
+                    <b class="label">Dash Media Source: </b>
+                    <input type="radio" id="rbDashSourceInBox" style="margin-left: 2px;" checked />
+                    <b id="bDashSourceInBox" class="description">inbox</b>
+                    <input type="radio" id="rbDashSourceDashJS" style="margin-left: 2px;" />
+                    <b id="bDashSourceDashJS" class="description">dash.all.js</b>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="width:180px;">
+                <b class="label">License Options:</b>
+                <div title="Use chained license">
+                    <input type="checkbox" value="1" id="cbChainLicense" style="margin-left: 10px;" />
+                    <b id="bChainLicense" class="description">Chain License</b>
+                </div>
+            </td>
+            <td>
+                <div title="Save acquired license to persistent storage.">
+                    <input type="checkbox" value="1" id="cbPersistLicense" style="margin-left: 10px;" />
+                    <b id="bPersistLicense" class="description">Persistent</b>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:180px;">
+                <div title="Enable secure stop">
+                    <input type="checkbox" value="1" id="cbSecureStop" style="margin-left: 10px;" />
+                    <b id="bSecureStop" class="description">Secure Stop</b>
+                </div>
+            </td>
+            <td>
+                <div title="Version 2.2 or higher of the High-bandwidth Digital Content Protection">
+                    <input type="checkbox" value="1" id="cbHDCPType1" style="margin-left: 10px;" />
+                    <b id="bHDCPType1" class="description">HDCP Type 1</b>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div title="Video Output protection level for Uncompressed Digital Video">
+        <b class="description">Uncompressed Digital Video OPL: </b>
+        <select id="sUncompDigitalVideo"></select>
+    </div>
+
+    <div id="DemoContent">
+        <div id="library" class="library" style="overflow: auto; -ms-overflow-style: -ms-autohiding-scrollbar;"></div>
+
+        <div id="videoFrame" class="controls">
+            <video id="video" autoplay controls style="display: block; width: 95%;"></video>
+        </div>
+
+        <textarea id="taLog" readOnly style="height:180px;width:97%;"></textarea>
+
+        <div class="description">
+
+            <p class="description">
+                This sample demonstrates:
+            </p>
+
+            <li class="bullet"> Proactive License acquisition:  Demonstrates the ability to pre-acquire licenses in EME scenarios within PlayReady.  </li>
+            <li class="bullet"> LDL:  Demonstrates playback with limited duration license (e.g. real time expiration and first play expiration = 60 seconds) followed by full license acquired 30 seconds after playback starts.  </li>
+            <li class="bullet"> A/V sep:  This sample uses separate content encryption keys for audio and video content. </li>
+            <li class="bullet"> DASH content: Demonstration of MPEG DASH Common Streaming Format playback. </li>
+
+            <p class="description">
+
+                The DASH Dual Key sample is provided by <i>© Fraunhofer FOKUS 2013, www.fokus.fraunhofer.de/go/famium. </i>
+
+                For more information about DASH and the reference Dash.js this sample is using please go to <a href="http://dashif.org/">http://dashif.org/ </a>.
+            </p>
+        </div>
+
+        <div id="upgrade">
+            <div id="upgrade_warning">
+                <img src="images/ie_logo_medium.png" id="upgrade_ie_logo" alt="Internet Explorer Logo" title="Internet Explorer" />
+                <div id="upgrade_content">
+                    <div id="upgrade_text">You are using a browser that doesn't support gestures. You aren't getting the best experiences the Internet has to offer! Upgrade to Internet Explorer 10 on Windows 8 to see what the Web has been waiting for!</div>
+                    <div id="upgrade_button">
+                        Learn More
+                    </div>
+                    <div id="dismiss_button">
+                        OK
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

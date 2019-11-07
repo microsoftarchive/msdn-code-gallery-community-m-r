@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "My Company - Expense detail";
+}
+
+<input id="Id" type="hidden" value="@ViewBag.Id" />
+
+<div data-bind="if: expense">
+    <div data-bind="with: expense">
+        <div>
+            <h2 data-bind="text: employeeFullName"></h2>
+        </div>
+        <div class="employee-picture">
+            <img src="#" data-bind="attr: { src: 'data:image/png;base64,' + employeePicture }" />
+        </div>
+        <div class="employee-info">            
+            <div data-role="controlgroup" data-type="horizontal" class="info-buttongroup">
+                <a href="#" data-role="button" data-icon="grid"><span data-bind="text: creationDate"></span></a>
+                <a href="#" data-role="button" data-icon="star"><span data-bind="text: amount"></span></a>
+                <a href="#" data-role="button" data-icon="gear"><span data-bind="text: status"></span></a>
+            </div>
+            <h3 data-bind="text: name"></h3>
+            <p data-bind="text: description"></p>
+            
+        
+            <div class="expense-picture">
+                <img src="#" data-bind="attr: { src: 'data:image/png;base64,' + picture }" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section HeaderButtons{
+    @Html.ActionLink("Back", "Index", "Home", routeValues: null, htmlAttributes: new { data_icon = "back" })
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/detail")
+}

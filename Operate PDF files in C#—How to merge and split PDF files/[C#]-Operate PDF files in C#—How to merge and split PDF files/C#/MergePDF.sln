@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergePDF", "MergePDF\MergePDF.csproj", "{88CFA128-D7EC-4A06-AD2B-9F83D370F602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitPDF1", "SplitPDF1\SplitPDF1.csproj", "{199FA938-3B72-41CB-917E-4F9A2DE549F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitPDF2", "SplitPDF2\SplitPDF2.csproj", "{00C99E82-68B3-49BB-8E2E-F14FB5DA793D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88CFA128-D7EC-4A06-AD2B-9F83D370F602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88CFA128-D7EC-4A06-AD2B-9F83D370F602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88CFA128-D7EC-4A06-AD2B-9F83D370F602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88CFA128-D7EC-4A06-AD2B-9F83D370F602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199FA938-3B72-41CB-917E-4F9A2DE549F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199FA938-3B72-41CB-917E-4F9A2DE549F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199FA938-3B72-41CB-917E-4F9A2DE549F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199FA938-3B72-41CB-917E-4F9A2DE549F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C99E82-68B3-49BB-8E2E-F14FB5DA793D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C99E82-68B3-49BB-8E2E-F14FB5DA793D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C99E82-68B3-49BB-8E2E-F14FB5DA793D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C99E82-68B3-49BB-8E2E-F14FB5DA793D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

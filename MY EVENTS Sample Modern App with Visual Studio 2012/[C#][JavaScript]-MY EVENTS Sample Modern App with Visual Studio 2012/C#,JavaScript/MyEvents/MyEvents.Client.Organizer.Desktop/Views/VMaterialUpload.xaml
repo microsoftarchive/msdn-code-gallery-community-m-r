@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.VMaterialUpload"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="592.025" d:DesignWidth="732" 
+             xmlns:behaviors="clr-namespace:MyEvents.Client.Organizer.Desktop.Behaviors"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             DataContext="{Binding UploadMaterial,  Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource BackButtonStyle}"
+                HorizontalAlignment="Left" Margin="0"
+                Command="{Binding NavigateBackCommand}" Grid.Row="0" Height="48" Width="31"/>
+        <TextBlock Margin="36,2,0,0" TextWrapping="Wrap" Text="{Binding materials, Mode=OneWay, Source={StaticResource languages}}" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Style="{DynamicResource SubTitleStyle}" Grid.Row="0" Height="40"/>
+        <StackPanel Margin="0" Orientation="Vertical" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Text="{Binding uploadMaterials, FallbackValue=Text for designt-time purpose, Mode=OneWay, Source={StaticResource languages}}" Style="{DynamicResource NormalText}"/>
+
+            <Button Style="{StaticResource BlankButtonRightStyle}" HorizontalAlignment="Stretch" Command="{Binding OpenFileSelectorCommand}" Cursor="Hand"
+                                   Background="#FFFFFFFF" Height="30" Margin="2,0">
+                <Image Source="/MyEvents.Client.Organizer.Desktop;component/Resources/Images/ico-folder.png" HorizontalAlignment="Right" Height="15" Margin="0,0,20,0"/>
+            </Button>
+        </StackPanel>
+        <DataGrid Grid.Row="4"  HeadersVisibility="None" ItemsSource="{Binding Materials}"
+                  AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}" IsReadOnly="True"
+                  CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CellStyle="{DynamicResource DataGridCellStyle}"
+                  SelectionMode="Single" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="*" Header="" CanUserSort="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid MaxHeight="50" HorizontalAlignment="Stretch" Background="#00FFFFFF" >
+                                <TextBlock VerticalAlignment="Center" Margin="5,5,5,5" Text="{Binding Name}" TextWrapping="Wrap" TextTrimming="WordEllipsis"
+                                           HorizontalAlignment="Left" 
+                                           Style="{StaticResource CellTextStyle}"/>
+                                <i:Interaction.Behaviors>
+                                    <behaviors:SaveMaterialBehavior/>
+                                </i:Interaction.Behaviors>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Width="Auto" Header=""  MinWidth="35">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Margin="0,0,10,0" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Right" Command="{Binding UploadMaterial.DeleteMaterialCommand, Mode=OneWay, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#FFFFFFFF">
+                                <Image Source="/Resources/Images/ico-delete.png"/>
+                            </Button>
+                            
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.ColumnSpan="1" Background="Transparent" Grid.RowSpan="4" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=false}" IsHitTestVisible="True" >
+            <ProgressBar HorizontalAlignment="Center" Height="10" VerticalAlignment="Center" Width="300" Margin="0" Value="32" Style="{DynamicResource ProgressBarStyle}" IsIndeterminate="True" Background="{x:Null}" Foreground="{DynamicResource SplashScreenBrush}" BorderBrush="{x:Null}"/>
+        </Grid>
+    </Grid>
+</UserControl>

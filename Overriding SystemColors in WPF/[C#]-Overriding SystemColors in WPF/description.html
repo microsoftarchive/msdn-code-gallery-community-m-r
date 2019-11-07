@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Overriding SystemColors in WPF</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Overriding SystemColors in WPF</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WPF, XAML
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Resources, XAML Control Templates, WPF Styling, Styling WPF Controls, WPF Control Templating, SystemColor
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/19/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Overriding-SystemColors-in-cbacf847">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>This sample shows how much of&nbsp;the WPF controls can be&nbsp;changed by simply fiddling with the SystemColors resource keys.</p>
+<p><img id="65416" src="description/SystemColours.png" alt="" width="603" height="331">&nbsp;</p>
+<p>&nbsp;</p>
+<h1><span>Building the Sample</span></h1>
+<p>Just download, unzip, open and run!</p>
+<p>&nbsp;</p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p>WPF comes with a very nicely buffed set of controls. If you want to completely change the colours, you can simply use another Theme. However, sometimes you just want to change one control, change the selected colour, or change a colour that is not simply
+ referenced by a regular property like Background.</p>
+<p>All WPF controls use ControlTemplates, and in those templates they refer to a number of sources for colours. One of those sources is the SystemColors namespace.</p>
+<p>WPF references the colours in this namespace by Keys (just like normal resources) which also means when you change SystemColors (through Control Panel) the colours in your application will change too.</p>
+<p>This also means we can override these colours, and change the look of unreachable componants, without having to change the ControlTemplate. Changing SystemColors can of course affect other controls, so if you only want the change to be on one control, you
+ must declare the resources closer to where they are to be used, so nothing else is affected.</p>
+<p>Below is an example of one of the sections, showing a RadioButton. All the colours that can be changed have been, leaving only the BulletChrome&nbsp;showing.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">	        &lt;GroupBox Header=&quot;RadioButton&quot;&gt;
+	            &lt;GroupBox.Resources&gt;
+	                &lt;SolidColorBrush x:Key=&quot;{x:Static SystemColors.ControlTextBrushKey}&quot; Color=&quot;Red&quot; /&gt; &lt;!-- or Foreground property --&gt;
+	                &lt;SolidColorBrush x:Key=&quot;{x:Static SystemColors.GrayTextBrushKey}&quot; Color=&quot;LightBlue&quot; /&gt; &lt;!-- Disabled color --&gt;
+	            	&lt;!-- Uses Microsoft_Windows_Themes:BulletChrome --&gt;
+				&lt;/GroupBox.Resources&gt;
+	            &lt;RadioButton Content=&quot;RadioButton&quot; Margin=&quot;10&quot; Style=&quot;{DynamicResource RadioButtonStyle1}&quot; Background=&quot;LightGreen&quot; BorderBrush=&quot;LightGreen&quot;/&gt;
+	        &lt;/GroupBox&gt;</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;GroupBox&nbsp;Header=<span class="cs__string">&quot;RadioButton&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;GroupBox.Resources&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SolidColorBrush&nbsp;x:Key=<span class="cs__string">&quot;{x:Static&nbsp;SystemColors.ControlTextBrushKey}&quot;</span>&nbsp;Color=<span class="cs__string">&quot;Red&quot;</span>&nbsp;/&gt;&nbsp;&lt;!--&nbsp;or&nbsp;Foreground&nbsp;property&nbsp;--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SolidColorBrush&nbsp;x:Key=<span class="cs__string">&quot;{x:Static&nbsp;SystemColors.GrayTextBrushKey}&quot;</span>&nbsp;Color=<span class="cs__string">&quot;LightBlue&quot;</span>&nbsp;/&gt;&nbsp;&lt;!--&nbsp;Disabled&nbsp;color&nbsp;--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Uses&nbsp;Microsoft_Windows_Themes:BulletChrome&nbsp;--&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/GroupBox.Resources&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RadioButton&nbsp;Content=<span class="cs__string">&quot;RadioButton&quot;</span>&nbsp;Margin=<span class="cs__string">&quot;10&quot;</span>&nbsp;Style=<span class="cs__string">&quot;{DynamicResource&nbsp;RadioButtonStyle1}&quot;</span>&nbsp;Background=<span class="cs__string">&quot;LightGreen&quot;</span>&nbsp;BorderBrush=<span class="cs__string">&quot;LightGreen&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/GroupBox&gt;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;<img id="65417" src="description/rad1.png" alt="" width="152" height="45"></p>
+<p>&nbsp;</p>
+<p><span style="color:#ff0000; font-size:medium"><strong>This sample project also includes ALL the default templates for ALL these controls, as generated out of Expression Blend</strong></span></p>
+<p>&nbsp;</p>
+<p>Just so I could check for other SystemColors being used, I copied all of the default templates into the project. There are a few others used, but are not sigmnificant in this study. If you find a part of a control you cannot change with resource overrrides,
+ you will have to edit the ControlTemplate.&nbsp;Please see the App.xaml file for all the&nbsp;ControlTemplates.&nbsp;</p>
+<p>&nbsp;</p>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li>MainWindow.xaml.cs - all the controls and resource overrides </li><li>App.xaml - All the control templates </li></ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="description/aniThanks1.gif" alt="" style="margin-right:auto; margin-left:auto; display:block"></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

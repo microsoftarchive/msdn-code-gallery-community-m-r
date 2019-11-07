@@ -1,0 +1,276 @@
+﻿
+<html data-ng-app="RESTClientModule">
+@{
+    ViewBag.Title = "Home Page";
+}
+<body data-ng-controller="AngularJs_studentsController">
+    <img src="~/Images/blank.gif" alt="" width="1" height="10" />
+    <table width="99%" style=" border-bottom:3px solid #3273d5;">
+        <tr>
+
+            <td width=" 250">
+                <table width="99%">
+                    <tr>
+                        <td>
+                            Welcome Mr. {{'SHANU'}}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="style1">
+                <h3>Shanu - MVC Angular JS CRUD using WEB API 2 with Stored procedures  :)</h3>
+            </td>
+           
+        </tr>
+    </table>
+    <img src="~/Images/blank.gif" alt="" width="1" height="2" />
+    <table id="tblContainer" style='width: 99%;table-layout:fixed;'>
+        <tr ng-show="showItem">
+            <td>
+                <table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Search Student Details</h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+
+                                    <td width="20"></td>
+                                    <td valign="top">
+                                       
+                                            <table style="color:#9F000F;font-size:large" cellpadding="4" cellspacing="6">
+
+                                                <tr>
+                                                    <td>
+                                                        <b>Student Name</b>
+                                                    </td>
+
+                                                    <td>
+                                                        : <input type="text" name="txtstudName" ng-model="stdName" value="" />
+                                                        <br />
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <b>   Email </b>
+                                                    </td>
+
+                                                    <td>
+                                                        :
+                                                        <input type="text" name="txtemail" ng-model="stdemail" />
+
+                                                    </td>
+                                                    <td>
+                                                        <input type="submit" value="Search" style="background-color:#336699;color:#FFFFFF" ng-click="searchStudentDetails()" />
+
+                                                    </td>
+                                                </tr>
+
+
+                                            </table>
+                                       
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <img src="~/Images/blank.gif" alt="" width="1" height="4" />
+            </td>
+        </tr>
+        <tr ng-show="showStudentAdd">
+            <td>
+                <table width="99%">
+                    <tr>
+                        <td align="right">
+                            <input type="button" value="Add New Student Details" style="background-color:#334668;color:#FFFFFF;font-size:large;width:200px;
+                              border-color:#a2aabe;border-style:dashed;border-width:2px;" ng-click="showStudentDetails()" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr ng-show="addEditStudents">
+            <td>
+               
+                    <table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                        <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                            <td>
+                                <h3> Add/Edit Student Details</h3>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+
+                                        <td width="20"></td>
+                                        <td valign="top">
+                                            <form novalidate name="f1" ng-submit="saveDetails()">
+                                                <table style="color:#9F000F;font-size:large" cellpadding="4" cellspacing="6">
+
+                                                    <tr>
+                                                        <td>
+                                                            <b>Student ID : </b>
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text" name="txtStdIDs" ng-model="StdIDs" value="0" style="background-color:tan" readonly />
+                                                            <br />
+
+                                                        </td>
+
+
+                                                        <td>
+                                                            <b> Student Name : </b>
+                                                        </td>
+
+                                                        <td>
+
+                                                            <input type="text" name="txtstdNames" ng-model="stdNames" placeholder=" Student Name..." required />
+                                                            <br />
+                                                            <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtstdNames.$error.required">Student Name required!</span>
+
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr>
+                                                        <td>
+                                                            <b>Email : </b>
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text" name="txtstdEmails" ng-model="stdEmails" placeholder=" Email..." required />
+                                                            <br />
+                                                            <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtstdEmails.$error.required">Email required!</span>
+
+                                                        </td>
+
+
+                                                        <td>
+                                                            <b> Phone : </b>
+                                                        </td>
+
+                                                        <td>
+
+                                                            <input type="text" name="txtPhones" ng-model="Phones" placeholder=" Phone ..." required />
+                                                            <br />
+                                                            <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtPhones.$error.required">Phone required!</span>
+
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <b>Address : </b>
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text" name="txtAddresss" ng-model="Addresss" placeholder=" Address ..." required />
+                                                            <br />
+                                                            <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtAddresss.$error.required">Address required!</span>
+
+                                                        </td>
+
+
+                                                        <td colspan="2">
+
+                                                           
+                                                            <input type="submit" value="Save Item" style="background-color:#336699;color:#FFFFFF" required />
+
+                                                        </td>
+                                                    </tr>
+
+
+
+                                                </table>
+
+                                            </form>
+                                       </td>
+
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <img src="~/Images/blank.gif" alt="" width="1" height="4" />
+
+                  
+</td>
+      </tr>
+                    <tr ng-show="StudentsList">
+
+                        <td>
+
+                            <table style=" background-color:#FFFFFF; border: solid 2px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+
+                                <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                                    <td width="40" align="center">Edit</td>
+                                    <td width="40" align="center">Delete</td>
+                                    <td width="100" align="center">Name</td>
+                                    <td width="120" align="center">Email</td>
+                                    <td width="80" align="center">Phone</td>
+                                    <td width="200" align="center">Address</td>
+
+                                </tr>
+                                <tbody data-ng-repeat="stds in Students">
+                                    <tr>
+
+                                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">
+                                                <img src="~/Images/edit.gif" alt="Edit" width="24px" height="24px" ng-click="studentEdit(stds.StdID,stds.StdName,stds.Email,stds.Phone,stds.Address)">
+                                            </span>
+                                        </td>
+
+                                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">
+                                                <img src="~/Images/delete.gif" alt="Delete" width="24px" height="24px" ng-click="studentDelete(stds.StdID,stds.StdName)">
+                                            </span>
+                                        </td>
+
+                                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">{{stds.StdName}}</span>
+                                        </td>
+
+                                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">{{stds.Email}}</span>
+                                        </td>
+
+                                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">{{stds.Phone}}</span>
+                                        </td>
+
+                                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">{{stds.Address}}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+</body>
+</html>
+
+<script src="~/Scripts/angular-animate.js"></script>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+<script src="~/Scripts/MYAngular/controller.js"></script>
+

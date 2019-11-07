@@ -1,0 +1,27 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Web.Areas.Organizer.Models.ManageMaterialsViewModel
+@{
+    ViewBag.Title = "my events - materials";
+}
+
+<span class="section-title">materials</span>
+
+<span>upload materials</span>
+<section id="upload">
+    <input id="sessionId" type="hidden" value="@Model.SessionId"/>
+    <div class="file-picker">
+        <input id="materialFileUploader" name="materialFileUploader" type="file" />
+        <img id="icon" src="@Url.Content("~/Styles/Images/materials.png")" />
+    </div>
+</section>
+<section id="materialList" class="list">
+    @foreach (var material in Model.Materials)
+    {
+        Html.RenderPartial("MaterialRow", material);
+    }
+</section>
+
+@section scripts
+{
+    @Scripts.Render("~/Organizer/Session/ManageMaterialsScripts/")
+}

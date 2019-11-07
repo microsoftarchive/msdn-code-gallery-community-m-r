@@ -1,0 +1,36 @@
+﻿<Application
+    x:Class="MyShuttle.Client.UniversalApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.UniversalApp">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="ida:ClientID">a1d9cf30-349a-4e23-9cdc-da92b05147bf</x:String>
+            <x:String x:Key="ida:AuthorizationUri">https://login.windows.net</x:String>
+            <local:LocalizedStrings x:Key="LocalizedStrings" />
+           
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Dictionaries/Assets.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/AppBarButtonResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/ButtonResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/BorderResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/CommandBarResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/GridResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/HubResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/ImageResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/ItemContainerResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Page.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/PolygonResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/ProgressRingResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/RatingResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/TextBlockResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/TextBoxResources.xaml" />
+                
+                <ResourceDictionary Source="Resources/Templates/ItemTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+           
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

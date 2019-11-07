@@ -1,0 +1,215 @@
+﻿<storeApps:VisualStateAwarePage
+    x:Name="pageRoot"
+    x:Class="MyShuttle.Dashboard.Client.Views.DriverHubPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm"
+    xmlns:storeApps="using:Microsoft.Practices.Prism.StoreApps"
+    xmlns:dataTemplateSelectors="using:MyShuttle.Dashboard.Client.DataTemplateSelectors"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:behaviors="using:MyShuttle.Dashboard.Client.Behaviors"
+    xmlns:extensions="using:WinRTXamlToolkit.Controls.Extensions"
+    mvvm:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <dataTemplateSelectors:GeneralStatisticsDataTemplateSelector x:Name="GeneralStatisticsDataTemplateSelector" 
+                                    MediumTemplate="{StaticResource MediumGeneralStatisticsDataTemplate}"
+                                    SmallTemplate="{StaticResource SmallGeneralStatisticsDataTemplate}" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Hub HeaderTemplate="{StaticResource MyShuttleHeaderHubDataTemplate}" HorizontalContentAlignment="Stretch">
+            <Hub.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/HubBg.png"></ImageBrush>
+            </Hub.Background>
+
+            <HubSection Margin="80,0,0,0" x:Name="DriverSectionHub" Header="driver card" HeaderTemplate="{StaticResource HeaderHubDataTemplate}">
+                <DataTemplate>
+                    <StackPanel MinWidth="380">
+                        <ProgressRing HorizontalAlignment="Center" Width="70" Height="70" IsActive="True" VerticalAlignment="Top" Margin="0,30,0,0" Foreground="White" Visibility="{Binding DriverIsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                        <StackPanel Visibility="{Binding DriverIsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+
+
+                            <StackPanel Orientation="Horizontal" x:Name="LowViewState">
+                                <Grid HorizontalAlignment="Left" Width="280" Height="387" DataContext="{Binding Driver}" Margin="0,0,10,0" >
+                                    <Border Background="#1D2938"/>
+
+                                    <StackPanel Margin="0,32,0,0" >
+                                        <Grid>
+                                            <Polygon Points="7,0 0,14, 14,14" Visibility="{Binding Rate.AvgRateIsLow, Converter={StaticResource InverseBooleanToVisibilityConverter}}" HorizontalAlignment="Right" Margin="0,0,30,0" Fill="{Binding Rate, Converter={StaticResource MyShuttleRateToBrushConverter}}"></Polygon>
+                                            <Polygon Points="0,0 7,14, 14,0" Visibility="{Binding Rate.AvgRateIsLow, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Right" Margin="0,0,30,0" Fill="{Binding Rate, Converter={StaticResource MyShuttleRateToBrushConverter}}"></Polygon>
+                                            <Ellipse Width="175" Height="175">
+
+                                                <Ellipse.Fill>
+                                                    <ImageBrush ImageSource="{Binding DriverInfo.Picture, Converter={StaticResource ByteArrayToImageConverter}}"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                        </Grid>
+                                        <TextBlock  Margin="0,44,0,0" Text="{Binding DriverInfo.Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="30" />
+                                        <TextBlock Text="{Binding DriverInfo.TotalRides}" Margin="0,8,0,0" TextAlignment="Center" Foreground="#ffffff" FontWeight="SemiBold" FontSize="42" />
+                                        <TextBlock Text="rides" Margin="0,-5,0,0" TextAlignment="Center" Foreground="#7C8997" FontSize="16" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <StackPanel>
+                                    <Grid Margin="0,0,0,0">
+                                        <Button Width="380" Height="260" Command="{Binding GoCarHubPageCommand}" extensions:FrameworkElementExtensions.SystemCursor="Hand">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Image Stretch="Fill" Source="{Binding VehicleData.Picture, Converter={StaticResource ByteArrayToImageConverter}}"></Image>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </Grid>
+                                    <TextBlock Margin="0,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding VehicleData.Model}"></TextBlock>
+                                    <TextBlock Margin="0,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding VehicleData.Device}" Foreground="#7E8B9F"></TextBlock>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="0,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding VehicleData.Rides}" Foreground="#7E8B9F"></TextBlock>
+                                        <TextBlock Margin="12,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="#7E8B9F">rides</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel x:Name="NormalViewState">
+                                <Grid HorizontalAlignment="Left" Width="380" Height="260" DataContext="{Binding Driver}" >
+                                    <Border Background="#1D2938"/>
+
+                                    <StackPanel Margin="0,25,0,0" >
+                                        <Grid>
+                                            <Polygon Points="7,0 0,14, 14,14" Visibility="{Binding Rate.AvgRateIsLow, Converter={StaticResource InverseBooleanToVisibilityConverter}}" HorizontalAlignment="Right" Margin="0,0,30,0" Fill="{Binding Rate, Converter={StaticResource MyShuttleRateToBrushConverter}}"></Polygon>
+                                            <Polygon Points="0,0 7,14, 14,0" Visibility="{Binding Rate.AvgRateIsLow, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Right" Margin="0,0,30,0" Fill="{Binding Rate, Converter={StaticResource MyShuttleRateToBrushConverter}}"></Polygon>
+                                            <Ellipse Width="108" Height="108">
+
+                                                <Ellipse.Fill>
+                                                    <ImageBrush ImageSource="{Binding DriverInfo.Picture, Converter={StaticResource ByteArrayToImageConverter}}"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                        </Grid>
+                                        <TextBlock  Margin="0,10,0,0" Text="{Binding DriverInfo.Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="30" />
+                                        <TextBlock Text="{Binding DriverInfo.TotalRides}" Margin="0,8,0,0" TextAlignment="Center" Foreground="#ffffff" FontWeight="SemiBold" FontSize="42" />
+                                        <TextBlock Text="rides" Margin="0,-5,0,0" TextAlignment="Center" Foreground="#7C8997" FontSize="16" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <StackPanel>
+                                    <Grid Margin="0,10,0,0">
+                                        <Button Width="380" Height="260" Command="{Binding GoCarHubPageCommand}" extensions:FrameworkElementExtensions.SystemCursor="Hand">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Image Stretch="Fill" Source="{Binding VehicleData.Picture, Converter={StaticResource ByteArrayToImageConverter}}"></Image>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </Grid>
+                                    <TextBlock Margin="0,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding VehicleData.Model}"></TextBlock>
+                                    <TextBlock Margin="0,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding VehicleData.Device}" Foreground="#7E8B9F"></TextBlock>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="0,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding VehicleData.Rides}" Foreground="#7E8B9F"></TextBlock>
+                                        <TextBlock Margin="12,5,0,0" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="#7E8B9F">rides</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+
+
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection Margin="40,0,0,0" MinWidth="320" Header="general statistics" HeaderTemplate="{StaticResource HeaderHubDataTemplate}">
+                <DataTemplate>
+                    <StackPanel>
+                        <ProgressRing HorizontalAlignment="Center" Width="70" Height="70" IsActive="True" VerticalAlignment="Top" Margin="0,30,0,0" Foreground="White" Visibility="{Binding StatisticsIsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <GridView
+                            ItemsSource="{Binding GeneralStatistics}"
+                            SelectionMode="None"
+                            IsSwipeEnabled="False"
+                            IsItemClickEnabled="False"
+                            ItemTemplateSelector="{StaticResource GeneralStatisticsDataTemplateSelector}">
+
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VariableSizedWrapGrid  ItemHeight="130" ItemWidth="230" Margin="0"  />
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+
+                        </GridView>
+                    </StackPanel>
+
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection Margin="40,0,80,0" x:Name="RatingsHubSection"  Header="driving style" HeaderTemplate="{StaticResource HeaderHubDataTemplate}">
+                <DataTemplate>
+                    <Grid Margin="0,60,0,0" x:Name="RatingsGrid" Width="461">
+                        <Grid.Resources>
+                            <Storyboard x:Key="RatingsLoadStoryBoard">
+                                <DoubleAnimation Duration="0:0:1" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="chart1D" d:IsOptimized="True">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CircleEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Duration="0:0:1" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="chart1D" d:IsOptimized="True">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CircleEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="chart1D" d:IsOptimized="True">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CircleEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="chart1D" d:IsOptimized="True">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CircleEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                
+                            </Storyboard>
+                        </Grid.Resources>
+                        <Image Source="/Assets/DrivingStyleChart.png" Width="461" Height="391"></Image>
+
+                        <Grid x:Name="chart1D" Width="461">
+                            <Polygon Points="{Binding DrivingStylePoints}" Stroke="#82D0B6" StrokeThickness="3" Fill="#22FFFFFF"  />
+                            <ItemsControl ItemsSource="{Binding DrivingStylePoints}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Ellipse Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                Path=DataContext, Converter={StaticResource MyShuttlePointToMarginConverter}}" Fill="#82D0B6" Height="15" Width="15" StrokeThickness="4" Stroke="#FFFFFF"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <Grid.RenderTransform>
+                                <CompositeTransform ScaleX="0" ScaleY="0" TranslateX="230" TranslateY="195"/>
+                               
+                            </Grid.RenderTransform>
+                        </Grid>
+                    </Grid>
+
+                </DataTemplate>
+            </HubSection>
+
+
+        </Hub>
+
+    </Grid>
+</storeApps:VisualStateAwarePage>

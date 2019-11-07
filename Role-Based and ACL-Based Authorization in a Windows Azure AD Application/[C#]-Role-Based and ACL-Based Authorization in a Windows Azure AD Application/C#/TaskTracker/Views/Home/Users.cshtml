@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Microsoft.WindowsAzure.ActiveDirectory.User> 
+@{
+    ViewBag.Title = "Users";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>@ViewBag.Message</h1>
+    <h2>@ViewBag.OtherMessage</h2>
+    <table>
+        <tr>
+            <th>
+                DisplayName
+            </th>
+            <th>
+                UPN
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var user in Model) {
+        <tr>
+            <td>
+             @Html.DisplayFor(modelItem => user.displayName)    
+            </td>
+            <td>
+             @Html.DisplayFor(modelItem => user.userPrincipalName)
+            </td>
+       </tr>
+    }
+
+    </table>
+}

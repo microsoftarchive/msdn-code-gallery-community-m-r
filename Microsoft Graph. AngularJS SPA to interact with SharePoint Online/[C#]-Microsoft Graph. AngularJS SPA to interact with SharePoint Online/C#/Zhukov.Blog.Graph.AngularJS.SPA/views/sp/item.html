@@ -1,0 +1,26 @@
+﻿<!-- Breadcrumb -->
+<ul class="breadcrumb">
+    <li><a href="#/">Microsoft Graph SPA</a></li>
+    <li><a href="#/sp">SharePoint</a></li>
+    <li><a href="#/sp/{{siteId}}">{{site.name!=''?site.name:'Root'}}</a></li>
+    <li><a href="#/sp/{{siteId}}/{{listId}}">{{list.name}}</a></li>
+    <li class="active">{{item.columnSet.Title}}</li>
+</ul>
+
+<div class="row">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- Перебираем все поля и выводим значения -->
+        <tr ng-repeat="(key, value) in item.columnSet">
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

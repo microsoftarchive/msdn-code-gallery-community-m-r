@@ -1,0 +1,11 @@
+<ul class="pagination pagination-sm pull-right">
+    <li ng-class="{'disabled': isFirstPage}">
+        <a ng-click="isFirstPage || goBack()">&laquo;</a>
+    </li>
+    <li ng-repeat="page in pages" ng-class="{'active': page.current}">
+        <a ng-click="goToPage(page.number)">{{page.number}}</a>
+    </li>
+    <li ng-class="{'disabled': isLastPage}">
+        <a ng-click="isLastPage || goForward()">»</a>
+    </li>
+</ul>

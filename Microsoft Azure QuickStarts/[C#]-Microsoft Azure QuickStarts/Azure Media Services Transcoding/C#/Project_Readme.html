@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Azure Media Services: Transcoding</title>
+    <style>body { font-family: 'Lucida Sans Unicode'} .subhead { font-style:italic; color: gray }</style>
+</head>
+<body>
+    <h1>Azure Media Services: Transcoding</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+     <p>Microsoft Azure Media Services allows you to build scalable, cost effective, end-to-end
+     media distribution solutions that can stream media to Adobe Flash, Android, iOS, Windows,
+     and other devices and platforms. If you don't have a Microsoft Azure subscription you can
+     get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>. </p>
+    
+    <p>
+        This QuickStart demonstrates the following scenarios:
+        <ol>
+            <li>Connecting to an Azure Media Services account</li>
+            <li>Uploading an MP4 video asset</li>
+            <li>Creating and executing a Smooth Streaming encoding job</li>
+            <li>Creating a locator URL to a streaming media asset on an origin server.</li>
+        </ol>
+    </p>
+    <h2>Running this sample</h2>
+    <ol>
+        <li>
+            Provision a Media Service using the <a href="http://go.microsoft.com/fwlink/?LinkId=324582">
+            Microsoft Azure Management Portal</a>          
+        </li>
+        <li>
+            Open App.Config and update the value of  appSetting <code>MediaServicesAccountName</code>
+            and <code>MediaServicesAccountKey</code>
+        </li>
+        <li>
+            Open Program.cs and update <code>_singleInputMp4Path</code> variable below to point at your *.mp4 input file
+        </li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="http://azure.microsoft.com/en-us/develop/media-services/">Azure Media Services documentation</a></li>
+    </ul>
+</body>
+</html>

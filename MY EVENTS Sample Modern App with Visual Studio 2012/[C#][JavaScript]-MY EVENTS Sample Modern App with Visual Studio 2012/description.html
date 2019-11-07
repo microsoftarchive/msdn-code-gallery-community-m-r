@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MY EVENTS Sample Modern App with Visual Studio 2012</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>MY EVENTS Sample Modern App with Visual Studio 2012</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WPF, XAML, HTML5, WinJS, ASP.NET MVC 4, Windows 8, ASP.NET Web API, Visual Studio 2012, Entity Framework 5
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Continuous services, Connected devices
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Cloud, Data, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">9/21/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/MY-EVENTS-Modern-Sample-9a42abc6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>&nbsp;</p>
+<h1><span>Building the Sample</span></h1>
+<p><em>Software required: </em></p>
+<p><em>- Visual Studio 2012</em></p>
+<p><em>- Windows 8</em></p>
+<p><em>- Bing Maps SDK for Metro style apps: <a href="http://visualstudiogallery.msdn.microsoft.com/bb764f67-6b2c-4e14-b2d3-17477ae1eaca">
+http://visualstudiogallery.msdn.microsoft.com/bb764f67-6b2c-4e14-b2d3-17477ae1eaca</a></em></p>
+<p><em>IMPORTANT: First of all, after downloading the .ZIP file and before unpackaging it, go the the .ZIP file properties and press the 'Unblock' button. Then, unpackage it. If you don't do it, you might get Visual Studio hung&nbsp;when trying to open the
+ solution.&nbsp;</em><em>You&nbsp;can also&nbsp;get rid of that long path created by the long .ZIP name.<br>
+Other than that, you might get errors because of having a too long path.</em></p>
+<p><em>Check that you have the required software dependencies, open the solution, select the Web project as default,&nbsp;and run it. The database will be generated for you using LocalDB and Entity Framework Initializers.
+</em></p>
+<p><em>For more information about how to how to set it up in your dev machine and even in a&nbsp;full IIS environment, check this blog post from Cesar de la Torre:
+<a href="http://blogs.msdn.com/b/cesardelatorre/archive/2012/09/17/setting-the-sample-my-events-modern-application-up-amp-running.aspx">
+http://blogs.msdn.com/b/cesardelatorre/archive/2012/09/17/setting-the-sample-my-events-modern-application-up-amp-running.aspx</a></em></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><em><em><span style="color:black; font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;; font-size:7.5pt">The main goal of this sample modern application is to provide a sample app where you can see most of the new technologies related to Visual Studio 2012, in a practical
+ way. </span></em><em><span style="color:black; font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;; font-size:7.5pt"><br>
+</span></em></em><br>
+<strong>Sample application context and scenarios</strong><br>
+This sample application shows most of the new technologies you can use with Visual Studio 2012 in order to build Modern Apps.<br>
+The context is about an events/conferences management system called &ldquo;My Events&rdquo;.
+<br>
+It is composed by:</p>
+<p><br>
+<strong>Central Web API Services:</strong><br>
+This is the core of the system and these services are consumed by all the client apps.</p>
+<p><br>
+<strong>Global Web-App (ASP.NET MVC4):</strong><br>
+For potential attendees so they can browse and register to any published event, but also for events' owners, so anyone can create their own events with all the required data (description, tracks, sessions, speakers, etc.).</p>
+<p><img id="66036" src="description/web app.png" alt="" width="611" height="337"><br>
+<strong>&nbsp;</strong></p>
+<p><strong>Organizers WPF App (WPF):</strong><br>
+This is a data entry app which is oriented to organizers, especially when they are creating or updating events or even checking global statistics (simplified dashboard).<br>
+<strong>&nbsp;<img id="66038" src="description/wpf app.png" alt="" width="609" height="403"></strong></p>
+<p><strong>Organizers Windows 8 Store App (XAML/C#):</strong><br>
+This app is also especially made for events' organizers, but in this case it should be used 'on the go' using a Windows 8 tablet, while running the events. Using this client app the organizers can check comments/feedback coming from attendees, registered people
+ to every sessions, etc.</p>
+<p>Windows 8 Store App (XAML/C#)</p>
+<p><img id="66040" src="description/Organizers_XAML_1.png" alt="" width="611" height="316"></p>
+<p><img id="66041" src="description/Organizers_XAML_2.png" alt="" width="602" height="358"><br>
+<strong>&nbsp;</strong></p>
+<p><strong>Attendees Windows 8 Store App (HTML5/WinJS):</strong><br>
+This app is especially made for attendees and it should be used 'on the go' using a Windows 8 tablet, while attending the events and when jumping from one session to another. This client app is very convenient as the attendess can see the live agenda and schedule
+ while checking what friends from FACEBOOK are attending to each session. They can also see the assigned room for each session, manually written notes assigned to some sessions and other information related to the events.</p>
+<p><img id="66042" src="description/Attendees_HTML5_1.png" alt="" width="602" height="360"></p>
+<p><strong><img id="66043" src="description/Attendees_HTML5_2.png" alt="" width="604" height="383"></strong></p>
+<p><strong>Austin/Journal App (manually written notes app) - C&#43;&#43; Windows Store App</strong><br>
+Although this other sample app is not really part of 'MY EVENTS', you can also use it to create manually written notes using a Tablet, and then
+<strong>share those notes through Windows 8 and assign any note to any specific conference session, so you can see it in the future</strong>.<br>
+<span style="text-decoration:underline">You&nbsp;can download this app (and source code, from CODEPLEX)&nbsp;from a different URL, published by the Microsoft Visual C&#43;&#43; team:
+<a href="http://blogs.msdn.com/b/vcblog/archive/2012/09/11/10348466.aspx?wa=wsignin1.0">
+http://blogs.msdn.com/b/vcblog/archive/2012/09/11/10348466.aspx?wa=wsignin1.0</a></span></p>
+<p><img id="66044" src="description/AUSTIN_3.png" alt="" width="624" height="350"></p>
+<p>&nbsp;</p>
+<p><strong>Virtual Events Application (Avatar &amp; KINECT for WINDOWS app)</strong><br>
+This is a separated download URL, but related to the same apps' context and demos. This is the download URL for this other app:
+<a href="http://code.msdn.microsoft.com/Virtual-Events-Sample-a0228a97">http://code.msdn.microsoft.com/Virtual-Events-Sample-a0228a97</a></p>
+<p>Windows 8 Store app (currently showed in a tablet):</p>
+<p><img id="66045" src="description/3 - virtual events - client with event description speaker photo avatar and scenario.png" alt="" width="603" height="362"></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Goals</strong><br>
+This global system and the related client apps are highlighting the following points:<br>
+- Consumer end-user point of view with the latest UX technologies capabilities, typical of Modern-Apps.<br>
+- Enterprise and LOB (Line of Business) point of view, when using a desktop application.<br>
+- Cloud friendly. You can deploy very easily all the server assets (Web Api Services and Web app) into the Windows Azure cloud.<br>
+- Extensible and open to more complex scenarios. Even though our scenario&rsquo;s main goal is to &lsquo;keep it simple&rsquo;, we wanted to be able to leave it open for future extensions and complexity that is usually required when implementing a real production
+ application. <br>
+- Multiple technical approaches. We wanted to illustrate how multiple technical approaches can co-exist within the same solution (Web, mainstream-app, CRUD, etc.)
+<br>
+- Easily deployable. The RI is easily deployable so that you can install it and experiment with it.</p>
+<p><em><em><span style="color:black; font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;; font-size:7.5pt"><em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">The selected technologies and frameworks used are the following:</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">-Core</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp; * ASP.NET Web-API Services</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp; * Entity Framework 5 (Code First)</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp; * SQL Server LocalDB</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">-Web App</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp; * ASP.NET MVC 4</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp; * JavaScript &amp; </span>
+</em><em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">JQuery consuming Web Api Services</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">-Windows 8 Store Apps</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp; * Windows 8 Store App using HTML5/WinJS</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp; * Windows 8&nbsp;Store Apps using XAML/C#</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">-Desktop App</span></em><br>
+<br>
+<em><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp; * WPF (Windows Presentation Foundation) App</span></em></span></em></em></p>
+<p><br>
+<strong>What this sample application is&nbsp;NOT about</strong><br>
+This is not a production application and it is not intended as a guidance for complex scenarios/applications, as it mostly covers CRUD and Data-Driven scenarios, only. If you need guidance for complex scenarios, we recommend to check guidance material from
+ the Microsoft Patterns &amp; Practices group like the &lsquo;CQRS Journey guidance&rsquo;, which shows a reference application with a&nbsp;related functional domain &amp; scope (Events/Conferences platform) but from a different point of view based on design-patterns
+ and best architectural practices for complex scenarios, covering approaches like CQRS (Command &amp; Query Responsibility Segregation) &amp; DDD (Domain Driven Design).</p>
+<p><strong>Wrap up</strong><br>
+Therefore and as previously mentioned, our main objective is to highlight and show most of the new capabilities and technical possibilities offered by Visual Studio 2012 and all its related technologies in order to build
+<strong>Modern Apps</strong>.</p>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

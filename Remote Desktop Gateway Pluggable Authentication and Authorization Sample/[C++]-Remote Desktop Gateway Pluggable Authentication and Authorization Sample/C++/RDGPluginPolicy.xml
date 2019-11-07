@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- 
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+//// PARTICULAR PURPOSE.
+////
+//// Copyright (c) Microsoft Corporation. All rights reserved
+-->
+
+<!--This is RD Gateway Plugin Policy for cookie based authentication and authorization-->
+<Authenticate Policy="Pol1">
+  <CookieValue>domain\username</CookieValue>
+  <Timeout>0</Timeout>
+  <TimeoutAction>0</TimeoutAction>
+  <UserName>domain\username</UserName>
+  <ClientMachine>clientmachineFQDN</ClientMachine>
+  <SmartcardAllowed>false</SmartcardAllowed>
+  <PasswordAllowed>true</PasswordAllowed>
+  <ResourceMachine>TargetServerName</ResourceMachine>
+  <PortNumber>3389</PortNumber>
+</Authenticate>

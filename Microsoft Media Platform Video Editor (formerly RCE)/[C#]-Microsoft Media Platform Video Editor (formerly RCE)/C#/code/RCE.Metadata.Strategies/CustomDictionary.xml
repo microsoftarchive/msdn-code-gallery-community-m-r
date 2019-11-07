@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>RCE</Word>
+      <Word>WMFSDK</Word>
+      <Word>Exif</Word>
+      <Word>LONG</Word>
+      <Word>bpp</Word>
+      <Word>ASCII</Word>
+    </Recognized>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>RCE</Acronym>
+      <Acronym>WMFSDK</Acronym>
+      <Acronym>Exif</Acronym>
+      <Acronym>LONG</Acronym>
+      <Acronym>bpp</Acronym>
+      <Acronym>ASCII</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

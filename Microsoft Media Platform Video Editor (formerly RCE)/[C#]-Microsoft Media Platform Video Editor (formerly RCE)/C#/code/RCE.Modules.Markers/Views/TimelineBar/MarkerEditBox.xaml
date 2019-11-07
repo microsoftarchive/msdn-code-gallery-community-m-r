@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="RCE.Modules.Markers.MarkerEditBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Commands="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation" 
+	xmlns:Converters="clr-namespace:RCE.Infrastructure.Converters;assembly=RCE.Infrastructure" 
+    Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Converters:PositionConverter x:Key="PositionConverter"/>
+	</UserControl.Resources>
+
+    <Popup x:Name="EditBoxPopup" IsOpen="True">
+        <Grid Margin="-9,0,0,0">
+            <Border Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Style="{StaticResource TimelineEditBoxBorderStyle}">
+                <Rectangle RadiusX="5" RadiusY="5" Fill="{StaticResource MarkerEditBoxBackgroundBrush}" Stroke="{StaticResource MarkerEditBoxStroke}"/>
+            </Border>
+            <Path Height="11" HorizontalAlignment="Left" Margin="8,-11,0,0" VerticalAlignment="Top" Width="15" RenderTransformOrigin="0.5,0.5" Fill="{StaticResource MarkerViewPreviewBrush}" Stretch="Fill" Data="M0.5,0.5 L24.5,0.5 L24.5,17.5 z">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Grid Height="100" Width="202" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.4*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Position:" Margin="5,0,5,0" VerticalAlignment="Center" TextWrapping="Wrap" Style="{StaticResource MarkerBoxTextBlockStyle}" Foreground="{StaticResource EditBoxHeaderForegroundBrush}" />
+                <TextBox x:Name="TimeBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Text="{Binding Time, Converter={StaticResource PositionConverter}, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" TextAlignment="Center" Grid.ColumnSpan="3" Grid.Column="0" Margin="52,0,0,0" Style="{StaticResource MarkerBoxTextBoxStyle}" Background="{StaticResource MarkerEditBoxTextBackgroundBrush}" Foreground="{StaticResource EditBoxForegroundBrush}"/>
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Margin="5,0,5,28" Grid.RowSpan="2">
+                    <TextBlock Text="Text:" TextWrapping="Wrap" Style="{StaticResource MarkerBoxTextBlockStyle}" Foreground="{StaticResource EditBoxHeaderForegroundBrush}"/>
+                    <TextBox x:Name="MarkerTextBox" Style="{StaticResource MarkerBoxTextBoxStyle}" Text="{Binding Text, Mode=TwoWay}" Background="{StaticResource MarkerEditBoxTextBackgroundBrush}" Foreground="{StaticResource EditBoxForegroundBrush}"/>
+                </StackPanel>
+                <Grid Grid.Row="2" Grid.ColumnSpan="3" Height="28" VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.50*"/>
+                        <ColumnDefinition Width="0.50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button FontFamily="Verdana" FontSize="10" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Grid.Column="0" Content="Save" Commands:Click.Command="{Binding SaveCommand}" />
+                    <Button Height="Auto" Width="60" Grid.Column="1" Content="Delete" Commands:Click.Command="{Binding DeleteCommand}" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                </Grid>
+                <Button Height="9" HorizontalAlignment="Right" Style="{StaticResource SharedCloseButtonStyle}" VerticalAlignment="Center" Width="9" Grid.Column="2" Content="" Margin="0,0,10,0"  Cursor="Hand" Commands:Click.Command="{Binding CloseCommand}"/>
+            </Grid>
+        </Grid>
+    </Popup>
+</UserControl>

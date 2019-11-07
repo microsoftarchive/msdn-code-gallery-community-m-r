@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="PhluffyFotos" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2012-05.1.7">
+  <Role name="PhluffyFotos.Worker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="WorkerSleepTime" value="2000" />
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName={YOUR-ACCOUNT};AccountKey={YOUR-ACCOUNT-KEY}" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName={YOUR-ACCOUNT};AccountKey={YOUR-ACCOUNT-KEY}" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

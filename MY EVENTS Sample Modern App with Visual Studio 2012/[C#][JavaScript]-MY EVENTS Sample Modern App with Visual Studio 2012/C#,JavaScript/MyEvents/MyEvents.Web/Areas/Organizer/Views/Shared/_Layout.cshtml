@@ -1,0 +1,70 @@
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/OrganizerStyles/")" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.2.js"></script>
+    @Scripts.Render("~/ThirdPartyScripts/")
+    @Scripts.Render("~/AppScripts/")
+</head>
+<body>
+    <div class="page">
+        <header id="header">
+            <div class="wrapper">
+                <span class="title">my events</span>
+                <section class="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div>
+            <div>
+                <section class="left">
+                    <nav class="menu">
+                        <a href="@Url.Action("Index", "Home", new { area = "" })">
+                            <div class="menu-option">
+                                <img src="@Url.Content("~/Styles/Images/button-home-white.png")" />
+                            </div>
+                            <span>home</span>
+                        </a>
+                        <a href="@Url.Action("Index", "Home", new { area = "Organizer" })">
+                            <div class="menu-option">
+                                <img src="@Url.Content("~/Styles/Images/button-manage-white.png")" />
+                            </div>
+                            <span>manage events</span>
+                        </a>
+                    </nav>
+                </section>
+                <section class="right">
+                    @RenderSection("Actions", required: false)
+                </section>
+            </div>
+        </header>
+
+        @RenderBody()
+    </div>
+
+    <div id="confirm" class="dialog">
+        <section id="content">
+            <img src="@Url.Content("~/Styles/Images/confirm-faces.png")" />
+            <div class="message">
+                <span id="confirm-dialog-title">confirmation</span>
+                <span id="confirm-dialog-message"></span>
+                <div id="buttons">
+                    <input id="confirm-dialog-no-button" type="button" value="decline" class="button" />
+                    <input id="confirm-dialog-yes-button" type="button" value="accept" class="button button-highlighted" />
+                </div>
+            </div>
+            <a id="confirm-dialog-delete" href="#">
+                <img src="@Url.Content("~/Styles/Images/confirm-delete.png")" />
+            </a>
+        </section>
+    </div>
+
+    @JsConfiguration.SetConfigurations()
+    @JsHelper.CreateHelpers()
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@using System.Globalization
+@model CIK.News.Web.Infras.ViewModels.PagingViewModel
+<!-- start Pagination -->
+
+<div class="pagging">
+    <div class="left">Showing @Model.MinItemIndexOfCurrentPage-@Model.MaxItemIndexOfCurrentPage of @Model.TotalCount</div>
+    <div class="right">
+        @if (Model.HasPreviousPage)
+        {
+            <a href="@Model.PageActionLink.Replace("{page}", (Model.PageIndex - 1).ToString(CultureInfo.InvariantCulture))" class="page@Model.PageIndex - 1">Previous</a>
+        }else
+        {
+            <a href="#">Previous</a>
+        }
+        @{
+            for (var page = Model.MinPageIndexForDisplaying; page <= Model.MaxPageIndexToDisplay; page++)
+            {
+                <a href="@Model.PageActionLink.Replace("{page}", page.ToString(CultureInfo.InvariantCulture))" class="page@page">
+                          @page</a>
+            }
+        }
+        @if (Model.HasNextPage) {
+            <a href="@Model.PageActionLink.Replace("{page}", (Model.PageIndex + 1).ToString())"
+                                class="page@{ Html.Raw(Model.PageIndex + 1); }">Next</a>
+        } else {
+            <a href="#">Next</a>
+        }
+    </div>
+</div>
+<!-- end Pagination -->

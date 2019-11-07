@@ -1,0 +1,22 @@
+﻿<mui:ModernWindow x:Class="ModernUIForWPFSample.Navigation.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="NavigationService Window"
+                  Width="650"
+                  Height="450"
+                  IsTitleVisible="True">
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link DisplayName="ModernUI Project" Source="https://mui.codeplex.com/" />
+        <mui:Link DisplayName="ModernUI For WPF Sample" Source="https://github.com/saramgsilva" />
+    </mui:ModernWindow.TitleLinks>
+
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Helper">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Steps" Source="/Views/StepsControl.xaml" />
+                <mui:Link DisplayName="Other resources" Source="/Views/ResourcesControl.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

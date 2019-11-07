@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleStorage.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:PerpetualEngine.Storage.SimpleStorage">
+            <summary>
+            iOS specific implementation to let EditGroup(string) return a n iOSSimpleStorage object
+            </summary>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.#ctor(System.String)">
+            <summary>
+            Creates a new Storage. It's ok to use the plattform specifc constructors
+            as long as the code depends on a plattorm anyway. But if you have shared
+            code, consider using the EditGroup(groupName) delegate as described in
+            the GettingStarted-Component-Description.
+            </summary>
+            <param name="groupName">the namespace for this storage object</param>
+        </member>
+        <member name="P:PerpetualEngine.Storage.SimpleStorage.EditGroup">
+            <summary>
+            plattform specific instance to save/load values within a given group (eg. namespace)
+            </summary>
+            <value>A delegate expecting a group name and returning a plattform specific variant of SimpleStorage</value>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Put(System.String,System.String)">
+            <summary>
+            Persists a value with given key.
+            </summary>
+            <param name="value">if value is null, the key will be deleted</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Get(System.String)">
+            <summary>
+            Retrieves value with given key.
+            </summary>
+            <returns>null, if key can not be found</returns>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Get(System.String,System.String)">
+            <summary>
+            Retrives a value with given key. If key can not be found, defaultValue is returned instead of null.
+            </summary>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Delete(System.String)">
+            <summary>
+            Delete the specified key.
+            </summary>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.HasKey(System.String)">
+            <summary>
+            Determines whether the storage has the specified key.
+            </summary>
+            <returns>
+                <c>true</c> if this instance has the specified key; otherwise, <c>false</c>.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.PutAsync(System.String,System.String)">
+            <summary>
+            Persists a value with given key.
+            </summary>
+            <param name="value">if value is null, the key will be deleted</param>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.GetAsync(System.String)">
+            <summary>
+            Retrieves value with given key.
+            </summary>
+            <returns>null, if key can not be found</returns>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.HasKeyAsync(System.String)">
+            <summary>
+            Determines whether the storage has the specified key async.
+            </summary>
+            <returns>
+                <c>true</c> if this instance has the specified key; otherwise, <c>false</c>.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.DeleteAsync(System.String)">
+            <summary>
+            Delete the specified key async.
+            </summary>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.PutAsync``1(System.String,``0)">
+            <summary>
+            Persists a complex value with given key via binary serialization async.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">must be serializable</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Put``1(System.String,``0)">
+            <summary>
+            Persists a complex value with given key via binary serialization.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">must be serializable</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.GetAsync``1(System.String)">
+            <summary>
+            Get the specified key or the dafault value of type T if the key does not exist.
+            </summary>
+            <remarks>Use HasKey(key) beforehand if T is a Value Type and you do not want the default value.</remarks>
+            <param name="key">Key.</param>
+            <returns>deserialized complex type</returns>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Get``1(System.String)">
+            <summary>
+            Get the specified key or the dafault value of type T if the key does not exist.
+            </summary>
+            <remarks>Use HasKey(key) beforehand if T is a Value Type and you do not want the default value.</remarks>
+            <param name="key">Key.</param>
+            <returns>deserialized complex type</returns>
+        </member>
+        <member name="M:PerpetualEngine.Storage.SimpleStorage.Get``1(System.String,``0)">
+            <summary>
+            Retrives a value with given key. If key can not be found, defaultValue is returned.
+            </summary>
+            <returns>deserialized complex type</returns>
+        </member>
+        <member name="M:PerpetualEngine.Storage.iOSSimpleStorage.Put(System.String,System.String)">
+            <summary>
+            Persists a value with given key.
+            </summary>
+            <param name="value">if value is null, the key will be deleted</param>
+        </member>
+        <member name="M:PerpetualEngine.Storage.iOSSimpleStorage.Get(System.String)">
+            <summary>
+            Retrieves value with given key.
+            </summary>
+            <returns>null, if key can not be found</returns>
+        </member>
+        <member name="M:PerpetualEngine.Storage.iOSSimpleStorage.Delete(System.String)">
+            <summary>
+            Delete the specified key.
+            </summary>
+        </member>
+    </members>
+</doc>

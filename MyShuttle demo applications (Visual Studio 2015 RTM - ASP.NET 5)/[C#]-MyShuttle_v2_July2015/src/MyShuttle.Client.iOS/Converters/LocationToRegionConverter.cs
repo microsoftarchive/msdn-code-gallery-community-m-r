@@ -1,0 +1,29 @@
+using System;
+using Cirrious.CrossCore.Converters;
+using MonoTouch.MapKit;
+using MonoTouch.CoreLocation;
+using MyShuttle.Client.Core.Model;
+
+namespace MyShuttle.Client.iOS.Converters
+{
+    public class LocationToRegionConverter : MvxValueConverter<Location, MKCoordinateRegion>
+    {
+        protected override MKCoordinateRegion Convert(Location value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value == null)
+            {
+                return new MKCoordinateRegion();
+            }
+
+            var location = new CLLocationCoordinate2D(value.Latitude, value.Longitude);
+
+            var returnRegion = new MKCoordinateRegion 
+            { 
+                Center = location, 
+                Span = new MKCoordinateSpan(MapSettings.LatitudeLongitudeDelta, MapSettings.LatitudeLongitudeDelta) 
+            };
+
+            return returnRegion;
+        }
+    }
+}

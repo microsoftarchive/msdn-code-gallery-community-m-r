@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.VManageEvents"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:converters="clr-namespace:MyEvents.Client.Organizer.Desktop.Converters"
+             d:DesignHeight="431" d:DesignWidth="518"
+             xmlns:controls="clr-namespace:MyEvents.Client.Organizer.Desktop.Views.UserControls"
+             DataContext="{Binding ManageEvents, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <converters:FormatStringConverter x:Key="FormatString"></converters:FormatStringConverter>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,0,10" IsEnabled="{Binding ShowConfirmation, Converter={StaticResource InverseBooleanConverter}}">
+            <TextBlock TextWrapping="Wrap" Text="{Binding TextSearchHeader, Source={StaticResource languages}}" Style="{StaticResource NormalText}" />
+
+            <Border BorderBrush="Black" BorderThickness="1">
+                <StackPanel Height="30" Orientation="Horizontal" Background="White">
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap"  VerticalAlignment="Top" Width="165"
+                             VerticalContentAlignment="Center"
+                             FontSize="16" BorderBrush="Transparent" Background="Transparent">
+                        <TextBox.InputBindings>
+                            <KeyBinding Key="Enter" Command="{Binding SearchEventCommand, Mode=OneWay}" CommandParameter="{Binding Text, ElementName=textBox}"></KeyBinding>
+                        </TextBox.InputBindings>
+                    </TextBox>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="30" Command="{Binding SearchEventCommand, Mode=OneWay}" CommandParameter="{Binding Text, ElementName=textBox}"
+                        Background="Transparent" BorderBrush="Transparent" Style="{StaticResource BlankButtonStyle}">
+                        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="18" Height="18" Margin="6,0,6,0">
+                            <Grid>
+                                <Grid Name="backgroundGrid" Width="24" Height="24" Visibility="Visible">
+                                    <Rectangle Fill="#00000000" Name="Rect" Visibility="Visible" />
+                                </Grid>
+                                <Path Data="F1M-185.925,-2026.96L-203.062,-2048.74C-197.485,-2056.51 -197.433,-2067.31 -203.64,-2075.2 -211.167,-2084.76 -225.019,-2086.42 -234.588,-2078.89 -244.154,-2071.36 -245.808,-2057.51 -238.282,-2047.94 -231.986,-2039.95 -221.274,-2037.5 -212.337,-2041.31L-195.262,-2019.61 -185.925,-2026.96z M-231.201,-2053.51C-235.653,-2059.17 -234.674,-2067.36 -229.02,-2071.81 -223.36,-2076.26 -215.169,-2075.29 -210.721,-2069.63 -206.269,-2063.97 -207.245,-2055.78 -212.902,-2051.33 -218.559,-2046.88 -226.752,-2047.86 -231.201,-2053.51z" Stretch="Uniform" Fill="#FF000000" Width="24" Height="24" Margin="0,0,0,0">
+                                </Path>
+                            </Grid>
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
+            </Border>
+
+
+        </StackPanel>
+        
+        <DataGrid Name="grdEvents" Grid.Row="1" Grid.ColumnSpan="2" HeadersVisibility="Column" ItemsSource="{Binding Events}"
+                  AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}" IsReadOnly="True"
+                  CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CellStyle="{DynamicResource DataGridCellStyle}"
+                  SelectionMode="Single" Cursor="Hand">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="120" Header="{Binding Events_Date, Source={StaticResource languages}}" CanUserSort="True">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid MinHeight="35" Background="{StaticResource SessionInfoBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PreviewMouseLeftButtonUp="Grid_PreviewMouseLeftButtonUp">
+                                <TextBlock Text="{Binding Date, Converter={StaticResource FormatString}, ConverterParameter='{}{ShortDate}'}" VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           Style="{StaticResource CellTextStyle}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*" Header="{Binding Events_Title, Source={StaticResource languages}}" CanUserSort="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid MinHeight="35" HorizontalAlignment="Stretch" Background="#00FFFFFF" PreviewMouseLeftButtonUp="Grid_PreviewMouseLeftButtonUp">
+                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center"
+                                           HorizontalAlignment="Left" TextWrapping="Wrap"
+                                           Style="{StaticResource CellTextStyle}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="Auto" Header="{Binding Events_City, Source={StaticResource languages}}" CanUserSort="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid MinHeight="35" HorizontalAlignment="Stretch" Background="#00FFFFFF" PreviewMouseLeftButtonUp="Grid_PreviewMouseLeftButtonUp">
+                                <TextBlock Text="{Binding City}" VerticalAlignment="Center"
+                                           HorizontalAlignment="Left" TextWrapping="Wrap"
+                                           Style="{StaticResource CellTextStyle}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="buttonColumnUsers" Width="Auto" Header="attendees" MinWidth="80">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Center" Command="{Binding ManageEvents.NavigateToUsersCommand, Source={StaticResource Locator}}"
+                                        CommandParameter="{Binding}" Background="#FFFFFFFF" ToolTip="{Binding Tooltip_users, Source={StaticResource languages}}">
+                                <Image Source="/Resources/Images/ico-users.png"></Image>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="buttonColumnSessions" Width="Auto" Header="sessions"  MinWidth="80">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Center" Command="{Binding ManageEvents.NavigateToSessionsCommand, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#FFFFFFFF" ToolTip="{Binding Tooltip_sessions, Source={StaticResource languages}}">
+                                <Image Source="/Resources/Images/ico-sessions.png"></Image>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="buttonColumnDelete" Width="Auto" Header="delete"  MinWidth="80">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Center" Command="{Binding ManageEvents.DeleteEventCommand, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#FFFFFFFF" ToolTip="{Binding Tooltip_delete, Source={StaticResource languages}}">
+                                <Image Source="/Resources/Images/ico-delete.png"></Image>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <TextBlock Text="{Binding NoEvents, Source={StaticResource languages}}" Grid.Row="1" HorizontalAlignment="Center" Margin="0,20,0,0" Style="{StaticResource SubTitleStyle}" VerticalAlignment="Top"
+                   Visibility="{Binding Events.Count, Converter={StaticResource CollectionCountToVisibility}, FallbackValue=Collapsed}"></TextBlock>
+        
+        <controls:ConfirmationDialog x:Name="deleteEventConfirmation" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                     Grid.RowSpan="2"
+                                     Visibility="{Binding ShowConfirmation, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=False}"></controls:ConfirmationDialog>
+        
+        <Grid Grid.ColumnSpan="3" Background="Transparent" Grid.RowSpan="2" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=false}" IsHitTestVisible="True" d:IsHidden="True" >
+            <ProgressBar HorizontalAlignment="Center" Height="10" VerticalAlignment="Center" Width="300" Margin="0" Value="32" Style="{DynamicResource ProgressBarStyle}" IsIndeterminate="True" Background="{x:Null}" Foreground="{DynamicResource SplashScreenBrush}" BorderBrush="{x:Null}"/>
+        </Grid>
+    </Grid>
+</UserControl>

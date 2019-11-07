@@ -1,0 +1,28 @@
+{
+  "name": "MyShuttle.Client.Cordova",
+  "version": "0.0.1",
+  "description": "MyShuttle Cordova App.",
+  "repository": {},
+  "readme": "readme.md",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-bower-normalize": "^1.0.5",
+    "gulp-karma": "^0.0.4",
+    "gulp-less": "^3.0.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-tsc": "^0.9.4",
+    "gulp-util": "^3.0.4",
+    "jasmine": "^2.2.1",
+    "karma": "^0.12.31",
+    "karma-cli": "0.0.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "main-bower-files": "^2.6.2",
+    "typescript": "^1.5.3"
+  }
+}

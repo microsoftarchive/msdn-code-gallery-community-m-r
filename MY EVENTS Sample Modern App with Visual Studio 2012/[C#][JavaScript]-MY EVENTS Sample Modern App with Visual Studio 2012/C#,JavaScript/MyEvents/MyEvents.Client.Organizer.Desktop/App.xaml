@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application x:Class="MyEvents.Client.Organizer.Desktop.App" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             StartupUri="MainWindow.xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:vm="clr-namespace:MyEvents.Client.Organizer.Desktop.ViewModel" 
+             xmlns:converters="clr-namespace:MyEvents.Client.Organizer.Desktop.Converters"
+             xmlns:lang="clr-namespace:MyEvents.Client.Organizer.Desktop.Resources.Language"  mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Common/CommonResources.xaml"/>
+                <ResourceDictionary Source="/Common/Colors.xaml"/>
+                <ResourceDictionary Source="/Common/TextBlocks.xaml"/>
+                <ResourceDictionary Source="/Common/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="/Common/ListboxStyles.xaml"/>
+                <ResourceDictionary Source="/Common/ScrollBarStyle.xaml"/>
+                <ResourceDictionary Source="/Common/ProgressBarStyles.xaml"/>
+                <ResourceDictionary Source="/Common/DataGridStyles.xaml"/>
+                <ResourceDictionary Source="/Common/ListViewStyles.xaml"/>
+                <ResourceDictionary Source="/Common/EventScheduleStyles.xaml"/>
+                <ResourceDictionary Source="/Common/TextBoxStyles.xaml"/>
+                <ResourceDictionary Source="/Common/PieChartStyles.xaml"/>
+                <ResourceDictionary Source="/Common/PathStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

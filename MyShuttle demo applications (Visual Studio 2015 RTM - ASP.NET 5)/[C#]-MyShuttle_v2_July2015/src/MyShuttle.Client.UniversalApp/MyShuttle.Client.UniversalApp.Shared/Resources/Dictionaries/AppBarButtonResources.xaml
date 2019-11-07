@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="AppBarButtonBase" TargetType="AppBarButton">
+        <Setter Property="IsCompact" Value="True"/>
+    </Style>
+
+    <Style TargetType="AppBarButton" BasedOn="{StaticResource AppBarButtonBase}">
+    </Style>
+
+    <Style x:Key="SettingsAppBarButton" TargetType="AppBarButton" BasedOn="{StaticResource AppBarButtonBase}">
+        <Setter Property="Icon" Value="Setting"/>       
+    </Style>
+
+</ResourceDictionary>

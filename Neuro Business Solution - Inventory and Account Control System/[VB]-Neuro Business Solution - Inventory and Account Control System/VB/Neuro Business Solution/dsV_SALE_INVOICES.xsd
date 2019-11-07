@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsV_SALE_INVOICES" targetNamespace="http://tempuri.org/dsV_SALE_INVOICES.xsd" xmlns:mstns="http://tempuri.org/dsV_SALE_INVOICES.xsd" xmlns="http://tempuri.org/dsV_SALE_INVOICES.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsV_SALE_INVOICES" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsV_SALE_INVOICES" msprop:Generator_DataSetName="dsV_SALE_INVOICES">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_SALE_INVOICES" msprop:Generator_UserTableName="V_SALE_INVOICES" msprop:Generator_RowDeletedName="V_SALE_INVOICESRowDeleted" msprop:Generator_TableClassName="V_SALE_INVOICESDataTable" msprop:Generator_RowChangedName="V_SALE_INVOICESRowChanged" msprop:Generator_RowClassName="V_SALE_INVOICESRow" msprop:Generator_RowChangingName="V_SALE_INVOICESRowChanging" msprop:Generator_RowEvArgName="V_SALE_INVOICESRowChangeEvent" msprop:Generator_RowEvHandlerName="V_SALE_INVOICESRowChangeEventHandler" msprop:Generator_TablePropName="V_SALE_INVOICES" msprop:Generator_TableVarName="tableV_SALE_INVOICES" msprop:Generator_RowDeletingName="V_SALE_INVOICESRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SINV_NO" msprop:Generator_UserColumnName="SINV_NO" msprop:Generator_ColumnPropNameInRow="SINV_NO" msprop:Generator_ColumnVarNameInTable="columnSINV_NO" msprop:Generator_ColumnPropNameInTable="SINV_NOColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CLIENT_NAME" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="103" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="S_DATE" msprop:Generator_UserColumnName="S_DATE" msprop:Generator_ColumnPropNameInRow="S_DATE" msprop:Generator_ColumnVarNameInTable="columnS_DATE" msprop:Generator_ColumnPropNameInTable="S_DATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TOT_BILL" msprop:Generator_UserColumnName="TOT_BILL" msprop:Generator_ColumnPropNameInRow="TOT_BILL" msprop:Generator_ColumnVarNameInTable="columnTOT_BILL" msprop:Generator_ColumnPropNameInTable="TOT_BILLColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DISC_RS" msprop:Generator_UserColumnName="DISC_RS" msprop:Generator_ColumnPropNameInRow="DISC_RS" msprop:Generator_ColumnVarNameInTable="columnDISC_RS" msprop:Generator_ColumnPropNameInTable="DISC_RSColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DISC_PER" msprop:Generator_UserColumnName="DISC_PER" msprop:Generator_ColumnPropNameInRow="DISC_PER" msprop:Generator_ColumnVarNameInTable="columnDISC_PER" msprop:Generator_ColumnPropNameInTable="DISC_PERColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DISC_OTHER" msprop:Generator_UserColumnName="DISC_OTHER" msprop:Generator_ColumnPropNameInRow="DISC_OTHER" msprop:Generator_ColumnVarNameInTable="columnDISC_OTHER" msprop:Generator_ColumnPropNameInTable="DISC_OTHERColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NET_TOTAL" msprop:Generator_UserColumnName="NET_TOTAL" msprop:Generator_ColumnPropNameInRow="NET_TOTAL" msprop:Generator_ColumnVarNameInTable="columnNET_TOTAL" msprop:Generator_ColumnPropNameInTable="NET_TOTALColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CASH_AMT" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CASH_AMT" msprop:Generator_ColumnPropNameInRow="CASH_AMT" msprop:Generator_ColumnVarNameInTable="columnCASH_AMT" msprop:Generator_ColumnPropNameInTable="CASH_AMTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BANK_AMT" msdata:ReadOnly="true" msprop:Generator_UserColumnName="BANK_AMT" msprop:Generator_ColumnPropNameInRow="BANK_AMT" msprop:Generator_ColumnVarNameInTable="columnBANK_AMT" msprop:Generator_ColumnPropNameInTable="BANK_AMTColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:V_SALE_INVOICES" />
+      <xs:field xpath="mstns:SINV_NO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

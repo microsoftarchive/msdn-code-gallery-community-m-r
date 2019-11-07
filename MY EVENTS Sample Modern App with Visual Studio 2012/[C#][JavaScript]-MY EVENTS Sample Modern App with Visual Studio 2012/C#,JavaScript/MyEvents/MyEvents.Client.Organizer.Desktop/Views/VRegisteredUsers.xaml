@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.VRegisteredUsers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="864.6" d:DesignWidth="1776"
+             DataContext="{Binding RegisteredUsers, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>            
+            <RowDefinition Height="45"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource BackButtonStyle}"
+                HorizontalAlignment="Left" Margin="0"
+                Command="{Binding NavigateBackCommand}"></Button>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Style="{DynamicResource SubTitleStyle}" Margin="40,2,0,0">
+            <Run Text="{Binding CurrentEvent.AttendeesCount, Mode=OneWay, FallbackValue=0}"/>            
+            <Run Text="{Binding attendees, Mode=OneWay, Source={StaticResource languages}}"/>
+        </TextBlock>
+        
+        <ListView   ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding RegisteredUsers}"  Background="{x:Null}" Grid.Row="2" ItemTemplate="{DynamicResource RegisteredUsersListViewItem}"  VerticalAlignment="Top" ItemContainerStyle="{DynamicResource ListViewItemContainer}" BorderBrush="{x:Null}" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" HorizontalAlignment="Left"  />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+
+        <TextBlock Text="{Binding NoUsers, Source={StaticResource languages}}" Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,0" Style="{StaticResource SubTitleStyle}" VerticalAlignment="Top"
+                   Visibility="{Binding CurrentEvent.AttendeesCount, Converter={StaticResource CollectionCountToVisibility}, FallbackValue=Collapsed}"></TextBlock>
+    </Grid>
+</UserControl>

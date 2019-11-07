@@ -1,0 +1,630 @@
+﻿<html data-ng-app="dashbordModule">
+@{
+    ViewBag.Title = "Shanu Dashboard";
+}
+<head>
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.0)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.0)" />
+
+    <meta http-equiv="x-ua-compatible" content="IE=9" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <script type="text/javascript">
+
+        //public Canvas object to use in all the functions.
+        //this variable will be used to check for the result of Alert Image display
+        var alertCheckValue = 90;
+
+        //Adding the Pic Chart Colors to array .Here i have fixed to 12 colors and 12 datas to add as Pic Chart.if you want you can add more from here.
+        var pirChartColor = ["#6CBB3C", "#F87217", "#EAC117", "#EDDA74", "#CD7F32", "#CCFB5D", "#FDD017", "#9DC209", "#E67451", "#728C00", "#617C58", "#64E986"]; // green Color Combinations
+        // var pirChartColor = ["#3090C7", "#BDEDFF", "#78C7C7", "#736AFF", "#7FFFD4", "#3EA99F", "#EBF4FA", "#F9B7FF", "#8BB381", "#BDEDFF", "#B048B5", "#4E387E"]; // Blue Color Combinations
+        var lineColor = "#6CBB3C";
+        var lineOuterCircleColor = "#3090C7";
+        var lineInnerCircleColor = "#FFFFFF";
+
+        //declare the
+        var canvas;
+        var chartCTX;
+
+        // declare the Border Space,Chart Start X and Y Position;
+        var xSpace = 80;
+        var ySpace = 80;
+        //declare the Chart DrawWidth and Hegith
+        var chartWidth, chartHeight;
+
+        // declared the Chart Legend Width and Hegit
+        var legendWidth, legendHeight;
+
+        //declared the Chart data Minimum Value,maximum Value and Noofplots(Bars/Arc and PIE points)
+        var minDataVal, maxDataVal, noOfPlots;
+
+        //here we declare the Image for the Chart legend alert status display.
+        var greenImage = new Image();
+        var redImage = new Image();
+        //Alert Image Size widht and hegith
+        var imagesize = 20;
+        var maxValdivValue;
+        //Here we declare the X,YAxis Font size and Color
+        var fotnColor = "#000000";
+        var axisfontSize = 10;
+
+        var LogoImage = new Image();
+        var LogoImgWidth = 120;
+        var LogoImgHeight = 70;
+        // This arrawy wil be used to draw the Legends
+        rect = {};
+        rectInner = {};
+
+        //This method will be used to check for user selected Color Theme and Change the color
+        function ChangeChartColor() {
+            pirChartColor = ["#F87217", "#EAC117", "#EDDA74", "#CD7F32", "#CCFB5D", "#6CBB3C", "#FDD017", "#9DC209", "#E67451", "#728C00", "#617C58", "#64E986"]; // green Color Combinations
+            lineColor = "#3090C7"; // Blue Color for Line
+            lineOuterCircleColor = "#6CBB3C"; // Green Color for Outer Circle
+        }
+
+
+        // to return the x-Value
+        function getXPlotvalue(val) {
+
+            return (Math.round((chartWidth) / noOfPlots)) * val + (xSpace * 1.5) - 20;
+        }
+
+        // Return the y value
+        function getYPlotVale(val) {
+            return chartHeight - (((chartHeight - xSpace) / maxDataVal) * val);
+
+        }
+
+        // This function is used to draw the Legend
+        function drawLengends() {
+            ctx.fillStyle = "#7F462C";
+            ctx.fillRect(rect.startX, rect.startY, rect.w, rect.h);
+            //Drawing Inner White color Rectange with in Above brown rectangle to plot all the Lables with color,Text and Value.
+            ctx.fillStyle = "#FFFFFF";
+            rectInner.startX = rect.startX + 1;
+            rectInner.startY = rect.startY + 1;
+            rectInner.w = rect.w - 2;
+            rectInner.h = rect.h - 2;
+            ctx.fillRect(rectInner.startX, rectInner.startY, rectInner.w, rectInner.h);
+
+
+            labelBarX = rectInner.startX + 4;
+            labelBarY = rectInner.startY + 4;
+            labelBarWidth = rectInner.w - 10;
+            labelBarHeight = (rectInner.h / noOfPlots) - 5;
+            colorval = 0;
+            // here to draw all the rectangle for Lables with Image display
+            $('#DropDownList1 option').each(function () {
+                if (isNaN(parseInt($(this).val()))) {
+
+                }
+                else {
+                    ctx.fillStyle = pirChartColor[colorval];
+
+                    ctx.fillRect(labelBarX, labelBarY, labelBarWidth, labelBarHeight);
+
+                    //Draw the Pie Chart Label text and Value
+                    ctx.fillStyle = "#000000";
+                    ctx.font = '10pt Calibri';
+                    ctx.fillText($(this).text(), labelBarX + imagesize + 2, labelBarY + (labelBarHeight / 2)-10);
+                    ctx.fillText($(this).val(), labelBarX + imagesize + 2, labelBarY + (labelBarHeight /2)+10);
+                    // To Increment and draw the next bar ,label Text and Alart Image.
+
+                    labelBarY = labelBarY + labelBarHeight + 4;
+                    //  labelTextYXVal = labelBarY + labelBarHeight - 4;
+
+                }
+
+                colorval = colorval + 1;
+            });
+
+        }
+
+         // This is the main function to darw the Charts
+    function drawChart() {
+
+        ChangeChartColor();
+
+        // asign the images path for both Alert images
+        greenImage.src = '../images/Green.png';
+        redImage.src = '../images/Red.png';
+
+        LogoImage.src = '../images/shanu.jpg';
+
+        // Get the minumum and maximum value.here i have used the hidden filed from code behind wich will stored the Maximum and Minimum value of the Drop down list box.
+
+        minDataVal = $('input:text[name=hidListMin]').val();
+        maxDataVal = $('input:text[name=hidListMax]').val();
+
+        // Total no of plots we are going to draw.
+        noOfPlots = $("#DropDownList1 option").length;
+
+        maxValdivValue = Math.round((maxDataVal / noOfPlots));
+
+
+        //storing the Canvas Context to local variable ctx.This variable will be used to draw the Pie Chart
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+        //globalAlpha - > is used to display the 100% opoacity of chart .because at the bottom of the code I have used the opacity to 0.1 to display the water mark text with fade effect.
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = "#000000";
+        ctx.strokeStyle = '#000000';
+        //Every time we clear the canvas and draw the chart
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        //If need to draw with out legend for the PIE Chart
+        chartWidth = canvas.width - xSpace;
+        chartHeight = canvas.height - ySpace;
+
+
+        //  step 1) Draw legend $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$########################
+            chartWidth = canvas.width - ((canvas.width / 3) - (xSpace / 2));
+            chartHeight = canvas.height - ySpace - 10;
+
+            legendWidth = canvas.width - ((canvas.width / 3) - xSpace);
+            legendHeight = ySpace;
+
+            rect.startX = legendWidth;
+            rect.startY = legendHeight;
+            rect.w = canvas.width / 3 - xSpace - 10;
+            rect.h = canvas.height - ySpace - 10;
+
+            //In this method i will draw the legend with the Alert Image.
+            drawLengends();
+
+        // end step 1) $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+        var chartMidPosition = chartWidth / 2 - 60;
+
+        ////        //If need to draw with legend
+        ////        chartWidth = canvas.width - ((canvas.width / 3) - (xSpace / 2));
+        ////        chartHeight = canvas.height - ySpace - 10;
+
+
+        // Step 2 ) +++++++++++++ To Add Chart Titel and  Company Logo
+        //To Add Logo to Chart
+
+
+
+        var logoXVal = canvas.width - LogoImgWidth - 10;
+        var logolYVal = 0;
+
+        //here we draw the Logo for teh chart and i have used the alpha to fade and display the Logo.
+        ctx.globalAlpha = 0.6;
+
+        ctx.drawImage(LogoImage, logoXVal, logolYVal, LogoImgWidth-10, LogoImgHeight);
+
+        ctx.globalAlpha = 1;
+
+        ctx.font = '20pt Calibri';
+        ctx.fillStyle = "#15317E";
+
+        var titletxt = $('input:text[name=txtTitle]').val();
+
+        ctx.fillText(titletxt, chartMidPosition, chartHeight + 60);
+
+
+        ctx.fillStyle = "#000000";
+        ctx.font = '10pt Calibri';
+
+        // end step 2) +++++++++++ End of Title and Company Logo Add
+
+        // Step 3 ) +++++++++++++ toDraw the X-Axis and Y-Axis
+
+        //  >>>>>>>>> Draw Y-Axis and X-Axis Line(Horizontal Line)
+        // Draw the axises
+        //////ctx.beginPath();
+        //////ctx.moveTo(xSpace, ySpace);
+        //////// first Draw Y Axis
+        //////ctx.lineTo(xSpace, chartHeight);
+
+        //////// Next draw the X-Axis
+        //////ctx.lineTo(chartWidth, chartHeight);
+        //////ctx.stroke();
+        //  >>>>>>>>>>>>> End of X-Axis PIE Draw
+        //end step 3) +++++++++++++++++++++++
+
+
+        // Step 4) <<<<<<<<<<<<<<<<<<<<<<< To Draw X - Axis Plot Values <<<<<<<<<<<<< }}}}}}
+        // Draw the X value texts
+        // --->>>>>>>>>>>>  for the Bar Chart i have draw the X-Axis plot in with drawBarChart
+        //  <<<<<<<<<<<<<<<<<<<<<<< End of X Axis Draw
+
+        // end Step 4) <<<<<<<<<<<<<<<<<<<<<<<
+
+
+        // Step 5){{{{{{{{{{{{
+        // {{{{{{{{{{{{{To Draw the Y Axis Plot Values}}}}}}}}}}}}}}
+
+        ////////var vAxisPoints = 0;
+        ////////var max = maxDataVal;
+        ////////max += 10 - max % 10;
+        ////////for (var i = 0; i <= maxDataVal; i += maxValdivValue) {
+
+        ////////    ctx.fillStyle = fotnColor;
+        ////////    ctx.font = axisfontSize + 'pt Calibri';
+        ////////    ctx.fillText(i, xSpace - 40, getYPlotVale(i));
+
+        ////////    //Here we draw the Y-Axis point PIE
+        ////////    ctx.beginPath();
+        ////////    ctx.moveTo(xSpace, getYPlotVale(i));
+
+        ////////    ctx.lineTo(xSpace - 10, getYPlotVale(i));
+        ////////    ctx.stroke();
+        ////////    vAxisPoints = vAxisPoints + maxValdivValue;
+
+
+        ////////}
+
+         //}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+        //Step 5) *********************************************************
+        //Function to Draw our Chart here we can Call/Bar Chart/PIE Chart or Pie Chart
+
+        drawPieChart();
+
+        // end step 6) **************
+
+        //Step 7)  :::::::::::::::::::: to add the Water mark Text
+        var waterMarktxt = $('input:text[name=txtWatermark]').val();
+
+
+        // Here add the Water mark text at center of the chart
+        ctx.globalAlpha = 0.1;
+        ctx.font = '86pt Calibri';
+        ctx.fillStyle = "#000000";
+        ctx.fillText(waterMarktxt, chartMidPosition - 40, chartHeight / 2);
+
+        ctx.font = '10pt Calibri';
+        ctx.globalAlpha = 1;
+        /// end step 7) ::::::::::::::::::::::::::::::::::::::
+
+    }
+
+    function drawPieChart() {
+     
+        var lastend = 0;
+        var XvalPosition = xSpace;
+
+        chartWidth = (canvas.width / 2) - xSpace;
+        chartHeight = (canvas.height / 2) - (xSpace / 2);
+
+        widthcalculation = parseInt(((parseInt(chartWidth) - 100) / noOfPlots));
+
+        //Draw Xaxis Line
+        //-- draw bar X-Axis and Y-Axis Line
+        var XLineStartPosition = xSpace;
+        var yLineStartPosition = xSpace;
+        var yLineHeight = chartHeight;
+        var xLineWidth = chartWidth;
+
+        colorval = 0;
+        var chartTotalResult = getChartTotal();
+
+        $('#DropDownList1 option').each(function () {
+            
+            if (isNaN(parseInt($(this).val()))) {
+                
+            }
+            else
+                {
+        
+            ctx.fillStyle = pirChartColor[colorval];
+            ctx.beginPath();
+            ctx.moveTo(chartWidth, chartHeight);
+            //Here we draw the each Pic Chart arc with values and size.
+            ctx.arc(chartWidth, chartHeight + 6, chartHeight, lastend, lastend +
+              (Math.PI * 2 * (parseInt($(this).val()) / chartTotalResult)), false);
+          
+            ctx.lineTo(chartWidth, chartHeight);
+
+           ctx.fill();
+            lastend += Math.PI * 2 * (parseInt($(this).val()) / chartTotalResult);
+
+            //END Draw Bar Graph  **************==================********************
+           
+            }
+            colorval = colorval + 1;
+        });
+
+
+    }
+
+    function getChartTotal() {
+        var chartTotalResult = 0;
+        $('#DropDownList1 option').each(function () {
+            if (isNaN(parseInt($(this).val()))) {
+
+            }
+            else {
+                chartTotalResult += (typeof parseInt($(this).val()) == 'number') ? parseInt($(this).val()) : 0;
+            }
+        });
+        return chartTotalResult;
+    }
+
+
+    </script>
+</head>
+<body data-ng-controller="AngularJs_Controller">
+
+    <table style='width: 99%;table-layout:fixed;'>
+        <tr>
+            <td>
+                <table style="background-color:#FFFFFF;border: dashed 3px #6D7B8D; padding:10px;width: 99%;table-layout:fixed;" cellpadding="12" cellspacing="12">
+                    <tr style="height: 30px; background-color:#f06a0a ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td align="center">
+                            <h3> SHANU MVC Dashboard with Chart using AngularJS </h3>
+                        </td>
+
+                    </tr>
+                    <tr style="background-color:#FFFFFF; border:dotted 3px #6D7B8D; padding: 6px;width:99%;">
+                        <td>
+                        You can write your own SQL query to bind dynamic Dashboard. 
+                            This program makes your work easy to display any Table/Columns details with your entered where Condition, 
+                            Order BY and with Group By Option for the selected database on your home page.In this dashboard page you can build any data to display Pie Chart at runtime.
+                                    </td>
+                    </tr>
+
+
+
+         </table>
+                      
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>
+
+
+
+                <table style="background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding :5px;width :99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Build Your Dashboard Query : </h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="width :99%;">
+                                <tr>
+
+                                    <td width="20"></td>
+                                    <td valign="top">
+
+                                        <table style="color:#9F000F;font-size:large;width :99%;" cellpadding="4" cellspacing="6">
+                                            <tr>
+                                                <td>
+                                                    <b>Dynamic SQL Query : </b>
+
+                                                </td>
+                                                <td>
+                                                    <div style="float:left;width:80%;">
+                                                        <textarea name="txtQuerys" ng-model="Querys" value="" style="width:100%"></textarea>
+                                                    </div>
+                                                </td>
+                                                <td align="left">
+                                                    <input type="checkbox" ng-model="isQuerys"><b> Is Query </b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Column Names : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtColumnNames" ng-model="ColumnNames" value="UserName,UserType,Phone" style="width: 350px;" maxlength=500 />
+                                                </td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Table Names : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtTableNames" ng-model="TableNames" value="UserDetails" size="120" />
+                                                </td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Where Condition : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtConditions" ng-model="Conditions" value="" size="120" />
+                                                    <br />
+                                                </td>
+                                                <td align="left">
+                                                    <input type="checkbox" ng-model="isCondition"> <b> Is Condition  </b>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Group By : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtGroupBys" ng-model="GroupBys" value="" size="120" />
+                                                    <br />
+                                                </td>
+                                                <td align="left"> <input type="checkbox" ng-model="isGroupBy"><b> Is GroupBy  </b></td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>
+                                                    <b>Order By : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtOrderBys" ng-model="OrderBys" value="" size="120" />
+                                                    <br />
+                                                </td>
+                                                <td align="left"><input type="checkbox" ng-model="isOrderBy"><b> Is OrderBy  </b> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Chart SQL Query : </b>
+
+                                                </td>
+                                                <td>
+                                                    <div style="float:left;width:80%;">
+                                                        <textarea name="txtchartQuerys" ng-model="chartQuerys" value="Select ItemName as Name,SUM(Price) as Value FROM ItemDetail GROUP BY  ItemName ORDER BY Value,Name" style="width:100%"></textarea>
+
+                                                    </div>
+                                                </td>                                                
+                                                <td>
+                                                    <select name="DropDownList1" id="DropDownList1" ng-model="selectedItem" required>
+                                                        <option ng-repeat="option in itemData" value="{{option.Value}}">{{option.Name}}</option>
+                                                    </select>
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" align="center">
+                                                    <input type="submit" value="Search" style="background-color:#3f9835;color:#FFFFFF;border-color:crimson;border-style:dashed;height:40px;width:500px;" ng-click="searchDetails()" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">
+                                                    Note : The Chart Select query should be contain only 2 column first is the name and next one is as value .Here name can be 
+                                                    your item name or any item you want to display as legend for chart and value is the actual value to be draw for chart it can be count ,max,min,sum or any Aggregate result to draw your chart for example 
+                                                    here is the sample query "Select ItemName as Name,SUM(Price) as Value FROM ItemDetail GROUP BY  ItemName".
+
+
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Chart Setting : </h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="color:#9F000F;font-size:large;width :99%;" cellpadding="4" cellspacing="6">
+                                <tr>
+
+                                    <td >
+                                        <b>  Enter Chart Title: </b>
+
+                                    </td>
+                                    <td>
+
+                                        <input type="text" name="txtTitle" ng-model="chartTitle" value="SHANU Pie Chart" />
+
+                                    </td>
+                                    <td >
+                                        <b>Chart WaterMark:</b>
+
+                                    </td>
+                                    <td >
+
+                                        <input type="text" name="txtWatermark" ng-model="waterMark" value="SHANU" style="width:60px" />
+
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="Click to Draw Chart" style="background-color:#ff0000;color:#FFFFFF;border-color:gold;border-style:dashed;height:40px;" onClick="drawChart()" />
+
+                                    </td>
+</table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="background-color:#FFFFFF; border :dashed 3px #6D7B8D; padding:10px;width: 99%;table-layout:fixed;" cellpadding="12" cellspacing="12">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td align="center" colspan="2">
+                            <h3> Dynamic Dashboard Details </h3>
+                        </td>
+
+                    </tr>
+                    <tr style="background-color:#FFFFFF; border:dotted 3px #6D7B8D; padding: 6px;width: 99%;">
+                        <td align="center">
+
+                            <table>
+                                <tr>
+                                    <td align="center">
+                                        <SECTION style="border-style: solid; border-width: 2px; width: 560px;">
+
+                                            <CANVAS HEIGHT="400px" WIDTH="560px" ID="canvas">
+                                                Your browser is not supporting HTML5 Canvas .Upgrade Browser to view this program or check with Chrome or in Firefox.
+                                            </CANVAS>
+
+                                        </SECTION>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="hidden" id="hidFirstVal" value="100" />
+
+                            <input type="text" name="hidListMax" ng-model="maxnew" style="display: none;" />
+                            <input type="text" name="hidListMin" ng-model="minsnew" style="display: none;" />
+
+                        </td>
+                        <td valign="top">
+                            <table style="width: 99%; background-color:#FFFFFF; border solid 2px #6D7B8D; padding 5px;width 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+
+                                <thead>
+                                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                                        <th ng-repeat="(header, value) in dashBoadData[0]" width="100" align="center">
+                                            <strong>   {{header}} </strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in dashBoadData">
+                                        <td ng-repeat="cell in row" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">    {{cell}} </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                        </td>
+                    </tr>
+                </table>
+</body>
+</html>
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-animate.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+<script src="~/Scripts/MYAngular/controller.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>

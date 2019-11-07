@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/3e00d0a6-7844-40b8-8b92-12c0e4eeaed2Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MSCRM - How to call Rest Service from Plugins</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>MSCRM - How to call Rest Service from Plugins</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            REST, Dynamics CRM, Microsoft Dynamics CRM 2011, Microsoft CRM SDK, C# Microsoft Dynamics CRM 2011, Microsoft Dynamics CRM 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Plug-in
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/9/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-call-Rest-Service-b0b188df">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="background-color:#ffffff; border:0px; margin:0px 0px 24px; padding:0px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+In many case we need to integrate data from external source. In my solutions I needed to load and view information from external source in our CRM.&nbsp; First of all we created the Rest service to expones the right call at our external source.</p>
+<p style="background-color:#ffffff; border:0px; margin:0px 0px 24px; padding:0px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">Step 1: Create the Service Rest</strong></p>
+<p style="background-color:#ffffff; border:0px; margin:0px 0px 24px; padding:0px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold"><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">Step 2:
+</strong>Deploy the Service Rest</strong></p>
+<p style="background-color:#ffffff; border:0px; margin:0px 0px 24px; padding:0px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold"><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">Step 3:
+</strong>Write plugin to consume the Service Rest</strong></p>
+<p style="background-color:#ffffff; border:0px; margin:0px 0px 24px; padding:0px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<span style="text-decoration:underline"><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">On internet you can find a lot of tutorial and manul that tey discuss about the right step to
+ create a rest service. This sample will explain only the right </strong><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">way to youse inside the plugin</strong></span><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold"><br>
+</strong></p>
+<p style="background-color:#ffffff; border:0px; margin:0px 0px 24px; padding:0px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<em><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">In our Plugin we call this
+</strong><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">rest service:</strong></em><strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold"><br>
+</strong></p>
+<ol style="background-color:#ffffff; border:0px; margin:0px 0px 24px 1.5em; padding:0px; vertical-align:baseline; list-style:decimal; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<li style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline">
+Create new Dynamics 2011 CRM Plugin Library projects </li><li style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline">
+Add the above generated .CS class into the plugin solution. In&nbsp;Visual Studio, select
+<strong style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline; font-weight:bold">
+CRM Explorer</strong>, open <strong>entities node </strong>and select an entity (in example I use the Account). click right-click on entity and select Create plugin
+</li><li style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline">
+Set all information (In the example I choose <strong>Update</strong>) </li><li style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline">
+Open PostAccountUpdate.cs </li><li style="background-color:transparent; border:0px; margin:0px; padding:0px; vertical-align:baseline">
+And call the Rest Service. </li></ol>
+<p style="background-color:#ffffff; border:0px none; margin:0px 0px 24px; padding:0px 0px 0px 60px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+To use it we need<code> </code><span style="background-color:#ffff00; color:#ff0000"><code>Newtonsoft.Json library.<br>
+</code></span></p>
+<p style="background-color:#ffffff; border:0px none; margin:0px 0px 24px; padding:0px 0px 0px 60px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<span style="background-color:#ffff00; color:#ff0000">You can install the library from Nuget Packages:</span></p>
+<p style="background-color:#ffffff; border:0px none; margin:0px 0px 24px; padding:0px 0px 0px 60px; vertical-align:baseline; color:#333333; font-family:Georgia,'Bitstream Charter',serif; font-size:16px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:24px; orphans:2; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">
+<span style="background-color:#ffff00; color:#ff0000">Hera the instruction : http://www.nuget.org/packages/Newtonsoft.Json</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">var uri = new Uri(&quot;http://localhost:9090/GetHelloWorld&quot;);
+
+                var request = WebRequest.Create(uri);
+                request.Method = WebRequestMethods.Http.Get;
+                request.ContentType = &quot;application/json&quot;;
+                try
+                {
+                    string helloWorldString = &quot;&quot;;
+                    using (var response = request.GetResponse())
+                    {
+                        using (var reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            string tmp = reader.ReadToEnd();
+                            helloWorldString = JsonConvert.DeserializeObject&lt;string&gt;(tmp);
+                            Debug.Print(&quot;I read this string {0}: &quot;, helloWorldString);
+                        }
+                    }
+
+                    var entity = (Entity) context.InputParameters[&quot;Target&quot;];
+                    if (entity.Contains(&quot;description&quot;))
+                        entity.Attributes[&quot;description&quot;] = helloWorldString;
+                    else
+                        entity.Attributes.Add(&quot;description&quot;, helloWorldString);
+
+                    //Update Sales Order Entity
+                    if (context.Depth == 1)
+                        service.Update(entity);
+
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }</pre>
+<div class="preview">
+<pre class="csharp">var&nbsp;uri&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Uri(<span class="cs__string">&quot;http://localhost:9090/GetHelloWorld&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;request&nbsp;=&nbsp;WebRequest.Create(uri);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.Method&nbsp;=&nbsp;WebRequestMethods.Http.Get;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.ContentType&nbsp;=&nbsp;<span class="cs__string">&quot;application/json&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;helloWorldString&nbsp;=&nbsp;<span class="cs__string">&quot;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;response&nbsp;=&nbsp;request.GetResponse())&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;reader&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamReader(response.GetResponseStream()))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;tmp&nbsp;=&nbsp;reader.ReadToEnd();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helloWorldString&nbsp;=&nbsp;JsonConvert.DeserializeObject&lt;<span class="cs__keyword">string</span>&gt;(tmp);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Debug.Print(<span class="cs__string">&quot;I&nbsp;read&nbsp;this&nbsp;string&nbsp;{0}:&nbsp;&quot;</span>,&nbsp;helloWorldString);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;entity&nbsp;=&nbsp;(Entity)&nbsp;context.InputParameters[<span class="cs__string">&quot;Target&quot;</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(entity.Contains(<span class="cs__string">&quot;description&quot;</span>))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity.Attributes[<span class="cs__string">&quot;description&quot;</span>]&nbsp;=&nbsp;helloWorldString;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity.Attributes.Add(<span class="cs__string">&quot;description&quot;</span>,&nbsp;helloWorldString);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Update&nbsp;Sales&nbsp;Order&nbsp;Entity</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(context.Depth&nbsp;==&nbsp;<span class="cs__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;service.Update(entity);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception&nbsp;ex)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">throw</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><em>PostAccountUpdate - Post update for account.</em> </li></ul>
+<h1>More Information</h1>
+<p><em><em>For more information please contact me .... <a title="contact me" href="http://nothingnessit.wordpress.com/" >
+http://nothingnessit.wordpress.com/</a></em></em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=D051540662D994D8842C2D71427E5FFB" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=B296DC89199ECF6E28A0D94C3246485C" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mobile Application for iOS, Android, and windows using Apache Cordova</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Mobile Application for iOS, Android, and windows using Apache Cordova</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Android, iOS, Windows Phone 8, HTML5/JavaScrip<wbr />t
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            mobile application development, Cross-Platform, cross-platform development
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/6/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Mobile-Application-for-iOS-91995fa8">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>Simple steps of creating Crossplatform Mobile Application for IOs, Android and Windows using Apache Cordova.</em></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>Latest Version of Visual Studio 2015 with all feature including Apache Cordova and Android Emulators.</em></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><em>This Sample is creating a simple Cross Platform project in easy steps below mention the snapshots as well as you can download and run on local using Cordova you can target all platforms and easy to install plugins below are given screen shots through
+ which you can learn easily.</em></p>
+<p><em>Click create New Project &amp; in javascrpt panel click on Blank App (Apache Cordava).</em></p>
+<p>&nbsp;</p>
+<p><img id="146892" width="1366" height="768" src="description/0.jpg" alt=""></p>
+<p>&nbsp;</p>
+<p><em>Name your project and click ok.</em></p>
+<p><img id="146896" width="1366" height="768" src="description/1.png" alt=""><strong>&nbsp;</strong><em>&nbsp;</em></p>
+<p>&nbsp;</p>
+<p><em>Take a look at the Solution explorer the whole hierarchy of your project.</em></p>
+<p><em><img id="146900" width="1366" height="768" src="description/2.png" alt=""><br>
+</em></p>
+<p>&nbsp;</p>
+<p><em>Open the www directroy from solution explorer where all pages, css and images are exisit.</em></p>
+<p><img id="146901" width="1366" height="768" src="description/3.png" alt=""></p>
+<p><em>There is also config file where you can set all settings relates to application (e.g application version, orientaion,full screen setting, Add plugins Target version etc).</em></p>
+<p><em><span id="146902">&nbsp;</span><br>
+</em></p>
+<p>&nbsp;</p>
+<p><em>Add Plugins.</em></p>
+<p><em><img id="146903" width="1366" height="768" src="description/5.png" alt=""><strong>&nbsp;</strong><em>&nbsp;</em><br>
+</em></p>
+<p>&nbsp;</p>
+<p><em>The first default file is index.html</em></p>
+<p><em><img id="146904" width="1366" height="768" src="description/6.png" alt=""><br>
+</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><em>You can add file by right click on www and click on add item new dialog appears and add file you want to add file, enter file name and click add.</em></p>
+<p><img id="146905" width="1366" height="768" src="description/7.png" alt=""></p>
+<p>&nbsp;</p>
+<p><em>change the code what you want to do as same as html tags as you shown below.</em></p>
+<p><em><img id="146906" width="1366" height="768" src="description/8.png" alt=""><br>
+</em></p>
+<p><em><br>
+</em></p>
+<p><em>Build the project &amp; run on Google Android Emulator as well as Windows.</em></p>
+<p><em><img id="146907" width="1366" height="768" src="description/9.png" alt=""><br>
+</em></p>
+<p>&nbsp;</p>
+<p><em>Application runs successfull.</em></p>
+<p><img id="146908" width="1366" height="768" src="description/10.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<pre><em><strong>Find the mobile application file of current project in bin folder. </strong><br><strong>Immplent your logic in cordova &amp; Target the all platforms. </strong><br></em></pre>
+<div></div>
+<p><em>&nbsp;</em></p>
+<div><em><br>
+</em></div>
+<p>&nbsp;</p>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><em><em>index.html - Your default application file. </em></em></li><li><em><em>config.xml - Configuration file of you project for setting up your application.<br>
+</em></em></li></ul>
+<h1>More Information</h1>
+<p><em>feel free to contact at t-surkum@microsoft.com if any case you are facing any problem redarding building of Cordova Application.</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

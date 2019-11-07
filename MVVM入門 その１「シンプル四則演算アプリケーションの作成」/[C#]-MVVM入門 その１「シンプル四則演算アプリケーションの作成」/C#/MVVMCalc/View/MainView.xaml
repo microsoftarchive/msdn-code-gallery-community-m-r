@@ -1,0 +1,36 @@
+﻿<Window x:Class="MVVMCalc.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MVVMCalc.ViewModel"
+        Title="簡単電卓" 
+        Width="300" 
+        SizeToContent="Height"
+        SnapsToDevicePixels="True">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- ラベル -->
+        <Label Content="左辺値：" />
+        <Label Content="計算方法：" Grid.Row="1" />
+        <Label Content="右辺値" Grid.Row="2" />
+
+        <!-- 入力項目 -->
+        <TextBox Text="{Binding Path=Lhs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" />
+        <ComboBox ItemsSource="{Binding Path=CalculateTypes}" SelectedItem="{Binding Path=SelectedCalculateType}" SelectedIndex="0" Grid.Row="1" Grid.Column="1" />
+        <TextBox Text="{Binding Path=Rhs, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" />
+        <Button Content="計算実行" Command="{Binding Path=CalculateCommand}" Grid.Row="3" Grid.ColumnSpan="2" />
+        <TextBlock Text="{Binding Path=Answer}" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+    </Grid>
+</Window>

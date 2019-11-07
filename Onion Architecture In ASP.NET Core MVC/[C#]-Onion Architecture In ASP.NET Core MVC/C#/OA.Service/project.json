@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.1.0-*",
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "OA.Data": {
+      "target": "project",
+      "version": "1.1.0-*"
+    },
+    "OA.Repo": {
+      "target": "project",
+      "version": "1.1.0-*"
+    }
+  },
+
+  "frameworks": {
+     "netcoreapp1.1": {
+      "imports": [ "dotnet5.6", "portable-net45+win8" ]
+    }
+  }
+}

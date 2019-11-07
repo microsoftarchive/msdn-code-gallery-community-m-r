@@ -1,0 +1,41 @@
+<section data-ng-controller="EventsController">
+    <div class="panel panel-default alarms-list">
+        <div class="panel-heading clearfix">
+            <h3>Events</h3>
+
+            <div class="filters-container pull-right clearfix">
+                <label class="control-label">
+                </label>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h3 ng-show="count == 0" class="ng-hide">There are no events</h3>
+                </div>
+                <h4 class="pull-right"><strong>{{count}}</strong> results</h4>
+            </div>
+            <div class="list-container" ng-if="count != 0">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>License Plate</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr bindonce="alarms" ng-repeat="event in events" class="table-row" ui-sref="editDevice({deviceId: event.DeviceId})">
+                            <td>{{event.Time}}</td>
+                            <td>{{event.DeviceId}}</td>
+                            <td>{{event.Message}}</td>
+                        </tr>                 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer clearfix" ng-repeat-end>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.CrossCutting", "MyCompany.Common.CrossCutting\MyCompany.Common.CrossCutting.csproj", "{2905329B-1AFB-4E7E-A345-44B4603B3FC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B61CAC5D-D343-403E-9AA1-F8EE3C645278}"
+	ProjectSection(SolutionItems) = preProject
+		CommonAssembly.cs = CommonAssembly.cs
+		CustomCodeAnalysisDictionary.xml = CustomCodeAnalysisDictionary.xml
+		ExternalLibs\MyCompany.Expenses.AzureEventBusPlugin.dll = ExternalLibs\MyCompany.Expenses.AzureEventBusPlugin.dll
+		ExternalLibs\MyCompany.Expenses.Data.dll = ExternalLibs\MyCompany.Expenses.Data.dll
+		ExternalLibs\MyCompany.Expenses.Model.dll = ExternalLibs\MyCompany.Expenses.Model.dll
+		ExternalLibs\MyCompany.Staff.AzureEventBusPlugin.dll = ExternalLibs\MyCompany.Staff.AzureEventBusPlugin.dll
+		ExternalLibs\MyCompany.Staff.Model.dll = ExternalLibs\MyCompany.Staff.Model.dll
+		ExternalLibs\MyCompany.Travel.AzureEventBusPlugin.dll = ExternalLibs\MyCompany.Travel.AzureEventBusPlugin.dll
+		ExternalLibs\MyCompany.Travel.Data.dll = ExternalLibs\MyCompany.Travel.Data.dll
+		ExternalLibs\MyCompany.Travel.Model.dll = ExternalLibs\MyCompany.Travel.Model.dll
+		ExternalLibs\MyCompany.Vacation.AzureEventBusPlugin.dll = ExternalLibs\MyCompany.Vacation.AzureEventBusPlugin.dll
+		ExternalLibs\MyCompany.Vacation.Data.dll = ExternalLibs\MyCompany.Vacation.Data.dll
+		ExternalLibs\MyCompany.Vacation.Model.dll = ExternalLibs\MyCompany.Vacation.Model.dll
+		ExternalLibs\MyCompany.Visitors.AzureEventBusPlugin.dll = ExternalLibs\MyCompany.Visitors.AzureEventBusPlugin.dll
+		ExternalLibs\MyCompany.Visitors.Data.dll = ExternalLibs\MyCompany.Visitors.Data.dll
+		ExternalLibs\MyCompany.Visitors.Model.dll = ExternalLibs\MyCompany.Visitors.Model.dll
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.Security", "MyCompany.Common.Security\MyCompany.Common.Security.csproj", "{70220A8F-AC85-40E7-B0F3-7BC85066A7ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.EventBus", "MyCompany.Common.EventBus\MyCompany.Common.EventBus.csproj", "{DA6F2A98-E6FA-4908-A05F-3A2BF587A37E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.EventBus.Tests", "MyCompany.Common.EventBus.Tests\MyCompany.Common.EventBus.Tests.csproj", "{199BA47A-02AC-44EC-B9C2-AA8225D3DC98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.EventBus.Plugin.Dummy", "MyCompany.Common.EventBus.Plugin.Dummy\MyCompany.Common.EventBus.Plugin.Dummy.csproj", "{E6D2A8AC-F1BE-45EF-A967-490CB597513B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.Web", "MyCompany.Common.Web\MyCompany.Common.Web.csproj", "{E5BFAA95-F8B5-4257-805F-E1A15F00AE62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.EventBus.Service", "MyCompany.Common.EventBus.Service\MyCompany.Common.EventBus.Service.csproj", "{932DDE08-67C4-4006-9748-BD7A02BF9FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.Notification", "MyCompany.Common.Notification\MyCompany.Common.Notification.csproj", "{D576FDFB-4F3C-40E8-AF6C-96BF7386E458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.Notification.Tests", "MyCompany.Common.Notification.Tests\MyCompany.Common.Notification.Tests.csproj", "{9D36C567-A8A5-4052-BBB9-6FB6E689A50F}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "MyCompany.Common.EventBus.Cloud", "MyCompany.Common.EventBus.Cloud\MyCompany.Common.EventBus.Cloud.ccproj", "{71A52E25-6349-4901-8011-30D8A6087528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCompany.Common.EventBus.Worker", "MyCompany.Common.EventBus.Worker\MyCompany.Common.EventBus.Worker.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2905329B-1AFB-4E7E-A345-44B4603B3FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2905329B-1AFB-4E7E-A345-44B4603B3FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2905329B-1AFB-4E7E-A345-44B4603B3FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2905329B-1AFB-4E7E-A345-44B4603B3FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70220A8F-AC85-40E7-B0F3-7BC85066A7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70220A8F-AC85-40E7-B0F3-7BC85066A7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70220A8F-AC85-40E7-B0F3-7BC85066A7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70220A8F-AC85-40E7-B0F3-7BC85066A7ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6F2A98-E6FA-4908-A05F-3A2BF587A37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6F2A98-E6FA-4908-A05F-3A2BF587A37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6F2A98-E6FA-4908-A05F-3A2BF587A37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6F2A98-E6FA-4908-A05F-3A2BF587A37E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199BA47A-02AC-44EC-B9C2-AA8225D3DC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199BA47A-02AC-44EC-B9C2-AA8225D3DC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199BA47A-02AC-44EC-B9C2-AA8225D3DC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199BA47A-02AC-44EC-B9C2-AA8225D3DC98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D2A8AC-F1BE-45EF-A967-490CB597513B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D2A8AC-F1BE-45EF-A967-490CB597513B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D2A8AC-F1BE-45EF-A967-490CB597513B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D2A8AC-F1BE-45EF-A967-490CB597513B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BFAA95-F8B5-4257-805F-E1A15F00AE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BFAA95-F8B5-4257-805F-E1A15F00AE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BFAA95-F8B5-4257-805F-E1A15F00AE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BFAA95-F8B5-4257-805F-E1A15F00AE62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{932DDE08-67C4-4006-9748-BD7A02BF9FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932DDE08-67C4-4006-9748-BD7A02BF9FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932DDE08-67C4-4006-9748-BD7A02BF9FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932DDE08-67C4-4006-9748-BD7A02BF9FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D576FDFB-4F3C-40E8-AF6C-96BF7386E458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D576FDFB-4F3C-40E8-AF6C-96BF7386E458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D576FDFB-4F3C-40E8-AF6C-96BF7386E458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D576FDFB-4F3C-40E8-AF6C-96BF7386E458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D36C567-A8A5-4052-BBB9-6FB6E689A50F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D36C567-A8A5-4052-BBB9-6FB6E689A50F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D36C567-A8A5-4052-BBB9-6FB6E689A50F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D36C567-A8A5-4052-BBB9-6FB6E689A50F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A52E25-6349-4901-8011-30D8A6087528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A52E25-6349-4901-8011-30D8A6087528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A52E25-6349-4901-8011-30D8A6087528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A52E25-6349-4901-8011-30D8A6087528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

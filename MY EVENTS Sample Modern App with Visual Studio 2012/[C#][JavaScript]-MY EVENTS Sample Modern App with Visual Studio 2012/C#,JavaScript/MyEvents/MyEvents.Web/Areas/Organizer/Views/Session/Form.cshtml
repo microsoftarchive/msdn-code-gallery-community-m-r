@@ -1,0 +1,45 @@
+﻿@model MyEvents.Model.Session
+@{
+    ViewBag.Title = "my events - session";
+}
+<div id="session-form" class="form">
+    <span class="section-title">@(Model.SessionId == 0 ? "create new " : "edit ")
+        session</span>
+    @using (Html.BeginForm("Save", "Session", "Post"))
+    {
+        <section class="box opacity-background">
+            @Html.HiddenFor(model => model.SessionId)
+            @Html.HiddenFor(model => model.EventDefinitionId)
+            <div class="wrapper">
+                <div class="left half">
+                    <div class="field">
+                        <label for="Title">title</label>
+                        @Html.EditorFor(model => model.Title)
+                    </div>
+                    <div class="field">
+                        <label for="Description">description</label>
+                        @Html.TextAreaFor(model => model.Description, new { rows = "10", @class = "text-box" })
+                    </div>
+                </div>
+                <div class="right half">
+                    <div class="field">
+                        @Html.LabelFor(model => model.Speaker)
+                        @Html.EditorFor(model => model.Speaker)
+                    </div>
+                    <div class="field">
+                        @Html.LabelFor(model => model.Biography)
+                        @Html.TextAreaFor(model => model.Biography, new { rows = "10", @class = "text-box" })
+                    </div>
+                    <div class="field">
+                        @Html.LabelFor(model => model.TwitterAccount)
+                        @Html.EditorFor(model => model.TwitterAccount)
+                    </div>
+                </div>
+            </div>
+            <section id="buttons" class="right">
+                @Html.ActionLink("cancel", "Manage", new { eventDefinitionId = Model.EventDefinitionId }, new { @class = "button" })
+                <input id="save-session-button" type="submit" value="save" class="button button-highlighted" />
+            </section>
+        </section>
+    }
+</div>

@@ -1,0 +1,86 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Model.EventDefinition
+@{
+    ViewBag.Title = "my events - " + @Model.Name + " event detail";
+}
+@section Meta
+{
+    <meta name="title" content="@Model.Name" />
+    <meta name="description" content="@Model.Description" />
+}
+@Html.Partial("_ShareMenu")
+@section Scripts {
+    <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    @Scripts.Render("~/Attendee/Event/DetailScripts/")
+}
+
+<article id="detail">
+    <header>
+        <h1>@Model.Name.</h1>
+        @Html.HiddenFor(model => model.Name)
+    </header>
+    <p>@Model.Description</p>
+    @Html.HiddenFor(model => model.Description)
+
+    <aside class="logo-and-date">
+        <div class="left">
+            <img src="@Url.Action("EventLogo", "Event", new { eventDefinitionId = Model.EventDefinitionId })"/>
+        </div>
+        <div class="right">
+            <header>
+                <h1><time datetime="@Model.Date.ToString("R")">@Model.Date.ToString("MMMM") @Model.Date.Day.</time><br />
+                    @Model.City</h1>
+            </header>
+            <footer>
+                <p>
+                    <img src="@Url.Content("~/Styles/Images/organizer-icon.png")" /> @Model.Organizer.Name
+                </p>
+                <p>
+                    <a href="http://www.twitter.com/@Model.TwitterAccount" class="twitter">
+                        <img src="@Url.Content("~/Styles/Images/twitter-speaker.png")" /> @Model.TwitterAccount
+                    </a>
+                </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </aside>
+    <div class="address">
+        @Model.Address<br />
+        @Model.ZipCode @Model.City.
+    </div>
+
+    <div id="localizationMap" class="map">
+        @Html.HiddenFor(model => model.Latitude)
+        @Html.HiddenFor(model => model.Longitude)
+    </div>
+</article>
+
+<section id="actions">
+    <a href="@Url.Action("ScheduleMobile", new { eventDefinitionId = Model.EventDefinitionId })" class="button">
+        <img src="@Url.Content("~/Styles/Images/schedule.png")" />
+        view event schedule
+    </a>
+    @if (Model.Registered)
+    {
+        <div class="message">
+            <p>already registered to this event</p>
+        </div>
+    }
+    else
+    {
+        <a href="@Url.Action("Register", "Event", new { eventDefinitionId = Model.EventDefinitionId })" class="button register">
+            register with <strong>Facebook</strong>            
+        </a>
+    }
+</section>
+
+
+<section id="tweets">
+    <header>
+        <h2>tweets <img src="@Url.Content("~/Styles/Images/twitter-timeline.png")" /></h2>
+        @Html.Hidden("TwitterAccount", Model.TwitterAccount)
+    </header>
+        <div id="last-tweets">
+    </div>
+</section>
+

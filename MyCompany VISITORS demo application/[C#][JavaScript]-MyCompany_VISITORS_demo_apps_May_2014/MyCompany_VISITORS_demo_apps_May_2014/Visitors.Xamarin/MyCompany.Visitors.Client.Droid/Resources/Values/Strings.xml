@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">MyCompany.Visitors.Client.Droid</string>
+  <string name="menu_add">Add New Visit</string>
+  <string name="menu_settings">Settings</string>
+</resources>

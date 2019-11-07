@@ -1,0 +1,236 @@
+﻿<UserControl x:Class="MyCompany.Travel.Client.Desktop.Views.TravelRequestForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:val="clr-namespace:MyCompany.Travel.Client.Desktop.Validations"
+             xmlns:control="clr-namespace:MyCompany.Travel.Client.Desktop.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="1400" d:DesignWidth="1000"
+             DataContext="{Binding TravelRequestVM, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70px"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="20px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Style="{StaticResource BackButtonStyle}"
+                ToolTip="{Binding Back, Source={StaticResource Provider}, Mode=OneWay}"                
+                Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.CancelCommand }" >
+            <Image Source="/Resources/Images/back.png" Stretch="None"></Image>
+        </Button>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource FormTitleStyle}">
+            <Run Style="{StaticResource Title}" Text="{Binding FormTitle, Mode=OneWay}" >
+            </Run>
+        </TextBlock>
+        <Image Grid.Row="0" Width="70" Height="70" Grid.Column="1" HorizontalAlignment="Right" Source="{Binding TravelRequest.EmployeePhoto, Converter={StaticResource ByteToImageConverter}}" Margin="0,0,200,0"
+                   Stretch="UniformToFill"></Image>
+
+        <Border Visibility="{Binding TravelRequest.Employee, Converter={StaticResource EmployeeToVisibilityConverter}}" Width="200" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" Background="{StaticResource module-primary-color-light-brush}" 
+                    Padding="15,10,5,5">
+            <TextBlock>
+                    <Run Style="{StaticResource ListTextBigLight}" Text="{Binding TravelRequest.Employee.FirstName}"></Run>
+                    <Run Style="{StaticResource ListTextBigLight}" Text="{Binding TravelRequest.Employee.LastName}"></Run>
+                    <LineBreak></LineBreak>
+                    <Run Style="{StaticResource ListTextSmallLight}" Text="{Binding TravelRequest.Employee.JobTitle}"></Run>
+            </TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Padding="20,10,20,20" Margin="0, 8"  Background="{StaticResource section-background-color-brush}">
+            <Grid Height="auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="{Binding Employee, Source={StaticResource Provider}, Mode=OneWay}"
+                           Style="{StaticResource LabelStyle}"></TextBlock>
+                <control:ComboBoxKeyboard Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding EmployeesList}" 
+                                          Style="{StaticResource ComboBox}" IsEditable="True"
+                                          IsTextSearchEnabled="True" DisplayMemberPath="FullName"
+                                          TextSearch.TextPath="FullName">
+                    <ComboBox.SelectedItem>
+                        <Binding Path="SelectedEmployee" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>                                
+                                <val:SelectedEmployeeValidationRule ValidatesOnTargetUpdated="True" ValidationStep="UpdatedValue"></val:SelectedEmployeeValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </ComboBox.SelectedItem>
+                </control:ComboBoxKeyboard>
+                <TextBlock Grid.Row="2" Text="{Binding Name, Source={StaticResource Provider}, Mode=OneWay}"
+                           Style="{StaticResource LabelStyle}"></TextBlock>
+                <control:TextBoxKeyboard Style="{StaticResource TextBox}" Grid.Row="3" Grid.ColumnSpan="3">
+                    <TextBox.Text>
+                        <Binding Path="Name" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" NotifyOnSourceUpdated="True">
+                            <Binding.ValidationRules>
+                                <val:RequiredValidationRule ValidatesOnTargetUpdated="True"></val:RequiredValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </control:TextBoxKeyboard>
+                <TextBlock   Grid.Row="4" Style="{StaticResource LabelStyle}"
+                             Text="{Binding Kind, Source={StaticResource Provider}, Mode=OneWay}"></TextBlock>
+                <RadioButton Grid.Row="5" Grid.Column="0" Style="{StaticResource FormRadios}" IsChecked="{Binding Path=TravelType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Roundtrip, Mode=TwoWay}"
+                             Content="{Binding RoundTrip, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <RadioButton Grid.Row="5" Grid.Column="2" Style="{StaticResource FormRadios}" IsChecked="{Binding Path=TravelType, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=OneWay, Mode=TwoWay}"
+                             Content="{Binding OneWay, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <TextBlock   Grid.Row="6" Style="{StaticResource LabelStyle}"
+                             Text="{Binding Origin, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <TextBlock   Grid.Row="6" Grid.Column="2" Style="{StaticResource LabelStyle}"
+                             Text="{Binding Destination, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <control:TextBoxKeyboard Style="{StaticResource TextBox}" Grid.Row="7" Grid.Column="0" >
+                    <TextBox.Text >
+                        <Binding Path="TravelRequest.From" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" NotifyOnSourceUpdated="True" >
+                            <Binding.ValidationRules>
+                                <val:RequiredValidationRule ValidatesOnTargetUpdated="True"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>                    
+                </control:TextBoxKeyboard>
+                <control:TextBoxKeyboard Style="{StaticResource TextBox}" Grid.Row="7" Grid.Column="2" >
+                    <TextBox.Text >
+                        <Binding Path="TravelRequest.To" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" NotifyOnSourceUpdated="True" >
+                            <Binding.ValidationRules>
+                                <val:RequiredValidationRule ValidatesOnTargetUpdated="True"></val:RequiredValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </control:TextBoxKeyboard>
+                <TextBlock   Grid.Row="8" Style="{StaticResource LabelStyle}"
+                             Text="{Binding From, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <TextBlock   Grid.Row="8" Grid.Column="2" Style="{StaticResource LabelStyle}"
+                             Text="{Binding To, Source={StaticResource Provider}, Mode=OneWay}"
+                             Visibility="{Binding IsRoundTrip, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <DatePicker  Grid.Row="9" Grid.Column="0" SelectedDate="{Binding Depart, Mode=TwoWay}" DisplayDateStart="{Binding MinStartDate, Mode=OneWay}" >
+                    <DatePicker.DisplayDate>
+                        <Binding Path="Depart" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" NotifyOnSourceUpdated="True" >
+                            <Binding.ValidationRules>
+                                <val:RequiredValidationRule ValidatesOnTargetUpdated="True"></val:RequiredValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DatePicker.DisplayDate>
+                </DatePicker>
+                <DatePicker  Grid.Row="9" Grid.Column="2" SelectedDate="{Binding TravelRequest.Return, Mode=TwoWay}"
+                             DisplayDateStart="{Binding MinEndDate, Mode=OneWay}"
+                             Visibility="{Binding IsRoundTrip, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                    <DatePicker.DisplayDate>
+                        <Binding Path="TravelRequest.Return" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" NotifyOnSourceUpdated="True" >
+                            <Binding.ValidationRules>
+                                <val:RequiredValidationRule ValidatesOnTargetUpdated="True"></val:RequiredValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DatePicker.DisplayDate>                
+                </DatePicker>
+                <TextBlock  Grid.Row="10" Grid.ColumnSpan="3" Style="{StaticResource LabelStyle}"
+                            Text="{Binding Description, Source={StaticResource Provider}, Mode=OneWay}"></TextBlock>
+                <control:TextBoxKeyboard Grid.Row="11" Grid.ColumnSpan="3" Style="{StaticResource TextArea}">
+                    <TextBox.Text >
+                        <Binding Path="TravelRequest.Description" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" NotifyOnSourceUpdated="True" >
+                            <Binding.ValidationRules>
+                                <val:RequiredValidationRule ValidatesOnTargetUpdated="True"></val:RequiredValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </control:TextBoxKeyboard>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Padding="20, 10, 20, 20" Margin="0, 8" Background="{StaticResource section-background-color-brush}">
+            <Grid Height="auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource LabelStyle}"
+                           Text="{Binding Transportation, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <control:TextBoxKeyboard Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding TravelRequest.TransportationNeed, Mode=TwoWay}" 
+                         Style="{StaticResource TextArea}" />
+                <TextBlock Grid.Row="2" Style="{StaticResource LabelStyle}"
+                           Text="{Binding Accommodation, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <control:TextBoxKeyboard Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding TravelRequest.AccommodationNeed, Mode=TwoWay}" 
+                         Style="{StaticResource TextArea}"/>
+                <TextBlock Grid.Row="4" Style="{StaticResource LabelStyle}"
+                           Text="{Binding Comments, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <control:TextBoxKeyboard Grid.Row="5" Grid.ColumnSpan="3" Text="{Binding TravelRequest.Comments, Mode=TwoWay}" 
+                         Style="{StaticResource TextArea}"/>
+                <TextBlock   Grid.Row="6" Grid.ColumnSpan="3" Style="{StaticResource LabelStyle}"
+                             Text="{Binding RelatedProject, Source={StaticResource Provider}, Mode=OneWay}"/>
+                <control:TextBoxKeyboard Style="{StaticResource TextBox}" Grid.Row="7" Grid.ColumnSpan="3" Text="{Binding TravelRequest.RelatedProject, Mode=TwoWay}"></control:TextBoxKeyboard>
+                <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.SaveCommand }"
+                    Grid.Row="9" Grid.Column="1" Style="{StaticResource PrimaryColorButtonStyle}" Margin="0 5 5 0"
+                    ToolTip="{Binding Save, Source={StaticResource Provider}, Mode=OneWay}">
+                    <Button.Content>
+                        <Image Source="/Resources/Images/check-big.png" Width="21" Height="21"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.CancelCommand }"
+                    Grid.Row="9" Grid.Column="2" Style="{StaticResource PrimaryColorDarkButtonStyle}" Margin="0 5 0 0"
+                    ToolTip="{Binding Cancel, Source={StaticResource Provider}, Mode=OneWay}">
+                    <Button.Content>
+                        <Image Source="/Resources/Images/cancel.png" Width="21" Height="21"></Image>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0" Padding="20, 10, 20, 20" Margin="0, 8" Background="{StaticResource section-background-color-brush}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="36"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Attachments" Style="{StaticResource LabelStyle}"></TextBlock>
+                <control:TextBoxKeyboard Style="{StaticResource TextBox}" Grid.Row="1" Grid.Column="0" Text="{Binding NewAttachmentName, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 6, 0" ></control:TextBoxKeyboard>
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource PrimaryColorButtonStyle}"
+                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.GetFileCommand }"
+                         IsEnabled="{Binding HasNewAttachmentName}"
+                         ToolTip="{Binding UploadFile, Source={StaticResource Provider}, Mode=OneWay}">
+                    <Image Stretch="None" Source="/Resources/Images/attach.png" ></Image>
+                </Button>
+                <ItemsControl Grid.Row="2" Grid.ColumnSpan="2" 
+                              ItemsSource="{Binding AttachmentsList, Mode=OneWay}" 
+                              ItemTemplate="{StaticResource AttachmentsTemplate}"
+                              >
+                </ItemsControl>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
+

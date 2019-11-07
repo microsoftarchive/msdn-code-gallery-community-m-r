@@ -1,0 +1,68 @@
+﻿@model MasterDetail.Models.SalesMain
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SalesMain</legend>
+
+    <div class="display-label">ReferenceNo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReferenceNo)
+    </div>
+
+    <div class="display-label">SalesDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SalesDate)
+    </div>
+
+    <div class="display-label">SalesPerson</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SalesPerson)
+    </div>
+
+      <br />
+      <table class="tbl" id="tbl">
+       <thead>
+       <tr>
+       <th>ItemName</th> <th>Quantity</th><th>Unit Price</th>
+       </tr>
+       </thead>
+       
+       <tbody>
+       @if (Model != null)
+       {
+           foreach (var item in Model.SalesSubs)
+           { 
+           <tr>
+           <td>
+           @Html.DisplayTextFor(i => item.ItemName)
+           </td>
+           <td>
+           @Html.DisplayTextFor(i => item.Qty)
+           </td>
+           <td>
+           @Html.DisplayTextFor(i => item.UnitPrice)
+           </td>
+           
+           </tr>
+           }
+       }
+       
+       </tbody>
+       
+       </table>
+
+
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,105 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MyCompany.Expenses.Client.WP.Views.TrackRoute"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:map="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:controls="clr-namespace:MyCompany.Expenses.Client.WP.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Maps.Toolkit;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP8"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False"
+    DataContext="{Binding TrackRoute, Source={StaticResource Locator}}">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="BackKeyPress">
+            <cmd:EventToCommand Command="{Binding Mode=OneWay, Path=BackKeyCommand}"
+                            PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ModuleColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".4*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource PageTitleTextblock}" Text="{Binding LocalizedResources.TrackRoutePageTitle, Source={StaticResource LocalizedStrings}}"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Button Grid.Row="0" VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource TransparentContainerButton}"
+                    Command="{Binding StartPositionTrackingCommand}">
+                <Grid Width="233" Height="233">
+                    <controls:TrackRadialProgress Opacity="2" HorizontalAlignment="Center" 
+                                                  VerticalAlignment="Center"
+                                                  StartTrackingAnimation="{Binding IsTracking}"/>
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Source="/Assets/TrackRoutePlayButton.png" Width="92"></Image>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Text="{Binding LocalizedResources.TrackRoutePageStartButton, Source={StaticResource LocalizedStrings}}" Margin="80,80,0,0"></TextBlock>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="0" VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Margin="270,200,0,0"
+                    Style="{StaticResource TransparentContainerButton}"
+                    Command="{Binding StopPositionTrackingCommand}">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Width="86" Height="86">
+                    <Ellipse Width="86" Height="86" Fill="#72732F"></Ellipse>
+                    <Rectangle RadiusX="5" RadiusY="5" Width="35" Height="35" Fill="{StaticResource ModuleColor}"></Rectangle>
+                </Grid>
+            </Button>
+
+            <StackPanel  Grid.Row="1" Margin="12,0,12,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Width="200">
+                    <Image HorizontalAlignment="Left" Source="/Assets/TrackRouteCrono.png"
+                           VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                    <TextBlock Text="{Binding TrackDuration}" VerticalAlignment="Center" Margin="10,0,0,0"
+                               Style="{StaticResource CurrencyTextBlock}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Image HorizontalAlignment="Left" Source="/Assets/TrackRouteCounter.png"
+                           VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                    <TextBlock VerticalAlignment="Bottom" Margin="10,0,0,0"
+                                Style="{StaticResource CurrencyTextBlock}">
+                        <Run Text="{Binding TrackLength}"/>
+                        <Run Text="{Binding LocalizedResources.MI, Source={StaticResource LocalizedStrings}}"/>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <map:Map x:Name="map" Grid.Row="2" ZoomLevel="17"
+                 LandmarksEnabled="True"
+                 PedestrianFeaturesEnabled="True"
+                 Center="{Binding CurrentPosition, Mode=TwoWay}">
+            <toolkit:MapExtensions.Children>
+                <toolkit:MapItemsControl x:Name="mapControls"/>
+                <toolkit:UserLocationMarker GeoCoordinate="{Binding CurrentPosition}"/>
+            </toolkit:MapExtensions.Children>
+        </map:Map>
+        
+        <ProgressBar IsIndeterminate="True" Grid.Row="2" VerticalAlignment="Center"
+                     HorizontalAlignment="Stretch"
+                     Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </Grid>
+</phone:PhoneApplicationPage>

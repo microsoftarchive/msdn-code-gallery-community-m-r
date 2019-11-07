@@ -1,0 +1,76 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Normal foreground color to be applied to application -->
+    <Color x:Key="NormalTextForegroundColor">#FFFFFFFF</Color>
+    
+    <!-- Color applied to texts in selected items-->
+    <Color x:Key="SelectedTextForegroundColor">#FF606163</Color>
+    
+    <!-- Session table color -->
+    <Color x:Key="SessionInfoColor">#FF385F8B</Color>
+    
+    <Color x:Key="SplashScreenColor">#FF406793</Color>
+    
+    <Color x:Key="RedButtonBackground">#FFc42a3b</Color>
+    
+    <!-- Solid color brush to apply to textblocks foreground -->
+    <SolidColorBrush x:Key="NormalTextForegroundBrush" Color="{StaticResource NormalTextForegroundColor}"></SolidColorBrush>
+    
+    <!-- Solid color brush to apply to textblocks in selected items -->
+    <SolidColorBrush x:Key="SelectedTextForegroundBrush" Color="{StaticResource SelectedTextForegroundColor}"></SolidColorBrush>
+    
+    <!-- Solid color brush to apply to event calendar session information -->
+    <SolidColorBrush x:Key="SessionInfoBrush" Color="{StaticResource SessionInfoColor}"></SolidColorBrush>
+    
+    <SolidColorBrush x:Key="SplashScreenBrush" Color="{StaticResource SplashScreenColor}"></SolidColorBrush>
+    
+    <SolidColorBrush x:Key="RedButtonBackgroundBrush" Color="{StaticResource RedButtonBackground}"></SolidColorBrush>
+    
+    <!-- Event item background for selected/unselected items -->
+    <LinearGradientBrush x:Key="EventItemBackgroundBrush" StartPoint=".78,0" EndPoint=".22, 1">
+        <GradientStop Color="#FFCACDCE" Offset="0"/>
+        <GradientStop Color="#FFD4D6D5" Offset=".46"/>
+        <GradientStop Color="#FFC6CFD6" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <!-- Event item background for selected/unselected items -->
+    <LinearGradientBrush x:Key="NoSessionBackground" StartPoint=".78,0" EndPoint=".22, 1" Opacity=".2">
+        <GradientStop Color="#FFCACDCE" Offset="0"/>
+        <GradientStop Color="#FFD4D6D5" Offset=".46"/>
+        <GradientStop Color="#FFC6CFD6" Offset="1"/>
+    </LinearGradientBrush>
+    
+    
+    
+    <!-- Background Brush -->
+    <LinearGradientBrush x:Key="BackgroundBrush"  StartPoint=".78,0" EndPoint=".22, 1">
+        <GradientStop Color="#FF385f8b" Offset="0"/>
+        <GradientStop Color="#FF7596bb" Offset=".46"/>
+        <GradientStop Color="#FF385f8b" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="DesktopBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FF7596BB" Offset=".2"></GradientStop>
+        <GradientStop Color="#FF385F8B" Offset="0"></GradientStop>
+    </LinearGradientBrush>
+    
+    <!-- EventDetail Background Brush -->
+    <LinearGradientBrush x:Key="EventDetailBackgroundBrush"  StartPoint="0,0" EndPoint="0, 1">
+        <GradientStop Color="#FF385f8b" Offset="0"/>
+        <GradientStop Color="#FF7596bb" Offset=".46"/>
+        <GradientStop Color="#FF385f8b" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <!--Background color of the progressbar-->
+    <SolidColorBrush x:Key="ProgressBarBackground" Color="#7FB2B2B2"/>
+  
+    <!-- Rooms plane colors -->
+    <SolidColorBrush x:Key="Room1Color" Color="#F15669" Opacity=".9"></SolidColorBrush>
+    <SolidColorBrush x:Key="Room2Color" Color="#F26D7D" Opacity=".9"></SolidColorBrush>
+    <SolidColorBrush x:Key="Room3Color" Color="#F69679" Opacity=".9"></SolidColorBrush>
+    <SolidColorBrush x:Key="Room4Color" Color="#FDC689" Opacity=".9"></SolidColorBrush>
+    <SolidColorBrush x:Key="Room5Color" Color="#FFF799" Opacity=".9"></SolidColorBrush>
+
+</ResourceDictionary>

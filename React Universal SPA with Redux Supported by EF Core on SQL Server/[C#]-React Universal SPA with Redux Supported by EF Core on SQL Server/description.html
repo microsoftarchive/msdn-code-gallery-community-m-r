@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.1.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=108612E2CC4F976C14444324F9F015F7" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=EB101E94E2F72F68528E12AC56A6D446" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>React Universal SPA with Redux Supported by EF Core on SQL Server</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>React Universal SPA with Redux Supported by EF Core on SQL Server</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SQL Server, ReactJS, ASP.NET Core, EF Core, Redux
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Data Access, Test Driven Development, Database, Web API, Universal Web App
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/13/2019</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><span style="font-size:xx-small">This ski shop web app is like most online stores that have&nbsp;</span></p>
+<ol>
+<li><span style="font-size:xx-small">An authentication function for login/logout.
+</span></li><li><span style="font-size:xx-small">A navigation system where customers can browse skis with page controls filtered by category, brand, gender, what they are ideal for and sorted by price, check their descriptions, tech specs and reviews, as well as add their
+ own reviews.</span> </li><li><span style="font-size:xx-small">A shopping cart where customers can add, remove skis and update quantities</span>
+</li><li><span style="font-size:xx-small">A checkout system where users or guests can fill in their shipping details, place their orders, or get messages if any item is sold out or over stock.</span>
+</li><li><span style="font-size:xx-small">An order system where users or guests can review their orders.</span>
+</li></ol>
+<p><span style="font-size:xx-small">On the backend, we use</span></p>
+<ul>
+<li><span style="font-size:xx-small">T-SQL to create a database on the MS SQL Server 2016 (LocalDB in this sample, also works on Express or other versions) and to seed its data.
+</span></li><li><span style="font-size:xx-small">EF Core to query the database and map the results back to C# models.
+</span></li><li><span style="font-size:xx-small">ASP.NET Core to create a Web API that passes data between the server and client sides.</span>
+</li><li><span style="font-size:xx-small">ASP.NET Core Identity to authenticate users</span>
+</li><li><span style="font-size:xx-small">SSDT SQL Server unit tests on SQL Server</span>
+</li><li><span style="font-size:xx-small">XUnit to test data access and Web API</span>
+</li></ul>
+<p><span style="font-size:xx-small">The client-side ES6 code is bundled by webpack for the development environment which covers:</span></p>
+<ul>
+<li><span style="font-size:xx-small">Component-based UI</span> </li><li><span style="font-size:xx-small">Navigation system with navigation history management</span>
+</li><li><span style="font-size:xx-small">App state management</span> </li><li><span style="font-size:xx-small">API result cache and async data flow </span>
+</li><li><span style="font-size:xx-small">Responsive design for desktop, tablet and mobile screens
+</span></li><li><span style="font-size:xx-small">Type checking</span> </li><li><span style="font-size:xx-small">Dynamically<strong> </strong>loading components and packages</span>
+</li><li><span style="font-size:xx-small">Hot Module Replacement (HMR)</span> </li></ul>
+<p>&nbsp;</p>
+<h1>Prerequirements:</h1>
+<ul>
+<li><span style="font-size:xx-small">Visual Studio 2017</span> </li><li><span style="font-size:xx-small">VS Code (recommended)</span> </li><li><span style="font-size:xx-small">SQL Server 2016 or up (LocalDB, Express or other versions)</span>
+</li><li><span style="font-size:xx-small">Node.js</span> </li><li><span style="font-size:xx-small">ASP.Net Core 2.2.0 or up</span> </li></ul>
+<h1>Running the Sample</h1>
+<p><span style="font-size:xx-small">It will take a while for VS2017 to automatically install all the npm and .NET dependencies when you first open the app. &nbsp;</span></p>
+<p><span style="font-size:xx-small">Step 1: publish the database (and the test database)</span></p>
+<p><span style="font-size:xx-small">The publish profiles in the folder SkiShopSQL-&gt;Publishes &nbsp;work for SQL Server 2016 LocalDB. Please update the data source if you use SQL Server 2016 Express or other versions.</span></p>
+<p><span style="font-size:xx-small"><img id="220170" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220170/1/publish_db_0.png" alt="" width="600" height="319"></span></p>
+<p><span style="font-size:xx-small">Step 2:&nbsp;Create the identity database using NuGet Package Manager Console&nbsp;</span></p>
+<p><span style="font-size:xx-small">Please select &ldquo;WebApiEfCore&rdquo; as the Starup project first.</span></p>
+<p><img id="220171" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220171/1/pmc_auth_1.png" alt="" width="612" height="179"></p>
+<p><span style="font-size:xx-small">Step 3: Make webpack bundles</span></p>
+<p><span style="font-size:xx-small">TOOLS -&gt; Node.js Tools -&gt; Node.js Interactive Window</span></p>
+<p><img id="220172" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220172/1/npm_webpack_0.png" alt="" width="600" height="105"></p>
+<p><span style="font-size:xx-small">Please check package.json for more scripts for bundle analysis and type checking.</span></p>
+<p><span style="font-size:xx-small">Step 4 Run testing code in Test Explorer</span></p>
+<p><span style="font-size:xx-small">All tests point to the test database.</span></p>
+<p><img id="220173" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220173/1/test_results_0.png" alt="" width="300" height="263"></p>
+<p><span style="font-size:xx-small"><br>
+</span></p>
+<p><div style="background:#FFFFCC;border:dotted 1px #FF0000;width:350px;height:300px;padding:10px;"><a href="https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv">https://i1.code<wbr />.msdn.s-msft.co<wbr />m/react-redux-s<wbr />pa-on-asp-net-e<wbr />910901f/image/f<wbr />ile/220179/1/sk<wbr />ishopreactefcor<wbr />e.wmv</a></div> <br>
+<span style="font-size:xx-small"><a id="https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv" href="https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv">Download
+ video</a></span></p>
+<p><span style="font-size:xx-small">or go to</span>&nbsp;</p>
+<p><span style="font-size:xx-small"><a href="https://code.msdn.microsoft.com/React-Redux-SPA-on-ASP-NET-e910901f/https://www.youtube.com/watch?v=laXNkReBlDo&amp;t=40s">https://www.youtube.com/watch?v=laXNkReBlDo&amp;t=40s</a></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:xx-small">Pictures</span></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img id="220181" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220181/1/filter_mobile_1.gif" alt="" width="123" height="248">&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img id="220182" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220182/1/skis_mobile_2.gif" alt="" width="122" height="248"></p>
+<p>&nbsp; &nbsp;&nbsp;<img id="220183" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220183/1/home_mobile_0.png" alt="" width="120" height="247">&nbsp; &nbsp; &nbsp;&nbsp;<img id="220184" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220184/1/login_mobile_0.png" alt="" width="120" height="247">&nbsp;
+ &nbsp; &nbsp;&nbsp;<img id="220185" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220185/1/orderhistory_mobile_0.png" alt="" width="120" height="247">&nbsp; &nbsp; &nbsp;&nbsp;<img id="220186" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220186/1/orderdetail_mobile_1.png" alt="" width="120" height="247"></p>
+<p><img id="220187" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220187/1/combine_images_1.png" alt="" width="612" height="349"></p>
+<p><img id="220188" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220188/1/combine_images_2.png" alt="" width="612" height="350"></p>
+<p>&nbsp;</p>
+<h1>Sample Codes:</h1>
+<p><span style="font-size:xx-small">Login.jsx</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">import React from 'react';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+
+import FormErrorMsg from '../../viewComponents/formErrorMsg/FormErrorMsg';
+import selectDefaultCategory from '../../reduxStore/helpers/selectDefaultCategory';
+
+class Login extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    redirectToLastPage() {
+        const { user, history } = this.props;
+
+        if (user &amp;&amp; user.userId &gt; 0) history.goBack();
+    }
+
+    componentDidMount() {
+        const { selectedCategoryId, selectCategory } = this.props;
+
+        selectDefaultCategory(selectedCategoryId, selectCategory);
+
+        this.redirectToLastPage();
+    }
+
+    componentDidUpdate() {
+        this.redirectToLastPage();
+    }
+
+    render() {
+        const { user, login} = this.props;
+
+        return (
+            &lt;div className=&quot;container h-100 mt-5 border align-content-center&quot;&gt;
+                &lt;h4 className=&quot;mb-2&quot;&gt;Log in&lt;/h4&gt;
+                &lt;Formik
+                    initialValues={{
+                        email: '',
+                        password: ''
+                    }}
+                    validationSchema={loginSchema}
+                    onSubmit={(values, actions) =&gt; {
+                        const loginModel = {
+                            email: values.email,
+                            password: values.password,
+                            rememberMe: true,
+                            lockoutFailure: true
+                        }
+
+                        login(loginModel);
+
+                        actions.setSubmitting(false);
+                    }}
+                    render={({ status, isSubmitting }) =&gt; (
+                        &lt;Form&gt;
+                            &lt;FieldGroup labelName=&quot;Email&quot; fieldName=&quot;email&quot; fieldType=&quot;email&quot; /&gt;
+                            &lt;FieldGroup labelName=&quot;Password&quot; fieldName=&quot;password&quot; fieldType=&quot;password&quot; /&gt;
+                            {status &amp;&amp; status.msg &amp;&amp; &lt;div className=&quot;text-danger&quot;&gt;{status.msg}&lt;/div&gt;}
+                            {user &amp;&amp; user.userId === -1 &amp;&amp; &lt;div className=&quot;text-danger mb-3&quot;&gt;{user.screenName}&lt;/div&gt;}
+                            &lt;button type=&quot;submit&quot; className=&quot;btn btn-primary mb-3&quot; disabled={isSubmitting}&gt;
+                                Submit
+                            &lt;/button&gt;
+                        &lt;/Form&gt;
+                    )
+                    }
+                &gt;
+                &lt;/Formik&gt;
+            &lt;/div&gt;
+        );
+    }
+} 
+
+const loginSchema = Yup.object().shape({
+    email: Yup.string()
+        .email('Invalid email')
+        .required('Required'),
+    password: Yup.string()
+        .required('Required')
+});
+
+const FieldGroup = ({ labelName, fieldName, fieldType }) =&gt; (
+    &lt;div className=&quot;form-group&quot;&gt;
+        &lt;strong&gt;{labelName}&lt;sup&gt;*&lt;/sup&gt;&lt;/strong&gt;
+        &lt;Field name={fieldName} type={fieldType} className=&quot;form-control&quot; /&gt;
+        &lt;FormErrorMsg name={fieldName} /&gt;
+    &lt;/div&gt;
+);
+
+export default Login;</pre>
+<div class="preview">
+<pre class="js">import&nbsp;React&nbsp;from&nbsp;<span class="js__string">'react'</span>;&nbsp;
+import&nbsp;<span class="js__brace">{</span>&nbsp;Formik,&nbsp;Form,&nbsp;Field&nbsp;<span class="js__brace">}</span>&nbsp;from&nbsp;<span class="js__string">'formik'</span>;&nbsp;
+import&nbsp;*&nbsp;as&nbsp;Yup&nbsp;from&nbsp;<span class="js__string">'yup'</span>;&nbsp;
+&nbsp;
+import&nbsp;FormErrorMsg&nbsp;from&nbsp;<span class="js__string">'../../viewComponents/formErrorMsg/FormErrorMsg'</span>;&nbsp;
+import&nbsp;selectDefaultCategory&nbsp;from&nbsp;<span class="js__string">'../../reduxStore/helpers/selectDefaultCategory'</span>;&nbsp;
+&nbsp;
+class&nbsp;Login&nbsp;extends&nbsp;React.Component&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;constructor(props)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(props);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;redirectToLastPage()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">const</span>&nbsp;<span class="js__brace">{</span>&nbsp;user,&nbsp;history&nbsp;<span class="js__brace">}</span>&nbsp;=&nbsp;<span class="js__operator">this</span>.props;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(user&nbsp;&amp;&amp;&nbsp;user.userId&nbsp;&gt;&nbsp;<span class="js__num">0</span>)&nbsp;history.goBack();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;componentDidMount()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">const</span>&nbsp;<span class="js__brace">{</span>&nbsp;selectedCategoryId,&nbsp;selectCategory&nbsp;<span class="js__brace">}</span>&nbsp;=&nbsp;<span class="js__operator">this</span>.props;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectDefaultCategory(selectedCategoryId,&nbsp;selectCategory);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.redirectToLastPage();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;componentDidUpdate()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.redirectToLastPage();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;render()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">const</span>&nbsp;<span class="js__brace">{</span>&nbsp;user,&nbsp;login<span class="js__brace">}</span>&nbsp;=&nbsp;<span class="js__operator">this</span>.props;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;className=<span class="js__string">&quot;container&nbsp;h-100&nbsp;mt-5&nbsp;border&nbsp;align-content-center&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;className=<span class="js__string">&quot;mb-2&quot;</span>&gt;Log&nbsp;<span class="js__operator">in</span>&lt;/h4&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Formik&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialValues=<span class="js__brace">{</span><span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:&nbsp;<span class="js__string">''</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;<span class="js__string">''</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span><span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validationSchema=<span class="js__brace">{</span>loginSchema<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSubmit=<span class="js__brace">{</span>(values,&nbsp;actions)&nbsp;=&gt;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">const</span>&nbsp;loginModel&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:&nbsp;values.email,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;values.password,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rememberMe:&nbsp;true,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lockoutFailure:&nbsp;true&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;login(loginModel);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actions.setSubmitting(false);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span><span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;render=<span class="js__brace">{</span>(<span class="js__brace">{</span>&nbsp;status,&nbsp;isSubmitting&nbsp;<span class="js__brace">}</span>)&nbsp;=&gt;&nbsp;(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Form&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FieldGroup&nbsp;labelName=<span class="js__string">&quot;Email&quot;</span>&nbsp;fieldName=<span class="js__string">&quot;email&quot;</span>&nbsp;fieldType=<span class="js__string">&quot;email&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FieldGroup&nbsp;labelName=<span class="js__string">&quot;Password&quot;</span>&nbsp;fieldName=<span class="js__string">&quot;password&quot;</span>&nbsp;fieldType=<span class="js__string">&quot;password&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>status&nbsp;&amp;&amp;&nbsp;status.msg&nbsp;&amp;&amp;&nbsp;&lt;div&nbsp;className=<span class="js__string">&quot;text-danger&quot;</span>&gt;<span class="js__brace">{</span>status.msg<span class="js__brace">}</span>&lt;/div&gt;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>user&nbsp;&amp;&amp;&nbsp;user.userId&nbsp;===&nbsp;-<span class="js__num">1</span>&nbsp;&amp;&amp;&nbsp;&lt;div&nbsp;className=<span class="js__string">&quot;text-danger&nbsp;mb-3&quot;</span>&gt;<span class="js__brace">{</span>user.screenName<span class="js__brace">}</span>&lt;/div&gt;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=<span class="js__string">&quot;submit&quot;</span>&nbsp;className=<span class="js__string">&quot;btn&nbsp;btn-primary&nbsp;mb-3&quot;</span>&nbsp;disabled=<span class="js__brace">{</span>isSubmitting<span class="js__brace">}</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Form&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Formik&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;&nbsp;
+&nbsp;
+<span class="js__statement">const</span>&nbsp;loginSchema&nbsp;=&nbsp;Yup.object().shape(<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;email:&nbsp;Yup.string()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.email(<span class="js__string">'Invalid&nbsp;email'</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.required(<span class="js__string">'Required'</span>),&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;Yup.string()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.required(<span class="js__string">'Required'</span>)&nbsp;
+<span class="js__brace">}</span>);&nbsp;
+&nbsp;
+<span class="js__statement">const</span>&nbsp;FieldGroup&nbsp;=&nbsp;(<span class="js__brace">{</span>&nbsp;labelName,&nbsp;fieldName,&nbsp;fieldType&nbsp;<span class="js__brace">}</span>)&nbsp;=&gt;&nbsp;(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;className=<span class="js__string">&quot;form-group&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;strong&gt;<span class="js__brace">{</span>labelName<span class="js__brace">}</span>&lt;sup&gt;*&lt;<span class="js__reg_exp">/sup&gt;&lt;/</span>strong&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Field&nbsp;name=<span class="js__brace">{</span>fieldName<span class="js__brace">}</span>&nbsp;type=<span class="js__brace">{</span>fieldType<span class="js__brace">}</span>&nbsp;className=<span class="js__string">&quot;form-control&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FormErrorMsg&nbsp;name=<span class="js__brace">{</span>fieldName<span class="js__brace">}</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;
+);&nbsp;
+&nbsp;
+export&nbsp;<span class="js__statement">default</span>&nbsp;Login;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">
+<h1><strong>RoadMap</strong></h1>
+<ul>
+<li><span style="font-size:xx-small">Turn it into a progressive web app</span> </li><li><span style="font-size:xx-small">Add Jest testing on the client side</span> </li><li><span style="font-size:xx-small">Improve type checking on the client side</span>
+</li></ul>
+&nbsp;</div>
+<div class="endscriptcode"></div>
+<h1 class="endscriptcode">Updates:</h1>
+<p><span style="font-size:xx-small">March 7, 2019</span></p>
+<p><span style="font-size:xx-small">Upgrade to V2</span></p>
+<p><span style="font-size:xx-small">August 22 2017:</span></p>
+<p><span style="font-size:xx-small">Fixed StylesByCategory.jsxWhen no genders/idealFors are selected, they will be processed as ALL are selected.</span></p>
+<p><span style="font-size:xx-small">November 22 2017</span></p>
+<p><span style="font-size:xx-small">Fixed 404 error when refreshing or manually writing route.</span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

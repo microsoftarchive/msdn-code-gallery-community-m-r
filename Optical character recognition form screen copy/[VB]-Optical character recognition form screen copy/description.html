@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Optical character recognition form screen copy</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Optical character recognition form screen copy</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Forms
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Data Binding, User Interface, .NET 2, Visual Studio 2010 MSBuild
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Routing Assistant, VSCommands for Visual Studio 2010, VS10x Code Map v2
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/31/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Optical-character-aca06896">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>Optical character recognition form screen copy&nbsp;</p>
+<h1>Introduction</h1>
+<p><em>sample solve for ocr in&nbsp;tessnet2_32.dll using</em></p>
+<h1><span>Building the Sample</span></h1>
+<p>using&nbsp;<em>Optical character recognition the tessnet .dll &nbsp;,tesact data&nbsp;</em></p>
+<p><span style="font-size:20px; font-weight:bold">Description </span></p>
+<div class="endscriptcode">&nbsp;
+<p><strong>Optical character recognition</strong>, usually abbreviated to&nbsp;<strong>OCR</strong>, is the&nbsp;<a title="Machine" href="http://en.wikipedia.org/wiki/Machine">mechanical</a>&nbsp;or&nbsp;<a title="Electronics" href="http://en.wikipedia.org/wiki/Electronics">electronic</a>&nbsp;conversion
+ of scanned&nbsp;<a title="Image" href="http://en.wikipedia.org/wiki/Image">images</a>&nbsp;of handwritten, typewritten or printed text into machine-encoded text. It is widely used as a form of data entry from some sort of original paper data source, whether
+ documents, sales receipts, mail, or any number of printed records. It is a common method of digitizing printed texts so that they can be electronically searched, stored more compactly, displayed on-line, and used in machine processes such as<a title="Machine translation" href="http://en.wikipedia.org/wiki/Machine_translation">machine
+ translation</a>,&nbsp;<a class="mw-redirect" title="Text-to-speech" href="http://en.wikipedia.org/wiki/Text-to-speech">text-to-speech</a>&nbsp;and&nbsp;<a title="Text mining" href="http://en.wikipedia.org/wiki/Text_mining">text mining</a>. OCR is a field
+ of research in&nbsp;<a title="Pattern recognition" href="http://en.wikipedia.org/wiki/Pattern_recognition">pattern recognition</a>,&nbsp;<a title="Artificial intelligence" href="http://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a>&nbsp;and&nbsp;<a title="Computer vision" href="http://en.wikipedia.org/wiki/Computer_vision">computer
+ vision</a>.</p>
+<p>Early versions needed to be programmed with images of each character, and worked on one font at a time. &quot;Intelligent&quot; systems with a high degree of recognition accuracy for most fonts are now common. Some systems are capable of reproducing formatted output
+ that closely approximates the original scanned page including images, columns and other non-textual components.</p>
+</div>
+<p><em>How does this sample solve the problem?</em></p>
+<p>tessnet data suppted</p>
+<h1><span>Source Code Files</span></h1>
+<h1><span>&nbsp;</span></h1>
+<ul>
+<li>OCRImage = &quot;&quot;&nbsp; &nbsp; &nbsp; &nbsp; Dim oOCR As New tessnet2.Tesseract&nbsp; &nbsp; &nbsp; &nbsp; oOCR.Init(path, language, False)&nbsp; &nbsp; &nbsp; &nbsp; Dim WordList As New List(Of tessnet2.Word)&nbsp; &nbsp; &nbsp; &nbsp; WordList = oOCR.DoOCR(bm,
+ Rectangle.Empty)&nbsp; &nbsp; &nbsp; &nbsp; Dim LineCount As Integer = tessnet2.Tesseract.LineCount(WordList)&nbsp; &nbsp; &nbsp; &nbsp; For i As Integer = 0 To LineCount - 1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OCRImage &amp;= tessnet2.Tesseract.GetLineText(WordList,
+ i) &amp; vbCrLf&nbsp; &nbsp; &nbsp; &nbsp; Next&nbsp; &nbsp; &nbsp; &nbsp; oOCR.Dispose()
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

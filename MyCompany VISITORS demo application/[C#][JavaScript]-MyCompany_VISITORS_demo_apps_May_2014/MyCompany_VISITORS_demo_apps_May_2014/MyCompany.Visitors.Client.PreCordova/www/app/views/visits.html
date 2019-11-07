@@ -1,0 +1,19 @@
+﻿<article class="article-of-list" ng-repeat="visit in visits">
+    <a href="#/visit/{{visit.id}}" class="transparent-on-tap">
+        <div class="avatar">
+            <img class="avatar-img" ng-src="{{visit.visitor.image}}" />
+        </div>
+
+        <div class="data-container">
+            <div class="data">
+                <span class="name" ng-bind="visit.visitor.fullName"></span>
+                <br />
+                <span class="company-name" ng-bind="visit.visitor.company"></span>
+            </div>
+            <div class="data-statistics">
+                <span class="dates-statistics-newtop dates-newsize" ng-bind="visit.visitDateTime | date:'dd/MM/yyyy'"></span>
+                <span class="dates-statistics-newtop" ng-bind="visit.visitDateTime | date:'shortTime'"></span>
+            </div>
+        </div>
+    </a>
+</article>

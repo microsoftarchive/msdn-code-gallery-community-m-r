@@ -1,0 +1,45 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<access origin=\"https://dc.services.visualstudio.com/v2/track\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.microsoft.azure-mobile-services": {
+            "PACKAGE_NAME": "Driver"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "Driver"
+        },
+        "cordova-plugin-appinsights": {
+            "PACKAGE_NAME": "Driver"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "Driver"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "Driver"
+        },
+        "org.apache.cordova.vibration": {
+            "PACKAGE_NAME": "Driver"
+        }
+    },
+    "dependent_plugins": {
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "Driver"
+        }
+    }
+}

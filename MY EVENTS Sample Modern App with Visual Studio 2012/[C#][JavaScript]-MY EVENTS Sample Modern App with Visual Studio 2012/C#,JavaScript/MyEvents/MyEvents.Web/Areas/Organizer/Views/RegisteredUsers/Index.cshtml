@@ -1,0 +1,22 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Web.Areas.Organizer.Models.RegisteredUsersViewModel
+@{
+    ViewBag.Title = "my events - attendees";
+}
+@section Scripts {
+    @Scripts.Render("~/Organizer/AttendeesScripts/")
+}
+<span class="section-title">@Model.RegisteredUsers.Count() attendees</span>
+<section>
+    @foreach (var user in Model.RegisteredUsers)
+    {
+        <article class="user">
+            <img class="picture" width="50" height="50" src="@("https://graph.facebook.com/" + user.FacebookId + "/picture")"/>
+            <div id="data">
+                <span class="field ellipsis" title="@user.Name">@user.Name</span>
+                <span class="field multi-line-ellipsis" title="@user.Bio">@user.Bio</span>
+                <span class="field ellipsis" title="@user.City">@user.City</span>
+            </div>
+        </article>
+    }
+</section>

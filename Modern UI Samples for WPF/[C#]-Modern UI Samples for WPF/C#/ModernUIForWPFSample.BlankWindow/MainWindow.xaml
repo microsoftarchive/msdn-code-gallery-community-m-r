@@ -1,0 +1,28 @@
+﻿<mui:ModernWindow x:Class="ModernUIForWPFSample.BlankWindow.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="Blank Window"
+                  Width="525"
+                  Height="350"
+                  Style="{StaticResource BlankWindow}">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+            Steps:
+            <LineBreak />
+            1st Install the ModernUI from Nuget
+            <LineBreak />
+            2nd Define in App.xaml the resources for ModernUI.xaml and ModernUI.Light.xaml
+            <LineBreak />
+            3rd Change the MainWindow: Replace the tag &quot;Window&quot; to ModernWindow
+            <LineBreak />
+            4th Apply the BlankWindow Style to the MainWindow
+            <LineBreak />
+            5th Define the content for the MainWindow like in a normal Window.
+            <LineBreak />
+            <LineBreak />
+            Note: For change the appearance use  AppearanceManager class
+            <LineBreak />
+        </TextBlock>
+    </Grid>
+</mui:ModernWindow>

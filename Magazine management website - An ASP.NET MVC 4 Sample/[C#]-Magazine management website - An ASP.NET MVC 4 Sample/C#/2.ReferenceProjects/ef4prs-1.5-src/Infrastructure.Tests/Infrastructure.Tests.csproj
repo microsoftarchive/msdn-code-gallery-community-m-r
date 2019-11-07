@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5158294-F45B-4073-9F56-BD263F67B336}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infrastructure.Tests</RootNamespace>
+    <AssemblyName>Infrastructure.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.3.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender.v4.0">
+      <HintPath>..\References\HibernatingRhinos.Profiler.Appender.v4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Domain\Category.cs" />
+    <Compile Include="Data\Domain\Customer.cs" />
+    <Compile Include="Data\Domain\Mapping\EntityMappingBase.cs" />
+    <Compile Include="Data\Domain\Mapping\CategoryMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Domain\Mapping\OrderLineMapping.cs" />
+    <Compile Include="Data\Domain\Mapping\OrderMapping.cs" />
+    <Compile Include="Data\Domain\Mapping\ProductMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Domain\Order.cs" />
+    <Compile Include="Data\Domain\OrderLine.cs" />
+    <Compile Include="Data\Domain\Product.cs" />
+    <Compile Include="Data\Domain\Mapping\CustomerMapping.cs" />
+    <Compile Include="Data\Lab\CustomerRepository.cs" />
+    <Compile Include="Data\Lab\MyDbContext.cs" />
+    <Compile Include="Data\Lab\DataSeedingInitializer.cs" />
+    <Compile Include="Data\Lab\RepositoryTest.cs" />
+    <Compile Include="Data\Lab\UseMyDbContextTest.cs" />
+    <Compile Include="Data\Lab\WithoutStorageTest.cs" />
+    <Compile Include="Data\Repository\CustomerRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Repository\RepositoryTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Repository\WithoutStorageTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Specification\ProductByNameSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Specification\ProductOnSaleSpecification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Data.EntityFramework\Infrastructure.Data.EntityFramework.csproj">
+      <Project>{B69BC712-D7B1-45A4-9C9F-682CE3A7BD8C}</Project>
+      <Name>Infrastructure.Data.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data\Infrastructure.Data.csproj">
+      <Project>{7CE588E9-6E48-43A9-843C-3078E6372255}</Project>
+      <Name>Infrastructure.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Model\Infrastructure.Model.csproj">
+      <Project>{3DB01132-5E0D-46A5-8C68-E4D9C2A12D7D}</Project>
+      <Name>Infrastructure.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

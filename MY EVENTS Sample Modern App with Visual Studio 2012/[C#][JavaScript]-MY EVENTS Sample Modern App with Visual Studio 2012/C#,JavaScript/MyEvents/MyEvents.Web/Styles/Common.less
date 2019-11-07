@@ -1,0 +1,141 @@
+﻿#font {
+    @font-size-small: 14px;
+    @font-size-medium: 16px;
+    @font-size-big: 18px;
+
+    .normal {
+        font-family: "Segoe UI Light", "Lucida Grande", Tahoma, Verdana, Arial;
+        color: @font-color;
+        font-size: @font-size-small;
+        @media all and (min-width: 640px) {
+            font-size: @font-size-medium;
+        }
+        @media all and (min-width: 1024px) {
+            font-size: @font-size-big;
+        }
+    }
+
+    .extra-big {
+        font-size: 2.5em;
+    }
+
+    .font-color-100 {
+        color: @font-color-100;
+    }
+
+    .font-primary-color {
+        color: @font-primary-color;
+    }
+    
+    .font-highlighted-color {
+        color: @font-highlighted-color;
+    }
+    
+    .font-contrast-color {
+        color: @font-contrast-color;
+    }
+}
+    
+#element {
+    .primary {
+        background-color: @primary-color;
+        #font > .font-primary-color;   
+    }
+     
+    .contrast {
+        background-color: @contrast-color;
+        #font > .font-contrast-color;
+    }
+                     
+    .highlighted {
+        background-color: @highlighted-color;
+        #font > .font-highlighted-color;
+    }
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: inline-block;
+}
+
+
+.quarter {
+    width: 25%;
+}
+
+
+.half {
+    width: 50%;
+}
+
+.threeQuarters {
+    width: 75%;
+}
+
+
+.full-height {
+    height: 100%;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.image-button {
+    border: 0; 
+    background: transparent;
+}
+
+.block {
+    display: block;
+}
+
+.middle {
+    vertical-align: middle;
+}
+
+.clear {
+    clear: both;
+}
+
+.responsive-max-width (@small: 30%, @medium: 60%, @big: 100%) {
+       max-width: @small;
+       @media all and (min-width: 640px) {
+             max-width: @medium;
+       }
+       @media all and (min-width: 1024px) {
+             max-width: @big;
+       }
+}
+
+.border-radius (@size: 0px) {
+       -webkit-border-radius: @size;
+       -moz-border-radius: @size;
+       border-radius: @size;
+}
+
+

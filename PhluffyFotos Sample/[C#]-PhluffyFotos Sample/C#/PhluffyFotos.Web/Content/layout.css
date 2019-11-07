@@ -1,0 +1,125 @@
+body {
+	background: #fff;
+	margin: 0;
+	border: 0;
+}
+.clear 
+{ 
+	clear: both; 
+}
+#pagewrap {
+	margin: 0;
+	border: 0;
+	border-top: 1px solid #fff;
+	width: 100%;
+}
+#container {
+	width: 800px;
+	margin: 0 auto;
+	padding: 0;
+}
+#mainnav {
+	vertical-align: bottom;
+	width: 800px;
+	padding: 0;
+	margin-top: 5px;
+	background-repeat: repeat-x;
+	display: block;
+	clear: both;
+}
+
+#topnav {
+padding:5px 0;
+display: block;
+margin:0;
+float:right;
+height:90px;
+text-align:right;
+
+}
+
+#logo {
+	float: left;
+	display: block;
+	width: 390px;
+	height:100px;
+	
+
+
+}
+
+#searchBar {
+margin:60px 0 0 0;
+text-align:left;
+}
+
+/* Page Levels */
+#lvl1 {
+	width: 800px;
+	height:135px;
+	border-bottom: 1px dotted #555;
+	margin: 0;
+	padding:0;
+	display: block;
+}
+#lvl2 {
+	width: 800px;
+	height:auto;
+	margin: 0;
+	padding: 5px 0 5px 0;
+	display: block;
+}
+#lvl3 {
+	width: 800px;
+	height:auto;
+	padding: 10px;
+	margin: 0;
+	display: block;
+}
+
+#clmLeft {
+	display: block;
+	float: left;
+	width: 420px;
+	margin: 0;
+	padding: 10px 10px 10px 0;
+}
+
+#clmRight {
+	display: block;
+	float: left;
+	width: 320px;
+	margin: 0;
+	padding: 10px;
+}
+
+#uploadClmLeft {
+	display: block;
+	float: left;
+	width: 360px;
+	margin: 0;
+	padding: 10px 10px 10px 0;
+}
+
+#uploadClmRight {
+	display: block;
+	float: left;
+	width: 420px;
+	margin: 0 0 5px 0;
+
+}
+
+#registerForm fieldset p label { display: inline-block; width: 130px; }
+
+
+/* Footer */
+
+#footer {
+	display: block;
+	clear: both;
+	height: 20px;
+	width: 800px;
+	border-top: 1px dotted #555;
+	padding: 10px 0;
+	margin: 5px 0 0 0;
+}

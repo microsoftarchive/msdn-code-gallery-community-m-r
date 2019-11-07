@@ -1,0 +1,13 @@
+﻿@model MyEvents.Model.Material
+
+<article class="detail">
+    <a href="@Url.Action("GetMaterial", "Session", new { materialId = Model.MaterialId })" target="_blanck">
+        <span class="field extra-big" title="@Model.Name">@Model.Name</span>
+    </a>
+    <form class="field small text-right" action="@Url.Action("DeleteMaterial", "Session", new { materialId = Model.MaterialId })" method="post">
+        <button type="button" value="delete" class="image-button" title="delete material" data-confirm="true" data-confirm-text="are you sure you want to delete this material?">
+            <img src="@Url.Content("~/Styles/Images/delete.png")" />
+        </button>
+    </form>
+
+</article>

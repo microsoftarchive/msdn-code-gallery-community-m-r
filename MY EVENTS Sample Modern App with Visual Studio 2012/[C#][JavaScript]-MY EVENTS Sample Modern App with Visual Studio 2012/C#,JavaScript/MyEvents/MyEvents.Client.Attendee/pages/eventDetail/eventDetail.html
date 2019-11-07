@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Event Detail</title>
+    <link href="/pages/eventDetail/eventDetail.css" rel="stylesheet" />
+    <!-- References added only for design time purpose -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="/js/default.js"></script>
+    <!-- Page references -->
+    <script src="/js/controls/myEvents.controls.map.js"></script>
+    <script src="/pages/eventDetail/eventDetail.js"></script>
+    <script src="/js/controls/myEvents.controls.schedule.scheduleControl.js"></script>
+    <script src="/js/controls/myEvents.controls.schedule.painters.sessionPainter.js"></script>
+</head>
+<body>
+    <div class="fragment eventdetailpage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle" data-win-bind="textContent: Name"></span>
+            </h1>
+            <div class="user-data">
+                <span class="user-name" data-win-bind="innerText: user.name"></span>
+                <img src="" class="user-image" data-win-bind="src: user.facebookId MyEvents.Formaters.facebookImage" alt="user image" />
+            </div>
+        </header>
+        <section aria-label="Main content" role="main">
+            <h2 class="title-details">details</h2>
+            <article class="details">
+                <div class="details-header">
+                    <div class="logo">
+                        <img src="" alt="event logo" data-win-bind="src: Logo MyEvents.Formaters.formatLogo" />
+                    </div>
+                    <div class="details-date" data-win-bind="innerText: Date MyEvents.Formaters.formatVerboseDate"></div>
+                    <div class="details-time" >
+                        <div data-win-bind="innerText: StartTime MyEvents.Formaters.formatTime">Wednesday 12, September</div>
+                        <div data-win-bind="innerText: TimeZoneOffset MyEvents.Formaters.formatGMTMessage">09:00 HS GMT +2</div>
+                    </div>
+                    <div class="details-duration" data-win-bind="innerText: Duration MyEvents.Formaters.formatDuration">( Duration, an hour)</div>
+                    <div class="details-organizer" data-win-bind="innerText: Organizer.Name">Microsoft</div>
+                    <div class="details-twitter" data-win-bind="innerText: TwitterAccount">@microsoft</div>
+                </div>
+                <div class="details-description">
+                    <h2>description</h2>
+                    <p class="multi-line-ellipsis text" data-win-bind="textContent: Description"></p>
+                </div>
+                <button class="register">register with Facebook</button>
+            </article>
+            <article class="localization">
+                <div class="localization-map">
+                </div>
+                <div class="localization-description">
+                    <div class="details-address" data-win-bind="innerText: Address"></div>
+                    <div class="details-city" data-win-bind="innerText: City"></div>
+                </div>
+            </article>
+            <h2 class="title-schedule">schedule</h2>
+            <article id="schedule-container" class="schedule">
+            </article>
+        </section>
+    </div>
+</body>
+</html>

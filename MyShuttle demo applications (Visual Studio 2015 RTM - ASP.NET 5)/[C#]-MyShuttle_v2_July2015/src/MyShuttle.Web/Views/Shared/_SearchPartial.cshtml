@@ -1,0 +1,9 @@
+@model MyShuttle.Web.Models.SearchViewModel
+
+<div>
+    @using (Html.BeginForm("CarrierListFiltered", "Index", FormMethod.Get, new {@id="searchForm", @class = ""}))
+    {
+        <div class="search-input-wrapper" id="searchBtn"></div>
+        @Html.TextBoxFor(m=>m.SearchString ,new { @id = "searchInput", @type = "search" ,@placeholder = "Search" , @class="form-control search-input" })
+    }
+</div>

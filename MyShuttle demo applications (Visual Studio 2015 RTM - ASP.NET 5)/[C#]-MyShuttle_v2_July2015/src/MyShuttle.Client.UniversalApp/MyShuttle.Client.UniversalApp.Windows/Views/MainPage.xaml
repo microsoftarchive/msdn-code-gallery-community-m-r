@@ -1,0 +1,68 @@
+﻿<base:WindowsBasePage
+    x:Class="MyShuttle.Client.UniversalApp.Views.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:base="using:MyShuttle.Client.UniversalApp.Views.Base"
+    xmlns:partials="using:MyShuttle.Client.UniversalApp.Views.Partials"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Hub>
+            <Hub.Header>
+                <Image Style="{StaticResource BrandImage}" Height="65"/>
+            </Hub.Header>
+
+            <!-- My company rides list -->
+            <HubSection Style="{StaticResource HubSectionLeft}" IsHeaderInteractive="False">
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding [CompanyRides], Source={StaticResource LocalizedStrings}}"
+                                       Style="{StaticResource HubHeaderTextBlock}" FontSize="45"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <Grid MaxHeight="700">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="9.8*"/>
+                            <RowDefinition Height="0.2*"/>
+                        </Grid.RowDefinitions>
+
+                        <partials:CompanyRides Grid.Row="0" DataContext="{Binding CompanyRidesViewModel}" />
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+
+            <!-- My last rides list -->
+            <HubSection>
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding [MyRides], Source={StaticResource LocalizedStrings}}"
+                                       Style="{StaticResource HubHeaderTextBlock}" FontSize="45" />
+                        </StackPanel>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="9.7*"/>
+                            <RowDefinition Height="0.3*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <partials:MyRides DataContext="{Binding MyRidesViewModel}" />
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+    </Grid>
+</base:WindowsBasePage>

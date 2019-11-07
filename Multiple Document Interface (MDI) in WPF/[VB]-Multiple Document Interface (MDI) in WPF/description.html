@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Multiple Document Interface (MDI) in WPF</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Multiple Document Interface (MDI) in WPF</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, Windows Forms, WPF, WPF MDI Form
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Forms, WPF MDI Form
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/9/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Multiple-Document-059b96a8">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>Multiple Document Interface(MDI) in WPF. </em></p>
+<p><em>MDI Form doesn't exist in WPF. But this functionality can be achieved by using Tab Control or Third Party Control. I Used WPF.MDI.DLL assembly.
+<br>
+</em></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>For implementing the MDI form in WPF, You need to download third party Tool &quot;WPF.MDI.DLL&quot;. You can download this library from this link.</em></p>
+<p><em><a title="WPF.MDI.DLL Download" href="http://wpfmdi.codeplex.com/"><span style="font-size:small"><strong>Download</strong></span></a></em></p>
+<p><em><span style="font-size:small"><strong>Screen:</strong></span></em></p>
+<p><em><span style="font-size:small"><strong><img id="106854" src="description/WPFMDIForm.gif" alt="" width="998" height="648"><br>
+</strong></span></em></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><em><strong>WPF.MDI.DLL</strong> assembly contain two conrol </em></p>
+<p><em>1) MDI Container</em></p>
+<p><em>2) MDI Child<br>
+</em></p>
+<p>To implement MDI form first Place MDI Container in a main window and Add User Control in your project to use as a MDI Child form. Two use this assembly place
+<strong>WPF.MDI.DLL</strong> in to <strong>bin</strong> folder and <strong>Add references</strong> to it. Add that assembly in
+<strong>ToolBox</strong> so you can easily drag and drop the MDI Control.</p>
+<p>Add this namespace in your mainwindow.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">  xmlns:mdi=&quot;clr-namespace:WPF.MDI;assembly=WPF.MDI&quot;</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;xmlns:mdi=<span class="cs__string">&quot;clr-namespace:WPF.MDI;assembly=WPF.MDI&quot;</span></pre>
+</div>
+</div>
+</div>
+<p>Add Menu in your MainWindow Form.&nbsp;</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">        &lt;DockPanel&gt;
+            &lt;Menu Name=&quot;MainMenu&quot; VerticalAlignment=&quot;Top&quot; DockPanel.Dock=&quot;Top&quot; Height=&quot;30&quot; FontSize=&quot;15&quot; &gt;
+                &lt;MenuItem Name=&quot;menuHome&quot; Header=&quot;Home&quot;&gt;
+                &lt;/MenuItem&gt;
+                &lt;MenuItem Name=&quot;menuMaster&quot; Header=&quot;Master&quot;&gt;
+                    &lt;MenuItem Name=&quot;userRegistration&quot; Header=&quot;User Registration&quot; Click=&quot;userRegistration_Click&quot;  /&gt;
+                    &lt;MenuItem Name=&quot;compRegistration&quot; Header=&quot;Company Registration&quot; Click=&quot;compRegistration_Click&quot;&gt;&lt;/MenuItem&gt;
+                &lt;/MenuItem&gt;
+                &lt;MenuItem Name=&quot;menuExit&quot; Header=&quot;Exit&quot;&gt;
+                    &lt;MenuItem Name=&quot;Exit&quot; Header=&quot;Exit&quot; Click=&quot;menuExit_Click&quot;&gt;&lt;/MenuItem&gt;
+                &lt;/MenuItem&gt;
+            &lt;/Menu&gt;
+        &lt;/DockPanel&gt;</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Menu&nbsp;Name=<span class="cs__string">&quot;MainMenu&quot;</span>&nbsp;VerticalAlignment=<span class="cs__string">&quot;Top&quot;</span>&nbsp;DockPanel.Dock=<span class="cs__string">&quot;Top&quot;</span>&nbsp;Height=<span class="cs__string">&quot;30&quot;</span>&nbsp;FontSize=<span class="cs__string">&quot;15&quot;</span>&nbsp;&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem&nbsp;Name=<span class="cs__string">&quot;menuHome&quot;</span>&nbsp;Header=<span class="cs__string">&quot;Home&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MenuItem&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem&nbsp;Name=<span class="cs__string">&quot;menuMaster&quot;</span>&nbsp;Header=<span class="cs__string">&quot;Master&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem&nbsp;Name=<span class="cs__string">&quot;userRegistration&quot;</span>&nbsp;Header=<span class="cs__string">&quot;User&nbsp;Registration&quot;</span>&nbsp;Click=<span class="cs__string">&quot;userRegistration_Click&quot;</span>&nbsp;&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem&nbsp;Name=<span class="cs__string">&quot;compRegistration&quot;</span>&nbsp;Header=<span class="cs__string">&quot;Company&nbsp;Registration&quot;</span>&nbsp;Click=<span class="cs__string">&quot;compRegistration_Click&quot;</span>&gt;&lt;/MenuItem&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MenuItem&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem&nbsp;Name=<span class="cs__string">&quot;menuExit&quot;</span>&nbsp;Header=<span class="cs__string">&quot;Exit&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem&nbsp;Name=<span class="cs__string">&quot;Exit&quot;</span>&nbsp;Header=<span class="cs__string">&quot;Exit&quot;</span>&nbsp;Click=<span class="cs__string">&quot;menuExit_Click&quot;</span>&gt;&lt;/MenuItem&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/MenuItem&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Menu&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DockPanel&gt;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>Then After p<span style="font-size:x-small">lace MDI Container in a MainWindow.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">        &lt;DockPanel&gt;
+            &lt;mdi:MdiContainer Theme=&quot;Aero&quot; DockPanel.Dock=&quot;Top&quot; Margin=&quot;0 20 0 0&quot; Name=&quot;MainMdiContainer&quot; /&gt;
+        &lt;/DockPanel&gt;</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mdi:MdiContainer&nbsp;Theme=<span class="cs__string">&quot;Aero&quot;</span>&nbsp;DockPanel.Dock=<span class="cs__string">&quot;Top&quot;</span>&nbsp;Margin=<span class="cs__string">&quot;0&nbsp;20&nbsp;0&nbsp;0&quot;</span>&nbsp;Name=<span class="cs__string">&quot;MainMdiContainer&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DockPanel&gt;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>By default MdiContainer contains three different Theme (Aero,Luna,Generic), You can apply any of them as per your requirement.</p>
+<p>I Used Two User Control to use as a MDI Child UserRegistration.xaml and CompRegistration.</p>
+<p>Add the name space in MainWindow.cs.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>Visual Basic</span><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">vb</span><span class="hidden">csharp</span>
+<pre class="hidden">Imports WPF.MDI</pre>
+<pre class="hidden">using WPF.MDI;</pre>
+<div class="preview">
+<pre class="vb"><span class="visualBasic__keyword">Imports</span>&nbsp;WPF.MDI</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>and the below code in MenuItem Click Event.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>Visual Basic</span><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">vb</span><span class="hidden">csharp</span>
+<pre class="hidden">Private Sub userRegistration_Click(sender As Object, e As RoutedEventArgs)
+	MainMdiContainer.Children.Clear()
+		'Here UserRegistration is the class that you have created for mainWindow.xaml user control.
+	MainMdiContainer.Children.Add(New MdiChild() With { _
+		 .Title = &quot; User Registration&quot;, _
+		 .Height = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenHeight.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenHeight">System.Windows.SystemParameters.PrimaryScreenHeight</a> - 15), _
+		 .Width = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenWidth.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenWidth">System.Windows.SystemParameters.PrimaryScreenWidth</a> - 15), _
+		 .Style = Nothing, _
+		 .Content = New UserRegistration() _
+	})
+End Sub
+
+Private Sub compRegistration_Click(sender As Object, e As RoutedEventArgs)
+	MainMdiContainer.Children.Clear()
+		'Here compRegistration is the class that you have created for mainWindow.xaml user control.
+	MainMdiContainer.Children.Add(New MdiChild() With { _
+		 .Title = &quot; Company Registration&quot;, _
+		 .Height = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenHeight.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenHeight">System.Windows.SystemParameters.PrimaryScreenHeight</a> - 15), _
+		 .Width = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenWidth.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenWidth">System.Windows.SystemParameters.PrimaryScreenWidth</a> - 15), _
+		 .Style = Nothing, _
+		 .Content = New CompRegistration() _
+	})
+End Sub</pre>
+<pre class="hidden"> private void userRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            MainMdiContainer.Children.Clear();
+            MainMdiContainer.Children.Add(new MdiChild()
+            {
+                Title = &quot; User Registration&quot;,
+                Height = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenHeight.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenHeight">System.Windows.SystemParameters.PrimaryScreenHeight</a> - 15),
+                Width = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenWidth.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenWidth">System.Windows.SystemParameters.PrimaryScreenWidth</a> - 15),
+                Style = null,
+                //Here UserRegistration is the class that you have created for mainWindow.xaml user control.
+                Content = new UserRegistration()
+            });
+        }
+
+        private void compRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            MainMdiContainer.Children.Clear();
+            MainMdiContainer.Children.Add(new MdiChild()
+            {
+                Title = &quot; Company Registration&quot;,
+                Height = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenHeight.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenHeight">System.Windows.SystemParameters.PrimaryScreenHeight</a> - 15),
+                Width = (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.SystemParameters.PrimaryScreenWidth.aspx"  title="Auto generated link to System.Windows.SystemParameters.PrimaryScreenWidth">System.Windows.SystemParameters.PrimaryScreenWidth</a> - 15),
+                Style = null,
+                //Here compRegistration is the class that you have created for mainWindow.xaml user control.
+                Content = new CompRegistration()
+            });
+        } </pre>
+<div class="preview">
+<pre class="vb"><span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;userRegistration_Click(sender&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Object</span>,&nbsp;e&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;RoutedEventArgs)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;MainMdiContainer.Children.Clear()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Here&nbsp;UserRegistration&nbsp;is&nbsp;the&nbsp;class&nbsp;that&nbsp;you&nbsp;have&nbsp;created&nbsp;for&nbsp;mainWindow.xaml&nbsp;user&nbsp;control.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;MainMdiContainer.Children.Add(<span class="visualBasic__keyword">New</span>&nbsp;MdiChild()&nbsp;<span class="visualBasic__keyword">With</span>&nbsp;{&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Title&nbsp;=&nbsp;<span class="visualBasic__string">&quot;&nbsp;User&nbsp;Registration&quot;</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Height&nbsp;=&nbsp;(System.Windows.SystemParameters.PrimaryScreenHeight&nbsp;-&nbsp;<span class="visualBasic__number">15</span>),&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Width&nbsp;=&nbsp;(System.Windows.SystemParameters.PrimaryScreenWidth&nbsp;-&nbsp;<span class="visualBasic__number">15</span>),&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Style&nbsp;=&nbsp;<span class="visualBasic__keyword">Nothing</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Content&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;UserRegistration()&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;
+<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;
+&nbsp;
+<span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;compRegistration_Click(sender&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Object</span>,&nbsp;e&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;RoutedEventArgs)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;MainMdiContainer.Children.Clear()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Here&nbsp;compRegistration&nbsp;is&nbsp;the&nbsp;class&nbsp;that&nbsp;you&nbsp;have&nbsp;created&nbsp;for&nbsp;mainWindow.xaml&nbsp;user&nbsp;control.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;MainMdiContainer.Children.Add(<span class="visualBasic__keyword">New</span>&nbsp;MdiChild()&nbsp;<span class="visualBasic__keyword">With</span>&nbsp;{&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Title&nbsp;=&nbsp;<span class="visualBasic__string">&quot;&nbsp;Company&nbsp;Registration&quot;</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Height&nbsp;=&nbsp;(System.Windows.SystemParameters.PrimaryScreenHeight&nbsp;-&nbsp;<span class="visualBasic__number">15</span>),&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Width&nbsp;=&nbsp;(System.Windows.SystemParameters.PrimaryScreenWidth&nbsp;-&nbsp;<span class="visualBasic__number">15</span>),&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Style&nbsp;=&nbsp;<span class="visualBasic__keyword">Nothing</span>,&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Content&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;CompRegistration()&nbsp;_&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;
+<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>Here MainMdiContainer.Children.Clear() is used for removing the previous UserControl. This method will display One Control at a time. If you want to display Two Control at once just remove or comment it.</p>
+<p>Style=null is used to remove minimize, maximize and close icon from the User Control.</p>
+<p><span style="font-size:x-small"><br>
+</span></p>
+<h1><span>Source Code Files</span></h1>
+<p>This library to add the traditional windows forms Multiple Document Interface (MDI) features to WPF.</p>
+<ul>
+<li><em>source code file MDIForm Library - <a title="Download MDI Form Library" href="http://code.msdn.microsoft.com/Multiple-Document-059b96a8/https://wpfmdi.codeplex.com/">
+Download MDIForm Library</a></em> </li><li><em><em>source code file Source File - <a id="106857" href="http://code.msdn.microsoft.com/windowsdesktop/site/view/file/106857/1/WPFMDIForm.zip">
+WPFMDIForm.zip</a><br>
+</em></em></li></ul>
+<h1>More Information</h1>
+<p><em>For more information on X, see ...?</em></p>
+<div class="mcePaste" id="_mcePaste" style="left:-10000px; top:41px; width:1px; height:1px; overflow:hidden">
+first</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

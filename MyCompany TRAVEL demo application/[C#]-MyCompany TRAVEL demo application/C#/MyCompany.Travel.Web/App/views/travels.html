@@ -1,0 +1,80 @@
+﻿<section class="view">
+    <header>
+        <div class="content-input">
+            <input class="input-search" type="text" data-bind="value: filter, valueUpdate: 'input'">
+        </div>
+        <div class="content-travels">
+            <div class="content-have-travels">
+                <span class="have-travels">Your travel requests</span>
+            </div>
+            <div class="travels-number">
+                <span data-bind="text: travelsCount"></span>
+            </div>
+            <button class="refresh-button" data-bind="click: refresh" title="Refresh">
+            </button>
+            <div class="clear"></div>
+        </div>
+
+        <button class="button-primary padding-newtravel" data-bind="click: add" title="New travel">
+            New travel
+        </button>
+        <div class="clear"></div>
+    </header>
+    <!-- ko if: !anyRecord()-->
+    <section class="list-no-articles">
+        No records found
+    </section>
+    <!-- /ko -->
+    <!-- ko if: anyRecord()-->
+    <section data-bind="foreach: { data: travels }">
+        <article class="article-of-list">
+            <div class="row-header row-header-left big" data-bind="class: (depart() > new Date()) ? 'highlighted' : ''">
+                <span class="row-text big" data-bind="dateString: depart, datePattern: 'MMMM'"></span>
+            </div>
+            <div class="row-header row-header-right small" data-bind="class: (depart() > new Date()) ? 'highlighted' : ''">
+                <span class="grand-font" data-bind="dateString: depart, datePattern: 'DD'"></span>
+                <br />
+                <span class="small-font" data-bind="dateString: depart, datePattern: 'YYYY'"></span>
+            </div>
+            <div class="row-body"  data-bind="class: (depart() > new Date()) ? 'highlighted' : ''">
+                <div class="row-cell shortColumn">
+                    <span class="row-text" data-bind="text: from"></span>
+                </div>
+                <div class="row-cell shortColumn">
+                    <span class="row-text" data-bind="text: to"></span>
+                </div>
+                <div class="row-cell longColumn">
+                    <span class="row-text" data-bind="text: name"></span>
+                </div>
+                <div class="row-cell status" data-bind="attr: { 'class': 'status ' + statusName(), 'title' : statusName() }"></div>
+                <div class="clear"></div>
+            </div>
+            <button class="button-box button-info" type="button" data-bind="click: $parent.openDetail" title="View request details"></button>
+            <button class="button-box button-edit" type="button" data-bind="click: $parent.edit, enable: $parent.canEdit($data) " title="Edit request" ></button>
+            <button class="button-box button-delete" type="button" data-bind="click: $parent.deleteTravel, enable: $parent.canDelete($data) " title="Remove request"></button>
+            <div class="clear"></div>
+        </article>
+    </section>
+    <section class="content-pagination">
+        <ul data-bind="foreach: pages">
+            <li data-bind="css: { active: activated}">
+                <div data-bind="{if: clickable}">
+                    <a href="#" data-bind="{text: number, click: $root.paginate}"></a>
+                </div>
+                <div data-bind="{if: !clickable}">...</div>
+            </li>
+        </ul>
+        <div class="content-arrows">
+            <div class="arrow-type">
+                <button class="arrow" data-bind="click: previousPage" title="Previous page"><</button>
+            </div>
+            <div class="arrow-type margin-arrow">
+                <button class="arrow" data-bind="click: nextPage" title="Next page">></button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </section>
+    <!-- /ko -->
+
+</section>

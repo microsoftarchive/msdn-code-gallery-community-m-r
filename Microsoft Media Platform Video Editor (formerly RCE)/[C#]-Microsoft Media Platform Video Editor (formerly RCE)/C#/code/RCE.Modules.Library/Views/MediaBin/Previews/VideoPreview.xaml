@@ -1,0 +1,35 @@
+﻿<Library:AssetPreview x:Class="RCE.Modules.MediaBin.VideoPreview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:Library="clr-namespace:RCE.Modules.Library"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" MouseLeftButtonDown="HandleMouseLeftButtonDown">
+    <Grid x:Name="VideoGrid" Height="90" Width="90" Background="{StaticResource PreviewBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17"/>
+            <ColumnDefinition Width="0.558*"/>
+            <ColumnDefinition Width="0.442*"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
+            <ContentControl x:Name="IconContent" ContentTemplate="{StaticResource PreviewVideoIconTemplate}" Margin="0"/>
+        </Grid>
+        <TextBox x:Name="NameTextBox" Background="{StaticResource PreviewBackgroundBrush}" IsReadOnly="True" Grid.Column="1"
+                           Grid.Row="0" Grid.ColumnSpan="3"
+                           Text="{Binding Title, Mode=TwoWay}" 
+                           TextWrapping="NoWrap"
+                           Foreground="{StaticResource ForegroundBrush}"
+                           FontSize="9"
+                           FontWeight="Bold" 
+                           FontFamily="Arial" VerticalAlignment="Center" Margin="2,0,0,0"/>
+        <Grid x:Name="AssetContainer" Grid.Row="2" Grid.ColumnSpan="4">
+            <Image x:Name="FramePreviewImage" Visibility="Collapsed">
+                <Image.RenderTransform>
+                    <ScaleTransform x:Name="FramePreviewImageRenderTransform" ScaleX="1" ScaleY="1" />
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+    </Grid>
+</Library:AssetPreview>

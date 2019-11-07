@@ -1,0 +1,132 @@
+﻿<html>
+<head>
+    <title update-title></title>
+    <base href='@Url.Content("~/")'/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	
+    <link rel="stylesheet" type="text/css" href="App/Themes/Lumen/css/bootstrap.css">
+    <!--<link rel="stylesheet" type="text/css" href="App/Themes/Superhero/css/bootstrap.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="App/lib/ng-img-crop/compile/unminified/ng-img-crop.css">-->
+    <link rel="stylesheet" type="text/css" href="Scripts/ng-img-crop.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/core.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/loader.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/list.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/crop.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Dashboard/Css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Drivers/Css/drivers.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Vehicles/Css/vehicles.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Rides/Css/rides.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Events/Css/events.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Profile/Css/profile.css">
+</head>
+<body class="ng-cloak">
+    <ms-loader class="loader">
+        <div class="spinner">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+    </ms-loader>
+    <div class="container-fluid full-width-container">
+        <header data-ng-include="'App/Modules/Core/Views/header.html'" class="navbar"></header>
+        <section class="container main-content">
+            <section data-ui-view></section>
+        </section>
+    </div>
+
+    <script src="App/lib/jquery/dist/jquery.js"></script>
+    <script src="App/lib/moment/min/moment.min.js"></script>
+    <script src="App/lib/angular/angular.js"></script>
+    <script src="App/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="App/lib/angular-animate/angular-animate.js"></script>
+    <script src="App/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="App/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="App/lib/angular-moment/angular-moment.js"></script>
+    <script src="Content/chartjs/Chart.js"></script>
+    <!--<script src="App/lib/ng-img-crop/compile/unminified/ng-img-crop.js"></script>-->
+    <script src="Scripts/ng-img-crop.js"></script>
+    <script src="App/lib/angular-bindonce/bindonce.js"></script>
+    <script src="App/lib/signalr/jquery.signalR.min.js"></script>
+    <!-- Core Module dependencies -->
+    <script src="App/config.js"></script>
+    <script src="App/application.js"></script>
+    <script src="App/Modules/Core/core.js"></script>
+    <script src="App/Modules/Core/Config/coreRoutes.js"></script>
+    <script src="App/Modules/Core/Config/coreConfig.js"></script>
+    <script src="App/Modules/Core/Controllers/headerController.js"></script>
+    <script src="App/Modules/Core/Services/navigationService.js"></script>
+    <script src="App/Modules/Core/Services/messengerService.js"></script>
+    <script src="App/Modules/Core/Services/modalService.js"></script>
+    <script src="App/Modules/Core/Services/httpInterceptor.js"></script>
+    <script src="App/Modules/Core/Services/dataService.js"></script>
+    <script src="App/Modules/Core/Services/settingsService.js"></script>
+    <script src="App/Modules/Core/Directives/rating.js"></script>
+    <script src="App/Modules/Core/Directives/angular-chartjs.js"></script>
+    <script src="App/Modules/Core/Directives/loader.js"></script>
+    <script src="App/Modules/Core/Directives/updateTitle.js"></script>
+    <script src="App/Modules/Core/Directives/focusMe.js"></script>
+    <script src="App/Modules/Core/Directives/ngKeyEnter.js"></script>
+    <script src="App/Modules/Core/Directives/listPager.js"></script>
+    <script src="App/Modules/Core/Directives/listInputSearch.js"></script>
+    <script src="App/Modules/Core/Directives/ngCrop.js"></script>
+    <script src="App/Modules/Core/Filters/imageBase64.js"></script>
+    <script src="App/Modules/Core/Directives/severity.js"></script>
+    <script src="App/Modules/Core/Filters/severity.js"></script>
+    <!-- Dashboard Module dependencies -->
+    <script src="App/Modules/Dashboard/dashboard.js"></script>
+    <script src="App/Modules/Dashboard/Config/dashboardRoutes.js"></script>
+    <script src="App/Modules/Dashboard/Config/dashboardConfig.js"></script>
+    <script src="App/Modules/Dashboard/Controllers/dashboardController.js"></script>
+    <script src="App/Modules/Dashboard/Services/dataService.js"></script>
+    <!-- Drivers Module dependencies -->
+    <script src="App/Modules/Drivers/drivers.js"></script>
+    <script src="App/Modules/Drivers/Config/driversRoutes.js"></script>
+    <script src="App/Modules/Drivers/Config/driversConfig.js"></script>
+    <script src="App/Modules/Drivers/Services/dataService.js"></script>
+    <script src="App/Modules/Drivers/Controllers/driversController.js"></script>
+    <script src="App/Modules/Drivers/Controllers/driverFormController.js"></script>
+    <!-- Vehicles Module dependencies -->
+    <script src="App/Modules/Vehicles/vehicles.js"></script>
+    <script src="App/Modules/Vehicles/Config/vehiclesRoutes.js"></script>
+    <script src="App/Modules/Vehicles/Config/vehiclesConfig.js"></script>
+    <script src="App/Modules/Vehicles/Services/dataService.js"></script>
+    <script src="App/Modules/Vehicles/Controllers/vehiclesController.js"></script>
+    <script src="App/Modules/Vehicles/Controllers/vehicleFormController.js"></script>
+    <!-- Rides Module dependencies -->
+    <script src="App/Modules/Rides/rides.js"></script>
+    <script src="App/Modules/Rides/Config/ridesRoutes.js"></script>
+    <script src="App/Modules/Rides/Config/ridesConfig.js"></script>
+    <script src="App/Modules/Rides/Controllers/ridesController.js"></script>
+    <script src="App/Modules/Rides/Services/dataService.js"></script>
+    <!-- Events Module dependencies -->
+    <script src="App/Modules/Events/events.js"></script>
+    <script src="App/Modules/Events/Config/eventsRoutes.js"></script>
+    <script src="App/Modules/Events/Config/eventsConfig.js"></script>
+    <script src="App/Modules/Events/Controllers/eventsController.js"></script>
+    <script src="App/Modules/Events/Services/dataService.js"></script>
+    <!-- Profile Module dependencies -->
+    <script src="App/Modules/Profile/profile.js"></script>
+    <script src="App/Modules/Profile/Config/profileRoutes.js"></script>
+    <script src="App/Modules/Profile/Controllers/profileController.js"></script>
+    <script src="App/Modules/Profile/Services/dataService.js"></script>
+
+    <!-- Livereload script rendered - For development pursposes -->
+    <!-- <script type="text/javascript" src="http://localhost:35729/livereload.js"></script> -->
+</body>
+</html>

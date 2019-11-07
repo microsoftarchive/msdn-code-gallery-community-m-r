@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="RCE.Modules.Ads.AdView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" MouseLeftButtonDown="UserControl_MouseLeftButtonDown">
+    <Canvas Height="12.666" Width="8.958" Margin="-6,-12,0,0">
+        <Path x:Name="AdPath" Fill="{StaticResource AdViewPreviewBrush}" Data="F1 M6.7542267,1.2417635E-09 L2.0787582,1.2417635E-09 C0.93089294,1.2417635E-09 0,0.93099976 0,2.0789948 L0,5.3389893 C0,6.4869843 0.93089294,7.417984 2.0787582,7.417984 L2.5417099,7.417984 L5.7503433,12.324997 L6.0873032,7.417984 L6.7542267,7.417984 C7.9020996,7.417984 8.8319855,6.4869843 8.8319855,5.3389893 L8.8319855,2.0789948 C8.8319855,0.93099976 7.9020996,1.2417635E-09 6.7542267,1.2417635E-09 z" Height="12.583" Width="9" Cursor="Hand" Stretch="Fill" Stroke="{StaticResource AdViewPreviewStroke}"/>
+    </Canvas>
+</UserControl>

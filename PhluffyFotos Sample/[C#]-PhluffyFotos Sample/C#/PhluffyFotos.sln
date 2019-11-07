@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{255AE7EE-60DB-4897-BF80-4BF7756F46AF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "PhluffyFotos", "PhluffyFotos\PhluffyFotos.ccproj", "{2BC8301A-CAFF-4063-B382-2FEBFB8686E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhluffyFotos.Worker", "PhluffyFotos.Worker\PhluffyFotos.Worker.csproj", "{C102C5B8-7973-4EBB-AE93-0EA9AEF9174F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhluffyFotos.Data.WindowsAzure", "PhluffyFotos.Data.WindowsAzure\PhluffyFotos.Data.WindowsAzure.csproj", "{E19F8C22-46FE-48D1-B5AE-63458A418062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhluffyFotos.Data", "PhluffyFotos.Data\PhluffyFotos.Data.csproj", "{25CD1E4D-B8E0-460D-86F1-AF609F0024B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhluffyFotos.Web", "PhluffyFotos.Web\PhluffyFotos.Web.csproj", "{DC0C0D85-2C3B-4302-9EB5-2408F0C54435}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25CD1E4D-B8E0-460D-86F1-AF609F0024B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25CD1E4D-B8E0-460D-86F1-AF609F0024B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25CD1E4D-B8E0-460D-86F1-AF609F0024B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25CD1E4D-B8E0-460D-86F1-AF609F0024B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC8301A-CAFF-4063-B382-2FEBFB8686E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC8301A-CAFF-4063-B382-2FEBFB8686E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC8301A-CAFF-4063-B382-2FEBFB8686E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC8301A-CAFF-4063-B382-2FEBFB8686E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C102C5B8-7973-4EBB-AE93-0EA9AEF9174F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C102C5B8-7973-4EBB-AE93-0EA9AEF9174F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C102C5B8-7973-4EBB-AE93-0EA9AEF9174F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C102C5B8-7973-4EBB-AE93-0EA9AEF9174F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0C0D85-2C3B-4302-9EB5-2408F0C54435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0C0D85-2C3B-4302-9EB5-2408F0C54435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0C0D85-2C3B-4302-9EB5-2408F0C54435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0C0D85-2C3B-4302-9EB5-2408F0C54435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E19F8C22-46FE-48D1-B5AE-63458A418062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19F8C22-46FE-48D1-B5AE-63458A418062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19F8C22-46FE-48D1-B5AE-63458A418062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19F8C22-46FE-48D1-B5AE-63458A418062}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

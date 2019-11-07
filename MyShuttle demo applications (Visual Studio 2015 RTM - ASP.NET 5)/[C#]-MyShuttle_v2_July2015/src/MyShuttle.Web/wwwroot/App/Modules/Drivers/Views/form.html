@@ -1,0 +1,89 @@
+<section data-ng-controller="DriverFormController" ng-key-enter="save()" tabindex="1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Driver {{driverId}}</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <alert ng-animate="'custom'" ng-repeat="alert in alerts" type="{{alert.type}}"
+                       close="closeAlert($index)">
+                    {{alert.msg}}
+                </alert>
+            </div>
+            <div class="col-md-4 driver-image-container">
+                <ms-crop ms-crop-model-property="driver.Picture" ms-image-size="225" ms-area-type="circle"></ms-crop>
+                <div class="form-group required">
+                    <div class="text-center" ng-class="{'has-error': showValidationMessages && !driver.Picture}">
+                        <span class="ng-hide control-label" ng-show="showValidationMessages && !driver.Picture">Required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <form name="driverForm" novalidate class="form-horizontal ng-cloak" role="form" ng-cloak>
+                    <div class="form-group required">
+                        <label class="col-xs-2 col-xs-2 col-sm-2 control-label" for="name">Name</label>
+
+                        <div class="col-xs-10 col-sm-10"
+                             ng-class="{'has-error': showValidationMessages && driverForm.name.$invalid}">
+                            <input type="text" id="name" name="name" class="form-control" ng-model="driver.Name"
+                                   required focus-me />
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && driverForm.name.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="col-xs-2 col-sm-2 control-label" for="phone">Phone</label>
+
+                        <div class="col-xs-10 col-sm-10"
+                             ng-class="{'has-error': showValidationMessages && driverForm.phone.$invalid}">
+                            <input type="text" id="phone" name="phone" class="form-control" ng-model="driver.Phone"
+                                   required/>
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && driverForm.phone.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="text-right help-block">* Field is required</div>
+                    <div class="form-group">
+                        <section class="read-only-data col-xs-offset-2 col-xs-10">
+                            <div class="well well-lg">
+                                <div class="row assigned-vehicle">
+                                    <div class="label-data">
+                                        Assigned Vehicle
+                                    </div>
+                                    <h3 ng-if="driver.Vehicle">{{driver.Vehicle.Make}} {{driver.Vehicle.Model}}</h3>
+
+                                    <h3 ng-if="!driver.Vehicle">-</h3>
+                                    <span ng-if="driver.Vehicle" class="license-plate">{{driver.Vehicle.LicensePlate}}</span>
+                                </div>
+                                <div class="row">
+                                    <div class="label-data">
+                                        Rating
+                                    </div>
+                                    <ms-rating model="driver.RatingAvg" big="true"></ms-rating>
+                                </div>
+                                <div class="row">
+                                    <div class="label-data">
+                                        Total Rides
+                                    </div>
+                                    <h3>{{driver.TotalRides}}</h3>
+                                    <button class="btn btn-primary btn-xs view-rides-button" ng-disabled="!driver.TotalRides"
+                                            ui-sref="rides({driverId: driver.DriverId})">
+                                        View All
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="profile-buttons-footer pull-right">
+                <button type="button" ng-click="reset()" ng-disabled="isUnchanged(driver)" class="btn btn-default">
+                    Reset
+                </button>
+                <button type="submit" ng-click="save()" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</section>

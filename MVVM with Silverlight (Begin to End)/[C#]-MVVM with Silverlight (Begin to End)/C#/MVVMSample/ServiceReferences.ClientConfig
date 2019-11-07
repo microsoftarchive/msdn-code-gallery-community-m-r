@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="CustomBinding_PersonDataService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:61126/PersonDataService.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_PersonDataService"
+                contract="PersonDataService.PersonDataService" name="CustomBinding_PersonDataService" />
+        </client>
+    </system.serviceModel>
+</configuration>

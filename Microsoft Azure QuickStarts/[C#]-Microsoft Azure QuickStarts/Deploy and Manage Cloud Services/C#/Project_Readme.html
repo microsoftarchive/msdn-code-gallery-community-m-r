@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Deploy and Manage Cloud Services</title>
+    <style>body { font-family: 'Lucida Sans Unicode'} .subhead { font-style:italic; color: gray }</style>
+</head>
+<body>
+    <h1>Deploy and Manage Cloud Services</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+    <p>
+        The <a href="https://msdn.microsoft.com/en-us/library/azure/dn722415.aspx">Microsoft Azure Management Libraries</a>
+        are intended for developers who want to automate
+        the management, provisioning, deprovisioning and test of cloud infrastructure with ease.
+        These services support Microsoft Azure Virtual Machines, Cloud Services, Storage, Virtual Networks,
+        Web Sites and core data center infrastructure management. 
+    </p>
+    
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>. 
+    </p>
+    
+    <p>
+        This QuickStart demonstrates the following scenarios:
+        <ol>
+            <li>Creating an Azure Storage Account</li>
+            <li>Uploading an Azure Cloud Service package to Storage</li>
+            <li>Creating an Azure Cloud Service</li>
+            <li>Deploying the package to the Azure Cloud Service production slot</li>
+            <li>Deleting a Cloud Service Deployment, Cloud Service and Storage Account.</li>
+        </ol>
+    </p>
+    <h2>Running this sample</h2>
+    <ol>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkID=276844">Download your *.publishsettings file</a> 
+            from the Microsoft Azure management portal and save to to your local dive </li>
+        <li>Open a new instance of Visual Studio, create an Azure Cloud Service project with at least
+            one role (don't worry about writing any custom code), right-click the project and choose
+            Package to create the .cspkg and .cscfg files which will be deployed to Azure by this sample.</li>
+         <li>Set the <code>PublishSettingsFilePath</code>, <code>ServiceConfigurationFilePath</code> and 
+            <code>ServicePackageFilePath</code> properties in Program.cs</li>
+          <li>Run</li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="https://msdn.microsoft.com/en-us/library/azure/dn722415.aspx">Get Started with the Management Libraries for .NET</a></li>
+    </ul>
+</body>
+</html>

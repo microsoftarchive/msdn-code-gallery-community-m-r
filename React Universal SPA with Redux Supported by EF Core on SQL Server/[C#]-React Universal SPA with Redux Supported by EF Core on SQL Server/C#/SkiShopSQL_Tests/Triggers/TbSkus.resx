@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="dbo_Trigger_Skus_Del_PreventTest_ById_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Skus_Del_Prevent_ById
+DECLARE @SkuId AS INT;
+SELECT @SkuId = 1;
+
+DELETE FROM [dbo].[Skus]
+	WHERE  [SkuId] = @SkuId
+</value>
+  </data>
+  <data name="dbo_Trigger_Skus_InsertTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Skus_Insert
+
+DECLARE @SkuId AS INT, @SkuNo AS CHAR (8), @StyleId AS INT, @Size AS NVARCHAR (20), @Quantity AS SMALLINT;
+SELECT @SkuId = (SELECT MAX(SkuId) + 1 FROM dbo.Skus),
+       @SkuNo = '99999999',
+       @StyleId = 1,
+       @Size = 'testing size',
+       @Quantity = 1;
+
+INSERT  INTO [dbo].[Skus] ([SkuId], [SkuNo], [StyleId], [Size], [Quantity])
+VALUES                   (@SkuId, @SkuNo, @StyleId, @Size, @Quantity);
+
+DECLARE @soldOut AS BIT;
+SELECT @soldOut = (SELECT SoldOut FROM dbo.StyleStates WHERE StyleId = @StyleId );
+	   
+IF @soldOut = 0 AND (EXISTS (SELECT SkuId FROM dbo.Skus WHERE SkuId = @SkuId))
+	SELECT 1;
+ELSE
+	SELECT 0;
+
+
+
+
+
+
+
+
+
+
+--DECLARE @SkuId AS INT, @SkuNo AS CHAR (8), @StyleId AS INT, @Size AS NVARCHAR (20), @Quantity AS SMALLINT, @SoftDeleted AS BIT
+--SELECT @SkuId = 0,
+--       @SkuNo = NULL,
+--       @StyleId = 0,
+--       @Size = NULL,
+--       @Quantity = 0,
+--       @SoftDeleted = 0
+--UPDATE [dbo].[Skus]
+--SET    [StyleId]     = @StyleId,
+--       [Size]        = @Size,
+--       [Quantity]    = @Quantity,
+--       [SoftDeleted] = @SoftDeleted
+--WHERE  N'[SkuId]' = N'@SkuId'
+--       AND N'[SkuNo]' = N'@SkuNo'
+</value>
+  </data>
+  <data name="dbo_Trigger_Skus_Del_PreventTest_ById_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+SELECT SkuId FROM dbo.Skus WHERE SkuId = 1;</value>
+  </data>
+  <data name="dbo_Trigger_Skus_Del_PreventTest_ByNo_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Skus_Del_Prevent_ByNo
+DECLARE @SkuNo AS CHAR(8);
+SELECT @SkuNo = '12345601';
+
+DELETE FROM [dbo].[Skus]
+	WHERE  [SkuNo] = @SkuNo
+
+
+</value>
+  </data>
+  <data name="dbo_Trigger_Skus_Del_PreventTest_ByNo_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+SELECT SkuNo FROM dbo.Skus WHERE SkuNo = '12345601';</value>
+  </data>
+  <data name="dbo_Trigger_Skus_InsertTest_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run before
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+UPDATE dbo.StyleStates SET SoldOut = 1 
+	WHERE StyleId = 1
+
+SELECT SoldOut FROM dbo.StyleStates WHERE StyleId = 1
+
+
+
+</value>
+  </data>
+  <data name="dbo_Trigger_Skus_InsertTest_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DISABLE TRIGGER [dbo].[Trigger_Skus_Del_Prevent] ON dbo.Skus;
+
+DECLARE @skuNo AS CHAR (8) = '99999999';
+
+DELETE FROM dbo.Skus WHERE SkuNo = @skuNo;
+
+ENABLE TRIGGER [dbo].[Trigger_Skus_Del_Prevent] ON dbo.Skus;
+
+DECLARE @totalQuantity AS INT;
+SELECT @totalQuantity = (SELECT SUM(Quantity) FROM dbo.Skus WHERE StyleId = 1);
+
+UPDATE dbo.StyleStates SET SoldOut = (CASE WHEN @totalQuantity &gt; 0 THEN 0 ELSE 1 END)
+
+SELECT SkuId FROM dbo.Skus
+	WHERE SkuNo = @skuNo;
+</value>
+  </data>
+  <data name="dbo_Trigger_Skus_UpdateTest_Add_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Skus_Update Add to Quantity
+
+DECLARE @skuNo AS CHAR (8) = '99999999';
+
+UPDATE dbo.Skus Set Quantity = 1 WHERE SkuNo = @skuNo;
+
+SELECT SoldOut FROM dbo.StyleStates WHERE StyleId = (SELECT StyleId FROM dbo.Skus WHERE SkuNo = @skuNo);</value>
+  </data>
+  <data name="dbo_Trigger_Skus_UpdateTest_Add_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run before
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DECLARE @StyleId AS INT, @StyleNo AS CHAR (6), @StyleName AS NVARCHAR (200), @BrandId AS SMALLINT, 
+	@CategoryId AS TINYINT, @GenderId AS TINYINT, @ImageBig AS NVARCHAR (300), @ImageSmall AS NVARCHAR (300), 
+	@PriceCurrent AS DECIMAL (8, 2), @PriceRegular AS DECIMAL (8, 2);
+SELECT @StyleId = (SELECT MAX(StyleId) + 1 FROM dbo.Styles),
+       @StyleNo = '999999',
+       @StyleName = 'testingStyle',
+       @BrandId = 1,
+       @CategoryId = 1,
+       @GenderId = 1,
+       @ImageBig = 'big image',
+       @ImageSmall = 'small image',
+       @PriceCurrent = 99.99,
+       @PriceRegular = 199.99;
+
+INSERT INTO [dbo].[Styles] ([StyleId], [StyleNo], [StyleName], [BrandId], [CategoryId], [GenderId], [ImageBig], 
+	[ImageSmall], [PriceCurrent], [PriceRegular])
+VALUES (@StyleId, @StyleNo, @StyleName, @BrandId, @CategoryId, @GenderId, @ImageBig, @ImageSmall, @PriceCurrent, 
+	@PriceRegular);
+
+DECLARE @SkuId AS INT, @SkuNo AS CHAR (8), @Size AS NVARCHAR (20), @Quantity AS SMALLINT, @SoftDeleted AS BIT
+SELECT @SkuId = (SELECT MAX(SkuId) + 1 FROM dbo.Skus),
+       @SkuNo = '99999999',
+       @Size = 'testing size',
+       @Quantity = 0;
+
+INSERT  INTO [dbo].[Skus] ([SkuId], [SkuNo], [StyleId], [Size], [Quantity])
+VALUES                   (@SkuId, @SkuNo, @StyleId, @Size, @Quantity);
+
+SELECT SoldOut FROM dbo.StyleStates WHERE StyleId = @StyleId
+
+
+</value>
+  </data>
+  <data name="dbo_Trigger_Skus_UpdateTest_Add_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DISABLE TRIGGER [dbo].[Trigger_Styles_Del_Prevent] ON dbo.Styles;
+DISABLE TRIGGER [dbo].[Trigger_Skus_Del_Prevent] ON dbo.Skus;
+
+DECLARE @styleNo AS CHAR (6) = '999999';
+
+DELETE FROM dbo.StyleStates
+	WHERE StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = @styleNo);
+
+DELETE FROM dbo.Skus
+	WHERE StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = @styleNo);
+
+DELETE FROM dbo.Styles
+	WHERE StyleNo = @styleNo;
+
+ENABLE TRIGGER [dbo].[Trigger_Styles_Del_Prevent] ON dbo.Styles;
+ENABLE TRIGGER [dbo].[Trigger_Skus_Del_Prevent] ON dbo.Skus;
+
+SELECT StyleId FROM dbo.Styles
+	WHERE StyleNo = @styleNo;</value>
+  </data>
+  <data name="dbo_Trigger_Skus_UpdateTest_Subtract_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Skus_Update Subtract from Quantity
+
+DECLARE @skuNo AS CHAR (8) = '99999999';
+
+UPDATE dbo.Skus Set Quantity = 0 WHERE SkuNo = @skuNo;
+
+SELECT SoldOut FROM dbo.StyleStates WHERE StyleId = (SELECT StyleId FROM dbo.Skus WHERE SkuNo = @skuNo);</value>
+  </data>
+  <data name="dbo_Trigger_Skus_UpdateTest_Subtract_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run before
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DECLARE @StyleId AS INT, @StyleNo AS CHAR (6), @StyleName AS NVARCHAR (200), @BrandId AS SMALLINT, 
+	@CategoryId AS TINYINT, @GenderId AS TINYINT, @ImageBig AS NVARCHAR (300), @ImageSmall AS NVARCHAR (300), 
+	@PriceCurrent AS DECIMAL (8, 2), @PriceRegular AS DECIMAL (8, 2);
+SELECT @StyleId = (SELECT MAX(StyleId) + 1 FROM dbo.Styles),
+       @StyleNo = '999999',
+       @StyleName = 'testingStyle',
+       @BrandId = 1,
+       @CategoryId = 1,
+       @GenderId = 1,
+       @ImageBig = 'big image',
+       @ImageSmall = 'small image',
+       @PriceCurrent = 99.99,
+       @PriceRegular = 199.99;
+
+INSERT INTO [dbo].[Styles] ([StyleId], [StyleNo], [StyleName], [BrandId], [CategoryId], [GenderId], [ImageBig], 
+	[ImageSmall], [PriceCurrent], [PriceRegular])
+VALUES (@StyleId, @StyleNo, @StyleName, @BrandId, @CategoryId, @GenderId, @ImageBig, @ImageSmall, @PriceCurrent, 
+	@PriceRegular);
+
+DECLARE @SkuId AS INT, @SkuNo AS CHAR (8), @Size AS NVARCHAR (20), @Quantity AS SMALLINT, @SoftDeleted AS BIT
+SELECT @SkuId = (SELECT MAX(SkuId) + 1 FROM dbo.Skus),
+       @SkuNo = '99999999',
+       @Size = 'testing size',
+       @Quantity = 1;
+
+INSERT  INTO [dbo].[Skus] ([SkuId], [SkuNo], [StyleId], [Size], [Quantity])
+VALUES                   (@SkuId, @SkuNo, @StyleId, @Size, @Quantity);
+
+SELECT SoldOut FROM dbo.StyleStates WHERE StyleId = @StyleId</value>
+  </data>
+  <data name="dbo_Trigger_Skus_UpdateTest_Subtract_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DISABLE TRIGGER [dbo].[Trigger_Styles_Del_Prevent] ON dbo.Styles;
+DISABLE TRIGGER [dbo].[Trigger_Skus_Del_Prevent] ON dbo.Skus;
+
+DECLARE @styleNo AS CHAR (6) = '999999';
+
+DELETE FROM dbo.StyleStates
+	WHERE StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = @styleNo);
+
+DELETE FROM dbo.Skus
+	WHERE StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = @styleNo);
+
+DELETE FROM dbo.Styles
+	WHERE StyleNo = @styleNo;
+
+ENABLE TRIGGER [dbo].[Trigger_Styles_Del_Prevent] ON dbo.Styles;
+ENABLE TRIGGER [dbo].[Trigger_Skus_Del_Prevent] ON dbo.Skus;
+
+SELECT StyleId FROM dbo.Styles
+	WHERE StyleNo = @styleNo;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="RCE.Modules.Timeline.Controls.VolumeControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="13.7808" 
+    Height="37.8103" 
+    Cursor="Hand"
+    RenderTransformOrigin="0.5,0.5" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/RCE.Infrastructure;component/Resources/MainResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+   <Canvas>
+	<Canvas.RenderTransform>
+		<TransformGroup>
+			<ScaleTransform ScaleX="1" ScaleY="1"/>
+			<SkewTransform AngleX="0" AngleY="0"/>
+			<RotateTransform Angle="0"/>
+			<TranslateTransform X="0" Y="0"/>
+		</TransformGroup>
+	</Canvas.RenderTransform>
+		<Path x:Name="bar0" Width="8.11429" Height="2.22852" Canvas.Left="3.53711" Canvas.Top="23.8152" Stretch="Fill" Fill="#FF323232" Data="F1 M 11.6514,25.6521C 11.6514,25.8669 11.4751,26.0437 11.2593,26.0437L 3.9292,26.0437C 3.71341,26.0437 3.53711,25.8669 3.53711,25.6521L 3.53711,24.2068C 3.53711,23.9919 3.71341,23.8152 3.9292,23.8152L 11.2593,23.8152C 11.4751,23.8152 11.6514,23.9919 11.6514,24.2068L 11.6514,25.6521 Z "/>
+		<Path x:Name="bar1" Width="8.11429" Height="2.22949" Canvas.Left="3.53711" Canvas.Top="19.2664" Stretch="Fill" Fill="#FF323232" Data="F1 M 11.6514,21.1033C 11.6514,21.3191 11.4751,21.4958 11.2593,21.4958L 3.9292,21.4958C 3.71341,21.4958 3.53711,21.3191 3.53711,21.1033L 3.53711,19.658C 3.53711,19.4431 3.71341,19.2664 3.9292,19.2664L 11.2593,19.2664C 11.4751,19.2664 11.6514,19.4431 11.6514,19.658L 11.6514,21.1033 Z "/>
+		<Path x:Name="bar2" Width="8.11429" Height="2.23145" Canvas.Left="3.53711" Canvas.Top="14.7175" Stretch="Fill" Fill="#FF323232" Data="F1 M 11.6514,16.5564C 11.6514,16.7722 11.4751,16.949 11.2593,16.949L 3.9292,16.949C 3.71341,16.949 3.53711,16.7722 3.53711,16.5564L 3.53711,15.1091C 3.53711,14.8943 3.71341,14.7175 3.9292,14.7175L 11.2593,14.7175C 11.4751,14.7175 11.6514,14.8943 11.6514,15.1091L 11.6514,16.5564 Z "/>
+		<Path x:Name="bar3" Width="8.11429" Height="2.23047" Canvas.Left="3.53711" Canvas.Top="10.1697" Stretch="Fill" Fill="#FF323232" Data="F1 M 11.6514,12.0076C 11.6514,12.2234 11.4751,12.4001 11.2593,12.4001L 3.9292,12.4001C 3.71341,12.4001 3.53711,12.2234 3.53711,12.0076L 3.53711,10.5623C 3.53711,10.3464 3.71341,10.1697 3.9292,10.1697L 11.2593,10.1697C 11.4751,10.1697 11.6514,10.3464 11.6514,10.5623L 11.6514,12.0076 Z "/>
+		<Path x:Name="bar4" Width="8.11429" Height="2.22852" Canvas.Left="3.53711" Canvas.Top="5.62378" Stretch="Fill" Fill="#FF323232" Data="F1 M 11.6514,7.46069C 11.6514,7.67554 11.4751,7.85229 11.2593,7.85229L 3.9292,7.85229C 3.71341,7.85229 3.53711,7.67554 3.53711,7.46069L 3.53711,6.01538C 3.53711,5.80054 3.71341,5.62378 3.9292,5.62378L 11.2593,5.62378C 11.4751,5.62378 11.6514,5.80054 11.6514,6.01538L 11.6514,7.46069 Z "/>
+		<Path x:Name="speaker" Width="4.07422" Height="6.43945" Canvas.Left="5.55759" Canvas.Top="28.7664" Stretch="Fill" Fill="#FF323232" Data="F1 M 9.63181,28.7664L 7.5947,30.8035L 7.5947,30.6687L 5.55759,30.6687L 5.55759,33.3035L 7.5947,33.3035L 7.5947,33.1687L 9.63181,35.2058L 9.63181,28.7664 Z "/>
+		<Rectangle x:Name="volumeHitArea" Width="20.89" Height="25" Fill="#00FFFFFF" Canvas.Top="3" Canvas.Left="-3.36"/>
+		<Rectangle x:Name="muteHitArea" Width="20.89" Height="10.141" Fill="#00FFFFFF" Canvas.Top="27.669" Canvas.Left="-3.36"/>
+	</Canvas>
+</UserControl>

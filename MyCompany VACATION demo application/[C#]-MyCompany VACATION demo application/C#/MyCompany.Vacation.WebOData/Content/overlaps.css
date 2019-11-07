@@ -1,0 +1,103 @@
+﻿/*General fonts*/
+/*General*/
+/*Module*/
+/*List*/
+.overlaps {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 0;
+}
+.overlaps .days-header {
+  margin-left: 40px;
+}
+.overlaps .day-header {
+  text-align: center;
+  width: 30px;
+  border-right-style: solid;
+  border-right-color: #17B5C2;
+  border-right-width: 1px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #17B5C2;
+}
+.overlaps .avatar {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-color: #ededed;
+}
+.overlaps .day-cell {
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  border-right-style: solid;
+  border-right-color: #17B5C2;
+  border-right-width: 1px;
+  position: relative;
+  color: #187B84;
+  cursor: auto;
+  padding-bottom: 5px;
+}
+.overlaps .day-cell .day-cell-content {
+  background-color: #bae0e3;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.overlaps .day-cell .date {
+  font-size: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.overlaps .day-cell .text {
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  max-height: 50px;
+}
+.overlaps .day-cell .status {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.overlaps .vacation {
+  cursor: pointer;
+}
+.overlaps .holiday .day-cell-content {
+  background-color: #7DD0D6;
+}
+.overlaps .approved {
+  border-color: #1498A3;
+  background-color: transparent;
+}
+.overlaps .approved .day-cell-content {
+  background-color: #1498A3;
+  opacity: 0.9;
+}
+.overlaps .denied {
+  border-color: #666666;
+  background-color: transparent;
+  cursor: auto;
+}
+.overlaps .denied .day-cell-content {
+  background-color: #666666;
+  opacity: 0.9;
+}
+.overlaps .pending {
+  border-color: #888888;
+  background-color: transparent;
+}
+.overlaps .pending .day-cell-content {
+  background-color: #888888;
+  opacity: 0.9;
+}
+.overlaps .employee-line:last-child .day-cell {
+  padding-bottom: 0;
+}
+.reason-input {
+  padding: 5px 5px;
+  width: 310px;
+}

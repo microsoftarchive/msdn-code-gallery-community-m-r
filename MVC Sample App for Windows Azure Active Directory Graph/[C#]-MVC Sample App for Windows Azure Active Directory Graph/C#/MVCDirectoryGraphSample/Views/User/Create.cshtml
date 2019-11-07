@@ -1,0 +1,214 @@
+﻿@model Microsoft.WindowsAzure.ActiveDirectory.User
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+
+@using (Html.BeginForm()) {
+    
+    <label style="color: #FF0000" >*</label><label>indicates a mandetory field</label><br />
+    
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.displayName)  <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.displayName)
+            @Html.ValidationMessageFor(model => model.displayName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userPrincipalName)  <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("emailAlias")
+            <label>@@</label>  @Html.DropDownList("selectedDomain")
+            @Html.ValidationMessageFor(model => model.userPrincipalName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.accountEnabled)  <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accountEnabled)
+            @Html.ValidationMessageFor(model => model.accountEnabled)
+        </div>
+               
+        <div class="editor-label">
+            @Html.LabelFor(model => model.passwordProfile.password)  <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.passwordProfile.password)
+            @Html.ValidationMessageFor(model => model.passwordProfile.password)
+        </div>      
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.city)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.city)
+            @Html.ValidationMessageFor(model => model.city)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.country)
+            @Html.ValidationMessageFor(model => model.country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.department)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.department)
+            @Html.ValidationMessageFor(model => model.department)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.facsimileTelephoneNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.facsimileTelephoneNumber)
+            @Html.ValidationMessageFor(model => model.facsimileTelephoneNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.givenName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.givenName)
+            @Html.ValidationMessageFor(model => model.givenName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.jobTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.jobTitle)
+            @Html.ValidationMessageFor(model => model.jobTitle)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.immutableId)  <label style="color: #ff69b4"> * Required if the userPrincipalName uses a federated domain</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.immutableId)
+            @Html.ValidationMessageFor(model => model.immutableId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mail)
+            @Html.ValidationMessageFor(model => model.mail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mobile)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mobile)
+            @Html.ValidationMessageFor(model => model.mobile)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.passwordPolicies)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.passwordPolicies)
+            @Html.ValidationMessageFor(model => model.passwordPolicies)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.physicalDeliveryOfficeName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.physicalDeliveryOfficeName)
+            @Html.ValidationMessageFor(model => model.physicalDeliveryOfficeName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.postalCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.postalCode)
+            @Html.ValidationMessageFor(model => model.postalCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.preferredLanguage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.preferredLanguage)
+            @Html.ValidationMessageFor(model => model.preferredLanguage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.state)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.state)
+            @Html.ValidationMessageFor(model => model.state)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.streetAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.streetAddress)
+            @Html.ValidationMessageFor(model => model.streetAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.surname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.surname)
+            @Html.ValidationMessageFor(model => model.surname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telephoneNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telephoneNumber)
+            @Html.ValidationMessageFor(model => model.telephoneNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.usageLocation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.usageLocation)
+            @Html.ValidationMessageFor(model => model.usageLocation)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userType)
+            @Html.ValidationMessageFor(model => model.userType)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

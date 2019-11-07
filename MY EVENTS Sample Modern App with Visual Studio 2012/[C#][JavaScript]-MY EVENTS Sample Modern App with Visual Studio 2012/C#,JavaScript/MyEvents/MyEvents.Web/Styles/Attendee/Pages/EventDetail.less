@@ -1,0 +1,191 @@
+﻿.column {
+    position: relative;
+    /*overflow: hidden;*/
+    
+    &.left {
+        width: 70%;
+        padding-right: 5%;
+    }
+          
+    &.right {
+        width: 25%;
+    }
+}
+
+.detail-page {
+    .row {
+        margin-bottom: 1.5em;
+    }
+         
+    .title {
+        display: block;
+        font-size: 2em;
+    }
+
+    .date, .city {
+        width: auto;
+        vertical-align: top;
+        font-size: 2em;
+    }
+        
+    .icon {
+        .ellipsis {
+            width: 80%;
+        }
+                  
+        img {
+            vertical-align: middle;
+        }
+}
+    
+    #twitter {
+        a {
+            color: #be3343;
+            
+            span {
+                vertical-align: top;
+            }
+        }
+    }
+    
+    #organizer {
+        span {
+            vertical-align: top;
+        }
+    }
+    
+    #schedule {
+        color: @font-color;
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 0.5em;
+        display: block;
+        margin-top: 0.5em;
+        font-size: 1em;
+    }
+    
+    .logo {
+        display: inline-block;
+        max-width: 25%;
+        height: 98%;
+        margin-right: 2%;
+                
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+    }
+    
+    #metadata {
+        vertical-align: top;
+    }
+    
+    #localizationMap {
+        overflow: hidden;
+    }
+    
+    .map + div {
+        background-color: @contrast-color;
+        height: 380px;
+        padding: 10px 1%;
+        width: 23%;
+    }
+}
+    
+#event-detail {
+    #metadata {
+        display: inline-block;
+        max-width: 70%;
+		margin-top: -10px;
+    }
+}
+    
+#session-detail {
+    .icon {
+        margin-bottom: 0.7em;
+        font-size: 1.5em;
+    }
+          
+    .icon:first-child {
+        margin-top: 0.7em;
+        margin-bottom: 0;
+    }
+}
+    
+#register {
+    width: 90%;
+    padding: 5%;
+    height: 5em;
+    text-align: center;
+    
+    div {
+        text-align: left;
+        display: inline-block;
+        margin-top: 3%;
+    }
+    
+    span {
+        display: block;
+    }
+    
+    .big {
+        font-size: 1.6em;
+    }
+}
+
+#tweets {
+    margin: 1em 0;
+    
+    .section-title {
+        display: inline-block;
+        margin-right: 0.4em;
+    }
+                   
+    .tweet {
+        color: @font-color-100;
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 0.5em;
+        display: block;
+        margin-top: 0.5em;
+        font-size: 0.8em;
+        
+        #account {
+            color: #385f8b;
+            margin-bottom: 0.333em;
+            display: inline-block;
+            text-align: left;
+        }
+        
+        #time-ago {
+            display: inline-block;
+            text-align: right;
+        }
+    }
+}
+    
+#materials {
+    .material {
+        color: @font-color-100;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin-top: 0.5em;
+        clear: both;
+        height: 31px;
+        display: block;
+        cursor: pointer;
+        
+        .wrapper {
+            padding-left: 35px;
+        }
+        
+        .icon {
+            background-color: white;
+            float: left;
+            width: 30px;
+            height: 31px;
+            text-align: center;
+            img {
+                vertical-align: middle;
+            }
+        }
+    }
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=6A843E98DB5AEC74CF385ACE5E94CB36" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=7B1318331AB587926159A23CD37DE62D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>M2Mqtt for .Net : MQTT client for Internet of Things &amp; M2M communication</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>M2Mqtt for .Net : MQTT client for Internet of Things &amp; M2M communication</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, .NET Framework, Windows Embedded Compact 7, C# Language, .NET Micro Framework, .Net Compact Framework, Windows Embedded Compact 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Messaging, Cloud, Devices and sensors, Connected devices, MQTT, Internet of Things, IoT, M2M, Machine to Machine, Device to Cloud
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/28/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>M2Mqtt is a MQTT client available for all .Net platform (.Net Framework, .Net Compact Framework and .Net Micro Framework) for Internet of Things and M2M communication.</em></p>
+<p><em>MQTT, short for Message Queue Telemetry Transport, is a light weight messaging protocol that enables embedded devices with limited resources to perform asynchronous communication on a constrained network.</em></p>
+<p><em>MQTT protocol is based on publish/subscribe pattern so that a client can subscribe to one or more topics and receive messages that other clients publish on these topics.</em></p>
+<p><em>This sample is a library contains an MQTT client that you can use to connect to any MQTT broker. It is developed in C# language and works on all the following .Net platforms :</em></p>
+<ul>
+<li><em>.Net Framework (up to 4.5)</em> </li><li><em>.Net Compact Framework 3.5 &amp; 3.9 (for Windows Embedded Compact 7 / 2013)</em>
+</li><li><em>.Net Micro Framework 4.2 &amp; 4.3</em> </li><li><em>Mono (for Linux O.S.)</em> </li></ul>
+<p>It can be used on Windows O.S, Windows Embedded Compact 7 / 2013 and Linux O.S. (thanks to Mono Project).</p>
+<p>Official web site on CodePlex :&nbsp;<a href="https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://m2mqtt.codeplex.com/">https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://m2mqtt.codeplex.com/</a></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>The library is available for the following solution and project files :</em></p>
+<ul>
+<li><em>M2MqttVS2012.sln : solution for Visual Studio 2012 that contains projects file for .Net Framework, .Net Compact Framework 3.9, .Net Micro Framework 4.2 and .Net Micro Framework 4.3;</em>
+</li><li><em>M2MqttVS2010.sln : solution for Visual Studio 2010&nbsp;<em>that contains projects file for .Net Framework and&nbsp;<em>.Net Micro Framework 4.2;</em></em></em>
+</li><li><em><em><em>M2MqttVS2008.sln :&nbsp;<em>solution for Visual Studio 2008&nbsp;<em>that contains project file for .Net Compact Framework 3.5;</em></em></em></em></em>
+</li><li><em><em><em><em><em>M2MqttMono.sln :&nbsp;<em><em><em><em>solution for MonoDevelop for building project under Linux O.S. with Mono Project;</em></em></em></em></em></em></em></em></em>
+</li></ul>
+<p>In this sample there is only the Visual Studio 2012 solution but on the CodePlex web site&nbsp;<a href="https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://m2mqtt.codeplex.com/">https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://m2mqtt.codeplex.com/</a>&nbsp;all other versions are available.</p>
+<p>To build sample based on .Net Micro Framework (4.2 and 4.3) you need to download .Net Micro Framework SDK from the official CodePlex web site :&nbsp;<a href="https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://netmf.codeplex.com/">https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://netmf.codeplex.com/</a></p>
+<p>To build sample based on .Net Compact Framework 3.9 you need to download Application Builder for Windows Embedded Compact 2013 from here :&nbsp;<a href="http://www.microsoft.com/en-us/download/details.aspx?id=38819">http://www.microsoft.com/en-us/download/details.aspx?id=38819</a></p>
+<h1><span style="font-size:20px; font-weight:bold">Description</span></h1>
+<p><em>The M2Mqtt library provides a main class MqttClient that represents the MQTT client to connect to a broker. You can connect to the broker providing its IP address or host name and optionally some parameters related to MQTT protocol.</em></p>
+<p><em>After connecting to the broker you can use Publish() method to publish a message to a topic and Subscribe() method to subscribe to a topic and receive message published on it. The
+<em>MqttClient class is events based so that you receive an event when a message is published to a topic you subscribed to. You can receive event when a message publishing is complete, you have subscribed or unsubscribed to a topic.</em></em></p>
+<p><em>Following an example of client subscriber to a topic :</em></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">...
+
+// create client instance
+MqttClient client = new MqttClient(IPAddress.Parse(MQTT_BROKER_ADDRESS));
+
+// register to message received
+client.MqttMsgPublishReceived &#43;= client_MqttMsgPublishReceived;
+
+string clientId = Guid.NewGuid().ToString();
+client.Connect(clientId);
+
+// subscribe to the topic &quot;/home/temperature&quot; with QoS 2
+client.Subscribe(new string[] { &quot;/home/temperature&quot; }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+
+...
+
+static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+{
+// handle message received
+}
+</pre>
+<div class="preview">
+<pre class="csharp">...&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;create&nbsp;client&nbsp;instance</span>&nbsp;
+MqttClient&nbsp;client&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MqttClient(IPAddress.Parse(MQTT_BROKER_ADDRESS));&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;register&nbsp;to&nbsp;message&nbsp;received</span>&nbsp;
+client.MqttMsgPublishReceived&nbsp;&#43;=&nbsp;client_MqttMsgPublishReceived;&nbsp;
+&nbsp;
+<span class="cs__keyword">string</span>&nbsp;clientId&nbsp;=&nbsp;Guid.NewGuid().ToString();&nbsp;
+client.Connect(clientId);&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;subscribe&nbsp;to&nbsp;the&nbsp;topic&nbsp;&quot;/home/temperature&quot;&nbsp;with&nbsp;QoS&nbsp;2</span>&nbsp;
+client.Subscribe(<span class="cs__keyword">new</span>&nbsp;<span class="cs__keyword">string</span>[]&nbsp;{&nbsp;<span class="cs__string">&quot;/home/temperature&quot;</span>&nbsp;},&nbsp;<span class="cs__keyword">new</span>&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;{&nbsp;MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE&nbsp;});&nbsp;
+&nbsp;
+...&nbsp;
+&nbsp;
+<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;client_MqttMsgPublishReceived(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;MqttMsgPublishEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+<span class="cs__com">//&nbsp;handle&nbsp;message&nbsp;received</span>&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p><em>Following an example of client publisher to a topic :</em><em>&nbsp;</em></p>
+<div class="scriptcode"><em>
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">...
+
+// create client instance
+MqttClient client = new MqttClient(IPAddress.Parse(MQTT_BROKER_ADDRESS));
+
+string clientId = Guid.NewGuid().ToString();
+client.Connect(clientId);
+
+string strValue = Convert.ToString(value);
+
+// publish a message on &quot;/home/temperature&quot; topic with QoS 2
+client.Publish(&quot;/home/temperature&quot;, Encoding.UTF8.GetBytes(strValue), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE);
+
+...</pre>
+<div class="preview">
+<pre class="csharp">...&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;create&nbsp;client&nbsp;instance</span>&nbsp;
+MqttClient&nbsp;client&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MqttClient(IPAddress.Parse(MQTT_BROKER_ADDRESS));&nbsp;
+&nbsp;
+<span class="cs__keyword">string</span>&nbsp;clientId&nbsp;=&nbsp;Guid.NewGuid().ToString();&nbsp;
+client.Connect(clientId);&nbsp;
+&nbsp;
+<span class="cs__keyword">string</span>&nbsp;strValue&nbsp;=&nbsp;Convert.ToString(<span class="cs__keyword">value</span>);&nbsp;
+&nbsp;
+<span class="cs__com">//&nbsp;publish&nbsp;a&nbsp;message&nbsp;on&nbsp;&quot;/home/temperature&quot;&nbsp;topic&nbsp;with&nbsp;QoS&nbsp;2</span>&nbsp;
+client.Publish(<span class="cs__string">&quot;/home/temperature&quot;</span>,&nbsp;Encoding.UTF8.GetBytes(strValue),&nbsp;MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE);&nbsp;
+&nbsp;
+...</pre>
+</div>
+</div>
+</em></div>
+<h1><em>M2Mqtt 3.0.0.0 Update</em></h1>
+<p><em>With this update, the <strong>&quot;inflight queue&quot;</strong> was added for the publish, subscribe and unsubscribe messages. Now, all these
+<strong>operations are executed asynchronously</strong>.</em></p>
+<p><em>On Subscribe() method there is a breaking changes; the method doesn't return granted QoS levels but message id assigned to subscribe message sent. The granted QoS levels are returned in the event args of the related event at the end of asynchronous operation
+ as before.</em></p>
+<h1><em>M2Mqtt 3.1.0.0 Update</em></h1>
+<p><em>With this update, QoS level 2 handle was improved and some other features to MqttClient were added.</em></p>
+<p><em>It was also uniformed all classes with future GnatMQ broker (<a href="https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://mqttbroker.codeplex.com/" >https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://mqttbroker.codeplex.com/</a>) based on M2Mqtt core and under development.</em></p>
+<p><em>For more information, please visit official CodePlex project web site :&nbsp;<a href="https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://m2mqtt.codeplex.com/" >https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://code.msdn.microsoft.com/M2Mqtt-MQTT-client-library-ac6d3858/https://m2mqtt.codeplex.com/</a></em></p>
+<h1><em>M2Mqtt 3.2.0.0 Update</em></h1>
+<p><em>Bug fix :&nbsp;<span>&nbsp;excluded SUBSCRIBE, UNSUBSCRIBE, CONNECT and DISCONNECT messages handling;</span></em></p>
+<h1><em>M2Mqtt 3.3.0.0 Update</em></h1>
+<p><em>Added more overloads for Connect() method;</em></p>
+<p><em>Exposed client disconnection (from broker) event;</em></p>
+<h1><em>M2Mqtt 3.4.0.0 Update</em></h1>
+<p><em><span>Added tracing features in DEBUG mode with Trace class and TraceLevel enumeration;</span></em></p>
+<h1><em><span>M2Mqtt 3.5.0.0 Update</span></em></h1>
+<p><em>Exposed callbacks for SSL/TLS server certificate validation and client certificate selection;</em></p>
+<p><em>Moved tracing under symbol TRACE;</em></p>
+<p><em>Bug fixing from issues on CodePlex web site;</em></p>
+<p><em>Change license from L-GPL to Apache 2.0;</em></p>
+<h1><em>M2Mqtt 3.6.0.0 Update</em></h1>
+<p><em>Exported all network and security related operations in IMqttNetworkChannel implementation;</em></p>
+<p><em>Added support for WinRT platforms (Windows 8.1 and Windows Phone 8.1);</em></p>
+<h1><em>M2Mqtt 4.0.0.0 Update</em></h1>
+<p><em>Support for old 3.1.0 and new 3.1.1 OASIS specification;</em><br>
+<em>&nbsp;</em></p>
+<p><em>Added session management (however without persistence) for supporting for 3.1.1 OASIS specification;</em></p>
+<p><em>Keep Alive ping request disabled if keep alive timeout is set to zero;</em></p>
+<p><em>&nbsp;</em><em>Inflight queue size managed;</em></p>
+<p><em></em></p>
+<p><em>Improvement on receiving thread with some modification on underlying network channel;</em><br>
+<em></em></p>
+<p><em>Bug fixing from issues on CodePlex <em>web site;</em></em></p>
+<h1><em>M2Mqtt 4.1.0.0 Update</em></h1>
+<p><em><span>Exposed IsPublished flag in the published event to know if message is published or not due to timeout;</span></em></p>
+<p><em><span>Internal changes for event management;</span></em></p>
+<p><em><span>Fixed bug on negative timeout;</span></em></p>
+<p><em><span>Improved stability on not reliable network;</span></em></p>
+<p><em><span>Fixed bug on session management;</span></em></p>
+<p><em><span>Added trace on queueing operations;</span><br>
+</em></p>
+<p><em>See the new code sample with Visual Studio 2013 solution <a href="http://code.msdn.microsoft.com/M2Mqtt-for-WinRT-MQTT-71c7d571">
+here</a>.</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

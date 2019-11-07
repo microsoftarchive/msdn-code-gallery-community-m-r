@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:epxheader.4,0:sprite;/Areas/Epx/Themes/VStudio/Content:0&amp;amp;v=616BCA26712ACB1BBDD2E7F8C1E90888" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:epxfooter.4,0:sprite;/Areas/Epx/Themes/VStudio/Content:0&amp;amp;v=5092FB21AE7A08AD1E6FFE5C5462775C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Programmatically send SMTP email and validate X509 certificates</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/bac3e82e-9274-4823-ba5e-ede2b4339ca8Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/vstudio/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/vstudio/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Programmatically send SMTP email and validate X509 certificates</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, SMTP, System.Net.Mail<wbr />, System.Net.Mail<wbr />.SmtpClient, System.Net.Secu<wbr />rity, System.Security<wbr />.Cryptography.X<wbr />509Certificates
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Send Email, SMTP, certificates
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/17/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>How to send remote SMTP email programmatically using .Net Framework and validate the certificates?</em></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>No special considerations or libraries needed. Just download and compile the app</em></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><em>This sample application will help you to send remote SMTP email programmatically using .Net Framework.
+<em>For this activity, i used <a class="libraryLink" href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-US/library/System.Net.Mail.aspx"  title="Auto generated link to System.Net.Mail">System.Net.Mail</a> API/Namespace which&nbsp;contains classes used to send electronic mail to a Simple Mail Transfer Protocol (SMTP) server for delivery.</em>&nbsp;</em></p>
+<p><em>The sender, recipient, subject, and body of an e-mail message may be specified as parameters when a MailMessage is used to initialize a MailMessage object. These parameters may also be set or accessed using properties on the MailMessage object.</em></p>
+<p><em>Best part is no 3rd party API/library is needed and you can just use .Net Framework itself. Also you can validate the certificates as well.</em></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/*Create new Mail Message */
+MailMessage mail = new MailMessage();
+
+/* Set From, To, Subject, Body of the email */
+mail.From = new MailAddress(&quot;frommailaddress@domain.com&quot;);
+mail.To.Add(&quot;Tomailaddress@domain.com&quot;);
+mail.Subject = &quot;Test Mail - SmtpClientEmail&quot;;
+mail.Body = &quot;This is for testing SMTP mail from SmtpClientEmail&quot;;
+
+/*Specify SMTPClient info - smtpserver, port, credentials, EnableSSL - if it needs SSL */
+SmtpClient smtpServer = new SmtpClient(&quot;smtpserveraddress.com&quot;);
+smtpServer.Port = 587;
+smtpServer.Credentials = new <a class="libraryLink" href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-US/library/System.Net.NetworkCredential.aspx"  title="Auto generated link to System.Net.NetworkCredential">System.Net.NetworkCredential</a>(&quot;frommailaddress@domain.com&quot;, &quot;password&quot;);
+smtpServer.EnableSsl = true;
+
+/* Certificate Validation */            
+ServicePointManager.ServerCertificateValidationCallback =
+                delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+                { return true; };
+
+/*Now you can send the email*/
+            smtpServer.Send(mail);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__mlcom">/*Create&nbsp;new&nbsp;Mail&nbsp;Message&nbsp;*/</span>&nbsp;
+MailMessage&nbsp;mail&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MailMessage();&nbsp;
+&nbsp;
+<span class="cs__mlcom">/*&nbsp;Set&nbsp;From,&nbsp;To,&nbsp;Subject,&nbsp;Body&nbsp;of&nbsp;the&nbsp;email&nbsp;*/</span>&nbsp;
+mail.From&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MailAddress(<span class="cs__string">&quot;frommailaddress@domain.com&quot;</span>);&nbsp;
+mail.To.Add(<span class="cs__string">&quot;Tomailaddress@domain.com&quot;</span>);&nbsp;
+mail.Subject&nbsp;=&nbsp;<span class="cs__string">&quot;Test&nbsp;Mail&nbsp;-&nbsp;SmtpClientEmail&quot;</span>;&nbsp;
+mail.Body&nbsp;=&nbsp;<span class="cs__string">&quot;This&nbsp;is&nbsp;for&nbsp;testing&nbsp;SMTP&nbsp;mail&nbsp;from&nbsp;SmtpClientEmail&quot;</span>;&nbsp;
+&nbsp;
+<span class="cs__mlcom">/*Specify&nbsp;SMTPClient&nbsp;info&nbsp;-&nbsp;smtpserver,&nbsp;port,&nbsp;credentials,&nbsp;EnableSSL&nbsp;-&nbsp;if&nbsp;it&nbsp;needs&nbsp;SSL&nbsp;*/</span>&nbsp;
+SmtpClient&nbsp;smtpServer&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SmtpClient(<span class="cs__string">&quot;smtpserveraddress.com&quot;</span>);&nbsp;
+smtpServer.Port&nbsp;=&nbsp;<span class="cs__number">587</span>;&nbsp;
+smtpServer.Credentials&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-US/library/System.Net.NetworkCredential.aspx"  title="Auto generated link to System.Net.NetworkCredential">System.Net.NetworkCredential</a>(<span class="cs__string">&quot;frommailaddress@domain.com&quot;</span>,&nbsp;<span class="cs__string">&quot;password&quot;</span>);&nbsp;
+smtpServer.EnableSsl&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+&nbsp;
+<span class="cs__mlcom">/*&nbsp;Certificate&nbsp;Validation&nbsp;*/</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ServicePointManager.ServerCertificateValidationCallback&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">delegate</span>(<span class="cs__keyword">object</span>&nbsp;s,&nbsp;X509Certificate&nbsp;certificate,&nbsp;X509Chain&nbsp;chain,&nbsp;SslPolicyErrors&nbsp;sslPolicyErrors)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span class="cs__keyword">return</span>&nbsp;<span class="cs__keyword">true</span>;&nbsp;};&nbsp;
+&nbsp;
+<span class="cs__mlcom">/*Now&nbsp;you&nbsp;can&nbsp;send&nbsp;the&nbsp;email*/</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smtpServer.Send(mail);</pre>
+</div>
+</div>
+</div>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><em>Refer the solution</em> </li></ul>
+<h1>More Information</h1>
+<ul>
+<li><em>For more information, you can get more related info from the following:</em>
+<ul>
+<li><em><a class="libraryLink" href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-US/library/System.Net.Mail.aspx"  title="Auto generated link to System.Net.Mail">System.Net.Mail</a> Namespace -&nbsp;<a href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-us/library/system.net.mail(v=vs.110).aspx">https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-us/library/system.net.mail(v=vs.110).aspx</a>&nbsp;</em>
+</li><li><em>MailMessage Class -&nbsp;<a href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage(v=vs.110).aspx">https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage(v=vs.110).aspx</a></em>
+</li><li>SmtpClient Class -&nbsp;<a href="https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-us/library/system.net.mail.smtpclient(v=vs.110).aspx">https://code.msdn.microsoft.com/vstudio/Programmatically-send-SMTP-e9f8e8d9/https://msdn.microsoft.com/en-us/library/system.net.mail.smtpclient(v=vs.110).aspx</a>
+</li></ul>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

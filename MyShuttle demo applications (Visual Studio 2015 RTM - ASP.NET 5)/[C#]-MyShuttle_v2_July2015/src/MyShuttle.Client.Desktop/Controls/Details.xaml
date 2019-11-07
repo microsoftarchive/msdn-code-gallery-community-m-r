@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="MyShuttle.Client.Desktop.Controls.Details"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyShuttle.Client.Desktop"
+             xmlns:controls="clr-namespace:MyShuttle.Client.Desktop.Controls"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance local:DesignDetailsViewModel, IsDesignTimeCreatable=True}"
+             d:DesignHeight="768" d:DesignWidth="450">
+    <UserControl.Background>
+        <ImageBrush ImageSource="{StaticResource DetailsColumnBackgroundImage}" Stretch="Fill"/>
+    </UserControl.Background>
+    <Grid>
+        <StackPanel VerticalAlignment="Stretch">
+            <StackPanel>
+                <Border Background="{StaticResource DetailsSectionHeaderBackground1}" Style="{StaticResource DetailsSectionHeaderStyle}">
+                    <TextBlock Text="{Binding Resources.LicensePlate, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsHeaderTextStyle}" />
+                </Border>
+                <Grid Style="{StaticResource DetailsSectionContentStyle}">
+                    <TextBlock Text="{Binding SelectedVehicle.LicensePlate}" Style="{StaticResource DetailsPlateTextStyle}"/>
+                    <TextBlock Text="{Binding Resources.LicensePlateUnknow, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsPlateEmptyTextStyle}" Visibility="{Binding SelectedVehicle.LicensePlate, Converter={StaticResource NullToVisibilityConverter}}"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel>
+                <Border Background="{StaticResource DetailsSectionHeaderBackground1}" Style="{StaticResource DetailsSectionHeaderStyle}">
+                    <TextBlock Text="{Binding Resources.DriverDetails, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsHeaderTextStyle}"/>
+                </Border>
+                <StackPanel Orientation="Horizontal" Style="{StaticResource DetailsSectionContentStyle}">
+                    <Grid>
+                        <Border Width="{StaticResource DetailsDriverImageWidth}" Height="{StaticResource DetailsDriverImageHeight}" BorderBrush="{StaticResource DetailsImageBackground}" BorderThickness="{StaticResource DetailsDriverImageBorderThickness}" CornerRadius="{StaticResource DetailsDriverImageRadius}">
+                            <Grid>
+                                <Image Style="{StaticResource DetailsDriverEmptyImageStyle}" Visibility="{Binding SelectedDriver, Converter={StaticResource NullToVisibilityConverter}}"/>
+                                <Border Name="Mask" Background="{StaticResource DetailsImageBackground}" CornerRadius="{StaticResource DetailsDriverImageRadius}" Visibility="{Binding SelectedDriver, Converter={StaticResource NotNullToVisibilityConverter}}"/>
+                                <StackPanel Background="White" Visibility="{Binding SelectedDriver, Converter={StaticResource NotNullToVisibilityConverter}}">
+                                    <Image Source="{Binding SelectedDriver.Picture, Converter={StaticResource ImageDataConverter}}" />
+                                    <StackPanel.OpacityMask>
+                                        <VisualBrush Visual="{Binding ElementName=Mask}" />
+                                    </StackPanel.OpacityMask>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <StackPanel Visibility="{Binding IsLoadingDriver, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <TextBlock Text="{Binding Resources.DriverLoading, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsDriverNameEmptyTextStyle}"/>
+                        <TextBlock Text="" Style="{StaticResource DetailsDriverPhoneEmptyTextStyle}"/>
+                        <controls:Rating Style="{StaticResource DetailsDriverRatingStyle}" Value="0" Maximum="5" Minimum="0"/>
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding IsLoadingDriver, Converter={StaticResource NotBoolToVisibilityConverter}}">
+                        <TextBlock Text="{Binding Resources.DriverUnknow, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsDriverNameEmptyTextStyle}" Visibility="{Binding SelectedDriver, Converter={StaticResource NullToVisibilityConverter}}"/>
+                        <TextBlock Text="{Binding SelectedDriver.Name, Converter={StaticResource ToUpperConverter}}" Style="{StaticResource DetailsDriverNameTextStyle}" Visibility="{Binding SelectedDriver, Converter={StaticResource NotNullToVisibilityConverter}}"/>
+                        <TextBlock Text="{Binding SelectedDriver.Phone}" Style="{StaticResource DetailsDriverPhoneTextStyle}"/>
+                        <controls:Rating Style="{StaticResource DetailsDriverRatingStyle}" Value="{Binding SelectedDriver.RatingAvg}" Maximum="5" Minimum="0"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <Border Background="{StaticResource DetailsSectionHeaderBackground2}" Style="{StaticResource DetailsSectionHeaderStyle}">
+                    <TextBlock Text="{Binding Resources.VehicleDetails, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsHeaderTextStyle}"/>
+                </Border>
+                <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedVehicle}" Style="{StaticResource DetailsSectionContentStyle}">
+                    <Grid Width="{StaticResource DetailsVehicleImageWidth}" Height="{StaticResource DetailsVehicleImageHeight}" Background="{StaticResource DetailsImageBackground}" Visibility="{Binding Converter={StaticResource NullToVisibilityConverter}}">
+                        <Image Style="{StaticResource DetailsVehicleEmptyImageStyle}" />
+                    </Grid>
+                    <Image Width="{StaticResource DetailsVehicleImageWidth}" Height="{StaticResource DetailsVehicleImageHeight}" Source="{Binding Picture, Converter={StaticResource ImageDataConverter}}" Stretch="UniformToFill" Visibility="{Binding Converter={StaticResource NotNullToVisibilityConverter}}"/>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Resources.VehicleUnknow, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsVehicleModelEmptyTextStyle}" Visibility="{Binding Converter={StaticResource NullToVisibilityConverter}}"/>
+                        <TextBlock Style="{StaticResource DetailsVehicleModelTextStyle}" Visibility="{Binding Converter={StaticResource NotNullToVisibilityConverter}}">
+                        <Run Text="{Binding Make, Converter={StaticResource ToUpperConverter}}" />
+                        <Run Text="{Binding Model, Converter={StaticResource ToUpperConverter}}" />
+                        </TextBlock>
+                        <TextBlock Text="{Binding LicensePlate}" Style="{StaticResource DetailsVehicleLicensePlateTextStyle}"/>
+                        <controls:Rating Style="{StaticResource DetailsVehicleRatingStyle}" Value="{Binding RatingAvg}" Maximum="5" Minimum="0"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <Border Background="{StaticResource DetailsSectionHeaderBackground3}" Style="{StaticResource DetailsSectionHeaderStyle}">
+                    <Grid>
+                        <TextBlock Text="{Binding Resources.Statistics, Source={StaticResource LocalizedResources}}" Style="{StaticResource DetailsHeaderTextStyle}"/>
+                        <TextBlock Text="{Binding Statistics.Date,Converter={StaticResource FormatConverter}, ConverterParameter='\{0:d\}'}" Style="{StaticResource DetailsSubheaderTextStyle}"/>
+                    </Grid>
+                </Border>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Style="{StaticResource DetailsSectionContentStyle}">
+                    <controls:StatisticItem 
+                        Style="{StaticResource DetailsStatisticsItemStyle}"
+                        HeaderText="{Binding Resources.Capacity, Source={StaticResource LocalizedResources}}"
+                        Value="{Binding Statistics.ActualCapacity}"
+                        SubheaderText="{Binding Resources.Vehicles, Source={StaticResource LocalizedResources}}"
+                        Percentage="{Binding Statistics.CapacityPercentage}"/>
+                    <controls:StatisticItem
+                        Style="{StaticResource DetailsStatisticsItemStyle}" 
+                        HeaderText="{Binding Resources.Outside, Source={StaticResource LocalizedResources}}"
+                        Value="{Binding Statistics.Outside}"
+                        SubheaderText="{Binding Resources.Vehicles, Source={StaticResource LocalizedResources}}"
+                        Percentage="{Binding Statistics.OutsidePercentage}"/>
+                    <controls:StatisticItem 
+                        Style="{StaticResource DetailsStatisticsItemStyle}"
+                        HeaderText="{Binding Resources.Inside, Source={StaticResource LocalizedResources}}"
+                        Value="{Binding Statistics.Inside}"
+                        SubheaderText="{Binding Resources.Vehicles, Source={StaticResource LocalizedResources}}"
+                        Percentage="{Binding Statistics.InsidePercentage}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Image Style="{StaticResource DetailsLogoImage}"/>
+    </Grid>
+</UserControl>

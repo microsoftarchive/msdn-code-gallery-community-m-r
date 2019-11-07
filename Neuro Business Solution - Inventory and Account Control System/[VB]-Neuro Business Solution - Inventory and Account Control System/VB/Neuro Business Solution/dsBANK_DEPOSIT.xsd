@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBANK_DEPOSIT" targetNamespace="http://tempuri.org/dsBANK_DEPOSIT.xsd" xmlns:mstns="http://tempuri.org/dsBANK_DEPOSIT.xsd" xmlns="http://tempuri.org/dsBANK_DEPOSIT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBANK_DEPOSIT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsBANK_DEPOSIT" msprop:Generator_DataSetName="dsBANK_DEPOSIT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_BANK_DEPOSITS" msprop:Generator_UserTableName="V_BANK_DEPOSITS" msprop:Generator_RowDeletedName="V_BANK_DEPOSITSRowDeleted" msprop:Generator_TableClassName="V_BANK_DEPOSITSDataTable" msprop:Generator_RowChangedName="V_BANK_DEPOSITSRowChanged" msprop:Generator_RowClassName="V_BANK_DEPOSITSRow" msprop:Generator_RowChangingName="V_BANK_DEPOSITSRowChanging" msprop:Generator_RowEvArgName="V_BANK_DEPOSITSRowChangeEvent" msprop:Generator_RowEvHandlerName="V_BANK_DEPOSITSRowChangeEventHandler" msprop:Generator_TablePropName="V_BANK_DEPOSITS" msprop:Generator_TableVarName="tableV_BANK_DEPOSITS" msprop:Generator_RowDeletingName="V_BANK_DEPOSITSRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:decimal" />
+              <xs:element name="BANK_ACC" msprop:Generator_UserColumnName="BANK_ACC" msprop:Generator_ColumnPropNameInRow="BANK_ACC" msprop:Generator_ColumnVarNameInTable="columnBANK_ACC" msprop:Generator_ColumnPropNameInTable="BANK_ACCColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SLIP_NO" msprop:Generator_UserColumnName="SLIP_NO" msprop:Generator_ColumnPropNameInRow="SLIP_NO" msprop:Generator_ColumnVarNameInTable="columnSLIP_NO" msprop:Generator_ColumnPropNameInTable="SLIP_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DEPOSIT_AMT" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DEPOSIT_AMT" msprop:Generator_ColumnPropNameInRow="DEPOSIT_AMT" msprop:Generator_ColumnVarNameInTable="columnDEPOSIT_AMT" msprop:Generator_ColumnPropNameInTable="DEPOSIT_AMTColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dDATE" msprop:Generator_UserColumnName="dDATE" msprop:Generator_ColumnPropNameInRow="dDATE" msprop:Generator_ColumnVarNameInTable="columndDATE" msprop:Generator_ColumnPropNameInTable="dDATEColumn" type="xs:dateTime" />
+              <xs:element name="sDESC" msprop:Generator_UserColumnName="sDESC" msprop:Generator_ColumnPropNameInRow="sDESC" msprop:Generator_ColumnVarNameInTable="columnsDESC" msprop:Generator_ColumnPropNameInTable="sDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GROUP_NAME" msprop:Generator_UserColumnName="GROUP_NAME" msprop:Generator_ColumnPropNameInRow="GROUP_NAME" msprop:Generator_ColumnVarNameInTable="columnGROUP_NAME" msprop:Generator_ColumnPropNameInTable="GROUP_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_NAME" msprop:Generator_UserColumnName="USER_NAME" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GROUP_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="GROUP_ID" msprop:Generator_ColumnPropNameInRow="GROUP_ID" msprop:Generator_ColumnVarNameInTable="columnGROUP_ID" msprop:Generator_ColumnPropNameInTable="GROUP_IDColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

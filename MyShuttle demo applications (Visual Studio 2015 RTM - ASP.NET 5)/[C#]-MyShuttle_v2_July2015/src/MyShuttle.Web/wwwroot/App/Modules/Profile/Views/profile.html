@@ -1,0 +1,96 @@
+<section data-ng-controller="ProfileController" ng-key-enter="update()" tabindex="1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Profile</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <alert data-ng-animate="'custom'" ng-repeat="alert in alerts" type="{{alert.type}}"
+                       close="closeAlert($index)">{{alert.msg}}
+                </alert>
+            </div>
+            <div class="col-md-4">
+                <ms-crop ms-crop-model-property="profile.Picture" ms-image-size="225"></ms-crop>
+            </div>
+            <div class="col-md-8">
+                <form name="profileForm " novalidate class="form-horizontal ng-cloak" role="form" ng-cloak>
+                    <div class="form-group  required">
+                        <label class="col-xs-2 col-xs-2 col-sm-2 control-label" for="name">Name</label>
+                        <div class="col-xs-10 col-sm-10"
+                             ng-class="{'has-error': showValidationMessages && profileForm.name.$invalid}">
+                            <input type="text" id="name" name="name" class="form-control" ng-model="profile.Name" required focus-me />
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && profileForm.name.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group   required">
+                        <label class="col-xs-2 col-sm-2 control-label" for="companyId">ID</label>
+                        <div class="col-xs-10 col-sm-10"
+                             ng-class="{'has-error': showValidationMessages && profileForm.companyId.$invalid}">
+                            <input type="text" id="companyId" name="companyId" class="form-control" ng-model="profile.CompanyID" required/>
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && profileForm.companyId.$error.required">Required</span>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="form-group">
+                        <label class="col-xs-2 col-sm-2 control-label" for="address">Address</label>
+                        <div class="col-xs-10 col-sm-10">
+                            <input type="text" class="form-control" id="address" name="address" ng-model="profile.Address"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 col-sm-2 control-label" for="zipCode">Zip Code</label>
+                        <div class="col-xs-4 col-sm-4">
+                            <input type="text" class="form-control" id="zipCode" name="zipCode" ng-model="profile.ZipCode"/>
+                        </div>
+                        <label class="col-xs-2  col-sm-2 control-label" for="city">City</label>
+                        <div class="col-xs-4  col-sm-4">
+                            <input type="text" class="form-control" id="city" name="city" ng-model="profile.City"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 col-sm-2 control-label" for="state">State</label>
+                        <div class="col-xs-4 col-sm-4">
+                            <input type="text" class="form-control" id="state" name="state" ng-model="profile.State"/>
+                        </div>
+                        <label class="col-xs-2 col-sm-2 control-label" for="country">Country</label>
+                        <div class="col-xs-4 col-sm-4" ng-cloak="">
+                            <input type="text" class="form-control" id="country" name="country" ng-model="profile.Country" />
+                        </div>
+                    </div>
+                    </br>
+                    <div class="form-group   required" ng-class="{'has-error': showValidationMessages && profileForm.email.$invalid}">
+                        <label class="col-xs-2 col-sm-2 control-label" for="email">Email</label>
+                        <div class="col-xs-10 col-sm-10">
+                            <input type="email" id="email" name="email" class="form-control" ng-model="profile.Email" required/>
+                            <span class="ng-hide control-label" ng-show="showValidationMessages && profileForm.email.$error.email">Not valid email</span>
+                            <span class="ng-hide control-label" ng-show="showValidationMessages && profileForm.email.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2  col-sm-2 control-label" for="phone">Phone</label>
+                        <div class="col-xs-4  col-sm-4">
+                            <input type="text" class="form-control" id="phone" name="phone" ng-model="profile.Phone"/>
+                        </div>
+                    </div>
+                    <div class="form-group  required" ng-class="{'has-error': showValidationMessages && profileForm.description.$invalid}">
+                        <label class="col-xs-2 col-sm-2 control-label" for="description">Description</label>
+                        <div class="col-xs-10  col-sm-10">
+                            <textarea type="text" id="description" name="description" class="form-control"
+                                      ng-model="profile.Description" rows="3" required></textarea>
+                            <span class="ng-hide control-label" ng-show="showValidationMessages && profileForm.description.$error.required">Required</span>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-right help-block">* Field is required</div>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="profile-buttons-footer pull-right">
+                <button type="button" ng-click="reset()" ng-disabled="isUnchanged(profile)" class="btn  btn-default">Reset</button>
+                <button type="submit" ng-click="update()" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</section>

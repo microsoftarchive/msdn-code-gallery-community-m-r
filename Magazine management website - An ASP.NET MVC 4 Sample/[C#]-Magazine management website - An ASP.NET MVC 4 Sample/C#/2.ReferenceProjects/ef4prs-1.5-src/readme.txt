@@ -1,0 +1,1 @@
+The (NUnit) test class located in the %solution folder%\Infrastructure.Tests\Data\Repository\RepositoryTest.cs is used to test the implementation. The Setup will (re-)creates database every time the test method is executed.

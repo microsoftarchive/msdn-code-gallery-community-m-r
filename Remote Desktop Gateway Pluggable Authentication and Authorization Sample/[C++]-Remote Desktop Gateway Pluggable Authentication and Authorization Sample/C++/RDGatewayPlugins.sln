@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RDGAuthenticationPlugin", "RDGAuthenticationPlugin\RDGAuthenticationPlugin.vcxproj", "{85600D98-E606-44F6-AE59-A43ACA32EED6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RDGAuthorizationPlugin", "RDGAuthorizationPlugin\RDGAuthorizationPlugin.vcxproj", "{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+		Debug|x64 = Debug|x64
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Debug|Win32.Build.0 = Debug|Win32
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Debug|x64.ActiveCfg = Debug|x64
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Debug|x64.Build.0 = Debug|x64
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Release|Win32.ActiveCfg = Release|Win32
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Release|Win32.Build.0 = Release|Win32
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Release|x64.ActiveCfg = Release|x64
+		{85600D98-E606-44F6-AE59-A43ACA32EED6}.Release|x64.Build.0 = Release|x64
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Debug|Win32.Build.0 = Debug|Win32
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Debug|x64.ActiveCfg = Debug|x64
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Debug|x64.Build.0 = Debug|x64
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Release|Win32.ActiveCfg = Release|Win32
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Release|Win32.Build.0 = Release|Win32
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Release|x64.ActiveCfg = Release|x64
+		{3C5C5D70-AD98-4CB0-86E6-BDC77D7E8D99}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

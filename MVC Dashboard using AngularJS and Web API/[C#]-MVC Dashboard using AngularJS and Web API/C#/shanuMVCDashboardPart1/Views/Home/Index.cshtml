@@ -1,0 +1,198 @@
+﻿<html data-ng-app="dashbordModule">
+@{
+    ViewBag.Title = "Shanu Dashboard";
+}
+<body data-ng-controller="AngularJs_Controller">
+
+    <table style='width: 99%;table-layout:fixed;'>
+        <tr>
+            <td>
+                <table style="background-color:#FFFFFF;border: dashed 3px #6D7B8D; padding:10px;width: 99%;table-layout:fixed;" cellpadding="12" cellspacing="12">
+                    <tr style="height: 30px; background-color:#f06a0a ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td align="center">
+                            <h3> SHANU MVC Dashboard using AngularJS </h3>
+                        </td>
+
+                    </tr>
+                    <tr style="background-color:#FFFFFF; border:dotted 3px #6D7B8D; padding: 6px;width:99%;">
+                        <td>
+                        You can write your own SQL query to bind dynamic Dashboard. 
+                            This program makes your work easy to display any Table/Columns details with your entered where Condition, 
+                            Order BY and with Group By Option for the selected database on your home page.
+                                    </td>
+                    </tr>
+
+
+
+         </table>
+                      
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>
+
+
+
+                <table style="background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding :5px;width :99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Build Your Dashboard Query : </h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="width :99%;" >
+                                <tr>
+
+                                    <td width="20"></td>
+                                    <td valign="top">
+
+                                        <table style="color:#9F000F;font-size:large;width :99%;" cellpadding="4" cellspacing="6">
+                                            <tr>
+                                                <td>
+                                                    <b>Dynamic SQL Query : </b>
+                                                  
+                                                </td>
+                                                <td>
+                                                    <div style="float:left;width:80%;">
+                                                        <textarea name="txtQuerys" ng-model="Querys" value="" style="width:100%"></textarea>
+                                                        </div>
+                                            </td>
+                                                <td align="left">
+                                                     <input type="checkbox" ng-model="isQuerys"><b> Is Query </b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Column Names : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtColumnNames" ng-model="ColumnNames" value="UserName,UserType,Phone"  style="width: 350px;" maxlength = 500 />
+                                                       </td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Table Names : </b>
+                                                </td>
+                                                <td>
+
+                                                    <input type="text" name="txtTableNames" ng-model="TableNames" value="UserDetails" size="120" />
+                                                    </td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Where Condition : </b>
+                                                </td>
+                                                <td>
+                                                   
+                                                    <input type="text" name="txtConditions" ng-model="Conditions" value="" size="120" />
+                                                    <br />
+                                                </td>
+                                                <td align="left">
+                                                    <input type="checkbox" ng-model="isCondition"> <b> Is Condition  </b>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <b>Group By : </b>
+                                                </td>
+                                                <td>
+                                                   
+                                                    <input type="text" name="txtGroupBys" ng-model="GroupBys" value="" size="120" />
+                                                    <br />
+                                                </td>
+                                                <td align="left"> <input type="checkbox" ng-model="isGroupBy"><b> Is GroupBy  </b></td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>
+                                                    <b>Order By : </b>
+                                                </td>
+                                                <td>
+                                                   
+                                                    <input type="text" name="txtOrderBys" ng-model="OrderBys" value="" size="120" />
+                                                    <br />
+                                                </td>
+                                                <td align="left"><input type="checkbox" ng-model="isOrderBy"><b> Is OrderBy  </b> </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" align="center">
+                                                    <input type="submit" value="Search" style="background-color:#3f9835;color:#FFFFFF;border-color:crimson;border-style:dashed;height:40px;width:500px;" ng-click="searchDetails()" />
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="background-color:#FFFFFF; border :dashed 3px #6D7B8D; padding:10px;width: 99%;table-layout:fixed;" cellpadding="12" cellspacing="12">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td align="center">
+                            <h3> Dynamic Dashboard Details </h3>
+                        </td>
+
+                    </tr>
+                    <tr style="background-color:#FFFFFF; border:dotted 3px #6D7B8D; padding: 6px;width: 99%;">
+                        <td>
+                            <table style="width: 99%; background-color:#FFFFFF; border solid 2px #6D7B8D; padding 5px;width 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+
+                                <thead>
+                                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                                        <th ng-repeat="(header, value) in dashBoadData[0]" width="100" align="center">
+                                            <strong>   {{header}} </strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in dashBoadData">
+                                        <td ng-repeat="cell in row" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                            <span style="color:#9F000F">    {{cell}} </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                        </td>
+                    </tr>
+                </table>
+</body>
+</html>
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-animate.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+<script src="~/Scripts/MYAngular/controller.js"></script>

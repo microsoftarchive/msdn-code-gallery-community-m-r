@@ -1,0 +1,514 @@
+﻿/* This selector is used to prevent ui-dark/light.css from overwriting changes to .win-surface. */
+.eventdetailpage .content .win-horizontal.win-viewport .win-surface {
+    margin-left: 45px;
+    margin-bottom: 60px;
+}
+
+.eventdetailpage section[role=main] {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: -ms-grid;
+    -ms-grid-rows: 42px 568px;
+    -ms-grid-columns: 124px 480px 45px auto 45px auto 45px auto;
+}
+
+.eventdetailpage .title-details {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+.eventdetailpage .details {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    display: -ms-grid;
+    -ms-grid-rows: 180px 337px 10px 40px;
+    -ms-grid-columns: auto;
+}
+
+    .eventdetailpage .details .details-header {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        display: -ms-grid;
+        -ms-grid-rows: auto auto auto 10px auto 10px auto;
+        -ms-grid-columns: 125px 1fr;
+    }
+
+        .eventdetailpage .details .details-header .logo {
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 5;
+            -ms-grid-column: 1;
+            max-height: 150px;
+            margin-right: 5px;
+            text-align: left;
+        }
+
+            .eventdetailpage .details .details-header .logo img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+        .eventdetailpage .details .details-header .details-date {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            font-size: 20pt;
+            font-weight: 200;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-top: -10px;
+        }
+
+        .eventdetailpage .details .details-header .details-time {
+            -ms-grid-row: 2;
+            -ms-grid-column: 2;
+            font-size: 20pt;
+            font-weight: 200;
+        }
+
+            .eventdetailpage .details .details-header .details-time div {
+                display: inline-block;
+            }
+
+        .eventdetailpage .details .details-header .details-duration {
+            -ms-grid-row: 3;
+            -ms-grid-column: 2;
+        }
+
+        .eventdetailpage .details .details-header .details-organizer {
+            -ms-grid-row: 5;
+            -ms-grid-column: 2;
+            background: url(/images/content/organizer-icon.png) center left no-repeat transparent;
+            padding-left: 25px;
+        }
+
+        .eventdetailpage .details .details-header .details-twitter {
+            -ms-grid-row: 7;
+            -ms-grid-column: 2;
+            background: url(/images/content/twitter-icon-black.png) center left no-repeat transparent;
+            padding-left: 25px;
+        }
+
+    .eventdetailpage .details .details-description {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        overflow: hidden;
+    }
+
+        .eventdetailpage .details .details-description h2 {
+            margin-bottom: 10px;
+        }
+
+        .eventdetailpage .details .details-description .text {
+            max-height: 90%;
+        }
+
+    .eventdetailpage .details button {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        width: 100%;
+        text-align: center;
+        background-color: #c73545;
+        color: #FFF;
+        font-size: 20pt;
+        font-weight: 200;
+        line-height: 20pt;
+        padding: 5px;
+    }
+
+        .eventdetailpage .details button:hover {
+            cursor: pointer;
+        }
+
+.eventdetailpage .localization {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    display: -ms-grid;
+    -ms-grid-rows: auto 1fr;
+    -ms-grid-columns: 1fr;
+    width: 450px;
+}
+
+    .eventdetailpage .localization .localization-map {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        background-color: #000;
+        position: relative;
+        height: 438px;
+    }
+
+    .eventdetailpage .localization .localization-description {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        background-color: rgba(181, 183, 186, 0.2);
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+.eventdetailpage .title-schedule {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
+}
+
+.eventdetailpage .schedule {
+    -ms-grid-row: 2;
+    -ms-grid-column: 6;
+}
+
+    .eventdetailpage .schedule .schedule-content {
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+    }
+
+.eventdetailpage .title-room {
+    -ms-grid-row: 1;
+    -ms-grid-column: 8;
+    min-width: 600px;
+}
+
+.eventdetailpage .room-map {
+    -ms-grid-row: 2;
+    -ms-grid-column: 8;
+    margin-right: 45px;
+}
+
+/* SCHEDULE STYLES */
+#schedule-container #header-container {
+    overflow: hidden;
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+
+#schedule-container #schedule {
+    height: 100%;
+    vertical-align: top;
+    margin-bottom: 2em;
+    display: inline-block;
+}
+
+#schedule-container .times-column.header {
+    background-image: url('/images/content/clock.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 21px;
+    min-width: 20px;
+    padding: 0.5em;
+    padding-top: 0;
+}
+
+#schedule-container .room-column.header {
+    height: 165px;
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 165px;
+}
+
+#schedule-container .room-column {
+    margin-bottom: 1%;
+    display: block;
+    height: 165px;
+}
+
+#schedule-container .times-column {
+    display: block;
+}
+
+#schedule-container .time-container {
+    width: 90px;
+    color: black;
+    display: inline-block;
+    margin-left: 9px;
+    min-height: 21px;
+    padding-bottom: 0.5em;
+}
+
+#schedule-container .time-gap {
+    background-color: rgba(181, 183, 186, 0.5);
+    position: relative;
+    display: inline-block;
+    margin-left: 9px;
+    height: 100%;
+}
+
+#schedule-container .session-container {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #456C98;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    height: 100%;
+}
+
+    #schedule-container .session-container .favorite {
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.5em;
+        height: 16px;
+        width: 16px;
+        background: url(/images/content/favorite.png) center left no-repeat transparent;
+    }
+
+    #schedule-container .session-container .link {
+        cursor: pointer;
+        display: block;
+        padding: 0.5em;
+        color: white;
+        height: 100%;
+    }
+
+    #schedule-container .session-container .session-title {
+        max-width: calc(100% - 35px - 1em);
+        max-height: 60px;
+    }
+
+    #schedule-container .session-container .session-friends {
+        position: relative;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+        #schedule-container .session-container .session-friends .session-friends-wrapper {
+            /* TODO: only show 2 lines of friends */
+            max-height: 70px;
+            text-align: left;
+            overflow: hidden;            
+        }
+
+        #schedule-container .session-container .session-friends img {
+            width: 30px;
+            height: 30px;
+            margin: 3px;
+        }
+
+    #schedule-container .session-container .session-speaker {
+        font-size: 1em;
+        background-image: url('/images/content/organizer-icon-white.png');
+        background-position: left center;
+        background-repeat: no-repeat;
+        padding-left: 20px;
+        position: absolute;
+        bottom: 0.5em;
+        display: block !important;
+        width: 100%;
+    }
+
+        #schedule-container .session-container .session-speaker .session-speaker-wrapper {
+            position: relative;
+            width: calc(100% - 20px - 1em);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+    #schedule-container .session-container .session-time {
+        width: 35px;
+    }
+
+        #schedule-container .session-container .session-time span {
+            display: block;
+            text-align: right;
+        }
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .eventdetailpage section[role=main] {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: -ms-grid;
+        -ms-grid-rows: 42px 530px 42px 530px 1fr;
+        -ms-grid-columns: 100px 480px 30px auto;
+    }
+
+    .eventdetailpage .title-details {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+
+    .eventdetailpage .title-schedule {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .eventdetailpage .title-room {
+        -ms-grid-row: 3;
+        -ms-grid-column: 4;
+    }
+
+    .eventdetailpage .localization {
+        -ms-grid-row: 4;
+        -ms-grid-column: 2;
+        display: -ms-grid;
+        -ms-grid-rows: auto 1fr;
+        -ms-grid-columns: 1fr;
+        width: 450px;
+        padding-right: 10px;
+        margin: 0px auto;
+    }
+
+    #schedule-container #header-container {
+        width: 70px;
+    }
+
+    #schedule-container #schedule {
+        height: 100%;
+        vertical-align: top;
+        margin-bottom: 2em;
+        display: inline-block;
+        margin-left: 70px;
+    }
+
+    .eventdetailpage .schedule {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 4;
+        display: -ms-grid;
+        -ms-grid-rows: 400px 1fr;
+        -ms-grid-columns: 1fr;
+        padding-right: 10px;
+    }
+
+    .eventdetailpage .room-map {
+        -ms-grid-row: 4;
+        -ms-grid-column: 4;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .fragment header[role=banner] {
+        -ms-grid-columns: auto 1fr;
+        margin-left: 20px;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            margin: 0;
+            margin-right: 10px;
+            margin-top: 76px;
+        }
+
+            .fragment header[role=banner] .win-backbutton:disabled {
+                display: none;
+            }
+
+        .fragment header[role=banner] .titlearea {
+            -ms-grid-column: 2;
+            margin-left: 0;
+            margin-top: 68px;
+        }
+
+    .eventdetailpage.fragment section[role=main] {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: -ms-grid;
+        -ms-grid-rows: auto 10px auto;
+        -ms-grid-columns: 15px 290px 15px;
+    }
+
+    .eventdetailpage .title-details, .eventdetailpage .title-schedule, .eventdetailpage .title-room {
+        display: none;
+    }
+
+    .eventdetailpage .details {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        display: -ms-grid;
+        -ms-grid-rows: 140px 15px 200px;
+        -ms-grid-columns: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+        .eventdetailpage .details .details-header {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+            -ms-grid-columns: 75px 1fr;
+        }
+
+            .eventdetailpage .details .details-header img {
+                -ms-grid-column: 1;
+                max-height: 75px;
+                max-width: 75px;
+            }
+
+            .eventdetailpage .details .details-header .details-date {
+                -ms-grid-column: 2;
+                font-size: 16pt;
+                font-weight: 200;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-top: -5px;
+            }
+
+            .eventdetailpage .details .details-header .details-time {
+                -ms-grid-column: 2;
+                font-size: 16pt;
+                font-weight: 200;
+            }
+
+            .eventdetailpage .details .details-header .details-duration {
+                -ms-grid-column: 2;
+            }
+
+            .eventdetailpage .details .details-header .details-organizer {
+                -ms-grid-column: 2;
+                background: url(/images/content/organizer-icon.png) center left no-repeat transparent;
+                padding-left: 25px;
+            }
+
+            .eventdetailpage .details .details-header .details-twitter {
+                -ms-grid-column: 2;
+                background: url(/images/content/twitter-icon-black.png) center left no-repeat transparent;
+                padding-left: 25px;
+            }
+
+        .eventdetailpage .details .details-description {
+            -ms-grid-column: 1;
+            -ms-grid-row: 3;
+        }
+
+        .eventdetailpage .details button {
+            margin-top: 10px;
+            font-size: 16pt;
+        }
+
+    .eventdetailpage .localization {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+        width: 100%;
+    }
+
+        .eventdetailpage .localization .localization-map {
+            height: 300px;
+            overflow: hidden;
+        }
+
+            .eventdetailpage .localization .localization-map .offline-map {
+                height: 300px;
+            }
+
+        .eventdetailpage .localization .localization-description {
+            margin-bottom: 15px;
+        }
+
+    .eventdetailpage .schedule {
+        display: none;
+    }
+
+    .eventdetailpage .room-map {
+        display: none;
+    }
+
+    .eventdetailpage .win-listview > .win-vertical .win-container {
+        margin-right: 0px;
+        margin-left: 2px;
+    }
+
+    .user-data {
+        display: none;
+    }
+}

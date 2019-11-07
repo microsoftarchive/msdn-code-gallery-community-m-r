@@ -1,0 +1,140 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:MyShuttle.Client.W10.UniversalApp.Converters"
+    xmlns:callisto="using:Callisto.Controls"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    mc:Ignorable="d">
+
+    <converters:VehicleStatusToColorBrushConverter x:Key="VehicleStatusToColorBrushConverter"/>
+    <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
+    <converters:DistanceToStringConverter x:Key="DistanceToStringConverter"/>
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <converters:DateTimeToTimeConverter x:Key="DateTimeToTimeConverter"/>
+    <converters:UpperCaseConverter x:Key="UpperCaseConverter"/>
+    <converters:VehicleToGeopointConverter x:Key="VehicleToGeopointConverter"/>
+    <converters:NormalizedCenteredAnchorPointConverter x:Key="NormalizedCenteredAnchorPointConverter"/>
+    <converters:VehicleStatusToImageStyleConverter x:Key="VehicleStatusToImageStyleConverter"/>
+    <converters:LocationToGeopointConverter x:Key="LocationToGeopointConverter"/>
+    
+    <DataTemplate x:Key="VehicleByDistanceTemplate">
+        
+        <Border Style="{StaticResource TileBorder}">
+            <Grid>
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Tapped">
+                        <core:InvokeCommandAction Command="{Binding DataContext.NavigateToVehicleDetailsCommand, 
+                                                                ElementName=VehiclesByDistanceGridView}"
+                                                                CommandParameter="{Binding VehicleId}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Grid Width="260" Height="217" Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="144"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding Picture, Converter={StaticResource ByteArrayToImageConverter}}" Stretch="UniformToFill"></Image>
+
+                    <StackPanel Grid.Row="1" Margin="10">
+                        <TextBlock Text="{Binding MakeAndModel}" Foreground="#30374A"></TextBlock>
+
+                        <Grid>
+                            <callisto:Rating
+                                         Margin="0,5,0,0"
+                                         ItemCount="5" 
+                                         Style="{StaticResource SmallRating}"
+                                         ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                         Value="{Binding RatingAvg}"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,6,0,0">
+                                <TextBlock Text="distance" Style="{StaticResource ExtraSmallFontDetail}"></TextBlock>
+                                <TextBlock Text="{Binding DistanceFromGivenPosition, Converter={StaticResource DistanceToStringConverter}}" Style="{StaticResource GreenFontDetail}"></TextBlock>
+                                <TextBlock Text="mi" FontSize="11" Margin="2,0,0,0"  VerticalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+                <Ellipse Fill="{Binding VehicleStatus, Converter={StaticResource VehicleStatusToColorBrushConverter}}" Margin="0,136,15,0" HorizontalAlignment="Right"  Width="16" Height="16" VerticalAlignment="Top" ></Ellipse>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="VehicleByPriceTemplate">
+        <Border BorderBrush="#E3E4E6" BorderThickness="1">
+            <Grid>
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Tapped">
+                        <core:InvokeCommandAction Command="{Binding DataContext.NavigateToVehicleDetailsCommand, 
+                                                                ElementName=VehiclesByPriceGridView}"
+                                                                CommandParameter="{Binding VehicleId}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Grid Width="260" Height="217" Background="White">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="144"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding Picture, Converter={StaticResource ByteArrayToImageConverter}}" Stretch="UniformToFill"></Image>
+
+                    <StackPanel Grid.Row="1" Margin="10">
+                        <TextBlock Text="{Binding MakeAndModel}" Foreground="#30374A"></TextBlock>
+
+                        <Grid>
+                            <callisto:Rating
+                                         Margin="0,5,0,0"
+                                         ItemCount="5" 
+                                         Style="{StaticResource SmallRating}"
+                                         ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                         Value="{Binding RatingAvg}"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,6,0,0">
+                                <TextBlock Text="$/mi" Style="{StaticResource ExtraSmallFontDetail}"></TextBlock>
+                                <TextBlock Text="{Binding Rate}" Style="{StaticResource GreenFontDetail}"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+                <Ellipse Fill="{Binding VehicleStatus, Converter={StaticResource VehicleStatusToColorBrushConverter}}" Margin="0,136,15,0" HorizontalAlignment="Right"  Width="16" Height="16" VerticalAlignment="Top" ></Ellipse>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    
+    <Style x:Key="GreenFontDetail" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="#46D0B6" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="SmallGreenFontDetail" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Foreground" Value="#46D0B6" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="SmallFontDetail" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="0,0,3,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ExtraSmallFontDetail" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Margin" Value="0,0,3,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="BottomArrowPoligon" TargetType="Polygon">
+        <Setter Property="Fill" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+    <Style x:Key="SelectedVehicleCarrierBorder" TargetType="Border" BasedOn="{StaticResource BorderBase}">
+        <Setter Property="Background" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+
+    
+
+
+</ResourceDictionary>

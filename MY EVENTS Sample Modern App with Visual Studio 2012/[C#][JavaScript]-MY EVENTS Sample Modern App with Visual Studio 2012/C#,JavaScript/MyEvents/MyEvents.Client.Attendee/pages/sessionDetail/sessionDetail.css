@@ -1,0 +1,424 @@
+﻿/* This selector is used to prevent ui-dark/light.css from overwriting changes to .win-surface. */
+.sessiondetailpage .win-horizontal.win-viewport .win-surface {
+    margin-left: 45px;
+    margin-bottom: 60px;
+}
+
+.sessiondetailpage section[role=main] {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: -ms-grid;
+    -ms-grid-rows: 42px 1fr;
+    -ms-grid-columns: 124px 480px 45px 420px 45px 360px 45px auto;
+}
+
+.sessiondetailpage .title-details {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+.sessiondetailpage .details {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    display: -ms-grid;
+    -ms-grid-rows: 115px 25px 358px 25px 40px;
+    -ms-grid-columns: auto;
+}
+
+    .sessiondetailpage .details .details-header {
+        -ms-grid-row: 1;
+        display: -ms-grid;
+        -ms-grid-rows: auto auto auto 5px auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .sessiondetailpage .details .details-header .details-favorite {
+            position: absolute;
+            top: 0.5em;
+            right: 0.5em;
+            height: 20px;
+            width: 20px;
+            background: url(/images/content/favorite-red.png) center left no-repeat transparent;
+        }
+
+        .sessiondetailpage .details .details-header .details-date {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            font-size: 20pt;
+            font-weight: 200;
+        }
+
+        .sessiondetailpage .details .details-header .details-time {
+            -ms-grid-row: 2;
+            -ms-grid-column: 2;
+            font-size: 20pt;
+            font-weight: 200;
+        }
+
+            .sessiondetailpage .details .details-header .details-time div {
+                display: inline-block;
+            }
+
+        .sessiondetailpage .details .details-header .details-duration {
+            font-size: 11pt;
+            font-weight: normal;
+        }
+
+        .sessiondetailpage .details .details-header .details-speaker {
+            -ms-grid-row: 5;
+            -ms-grid-column: 2;
+            background: url(/images/content/organizer-icon.png) center left no-repeat transparent;
+            padding-left: 25px;
+            font-size: 20pt;
+            font-weight: 200;
+        }
+
+    .sessiondetailpage .details .details-description {
+        -ms-grid-row: 3;
+        overflow: hidden;
+    }
+
+        .sessiondetailpage .details .details-description h2 {
+            margin-bottom: 10px;
+        }
+
+        .sessiondetailpage .details .details-description h4 {
+            max-height: 90%;
+        }
+
+    .sessiondetailpage .details .rating-zone {
+        -ms-grid-row: 5;
+        height: 100%;
+        width: 100%;
+        background-color: #c73545;
+        color: #FFF;
+        font-size: 20pt;
+        font-weight: 200;
+        margin: 0 auto;
+    }
+
+        .sessiondetailpage .details .rating-zone span {
+            display: inline-block;
+            padding-left: 30px;
+            font-size: 20pt;
+            font-weight: 200;
+            line-height: 35px;
+        }
+
+        .sessiondetailpage .details .rating-zone .rating .win-full {
+            color: #FFF;
+            opacity: 1;
+        }
+
+        .sessiondetailpage .details .rating-zone .rating .win-empty {
+            background-color: transparent;
+        }
+
+        .sessiondetailpage .details .rating-zone .rating .win-tentative {
+            opacity: 0.6;
+        }
+
+.sessiondetailpage .title-friends {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
+}
+
+.sessiondetailpage .friendinsession {
+    -ms-grid-row: 2;
+    -ms-grid-column: 6;
+    height: 100%;
+}
+
+    .sessiondetailpage .friendinsession .no-friends {
+        display: none;
+    }
+
+.sessiondetailpage .friendInSessionList {
+    height: 100%;
+}
+
+    .sessiondetailpage .friendInSessionList .win-container:hover {
+        outline: none;
+    }
+
+    .sessiondetailpage .friendInSessionList .item {
+        height: 60px;
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 60px 1fr;
+    }
+
+        .sessiondetailpage .friendInSessionList .item img {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+            margin-left: 0;
+        }
+
+        .sessiondetailpage .friendInSessionList .item .item-header {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            color: #414141;
+            padding-top: 5px;
+        }
+
+            .sessiondetailpage .friendInSessionList .item .item-header .item-name {
+                font-size: 20pt;
+                font-weight: 200;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 100%;
+            }
+
+            .sessiondetailpage .friendInSessionList .item .item-header .item-description {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 100%;
+            }
+
+.sessiondetailpage .title-comments {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+}
+
+.sessiondetailpage .comments {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    display: -ms-grid;
+    -ms-grid-rows: 75px 40px 10px 1fr 33px;
+    -ms-grid-columns: 1fr;
+    height: 100%;
+}
+
+    .sessiondetailpage .comments .text-comment {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        margin-right: 24px;
+        margin-left: 7px;
+    }
+
+    .sessiondetailpage .comments .button-comment {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-align: end;
+        background-color: #385f8b;
+        color: #FFF;
+        width: 150px;
+        font-weight: 300;
+        margin-right: 24px;
+        border: 0;
+    }
+
+    .sessiondetailpage .comments .button-comment:hover {
+        cursor: pointer;
+    }
+
+    .sessiondetailpage .comments .commentsInSessionList {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        height: 100%;
+    }
+
+        .sessiondetailpage .comments .commentsInSessionList .win-container:hover {
+            outline: none;
+        }
+
+.sessiondetailpage .commentsInSessionList .item {
+    /*TODO: Remove fixed height*/
+    height: 99px;
+    display: -ms-grid;
+    -ms-grid-rows: 40px 1fr;
+    -ms-grid-columns: 1fr;
+    background-color: #ddddde;
+    border: solid 1px rgba(35, 88, 147, 0.2);
+}
+
+    .sessiondetailpage .commentsInSessionList .item .item-header {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 50px 1fr 60px;
+        color: #414141;
+        overflow: hidden;
+    }
+
+        .sessiondetailpage .commentsInSessionList .item .item-header .image {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            height: 21px;
+            width: 22px;
+            margin: 12px;
+            background: url(/images/content/comment-ico.png) top center no-repeat transparent;
+            background-size: 22px 21px;
+        }
+
+        .sessiondetailpage .commentsInSessionList .item .item-header .item-name {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            font-size: 20pt;
+            font-weight: 200;
+        }
+
+        .sessiondetailpage .commentsInSessionList .item .item-header .item-time {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+            line-height: 30px;
+            vertical-align: bottom;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+    .sessiondetailpage .commentsInSessionList .item .item-description {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+
+
+.sessiondetailpage .title-room {
+    -ms-grid-row: 1;
+    -ms-grid-column: 8;
+    min-width: 600px;
+}
+
+.sessiondetailpage .room-map {
+    -ms-grid-row: 2;
+    -ms-grid-column: 8;
+    margin-right: 45px;
+}
+
+
+@media screen and (-ms-view-state: snapped) {
+
+    .sessiondetailpage section[role=main] {
+        -ms-grid-rows: auto 25px auto;
+        -ms-grid-columns: 15px 1fr 15px;
+    }
+
+    .sessiondetailpage .details {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        display: -ms-grid;
+        -ms-grid-rows: 120px 15px 130px 15px 40px;
+        -ms-grid-columns: 100%;
+        width: 100%;
+        height: 100%;
+        margin-top: 25px;
+    }
+
+        .sessiondetailpage .details .details-header {
+            -ms-grid-columns: 1fr;
+            -ms-grid-row: 1;
+        }
+
+            .sessiondetailpage .details .details-header .details-date {
+                font-size: 16pt;
+                font-weight: 200;
+                -ms-grid-row: 1;
+                -ms-grid-column: 1;
+            }
+
+            .sessiondetailpage .details .details-header .details-time {
+                -ms-grid-row: 2;
+                -ms-grid-column: 1;
+                font-size: 16pt;
+                font-weight: 200;
+            }
+
+            .sessiondetailpage .details .details-header .details-duration {
+                -ms-grid-row: 3;
+                -ms-grid-column: 1;
+                font-size: 11pt;
+            }
+
+            .sessiondetailpage .details .details-header .details-speaker {
+                -ms-grid-row: 5;
+                -ms-grid-column: 1;
+                background: url(/images/content/organizer-icon.png) center left no-repeat transparent;
+                padding-left: 25px;
+                font-size: 16pt;
+                font-weight: 200;
+            }
+
+        .sessiondetailpage .details .details-description {
+            -ms-grid-row: 3;
+            overflow: hidden;
+        }
+
+        .sessiondetailpage .details .rating-zone {
+            -ms-grid-row: 5;
+        }
+
+            .sessiondetailpage .details .rating-zone span {
+                display: inline-block;
+                padding-left: 30px;
+                font-size: 11pt;
+                line-height: 35px;
+                vertical-align: top;
+            }
+
+            .sessiondetailpage .details .rating-zone .win-rating {
+                width: 120px;
+                vertical-align: middle;
+            }
+
+            .sessiondetailpage .details .rating-zone .win-star {
+                font-size: 14pt !important;
+            }
+
+    .sessiondetailpage .title-friends {
+        display: none;
+    }
+
+    .sessiondetailpage .friendinsession {
+        display: none;
+    }
+
+    .sessiondetailpage .title-comments {
+        display: none;
+    }
+
+    .sessiondetailpage .comments {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+        display: -ms-grid;
+        -ms-grid-rows: 200px 20px;
+        -ms-grid-columns: 1fr;
+        height: 100%;
+    }
+
+        .sessiondetailpage .comments .text-comment {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .sessiondetailpage .comments .button-comment {
+            line-height: 1em;
+            margin-right: 0;
+        }
+
+        .sessiondetailpage .comments .commentsInSessionList {
+            display: none;
+        }
+
+    .sessiondetailpage .title-room {
+        display: none;
+    }
+
+    .sessiondetailpage .room-map {
+        display: none;
+    }
+
+    .user-data {
+        display: none;
+    }
+}

@@ -1,0 +1,150 @@
+.rides-list {
+  overflow: hidden;
+
+  .table-striped > tbody > tr.table-row:nth-child(4n-1) > td,
+  .table-striped > tbody > tr.table-row:nth-child(4n-1) > th {
+    background-color: white;
+  }
+
+  .table-striped > tbody > tr.table-row {
+    cursor: pointer;
+
+    .vertical-middle {
+      vertical-align: middle;
+    }
+
+    &.table-row-selected {
+      color: white;
+
+      & > td {
+        background-color: #555;
+      }
+    }
+  }
+
+  .ride-detail-row {
+    & > td {
+      padding: 0;
+    }
+
+    &.ride-detail-row-selected > td {
+      border: 0;
+    }
+
+    .ride-detail-container {
+      border: solid #555;
+
+      img {
+        position: absolute;
+        z-index: 1000;
+      }
+
+      .data-container {
+        background-color: white;
+        padding-left: 260px;
+        min-height: 180px;
+
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+
+          & > div {
+            margin-top: 15px;
+          }
+        }
+
+        h3, .ms-rating {
+          display: inline-block;
+          margin: 0;
+          margin-left: 5px;
+        }
+      }
+
+      @media (max-width: 767px){
+        .data-container {
+          padding-left: 0;
+          margin-top: 0;
+
+          h3, .ms-rating {
+            display: block;
+            margin-left: 0;
+          }
+        }
+      }
+
+      .comment-container {
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+
+.filters-container {
+  select.form-control {
+    margin-left: 10px;
+    margin-right: 15px;
+    display: inline-block;
+    width: auto;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Starting animation for enter
+.animate-if.ng-enter {
+  @time: .25s;
+  -webkit-transition: height @time ease-out;
+  transition: height @time ease-out;
+  height: 0;
+
+  img {
+    -webkit-transition: height @time ease-out;
+    transition: height @time ease-out;
+    height: 0;
+    width: 260px;
+    -webkit-animation: enter_animation @time;
+    animation: enter_animation @time;
+  }
+
+  .data-container {
+    -webkit-animation: enter_animation @time;
+    animation: enter_animation @time;
+    min-height: 0;
+  }
+}
+// Terminating animation for enter
+.animate-if.ng-enter.ng-enter-active {
+  height: 180px;
+
+  img {
+    height: 180px;
+  }
+}
+// Starting animation for leave
+.animate-if.ng-leave {
+  height: 0;
+
+  img {
+    height: 0;
+  }
+
+  .data-container {
+    display: none;
+  }
+}
+// Terminating animation for leave
+.animate-if.ng-leave.ng-leave-active {
+
+}
+
+@-webkit-keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}

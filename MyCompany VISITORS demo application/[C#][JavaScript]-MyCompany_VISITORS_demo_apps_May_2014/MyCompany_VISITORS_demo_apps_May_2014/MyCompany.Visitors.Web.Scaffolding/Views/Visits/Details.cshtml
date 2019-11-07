@@ -1,0 +1,81 @@
+﻿@model MyCompany.Visitors.Model.Visit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Visit</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasCar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasCar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.VisitId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

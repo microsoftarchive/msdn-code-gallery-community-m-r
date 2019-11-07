@@ -1,0 +1,32 @@
+	
+1) Dynamic Sql Query :
+Sample Select query to be used for our application: 
+1)	select ID,ItemNo ,ItemName ,Comments ,Price from ItemDetail where Price>'1000'
+2)	select A.UserName,A.UserType,A.Phone,B.Address,B.Email
+From
+Userdetails A Left Outer JOIN UserAddress B
+on
+A.UserID=B.UserID
+
+
+2) Sample Column Name and table details to be used for testing : 
+1)	Column Names: UserName,UserType,Phone
+Table Names: UserDetails
+2)	Column Names:ItemNo ,ItemName ,Comments ,Price
+Table Names:ItemDetail
+3)	Column Names: A.UserName,A.UserType,A.Phone,B.Address,B.Email
+Table Names: Userdetails A Left Outer JOIN UserAddress B on A.UserID=B.UserID 
+
+
+2)Column Names:ItemNo ,ItemName ,Comments ,Price
+Table Names:ItemDetail
+Where Condition:ItemName like 'm%'
+
+3) Column Names:ItemName,SUM(Price) as totalCost
+Table Names:ItemDetail
+Where Condition:ItemName like 'm%'
+Group By: ItemName
+
+4) Column Names:ID,ItemNo ,ItemName ,Comments ,Price
+Table Names:itemDetail
+Order By : Price desc

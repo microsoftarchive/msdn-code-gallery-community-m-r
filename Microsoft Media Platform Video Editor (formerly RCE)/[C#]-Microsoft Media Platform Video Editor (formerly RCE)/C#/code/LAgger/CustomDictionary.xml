@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>LAgger</Word>
+      <Word>Agger</Word>
+    </Recognized>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>LAgger</Acronym>
+      <Acronym>Agger</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

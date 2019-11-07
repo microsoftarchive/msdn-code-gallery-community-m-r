@@ -1,0 +1,171 @@
+﻿@import '../../core/css/fonts';
+@import '../../core/css/core';
+
+.home-container {
+    text-align: center;
+    padding: 30% 10% 0 10%;
+
+    > img {
+        max-width: 7em;
+    }
+
+    .no-data-message {
+        #fonts > .no-data;
+    }
+}
+
+.button {
+    min-height: 13%;
+
+    &.button-next {
+        background-image: url('../images/next_icon.png');
+        background-position: 95% center;
+        background-repeat: no-repeat;
+        background-size: 2em;
+    }
+
+    .button-signature-img {
+        width: 1.5em;
+        position: absolute;
+        top: 28%;
+        left: 30%;
+    }
+
+    .button-employee-img {
+        width: 1.2em;
+        position: absolute;
+        top: 30%;
+        left: 22%;
+    }
+}
+
+.view-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 7em;
+}
+
+// Ride page styles
+.time-row {
+    display: table;
+    padding: 2em 0;
+    height: 15%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    &.start-time {
+        background-color: @start-row-bg-color;
+    }
+
+    &.end-time {
+        background-color: @data-row-bg-color;
+    }
+
+    .label-col {
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+
+        label.time {
+            padding-left: 2em;
+            background-image: url('../images/clock_icon.png');
+            background-repeat: no-repeat;
+            background-size: 1.3em;
+            background-position: 0 50%;
+        }
+    }
+
+    .data-col {
+        #fonts .secondary-data;
+        text-align: right;
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.summary-row {
+    background-color: @primary-color;
+    padding: 0.7em 0 0.4em 0;
+    height: 15%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: table;
+
+    .summary-col {
+        text-align: center;
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+
+        img {
+            height: 2.4em;
+            display: block;
+            margin: 0 auto 0.2em auto;
+        }
+
+        label {
+            #fonts .primary-label;
+        }
+
+        .ride-data {
+            #fonts .summary-data;
+            margin: 0;
+            line-height: 1em;
+
+            .data-unit {
+                font-size: 0.5em;
+            }
+        }
+    }
+}
+
+.bing-map {
+    height: 45%;
+    position: relative;
+
+    .start-pushpin {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        background-color: @secondary-color;
+    }
+}
+
+// Signature page styles
+.customer-email-row {
+    margin-left: 0;
+    margin-right: 0;
+    .input-row;
+    background-color: @data-row-bg-color;
+    min-height: 20%;
+}
+
+.customer-signature-row {
+    padding-top: 2em;
+    height: 80%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.canvas-wrapper {
+    width: 100%;
+    height: 80%;
+}
+
+// Service pace styles
+
+.service-content {
+    .service-employee-row {
+        min-height: 16%;
+    }
+
+    .service-bing-map {
+        height: 73%;
+    }
+}

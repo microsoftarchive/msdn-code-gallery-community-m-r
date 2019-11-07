@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="SyncConfiguration" type="Microsoft.Synchronization.ClientServices.Configuration.SyncConfigurationSection, SyncSvcUtil, Version=1.0.0.0, Culture=neutral" allowDefinition="Everywhere" allowExeDefinition="MachineToApplication" restartOnExternalChanges="true" />
+  </configSections>
+
+  <SyncConfiguration>
+    <SyncScopes>
+      <SyncScope Name="DefaultScope" IsTemplateScope="true">
+        <SyncTables>
+          <SyncTable Name="Tag" GlobalName="Tag" IncludeAllColumns="true" />
+          <SyncTable Name="Priority" GlobalName="Priority" IncludeAllColumns="true" />
+		  <SyncTable Name="Status" GlobalName="Status" IncludeAllColumns="true" />
+		  
+		  <SyncTable Name="User" GlobalName="User" IncludeAllColumns="true" FilterClause="[side].ID = @ID" >
+ 			<FilterColumns>
+				<FilterColumn Name="ID" />
+			</FilterColumns>
+
+			<FilterParameters>
+				<FilterParameter Name="@ID" SqlType="uniqueidentifier" DataSize="16" />
+			</FilterParameters>
+		  </SyncTable>
+		  
+		  <SyncTable Name="List" GlobalName="List" IncludeAllColumns="true" FilterClause="[side].UserID = @UserID" >
+ 			<FilterColumns>
+				<FilterColumn Name="UserID" />
+			</FilterColumns>
+
+			<FilterParameters>
+				<FilterParameter Name="@UserID" SqlType="uniqueidentifier" DataSize="16" />
+			</FilterParameters>
+		  </SyncTable>
+		  
+		  <SyncTable Name="Item" GlobalName="Item" IncludeAllColumns="true" FilterClause="[side].UserID = @UserID" >
+ 			<FilterColumns>
+				<FilterColumn Name="UserID" />
+			</FilterColumns>
+
+			<FilterParameters>
+				<FilterParameter Name="@UserID" SqlType="uniqueidentifier" DataSize="16" />
+			</FilterParameters>
+		  </SyncTable>
+		  
+		  <SyncTable Name="TagItemMapping" GlobalName="TagItemMapping" IncludeAllColumns="true" FilterClause="[side].UserID = @UserID">
+ 			<FilterColumns>
+				<FilterColumn Name="UserID" />
+			</FilterColumns>
+
+			<FilterParameters>
+				<FilterParameter Name="@UserID" SqlType="uniqueidentifier" DataSize="16" />
+			</FilterParameters>
+		  </SyncTable>	
+		  
+        </SyncTables>
+      </SyncScope>
+    </SyncScopes>
+    <Databases>
+      <TargetDatabase Name="ListSample" DbServer="." DbName="listdb" UseIntegratedAuth="true" />
+    </Databases>
+  </SyncConfiguration>
+</configuration>

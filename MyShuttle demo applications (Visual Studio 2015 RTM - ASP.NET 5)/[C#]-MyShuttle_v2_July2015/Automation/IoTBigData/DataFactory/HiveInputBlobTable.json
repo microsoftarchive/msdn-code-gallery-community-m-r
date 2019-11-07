@@ -1,0 +1,24 @@
+{
+    "name": "HiveInputBlobTable",
+    "properties": {
+       
+         "structure": [
+            { "name": "winstarttime", "type": "String" },
+            { "name": "WinEndTime", "type": "String" },
+            { "name": "DriverId", "type": "Int" },
+            { "name": "licenseplate", "type": "String" },
+            { "name": "name", "type": "String" },
+            { "name": "NumWarnings", "type": "Int" }
+        ],
+        "location": {
+            "type": "AzureBlobLocation",
+            "folderPath": "myshuttledata/OBD-SecurityBelt/",
+            "linkedServiceName": "AzureStorage"
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1,
+            "waitonexternal": { }
+        }
+    }
+}

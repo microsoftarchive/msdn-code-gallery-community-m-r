@@ -1,0 +1,277 @@
+@import "variables.less";
+
+// Product carriers list styles
+.carrier-list {
+    padding-top: 0;
+    padding-bottom: 2.5em;
+
+    .carrier-info-wrapper {
+        text-align: left;
+        margin-top: 1em;
+
+        .carrier-tile {
+
+            .carrier-info {
+                border: solid 1px @customer-message-border-color;
+                padding: 0.6em 0em 0.6em 0em;
+                color: @text-base-light-color;
+                line-height: 1.2em;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                border-radius: 0.5em;
+                width: 100%;
+
+                &.even {
+                    float: right;
+                }
+
+                .carrier-rating {
+                    margin-top: 0.6em;
+                }
+
+                .img-wrapper {
+                    line-height: 7em;
+                    padding-left: 7px;
+                    padding-right: 7px;
+
+                    img.carrier-pic {
+                        height: 100%;
+                        width: 100%;
+                        margin: 0.3em 0em;
+                    }
+                }
+
+                .carrier-name {
+                    font-weight: 400;
+                    font-size: 1.5em;
+                    color: @black-shuttle;
+                    line-height: 1.5em;
+                }
+
+                .carrier-description {
+                    height: 2.3em;
+                }
+            }
+        }
+    }
+
+    .carrier-controls {
+        margin: 0em 0em 1em;
+
+        .search-carrier {
+            margin-top: 3em;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                background-image: url('Images/search.png');
+                background-size: inherit;
+                background-repeat: no-repeat;
+                background-color: white;
+                content: '';
+                right: 0.2em;
+                top: 0.7em;
+                width: 2em;
+                height: 1.7em;
+                position: absolute;
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .search-input {
+            color: @color-input;
+            height: 3em;
+
+            &:focus {
+                border: 1px solid @default-input-border;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .carrier-results {
+        .n-results {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .text-results {
+            font-size: 1em;
+        }
+    }
+}
+
+// Become carrier list styles list styles
+.carrier-form-wrapper {
+    background-image: url('Images/bgcolaborators.png');
+    background-position-x: left;
+    background-position-y: top;
+    background-repeat: no-repeat;
+
+    &.cover-background {
+        background-size: cover;
+    }
+
+    .carrier-form {
+        .register-carrier-form {
+            margin-top: 3em;
+        }
+
+        &.center-container {
+            margin: 0 auto;
+        }
+
+        .padding-right-row-md {
+            padding-right: 3.5em;
+        }
+
+        .padding-left-row-md {
+            padding-left: 3.5em;
+        }
+
+        .become-carrier {
+            color: @green-dark-form;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 2.6em;
+            margin-top: 0.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .become-carrier-description {
+            color: white;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1.2em;
+            line-height: 1.3em;
+        }
+
+        .validation-summary, .validation-summary-errors {
+            color: @green-dark-form;
+            font-size: 1.2em;
+            font-weight: 600;
+
+            ul {
+                padding-left: 1em;
+                /*padding-left: 0;
+                list-style: none;*/
+                li {
+                    /*float: left;*/
+                    margin-right: 0.5em;
+                }
+            }
+        }
+    }
+
+    .separator {
+        bottom: 0;
+        height: 1.5em;
+        width: 100%;
+        border-bottom: 0.4em solid @grey-line-color;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: @white;
+    font-weight: 200;
+}
+
+::-moz-placeholder {
+    color: @white;
+    font-weight: 200;
+}
+
+::-moz-placeholder {
+    color: @white;
+    font-weight: 200;
+}
+
+:-ms-input-placeholder {
+    color: @white;
+    font-weight: 200;
+}
+
+@media (max-width: @extended-row-max-width) {
+    .carrier-list {
+
+        .carrier-info-wrapper {
+
+            .carrier-tile {
+                .carrier-info {
+                    &.even {
+                        float: none;
+                    }
+                }
+            }
+        }
+
+        .carrier-controls {
+            margin: 0em 2em 1em;
+        }
+
+
+
+        .carrier-results {
+            margin-right: 2em;
+        }
+    }
+}
+
+@media (max-width: @screen-sm-min) {
+    // Product carriers list styles
+    .carrier-list {
+
+        .carrier-info-wrapper {
+
+            .carrier-tile {
+                padding-right: 0em;
+                padding-left: 0em;
+
+                .carrier-info {
+                    margin-left: 0em;
+                    margin-right: 0em;
+
+                    &.even {
+                        float: none;
+                    }
+                }
+            }
+        }
+
+        .carrier-controls {
+            margin: 0;
+
+            .search-carrier {
+                margin-top: 1em;
+                padding: 0;
+            }
+        }
+
+        .carrier-results {
+            display: none;
+        }
+    }
+
+    .carrier-form-wrapper {
+        background-size: cover;
+
+        .carrier-form {
+            .padding-left-row-md {
+                padding-left: 0em;
+                margin-right: 0em;
+            }
+
+            .padding-right-row-md {
+                padding-right: 0em;
+            }
+        }
+
+        .separator {
+            height: 2em;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+<!--Base text block style-->
+    <Style x:Key="TextBoxBase" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+
+    <!--Normal application text style-->
+    <Style x:Key="NormalTextBox" TargetType="TextBox" BasedOn="{StaticResource TextBoxBase}">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+</ResourceDictionary>

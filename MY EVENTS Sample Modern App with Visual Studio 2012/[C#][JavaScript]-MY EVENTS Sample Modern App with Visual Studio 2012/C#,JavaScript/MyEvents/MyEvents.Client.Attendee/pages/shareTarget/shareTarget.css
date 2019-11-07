@@ -1,0 +1,90 @@
+﻿body {
+    height: 100%;
+}
+
+section[role=main] {
+    display: -ms-grid;
+    -ms-grid-columns: 40px 1fr 40px;
+    -ms-grid-rows: 10px 40px 10px auto 10px auto 10px 30px;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: #3e3e3e !important;
+}
+
+    section[role=main] .commentbox {
+        -ms-grid-column-align: stretch;
+        -ms-grid-column: 2;
+        -ms-grid-row: 2;
+        height: 25px;
+        margin-top: 10px;
+        width: calc(100% - 4px);
+        color: #3e3e3e !important;
+    }
+
+    section[role=main] .event-list {
+        -ms-grid-column: 2;
+        -ms-grid-row: 4;
+        color: #3e3e3e !important;
+        width: 100%;
+    }
+
+        section[role=main] .event-list p {
+            margin-top: 7px;
+            margin-bottom: 5px;
+        }
+
+        section[role=main] .event-list .shareEventList {
+            padding: 0;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+    section[role=main] .session-list {
+        -ms-grid-column: 2;
+        -ms-grid-row: 6;
+        color: #3e3e3e !important;
+        width: 100%;
+    }
+
+        section[role=main] .session-list p {
+            margin-top: 7px;
+            margin-bottom: 5px;
+        }
+
+        section[role=main] .session-list .shareSessionList {
+            padding: 0;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+    section[role=main] .sharecontrols {
+        -ms-grid-column-align: stretch;
+        -ms-grid-column: 2;
+        -ms-grid-row: 8;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr auto;
+        -ms-grid-rows: 1fr;
+    }
+
+        section[role=main] .sharecontrols .submitbutton {
+            -ms-grid-column: 2;
+            margin-top: 5%;
+            background-color: #3b6492;
+            border: solid 1px #235893;
+        }
+
+        section[role=main] .sharecontrols .progressindicators {
+            visibility: hidden;
+        }
+
+            section[role=main] .sharecontrols .progressindicators progress {
+                display: inline;
+                height: 20px;
+                margin-right: 7px;
+                width: 20px;
+            }
+
+                section[role=main] .sharecontrols .progressindicators progress::-ms-fill {
+                    animation-name: -ms-ring;
+                }

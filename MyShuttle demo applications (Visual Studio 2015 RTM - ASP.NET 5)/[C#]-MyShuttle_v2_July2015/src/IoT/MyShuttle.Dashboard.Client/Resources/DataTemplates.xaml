@@ -1,0 +1,189 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="RatingArrow">
+        <Grid Height="{Binding Index, Converter={StaticResource MyShuttleTopDriverTileIndexToHeightConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19"></ColumnDefinition>
+                <ColumnDefinition Width="4"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                Path=DataContext, Converter={StaticResource MyShuttleRateToMarginConverter}}" 
+                        VerticalAlignment="Bottom" Grid.RowSpan="3">
+                <Polygon Points="0,0 14,7, 0,14" Fill="{Binding Rate, Converter={StaticResource MyShuttleRateToBrushConverter}}"></Polygon>
+            </StackPanel>
+
+            <Border Grid.Row="0" Grid.Column="1" Background="#00CCB0"/>
+            <Border Grid.Column="1" Grid.Row="1" Background="#9BAB90"/>
+            <Border Grid.Column="1" Grid.Row="2" Background="#FD8C71"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LongTopDriverDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="300" Height="410">
+            <Border Background="#1D2938"/>
+            <ContentControl Width="23" Margin="256,0,0,0" ContentTemplate="{StaticResource RatingArrow}"></ContentControl>
+
+            <StackPanel Margin="0,40,0,0" >
+                <Ellipse Width="151" Height="151">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding DriverInfo.Picture, Converter={StaticResource ByteArrayToImageConverter}}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock  Margin="0,20,0,0" Text="{Binding DriverInfo.Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="30" />
+                <TextBlock Text="{Binding DriverInfo.TotalRides}" Margin="0,20,0,0" TextAlignment="Center" Foreground="#ffffff" FontWeight="SemiBold" FontSize="42" />
+                <TextBlock Text="rides" Margin="0,-5,0,0" TextAlignment="Center" Foreground="#7C8997" FontSize="16" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MediumTopDriverDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="300" Height="270">
+            <Border Background="{Binding Index, Converter={StaticResource MyShuttleTopDriverTileIndexToBrushConverter}}"/>
+
+            <ContentControl Width="23" Margin="256,0,0,0" ContentTemplate="{StaticResource RatingArrow}"></ContentControl>
+
+
+            <StackPanel Margin="0,20,0,0" >
+                <Ellipse Width="118" Height="118">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding DriverInfo.Picture, Converter={StaticResource ByteArrayToImageConverter}}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock  Margin="0,10,0,0" Text="{Binding DriverInfo.Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="24" />
+                <TextBlock Text="{Binding DriverInfo.TotalRides}" Margin="0,10,0,0" TextAlignment="Center" Foreground="#ffffff" FontWeight="SemiBold" FontSize="34" />
+                <TextBlock Text="rides"  Margin="0,-5,0,0" TextAlignment="Center" Foreground="#7C8997" FontSize="16" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SmallTopDriverDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="300" Height="130">
+            <Border Background="#435266"/>
+            <ContentControl Width="23" Margin="256,0,0,0" ContentTemplate="{StaticResource RatingArrow}"></ContentControl>
+
+            <StackPanel Margin="20,0,0,0" Orientation="Horizontal" >
+                <Ellipse Width="82" Height="82">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding DriverInfo.Picture, Converter={StaticResource ByteArrayToImageConverter}}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel VerticalAlignment="Center" Margin="10,0,0,0" Width="155">
+                    <TextBlock Text="{Binding DriverInfo.Name}" TextTrimming="CharacterEllipsis" TextAlignment="Left" Foreground="#ffffff" FontWeight="Light" FontSize="24" />
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                        <TextBlock Text="{Binding DriverInfo.TotalRides}" Margin="0,0,5,0" TextAlignment="Left" Foreground="#ffffff" FontWeight="SemiBold" FontSize="34"  />
+                        <TextBlock Text="rides" Margin="0,20,0,0" Foreground="#7C8997" FontSize="16" />
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="UnitsVehicleDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="210" Height="260">
+            <Border Background="#47D1B6"/>
+            <StackPanel Margin="0,40,0,0" >
+                <TextBlock  Margin="0,20,0,0" Text="{Binding Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="20" />
+                <TextBlock Text="{Binding Value}" Margin="0,25,0,0" TextAlignment="Center" Foreground="#207A69" FontWeight="SemiBold" FontSize="36" />
+                <TextBlock Text="{Binding Unit}" Margin="0,-5,0,0" TextAlignment="Center" Foreground="#B3F9E9" FontSize="16" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AbsoluteVehicleDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="210" Height="260">
+            <Border Background="#1D2938"/>
+            <StackPanel Margin="0,40,0,0" >
+                <TextBlock  Margin="0,20,0,0" Text="{Binding Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="20" />
+                <TextBlock Text="{Binding Value}" Margin="0,25,0,0" TextAlignment="Center" Foreground="#5E6D7A" FontSize="36" FontWeight="SemiBold" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="SmallUnitsVehicleDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="210" Height="130">
+            <Border Background="#47D1B6"/>
+            <StackPanel Margin="0,0,0,0" >
+                <TextBlock  Margin="0,15,0,0" Text="{Binding Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="20" />
+                <TextBlock Text="{Binding Value}" Margin="0,5,0,0" TextAlignment="Center" Foreground="#207A69" FontWeight="SemiBold" FontSize="36" />
+                <TextBlock Text="{Binding Unit}" Margin="0,-5,0,0" TextAlignment="Center" Foreground="#B3F9E9" FontSize="16" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SmallAbsoluteVehicleDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="210" Height="130">
+            <Border Background="#1D2938"/>
+            <StackPanel Margin="0,0,0,0" >
+                <TextBlock  Margin="0,15,0,0" Text="{Binding Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="20" />
+                <TextBlock Text="{Binding Value}" Margin="0,5,0,0" TextAlignment="Center" Foreground="#5E6D7A" FontSize="36" FontWeight="SemiBold" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MediumGeneralStatisticsDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="230" Height="260">
+            <Border Style="{Binding Index, Converter={StaticResource MyShuttleTileIndexToStyleConverter}}"/>
+            <Polygon Points="30,260 230,50, 230,260" Fill="#22000000" />
+            <StackPanel Margin="0,20,0,0" >
+                <TextBlock  Margin="0,10,0,0" Text="{Binding Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="20" />
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="30,25,0,0">
+                    <TextBlock Text="{Binding Value}" Style="{Binding Index, Converter={StaticResource MyShuttleFontTileIndexToStyleConverter}}" FontWeight="SemiBold" FontSize="36" />
+                    <TextBlock Text="{Binding Unit}" VerticalAlignment="Bottom" Margin="2,0,0,5" Foreground="#B3F9E9" FontSize="16" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,60,30,0">
+                    <TextBlock Text="{Binding GlobalValue}" Style="{Binding Index, Converter={StaticResource MyShuttleFontTileIndexToStyleConverter}}" FontWeight="SemiBold" FontSize="26" />
+                    <TextBlock Text="{Binding Unit}" VerticalAlignment="Bottom" Margin="2,0,0,5" Foreground="#B3F9E9" FontSize="16" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SmallGeneralStatisticsDataTemplate">
+        <Grid HorizontalAlignment="Left" Width="230" Height="130">
+            <Border Style="{Binding Index, Converter={StaticResource MyShuttleTileIndexToStyleConverter}}"/>
+            <Polygon Points="45,130 230,10, 230,130" Fill="#22000000" />
+            <StackPanel Margin="0" >
+                <TextBlock  Margin="0,5,0,0" Text="{Binding Name}" TextAlignment="Center" Foreground="#ffffff" FontWeight="Light" FontSize="20" />
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="20,10,0,0">
+                    <TextBlock Text="{Binding Value}" Style="{Binding Index, Converter={StaticResource MyShuttleFontTileIndexToStyleConverter}}" FontWeight="SemiBold" FontSize="36" />
+                    <TextBlock Text="{Binding Unit}" VerticalAlignment="Bottom" Margin="2,0,0,5" Foreground="#B3F9E9" FontSize="16" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,-10,20,0">
+                    <TextBlock Text="{Binding GlobalValue}" Style="{Binding Index, Converter={StaticResource MyShuttleFontTileIndexToStyleConverter}}" FontWeight="SemiBold" FontSize="26" />
+                    <TextBlock Text="{Binding Unit}" VerticalAlignment="Bottom" Margin="2,0,0,5" Foreground="#B3F9E9" FontSize="16" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    
+     <DataTemplate x:Key="VehicleAlarmTemplate">
+        <Grid Width="270" Height="130">
+            <Border Background="#1D2938"/>
+            <Grid Margin="0,0,0,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Ellipse Fill="{Binding Level, Converter={StaticResource MyShuttleAlarmLevelToBrushConverter}}" Height="16" Width="16"></Ellipse>
+                <TextBlock Grid.Column="1" Margin="0,15,10,0" Text="{Binding Date, Converter={StaticResource StringFormatConverter}, ConverterParameter='\{0:HH:mm dd MMM yyyy}'}" TextAlignment="Right" Foreground="#95A8BD" FontWeight="Light" FontSize="12" />
+                <TextBlock Grid.ColumnSpan="2" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" Width="240" Margin="15,5,15,0" Grid.Row="1" Text="{Binding Description}" TextAlignment="Left" Foreground="#DBDCDF" FontSize="14" FontWeight="Light" />
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

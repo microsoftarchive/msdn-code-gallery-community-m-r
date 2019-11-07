@@ -1,0 +1,190 @@
+﻿<Library:AssetPreview
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:Library="clr-namespace:RCE.Modules.Library"   
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:RCE.Infrastructure.Controls;assembly=RCE.Infrastructure"
+    xmlns:MediaBin="clr-namespace:RCE.Modules.MediaBin" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="RCE.Modules.MediaBin.VideoPreviewTimeline"
+    mc:Ignorable="d">
+    <Library:AssetPreview.Resources>
+        <Storyboard x:Name="ShowInterface">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Player" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1" KeySpline="0.7,0,0.3,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="HideInterface">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Player" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" KeySpline="0.7,0,0.3,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Library:AssetPreview.Resources>
+    <Grid x:Name="VideoGrid" Height="145" Width="170" Background="{StaticResource PreviewBackgroundBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="MediaErrorStates">
+                <VisualState x:Name="MediaErrorExpanded">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="MediaErrorViewContainerElement" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>  
+                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="AssetContainer" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MediaErrorCollapsed">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="MediaErrorViewContainerElement" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="AssetContainer" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <ContentControl x:Name="IconContent" ContentTemplate="{StaticResource PreviewVideoIconTemplate}" Margin="0"/>
+        </Grid>
+        <TextBlock Grid.Column="1"
+                   Grid.Row="0"
+                   Text="{Binding Title}" 
+                   TextWrapping="NoWrap"
+                   Foreground="{StaticResource ForegroundBrush}"
+                   FontSize="10" 
+                   FontWeight="Bold" 
+                   FontFamily="Arial"/>
+        <StackPanel
+                Grid.Row="0"
+                Grid.Column="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right">
+            <TextBlock x:Name="CurrentPositionLabel"
+                       Foreground="{StaticResource ForegroundBrush}"
+                       TextWrapping="NoWrap" 
+                       FontSize="10" 
+                       FontWeight="Bold" 
+                       FontFamily="Arial"/>
+            <TextBlock Text="{Binding Duration}"
+                       Margin="0,0,5,0"
+                       Foreground="{StaticResource ForegroundBrush}"
+                       TextWrapping="NoWrap" 
+                       FontSize="10" 
+                       FontWeight="Bold" 
+                       FontFamily="Arial"/>
+        </StackPanel>
+        <Border x:Name="MediaErrorViewContainerElement" Visibility="Collapsed" Padding="0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" Canvas.ZIndex="2">
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Border.RenderTransform>
+        <Controls:MediaErrorView HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+        <Grid x:Name="SubclipGrid" Grid.Row="1" Grid.ColumnSpan="3" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="MarkInGrid" Grid.Column="0" Visibility="Collapsed" Margin="5" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="14"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Foreground="{StaticResource ForegroundBrush}" FontSize="12" HorizontalAlignment="Center" Text="Mark In"/>
+                <Button Grid.Row="0" Style="{StaticResource VideoPreviewTimelineCloseButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Content="" Cursor="Hand" Width="10" Height="10" Click="MarkInDeleteButton_Click" Margin="61,0,0,0"/>
+                <Image x:Name="MarkInPreview" Grid.Row="1" Stretch="Uniform" MouseLeftButtonDown="MarkIn_Clicked"  Cursor="Hand"/>
+                <TextBlock x:Name="MarkInText" Grid.Row="2" Foreground="{StaticResource ForegroundBrush}" Text="text" FontSize="9" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="AssetContainer" Grid.Column="1" Cursor="Hand"  ToolTipService.ToolTip="{Binding Title}">
+                <Image x:Name="FramePreviewImage"  Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <ScaleTransform x:Name="FramePreviewImageRenderTransform" ScaleX="1" ScaleY="1" />
+                    </Image.RenderTransform>
+                </Image>
+                <!--<Controls:MarkingView x:Name="MarkingView" Opacity="0" Canvas.ZIndex="2"/>-->
+            </Grid>
+            <Border x:Name="BufferBar" Grid.Column="1" Visibility="Collapsed" Canvas.ZIndex="200">
+                <Controls:Spinner x:Name="Spinner" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="84" RenderTransformOrigin="0.5,0.5" >
+                    <Controls:Spinner.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Controls:Spinner.RenderTransform>
+                </Controls:Spinner>
+            </Border>
+			<Border x:Name="GoToPanel" Grid.Column="1" Canvas.ZIndex="200" Visibility="Collapsed">
+                <Canvas Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Center" Width="135"  RenderTransformOrigin="0.5,0.5" Margin="0,0,0,25" VerticalAlignment="Center" >
+                   <Border Grid.Column="1" Padding="5" Style="{StaticResource GoToTimecodeBorderStyle}">
+				   <Border.Effect>
+				    <DropShadowEffect BlurRadius="10" Color="Black" Direction="-45" Opacity="0.5" ShadowDepth="5"> 
+        			</DropShadowEffect> 
+				   </Border.Effect>
+				   <Grid>
+				   		<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+				   <TextBlock Style="{StaticResource GoToTimecodeTextBlockStyle}" Grid.Column="0" VerticalAlignment="Center" Text="Go to:"/>
+				   <TextBox x:Name="GoToTextBox" Grid.Column="1" Width="74" Margin="2,0,2,0" Style="{StaticResource GoToTimecodeTextBoxStyle}" KeyDown="GoToTextBox_KeyDown"/>
+				   <Button Cursor="Hand" Style="{StaticResource SharedCloseButtonStyle}" Grid.Column="2" Width="11" Height="11" Click="GoToTimeCodeClose_Click"/>
+				   </Grid>
+				    </Border>
+                </Canvas>
+            </Border>
+            <Grid x:Name="MarkOutGrid" Grid.Column="2" Visibility="Collapsed" Margin="5" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="14"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Foreground="{StaticResource ForegroundBrush}" FontSize="12" HorizontalAlignment="Center" Text="Mark Out"/>
+                <Button Grid.Row="0" Style="{StaticResource VideoPreviewTimelineCloseButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="70,0,0,0" Content="" Cursor="Hand" Width="10" Height="10" Click="MarkOutDeleteButton_Click"/>
+                <Image x:Name="MarkOutPreview" Stretch="Uniform" Grid.Row="1" MouseLeftButtonDown="MarkOut_Clicked"  Cursor="Hand"/>
+                <TextBlock x:Name="MarkOutText" Grid.Row="2" Foreground="{StaticResource ForegroundBrush}" FontSize="9" HorizontalAlignment="Center"/>
+            </Grid>
+           <MediaBin:MetadataView x:Name="MetadataPanel" Visibility="Collapsed" Grid.Column="3" Margin="5,5,0,5" VerticalAlignment="Top"/>
+        </Grid>
+        <Controls:PlayerControl x:Name="Player" HorizontalAlignment="Stretch" Grid.Row="2" Grid.ColumnSpan="3" Opacity="0" 
+                                DisplayExpandButton="True"
+                                UseAllDataStreams="False"
+                                ParseDataStreams="True" Canvas.ZIndex="3"/>
+        <MediaBin:TimelineControl x:Name="Timeline" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed" Canvas.ZIndex="2"/>
+    </Grid>
+</Library:AssetPreview>

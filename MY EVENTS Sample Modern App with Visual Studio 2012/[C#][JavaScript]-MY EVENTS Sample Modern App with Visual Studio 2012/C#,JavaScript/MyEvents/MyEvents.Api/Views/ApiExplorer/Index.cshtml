@@ -1,0 +1,35 @@
+﻿@model System.Web.Http.Description.IApiExplorer
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div id="body">
+<section class="featured">
+<div class="content-wrapper">
+        <hgroup class="title">
+        <h1>My Events Web API Help Page</h1>
+</hgroup>
+</div>
+</section>
+<section class="content-wrapper main-content clear-fix">
+    <h3>APIs</h3>
+    <ul>
+    @foreach (var api in Model.ApiDescriptions)
+    {
+        <li>
+        <h5>@api.HttpMethod @api.RelativePath</h5>
+        <blockquote>
+        <p>@api.Documentation</p>
+        @if (api.ParameterDescriptions.Count > 0)
+        {
+            <h6>Parameters</h6>
+            <ul>
+        @foreach (var parameter in api.ParameterDescriptions)
+        {
+                <li>@parameter.Name: @parameter.Documentation (@parameter.Source)</li>
+    }
+        </ul>
+    }
+        </blockquote>
+        </li>
+    }
+</ul>
+</section>
+</div>

@@ -1,0 +1,13 @@
+<div data-ng-controller="HeaderController">
+    <img src="images/logo.png" class="logo" />
+    
+    <section class="menu-container">
+        <a ng-href="#settings" class="button primary button-settings" ng-show="!backBtnVisible">
+            <img src="images/settings_icon.png" />
+        </a>
+        
+        <a ng-click="navigateBack()" class="button secondary button-settings" ng-show="backBtnVisible">
+            <img src="images/close_icon.png" />
+        </a>
+    </section>
+</div>

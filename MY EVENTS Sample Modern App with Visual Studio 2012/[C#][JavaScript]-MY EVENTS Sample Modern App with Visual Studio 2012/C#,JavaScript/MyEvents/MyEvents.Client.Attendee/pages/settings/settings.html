@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Preferences</title>
+    <!-- References added only for design time purpose -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="/js/default.js"></script>
+    <!-- Page references -->
+    <script src="/pages/settings/settings.js"></script>
+    <link href="/pages/settings/settings.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-win-control="WinJS.UI.SettingsFlyout"
+        aria-label="App Settings Flyout"
+        data-win-options="{settingsCommandId:'Settings',width:'wide'}">
+        <div class="win-header">
+            <button onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton" aria-label="Back">
+            </button>
+            <div class="win-label">Settings</div>
+            <img src="/Assets/SmallLogo.png" class="logo" />
+        </div>
+        <div class="win-content">
+            <div>
+                <h3>web address</h3>
+                <p>
+                    <input id="webUrl" type="text" />
+                </p>
+                <h3>service address</h3>
+                <p>
+                    <input id="apiUrl" type="text" />
+                </p>
+                <div class="offline">
+                    <input id="offlineCheck" type="checkbox" />
+                    <h3>no internet mode</h3>
+                </div>
+            </div>
+            <button type="button" class="button button-save">save</button>
+        </div>
+    </div>
+</body>
+</html>

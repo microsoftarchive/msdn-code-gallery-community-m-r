@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="MyShuttle.Client.W10.UniversalApp.Views.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.W10.UniversalApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" RequestedTheme="Light">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Dictionaries/SplitViewStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <SplitView OpenPaneLength="240" x:Name="ShellSplitView"
+               CompactPaneLength="48" DisplayMode="Overlay"
+               IsPaneOpen="False" PaneBackground="Transparent">
+            <SplitView.Pane>
+                <RelativePanel x:Name="RadioButtonContainer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,76,0,0" Background="#FF202C3A">
+                    <StackPanel Width="240">
+                        <Rectangle Margin="0" Fill="#FF7D64" Height="8"></Rectangle>
+                        <RadioButton Tag="/Resources/Images/home.png" Command="{Binding NavCommand}" CommandParameter="MainPage" Content="Home" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                        <RadioButton Tag="/Resources/Images/distance.png" Command="{Binding NavCommand}" CommandParameter="VehicleByDistancePage" Content="Distance" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                        <RadioButton Tag="/Resources/Images/price.png" Command="{Binding NavCommand}" CommandParameter="VehicleByPricePage" Content="Price" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                        <RadioButton Tag="/Resources/Images/map.png" Command="{Binding NavCommand}" CommandParameter="MapPage" Content="Map" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                        <RadioButton Tag="/Resources/Images/rides.png" Command="{Binding NavCommand}" CommandParameter="MyRidesPage" Content="My rides" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                        <RadioButton Tag="/Resources/Images/settings.png" Command="{Binding NavCommand}" CommandParameter="MainPage" Content="Settings" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                    </StackPanel>
+                </RelativePanel>
+            </SplitView.Pane>
+        </SplitView>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button Content="" Click="HamburgerButton_Clicked" Style="{StaticResource NavButtonFontStyle}" />
+            <Button Content="" x:Name="backButton" Style="{StaticResource NavButtonFontStyle}" />
+            <TextBlock x:Name="PageTitle" HorizontalAlignment="Center"
+                                       Foreground="White"
+                        				VerticalAlignment="Center"
+                                        FontSize="20"
+                       FontWeight="SemiLight"
+                        			    Margin="15,0,0,0"
+                                        Text="Home" />
+            
+        </StackPanel>
+    </Grid>
+
+
+</Page>

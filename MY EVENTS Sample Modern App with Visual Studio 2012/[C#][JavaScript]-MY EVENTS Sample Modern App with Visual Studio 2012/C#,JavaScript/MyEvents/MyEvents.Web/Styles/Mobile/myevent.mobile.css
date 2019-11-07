@@ -1,0 +1,538 @@
+﻿
+html, body {
+    font-family: "Segoe UI Light", "Segoe WP Light", sans-serif;
+    font-size: 11.5pt;
+    color: #3e3e3e;
+}
+
+a, a:hover, a:active {
+    color: #3e3e3e;
+    text-decoration: none;
+}
+
+
+strong {
+    font-family: "Segoe UI", "Segoe WP", sans-serif;
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e7e7e7;
+    padding: 0px;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: inline-block;
+}
+
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* Layout */
+
+.page > header {
+    position: relative;
+    height: 3em;
+    margin: 10px;
+}
+
+    .page > header > h1 {
+        line-height: 0.60em;
+        font-size: 2.75em;
+    }
+
+    .page > header > nav {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+/* Index View */
+
+.box {
+    padding: 0px 10px 5px 10px;
+}
+
+    .box.highlighted {
+        background-color: #c42a3b;
+        margin: 0px 10px 10px 10px;
+    }
+
+    #coming-soon-events .highlighted a{
+        color: white;
+    }
+
+    #coming-soon-events  .multi-line-ellipsis {
+        max-height: 3em;
+    }
+
+    .box.mini {
+        background-color: #385f8b;
+        margin: 0px 0px 10px 10px;
+        padding: 5px 10px 8px 10px;
+        float: left;
+        min-height: 5em;
+        overflow: hidden;
+
+        /* Standard */
+        width: 39%;
+    }
+        .box.mini h2 {
+            word-wrap: break-word;            
+            font-size: 1.2em;
+        }
+
+        .box.mini time {
+            word-wrap: break-word;            
+        }
+
+    .box.mini:nth-child(2n+3) 
+    {
+        margin-right: 10px;
+        float: right;
+    }
+
+    
+     @media all and (min-width: 480px) {
+        .box.mini {
+            width: 42%;
+        }
+    }
+
+     @media all and (min-width: 800px) {
+        .box.mini {
+            width: 46%;
+        }
+    }
+
+    .box p, .box header h1, .box header h2, .box footer {
+        color: white;
+    }
+
+    .box h1, .box h2 {
+        text-transform: uppercase;
+    }
+
+    .box h2 {
+        line-height: 1em;
+    }
+
+    .box footer {
+        margin-top: 5px;
+        font-size: 0.9em;
+    }
+
+        .box footer img {
+            vertical-align: sub;
+        }
+
+/* Event List table */
+
+.event-table {
+    font-size: 0.85em;
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .event-table tr {
+        border-bottom: 2px solid #e7e7e7;
+    }
+
+        .event-table tr td {
+            vertical-align: top;
+            text-transform: uppercase;
+            padding: 0.5em 0.25em;
+        }
+
+            .event-table tr td:first-child {
+                padding-left: 10px;
+            }
+
+            .event-table tr td:last-child {
+                padding-right: 10px;
+            }
+
+    .event-table td.number {
+        text-align: right;
+    }
+
+
+/* Error page */
+
+#error-page {
+    margin: 0 auto;
+    width: 80%;
+}
+
+    #error-page aside {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+        #error-page aside img {
+            max-width: 200px;
+            width: 100%;
+        }
+
+    #error-page header {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+
+/* Share actions */
+
+.share-actions {
+    margin: 0px 10px;
+}
+
+    .share-actions a {
+        opacity: 0.8;
+    }
+
+        .share-actions a:hover, .share-actions a:active {
+            opacity: 1;
+        }
+
+        .share-actions a img {
+            vertical-align: middle;
+        }
+
+
+/* Event Detail */
+
+#detail {
+    margin: 10px;
+}
+
+    #detail > header > h1 {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    #detail > header, #detail > header > h1, #detail > p {
+        display: inline;
+    }
+
+.logo-and-date {
+    margin: 10px 0px;
+}
+
+    .logo-and-date .left {
+        width: 30%;
+        padding: 0.25em;
+        text-align: center;
+        background-color: transparent;
+        overflow: hidden;
+        min-height: 8em;
+    }
+
+        .logo-and-date .left img {
+            width: 100%;
+        }
+
+    .logo-and-date .right {
+        float: left;
+        width: 60%;
+        padding-left: 10px;
+    }
+
+    .logo-and-date header {
+        margin-bottom: 10px;
+    }
+
+        .logo-and-date header h1 {
+            font-size: 1.75em;
+            font-weight: normal;
+            text-transform: uppercase;
+            line-height: 1em;
+        }
+
+    .logo-and-date footer {
+        font-size: 0.9em;
+    }
+
+        .logo-and-date footer img {
+            vertical-align: sub;
+        }
+
+        .logo-and-date footer a.twitter {
+            color: #be3343;
+        }
+
+#detail .address {
+    background-color: white;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#detail .map {
+    position: relative;
+    height: 300px;
+}
+
+/* Actions controls */
+
+.button, .message {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1em;
+    padding: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: -webkit-transform 0.1s ease-in;
+    -moz-transition: -moz-transform 0.1s ease-in;
+    transition: transform 0.1s ease-in;
+}
+
+    .button:active {
+        -webkit-transform: scale(0.95);
+        -moz-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+
+    .button img {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+
+
+#actions {
+    margin: 10px 10px 0px 10px;
+}
+
+    #actions .button {
+        background-color: white;
+        display: block;
+    }
+
+        #actions .button.register {
+            background-color: #be3343;
+            color: white;
+        }
+
+
+/* Tweets */
+#tweets {
+    margin: 0px 10px;
+}
+
+    #tweets header {
+        margin-bottom: 10px;
+    }
+
+    #tweets .tweet {
+        background-color: white;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+
+        #tweets .tweet .account {
+            float: left;
+            font-size: 1.1em;
+            font-style: italic;
+            color: #385f8b;
+        }
+
+        #tweets .tweet .time-ago {
+            float: right;
+        }
+
+        #tweets .tweet span {
+            display: block;
+            clear: both;
+        }
+
+
+/* Session Detail */
+
+#session-detail {
+    margin: 10px;
+}
+
+    #session-detail h1 {
+        font-size: 1.4em;
+    }
+
+    #session-detail h2 {
+        margin: 0.25em 0em;
+    }
+
+    #session-detail .description {
+      background-color: #fafafa;
+      padding: 0em 1em 0.5em 1em;
+    }
+    
+    #session-detail .description h2 {
+        margin-bottom: 0px;
+        background: url('../styles/Images/dropdown-transp.png') no-repeat right center;
+    }
+        #session-detail .description .content {
+          margin-top: 5px;
+        }
+
+    
+    #session-detail .speakers header {
+        margin-bottom: 10px;
+    }
+
+    #session-detail .speakers img {
+        vertical-align: sub;
+    }
+
+    #session-detail .speakers header p {
+        font-size: 0.9em;
+    }
+
+    #session-detail .speakers a.twitter {
+        color: #be3343;
+    }
+
+    #session-detail > footer ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 5px 0em;
+    }
+
+        #session-detail > footer ul li {
+        }
+
+            #session-detail > footer ul li a {
+                display: block;
+                background-color: white;
+                padding: 0.25em 1em;
+            }
+
+            #session-detail > footer ul li img {
+                vertical-align: sub;
+                padding-right: 1em;
+            }
+
+/* Session schedule */
+
+#session-schedule {
+    margin: 10px;
+}
+
+.schedule {
+    border-spacing: 0.25em;
+    border-collapse: separate;
+    width: 100%;
+}
+
+    .schedule tr {
+        vertical-align: top;
+    }
+
+    .schedule td {
+        margin: 1em;
+    }
+
+        .schedule td.clock {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .schedule td.time {
+            font-size: 0.85em;
+            white-space: nowrap;
+            width: 3em;
+            text-align: center;
+        }
+            .schedule td.time img {
+              opacity: 0.35;
+            }
+
+            .schedule td.time time.end,
+            .schedule td.time time.start {
+                display: block;
+            }
+            .schedule td.time time.end {
+                color: #999;
+                line-height: 0.25em;
+            }
+
+        .schedule td.session-info {
+            background-color: #385f8b;
+        }
+
+            .schedule td.session-info:hover {
+                background-color: #284f7b;
+            }
+
+            .schedule td.session-info a {
+                display: block;
+                padding: 0.25em 1em;
+                color: white;
+                opacity: 0.8;
+            }
+
+                .schedule td.session-info a:hover {
+                    opacity: 1;
+                }
+
+            .schedule td.session-info .speaker {
+                margin-top: 5px;
+                font-size: 0.9em;
+                text-transform: uppercase;
+            }
+
+                .schedule td.session-info .speaker img {
+                    vertical-align: sub;
+                }
+
+        .schedule td.rooms a {
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            background-color: #b5b7ba;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            width: 2.30em;
+            line-height: 1.25em;
+        }
+
+            .schedule td.rooms a.selected {
+                background-color: #c42a3b;
+            }
+
+
+/* Login */
+
+
+
+#login {
+    margin: 10px 10px 10px 10px;
+}
+
+    #login .button {
+        background-color: #385F8B;
+        margin-top: 10px;
+        color: white;
+        display: block;
+    }
+
+        

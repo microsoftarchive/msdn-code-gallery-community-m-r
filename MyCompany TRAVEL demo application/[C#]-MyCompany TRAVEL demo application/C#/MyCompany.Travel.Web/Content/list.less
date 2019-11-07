@@ -1,0 +1,295 @@
+﻿@import url('variables.less');
+
+/*List*/
+.article-of-list {
+    margin-top: 5px;
+
+    .row-header {
+        background-color: @module-primary-color-light;
+
+        &.highlighted {
+            background-color: @module-primary-color;
+        }
+    }
+
+    &:first-child {
+        margin-top: 20px;
+    }
+}
+
+.avatar {
+    float: left;
+    max-width: 70px;
+    width: 100%;
+    max-height: @row-height;
+    text-align: center;
+    background-color: #dfe0e0;
+    overflow: hidden;
+}
+
+.avatar-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.row-header {
+    float: left;
+    vertical-align: middle;
+    display: inline-block;
+    height: 67px;
+    margin-top: 0px;
+    padding-top: 3px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+
+    &.row-header-right {
+        max-width: 135px;
+        margin-right: 5px;
+        font-size: 1.5em;
+        font-weight: lighter;
+
+        &.small {
+            max-width: 82x;
+            width:8.5%;
+            font-size: 1em;
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+
+    &.row-header-left {
+        width: 60px;
+        text-align: center;
+
+        &.big {
+            max-width: 135px;
+            width: 10%;
+            padding-left: 5px;
+            text-align: right;
+        }
+    }
+}
+
+.row-text {
+    font-size: 16px;
+    line-height: 50px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+    .row-text.big {
+        font-size: 24px;
+        line-height: 55px;
+    }
+
+.grand-font {
+    font-size: 2.3em;
+}
+
+.small-font {
+    line-height: 0.4em;
+    vertical-align: top;
+}
+
+.button-faq {
+    display: none;
+}
+
+.row-body {
+    float: left;
+    margin-right: 5px;
+    padding-right: 5px;
+    max-width: 625px;
+    width: 56%;
+    height: @row-height;
+    background-color: @second-background-color;
+    font-size: @base-font-size;
+
+    &.highlighted {
+        background-color: @second-background-color-highlighted;
+    }
+
+    .row-cell {
+        float: left;
+        padding-left: 10px;
+
+        span {
+            margin-top: 9px;
+            display: block;
+            color: @list-info-font-color;
+        }
+
+        div {
+            span {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 800px) {
+    .row-body {
+        width: 59%;
+    }
+
+    .button-faq {
+        display: inline-block;
+    }
+}
+
+@media all and (min-width: 936px) {
+    .row-body {
+        width: 60%;
+    }
+}
+
+.shortColumn {
+    max-width: 145px;
+    width: 15%;
+}
+
+.longColumn {
+    max-width: 220px;
+    width: 35%;
+}
+
+/*End List*/
+
+/*List Buttons*/
+.button-box {
+    float: left;
+    max-width: @row-height;
+    width: 6%;
+    height: @row-height;
+    margin-right: 0.5%;
+    border: none;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+.button-info {
+    background-color: #9d9d9d;
+    background-image: url(Images/info.png);
+
+    &:hover {
+        background-color: #858585;
+    }
+}
+
+.button-edit {
+    background-color: @module-primary-color;
+    background-image: url(Images/edit.png);
+
+    &:hover {
+        background-color: @module-primary-color-over;
+    }
+
+        &:hover:disabled {
+            background-color: @module-primary-color;
+        }
+}
+
+.button-delete {
+    background-color: @module-primary-color-dark;
+    background-image: url(Images/cancel.png);
+    margin-right: 0px;
+
+    &:hover {
+        background-color: @module-primary-color-dark-over;
+    }
+
+        &:hover:disabled {
+            background-color: @module-primary-color-dark;
+        }
+}
+
+.button-check {
+    background-color: @module-primary-color-dark;
+    background-image: url(Images/check-big.png);
+    margin-right: 0px;
+
+    &:hover {
+        background-color: @module-primary-color-dark-over;
+    }
+}
+
+.button-accept {
+    background-color: @module-primary-color;
+    background-image: url(Images/check-big.png);
+    margin-right: 5px;
+
+    &:hover {
+        background-color: @module-primary-color-over;
+    }
+}
+/*End List Buttons*/
+
+/* Team Travels */
+#team-travels-list .row-body {
+    max-width: 550px;
+}
+
+#team-travels-list .row-header.row-header-right {
+    max-width: 195px;
+    width: 9%;
+    font-size: 1em;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+@media all and (min-width: 1090px) {
+    #team-travels-list .row-header.row-header-right {
+        width: 15%;
+    }
+}
+
+
+
+#team-travels-list .longColumn {
+    width: 45%;
+}
+
+#team-travels-list .row-text {
+    line-height: 20px;
+    margin-top: 0px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+    #team-travels-list .row-text.big {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+#team-travels-list .row-body .row-text.big {
+    margin-top: 5px;
+    line-height: 25px;
+}
+
+/* End Team Travels*/
+
+
+.list-no-articles {
+    height: @row-height;
+    margin-top: @row-height;
+    line-height: @row-height;
+    color: @module-primary-color;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=62DBC035A4A8AD76676CA11B61CB6C59" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/c35dca19-b4f6-41ba-af1e-685efe2d57edCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=E1AC8963DF2251A819FB3B69D9505C87" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Operate excel document in C#--Import/Export Data from DataTable to Excel</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Operate excel document in C#--Import/Export Data from DataTable to Excel</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, Silverlight, ASP.NET, Win32, Windows Forms, WPF, SharePoint, .NET Framework 4, .NET Framework, VB.Net, Office 2010, .NET 4.5
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, C#, Silverlight, ASP.NET, Class Library, SharePoint, VB.Net, How to, Charts, C# Language Features
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/20/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Operate-excel-document-in-881b1ce8">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This is a C # example to operate Excel worksheet via a Free C# excel library. And the code gives you clear information of how to Import Excel from DataTable and Export Excel to DataTable.</p>
+<p>As a professional C# excel component, Free Spire.XLS for .NET enables developers to create, manage and manipulate Excel files on any .NET applications.Free Spire.XLS for .NET offers support both for the old Excel 97-2003 format (.xls) and for the new Excel
+ 2007,Excel 2010 and Excel 2013 (.xlsx, .xlsb, .xlsm), along with Open Office(.ods) format.</p>
+<p>Screenshots of Import/Export Data from DataTable to Excel:</p>
+<p><strong>Export Excel to DataTable:</strong></p>
+<p><img id="119090" src="description/Export Excel to DataTable.PNG" alt=""></p>
+<p>&nbsp;</p>
+<p><strong>Import Excel from DataTable:</strong></p>
+<p><strong><img id="119092" src="description/Import Excel from DataTable.PNG" alt=""></strong></p>
+<p><strong>Main features:</strong></p>
+<p><strong>Conversion</strong><br>
+Free Spire.XLS for .NET has powerful conversion ability and it enables converting Excel files to most common and popular formats.<br>
+<br>
+</p>
+<ul>
+<li>Excel to HTML/XML/CSV </li><li>XML/CSV to Excel </li><li>Excel to Image </li><li>Excel to Text </li><li>Excel to PDF </li></ul>
+<p><br>
+<strong>Contents Features</strong><br>
+Free Spire.XLS for .NET offers a wide range of features and the main features are listed as below:<br>
+<br>
+</p>
+<ul>
+<li>Create and Edit Excel </li><li>Find and Replace Data </li><li>Import/Export data from a DataTable, DataView, Array, DataGrid etc. </li><li>Save Excel to file/Stream or as web response </li><li>Create charts </li><li>Read and write hyperlinks </li><li>Create auto filters </li><li>Implement Data Sorting </li><li>Implement Data Validations </li><li>Merge/Unmerge Cells and files </li><li>Group/UnGroup Rows and Columns </li><li>Insert/Delete or Hide Rows, Columns and Sheets </li><li>Calculate Complex Excel Formula </li><li>Freeze/Unfreeze Panes </li><li>Insert Hyperlinks to link data </li><li>Protect/Unprotect Worksheets </li><li>Create Pivot Tables </li><li>Encrypt/Decrypt Files </li><li>Load/Save Excel VBA </li><li>Merge data into Excel with MarkerDesigner </li></ul>
+<p><br>
+<strong>Formatting Features</strong><br>
+Free Spire.XLS for .NET provides detailed programmatic access to formatting properties of all spreadsheet elements.<br>
+<br>
+</p>
+<ul>
+<li>Apply all characters formatting in the cells including fonts, colors, effects, fill and shading.
+</li><li>Apply all the Number Format Settings (supported in MS Excel) for the cells. </li><li>Set all types of Text Alignment settings. </li><li>Apply different kinds of Font Settings for the cells. </li><li>Apply different Colors to Cells, Fonts, Gridlines, Graphic objects etc. </li><li>Apply different Rich Text formatting in a single cell. </li><li>Apply different Border Settings on cells. </li><li>Apply different Background Patterns on cells. </li><li>Apply gradient Background Patterns on cells. </li><li>Apply Format Settings on a Worksheet, Row, Column or a range of cells etc. </li></ul>
+<p><strong>How to Download and Install Free Spire.XLS</strong></p>
+<p><a href="http://www.e-iceblue.com/Download/download-excel-for-net-now.html">Download Spire.XLS for .NET</a> here and you can get a zip package named Free Spire.XLS for .NET Version:7.4. Extract this package and get the .msi file. Double click this file and
+ install Free Spire.XLS for .NET to the specified path on your system.</p>
+<p><strong>How to Use DLLS</strong><br>
+Users need to add dll files in project as reference to perform Spire.XLS for .NET to compile.<br>
+There are several folders, which save dlls for different .NET Framework version under Bin directory. After creating a project, right click project name &rarr; Add Reference &rarr; Browse &rarr; Spire.XLS folder &rarr; Bin &rarr; .NET 2.0/3.5/4.0/4.5/4.0 ClientProfile
+ &rarr; Spire.XLS.dll. <br>
+<br>
+<strong>How to Run Demos</strong><br>
+<br>
+After installing, the sample projects for C#, VB.NET are put in respective folders: CS and VB. Choose one folder and run sample project in it.</p>
+<p>There are two methods to run demos:<br>
+&bull;&nbsp;&nbsp;&nbsp; Open the appropriate solution file (.sln) to get all projects this package has. To run the specified project, right click project name (for example Edit) &rarr; Debug &rarr; Start new instance. And then the result will be shown.
+<br>
+&bull;&nbsp;&nbsp;&nbsp; Open Demos folder &rarr; WinForms folder &rarr; Specified directory (for example Quick Guide) &rarr; Specified Project folder (for example Edit) &rarr; Open appropriate project (.csproj) &rarr; Debug &rarr; Start Debugging or Press
+ F5.</p>
+<p>Website: <a href="http://www.e-iceblue.com">www.e-iceblue.com</a><br>
+Product Home: <a href="http://www.e-iceblue.com/Introduce/free-xls-component.html">
+Free Spire.XLS for .NET</a><br>
+Download: <a href="http://www.e-iceblue.com/Download/download-excel-for-net-now.html">
+Spire.XLS for. NET</a><br>
+Forum: <a href="http://www.e-iceblue.com/forum/viewforum.php?f=4">Spire.XLS forum</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

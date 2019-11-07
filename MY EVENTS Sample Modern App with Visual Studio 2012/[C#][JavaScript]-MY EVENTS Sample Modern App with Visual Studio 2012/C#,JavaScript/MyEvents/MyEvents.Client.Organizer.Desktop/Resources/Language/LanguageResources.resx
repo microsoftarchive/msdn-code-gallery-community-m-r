@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="applicationTitle" xml:space="preserve">
+    <value>my events</value>
+  </data>
+  <data name="AllEvents" xml:space="preserve">
+    <value>my events</value>
+  </data>
+  <data name="mainDesktopButton" xml:space="preserve">
+    <value>dashboard</value>
+  </data>
+  <data name="manageEventsButton" xml:space="preserve">
+    <value>manage events</value>
+  </data>
+  <data name="Metrics" xml:space="preserve">
+    <value>my event's metrics</value>
+  </data>
+  <data name="manageMapeEvent" xml:space="preserve">
+    <value>manage event map</value>
+  </data>
+  <data name="signoutButton" xml:space="preserve">
+    <value>sign out</value>
+  </data>
+  <data name="viewScheduleEvent" xml:space="preserve">
+    <value>manage  schedule event</value>
+  </data>
+  <data name="TextSearchHeader" xml:space="preserve">
+    <value>enter text to search</value>
+  </data>
+  <data name="Dialog_Title" xml:space="preserve">
+    <value>confirmation</value>
+  </data>
+  <data name="Events_City" xml:space="preserve">
+    <value>city</value>
+  </data>
+  <data name="Events_Date" xml:space="preserve">
+    <value>date</value>
+  </data>
+  <data name="Events_Title" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="Dialog_delete_message" xml:space="preserve">
+    <value>are you sure to delete {0} event?</value>
+  </data>
+  <data name="attendees" xml:space="preserve">
+    <value>attendees</value>
+  </data>
+  <data name="FB_Login" xml:space="preserve">
+    <value>facebook login</value>
+  </data>
+  <data name="hiUser" xml:space="preserve">
+    <value>hi, </value>
+  </data>
+  <data name="allSessions" xml:space="preserve">
+    <value>sessions for</value>
+  </data>
+  <data name="createNewSession" xml:space="preserve">
+    <value>create new session</value>
+  </data>
+  <data name="manageSchedule" xml:space="preserve">
+    <value>manage schedule</value>
+  </data>
+  <data name="manageSessionsButton" xml:space="preserve">
+    <value>view event schedule</value>
+  </data>
+  <data name="cancelButton" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="saveButton" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="manageMaterialsButton" xml:space="preserve">
+    <value>manage materials</value>
+  </data>
+  <data name="biography" xml:space="preserve">
+    <value>biography</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>description</value>
+  </data>
+  <data name="editSession" xml:space="preserve">
+    <value>edit session</value>
+  </data>
+  <data name="speaker" xml:space="preserve">
+    <value>speaker</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="twitterAccount" xml:space="preserve">
+    <value>twitter account</value>
+  </data>
+  <data name="acceptButton" xml:space="preserve">
+    <value>accept</value>
+  </data>
+  <data name="associatedMaterials" xml:space="preserve">
+    <value>associated materials</value>
+  </data>
+  <data name="endTime" xml:space="preserve">
+    <value>end time</value>
+  </data>
+  <data name="roomNumber" xml:space="preserve">
+    <value>room number</value>
+  </data>
+  <data name="startTime" xml:space="preserve">
+    <value>start time</value>
+  </data>
+  <data name="ViewSessionDetails" xml:space="preserve">
+    <value>session details</value>
+  </data>
+  <data name="NoEvents" xml:space="preserve">
+    <value>you don't have events</value>
+  </data>
+  <data name="NoSessions" xml:space="preserve">
+    <value>this event don't have sessions</value>
+  </data>
+  <data name="NoUsers" xml:space="preserve">
+    <value>no users registered for this event</value>
+  </data>
+  <data name="Dialog_delete_session" xml:space="preserve">
+    <value>are you sure you want to delete the session?</value>
+  </data>
+  <data name="materialList" xml:space="preserve">
+    <value>material list</value>
+  </data>
+  <data name="materials" xml:space="preserve">
+    <value>materials</value>
+  </data>
+  <data name="uploadMaterials" xml:space="preserve">
+    <value>upload materials</value>
+  </data>
+  <data name="topSpeakers" xml:space="preserve">
+    <value>TOP SPEAKERS</value>
+  </data>
+  <data name="MapInstructionsFirst" xml:space="preserve">
+    <value>1.- Upload an image containing the building plane</value>
+  </data>
+  <data name="MapInstructionsSecond" xml:space="preserve">
+    <value>2.- Mark the points defining an area</value>
+  </data>
+  <data name="UploadMap" xml:space="preserve">
+    <value>upload map image</value>
+  </data>
+  <data name="topTags" xml:space="preserve">
+    <value>TOP TAGS</value>
+  </data>
+  <data name="offlineLogin" xml:space="preserve">
+    <value>Offline Login</value>
+  </data>
+  <data name="serviceAddress" xml:space="preserve">
+    <value>service address</value>
+  </data>
+  <data name="OfflineMode" xml:space="preserve">
+    <value>no internet mode</value>
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value>offline</value>
+  </data>
+  <data name="online" xml:space="preserve">
+    <value>online</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="Tooltip_close" xml:space="preserve">
+    <value>close</value>
+  </data>
+  <data name="Tooltip_delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="Tooltip_edit" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="Tooltip_materials" xml:space="preserve">
+    <value>materials</value>
+  </data>
+  <data name="Tooltip_minimize" xml:space="preserve">
+    <value>minimize</value>
+  </data>
+  <data name="Tooltip_restore" xml:space="preserve">
+    <value>restore down</value>
+  </data>
+  <data name="Tooltip_sessions" xml:space="preserve">
+    <value>sessions</value>
+  </data>
+  <data name="Tooltip_settings" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="Tooltip_users" xml:space="preserve">
+    <value>registered users</value>
+  </data>
+  <data name="declineButton" xml:space="preserve">
+    <value>decline</value>
+  </data>
+  <data name="editSessionButton" xml:space="preserve">
+    <value>edit this session</value>
+  </data>
+  <data name="Sessions_Title" xml:space="preserve">
+    <value>title</value>
+  </data>
+</root>

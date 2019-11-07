@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:MyCompany.Travel.Client.Desktop.Converters">
+    <converters:ByteToImageConverter x:Key="ByteToImageConverter"></converters:ByteToImageConverter>
+    <converters:TravelTypeToTextConverter x:Key="TravelTypeToTextConverter"></converters:TravelTypeToTextConverter>
+    <converters:EnumToBooleanConverter x:Key="EnumToBooleanConverter"></converters:EnumToBooleanConverter>
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></converters:BooleanToVisibilityConverter>
+    <converters:EmployeeToVisibilityConverter x:Key="EmployeeToVisibilityConverter"></converters:EmployeeToVisibilityConverter>
+    <converters:IdToVisibilityConverter x:Key="IdToVisibilityConverter"></converters:IdToVisibilityConverter>
+</ResourceDictionary>

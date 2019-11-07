@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.1.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BED5AE716C741172410F6BA55B965E47" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=0F7605DF199CB5B5865FD07B66C0444A" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Move rows up/down and remember order for DataGridView and ListBoxs data bound</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Move rows up/down and remember order for DataGridView and ListBoxs data bound</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET, LINQ, Windows Forms
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Data Binding, User Interface, Data Access
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/25/2019</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Move-rows-updown-and-987fe786">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>&nbsp;</em></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium">This article explains one method to display data in a DataGridView or ListBox which allows the user to move items up or down using two buttons. The origins
+ came from someone needing a method using drag and drop but I feel that is not intuitive. A common place usage of this functionality is in the smart editor of a DataGridView control for re-positioning columns via up/down buttons.</span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><strong><span style="background-color:#ffff00">Update 4/67/2018</span></strong> see
+<a href="https://code.msdn.microsoft.com/Move-rows-updown-and-987fe786/https://code.msdn.microsoft.com/DataGridView-ListBox-8e94fbc9">the following</a> for a robust C# sample for DataGridView, CheckedListBox, ListBox and ListView using bound and unbound controls via SQL-Server and JSON.</span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><strong><span style="background-color:#ffff00">Update 8/2019</span></strong> GitHub repositories for updates examples</span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><a href="https://code.msdn.microsoft.com/Move-rows-updown-and-987fe786/https://github.com/karenpayneoregon/DataGridViewListBoxMoveRowsUpDown_VBNET">VB.NET</a>,
+<a href="https://code.msdn.microsoft.com/Move-rows-updown-and-987fe786/https://github.com/karenpayneoregon/WindowsFormsMoveItemsUpDown">C#</a></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><img id="197910" src="https://i1.code.msdn.s-msft.com/move-rows-updown-and-987fe786/image/file/197910/1/figure13.png" alt="" width="449" height="258"><br>
+</span></p>
+<p><span style="font-size:small"><strong><span style="color:#ff0000">Update 3/5/2014</span></strong> added a simple version in C#.<br>
+<br>
+<span style="color:#ff0000"><strong>Update 5/24/2014</strong></span> uploaded to OneDrive
+<a title="DataGridView project done in C#" href="https://code.msdn.microsoft.com/Move-rows-updown-and-987fe786/https://onedrive.live.com/redir?resid=A3D5A9A9A28080D1!598&amp;authkey=!AKEOb4um_eePspY&amp;ithint=file%2c.zip">
+C# project</a> for second screenshot below (will update the solution here shortly). Make sure to read the readme file as it indicates projects needed from this solution to compile.</span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium">ListBox</span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:small"><span style="font-family:Calibri; font-size:small"><img id="94383" src="description/ListBox.jpg" alt="" width="512" height="241"></span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">DataGridView</span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:small"><img id="94387" src="description/DataGridview.jpg" alt="" width="734" height="431"><br>
+<img id="110086" src="description/CCCCC.png" alt="" width="418" height="246"></span></p>
+<h1><span>Building the Sample</span></h1>
+<p><span style="font-size:small"><em>Build and enjoy</em></span></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">Since we tend to work with databases the majority of the time let's see what it takes to load data then write data back to a table so that after
+ each time rows in a DataGridView or ListBox have the exact same row order as the last time the project ran. The database engine does not matter, MS-Access, MS-SQL-Server etc. What the table needs is a primary non-repeating key which all well designed tables
+ should have. At least one field to display along with a field that stores the display index, a numeric. There are two tables in the demo project, both have a auto-incrementing primary key named Identifier. Both tables have a field for storing the display index,
+ one is DisplayIndex for the ListBox while the other is RowPosition. They both could had been the same name but these names seemed appropriate for the controls the data will be displayed in.</span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">There are routines to load data where in the SQL select statement the ordering is done by the field DisplayIndex or RowPosition. IMPORTANT: Since
+ a DataGridView permits a user to sort by column this can mess up the move up/down rows and make the operation appear to not work as expected. For this reason I disabled sorting in the DataGridView but if you want to see what happens comment out the code that
+ disables sorting, you will begin to see ghost rows and can be fixed yet the move up/down of rows in this article does not deal with sorting other than when a move up/down operation is invoke if there is a current sort the sort is removed.</span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">Back to data, all data is loaded into a DataTable which becomes the DataSource of a BindingSource which in turn is set to the DataSource of a
+ DataGridView or ListBox. There are two buttons when have images of a up or down button, a language extension is used for the DataGridView passing the BindingSource as a argument. We could simply use the BindingSource but then when a move up/down is done we
+ lose the current cell index which I feel is important to retain the user's column selection.</span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">What happens inside of a move operation, first we disable any sorts as per above which mess things up. Next we get the current DataGridView column
+ index so after the move the column index is restored. Next the current DataRow is remembered, removed then inserted at the correct location in the Row collection of the DataTable, the BindingSource position is set which in the DataGridView is up or down one
+ row unless we are at the first or last row in which case nothing happens. That is pretty much it for working with a database table.</span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">For a insight into a future article in the form for MS-Access I have two DataGridView controls that demonstrate how to clone a row from DataGridView
+ to another DataGridView which can clone the whole row or part of a row. There is a sort button for experimenting but do not advise using one in a production application.</span></span></p>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">Lastly, all code for this demo could easily be in one project but I broke them out to four so that you can use the functions by adding several
+ projects to your solution rather than copy-n-paste. </span></span></p>
+<p><span style="font-size:medium">&nbsp;</span></p>
+<p><span style="font-size:small"><em>&nbsp;&nbsp;</em></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small">&nbsp;</span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=EB87627F1FAC8F417DDC560F58ECEDC8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/7a47172a-42fb-4d7f-91a2-34281c304ef2Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=59AF12CEA39A0C1AEAA6487FF1817969" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Magazine management website - An ASP.NET MVC 4 Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Magazine management website - An ASP.NET MVC 4 Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET Entity Framework, ASP.NET, Javascript, Entity Framework, ASP.NET MVC 4, autofac, automapper, Visual Studio 2012
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            ADO.NET Entity Framework, ASP.NET, ASP.NET and ADO.NET Entity Framework, ASP.NET MVC, Javascript, Entity Framework, ASP.NET Web API
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/9/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/ASPNET-MVC-4-Sample-37924d68">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>As we know, ASP.NET MVC 4 came out. And now everyone is very excited to using it. I have read
+<a href="http://www.asp.net/whitepapers/mvc4-release-notes">a release notes</a> from ASP.NET MVC 4 website, and found out some cool stuffs there. At the 4th version, M$ introduced many features, such as Http programming model, routing, model binding, validation,
+ Query composite, IoC container, self host for Web API, Bundle and minification, Mobile, asynchronous programing,... I really love the improving for the Razor view engine (it called automatically removing null value when some values in view model got null,
+ and this features actually make us to avoid a lot of mistakes in programming time), Web API cannot be believable (hope it will be a stardard web soon). Moving from M$'s Json to the Newtonsoft.Json.4.5.1 third-party library is the big changes as well.</em></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>I am trying to using Visual Studio 2012 for building up a Magazine website that including a front page and an admin page. It is actually small example to visualize new technologies that I have learnt, so I try to make it as simple as possible.</em></p>
+<p><em>I used EF 5.0 Beta in this sample, and got the sample from my former teamleader for building the
+<a href="http://huyrua.wordpress.com/2010/07/13/entity-framework-4-poco-repository-and-specification-pattern/">
+EF persistence layer</a>. Thanks Mr&nbsp;<a href="http://huyrua.wordpress.com">Huy Nguyen</a> for that great
+<a href="http://code.google.com/p/ef4prs/downloads/list">EF framework</a>&nbsp;sample. To adapting with my code,&nbsp;I also have to edit some code in this framework to matching with new EF 5.0 release.</em></p>
+<p><em>For the layout, I used some templates for the&nbsp;<a href="http://www.template4all.com/">front-end</a>&nbsp;page and the&nbsp;<a href="http://chocotemplates.com/">admin page</a>&nbsp;page from internet. Thanks for your great templates :)</em></p>
+<h1>Upgrade</h1>
+<p><span style="color:#000000; background-color:#ffffff">I am working for upgrading this example. The next version of it will use
+<strong>Visual Studio 2013</strong> RTM, <strong>ASP.NET MVC 5</strong>, <strong>
+Web API 2</strong> and <strong>AngularJS</strong>)</span></p>
+<p><span style="background-color:#ffffff; color:#000000">The <strong>source code</strong> can be find out at&nbsp;<a href="http://code.msdn.microsoft.com/ASPNET-MVC-4-Sample-37924d68/https://github.com/thangchung/magazine-website-mvc-5">http://code.msdn.microsoft.com/ASPNET-MVC-4-Sample-37924d68/https://github.com/thangchung/magazine-website-mvc-5</a></span></p>
+<p><span style="background-color:#ffffff; color:#000000">The <strong>new admin template</strong>&nbsp;using
+<strong>Bootstrap 3</strong> can be find at&nbsp;<a href="http://saka-webstack.github.io/templates/new-admin-layout/index.html">http://saka-webstack.github.io/templates/new-admin-layout/index.html</a></span></p>
+<p><strong><span style="background-color:#ffffff; color:#000000">Front-end page</span></strong></p>
+<p><span style="background-color:#ffff00; color:#ff0000"><img id="100502" src="description/mvc5_1.png" alt="" width="500" height="400"><br>
+</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:2em">Demo site</span></p>
+<p>The newest source code will come to the MSDN code very soon. At the moment, I just want to introducing the demo pages for it as below</p>
+<p><span style="color:#ff0000"><strong>The front-end page:</strong></span>&nbsp;<a href="http://magazinewebsitelite.apphb.com/">http://magazinewebsitelite.apphb.com</a></p>
+<h1>Description</h1>
+<p><em>We have the front page like this</em></p>
+<p><img id="60214" src="description/MagazineWebsite-Index page-180208.png" alt="" width="1287" height="1511"></p>
+<p>&nbsp;And the admin page as below</p>
+<p><img id="60215" src="description/MagazineWebsiteAdmin--180259.png" alt="" width="1304" height="680"></p>
+<p><strong><span style="font-size:medium">How to run the web application:</span></strong></p>
+<p>Step 1: Get a source code from the MSDN code</p>
+<p>Step 2: Run a database script, the script can be found at C#\1.DatabaseScripts\3.NewsDbScript.sql</p>
+<p>Step 3: Host a CIK.News.Web solution to an IIS host</p>
+<p>Step 4: Press F5 to building all solutions</p>
+<p>Step 5: Changing a connection string to your own database server.</p>
+<p>Step 6: Running it</p>
+<p><strong><span style="font-size:medium">Structure of solutions:</span></strong></p>
+<p><img id="71207" src="description/sample01.png" alt="" width="239" height="346"></p>
+<p><strong><span style="font-size:large">History:</span></strong></p>
+<p><span style="color:#ff0000">1.0:</span> finished the draft version</p>
+<p><span style="color:#ff0000">1.1:</span> removed some redundant code that commented from the community. Fixed bug, and removed the complex security model and changed it to the simple one. Re-structure the architecture of the application</p>
+<p><span style="color:#ff0000">1.2:</span> edited some contents in this site</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

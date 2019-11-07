@@ -1,0 +1,23 @@
+﻿        {
+            "dependencies": {
+                "Helios": "0.1-alpha-*",
+                "Microsoft.AspNet.Server.WebListener": "0.1-alpha-*",
+                "Microsoft.AspNet.Mvc": "0.1-alpha-*",
+                "Microsoft.AspNet.RequestContainer": "0.1-alpha-*",
+                "Microsoft.Data.Entity.SqlServer": "0.1-alpha-*",
+                "Microsoft.AspNet.Diagnostics": "0.1-alpha-*",
+                "Microsoft.AspNet.StaticFiles": "0.1-alpha-*"
+            },
+            "commands": { "web": "Microsoft.AspNet.Hosting server=Microsoft.AspNet.Server.WebListener server.urls=http://localhost:5001" },
+            "configurations": {
+                "net45": {
+                    "dependencies": {
+                        "System.Runtime": "",
+                        "System.Runtime.Serialization":  "",
+                        "System.ComponentModel.DataAnnotations": "",
+                        "System.Data" : "4.0.0.0"
+                    }
+                },
+                "k10": { }
+            }
+        }

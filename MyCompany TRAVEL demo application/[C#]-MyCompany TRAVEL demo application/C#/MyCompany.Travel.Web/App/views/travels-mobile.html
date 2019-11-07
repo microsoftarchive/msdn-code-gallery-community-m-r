@@ -1,0 +1,29 @@
+﻿<section class="view">
+    <!-- ko if: !anyRecord()-->
+    <section class="list-no-articles">
+        No records found
+    </section>
+    <!-- /ko -->
+    <!-- ko if: anyRecord()-->
+    <section data-bind="foreach: { data: travels }" class="article-list">
+        <article class="article-of-list" data-bind="click: $root.openDetail">
+            <div class="row-header row-header-left">
+                <span class="grand-font" data-bind="dateString: depart, datePattern: 'DD'"></span>
+                <br />
+                <span class="small-font" data-bind="dateString: depart, datePattern: 'YYYY'"></span>
+            </div>
+            <div class="row-header row-header-right">
+                <span class="row-text big" data-bind="dateString: depart, datePattern: 'MMM'"></span>
+                <div data-bind="attr: { 'class': 'status ' + statusName() }"></div>
+            </div>
+            <div class="row-body">
+                <div class="row-cell shortColumn">
+                    <span class="row-text left" data-bind="text: from"></span><span class="row-text left"> - </span><span class="row-text" data-bind="text: to"></span>
+                    <span class="row-text" data-bind="text: name"></span>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </article>
+    </section>
+    <!-- /ko -->
+</section>

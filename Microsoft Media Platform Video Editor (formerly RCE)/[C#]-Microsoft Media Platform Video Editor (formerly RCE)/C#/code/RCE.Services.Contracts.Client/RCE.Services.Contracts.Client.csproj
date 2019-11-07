@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F14113F-B290-412C-A21C-0C9E66C78C1C}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCE.Services.Contracts.Client</RootNamespace>
+    <AssemblyName>RCE.Services.Contracts.Client</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Debug\RCE.Services.Contracts.Client.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\RCE.Services.Contracts.Client.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\AdOpportunity.cs">
+      <Link>Contracts\AdOpportunity.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\AdOpportunityCollection.cs">
+      <Link>Contracts\AdOpportunityCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Anchor.cs">
+      <Link>Contracts\Anchor.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\AudioItem.cs">
+      <Link>Contracts\AudioItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\AudioStreamInfo.cs">
+      <Link>Contracts\AudioStreamInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Comment.cs">
+      <Link>Contracts\Comment.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\CommentCollection.cs">
+      <Link>Contracts\CommentCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Container.cs">
+      <Link>Contracts\Container.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\ContainerCollection.cs">
+      <Link>Contracts\ContainerCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\ImageItem.cs">
+      <Link>Contracts\ImageItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\InkComment.cs">
+      <Link>Contracts\InkComment.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Item.cs">
+      <Link>Contracts\Item.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\ItemCollection.cs">
+      <Link>Contracts\ItemCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Marker.cs">
+      <Link>Contracts\Marker.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\MarkerCollection.cs">
+      <Link>Contracts\MarkerCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\MediaBin.cs">
+      <Link>Contracts\MediaBin.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\MediaItem.cs">
+      <Link>Contracts\MediaItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\OverlayItem.cs">
+      <Link>Contracts\OverlayItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\PlayByPlay.cs">
+      <Link>Contracts\PlayByPlay.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Project.cs">
+      <Link>Contracts\Project.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\ProjectCollection.cs">
+      <Link>Contracts\ProjectCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\RceObject.cs">
+      <Link>Contracts\RceObject.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Resource.cs">
+      <Link>Contracts\Resource.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\ResourceCollection.cs">
+      <Link>Contracts\ResourceCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Sequence.cs">
+      <Link>Contracts\Sequence.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\SequenceCollection.cs">
+      <Link>Contracts\SequenceCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Shot.cs">
+      <Link>Contracts\Shot.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\ShotCollection.cs">
+      <Link>Contracts\ShotCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\SmoothStreamingAudioItem.cs">
+      <Link>Contracts\SmoothStreamingAudioItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\SmoothStreamingVideoItem.cs">
+      <Link>Contracts\SmoothStreamingVideoItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\SubClipItem.cs">
+      <Link>Contracts\SubClipItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TextBlock.cs">
+      <Link>Contracts\TextBlock.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TextBlockCollection.cs">
+      <Link>Contracts\TextBlockCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Title.cs">
+      <Link>Contracts\Title.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TitleCollection.cs">
+      <Link>Contracts\TitleCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TitleTemplate.cs">
+      <Link>Contracts\TitleTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TitleTemplateCollection.cs">
+      <Link>Contracts\TitleTemplateCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Track.cs">
+      <Link>Contracts\Track.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TrackCollection.cs">
+      <Link>Contracts\TrackCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TrackType.cs">
+      <Link>Contracts\TrackType.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\Transition.cs">
+      <Link>Contracts\Transition.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TransitionCollection.cs">
+      <Link>Contracts\TransitionCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TransitionItem.cs">
+      <Link>Contracts\TransitionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\TransitionType.cs">
+      <Link>Contracts\TransitionType.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\VideoItem.cs">
+      <Link>Contracts\VideoItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Contracts\VolumeLevelNode.cs">
+      <Link>Contracts\VolumeLevelNode.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Metadata\Metadata.cs">
+      <Link>Metadata\Metadata.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Metadata\MetadataField.cs">
+      <Link>Metadata\MetadataField.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Output\OutputMetadata.cs">
+      <Link>Output\OutputMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Output\OutputSettings.cs">
+      <Link>Output\OutputSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\RCE.Services.Contracts\Output\WindowsMediaHeaderProperties.cs">
+      <Link>Output\WindowsMediaHeaderProperties.cs</Link>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Metadata\MetadataEventArgs.cs" />
+    <Compile Include="Metadata\IMetadataStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMPTETimecode.Client\SMPTETimecode.Client.csproj">
+      <Project>{9BB1BFDA-5A8D-468B-9C42-A053FC24F908}</Project>
+      <Name>SMPTETimecode.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Settings.StyleCop">
+      <Link>Settings.StyleCop</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

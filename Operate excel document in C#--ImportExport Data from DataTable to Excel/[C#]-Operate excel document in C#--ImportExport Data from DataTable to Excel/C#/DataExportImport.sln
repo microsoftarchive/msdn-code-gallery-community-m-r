@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataExport", "DataExport\DataExport.csproj", "{2AFF3E23-E86A-4203-924F-34256987CBB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataImport", "DataImport\DataImport.csproj", "{8DB6FF14-8824-4D8A-8D6B-5B5BAD245654}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AFF3E23-E86A-4203-924F-34256987CBB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AFF3E23-E86A-4203-924F-34256987CBB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AFF3E23-E86A-4203-924F-34256987CBB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AFF3E23-E86A-4203-924F-34256987CBB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB6FF14-8824-4D8A-8D6B-5B5BAD245654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB6FF14-8824-4D8A-8D6B-5B5BAD245654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB6FF14-8824-4D8A-8D6B-5B5BAD245654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB6FF14-8824-4D8A-8D6B-5B5BAD245654}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

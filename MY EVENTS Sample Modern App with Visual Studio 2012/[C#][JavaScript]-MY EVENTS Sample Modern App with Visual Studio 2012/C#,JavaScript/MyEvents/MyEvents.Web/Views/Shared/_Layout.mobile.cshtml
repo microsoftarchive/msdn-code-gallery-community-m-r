@@ -1,0 +1,27 @@
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @RenderSection("Meta", required:false)
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="@BundleTable.Bundles.ResolveBundleUrl("~/MobileStyles/")" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.2.js"></script>
+    @Scripts.Render("~/ThirdPartyScripts/", "~/AppScripts/")
+</head>
+<body>
+    <div class="page">
+        <header id="header">
+           <h1>my events</h1>
+            <nav>
+                <a href="@Url.Action("Index", "Home")">
+                        <img src="@Url.Content("~/Styles/Images/button-home.png")" alt="home icon" title="home" />
+                </a>
+            </nav>
+        </header>
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

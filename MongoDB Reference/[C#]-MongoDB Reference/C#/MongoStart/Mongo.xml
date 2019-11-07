@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mongo>
+  <TreeData>
+    <Title>BSON Document</Title>
+    <Description></Description>
+    <CodeBlock></CodeBlock>
+    <Execute></Execute>
+    <Children>
+      <TreeData>
+        <Title>Creating</Title>
+        <Description></Description>
+        <CodeBlock></CodeBlock>
+        <Execute></Execute>
+        <Children>
+          <TreeData>
+            <Title>Empty Document</Title>
+            <Description></Description>
+            <CodeBlock>
+              <lang id="Console">var doc = { }</lang>
+              <lang id="C#">var doc = new BSONDocument { };</lang>
+            </CodeBlock>
+            <Execute></Execute>
+            <Children>
+            </Children>
+          </TreeData>
+        </Children>
+      </TreeData>
+    </Children>
+  </TreeData>
+</Mongo>

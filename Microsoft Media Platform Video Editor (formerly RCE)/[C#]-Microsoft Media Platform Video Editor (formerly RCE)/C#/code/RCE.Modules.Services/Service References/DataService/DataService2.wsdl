@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/rce/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/rce/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/rce/Imports">
+      <xsd:import schemaLocation="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/rce/" />
+      <xsd:import schemaLocation="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RCE.Services.Contracts.Contracts" />
+      <xsd:import schemaLocation="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://w7-mb-ejadib/RCE.Web/DataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SMPTETimecode" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDataService_LoadMediaBin_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadMediaBin" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_LoadMediaBin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadMediaBinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_LoadTitleTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTitleTemplates" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_LoadTitleTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTitleTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_LoadProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadProject" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_LoadProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProject" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProjectsByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectsByUser" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProjectsByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProject" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProject" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProjectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDataService">
+    <wsdl:operation name="LoadMediaBin">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/LoadMediaBin" message="tns:IDataService_LoadMediaBin_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/LoadMediaBinResponse" message="tns:IDataService_LoadMediaBin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitleTemplates">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/LoadTitleTemplates" message="tns:IDataService_LoadTitleTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/LoadTitleTemplatesResponse" message="tns:IDataService_LoadTitleTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/LoadProject" message="tns:IDataService_LoadProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/LoadProjectResponse" message="tns:IDataService_LoadProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/SaveProject" message="tns:IDataService_SaveProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/SaveProjectResponse" message="tns:IDataService_SaveProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsByUser">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/GetProjectsByUser" message="tns:IDataService_GetProjectsByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/GetProjectsByUserResponse" message="tns:IDataService_GetProjectsByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/GetProject" message="tns:IDataService_GetProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/GetProjectResponse" message="tns:IDataService_GetProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProject">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/rce/IDataService/DeleteProject" message="tns:IDataService_DeleteProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/rce/IDataService/DeleteProjectResponse" message="tns:IDataService_DeleteProject_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

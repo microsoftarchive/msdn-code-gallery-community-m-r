@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "My First Integration Services Solution", "My First Integration Services Solution\My First Integration Services Solution.dtproj", "{106995B5-BAD6-40B9-B502-38A2F1C758F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{106995B5-BAD6-40B9-B502-38A2F1C758F4}.Development|Default.ActiveCfg = Development
+		{106995B5-BAD6-40B9-B502-38A2F1C758F4}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

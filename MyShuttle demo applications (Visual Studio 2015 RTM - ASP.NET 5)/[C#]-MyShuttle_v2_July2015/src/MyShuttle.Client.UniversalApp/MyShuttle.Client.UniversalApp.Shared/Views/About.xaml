@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="MyShuttle.Client.UniversalApp.Views.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.UniversalApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Hub Style="{StaticResource MainHub}">
+            <Hub.Header>
+                <Image Source="/Resources/Images/app-brand.png" Height="80"/>
+            </Hub.Header>
+
+            <HubSection>
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="about" Style="{StaticResource PrimaryTextBlock}"/>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>If you want more information, feel free to contact us:</TextBlock>
+                        <TextBlock>- Spring Studios, 50 Varick St, New York, NY 10012</TextBlock>
+                        <TextBlock>- 930 000 000</TextBlock>
+                        <TextBlock>- hello@fabrikamshuttle.com</TextBlock>
+                        <TextBlock></TextBlock>
+                        <TextBlock>© 2014 Fabrikam Shuttle</TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+    </Grid>
+</Page>

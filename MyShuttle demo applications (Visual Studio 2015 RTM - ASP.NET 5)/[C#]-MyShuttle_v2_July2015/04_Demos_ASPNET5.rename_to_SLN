@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22717.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Server", "02.Server", "{EF5047A2-7825-47AF-A8C9-231ADC0E5264}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyShuttle.Model", "src\MyShuttle.Model\MyShuttle.Model.xproj", "{CEC21C0E-41AF-47C7-B09E-F398B62B5403}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyShuttle.Data", "src\MyShuttle.Data\MyShuttle.Data.xproj", "{940FBD8B-EBBB-445D-AA04-30307EA18263}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyShuttle.API", "src\MyShuttle.API\MyShuttle.API.xproj", "{18C49802-CB04-4C39-812A-F13CB83360BE}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyShuttle.Web", "src\MyShuttle.Web\MyShuttle.Web.xproj", "{95C1B6C3-3F59-4CF8-A908-73A99DD25F64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6B272D9D-ED01-4AF9-97F6-9FC8F8D002DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5CF485BB-10CE-4974-8366-5235FAA6CF9E}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		global_1json__JSONSchema = http://json.schemastore.org/global
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEC21C0E-41AF-47C7-B09E-F398B62B5403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC21C0E-41AF-47C7-B09E-F398B62B5403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC21C0E-41AF-47C7-B09E-F398B62B5403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC21C0E-41AF-47C7-B09E-F398B62B5403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940FBD8B-EBBB-445D-AA04-30307EA18263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940FBD8B-EBBB-445D-AA04-30307EA18263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940FBD8B-EBBB-445D-AA04-30307EA18263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940FBD8B-EBBB-445D-AA04-30307EA18263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C49802-CB04-4C39-812A-F13CB83360BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C49802-CB04-4C39-812A-F13CB83360BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C49802-CB04-4C39-812A-F13CB83360BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C49802-CB04-4C39-812A-F13CB83360BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C1B6C3-3F59-4CF8-A908-73A99DD25F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C1B6C3-3F59-4CF8-A908-73A99DD25F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C1B6C3-3F59-4CF8-A908-73A99DD25F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C1B6C3-3F59-4CF8-A908-73A99DD25F64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF5047A2-7825-47AF-A8C9-231ADC0E5264} = {6B272D9D-ED01-4AF9-97F6-9FC8F8D002DE}
+		{CEC21C0E-41AF-47C7-B09E-F398B62B5403} = {EF5047A2-7825-47AF-A8C9-231ADC0E5264}
+		{940FBD8B-EBBB-445D-AA04-30307EA18263} = {EF5047A2-7825-47AF-A8C9-231ADC0E5264}
+		{18C49802-CB04-4C39-812A-F13CB83360BE} = {EF5047A2-7825-47AF-A8C9-231ADC0E5264}
+		{95C1B6C3-3F59-4CF8-A908-73A99DD25F64} = {EF5047A2-7825-47AF-A8C9-231ADC0E5264}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "RoleMappings";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Role Mappings</h1>    
+
+    using (Html.BeginForm("RoleMappingSubmit", "Role", FormMethod.Post))
+    {
+        <p>Enter user principal or group name: <input type="text" name="name">
+        To
+        <select name ="roletype">
+        @foreach (string str in (string []) ViewData["roles"])
+        {
+            <option value="@str"> @str</option>       
+        }
+        </select>
+        </p>
+    
+        foreach (string str in (string [])ViewData["roles"])
+        {
+            if (ViewData[@str + "List"] !=null && ((List<TaskTracker.RoleMapElem>)ViewData[@str + "List"]).Count > 0)
+            {
+                <h2>@str</h2>    
+        
+                <table>
+                    <tr>
+                        <th>ObjectId</th>
+                        <th>Name</th>
+                        <th>Delete</th>
+
+                    </tr>
+                @foreach (TaskTracker.RoleMapElem mapping in (List<TaskTracker.RoleMapElem>)ViewData[@str + "List"])
+                {
+                    <tr>
+                        <td>
+                            @mapping.ObjectId
+                        </td>
+                        <td>
+                            @if( (((Dictionary<string,string>)ViewData["nameDict"])[@mapping.ObjectId]) == null)
+                            {
+                                <span style="color: red;">Object has been deleted</span>   
+                            }
+                            else 
+                            {
+                                @(((Dictionary<string,string>)ViewData["nameDict"])[@mapping.ObjectId])
+                            }
+                        </td>
+                        <td>
+                            <input type="checkbox" name="@mapping.MappingId" value="delete" />
+                        </td>
+                    </tr>
+                }
+                </table>    
+            }
+        }
+        
+        <input type="submit" value="Submit" />
+    }
+    
+    using (Html.BeginForm("ACLSubmit", "Role", FormMethod.Post))
+    {
+        <h1>Users Resource Access Control List</h1>
+        <p>Enter user principal or group name: <input type="text" name="ACLName"> to UsersACL</p>
+   
+        <table>
+            <tr>
+                <th>ObjectId</th>
+                <th>Name</th>
+                <th>Delete</th>
+
+            </tr>
+        @foreach (TaskTracker.ACLElem elem in (List<TaskTracker.ACLElem>)ViewData["ACL"])
+        {
+        <tr>
+            <td>
+                @elem.ObjectId
+            </td>
+            <td>
+                @(((Dictionary<string,string>)ViewData["nameDict"])[@elem.ObjectId])
+            </td>
+            <td>
+                <input type="checkbox" name="@elem.MappingId" value="delete" />
+            </td>
+        </tr>
+        }
+        </table>
+        <input type="submit" value="Submit" />
+    }
+}

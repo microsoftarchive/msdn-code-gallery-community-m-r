@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLUP_VAN" targetNamespace="http://tempuri.org/dsLUP_VAN.xsd" xmlns:mstns="http://tempuri.org/dsLUP_VAN.xsd" xmlns="http://tempuri.org/dsLUP_VAN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLUP_VAN" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsLUP_VAN" msprop:Generator_DataSetName="dsLUP_VAN">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LUP_VANS" msprop:Generator_UserTableName="LUP_VANS" msprop:Generator_RowDeletedName="LUP_VANSRowDeleted" msprop:Generator_TableClassName="LUP_VANSDataTable" msprop:Generator_RowChangedName="LUP_VANSRowChanged" msprop:Generator_RowClassName="LUP_VANSRow" msprop:Generator_RowChangingName="LUP_VANSRowChanging" msprop:Generator_RowEvArgName="LUP_VANSRowChangeEvent" msprop:Generator_RowEvHandlerName="LUP_VANSRowChangeEventHandler" msprop:Generator_TablePropName="LUP_VANS" msprop:Generator_TableVarName="tableLUP_VANS" msprop:Generator_RowDeletingName="LUP_VANSRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sPLATE_NO" msprop:Generator_UserColumnName="sPLATE_NO" msprop:Generator_ColumnPropNameInRow="sPLATE_NO" msprop:Generator_ColumnVarNameInTable="columnsPLATE_NO" msprop:Generator_ColumnPropNameInTable="sPLATE_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sDESC" msprop:Generator_UserColumnName="sDESC" msprop:Generator_ColumnPropNameInRow="sDESC" msprop:Generator_ColumnVarNameInTable="columnsDESC" msprop:Generator_ColumnPropNameInTable="sDESCColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sMODEL" msprop:Generator_UserColumnName="sMODEL" msprop:Generator_ColumnPropNameInRow="sMODEL" msprop:Generator_ColumnVarNameInTable="columnsMODEL" msprop:Generator_ColumnPropNameInTable="sMODELColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nMADE_YEAR" msprop:Generator_UserColumnName="nMADE_YEAR" msprop:Generator_ColumnPropNameInRow="nMADE_YEAR" msprop:Generator_ColumnVarNameInTable="columnnMADE_YEAR" msprop:Generator_ColumnPropNameInTable="nMADE_YEARColumn" type="xs:decimal" />
+              <xs:element name="sENG_NO" msprop:Generator_UserColumnName="sENG_NO" msprop:Generator_ColumnPropNameInRow="sENG_NO" msprop:Generator_ColumnVarNameInTable="columnsENG_NO" msprop:Generator_ColumnPropNameInTable="sENG_NOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sCH_NO" msprop:Generator_UserColumnName="sCH_NO" msprop:Generator_ColumnPropNameInRow="sCH_NO" msprop:Generator_ColumnVarNameInTable="columnsCH_NO" msprop:Generator_ColumnPropNameInTable="sCH_NOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sCOLOR" msprop:Generator_UserColumnName="sCOLOR" msprop:Generator_ColumnPropNameInRow="sCOLOR" msprop:Generator_ColumnVarNameInTable="columnsCOLOR" msprop:Generator_ColumnPropNameInTable="sCOLORColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATUS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="STATUS" msprop:Generator_ColumnPropNameInRow="STATUS" msprop:Generator_ColumnVarNameInTable="columnSTATUS" msprop:Generator_ColumnPropNameInTable="STATUSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LUP_VANS" />
+      <xs:field xpath="mstns:sPLATE_NO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

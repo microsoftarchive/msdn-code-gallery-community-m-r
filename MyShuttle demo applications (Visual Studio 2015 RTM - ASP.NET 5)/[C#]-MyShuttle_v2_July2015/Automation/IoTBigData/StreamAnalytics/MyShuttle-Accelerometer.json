@@ -1,0 +1,69 @@
+{  
+   "location":"($location)",
+   "properties":{  
+      "sku":{  
+         "name":"standard"
+      },
+      "outputStartMode":"JobStartTime",
+      "eventsOutOfOrderPolicy":"Adjust",
+      "eventsOutOfOrderMaxDelayInSeconds": 0,
+      "inputs":[  
+         {  
+            "name":"EventHub",
+            "properties":{  
+               "type":"stream",
+               "serialization":{  
+                  "type":"JSON",
+                  "properties":{  
+                     "encoding":"UTF8"
+                  }
+               },
+               "datasource":{  
+                  "type":"Microsoft.ServiceBus/EventHub",
+                  "properties":{  
+                     "serviceBusNamespace":"($eventhubnamespace)",
+                     "sharedAccessPolicyName":"($sharedAccessPolicyName)",
+                     "sharedAccessPolicyKey":"($sharedAccessPolicyKey)",
+                     "eventHubName":"($eventhubname)"
+                  }
+               }
+            }
+         }
+      ],
+      "transformation":{  
+         "name":"MyShuttle-Accelerometer",
+         "properties":{  
+            "streamingUnits":1,
+            "query":"SELECT EventDateTime, DeviceId, DriverId, X, Y, Z FROM eventhub \r\nWHERE Type = 'AccelerometerEvent'"
+         }
+      },
+      "outputs":[  
+         {  
+            "name":"output",
+            "properties":{  
+               "datasource":{  
+                  "type":"Microsoft.Storage/Blob",
+                  "properties":{  
+                     "BlobPathPrefix":"accelerometer",
+                     "Container":"myshuttledata",
+                     "StorageAccounts": [
+                                  {
+                                    "AccountKey": "($storageaccountkey)",
+                                    "AccountName": "($storageaccountname)"
+                                  }
+                                ]
+                  }
+               },
+               "Serialization": {
+                              "Properties": {
+                                "Encoding": "UTF8",
+                                "FieldDelimiter": ","
+                              },
+                              "Type": "Csv"
+                            }
+               
+            }
+         }
+      ]
+   }
+}

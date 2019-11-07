@@ -1,0 +1,51 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; } 
+
+@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unexpected Error</title>
+</head>
+<body>
+    <h2>
+        An error occurred while processing your request.
+    </h2>
+    <div><label>Controller Name: </label> @Model.ControllerName</div>
+    <div><label> Name : </label> @Model.ActionName</div>
+    <div>         
+        @{
+            if(@Model.Exception.InnerException != null)
+            {
+                string errorCode, errorMessage;
+                MvcDirectoryGraphSample.Helpers.ModelValidationHelper.GetErrorCodeAndMessageForGraphServiceError(
+                                                        Model.Exception.InnerException.Message, out errorCode, out errorMessage);
+                if(errorCode != null)
+                {
+                    <div>
+                        <label>Error Code: </label> @errorCode
+                    </div>
+                    <div>
+                        <label>Error Message: </label> @errorMessage
+                    </div>
+                }
+                else
+                {
+                    <label>Message: </label>
+                    @Model.Exception.InnerException.Message
+                }
+                
+            }
+            else
+            {
+                <label>Message:</label>
+                @Model.Exception.Message;
+            }            
+        }
+        </div>
+</body>
+</html>

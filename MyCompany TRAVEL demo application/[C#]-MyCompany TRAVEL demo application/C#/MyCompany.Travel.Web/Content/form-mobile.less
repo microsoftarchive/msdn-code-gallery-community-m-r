@@ -1,0 +1,205 @@
+﻿@import "Variables.less";
+.form-header {
+    height: 28pt;
+    margin-bottom: 7pt;
+    padding-top: 7pt;
+
+    .employee-data {
+        float: right;
+        background-color: @module-primary-color;
+        height: 30pt;
+    }
+
+    .avatar {
+        float: left;
+    }
+
+    .employee-data-text {
+        float: left;
+        height: 35pt;
+        background-color: @module-primary-color;
+        width: 100pt;
+        white-space: nowrap;
+        color: @light-font-color;
+        padding: 5pt;
+
+        div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 10pt;
+            line-height: 14pt;
+
+            .big {
+                font-size: 12pt;
+                font-weight: 300;
+                line-height: 15pt;
+            }
+        }
+    }
+}
+
+.form-body {
+    padding-left: 3pt;
+    padding-right: 3pt;
+
+    label {
+        font-size: 14pt;
+        color: @second-font-color;
+        display: block;
+    }
+
+    ul {
+        list-style: none outside none;
+        padding-left: 0px;
+    }
+
+    .row-height {
+        height: 45pt;
+    }
+
+    .row-text {
+        font-size: 10pt;
+        line-height: 12pt
+    }   
+}
+
+.row-text-multiline {
+    height: 35pt;
+    font-size: 10pt;
+    margin-left: 0px !important;
+}
+
+
+
+.attachments-zone {
+    padding-left: 3pt;
+    padding-right: 3pt;
+
+    label {
+        font-size: 14pt;
+        color: @second-font-color;
+    }
+
+    .attachments-container
+    {
+        width: 100%;
+        overflow-x: hidden;
+
+        .attachment {
+            background-color: #FFFFFF;
+            border-left-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            border-bottom-color: #CCCCCC;
+            border-style: none solid solid;
+            border-width: 0 0px 1px;
+            height: 50px;
+            display: table;
+            width: 100%;
+            overflow: hidden;
+
+            .cell {
+                float: none;
+                display: table-cell;
+                height: 25pt;
+                width: 25pt;
+                padding-right: 5pt;
+            }
+        
+            .icon {
+                width: 25pt;
+                height: 25pt;
+                float: none;
+                display: table-cell;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+
+                &.download {
+                    background-image: url("images/file-download.png");
+                    width: 25pt;
+                    padding-right: 10pt;
+                }
+
+                &.delete {
+                    background-image: url("images/file-delete.png");
+                    padding-right: 5pt;
+                }
+            }
+
+            .text {
+                overflow: hidden;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                float: none;
+                display: table-cell;
+                line-height: 50px;
+                padding-left: 5pt;
+            
+                .link-file {
+                    color: @list-info-font-color;
+                } 
+            }
+        
+        }
+    }
+}
+
+/*Buttons*/
+.button-primary {
+    font-family: @primary-font;
+    font-size: @base-font-size;
+    background-color: @module-primary-color;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    padding: 5px 25px 5px 25px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: @module-primary-color-over;
+    }
+}
+
+.button-box {
+    float: left;
+    margin-top: 20pt;
+    margin-bottom: 15pt;
+    border: none;
+    color: @light-font-color;
+    width: 49%;
+    height: 20pt;
+    font-weight: bold;
+}
+
+.button-delete {
+    background-color: @module-primary-color-dark;
+    margin-right: 0px;
+
+    &:hover {
+        background-color: @module-primary-color-dark-over;
+    }
+}
+
+.button-accept {
+    background-color: @module-primary-color;
+    margin-right: 2%;
+
+    &:hover {
+        background-color: @module-primary-color-over;
+    }
+}
+
+.modal-msgBox {
+    width: 100% !important;
+}
+
+.footer-div {
+    height: 20pt;
+    display: block;
+}
+/*End Buttons*/
+
+ 

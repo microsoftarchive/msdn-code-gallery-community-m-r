@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="StandardStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="VisitNormalText" TargetType="TextBlock" BasedOn="{StaticResource BasicTextStyle}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Opacity" Value=".7"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+    </Style>
+    <Style x:Key="VisitorNameText" TargetType="TextBlock" BasedOn="{StaticResource GroupHeaderTextStyle}">
+        <Setter Property="LineHeight" Value="20"></Setter>
+        <Setter Property="FontSize" Value="24"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+    <Style x:Key="VisitorNameTextDetails" TargetType="TextBlock" BasedOn="{StaticResource GroupHeaderTextStyle}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="33"></Setter>
+    </Style>
+    <Style x:Key="VisitMediumText" TargetType="TextBlock" BasedOn="{StaticResource VisitNormalText}">
+        <Setter Property="FontSize" Value="20"></Setter>
+    </Style>
+    <Style x:Key="PopupText" TargetType="TextBlock" BasedOn="{StaticResource BasicTextStyle}">
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
+    <Style x:Key="UserHeaderText" TargetType="TextBlock" BasedOn="{StaticResource SubheaderTextStyle}">
+        <Setter Property="FontSize" Value="26"></Setter>
+    </Style>
+</ResourceDictionary>

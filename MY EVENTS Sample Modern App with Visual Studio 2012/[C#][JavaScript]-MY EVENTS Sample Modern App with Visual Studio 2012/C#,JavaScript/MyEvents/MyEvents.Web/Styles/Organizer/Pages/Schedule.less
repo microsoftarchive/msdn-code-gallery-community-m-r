@@ -1,0 +1,187 @@
+﻿.drag-message {
+    font-size: 0.8em;
+    opacity: 0.5;
+    text-align: right;
+    padding: 0.8em;
+}
+
+.dragging-helper{
+	background-color: @primary-color;
+
+	background-color: @primary-color;
+        #font > .font-primary-color;
+        font-size: 0.9em;
+        cursor: move;
+        overflow: hidden;
+        
+        .wrapper {
+            margin: 0.5em;
+            height: 100%;
+        }
+                 
+        .session-title {
+            max-height: 3em;
+            max-width: 75%;
+            @media all and (min-width: 1024px) {
+                max-width: 85%;
+            }
+        }
+        
+        .session-speaker {
+            font-size: 1em;
+            background-image: url('/Styles/Images/organizer-icon-white.png');
+            background-position: left center;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            position: absolute;
+            bottom: 5px;
+        }
+
+		.session-time span{
+			display: block;
+			text-align: right;
+		}
+}
+
+#editable-schedule {
+    #available-sessions {
+        margin-bottom: 2em;
+        padding: 1em;
+        min-height: 5em;
+    
+        .available-session {
+            width: 20% !important;
+            position: static;
+            display: inline-block;
+            margin: 0.333em 1em;
+            vertical-align: top;
+            height: auto !important;
+            min-height: 5em;
+
+			 .session-speaker {
+				display: none;
+			}
+        }
+    }
+
+    .session-container {
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        background-color: @primary-color;
+        #font > .font-primary-color;
+        font-size: 0.9em;
+        cursor: move;
+        overflow: hidden;
+        width: 100% !important;
+        
+        .wrapper {
+            margin: 0.5em;
+            height: 100%;
+        }
+                 
+        .session-title {
+            max-height: 3em;
+            max-width: 75%;
+            @media all and (min-width: 1024px) {
+                max-width: 85%;
+            }
+        }
+        
+        .session-speaker {
+            font-size: 1em;
+            background-image: url('/Styles/Images/organizer-icon-white.png');
+            background-position: left center;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            position: absolute;
+            bottom: 5px;
+        }
+
+		.session-time span{
+			display: block;
+			text-align: right;
+		}
+    }
+
+    #schedule-container {    
+        font-size: 0.9em;
+    
+        #header-container {
+            overflow: hidden;
+        }
+                      
+        #schedule {
+            margin-bottom: 2em;
+            padding: 1%;
+            .opacity-background;
+        }
+    
+        .times-column {
+            width: 5%;
+            float: left;
+            min-width: 33px;
+        }
+
+        .times-column.header {
+            background-image: url('/Styles/Images/clock-white.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 21px;
+            padding: 0.5em;
+        }
+
+        .room-column {
+            margin-right: 2%;
+            float: left;
+        }
+
+        &.total-rooms-1 {
+            .room-column {
+                width: 90.6%;
+                @media all and (min-width: 1024px) {
+                    width: 93%;
+                }
+            }
+                         
+            .room-column.header {
+                width: 88%;
+            }
+        }
+    
+        &.total-rooms-2 {
+            .room-column {
+                width: 44.3%;
+                @media all and (min-width: 1024px) {
+                    width: 45.5%;
+                }
+            }
+                         
+            .room-column.header {
+                width: 43%;
+            }
+        }
+    
+        &.total-rooms-3 {
+            .room-column {
+                width: 28.8%;
+                @media all and (min-width: 1024px) {
+                    width: 29.6%;
+                }
+            }
+                         
+            .room-column.header {
+                width: 28%;
+            }
+        }
+        
+        .room-column.header {
+            font-size: 1.5em;
+        }
+
+        .time-gap {
+            background-color: rgba(233, 238, 244, 0.5);
+            position: relative;
+        }
+    }    
+}

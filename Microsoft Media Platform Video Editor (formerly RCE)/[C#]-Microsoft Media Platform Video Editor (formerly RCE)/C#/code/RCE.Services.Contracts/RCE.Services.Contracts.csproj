@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01EB83B4-2BC2-4040-90A1-E9199E0DA430}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RCE.Services.Contracts</RootNamespace>
+    <AssemblyName>RCE.Services.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\RCE.Services.Contracts.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\RCE.Services.Contracts.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\AdOpportunity.cs" />
+    <Compile Include="Contracts\AdOpportunityCollection.cs" />
+    <Compile Include="Contracts\Anchor.cs" />
+    <Compile Include="Contracts\AudioItem.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Contracts\AudioStreamInfo.cs" />
+    <Compile Include="Contracts\Comment.cs" />
+    <Compile Include="Contracts\CommentCollection.cs" />
+    <Compile Include="Contracts\Container.cs" />
+    <Compile Include="Contracts\ContainerCollection.cs" />
+    <Compile Include="Contracts\ImageItem.cs" />
+    <Compile Include="Contracts\InkComment.cs" />
+    <Compile Include="Contracts\Item.cs" />
+    <Compile Include="Contracts\ItemCollection.cs" />
+    <Compile Include="Contracts\Marker.cs" />
+    <Compile Include="Contracts\MarkerCollection.cs" />
+    <Compile Include="Contracts\MediaBin.cs" />
+    <Compile Include="Contracts\MediaItem.cs" />
+    <Compile Include="Contracts\OverlayItem.cs" />
+    <Compile Include="Contracts\PlayByPlay.cs" />
+    <Compile Include="Contracts\Project.cs" />
+    <Compile Include="Contracts\ProjectCollection.cs" />
+    <Compile Include="Contracts\RceObject.cs" />
+    <Compile Include="Contracts\Resource.cs" />
+    <Compile Include="Contracts\ResourceCollection.cs" />
+    <Compile Include="Contracts\Sequence.cs" />
+    <Compile Include="Contracts\SequenceCollection.cs" />
+    <Compile Include="Contracts\Shot.cs" />
+    <Compile Include="Contracts\ShotCollection.cs" />
+    <Compile Include="Contracts\SmoothStreamingAudioItem.cs" />
+    <Compile Include="Contracts\SmoothStreamingVideoItem.cs" />
+    <Compile Include="Contracts\SubClipItem.cs" />
+    <Compile Include="Contracts\TextBlock.cs" />
+    <Compile Include="Contracts\TextBlockCollection.cs" />
+    <Compile Include="Contracts\Title.cs" />
+    <Compile Include="Contracts\TitleCollection.cs" />
+    <Compile Include="Contracts\TitleTemplate.cs" />
+    <Compile Include="Contracts\TitleTemplateCollection.cs" />
+    <Compile Include="Contracts\Track.cs" />
+    <Compile Include="Contracts\TrackCollection.cs" />
+    <Compile Include="Contracts\TrackType.cs" />
+    <Compile Include="Contracts\Transition.cs" />
+    <Compile Include="Contracts\TransitionCollection.cs" />
+    <Compile Include="Contracts\TransitionItem.cs" />
+    <Compile Include="Contracts\TransitionType.cs" />
+    <Compile Include="Contracts\VideoItem.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Metadata\Metadata.cs" />
+    <Compile Include="Metadata\IMetadataLocator.cs" />
+    <Compile Include="Metadata\IMetadataStrategy.cs" />
+    <Compile Include="Metadata\MetadataField.cs" />
+    <Compile Include="Output\OutputMetadata.cs" />
+    <Compile Include="Output\OutputSettings.cs" />
+    <Compile Include="Output\WindowsMediaHeaderProperties.cs" />
+    <Compile Include="Providers\IAssetsDataProvider.cs" />
+    <Compile Include="Providers\IDataProvider.cs" />
+    <Compile Include="Services\IAssetsDataService.cs" />
+    <Compile Include="Services\IDataService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Output\IOutputService.cs" />
+    <Compile Include="UtilityHelper.cs" />
+    <Compile Include="Contracts\VolumeLevelNode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Settings.StyleCop">
+      <Link>Settings.StyleCop</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMPTETimecode\SMPTETimecode.csproj">
+      <Project>{A1861304-5984-4CBD-B674-C358EF13D9CB}</Project>
+      <Name>SMPTETimecode</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

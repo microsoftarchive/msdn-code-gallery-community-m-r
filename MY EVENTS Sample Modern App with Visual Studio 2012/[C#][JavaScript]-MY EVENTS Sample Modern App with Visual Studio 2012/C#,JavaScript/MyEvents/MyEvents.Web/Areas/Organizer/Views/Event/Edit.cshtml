@@ -1,0 +1,13 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Web.Areas.Organizer.Models.EditEventViewModel
+@{
+    ViewBag.Title = "my events - edit event";
+}
+
+@section Scripts {
+
+    <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    @Scripts.Render("~/Organizer/Event/EditScripts/")
+}
+
+@{Html.RenderPartial("Form", Model);}

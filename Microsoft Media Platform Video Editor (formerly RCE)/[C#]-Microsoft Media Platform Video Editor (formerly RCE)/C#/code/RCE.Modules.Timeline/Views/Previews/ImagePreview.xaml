@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="RCE.Modules.Timeline.ImagePreview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+     xmlns:Converters="clr-namespace:RCE.Infrastructure.Converters;assembly=RCE.Infrastructure"
+    Width="200" Height="86" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <UserControl.Resources>
+        <Converters:ImageUriConverter x:Key="ImageUriConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Border Background="{StaticResource VideoAssetBackground}" BorderThickness="0,1,1,0" CornerRadius="4,4,4,4" BorderBrush="{StaticResource PreviewControlBorderBrush}">
+            <Image Height="60" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,20,0,0" Source="{Binding Source, Converter={StaticResource ImageUriConverter}}" />
+        </Border>
+
+        <!--<TextBlock FontSize="9.5" FontWeight="Bold" Text="{Binding Title}" TextWrapping="NoWrap" HorizontalAlignment="Left" Margin="28.5,3.5,0,0" VerticalAlignment="Top"/>-->
+        <TextBlock FontSize="9.5" FontWeight="Bold" Text="{Binding Title}" TextWrapping="NoWrap" Foreground="{StaticResource ForegroundBrush}" HorizontalAlignment="Left" Margin="27.5,2.5,0,0" VerticalAlignment="Top"/>
+        <Rectangle x:Name="SelectionBox" Visibility="Collapsed" StrokeThickness="3" RadiusX="3" RadiusY="3" Grid.RowSpan="2">
+            <Rectangle.Stroke>
+                <LinearGradientBrush StartPoint="0.42063,0.999448" EndPoint="0.42063,-0.002591">
+                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                    <GradientStop Color="#FF7F7F7F" Offset="0.486486"/>
+                    <GradientStop Color="#FF000000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+        </Rectangle>
+        <Grid Height="10" HorizontalAlignment="Left" Margin="4,6,0,0" VerticalAlignment="Top" Width="13" Background="{StaticResource ImagePreviewIconBackgroundBrush}">
+        	<Path 
+        		Height="10.0045" 
+        		Stretch="Fill" 
+        		Fill="{StaticResource ImagePreviewIconFill}" 
+        		Margin="0,0,-0.197,-0.005"
+        		Data="F1 M 12.3422,4.14362L 9.72324,4.14368L 9.72324,1.52472L 12.3422,4.14362 Z M 10.7141,0.947754L 2.27942,0.947754L 2.27942,9.01123L 13.5287,9.01123L 13.5287,3.76233L 10.7141,0.947754 Z M 3.41904,1.98596L 8.82999,1.98596L 8.82999,5.03693L 11.8877,5.03687L 11.8877,7.91125L 3.41904,7.91125L 3.41904,1.98596 Z M 8.66287,0L 9.52124,0L 14.4456,0L 14.4456,4.92444L 14.4456,5.35681L 14.4456,10.0045L 1.24829,10.0045L 1.24829,0L 8.66287,0 Z " UseLayoutRounding="False"/>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=242549DE40032C3C747A873E54852767" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=6E35A38929E376AA4B24625BCA315D6F" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>RDLC Report in C#</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>RDLC Report in C#</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, .NET Framework, RDLC
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Reports, Reporting, SQL Server Reporting Services, RDLC, ReportViewer
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/3/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/RDLC-Report-in-C-b106fc20">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em>This sample shows how to generate RDLC report in C#, you can generate reports for small, medium and large scale business.</em></p>
+<h1><span>Building the Sample</span></h1>
+<p><em>Visual Studio 2013, .Net Frameworm 4.5, MS SQL Server 2012</em></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><em>This sample shows in detail how to generate RDLC report in c#</em></p>
+<p>I have explained a simple tutorial with an example and sample code to create RDLC Report in Windows Forms (WinForms) application using C# and VB.Net.<br>
+The RDLC Report in in Windows Forms (WinForms) application will be populated using Typed DataSet. &nbsp; &nbsp;&nbsp;</p>
+<h2>Create C# Project</h2>
+<p>Here you can take your C# project.</p>
+<h2><img id="137142" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137142/1/slnrdlc.png" alt="" width="947" height="543"></h2>
+<p>&nbsp;</p>
+<h2>Create DataSet in Your Project</h2>
+<p>Create Dataset to populate RDLC reports in to your project.</p>
+<p><img id="137143" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137143/1/dataset1.png" alt="" width="984" height="533"></p>
+<p>&nbsp;</p>
+<h2>ADD RDLC Report in Project</h2>
+<p>Now you can add RDLC report into your project.</p>
+<p><img id="137144" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137144/1/rdlc_report.png" alt="" width="808" height="460"></p>
+<p>&nbsp;</p>
+<h2>Add Binding Source to your Project</h2>
+<p>Now add binding source to your project so that can fill database to populate RDLC report.</p>
+<p><img id="137145" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137145/1/bindingsource.png" alt="" width="415" height="368"></p>
+<p>&nbsp;</p>
+<p>Insert Table in your RDLC report</p>
+<p>Here you can drag required information to display Header and Footer in report.</p>
+<p><img id="137146" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137146/1/rdlc_insert_header_footer.png" alt="" width="654" height="467"></p>
+<h2>Choose Dataset</h2>
+<p>Here you can choose dataset to populate report in C#</p>
+<p><img id="137147" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137147/1/choose_dataset.png" alt="" width="888" height="544"></p>
+<p>&nbsp;</p>
+<h2>Add Report Viewer to display RDLC report</h2>
+<p>Here we are adding ReportViewer to display report.</p>
+<p><img id="137148" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137148/1/report_viewer.png" alt="" width="329" height="445"></p>
+<h2>Provide Datasource and Path to RDLC Report</h2>
+<p>Here we can provide datasource and path of the RDLC report.</p>
+<p><img id="137149" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137149/1/choose_report1.png" alt="" width="822" height="379"></p>
+<h2>Final View of RDLC report</h2>
+<p><img id="137150" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137150/1/city_details.png" alt="" width="741" height="374"></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// TODO: This line of code loads data into the 'DataSet1.tblCityMaster' table. You can move, or remove it, as needed.
+            this.tblCityMasterTableAdapter.Fill(this.DataSet1.tblCityMaster);
+
+            this.reportViewer1.RefreshReport();</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;TODO:&nbsp;This&nbsp;line&nbsp;of&nbsp;code&nbsp;loads&nbsp;data&nbsp;into&nbsp;the&nbsp;'DataSet1.tblCityMaster'&nbsp;table.&nbsp;You&nbsp;can&nbsp;move,&nbsp;or&nbsp;remove&nbsp;it,&nbsp;as&nbsp;needed.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.tblCityMasterTableAdapter.Fill(<span class="cs__keyword">this</span>.DataSet1.tblCityMaster);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.reportViewer1.RefreshReport();</pre>
+</div>
+</div>
+</div>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><em>You can view in detail from here <a title="RDLC reports in C#" href="http://www.technologycrowds.com/2015/04/rdlc-reports-in-csharp.html">
+RDLC report in C#</a>.</em> </li></ul>
+<h1>More Information</h1>
+<p><em>If you go in deep in RDLC report then can view from <a title="RDLC reports in C#" href="RDLC reports in C#">
+here</a>&nbsp;</em></p>
+<p>Database is under <strong>DB_Script </strong>folder.</p>
+<p><em><br>
+</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

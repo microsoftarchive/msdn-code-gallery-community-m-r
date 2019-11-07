@@ -1,0 +1,31 @@
+﻿<ul class="breadcrumb">
+    <li><a href="#/">Microsoft Graph SPA</a></li>
+    <li><a href="#/onedrive">OneDrive</a></li>
+    <li class="active">Search</li>
+</ul>
+<!-- Search results -->
+<div class="row">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Created</th>
+                <th>Created By</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items | orderBy: 'folder'">
+                <td>
+                    <i class="fa"
+                       ng-class="item.folder ? 'fa-folder' : 'fa-file'"
+                       aria-hidden="true"></i>
+                    <a href="#/onedrive/{{item.id}}">{{ item.name }}</a>
+                </td>
+                <td>{{ item.file ? (item.size | bytes) : ''}}</td>
+                <td>{{ item.createdDateTime | date:'medium' }}</td>
+                <td>{{ item.createdBy.user.displayName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

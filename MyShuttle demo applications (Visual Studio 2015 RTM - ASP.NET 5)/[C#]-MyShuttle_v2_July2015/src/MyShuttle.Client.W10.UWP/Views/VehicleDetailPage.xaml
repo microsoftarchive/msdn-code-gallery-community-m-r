@@ -1,0 +1,319 @@
+﻿<base:WindowsBasePage
+    x:Class="MyShuttle.Client.W10.UniversalApp.Views.VehicleDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.W10.UniversalApp"
+    xmlns:vm="using:MyShuttle.Client.W10.UniversalApp.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:base="using:MyShuttle.Client.W10.UniversalApp.Views.Base"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:callisto="using:Callisto.Controls"
+    Title="Vehicle detail"
+    mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=vm:VehicleDetailViewModel}" >
+
+
+    <Grid Background="{StaticResource AppBackgroundBrush}" >
+        <Grid.Resources>
+            <BitmapImage x:Key="defaultImage" UriSource="/ImageNullRef;Assets/Fallback/DemoVehicle.png" />
+        </Grid.Resources>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="SmallLayout1">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ThirdColumn.Width" Value="3*" />
+                        <Setter Target="SmallLayout.Visibility" Value="Visible" />
+                        <Setter Target="BigLayout.Visibility" Value="Collapsed" />
+                        <Setter Target="StatusVehicleEllipse.Margin" Value="151 110 0 0" />
+                        <Setter Target="VehicleStatusIcons.Margin" Value="0 51 20 0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="BigLayout1">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1200" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SmallLayout.Visibility" Value="Collapsed" />
+                        <Setter Target="BigLayout.Visibility" Value="Visible" />
+                        <Setter Target="ThirdColumn.Width" Value="3*" />
+                        <Setter Target="FourthColumn.Width" Value="2*" />
+                        <Setter Target="RowFooter.Height" Value="180" />
+                        <Setter Target="StatusVehicleEllipse.Margin" Value="321 20 0 0" />
+                        <Setter Target="VehicleStatusIcons.Margin" Value="0 51 40 0" />
+                        <Setter Target="RequestVehicleCaption.FontSize" Value="20" />
+
+                    </VisualState.Setters>
+                </VisualState>
+
+
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="260" x:Name="RowFooter"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF202C3A">
+
+            <Image Style="{StaticResource ImageHeader}" />
+            <Border Margin="0,76,0,0" Style="{StaticResource MapBorder}" x:Name="MapHeader"  >
+                <Grid>
+                    <Image d:IsHidden="False" Source="/Assets/Fallback/DemoMap.png" Stretch="UniformToFill"></Image>
+                    <maps:MapControl d:IsHidden="True"
+                                     ZoomLevel="16"
+                                     Center="{Binding CurrentVehicle, Converter={StaticResource VehicleToGeopointConverter}}" 
+                         MapServiceToken="{Binding ApplicationSettingService.UniversalAppBingMapsToken}" MapTapped="MapControl_MapTapped">
+
+                        <Image Style="{Binding CurrentVehicle, Converter={StaticResource VehicleStatusToImageStyleConverter}}"
+                       maps:MapControl.Location="{Binding CurrentVehicle, Converter={StaticResource VehicleToGeopointConverter}}"
+                       maps:MapControl.NormalizedAnchorPoint="{Binding CurrentVehicle, Converter={StaticResource NormalizedCenteredAnchorPointConverter}}"/>
+
+                        <!--Device position pushpin-->
+                        <Image Style="{StaticResource DevicePushpinImage}" 
+                       maps:MapControl.Location="{Binding CurrentLocation, Converter={StaticResource LocationToGeopointConverter}}"
+                       maps:MapControl.NormalizedAnchorPoint="0.5 , 1.0"/>
+                    </maps:MapControl>
+
+                </Grid>
+            </Border>
+            <StackPanel x:Name="VehicleStatusIcons" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,51,20,0">
+                <Border CornerRadius="28" Width="55" Height="55" Margin="0,0,8,0" Background="{StaticResource FreeStatusColorBrush}">
+                    <StackPanel Margin="0,-3,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="19" FontWeight="SemiBold" FontStyle="Italic" Foreground="White" Text="6"></TextBlock>
+                        <Image Margin="2,12,0,0" Source="/Resources/Images/freecar.png" Width="13" Height="11"></Image>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="23" Width="45" Height="45" Margin="0,0,8,0" Background="{StaticResource OccupiedStatusColorBrush}">
+                    <StackPanel Margin="0,-3,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="17"  FontWeight="SemiBold" FontStyle="Italic" Foreground="White" Text="3"></TextBlock>
+                        <Image Margin="2,12,0,0" Source="/Resources/Images/occupiedcar.png" Width="11" Height="10"></Image>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <ProgressRing HorizontalAlignment="Center" Width="40" Height="40" IsActive="True" Visibility="{Binding IsLoadingVehicle, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Foreground="#2E3B4B"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1" x:Name="BigLayout">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="330"></ColumnDefinition>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition x:Name="ThirdColumn" Width="7*"></ColumnDefinition>
+                <ColumnDefinition x:Name="FourthColumn" Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="{Binding CurrentVehicle.Picture, Converter={StaticResource ByteArrayToImageConverter}, FallbackValue=/Assets/Fallback/DemoVehicle.png}" Stretch="UniformToFill"></Image>
+            <Grid Grid.Column="1" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="25,20,0,20" Grid.ColumnSpan="2" FontSize="19" Text="{Binding CurrentVehicle.MakeAndModel}" Foreground="#30374A"></TextBlock>
+
+                <Image Source="{Binding CurrentVehicle.Carrier.Picture, Converter={StaticResource ByteArrayToImageConverter}}" Width="80" HorizontalAlignment="Right"></Image>
+
+
+                <StackPanel Grid.Row="1" Margin="25,23">
+                    <TextBlock Text="{Binding CurrentVehicle.Driver.Name}" FontSize="14" Foreground="#B2B2B2"></TextBlock>
+                    <callisto:Rating Margin="0,7,0,0"
+                                     ItemCount="5" 
+                                     Style="{StaticResource MediumRating}"
+                                     ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                     Value="{Binding CurrentVehicle.RatingAvg}" />
+                </StackPanel>
+
+                <Grid Margin="0,10,0,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Grid Margin="10" Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition MinWidth="8" MaxWidth="10"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition MinWidth="8" MaxWidth="10"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition MinHeight="10"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="55" Text="distance" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                            <TextBlock Text="{Binding CurrentVehicle.DistanceFromGivenPosition}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+                            <TextBlock Width="45" Text="$/mile" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                            <TextBlock Text="{Binding CurrentVehicle.Rate}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"  Grid.Column="0"  Orientation="Horizontal">
+                            <TextBlock Width="55" Text="type" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                            <TextBlock Text="{Binding CurrentVehicle.Type}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"  Grid.Column="2"  Orientation="Horizontal">
+                            <TextBlock Width="45" Text="seats" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                            <TextBlock Text="{Binding CurrentVehicle.Seats}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"  Grid.Column="4"  Orientation="Horizontal">
+                            <TextBlock Width="50" Text="license" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                            <TextBlock Text="{Binding CurrentVehicle.LicensePlate}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+
+            </Grid>
+
+            <Button x:Name="RequestButtonHorizontal" Style="{StaticResource ActionButton}"  Grid.Column="2" HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Background="{StaticResource FreeStatusColorBrush}"
+                        Command="{Binding RequestVehicleCommand}">
+                <Button.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Resources/Images/request.png" Height="35" Margin="0,0,25,0"></Image>
+                        <TextBlock x:Name="RequestVehicleCaption" Grid.Column="1" TextAlignment="Center" Text="Request vehicle" FontWeight="ExtraLight" FontSize="24" Foreground="White" TextWrapping="Wrap"></TextBlock>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Column="3" HorizontalAlignment="Stretch" Style="{StaticResource ActionButton}" 
+                        VerticalAlignment="Stretch" 
+                        Background="{StaticResource OccupiedStatusColorBrush}"
+                        Command="{Binding CallVehicleCommand}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Images/call.png" Height="35" Margin="0,0,25,0"></Image>
+                        <TextBlock Text="Call" FontWeight="ExtraLight" FontSize="24" Foreground="White"></TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+        </Grid>
+
+        <Grid Grid.Row="1" x:Name="SmallLayout">
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Background="{StaticResource FreeStatusColorBrush}"
+                        Command="{Binding RequestVehicleCommand}"
+                        Style="{StaticResource ActionButton}">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="/Resources/Images/request.png" Height="35" Margin="0,0,25,0"></Image>
+                            <TextBlock Grid.Column="1" TextAlignment="Center" Text="Request vehicle" FontWeight="ExtraLight" FontSize="24" Foreground="White" TextWrapping="Wrap"></TextBlock>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Column="1" HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        Background="{StaticResource OccupiedStatusColorBrush}" 
+                        Style="{StaticResource ActionButton}"
+                        Command="{Binding CallVehicleCommand}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/Images/call.png" Height="35" Margin="0,0,25,0"></Image>
+                            <TextBlock Text="Call" FontWeight="ExtraLight" FontSize="24" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding CurrentVehicle.Picture, Converter={StaticResource ByteArrayToImageConverter}, FallbackValue=/Assets/Fallback/DemoVehicle.png}" Stretch="UniformToFill"></Image>
+
+                <Grid Grid.Column="2" Background="White">
+                    <StackPanel Margin="20,10,0,0">
+                        <TextBlock FontSize="19" Text="{Binding CurrentVehicle.MakeAndModel}" Foreground="#30374A"></TextBlock>
+                        <TextBlock Text="{Binding CurrentVehicle.Driver.Name}" FontSize="14" Foreground="#B2B2B2"></TextBlock>
+                        <callisto:Rating Margin="0,3,0,0"
+                                     ItemCount="5" 
+                                     Style="{StaticResource MediumRating}"
+                                     ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                     Value="{Binding CurrentVehicle.RatingAvg, FallbackValue=5}" />
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid Margin="10" Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition MinWidth="6" MaxWidth="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition MinWidth="6" MaxWidth="10"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition MaxHeight="10"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="55" Text="distance" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                        <TextBlock Text="{Binding CurrentVehicle.DistanceFromGivenPosition}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <TextBlock Width="45" Text="$/mile" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                        <TextBlock Text="{Binding CurrentVehicle.Rate}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2"  Grid.Column="0"  Orientation="Horizontal">
+                        <TextBlock Width="55" Text="type" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                        <TextBlock Text="{Binding CurrentVehicle.Type}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2"  Grid.Column="2"  Orientation="Horizontal">
+                        <TextBlock Width="45" Text="seats" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                        <TextBlock Text="{Binding CurrentVehicle.Seats}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2"  Grid.Column="4"  Orientation="Horizontal">
+                        <TextBlock Width="50" Text="license" Style="{StaticResource SmallFontDetail}"></TextBlock>
+                        <TextBlock Text="{Binding CurrentVehicle.LicensePlate}" Style="{StaticResource SmallGreenFontDetail}"></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+
+        <Ellipse x:Name="StatusVehicleEllipse" Grid.Row="1" Fill="{Binding CurrentVehicle.VehicleStatus, Converter={StaticResource VehicleStatusToColorBrushConverter}}" Margin="151 110 0 0" Width="18" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top" ></Ellipse>
+    </Grid>
+</base:WindowsBasePage>

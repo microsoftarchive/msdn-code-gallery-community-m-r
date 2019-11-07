@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MyShuttle.Device.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EventHubName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">myshuttle2</Value>
+    </Setting>
+    <Setting Name="NumDataRegisters" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="CrashDataRegisters" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="OBDSecurityBeltOn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OBD_SB001</Value>
+    </Setting>
+    <Setting Name="OBDSecurityBeltOff" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OBD_SB002</Value>
+    </Setting>
+    <Setting Name="OBDParkingOn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OBD_P283</Value>
+    </Setting>
+    <Setting Name="OBDParkingOff" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OBD_P284</Value>
+    </Setting>
+    <Setting Name="OBDFuelOn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OBD_F678</Value>
+    </Setting>
+    <Setting Name="OBDFuelOff" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OBD_F679</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

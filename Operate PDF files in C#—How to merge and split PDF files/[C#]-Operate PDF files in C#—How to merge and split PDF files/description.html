@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.0.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=81B936ECD633661B5BC030BBB9637263" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=B5CE4E63583BE24AAFB908BDA5BF5C5B" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Operate PDF files in C#—How to merge and split PDF files</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Operate PDF files in C#—How to merge and split PDF files</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, ASP.NET, .NET Framework, C# Language, PDF, .NET PDF API
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, C#, ASP.NET, Class Library, How to, Language Samples, PDF API, Merge PDF, split pdf
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/1/2018</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>In this sample, we will see how to merge multiple PDF files and split PDF file into multiple ones using&nbsp;<a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Introduce/free-pdf-component.html"><strong><em>Free Spire.PDF for .NET</em></strong></a> in C#.</p>
+<p>Here we will see how to:</p>
+<ul>
+<li>&nbsp;Merge multiple PDF files into a new one </li><li>&nbsp;Split one PDF file into multiple ones (by every page/by specifying page range)
+</li></ul>
+<h1><span>Building the Sample</span></h1>
+<p><strong>Prerequisite </strong></p>
+<p><a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Download/download-pdf-for-net-free.html"><strong>Download</strong></a> and install Free Spire.PDF for .NET firstly and don&rsquo;t forget to reference the
+<strong><em>Spire.PDF.dll</em></strong> into your Visual Studio project.</p>
+<p><img id="189780" src="description/5.png" alt="" width="336" height="268"></p>
+<p><span style="font-size:small"><strong>1.&nbsp;</strong><strong>Merge PDF files into a new one</strong></span></p>
+<p><strong><em>Before</em></strong></p>
+<p><strong><em><img id="189781" src="description/500a2f37-73c8-4239-8f90-586aeb5d1c7b5.png" alt="" width="808" height="621"><br>
+</em></strong></p>
+<p><strong><em>After</em></strong></p>
+<p><img id="189782" src="description/1752e6e3-4495-4ebe-ba4f-d7d3fdf6f6715.png" alt="" width="675" height="569"></p>
+<p><span style="font-size:small"><strong>2.&nbsp; </strong><strong>Split one PDF file into multiple ones</strong></span></p>
+<p><span style="font-size:small"><strong><em>&nbsp; &nbsp; 2.1 split by every page</em></strong></span></p>
+<p><span style="font-size:x-small"><em><strong>Before</strong></em></span></p>
+<p><img id="189784" src="description/afc004dc-b67a-4fa5-ba4a-3754706a1bfb5.png" alt="" width="525" height="435"></p>
+<p><span style="font-size:x-small"><em><strong>After</strong></em></span></p>
+<p><img id="189783" src="description/acca3fb8-4f91-4b0d-a501-10e7eed021dd5.png" alt="" width="453" height="333"></p>
+<p><strong><em>2.2 split by specifying page range</em></strong></p>
+<p><img id="189785" src="description/38258fbb-a736-4a91-a8ee-b560771a30375.png" alt="" width="449" height="288"></p>
+<p>&nbsp;</p>
+<p>Visit here for more samples about MERGE.</p>
+<ul>
+<li>&nbsp;<a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Merge-Selected-Pages-from-a3a48538">Merge selected PDF pages</a>
+</li><li>&nbsp;<a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Merge-Different-File-Types-3a171f5a#content">Merge different file formats into one PDF</a>
+</li></ul>
+<p>&nbsp;</p>
+<p><span style="font-size:medium"><strong>More information </strong></span></p>
+<p><strong>About Free Spire.PDF for .NET:</strong></p>
+<p>Free Spire.PDF for .NET is a Community Edition of the Spire.PDF for .NET, which is a totally free PDF component for commercial and personal use. As a standalone C#/VB.NET component, Free Spire.PDF for .NET enables developers to create, write, edit,<a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/Convert-HTML-to-PDF-Customize-HTML-to-PDF-Conversion-by-Yourself.html">
+ convert</a>, print, handle and <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/Read-PDF-Read-PDF-Images-and-Text-in-C-VB.NET.html">
+read PDF files</a> on any .NET applications.</p>
+<p>&nbsp;</p>
+<p>Using this free .NET PDF library, you can implement rich capabilities to create PDF files from scratch or process existing PDF documents. Many
+<strong><em>rich features can be supported</em></strong>, such as <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/Protect-PDF-%E2%80%93-Encrypt-PDF-Document-with-C-VB.NET.html">
+security setting</a>, PDF <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/How-to-Extract-Text-from-PDF-Document-with-C-/VB.NET.html">
+text</a>/ <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/How-to-Extract-Image-From-PDF-in-C.html">
+image extracting</a>, <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/Merge-Multiple-PDF-Files-into-One-for-WPF.html">
+PDF merge</a>/<a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/NET-Split-PDF-Simply-Split-PDF-Document-to-Multiple-Files-with-C-VB.NET.html">split</a>, metadata update, section and paragraph optimizing, graph/image drawing and
+ inserting, <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/How-to-Generate-PDF-Table-in-C-/VB.NET.html">
+table creation</a> and processing, <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/Document-Operation/How-to-print-PDF-files-in-C.html">
+PDF printing</a> and importing data etc.</p>
+<p>&nbsp;</p>
+<p><strong>Useful links</strong></p>
+<p>Website: <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/">https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/</a></p>
+<p>Contacts: <a href="https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Misc/maillist.html">https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://code.msdn.microsoft.com/Operate-PDF-files-in-CHow-092b8f9e/https://www.e-iceblue.com/Misc/maillist.html</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

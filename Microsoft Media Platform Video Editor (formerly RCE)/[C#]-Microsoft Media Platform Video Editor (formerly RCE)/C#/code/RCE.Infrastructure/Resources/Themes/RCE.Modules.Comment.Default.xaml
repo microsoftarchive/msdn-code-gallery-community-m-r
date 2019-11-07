@@ -1,0 +1,450 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:Primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls" 
+    mc:Ignorable="d">
+    <LinearGradientBrush x:Key="CommentButtonBrush" StartPoint="0.65454,-0.0316916" EndPoint="0.65454,1.1321">
+        <GradientStop Color="#801C6EB3" Offset="0"/>
+        <GradientStop Color="#8016568B" Offset="0.144144"/>
+        <GradientStop Color="#80113E63" Offset="0.322034"/>
+        <GradientStop Color="#800D3150" Offset="0.322205"/>
+        <GradientStop Color="#8009253D" Offset="0.576577"/>
+        <GradientStop Color="#80000000" Offset="1"/>
+    </LinearGradientBrush>
+ <SolidColorBrush x:Key="CommentOuterBorderBackgroundBrush" Color="#FF2F2F2F"/>
+    <SolidColorBrush x:Key="CommentViewIconPathBrush" Color="#80FFFFFF"/>
+    <LinearGradientBrush x:Key="CommentViewButtonBorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+        <GradientStop Color="#FF718597" Offset="0.375"/>
+        <GradientStop Color="#FF617584" Offset="1"/>
+    </LinearGradientBrush>
+    <ControlTemplate x:Key="CommentButtonTemplate" TargetType="Button">
+        <Grid>
+            <vsm:VisualStateManager.VisualStateGroups>
+                <vsm:VisualStateGroup x:Name="CommonStates">
+                    <vsm:VisualState x:Name="Normal"/>
+                    <vsm:VisualState x:Name="MouseOver"/>
+                    <vsm:VisualState x:Name="Pressed"/>
+                    <vsm:VisualState x:Name="Disabled"/>
+                </vsm:VisualStateGroup>
+                <vsm:VisualStateGroup x:Name="FocusStates">
+                    <vsm:VisualState x:Name="Focused"/>
+                    <vsm:VisualState x:Name="Unfocused"/>
+                </vsm:VisualStateGroup>
+            </vsm:VisualStateManager.VisualStateGroups>
+            <Border Background="{StaticResource CommentButtonBrush}" CornerRadius="5,5,5,5">
+                <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="CommentComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition GeneratedDuration="00:00:00.1"/>
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement"
+             Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement"
+             Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unfocused"/>
+                                <vsm:VisualState x:Name="FocusedDropDown">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="PopupBorder"
+             Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ContentPresenterBorder">
+                            <Grid>
+                                <Rectangle Opacity="0" Width="20" Height="20"/>
+                                <Path x:Name="downArrowBgd" Width="20" Height="20" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Data="F1 M 23.3415,8C 23.3415,3.58203 19.7595,0 15.3415,0L 0,0L 0,26.4597L 15.3415,26.4597C 19.7595,26.4597 23.3415,22.8776 23.3415,18.4597L 23.3415,8 Z ">
+                                    <Path.Fill>
+                                        <LinearGradientBrush StartPoint="-0.885403,1.07701" EndPoint="-0.885403,-1.79529">
+                                            <GradientStop Color="#FF000000" Offset="0"/>
+                                            <GradientStop Color="#FF09253D" Offset="0.306306"/>
+                                            <GradientStop Color="#FF0D3150" Offset="0.999318"/>
+                                            <GradientStop Color="#FF113E63" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path x:Name="downArrowIcon" Width="7" Height="5" Canvas.Left="6" Canvas.Top="8" Stretch="Fill" Fill="#80FFFFFF" Data="F1 M 14.6625,11.298L 10.1448,17.0865L 5.62714,11.298L 14.6625,11.298 Z "/>
+                            </Grid>
+                        </Border>
+                        <Rectangle x:Name="DisabledVisualElement" IsHitTestVisible="false" Opacity="0" Fill="Gray"/>
+                        <Rectangle x:Name="FocusVisualElement" Stroke="Black" IsHitTestVisible="false" Opacity="0"
+         StrokeThickness="1">
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="Black" Opacity="0" />
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Popup x:Name="Popup" Margin="-1">
+                            <Border Height="Auto" HorizontalAlignment="Stretch"
+       x:Name="PopupBorder"
+       BorderBrush="{TemplateBinding BorderBrush}"
+       BorderThickness="0">
+                                <ScrollViewer x:Name="ScrollViewer" BorderThickness="0" Padding="1">
+                                    <ScrollViewer.Background>
+                                        <SolidColorBrush Color="Black" Opacity="0"/>
+                                    </ScrollViewer.Background>
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <SolidColorBrush x:Key="CommentViewDropDownBackground" Color="#D9000000"/>
+    <SolidColorBrush x:Key="CommentViewDropDownStrokeBrush" Color="#80FFFFFF"/>
+    <Style x:Key="CommentComboBoxItemStyle" TargetType="ComboBoxItem">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                                <vsm:VisualState x:Name="Focused"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="MouseOver" />
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="Pressed" />
+                                <vsm:VisualState x:Name="Disabled"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Path x:Name="DropDownPath" Width="149" Height="27" Stroke="#80FFFFFF" Fill="#D9000000"  StrokeThickness="1.33333" Data="F1 M 7.33331,0.666687L 140.912,0.666687C 144.594,0.666687 147.578,3.65146 147.578,7.33334L 147.578,19C 147.578,22.6819 144.594,25.6667 140.912,25.6667L 7.33331,25.6667C 3.65143,25.6667 0.666687,22.6819 0.666687,19L 0.666687,7.33334C 0.666687,3.65146 3.65143,0.666687 7.33331,0.666687 Z "/>
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommentViewSearchButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                                <vsm:VisualState x:Name="Focused"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Path x:Name="SearchPath" Width="14.1719" Height="14.1229" Stretch="Fill" Stroke="#FFFFFFFF" StrokeMiterLimit="2.75" StrokeThickness="2.66667" Data="F1 M 219.772,89.6783C 221.332,88.1315 223.851,88.1403 225.399,89.6998C 226.947,91.2594 226.938,93.7789 225.378,95.3278C 224.047,96.6492 222.018,96.8354 220.489,95.8923L 216.645,99.7086C 216.277,100.074 215.685,100.07 215.321,99.7028C 214.957,99.3356 214.958,98.7438 215.326,98.3785L 219.17,94.5636C 218.239,93.0281 218.44,91.0001 219.772,89.6783 Z "/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DropDownButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                                <vsm:VisualState x:Name="Focused"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="MouseOver" />
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="Pressed" />
+                                <vsm:VisualState x:Name="Disabled"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Path x:Name="DropDownPath" Width="6" Height="5" Stretch="Fill" Stroke="#4DFFFFFF" StrokeMiterLimit="2.75" StrokeThickness="2.66667" Data="F1 M 14.6625,11.298L 10.1448,17.0865L 5.62714,11.298L 14.6625,11.298 Z "/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToggleGlobalCommentTypeButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <ToolTipService.ToolTip>
+                            <StackPanel>
+                                <TextBlock x:Name="TooltipShow" Text="{Binding ShowGlobalComments, Source={StaticResource Localization}}" />
+                                <TextBlock x:Name="TooltipHide" Text="{Binding HideGlobalComments, Source={StaticResource Localization}}" />
+                            </StackPanel>
+                        </ToolTipService.ToolTip>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled">
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CheckStates">
+                                <vsm:VisualState x:Name="Checked">
+                                    <Storyboard x:Name="ToggleButtonOff">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="TooltipShow" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".20"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="TooltipHide" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Focused"/>
+                                <vsm:VisualState x:Name="Unfocused"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+
+                        <TextBlock HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" x:Name="contentPresenter" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Text="{TemplateBinding Content}" Foreground="White"/>
+                        <Rectangle x:Name="DisabledVisualElement" IsHitTestVisible="false" Opacity="0" Fill="#FFFFFFFF" RadiusX="3" RadiusY="3"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToggleTimelineCommentTypeButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <ToolTipService.ToolTip>
+                            <StackPanel>
+                                <TextBlock x:Name="TooltipShow" Text="{Binding ShowTimelineComments, Source={StaticResource Localization}}" />
+                                <TextBlock x:Name="TooltipHide" Text="{Binding HideTimelineComments, Source={StaticResource Localization}}" />
+                            </StackPanel>
+                        </ToolTipService.ToolTip>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled">
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CheckStates">
+                                <vsm:VisualState x:Name="Checked">
+                                    <Storyboard x:Name="ToggleButtonOff">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="TooltipShow" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".20"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="TooltipHide" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Focused"/>
+                                <vsm:VisualState x:Name="Unfocused"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+
+                        <TextBlock HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" x:Name="contentPresenter" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Text="{TemplateBinding Content}" Foreground="White"/>
+                        <Rectangle x:Name="DisabledVisualElement" IsHitTestVisible="false" Opacity="0" Fill="#FFFFFFFF" RadiusX="3" RadiusY="3"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="PlayButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#00FFFFFF"/>
+                        <Path Width="7.10608" Height="7.87869" Stretch="Fill" Fill="#80FFFFFF" Data="F1 M 462.969,348.853L 470.075,352.793L 462.969,356.732L 462.969,348.853 Z "/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CommentButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#00FFFFFF" Canvas.Left="250" Canvas.Top="2" Cursor="Hand"/>
+                        <Path IsHitTestVisible="False" Width="8.72443" Height="11.0983" Stretch="Fill" Fill="#80FFFFFF" Data="F1 M 574.015,347.602L 569.396,347.602C 568.262,347.602 567.343,348.521 567.343,349.655L 567.343,352.876C 567.343,354.01 568.262,354.929 569.396,354.929L 569.853,354.929L 573.024,358.7L 573.356,354.929L 574.015,354.929C 575.149,354.929 576.067,354.01 576.067,352.876L 576.067,349.655C 576.067,348.521 575.149,347.602 574.015,347.602 Z " Margin="1.153,4.5,9.847,4.5"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CommentViewDeleteButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused"/>
+                                <vsm:VisualState x:Name="Focused"/>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="MouseOver"/>
+                                <vsm:VisualState x:Name="Normal"/>
+                                <vsm:VisualState x:Name="Pressed"/>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="DeletePath" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="00:00:00.3000000" Value="#4DFFFFFF" KeySpline="0.7,0,0.3,1"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Rectangle Stretch="Fill" Opacity="0" Fill="#FFFFFFFF" />
+                        <!--<Path Height="10.998" Width="9.142" RenderTransformOrigin="0.5,0.5" Fill="#4DFFFFFF" Stretch="Fill" Data="M6.1879883,5.0024414 L8.5673828,5.0024414 L10.232422,7.4946289 L11.945801,5.0024414 L14.228516,5.0024414 L11.435547,8.8857422 L14.271484,13 L11.886719,13 L10.162598,10.373535 L8.40625,13 L6.1289063,13 L8.9648438,8.9716797 z" d:LayoutOverrides="Width" />-->
+                        <Path x:Name="DeletePath" Height="10.178" Width="10.363" RenderTransformOrigin="0.5,0.5" Fill="#FFFFFFFF" Stretch="Fill" Data="M6.2392578,6.0946217 L9.2675781,6.0946217 L11.386719,9.2664967 L13.567383,6.0946217 L16.472656,6.0946217 L12.917969,11.037004 L16.527344,16.273333 L13.492188,16.273333 L11.297852,12.930559 L9.0625,16.273333 L6.1640625,16.273333 L9.7734375,11.146379 z" />
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

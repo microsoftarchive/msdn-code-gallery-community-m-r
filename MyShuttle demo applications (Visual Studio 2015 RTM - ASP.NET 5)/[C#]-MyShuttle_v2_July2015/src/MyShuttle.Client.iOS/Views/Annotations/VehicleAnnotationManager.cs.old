@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using MonoTouch.MapKit;
+using MyShuttle.Client.Core.DocumentResponse;
+using System.Collections;
+using System.Collections.Specialized;
+using Cirrious.MvvmCross.Binding.Attributes;
+using Cirrious.MvvmCross.Binding;
+using Cirrious.CrossCore.Platform;
+using Cirrious.CrossCore.WeakSubscription;
+
+namespace MyShuttle.Client.iOS.Views.Annotations
+{
+    public class VehicleAnnotationManager
+    {
+        private Dictionary<Vehicle, MKAnnotation> _annotations = new Dictionary<Vehicle,MKAnnotation>();
+        private MKMapView _mapView;
+        private IEnumerable<Vehicle> _itemsSource;
+        private IDisposable _subscription;
+
+        public VehicleAnnotationManager(MKMapView mapView)
+        {
+            if (mapView == null)
+            {
+                throw new ArgumentNullException("mapView");
+            }
+
+            _mapView = mapView;
+        }
+
+        private MKAnnotation CreateAnnotation(Vehicle vehicle)
+        {
+            return new VehicleAnnotation(vehicle);
+        }
+
+        private void AddAnnotationFor(Vehicle vehicle)
+        {
+            var annotation = CreateAnnotation(vehicle);
+            _annotations[vehicle] = annotation;
+            _mapView.AddAnnotation(annotation);
+        }
+
+        private void RemoveAnnotationFor(Vehicle vehicle)
+        {
+            var annotation = _annotations[vehicle];
+            _mapView.RemoveAnnotation(annotation);
+            _annotations.Remove(vehicle);
+        }
+
+        private void AddAnnotations(IList newItems)
+        {
+            foreach (Vehicle vehicle in newItems)
+            {
+                AddAnnotationFor(vehicle);
+            }
+        }
+
+        private void RemoveAnnotations(IList oldItems)
+        {
+            foreach (Vehicle vehicle in oldItems)
+            {
+                RemoveAnnotationFor(vehicle);
+            }
+        }
+
+        private void OnItemsSourceCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    AddAnnotations(e.NewItems);
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    RemoveAnnotations(e.OldItems);
+                    break;
+                case NotifyCollectionChangedAction.Replace:
+                    RemoveAnnotations(e.OldItems);
+                    AddAnnotations(e.NewItems);
+                    break;
+                case NotifyCollectionChangedAction.Move:
+                    // not interested in this
+                    break;
+                case NotifyCollectionChangedAction.Reset:
+                    //ReloadAllAnnotations();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        // MvxSetToNullAfterBinding isn't strictly needed any more 
+        // - but it's nice to have for when binding is torn down
+        [MvxSetToNullAfterBinding]
+        public virtual IEnumerable<Vehicle> ItemsSource
+        {
+            get { return _itemsSource; }
+            set { SetItemsSource(value); }
+        }
+
+        protected virtual void SetItemsSource(IEnumerable<Vehicle> value)
+        {
+            if (_itemsSource == value)
+                return;
+
+            if (_subscription != null)
+            {
+                _subscription.Dispose();
+                _subscription = null;
+            }
+            _itemsSource = value;
+            if (_itemsSource != null && !(_itemsSource is IList))
+                MvxBindingTrace.Trace(MvxTraceLevel.Warning,
+                                      "Binding to IEnumerable rather than IList - this can be inefficient, especially for large lists");
+
+            //ReloadAllAnnotations();
+
+            var newObservable = _itemsSource as INotifyCollectionChanged;
+            if (newObservable != null)
+            {
+                _subscription = newObservable.WeakSubscribe(OnItemsSourceCollectionChanged);
+            }
+        }
+    }
+}

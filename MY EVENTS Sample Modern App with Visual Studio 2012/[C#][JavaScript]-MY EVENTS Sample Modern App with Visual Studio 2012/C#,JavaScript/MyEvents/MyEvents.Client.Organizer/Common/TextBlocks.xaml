@@ -1,0 +1,261 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Common/Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Title text -->
+    <Style x:Key="TitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="42"/>
+        <Setter Property="Margin" Value="0,0,36,36"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+    </Style>
+
+    <!-- SubTitle text -->
+    <Style x:Key="SubTitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+    </Style>
+    
+    <Style x:Key="SettingsSubTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource SubTitleStyle}">
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Margin" Value="10,0,0,0"></Setter>
+    </Style>
+
+    <!-- SubTitle text -->
+    <Style x:Key="ButtonTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+    </Style>
+
+    <!-- Day text -->
+    <Style x:Key="DayStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="53.333"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Normal"></Setter>
+    </Style>
+
+    <!-- Month text -->
+    <Style x:Key="MonthStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+    </Style>
+
+    <!-- Event description -->
+    <Style x:Key="EventTitle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="19"/>
+    </Style>
+    
+    <!-- Event description -->
+    <Style x:Key="EventDescription" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <!-- FacebookLikes text -->
+    <Style x:Key="FacebookLikes" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="29.333"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+    </Style>
+    
+    <Style x:Key="FacebookLikesLittle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>        
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="Foreground" Value="White"/>
+        
+    </Style>
+    
+
+    <!--Event details calendar hours header-->
+    <Style x:Key="CalendarHoursHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+    </Style>
+
+    <!--Event details calendar hours header-->
+    <Style x:Key="CalendarRoomsHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22"></Setter>
+        <Setter Property="Margin" Value="20,0,10,0"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+    </Style>
+
+    <!-- twitter username text -->
+    <Style x:Key="TwitterUsernameStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+    </Style>
+
+    <!-- twitter message text -->
+    <Style x:Key="TwitterMessageStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+    </Style>
+
+    <!-- Desktop styles-->
+    <!--Base text block style-->
+    <Style x:Key="TextBlockBase" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+
+    <!--Normal application text style-->
+    <Style x:Key="NormalText" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+    <!--Normal application text style-->
+    <Style x:Key="NormalTextGrey" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+    <!--Normal application text style-->
+    <Style x:Key="LittleText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
+    <!-- Month text -->
+    <Style x:Key="MonthDesktopStyle" TargetType="TextBlock" >
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+
+    
+    <!-- event details text -->
+    <Style x:Key="EventDetailsDesktopStyle" TargetType="TextBlock" >
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+    
+    <!--Style for the textblocks in registered users view items-->
+    <Style x:Key="RegisteredUsersStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="TextTrimming" Value="WordEllipsis"/>
+    </Style>
+    
+    <!-- event details subtitle text -->
+    <Style x:Key="EventDetailsSubTitle" TargetType="TextBlock" >
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+
+    <!-- Event title -->
+    <Style x:Key="EventTitleDesktopStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="19"/>
+    </Style>
+    
+    <!-- Event description -->
+    <Style x:Key="EventDescriptionDesktopStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <!-- FacebookLikes text -->
+    <Style x:Key="FacebookLikesDesktopStyle" TargetType="TextBlock">
+
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+    </Style>
+    
+    <!-- Main window header -->
+    <Style x:Key="MainHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"></Setter>
+    </Style>
+    
+    <Style x:Key="CellTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource NormalTextForegroundBrush}"></Setter>
+    </Style>
+    
+    <!-- Confirmation dialog title style -->
+    <Style x:Key="DialogTitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="42"></Setter>
+        <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource SessionInfoBrush}"></Setter>
+    </Style>
+    
+    <!-- Confirmation dialog message style -->
+    <Style x:Key="DialogMessageStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource SessionInfoBrush}"></Setter>
+    </Style>
+    
+    <!--Event details calendar hours header-->
+    <Style x:Key="DesktopCalendarHoursHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Normal"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource SelectedTextForegroundBrush}"/>
+    </Style>
+
+    <!--Event details calendar hours header-->
+    <Style x:Key="DesktopCalendarRoomsHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22"></Setter>
+        <Setter Property="Margin" Value="20,0,10,0"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource SelectedTextForegroundBrush}"/>
+    </Style>
+
+</ResourceDictionary>

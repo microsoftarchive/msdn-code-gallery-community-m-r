@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Commons="clr-namespace:MVVMLightWPFSampleApp.Commons" x:Class="MVVMLightWPFSampleApp.Views.EditWindow"
+        Title="EditWindow" Height="151" Width="346" ResizeMode="NoResize"
+        DataContext="{Binding EditWindowViewModel, Mode=OneWay, Source={StaticResource ViewModelLocator}}">
+	<i:Interaction.Triggers>
+		<Commons:MessageBaseTrigger Target="CloseWindow">
+			<Commons:WindowCloseAction/>
+		</Commons:MessageBaseTrigger>
+	</i:Interaction.Triggers>
+	<StackPanel>
+		<Label Content="名前"/>
+		<TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Name.Value, UpdateSourceTrigger=PropertyChanged}"/>
+		<Label Content="年齢"/>
+		<TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Age.Value, UpdateSourceTrigger=PropertyChanged}"/>
+		<Button Content="更新" Command="{Binding CommitCommand, Mode=OneWay}" />
+	</StackPanel>
+</Window>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Azure WebJobs SDK: Blobs</title>
+    <style>body { font-family: 'Lucida Sans Unicode'} .subhead { font-style:italic; color: gray }</style>
+</head>
+<body>
+    <h1>Azure WebJobs SDK: Blobs</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+    <p>
+        This will show you how to perform common scenarios using the Microsoft Azure Blob storage service using
+        the Microsoft Azure WebJobs SDK. The scenarios covered include triggering a function when a new blob is detected
+        or updated in a blob container and bind the contents of the blob to BCL types so you can read/write the contents.   
+    </p>
+    <p>
+        In this sample, the <code>Program</code> class starts the <code>JobHost</code>  and creates the demo data. 
+        The <code>Functions</code> class
+        contains methods that will be invoked when blobs are added to the storage account, based on the attributes in 
+        the method headers.
+    </p>
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>. 
+    </p>
+    
+   
+    <h2>Running this sample</h2>
+    <ol>
+        <li>
+            Create a Storage Account through the Portal or Visual Studio 
+        </li>
+        <li>
+            Open app.config and paste your Storage connection string into the <code>AzureWebJobsDashboard</code> and
+            <code>AzureWebJobsStorage</code> connection string settings.
+        </li>
+        <li>
+            Run the project
+        </li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkID=320976">Get Started with the Azure WebJobs SDK</a></li>
+    </ul>
+</body>
+</html>

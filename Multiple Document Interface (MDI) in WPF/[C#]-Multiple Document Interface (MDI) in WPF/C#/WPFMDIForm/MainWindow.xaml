@@ -1,0 +1,27 @@
+﻿<Window x:Class="WPFMDIForm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        xmlns:mdi="clr-namespace:WPF.MDI;assembly=WPF.MDI"
+         Width="1024"
+        Height="700"
+        >
+    <Grid>
+        <DockPanel>
+            <Menu Name="MainMenu" VerticalAlignment="Top" DockPanel.Dock="Top" Height="30" FontSize="15" >
+                <MenuItem Name="menuHome" Header="Home">
+                </MenuItem>
+                <MenuItem Name="menuMaster" Header="Master">
+                    <MenuItem Name="userRegistration" Header="User Registration" Click="userRegistration_Click"  />
+                    <MenuItem Name="compRegistration" Header="Company Registration" Click="compRegistration_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Name="menuExit" Header="Exit">
+                    <MenuItem Name="Exit" Header="Exit" Click="menuExit_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <DockPanel>
+            <mdi:MdiContainer Theme="Aero" DockPanel.Dock="Top" Margin="0 20 0 0" Name="MainMdiContainer" />
+        </DockPanel>
+    </Grid>
+</Window>

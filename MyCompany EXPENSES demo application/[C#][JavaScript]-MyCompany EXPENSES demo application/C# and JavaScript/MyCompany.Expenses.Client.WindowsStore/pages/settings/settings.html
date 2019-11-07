@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Configuration</title>
+    <!-- Page references -->
+    <script src="/pages/settings/settings.js"></script>
+    <link href="/pages/settings/settings.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-win-control="WinJS.UI.SettingsFlyout"
+        aria-label="App Settings Flyout"
+        data-win-options="{settingsCommandId:'Settings',width:'wide'}">
+        <div class="win-header">
+            <button onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton" aria-label="Back">
+            </button>
+            <div class="win-label">Configuration</div>
+        </div>
+        <div class="win-content">
+            <div>
+                <h3>Server url</h3>
+                <p>
+                    <input id="apiUrl" type="text" />
+                </p>
+            </div>
+            <div>
+                <p>
+                    <input id="testMode" type="checkbox" /><label for="testMode">Test mode enabled</label>
+                </p>
+            </div>
+            <a href="#" id="saveLink" class="link">Save</a>
+        </div>
+    </div>
+</body>
+</html>

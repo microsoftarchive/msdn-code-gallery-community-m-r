@@ -1,0 +1,346 @@
+﻿@import "Variables.less";
+
+#travel-form {
+    overflow: hidden;
+}
+
+.navigation.container-fluid {
+    display: none !important;
+}
+
+.form-header {
+    height: 70px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+    .employee-data {
+        float: right;
+        background-color: @module-primary-color;
+        height: 70px;
+        width: 283px;
+
+        .employee-data-text {
+            color: #FFFFFF;
+            display: inline-block;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-left: 5px;
+            padding-right: 5px;
+            width: 203px;
+            padding-top: 10px;
+
+            div {
+                width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+            }
+
+            .row-text {
+                font-size: 16px;
+                line-height: 25px;
+            }
+
+                .row-text.big {
+                    font-size: 24px;
+                    line-height: 20px;
+                    font-weight: 300;
+                }
+        }
+    }
+
+
+
+    .back-button {
+        width: 36px;
+        height: 36px;
+        margin-right: 15px;
+        background-color: @module-primary-color;
+        background-image: url("images/back.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        float: left;
+        cursor: pointer;
+    }
+}
+
+.form-body {
+    background-color: @section-background-color;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+}
+
+.input-block-level {
+    min-height: 0px;
+}
+
+.form-body label {
+    font-size: 14pt;
+    color: @second-font-color;
+    display: block;
+}
+
+.form-body textarea {
+    resize: none;
+    width: 100%;
+    padding: 5px;
+    height: 111px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.form-body input[type="text"] {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.form-body ul {
+    list-style: none outside none;
+}
+
+.form-body li {
+    margin-top: 15px;
+}
+
+.form-body .row-height {
+    height: 100px;
+}
+
+.form-body .radio-option {
+    height: 30px;
+}
+
+.form-body .radio-list input[type="radio"] {
+    margin-top: 0px;
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+    padding: 0px;
+}
+
+.form-body .radio-list label {
+    float: left;
+    line-height: 28px;
+    margin: 0px;
+}
+
+.form-body .buttons {
+    padding-top: 40px;
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
+#travel-form .buttons button, #travel-detail .buttons button {
+    display: inline-block;
+    float: none;
+    width: 15%;
+}
+
+.form-body button {
+    margin-left: 5px;
+}
+
+.form-body .row-text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.form-body .button-accept {
+    margin-right: 0px;
+}
+
+
+.form-body-left {
+    padding-left: 25px;
+
+    label {
+        margin-top: 11px;
+        margin-bottom: 5px;
+    }
+
+    ul {
+        li:first-child {
+            label {
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.form-body-right {
+    padding-right: 35px;
+
+    textarea {
+        width: 460px;
+        height: 100px;
+    }
+
+    .row-text {
+        margin-left: 0px;
+    }
+}
+
+.validationMessage {
+    position: absolute;
+    display: block;
+    margin-top: 2px;
+    text-align: right;
+    right: 0px;
+    color: red;
+}
+
+.validation-block {
+    display: block;
+    position: relative;
+}
+
+.calendar-image {
+    background-color: @module-primary-color;
+    height: 35px;
+    /*margin-left: 15px !important;*/
+    background-image: url("Images/calendar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.row-text-multiline {
+    height: 80px;
+}
+
+.form-body .row-fluid {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+.row-fluid [class*="span"].row-text-multiline {
+    margin-left: 0px;
+    height: 95px;
+}
+
+.add-file {
+    background-color: transparent;
+    width: 455px;
+    height: 36px;
+    margin-top: 10px;
+
+    .text {
+        background-color: #FFFFFF;
+        width: 203px;
+        height: 36px;
+        float: left;
+        line-height: 36px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .button {
+        background-color: @module-primary-color;
+        width: 36px;
+        height: 36px;
+        background-image: url("images/attach.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        float: right;
+        border-style: none;
+
+        &:disabled {
+            opacity: 0.7;
+        }
+    }
+}
+
+.attachments-zone {
+    background-color: #FFFFFF;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    width: 455px;
+
+    .explore {
+        width: 0px;
+        overflow: hidden;
+    }
+
+    label {
+        font-size: 14pt;
+        color: @second-font-color;
+    }
+
+    .input-modal {
+        height: 25px;
+        padding: 5px;
+        width: 400px;
+    }
+
+    .attachments-container {
+        .attachment {
+            background-color: #FFFFFF;
+            border-left-color: #FFFFFF;
+            border-right-color: #FFFFFF;
+            border-bottom-color: #CCCCCC;
+            border-style: none solid solid;
+            border-width: 0 5px 1px;
+            height: 50px;
+            padding-left: 10px;
+            width: 435px;
+
+            &:last-child {
+                border-color: #FFFFFF;
+            }
+
+            .icon {
+                width: 50px;
+                height: 50px;
+                float: right;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+
+                &.download {
+                    background-image: url("images/file-download.png");
+                }
+
+                &.delete {
+                    background-image: url("images/file-delete.png");
+                }
+            }
+
+            .text {
+                overflow: hidden;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 385px;
+                float: left;
+                line-height: 50px;
+
+                .link-file {
+                    color: @list-info-font-color;
+                }
+
+                &.two-icons {
+                    width: 335px;
+                }
+            }
+        }
+    }
+}

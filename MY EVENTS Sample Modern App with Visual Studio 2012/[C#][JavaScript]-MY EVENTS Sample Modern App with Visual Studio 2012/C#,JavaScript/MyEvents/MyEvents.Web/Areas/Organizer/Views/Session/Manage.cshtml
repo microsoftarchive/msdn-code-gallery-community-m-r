@@ -1,0 +1,52 @@
+@model MyEvents.Web.Areas.Organizer.Models.ManageSessionViewModel
+@{
+    ViewBag.Title = "my events - sessions";
+}
+@section Actions
+{
+    <section class="actions right menu">
+        @Html.ActionLink("create new session", "Create", "Session", new { eventDefinitionId = Model.EventDefinitonId }, new { @class = "button button-highlighted" })
+        @Html.ActionLink("manage schedule", "Index", "Schedule", new { eventDefinitionId = Model.EventDefinitonId }, new { @class = "button" })
+    </section>
+}
+
+<section id="all-sessions">
+    <span class="section-title">all sessions</span>
+    <section class="list">
+        <section class="headers">
+            <span class="field extra-big uppercase">Session</span>
+            <span class="field small uppercase center">Edit</span>
+            <span class="field uppercase center">Materials</span>
+            <span class="field small uppercase center">Delete</span>
+        </section>
+
+        @foreach (var session in Model.Sessions)
+        {
+            <article class="detail">
+                <span class="field extra-big" title="@session.Title">@session.Title</span>
+                <span class="field small center">
+                    <a href="@Url.Action("Edit", "Session", new { sessionId = session.SessionId })" title="edit session">
+                        <img src="@Url.Content("~/Styles/Images/pencil.png")" />
+                    </a>
+                </span>
+                <span class="field center">
+                    <a href="@Url.Action("Materials", "Session", new { sessionId = session.SessionId })" title="manage materials">
+                        <img src="@Url.Content("~/Styles/Images/materials.png")" />
+                    </a>
+                </span>
+                <form class="field small center" action="@Url.Action("Delete", "Session", new { eventDefinitionId = session.EventDefinitionId, sessionId = session.SessionId })" method="post">
+                <button type="button" value="delete" class="image-button" title="delete event" data-confirm="true" data-confirm-text="are you sure you want to delete this session?">
+                    <img src="@Url.Content("~/Styles/Images/delete.png")" />
+                </button>
+                </form>
+            </article>
+        }
+        @if (!Model.Sessions.Any())
+        {
+            <article class="detail no-data">
+                there are no available sessions at this moment.
+                <a href="@Url.Action("Create", "Session", new { eventDefinitionId = Model.EventDefinitonId })"> Do you want to create one?</a>
+            </article>
+        }
+    </section>
+</section>

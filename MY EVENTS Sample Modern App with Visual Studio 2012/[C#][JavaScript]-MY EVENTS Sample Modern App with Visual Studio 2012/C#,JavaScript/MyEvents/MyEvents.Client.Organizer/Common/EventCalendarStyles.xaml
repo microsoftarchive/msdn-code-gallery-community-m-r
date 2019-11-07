@@ -1,0 +1,421 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:MyEvents.Client.Organizer.Converters"
+    xmlns:WinRtBehaviors="using:WinRtBehaviors"
+    xmlns:Behaviors="using:MyEvents.Client.Organizer.ViewModel.Base">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Common/TextBlocks.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <DataTemplate x:Key="CalendarHeaderTemplate">
+        <Grid Width="240" Height="40">
+            <TextBlock Text="{Binding}" Style="{StaticResource CalendarHoursHeader}" Margin="5,0,0,0"></TextBlock>          
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CalendarRoomsTemplate">
+        <Grid Height="180">
+            <Grid.Resources>
+                <converters:EventsByRoomConverter x:Key="EventsByRoom"></converters:EventsByRoomConverter>       
+                <converters:SelectedItemHighlightedConverter x:Key="SelectedItemConverter"/>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="room" Grid.Column="0" Text="{Binding}" Style="{StaticResource CalendarRoomsHeader}"></TextBlock>
+            <ItemsControl Grid.Column="1" ItemsSource="{Binding Path=Text, ElementName=room, Converter={StaticResource EventsByRoom}}" HorizontalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,5"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Rectangle Fill="{StaticResource NoSessionBackground}" Width="230" Height="170" Margin="5,0,5,0">
+                        </Rectangle>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl Grid.Column="1" ItemsSource="{Binding Path=Text, ElementName=room, Converter={StaticResource EventsByRoom}}" HorizontalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Margin="0,5,0,5"></Canvas>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>                        
+                        <Grid Name="grdItem" Width="{Binding Duration, Converter={StaticResource DurationToWidth}}" Height="170" >
+                            <WinRtBehaviors:Interaction.Behaviors>
+                                <Behaviors:EventToCommandBehavior Event="Tapped"
+                                    Command="{Binding EventDetail.NavigateToSessionDetailsCommand, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}"/>                                
+                            </WinRtBehaviors:Interaction.Behaviors> 
+                            <Grid.Resources>
+                                    <converters:SelectedItemHighlightedConverter x:Key="SelectedItemBackground" CurrentSelectedItem="{Binding}"/>
+                                    <converters:SelectedItemTextColorConverter x:Key="SelectedItemTextColor" CurrentSelectedItem="{Binding}" />
+                            </Grid.Resources>
+                            <Grid Name="ContentGrid"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                  Background="{Binding EventDetail.SelectedSession, Source={StaticResource Locator}, Converter={StaticResource SelectedItemBackground}}" 
+                                  Margin="5,0,5,0">                                                             
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <TextBlock Grid.Row="0" Margin="10" TextWrapping="Wrap" TextTrimming="WordEllipsis" FontSize="14" Foreground="{Binding EventDetail.SelectedSession, Source={StaticResource Locator}, Converter={StaticResource SelectedItemTextColor}}" >                                    
+                                    <Run FontWeight="Bold" Text="{Binding Title}"></Run>
+                                    <Run FontWeight="Bold" Text="."></Run>                                    
+                                    <Run Text="{Binding Description}"></Run>                                       
+                                </TextBlock>
+                                
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".6*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".4*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <ProgressBar Style="{StaticResource BarRatingStyle}" Grid.Column="0" Height="30" HorizontalAlignment="Left" Margin="5,0,0,0"
+                                                                                         Value="{Binding Score}"></ProgressBar>
+                                    <Border Background="{Binding EventDetail.SelectedSession, Source={StaticResource Locator}, Converter={StaticResource SelectedItemTextColor}}" VerticalAlignment="Bottom" Height="40" Grid.Column="1" MinWidth="70" Width="Auto"
+                                               HorizontalAlignment="Right" Margin="0,0,10,0">
+                                        <Grid >
+                                            <TextBlock x:Name="FacebookLikes" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding AttendeesCount}" VerticalAlignment="Bottom" Grid.Row="2" Margin="5,5,5,0" Style="{StaticResource FacebookLikes}"
+                                                       Foreground="{Binding EventDetail.SelectedSession, Source={StaticResource Locator}, Converter={StaticResource SelectedItemBackground}}"  Opacity="1"/>
+                                            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="16" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+                                                <Grid>
+                                                    <Grid Name="backgroundGrid" Width="24" Height="24" Visibility="Collapsed" />
+                                                    <Path Data="M30.025426,8.4380001C31.236374,8.4380001 36.449965,8.4380001 37.624574,8.4380001 40.059387,8.4380001 42.049,10.410531 42.049,12.844083 42.049,14.083683 42.049,22.677487 42.049,23.508289 42.049,24.340189 41.395396,25.013489 40.56459,25.013489 39.733886,25.013489 39.059381,24.340189 39.059381,23.508289 39.059381,22.539489 39.059381,13.893583 39.059381,13.893584L38.283377,13.893584C38.283377,13.893583 38.283377,38.997799 38.283377,40.648998 38.283377,41.7635 37.369171,42.667 36.257364,42.667 35.142658,42.667 34.239052,41.7635 34.239052,40.648998 34.239052,38.997799 34.239052,25.112389 34.239052,25.112389L33.413578,25.112389C33.413578,25.112389 33.413578,38.997799 33.413578,40.648998 33.413578,41.7635 32.509852,42.667 31.395306,42.667 30.280628,42.667 29.369163,41.7635 29.369163,40.648998 29.369163,38.997799 29.369163,13.893583 29.369163,13.893584L28.593148,13.893584C28.593148,13.893583 28.593148,22.539489 28.593148,23.508289 28.593148,24.340189 27.918754,25.013489 27.087949,25.013489 26.254607,25.013489 25.601,24.340189 25.601,23.508289 25.601,22.677487 25.601,14.083683 25.601,12.844083 25.601,10.410531 27.595812,8.4380001 30.025426,8.4380001z M7.1083164,8.0040056C7.132122,8.0039455,7.1446743,8.0044135,7.1446743,8.0044138L12.482997,8.0044138C12.482997,8.0044135,15.696247,7.8846037,16.797796,11.723137L19.558069,21.328521C19.821156,22.225719 19.323679,22.913218 18.540016,23.137218 17.756152,23.363718 16.954089,22.967918 16.748399,22.24912L14.066223,12.885835 13.334557,12.884635 17.985241,29.098108 13.607844,29.098108 13.605345,29.100609 13.605345,41.001686C13.605345,41.906685 12.82668,42.663185 11.881425,42.666985 11.045563,42.671085 10.165304,41.824585 10.165304,40.918388L10.165304,29.098108 9.4648361,29.098108 9.4648361,40.918388C9.4648361,41.824585 8.582077,42.671085 7.7462368,42.666985 6.7982903,42.663185 6.0223255,41.906685 6.0223255,41.001686L6.0223255,29.100609 6.0196667,29.098108 1.63974,29.098108 6.2931232,12.884635 5.5614185,12.885835 2.879282,22.24912C2.6760921,22.967918 1.8714485,23.363718 1.0902958,23.137218 0.3038063,22.913218 -0.19351578,22.225719 0.072065353,21.328521L2.8298149,11.723137C3.8623943,8.124512,6.7512436,8.0048995,7.1083164,8.0040056z M33.824955,0.6789999C35.809504,0.6789999 37.419,2.2207098 37.419,4.119164 37.419,6.0175695 35.809504,7.5579997 33.824955,7.5579998 31.840566,7.5579997 30.231,6.0175695 30.230999,4.119164 30.231,2.2207098 31.840566,0.6789999 33.824955,0.6789999z M9.8134499,0C11.797712,0 13.407001,1.5404301 13.407001,3.4388247 13.407001,5.3385694 11.797712,6.8789997 9.8134499,6.8790001 7.8293571,6.8789997 6.2199993,5.3385694 6.2199993,3.4388247 6.2199993,1.5404301 7.8293571,0 9.8134499,0z" 
+                                                          Stretch="Uniform" Fill="{Binding EventDetail.SelectedSession, Source={StaticResource Locator}, Converter={StaticResource SelectedItemBackground}}" Width="24" Height="24" Margin="0,0,0,0">
+                                                    </Path>
+                                                </Grid>
+                                            </Viewbox>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                            <Grid.RenderTransform>
+                                <TranslateTransform X="{Binding StartTime, Converter={StaticResource TimeToPositionOffset}, ConverterParameter={Binding EventDetail.Event.StartTime, Source={StaticResource Locator}}}"></TranslateTransform>
+                            </Grid.RenderTransform>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </DataTemplate>
+    
+    
+    <DataTemplate x:Key="VerticalCalendarRoomsTemplate">
+        <Grid Width="300">
+            <Grid.Resources>
+                <converters:EventsByRoomConverter x:Key="EventsByRoom"></converters:EventsByRoomConverter>
+                <converters:DurationToHeightConverter x:Key="DurationToHeight"></converters:DurationToHeightConverter>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="room" Grid.Row="0" Margin="0,10,0,10" Text="{Binding}" Style="{StaticResource CalendarRoomsHeader}" Visibility="Visible"
+                       HorizontalAlignment="Left"></TextBlock>
+            <Border Grid.Row="1"  Grid.Column="0"></Border>
+            <ItemsControl Grid.Row="1" Margin="0,0,0,0" ItemsSource="{Binding Path=Text, ElementName=room, Converter={StaticResource EventsByRoom}, ConverterParameter=NoNulls}" HorizontalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Margin="0,5,0,5"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalAlignment="Top" Height="Auto">
+                            <WinRtBehaviors:Interaction.Behaviors>
+                                <Behaviors:TapEventToCommandBehavior Event="Tapped"
+                                    Command="{Binding EventDetail.NavigateToSessionDetailsCommand, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}"/>
+                            </WinRtBehaviors:Interaction.Behaviors>
+                            <Grid Height="Auto" Width="280" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="{StaticResource SessionInfoBrush}" Margin="0,5,20,5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <TextBlock Grid.Row="0" Margin="10,10,10,5" TextWrapping="Wrap" TextTrimming="WordEllipsis" Style="{StaticResource EventDescription}" Foreground="{StaticResource NormalTextForegroundBrush}">
+                                        <Run FontWeight="Bold" Text="{Binding Title}"></Run>
+                                        <Run FontWeight="Bold" Text="."></Run>
+                                        <Run Text="{Binding Description}"></Run>
+                                </TextBlock>
+                                
+                                <TextBlock Grid.Row="1" Margin="10,5,10,5" Style="{StaticResource EventDescription}">
+                                    <Run x:Uid="StartTime" FontWeight="Bold" Text="Start time: "></Run>
+                                    <Run Text="{Binding StartTime, Converter={StaticResource FormatString}, ConverterParameter='{}{Time}'}"></Run>
+                                </TextBlock>
+                                
+                                <TextBlock Grid.Row="2" Margin="10,5,10,10" Style="{StaticResource EventDescription}">
+                                    <Run x:Uid="DurationText" FontWeight="Bold" Text="Duration: "></Run>
+                                    <Run Text="{Binding Duration}"></Run>
+                                    <Run x:Uid="MinutesText" Text=" Minutes"></Run>
+                                </TextBlock>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </DataTemplate>
+    
+<Style x:Key="BarRatingStyle" TargetType="ProgressBar">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ProgressBarBorderThemeBrush}"/>
+        <Setter Property="BorderThickness" Value="{StaticResource ProgressBarBorderThemeThickness}"/>
+        <Setter Property="Minimum" Value="0"></Setter>
+        <Setter Property="Maximum" Value="5"/>
+        <Setter Property="MinHeight" Value="{StaticResource ProgressBarThemeMinHeight}"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Updating" To="Determinate">
+                                        <Storyboard>
+                                            <RepositionThemeAnimation FromHorizontalOffset="{Binding TemplateSettings.IndicatorLengthDelta, RelativeSource={RelativeSource Mode=TemplatedParent}}" TargetName="ProgressBarIndicator"/>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition From="Paused" To="Determinate">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.25" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ProgressBarIndicator"/>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition From="Indeterminate">
+                                        <Storyboard>
+                                            <FadeInThemeAnimation TargetName="EllipseGrid"/>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Determinate"/>
+                                <VisualState x:Name="Updating"/>
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation Duration="0:0:3.917" From="{Binding TemplateSettings.ContainerAnimationStartPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}" To="{Binding TemplateSettings.ContainerAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="EllipseGrid"/>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E2">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.167" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.167" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.167" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E3">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.333" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.333" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.333" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E4">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.5" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.5" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E5">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.667" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.667" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                            <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.667" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B2">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.167" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B3">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.833" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.333" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B4">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B5">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.167" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.667" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="100"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EllipseGrid"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E1">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E2">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E3">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E4">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E5">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <FadeOutThemeAnimation TargetName="DeterminateRoot"/>
+                                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DeterminateRoot"/>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E2">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E3">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E4">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E5">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="1"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Error">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ProgressBarIndicator">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Paused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.25" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ProgressBarIndicator"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="EllipseGrid" Opacity="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RenderTransform>
+                                <TranslateTransform/>
+                            </Grid.RenderTransform>
+                            <Border x:Name="B1" Grid.Column="8" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TranslateTransform/>
+                                </Border.RenderTransform>
+                                <Ellipse x:Name="E1" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Border>
+                            <Rectangle Grid.Column="7" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Border x:Name="B2" Grid.Column="6" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TranslateTransform/>
+                                </Border.RenderTransform>
+                                <Ellipse x:Name="E2" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Border>
+                            <Rectangle Grid.Column="5" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Border x:Name="B3" Grid.Column="4" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TranslateTransform/>
+                                </Border.RenderTransform>
+                                <Ellipse x:Name="E3" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Border>
+                            <Rectangle Grid.Column="3" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Border x:Name="B4" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TranslateTransform/>
+                                </Border.RenderTransform>
+                                <Ellipse x:Name="E4" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Border>
+                            <Rectangle Grid.Column="1" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Border x:Name="B5" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TranslateTransform/>
+                                </Border.RenderTransform>
+                                <Ellipse x:Name="E5" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Border>
+                        </Grid>
+                        <Border x:Name="DeterminateRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <Viewbox>
+                                <Grid>
+                                    <TextBlock Text="«««««" Opacity=".3" FontFamily="Wingdings" FontSize="56" Foreground="White" HorizontalAlignment="Left">
+                                    </TextBlock>
+                                    <TextBlock Text="«««««" FontFamily="Wingdings" FontSize="56" Name="ProgressBarIndicator" HorizontalAlignment="Left"></TextBlock>
+                                </Grid>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

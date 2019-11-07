@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="ListsManagement.Controls.TagsChooserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="#FF1F1F1F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="330*" />
+        </Grid.RowDefinitions>
+        <Grid Margin="30,0,0,0" Grid.Row="0">
+            <TextBlock x:Name="textLbl" Text="Tags Selected" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{StaticResource PhoneTextBodyTextStyle}" Grid.Row="0"/>
+            <Button x:Name="addNewBtn" Content="+" Width="60" Height="60" FontSize="22"  BorderThickness="1" HorizontalAlignment="Right" Click="addNewBtn_Click"/>
+        </Grid>
+        <ListBox x:Name="SelectedTagsList" ItemsSource="SelectedTags" Style="{StaticResource PhoneListBox}" Margin="0,6,0,10" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="DataTemplateStackPanel" Orientation="Horizontal">
+                        <Button x:Name="deselect" BorderThickness="1" Height="63" Width="63" VerticalAlignment="Top" Margin="10,0,20,0" 
+                               Tag="{Binding}" Content="X" Click="deselect_Click"/>
+                        <TextBlock Text="{Binding Name}" Margin="-2,-13,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="UnAddedTagsList" ItemsSource="NonSelectedTags" Style="{StaticResource PhoneListBox}" Margin="0,6,0,10" Grid.Row="1" Visibility="Collapsed">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="DataTemplateStackPanel" Orientation="Horizontal">
+                        <Button x:Name="select" BorderThickness="1" Height="63" Width="63" VerticalAlignment="Top" Margin="10,0,20,0" 
+                               Tag="{Binding}" Content="+" Click="select_Click"/>
+                        <TextBlock Text="{Binding Name}" Margin="-2,-13,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

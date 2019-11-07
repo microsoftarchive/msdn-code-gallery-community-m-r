@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTEMP_LEDGER" targetNamespace="http://tempuri.org/dsTEMP_LEDGER.xsd" xmlns:mstns="http://tempuri.org/dsTEMP_LEDGER.xsd" xmlns="http://tempuri.org/dsTEMP_LEDGER.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTEMP_LEDGER" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTEMP_LEDGER" msprop:Generator_DataSetName="dsTEMP_LEDGER">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SV_CLIENT_LEDGER" msprop:Generator_UserTableName="SV_CLIENT_LEDGER" msprop:Generator_RowDeletedName="SV_CLIENT_LEDGERRowDeleted" msprop:Generator_RowChangedName="SV_CLIENT_LEDGERRowChanged" msprop:Generator_RowClassName="SV_CLIENT_LEDGERRow" msprop:Generator_RowChangingName="SV_CLIENT_LEDGERRowChanging" msprop:Generator_RowEvArgName="SV_CLIENT_LEDGERRowChangeEvent" msprop:Generator_RowEvHandlerName="SV_CLIENT_LEDGERRowChangeEventHandler" msprop:Generator_TableClassName="SV_CLIENT_LEDGERDataTable" msprop:Generator_TableVarName="tableSV_CLIENT_LEDGER" msprop:Generator_RowDeletingName="SV_CLIENT_LEDGERRowDeleting" msprop:Generator_TablePropName="SV_CLIENT_LEDGER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GROUP_ID" msprop:Generator_UserColumnName="GROUP_ID" msprop:Generator_ColumnVarNameInTable="columnGROUP_ID" msprop:Generator_ColumnPropNameInRow="GROUP_ID" msprop:Generator_ColumnPropNameInTable="GROUP_IDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TR_TYPE" msprop:Generator_UserColumnName="TR_TYPE" msprop:Generator_ColumnVarNameInTable="columnTR_TYPE" msprop:Generator_ColumnPropNameInRow="TR_TYPE" msprop:Generator_ColumnPropNameInTable="TR_TYPEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sDESC" msprop:Generator_UserColumnName="sDESC" msprop:Generator_ColumnVarNameInTable="columnsDESC" msprop:Generator_ColumnPropNameInRow="sDESC" msprop:Generator_ColumnPropNameInTable="sDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLIENT_ID" msprop:Generator_UserColumnName="CLIENT_ID" msprop:Generator_ColumnVarNameInTable="columnCLIENT_ID" msprop:Generator_ColumnPropNameInRow="CLIENT_ID" msprop:Generator_ColumnPropNameInTable="CLIENT_IDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dDATE" msprop:Generator_UserColumnName="dDATE" msprop:Generator_ColumnVarNameInTable="columndDATE" msprop:Generator_ColumnPropNameInRow="dDATE" msprop:Generator_ColumnPropNameInTable="dDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TR_ID" msprop:Generator_UserColumnName="TR_ID" msprop:Generator_ColumnVarNameInTable="columnTR_ID" msprop:Generator_ColumnPropNameInRow="TR_ID" msprop:Generator_ColumnPropNameInTable="TR_IDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dr" msprop:Generator_UserColumnName="Dr" msprop:Generator_ColumnVarNameInTable="columnDr" msprop:Generator_ColumnPropNameInRow="Dr" msprop:Generator_ColumnPropNameInTable="DrColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cr" msprop:Generator_UserColumnName="Cr" msprop:Generator_ColumnVarNameInTable="columnCr" msprop:Generator_ColumnPropNameInRow="Cr" msprop:Generator_ColumnPropNameInTable="CrColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BAL" msprop:Generator_UserColumnName="BAL" msprop:Generator_ColumnPropNameInRow="BAL" msprop:Generator_ColumnVarNameInTable="columnBAL" msprop:Generator_ColumnPropNameInTable="BALColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="A9829BD7-590D-4F28-9658-ED8CDD1BF4E0" Publisher="CN=fredy_000" Version="1.0.0.0" />
+  <Properties>
+    <PublisherDisplayName>my events</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <DisplayName>my events organizer</DisplayName>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.0</OSMinVersion>
+    <OSMaxVersionTested>6.2.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MyEvents.Client.Organizer.App">
+      <VisualElements DisplayName="organizers" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Organizers application for my events. Allows you to see all your events and sessions, see attenders and tweet with the event account." ForegroundText="light" BackgroundColor="#406793">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#406793" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

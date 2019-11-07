@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style type="text/css">
+        html
+        {
+            height: 100%;
+        }
+        body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .divHeader
+        {
+            background-color: #003366;
+            vertical-align: middle;
+            height: 50px;
+            width: 100%;
+            color: White;
+            font-family: Microsoft Sans Serif;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .divBody
+        {
+            vertical-align: middle;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .fileInput
+        {
+            height: 22px;
+            width: 100%;
+            color: White;
+            background-color: Transparent;
+            border: solid 1px black;
+        }
+        
+        .message
+        {
+            font-size: 12px;
+            font-family: Arial;
+            color: White;
+        }
+        
+        #controlHost
+        {
+            border: 3px solid #293955;
+            padding: 7px 7px 7px 7px;
+            width: 400px;
+            height: 130px;
+        }
+        
+        #outerPanel
+        {
+            background: #293955;
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+        }
+        
+        input.button
+        {
+            color: #050;
+            height: 22px;
+            font-style: normal;
+            font-family: Arial;
+            background-color: White;
+            color: Black;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/BlockBlobUpload.js")"></script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

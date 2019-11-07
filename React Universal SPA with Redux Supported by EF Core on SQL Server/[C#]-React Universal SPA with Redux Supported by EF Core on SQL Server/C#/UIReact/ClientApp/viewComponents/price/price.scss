@@ -1,0 +1,20 @@
+﻿%price-shared {
+    color: navy;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+p[name="price"] {
+    @extend %price-shared
+}
+
+p[name="price"] > del {
+    @extend %price-shared
+}
+
+p[name="price"] > span {
+    color: red;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="MetaDataTextForegroundBrush" Color="White"/>
+	<SolidColorBrush x:Key="MetaDataTextBorderBrush" Color="#FF191919"/>
+ <SolidColorBrush x:Key="MetaDataBackgroundBrush" Color="#FF333333"/>
+    <!--MetadataView Styles-->
+    <DataTemplate x:Key="MetadataItemTemplate">
+        <Grid HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170"/>
+                <ColumnDefinition Width="240"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Binding MetadataTagName}" Foreground="{StaticResource MetaDataTextForegroundBrush}" VerticalAlignment="Center" TextAlignment="Right" TextWrapping="Wrap" FontWeight="Bold" Margin="0,2,0,0"/>
+            <Border Grid.Column="1" Background="{StaticResource MetaDataTextBorderBrush}" CornerRadius="5,5,5,5" VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Stretch" Text="{Binding MetadataTagValue}"  TextAlignment="Left" Foreground="{StaticResource MetaDataTextForegroundBrush}" TextWrapping="Wrap" Margin="7,2,7,0"/>
+            </Border>
+        </Grid>
+    </DataTemplate>
+    <Style x:Key="MetadataListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Foreground" Value="#BDBC97" />
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid x:Name="RootElement">
+                        <Grid.Resources>
+                            <Storyboard x:Key="Normal State" />
+                            <Storyboard x:Key="Normal Selected State">
+                                <ColorAnimation Storyboard.TargetName="BackgroundBrush" Storyboard.TargetProperty="Color" Duration="0" To="Transparent"/>
+                            </Storyboard>
+                            <Storyboard x:Key="MouseOver State">
+                                <ColorAnimation Storyboard.TargetName="BackgroundBrush" Storyboard.TargetProperty="Color" Duration="0" To="Transparent"/>
+                            </Storyboard>
+                            <!-- <Storyboard x:Key="MouseOver Unfocused Selected State"/> -->
+                            <Storyboard x:Key="MouseOver Selected State">
+                                <ColorAnimation Storyboard.TargetName="BackgroundBrush" Storyboard.TargetProperty="Color" Duration="0" To="Transparent"/>
+                            </Storyboard>
+                        </Grid.Resources>
+                        <ContentPresenter  Content="{TemplateBinding Content}" />
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MetadataListBoxStyle" TargetType="ListBox">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource MetadataListBoxItemStyle}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Grid>
+                        <ScrollViewer Style="{StaticResource ScrollViewerStyle}" VerticalScrollBarVisibility="Auto" BorderBrush="#FF333333">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <!--End MetadataView Styles-->
+</ResourceDictionary>

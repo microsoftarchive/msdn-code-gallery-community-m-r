@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="79dp"
+    android:background="#fff">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <RelativeLayout
+            android:layout_width="78dp"
+            android:layout_height="fill_parent">
+            <ImageView
+                android:id="@+id/vehicleImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_gallery"
+                local:MvxBind="Bitmap InMemoryImage(Picture)"
+                android:scaleType="centerCrop" />
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignTop="@id/vehicleImage"
+                android:layout_alignRight="@id/vehicleImage"
+                android:src="@drawable/occupied" />
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignTop="@id/vehicleImage"
+                android:layout_alignRight="@id/vehicleImage"
+                android:src="@drawable/available"
+                local:MvxBind="Visible Visibility(VehicleStatusToBool(VehicleStatus))" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <TextView
+                android:id="@+id/titleText"
+                android:text="Audi A5 8T Quattro DEMOTEXT"
+                local:MvxBind="Text Make + ' ' + Model"
+                android:textSize="18dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:textColor="#333"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/milesText"
+                android:text="mi"
+                android:tag="milesText"
+                android:textSize="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#777" />
+            <TextView
+                android:text="150"
+                android:tag="distanceText"
+                local:MvxBind="Text DistanceToString(DistanceFromGivenPosition)"
+                android:textSize="15dp"
+                android:layout_alignBottom="@id/milesText"
+                android:layout_toLeftOf="@id/milesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textColor="#777"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/dollarText"
+                android:tag="dollarText"
+                android:text="$/mi"
+                android:textSize="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#777" />
+            <TextView
+                android:id="@+id/priceText"
+                android:tag="priceText"
+                android:text="6.20"
+                local:MvxBind="Text PriceToString(Rate, true)"
+                android:textSize="15dp"
+                android:layout_alignBottom="@id/dollarText"
+                android:layout_toLeftOf="@id/dollarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/titleText"
+                android:layout_alignBottom="@id/milesText"
+                android:paddingBottom="2dp">
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/titleText"
+                android:layout_alignBottom="@id/milesText"
+                android:paddingBottom="2dp">
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ratingON1"
+                    local:MvxBind="Visible Visibility(RatingToBool(RatingAvg, 1))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON2"
+                    local:MvxBind="Visible Visibility(RatingToBool(RatingAvg, 2))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON3"
+                    local:MvxBind="Visible Visibility(RatingToBool(RatingAvg, 3))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON4"
+                    local:MvxBind="Visible Visibility(RatingToBool(RatingAvg, 4))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON5"
+                    local:MvxBind="Visible Visibility(RatingToBool(RatingAvg, 5))" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

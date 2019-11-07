@@ -1,0 +1,117 @@
+﻿@model CIK.News.Web.Infras.ViewModels.Admin.DashBoard.DashBoardViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderContent{
+    <script type="text/javascript">
+        $(function () {
+            $('#search').click(function () {
+                $('form').submit();
+            });
+        });
+    </script>
+}
+
+@{ Html.BeginForm("Index", "DashBoard", new {page = 0}); }
+<!-- Content -->
+<div id="content">
+				
+    <!-- Box -->
+    <div class="box">
+        <!-- Box Head -->
+        <div class="box-head">
+            <h2 class="left">Current News</h2>
+            <div class="right">
+                <label>search news</label>
+                @Html.TextBoxFor(m=>m.TitleSearchText, new { Class="field small-field"})
+                @*<input type="text" class="field small-field" />*@
+                <input type="submit" class="button" value="search" id="search" name="search" />
+            </div>
+        </div>
+        <!-- End Box Head -->	
+
+        <!-- Table -->
+        <div class="table">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="13"><input type="checkbox" class="checkbox" /></th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Added by</th>
+                    <th width="110" class="ac">Content Control</th>
+                </tr>
+
+                @foreach(var item in Model.Items)
+                {
+                    <tr>
+                        <td><input type="checkbox" class="checkbox" /></td>
+                        <td><h3><a href="#">@item.ItemContent.Title</a></h3></td>
+                        <td>@item.CreatedDate.Value.ToShortDateString()</td>
+                        <td><a href="#">@item.CreatedBy</a></td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", "Item", new { id = item.Id }, new { Class = "ico del" })
+                            @Html.ActionLink("Edit", "Edit", "Item", new { id = item.Id }, new { Class = "ico edit" })
+                            @*<a href="#" class="ico del">Delete</a>*@
+                            @*<a href="#" class="ico edit">Edit</a>*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+						
+						
+            <!-- Pagging -->
+            @Html.Partial("_Pagination", Model.PagingData)
+            <!-- End Pagging -->
+						
+        </div>
+        <!-- Table -->
+					
+    </div>
+    <!-- End Box -->
+</div>
+<!-- End Content -->
+			
+<!-- Sidebar -->
+<div id="sidebar">
+				
+    <!-- Box -->
+    <div class="box">
+					
+        <!-- Box Head -->
+        <div class="box-head">
+            <h2>Management</h2>
+        </div>
+        <!-- End Box Head-->
+					
+        <div class="box-content">
+            @*@Html.ActionLink("Add new Article", "Create", "Item", new {Class="add-button"})*@
+            <a href="/Admin/Item/Create" class="add-button"><span>Add new Article</span></a>
+            <div class="cl">&nbsp;</div>
+						
+            <p class="select-all"><input type="checkbox" class="checkbox" /><label>select all</label></p>
+            <p><a href="#">Delete Selected</a></p>
+						
+            <!-- Sort -->
+            <div class="sort">
+                <label>Sort by</label>
+                <select class="field">
+                    <option value="">Title</option>
+                </select>
+                <select class="field">
+                    <option value="">Date</option>
+                </select>
+                <select class="field">
+                    <option value="">Author</option>
+                </select>
+            </div>
+            <!-- End Sort -->
+						
+        </div>
+    </div>
+    <!-- End Box -->
+</div>
+<!-- End Sidebar -->
+@{Html.EndForm(); }

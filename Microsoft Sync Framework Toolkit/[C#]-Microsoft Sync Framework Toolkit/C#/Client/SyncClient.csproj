@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BB3508B-6459-4BBB-BA38-2A065874E6CA}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Synchronization.ClientServices</RootNamespace>
+    <AssemblyName>Microsoft.Synchronization.ClientServices</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Client\Silverlight\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT, CLIENT, SLUNITTEST</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Client\Silverlight\Microsoft.Synchronization.ClientServices.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT, CLIENT, SLUNITTEST</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ClientCommon\AsyncWorkerManager.cs">
+      <Link>ClientCommon\AsyncWorkerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\AsyncWorkManagerException.cs">
+      <Link>ClientCommon\AsyncWorkManagerException.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\AsyncWorkRequest.cs">
+      <Link>ClientCommon\AsyncWorkRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheController.cs">
+      <Link>ClientCommon\CacheController.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheControllerBehavior.cs">
+      <Link>ClientCommon\CacheControllerBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheControllerException.cs">
+      <Link>ClientCommon\CacheControllerException.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheRefreshStatistics.cs">
+      <Link>ClientCommon\CacheRefreshStatistics.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheRequest.cs">
+      <Link>ClientCommon\CacheRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheRequestHandler.cs">
+      <Link>ClientCommon\CacheRequestHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\CacheRequestType.cs">
+      <Link>ClientCommon\CacheRequestType.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\ChangeSet.cs">
+      <Link>ClientCommon\ChangeSet.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\ChangeSetResponse.cs">
+      <Link>ClientCommon\ChangeSetResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\HttpCacheRequestHandler.cs">
+      <Link>ClientCommon\HttpCacheRequestHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\ArchiveIdManager.cs">
+      <Link>IsolatedStorage\ArchiveIdManager.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\AutoResetLock.cs">
+      <Link>IsolatedStorage\AutoResetLock.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\CacheData.cs">
+      <Link>IsolatedStorage\CacheData.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\CacheFileType.cs">
+      <Link>IsolatedStorage\CacheFileType.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\Constants.cs">
+      <Link>IsolatedStorage\Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\DownloadResponseData.cs">
+      <Link>IsolatedStorage\DownloadResponseData.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\IsolatedStorageCollection.cs">
+      <Link>IsolatedStorage\IsolatedStorageCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\IsolatedStorageOfflineContext.cs">
+      <Link>IsolatedStorage\IsolatedStorageOfflineContext.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\IsolatedStorageOfflineEntity.cs">
+      <Link>IsolatedStorage\IsolatedStorageOfflineEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\IsolatedStorageSchema.cs">
+      <Link>IsolatedStorage\IsolatedStorageSchema.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\IsolatedStorageSyncConflict.cs">
+      <Link>IsolatedStorage\IsolatedStorageSyncConflict.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\IsolatedStorageSyncError.cs">
+      <Link>IsolatedStorage\IsolatedStorageSyncError.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\LoadCompletedEventArgs.cs">
+      <Link>IsolatedStorage\LoadCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\OfflineEntityKey.cs">
+      <Link>IsolatedStorage\OfflineEntityKey.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\OfflineEntitySnapshot.cs">
+      <Link>IsolatedStorage\OfflineEntitySnapshot.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\OfflineEntityState.cs">
+      <Link>IsolatedStorage\OfflineEntityState.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\SaveFailedException.cs">
+      <Link>IsolatedStorage\SaveFailedException.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\StorageHandler.cs">
+      <Link>IsolatedStorage\StorageHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\StoreConflict.cs">
+      <Link>IsolatedStorage\StoreConflict.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\StoreConflictResolutionAction.cs">
+      <Link>IsolatedStorage\StoreConflictResolutionAction.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\SyncActiveException.cs">
+      <Link>IsolatedStorage\SyncActiveException.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\IsolatedStorage\SyncErrorInfo.cs">
+      <Link>IsolatedStorage\SyncErrorInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\OfflineSyncProvider.cs">
+      <Link>ClientCommon\OfflineSyncProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\ProcessCacheRequestCompletedEventArgs.cs">
+      <Link>ClientCommon\ProcessCacheRequestCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\RefreshCompletedEventArgs.cs">
+      <Link>ClientCommon\RefreshCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\ClientCommon\SerializationFormat.cs">
+      <Link>ClientCommon\SerializationFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Conflict.cs">
+      <Link>Common\Conflict.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\IOfflineEntity.cs">
+      <Link>Common\IOfflineEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\OfflineEntityMetadata.cs">
+      <Link>Common\OfflineEntityMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SyncConflict.cs">
+      <Link>Common\SyncConflict.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SyncConflictResolution.cs">
+      <Link>Common\SyncConflictResolution.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\SyncError.cs">
+      <Link>Common\SyncError.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\AtomEntryInfoWrapper.cs">
+      <Link>Formatters\AtomEntryInfoWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\AtomHelper.cs">
+      <Link>Formatters\AtomHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\EntryInfoWrapper.cs">
+      <Link>Formatters\EntryInfoWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\FormatterConstants.cs">
+      <Link>Formatters\FormatterConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\FormatterUtilities.cs">
+      <Link>Formatters\FormatterUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\JsonElementTypes.cs">
+      <Link>Formatters\JsonElementTypes.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\JsonEntryInfoWrapper.cs">
+      <Link>Formatters\JsonEntryInfoWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\JsonHelper.cs">
+      <Link>Formatters\JsonHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\ODataAtomReader.cs">
+      <Link>Formatters\ODataAtomReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\ODataAtomWriter.cs">
+      <Link>Formatters\ODataAtomWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\ODataJsonReader.cs">
+      <Link>Formatters\ODataJsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\ODataJsonWriter.cs">
+      <Link>Formatters\ODataJsonWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\ReaderItemType.cs">
+      <Link>Formatters\ReaderItemType.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\ReflectionUtility.cs">
+      <Link>Formatters\ReflectionUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\SyncReader.cs">
+      <Link>Formatters\SyncReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Formatters\SyncWriter.cs">
+      <Link>Formatters\SyncWriter.cs</Link>
+    </Compile>
+    <Compile Include="ExceptionUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

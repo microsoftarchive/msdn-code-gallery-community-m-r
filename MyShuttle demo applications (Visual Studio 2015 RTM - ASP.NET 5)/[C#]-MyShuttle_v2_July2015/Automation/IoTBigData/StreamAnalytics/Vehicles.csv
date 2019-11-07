@@ -1,0 +1,22 @@
+﻿VehicleId,DriverId,LicensePlate,Name,Make,Model,RatingAvg,Seats,TotalRides,Type
+1,1,SLV-4335,Cesar de la Torre,Chrysler,Pacifica,1,4,76,4
+2,2,MAX-9876,David Carmona,Lincoln,Town Car,2,7,52,1
+3,3,ZCC-1432,David Salgado,Ford,Taurus,2,7,90,1
+4,4,JNV-9876,Dmitry Lyalin,Chrysler,300C,3,7,77,1
+5,5,FGH-9876,Scott Hanselman,Chevrolet,Volt2,4,7,63,1
+6,6,ZUA-1456,Erich Gamma,Chevrolet,Caprice PPV,4,7,61,1
+7,7,JOP-9876,Mitra Azizirad,Cadillac,BLS,4,7,83,1
+8,8,HTY-1243,Rob Caron,Cadilac,ELR,2,7,68,1
+9,9,VVV-4444,S. Somasegar,Chevrolet,AveoLT,2,7,70,1
+10,10,ERT-1256,Scott Guthrie,Dodge,Caliber,1,7,92,1
+11,11,WWW-1256,James Rodriguez,Dodge,Dart,1,7,57,3
+12,12,ZVC-1256,Rose Anderson,Pontiac,G8,1,7,64,3
+13,13,HUL-5678,Aaron McDonall,Saturn,Aura XR,2,7,99,3
+14,14,WTW-6182,Alan Anderson,Pontiac,G6,3,7,92,3
+15,15,OUJ-6182,Austin Lumbert,Pontiac,G5,0,7,57,3
+16,16,ERT-1289,Wendy Torre,Buick,Regal,3,7,64,3
+17,17,RTY-2345,Ray J. Poland,Chevrolet,Impala LTZ,3,7,58,3
+18,18,RTY-2345,Ibon Campa,Buick,Riviera,4,7,71,3
+19,19,ERT-2345,Carlos Rodriguez,Chevrolet,Impala LTZ,4,7,98,3
+20,24,TRT-9473,Alec Watson,Pontiac,G6,2,7,87,3
+21,25,WIE-4545,Andry Jackson,Pontiac,Grand Prix,0,7,51,3

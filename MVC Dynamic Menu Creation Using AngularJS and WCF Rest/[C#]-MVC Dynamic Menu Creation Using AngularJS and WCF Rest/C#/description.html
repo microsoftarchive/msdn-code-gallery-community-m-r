@@ -1,0 +1,1209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3DAFBD3CF12F2F0BDD51C397A4EA333C" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=7411578604E630B047980E705A7AA489" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>AngularJS Dynamic Menu Creation Using MVC and WCF Rest</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>AngularJS Dynamic Menu Creation Using MVC and WCF Rest</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WCF, ASP.NET MVC, AngularJS
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            WCF, ASP.NET MVC, AngularJS, WCF Rest Service
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/9/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/AngularJS-Dynamic-Menu-dc974920">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<div><em><img id="141033" src="description/shanuMenuAngular.gif" alt="" width="601" height="312"></em></div>
+<div><em>&nbsp;&nbsp;This article shows how to create a menu dynamically from a database using AngularJS, MVC and WCF Rest service.</em></div>
+<h4 style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px"><span style="outline:0px">Why we need to create a Dynamic Menu</span></strong></h4>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+If we are working on a simple web site creation with very few pages and only one programmer is working to create a website then in that case we can create a static menu and use it in our web site.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+Let's now consider we need to work for a big web application project. Let's consider development of an ERP Web application.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+However if more than two developers are working and perhaps the number&nbsp;of pages is greater than 50 to 100 then it will be hard to maintain a static menu.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+And also there will be a greater chance of removing and adding a new menu item to the web project, for example our client can ask to add 5 more new menus or remove 1 menu item.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+In this case it will be a hard and difficult task to remove the menu Items that are live now.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+And also for large web projects like ERP we need to display the menu depending on the user roles. If we use a static menu then it will be very difficult to manage the users for the menu.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+To avoid all this we create a Menu Management with a user role setting.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px">Who can manage the Menu</strong></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+This is a very important part since an Admin or Super user can Add/Edit/Delete a menu and a user.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+When an Admin is logged in he can add a new menu, edit an existing menu and delete a menu item to be displayed.</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+This article is not focused on menu management but in this article we will see in detail how to create a Menu Master and Menu Detail Table. Insert a sample Menu Item to our Database Tables. Display the Menu from the database dynamically to our MVC Web page
+ using AngularJS and WCF Rest Service.<span style="outline:0px"><span class="Apple-converted-space">&nbsp;</span>This article will explain:</span></div>
+<ol style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px">How to create a WCF Rest service and retrieve data from a database.
+</li><li style="outline:0px">How to install the AngularJS Package into a MVC application.
+</li><li style="outline:0px">How to create our AngularJS application for Dynamic Menu Creation.
+</li><li style="outline:0px">How to use a WCS service in AngularJS to display dynamic Menu.
+</li></ol>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px"><span style="outline:0px">Note:</span></strong><span style="outline:0px"><span class="Apple-converted-space">&nbsp;</span>the prerequisites are Visual Studio 2013 (if you don't have Visual Studio 2013, you can download it from<span class="Apple-converted-space">&nbsp;</span><a href="http://www.visualstudio.com/en-us/products/visual-studio-community-vs"  style="outline:0px; text-decoration:none">Microsoft</a>.(You
+ can download latest Visual Studio 2015 and use for the same).<br style="outline:0px">
+Here we can see some basics and reference links for Windows Communication Foundation (WCF). WCF is a framework for building service-oriented applications.<br style="outline:0px">
+<strong style="outline:0px"><br style="outline:0px">
+<strong style="outline:0px"><span style="outline:0px">Service-oriented application:<span class="Apple-converted-space">&nbsp;</span></span></strong></strong>Using this protocol the service can be shared and used over a network.<br style="outline:0px">
+<br style="outline:0px">
+For example, let's consider that we are now working on a project and we need to create some common database function and those functions need to be used in multiple projects and the projects are in multiple places and connected via a network such as the internet.<br style="outline:0px">
+<br style="outline:0px">
+In this case we can create a WCF service and we can write all our common database functions in our WCF service class. We can deploy our WCF in IIS and use the URL in our application to do DB functions. In the code part let's see how to create a WCF REST service
+ and use it in our AngularJS application.<span class="Apple-converted-space">&nbsp;</span><br style="outline:0px">
+<br style="outline:0px">
+If you are interested in reading more details about WCF then kindly go to this<span class="Apple-converted-space">&nbsp;</span><a href="https://code.msdn.microsoft.com/AngularJS-Dynamic-Menu-dc974920/https://msdn.microsoft.com/en-in/library/dd203052.aspx"  style="outline:0px; text-decoration:none">link</a>.<br style="outline:0px">
+<br style="outline:0px">
+<strong style="outline:0px"><span style="outline:0px">AngularJS<span class="Apple-converted-space">&nbsp;</span></span></strong><strong style="outline:0px"><br style="outline:0px">
+</strong><br style="outline:0px">
+We might be be familiar with what Model, View and View Model (MVVM) is and what Model, View and Controller (MVC) is. AngularJS is a JavaScript framework that is purely based on HTML, CSS and JavaScript.<br style="outline:0px">
+<br style="outline:0px">
+Similar to the MVC and MVVM patterns AngularJS uses the Model, View and Whatever (MVW) pattern.<br style="outline:0px">
+<br style="outline:0px">
+In our example I have used a Model, View and Service. In the code part let's see how to install and create AngularJS in our MVC application.<span class="Apple-converted-space">&nbsp;</span><br style="outline:0px">
+<br style="outline:0px">
+If you are interested in reading more details about AngularJS then kindly go to this link.</span></div>
+<h1><span>Building the Sample</span></h1>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">We will create a<span class="Apple-converted-space">&nbsp;</span></span><span style="outline:0px">MenuMaster<span class="Apple-converted-space">&nbsp;</span></span><span style="outline:0px"><span style="outline:0px">MenuDetails<span class="Apple-converted-space">&nbsp;</span></span><span style="outline:0px">table
+ under the Database MenuDB.</span></span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Note: The MenuMaster and MenuDetail are the important tables that will use to load our menu dynamically. We need to understand how to insert menu details to these tables to display our menu properly.</span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">In this article I have displayed a 3-level hierarchical display of menus. Here you can see the 3-level hierarchical sample.</span></div>
+<div><span style="font-size:20px; font-weight:bold"><img id="141035" src="description/M4.jpg" alt="" width="336" height="108"></span></div>
+<div><span style="font-size:20px; font-weight:bold">&nbsp;</span>&nbsp;</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Here we can see that the first level of the hierarchy is the Inventory.</span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">The 3<sup style="outline:0px">rd</sup><span class="Apple-converted-space">&nbsp;</span>level of the hierarchy is the Finished Goods Receipt and Finished Goods Issue.</span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Now let's see how to create a table relationship to create the master and detail menus.</span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px"><span style="outline:0px">Menu Master Table</span></strong></div>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">1st Level hierarchy Insert</strong>
+</li></ul>
+<div style="outline:0px">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Root','Inventory','Shanu',getdate()-23) </pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__keyword">Insert</span><span class="sql__keyword">into</span><span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Root'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;</pre>
+</div>
+</div>
+</div>
+</div>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">2nd Level hierarchies Insert</strong>
+</li></ul>
+<div style="outline:0px"><strong><span style="color:#333333">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Inventory','INV001','Shanu',getdate()-23) </pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__keyword">Insert</span><span class="sql__keyword">into</span><span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Inventory'</span>,<span class="sql__string">'INV001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;</pre>
+</div>
+</div>
+</div>
+</span></strong></div>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">3rd Level hierarchies Insert</strong>
+</li></ul>
+<div style="outline:0px"><strong><span style="color:#333333">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('INV001','FG001','Shanu',getdate()-23)  
+  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('INV001','FG002','Shanu',getdate()-23)  </pre>
+<div class="preview">
+<pre class="js">Insert&nbsp;into&nbsp;MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate)&nbsp;values(<span class="js__string">'INV001'</span>,<span class="js__string">'FG001'</span>,<span class="js__string">'Shanu'</span>,getdate()-<span class="js__num">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+Insert&nbsp;into&nbsp;MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate)&nbsp;values(<span class="js__string">'INV001'</span>,<span class="js__string">'FG002'</span>,<span class="js__string">'Shanu'</span>,getdate()-<span class="js__num">23</span>)&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">Here we can see the fields
+ for the Menu Master. I have used the following fields:</span></span></strong></div>
+<div style="outline:0px"><strong><span style="color:#333333"><img id="141036" src="description/14.jpg" alt="" width="546" height="226"></span></strong></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px"><span style="outline:0px">Menu Detail Table</span></strong></div>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">1st Level hierarchy Insert</strong>
+</li></ul>
+<div><span style="font-size:20px; font-weight:bold">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,  
+MenuURL,UserID,CreatedDate)  
+values('Inventory','Inventory','Inventory','Index','Inventory',  
+'Shanu',getdate()-23)  </pre>
+<div class="preview">
+<pre class="js">Insert&nbsp;into&nbsp;MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,&nbsp;&nbsp;&nbsp;
+MenuURL,UserID,CreatedDate)&nbsp;&nbsp;&nbsp;
+values(<span class="js__string">'Inventory'</span>,<span class="js__string">'Inventory'</span>,<span class="js__string">'Inventory'</span>,<span class="js__string">'Index'</span>,<span class="js__string">'Inventory'</span>,&nbsp;&nbsp;&nbsp;
+<span class="js__string">'Shanu'</span>,getdate()-<span class="js__num">23</span>)&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<div class="endscriptcode">
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">2nd Level hierarchies Insert</strong>
+</li></ul>
+</div>
+<div style="outline:0px">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,  
+MenuURL,UserID,CreatedDate)  
+values('INV001','Inventory','Inventory Details','Index','Inventory',  
+'Shanu',getdate()-23)  </pre>
+<div class="preview">
+<pre class="js">Insert&nbsp;into&nbsp;MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,&nbsp;&nbsp;&nbsp;
+MenuURL,UserID,CreatedDate)&nbsp;&nbsp;&nbsp;
+values(<span class="js__string">'INV001'</span>,<span class="js__string">'Inventory'</span>,<span class="js__string">'Inventory&nbsp;Details'</span>,<span class="js__string">'Index'</span>,<span class="js__string">'Inventory'</span>,&nbsp;&nbsp;&nbsp;
+<span class="js__string">'Shanu'</span>,getdate()-<span class="js__num">23</span>)&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+</div>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">3rd Level hierarchies Insert</strong>
+</li></ul>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,  
+MenuURL,UserID,CreatedDate)  
+values('FG001','FGIN','FG Receipt','FGIN','Inventory','Shanu',getdate()-43)  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,  
+MenuURL,UserID,CreatedDate)  
+values('FG002','FGOUT','FG Issue','FGOUT','Inventory','Shanu',getdate()-13)  </pre>
+<div class="preview">
+<pre class="js">Insert&nbsp;into&nbsp;MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,&nbsp;&nbsp;&nbsp;
+MenuURL,UserID,CreatedDate)&nbsp;&nbsp;&nbsp;
+values(<span class="js__string">'FG001'</span>,<span class="js__string">'FGIN'</span>,<span class="js__string">'FG&nbsp;Receipt'</span>,<span class="js__string">'FGIN'</span>,<span class="js__string">'Inventory'</span>,<span class="js__string">'Shanu'</span>,getdate()-<span class="js__num">43</span>)&nbsp;&nbsp;&nbsp;
+Insert&nbsp;into&nbsp;MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,&nbsp;&nbsp;&nbsp;
+MenuURL,UserID,CreatedDate)&nbsp;&nbsp;&nbsp;
+values(<span class="js__string">'FG002'</span>,<span class="js__string">'FGOUT'</span>,<span class="js__string">'FG&nbsp;Issue'</span>,<span class="js__string">'FGOUT'</span>,<span class="js__string">'Inventory'</span>,<span class="js__string">'Shanu'</span>,getdate()-<span class="js__num">13</span>)&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+</ul>
+<div class="endscriptcode"><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">Here we can see the
+ field for the Menu Detail. I have used the following fields</span><span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">.</span></div>
+</span>
+<div class="endscriptcode">&nbsp;<img id="141037" src="description/15.jpg" alt="" width="546" height="365"></div>
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">The following is the script
+ to create a database, table and sample insert query. Run this script in your SQL Server. I have used SQL Server 2012.</span>
+</ul>
+</div>
+<div>&nbsp;
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">-- =============================================                                  
+-- Author      : Shanu                        
+-- Create date : 2015-03-20               
+-- Description : To Create Database,Table and Sample Insert Query                               
+-- Latest 
+-- Modifier    : Shanu 
+-- Modify date : 2015-03-20                              
+-- =============================================  
+--Script to create DB,Table and sample Insert data  
+USE MASTER  
+GO  
+-- 1) Check for the Database Exists .If the database is exist then drop and create new DB  
+IF EXISTS (SELECT [name] FROM sys.databases WHERE [name] = 'MenuDB' )  
+DROP DATABASE MenuDB  
+GO  
+  
+CREATE DATABASE MenuDB  
+GO  
+  
+USE MenuDB  
+GO  
+  
+-- 1) //////////// ToysDetails table  
+-- Create Table  ToysDetails ,This table will be used to store the details like Toys Information   
+  
+IF EXISTS ( SELECT [name] FROM sys.tables WHERE [name] = 'MenuMaster' )  
+DROP TABLE MenuMaster  
+GO  
+  
+CREATE TABLE MenuMaster  
+(  
+   Menu_ID int identity(1,1),  
+   Menu_RootID VARCHAR(30)  NOT NULL,  
+   Menu_ChildID VARCHAR(30)  NOT NULL,  
+   UserID varchar(50),  
+   CreatedDate datetime  
+CONSTRAINT [PK_MenuMaster] PRIMARY KEY CLUSTERED        
+(       
+  [Menu_ID] ASC   ,  
+  [Menu_RootID] ASC,  
+  [Menu_ChildID] ASC    
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]       
+) ON [PRIMARY]     
+  
+GO  
+--delete from MenuMaster  
+-- Insert the sample records to the ToysDetails Table  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Root','Home','Shanu',getdate()-23)  
+--Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Home','Home','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Home','About','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Home','Contact','Shanu',getdate()-23)  
+  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Root','Masters','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Masters','ITM001','Shanu',getdate()-23)  
+--Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('ITM001','ITM001','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('ITM001','ITM002','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('ITM001','ITM003','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Masters','CAT001','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('CAT001','CAT001','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('CAT001','CAT002','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('CAT001','CAT003','Shanu',getdate()-23)  
+  
+  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Root','Inventory','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('Inventory','INV001','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('INV001','FG001','Shanu',getdate()-23)  
+Insert into MenuMaster(Menu_RootID,Menu_ChildID,UserID,CreatedDate) values('INV001','FG002','Shanu',getdate()-23)  
+  
+  
+  
+select * from MenuMaster  
+-- 1) END //  
+  
+-- 2) Cart Details Table  
+IF EXISTS ( SELECT [name] FROM sys.tables WHERE [name] = 'MenuDetails' )  
+DROP TABLE MenuDetails  
+GO  
+  
+CREATE TABLE MenuDetails  
+(  
+   MDetail_ID int identity(1,1),  
+   Menu_ChildID VARCHAR(20) NOT NULL,  
+   MenuName VARCHAR(100) NOT NULL,  
+   MenuDisplayTxt VARCHAR(200) NOT NULL,  
+   MenuFileName VARCHAR(100) NOT NULL,   
+   MenuURL VARCHAR(500) NOT NULL,  
+   USE_YN Char(1) DEFAULT 'Y',  
+   UserID varchar(50),  
+   CreatedDate datetime  
+CONSTRAINT [PK_MenuDetails] PRIMARY KEY CLUSTERED        
+(       
+  [MDetail_ID] ASC,  
+  [Menu_ChildID] ASC         
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]       
+) ON [PRIMARY]     
+  
+GO  
+----delete from MenuDetails  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('Root','Home','Shanu Home','Index','Home','Shanu',getdate()-23)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('Home','Home','Shanu Home','Index','Home','Shanu',getdate()-23)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('About','About','About Shanu','About','Home','Shanu',getdate()-43)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('Contact','Contact','Contact Shanu','Contact','Home','Shanu',getdate()-13)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('Masters','Masters','Masters','ItemDetails','Masters','Shanu',getdate()-13)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('ITM001','ItemMaster','Item Master','ItemDetails','Masters','Shanu',getdate()-13)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('ITM002','ItemDetail','Item Details','ItemDetails','Masters','Shanu',getdate()-13)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('ITM003','ItemManage','Item Manage','ItemManage','Masters','Shanu',getdate()-13)  
+  
+  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('CAT001','CatMaster','Category Masters','CATDetails','Masters','Shanu',getdate()-13)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('CAT002','CATDetail','Category Details','CATDetails','Masters','Shanu',getdate()-13)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('CAT003','CATManage','Category Manage','CATManage','Masters','Shanu',getdate()-13)  
+  
+  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('Inventory','Inventory','Inventory','Index','Inventory','Shanu',getdate()-23)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('INV001','Inventory','Inventory Details','Index','Inventory','Shanu',getdate()-23)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('FG001','FGIN','FG Receipt','FGIN','Inventory','Shanu',getdate()-43)  
+  
+Insert into MenuDetails(Menu_ChildID,MenuName,MenuDisplayTxt,MenuFileName,MenuURL,UserID,CreatedDate)   
+values('FG002','FGOUT','FG Issue','FGOUT','Inventory','Shanu',getdate()-13)  
+  
+  
+select * from MenuMaster  
+  
+select * from MenuDetails  
+  
+        select   A.Menu_RootID,  
+                 B.MDetail_ID,  
+                 B.Menu_ChildID,  
+                 B.MenuName,  
+                 B.MenuDisplayTxt,  
+                 B.MenuFileName,             
+                 B.MenuURL ,             
+                 B.UserID                                                        
+                 FROM   
+                 MenuMaster A  
+                 INNER JOIN MenuDetails B  
+                 ON A.Menu_ChildID=B.Menu_ChildID </pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__com">--&nbsp;=============================================&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Shanu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Create&nbsp;date&nbsp;:&nbsp;2015-03-20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Description&nbsp;:&nbsp;To&nbsp;Create&nbsp;Database,Table&nbsp;and&nbsp;Sample&nbsp;Insert&nbsp;Query&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Latest&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Modifier&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Shanu&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Modify&nbsp;date&nbsp;:&nbsp;2015-03-20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;=============================================&nbsp;&nbsp;</span>&nbsp;
+--<span class="sql__id">Script</span>&nbsp;<span class="sql__keyword">to</span>&nbsp;<span class="sql__keyword">create</span>&nbsp;<span class="sql__id">DB</span>,<span class="sql__keyword">Table</span>&nbsp;<span class="sql__keyword">and</span>&nbsp;<span class="sql__id">sample</span>&nbsp;<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">data</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">USE</span>&nbsp;<span class="sql__keyword">MASTER</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__com">--&nbsp;1)&nbsp;Check&nbsp;for&nbsp;the&nbsp;Database&nbsp;Exists&nbsp;.If&nbsp;the&nbsp;database&nbsp;is&nbsp;exist&nbsp;then&nbsp;drop&nbsp;and&nbsp;create&nbsp;new&nbsp;DB&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__keyword">IF</span>&nbsp;<span class="sql__keyword">EXISTS</span>&nbsp;(<span class="sql__keyword">SELECT</span>&nbsp;[<span class="sql__keyword">name</span>]&nbsp;<span class="sql__keyword">FROM</span>&nbsp;<span class="sql__id">sys</span>.<span class="sql__keyword">databases</span>&nbsp;<span class="sql__keyword">WHERE</span>&nbsp;[<span class="sql__keyword">name</span>]&nbsp;=&nbsp;<span class="sql__string">'MenuDB'</span>&nbsp;)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">DROP</span>&nbsp;<span class="sql__keyword">DATABASE</span>&nbsp;<span class="sql__id">MenuDB</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">DATABASE</span>&nbsp;<span class="sql__id">MenuDB</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">USE</span>&nbsp;<span class="sql__id">MenuDB</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__com">--&nbsp;1)&nbsp;////////////&nbsp;ToysDetails&nbsp;table&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__com">--&nbsp;Create&nbsp;Table&nbsp;&nbsp;ToysDetails&nbsp;,This&nbsp;table&nbsp;will&nbsp;be&nbsp;used&nbsp;to&nbsp;store&nbsp;the&nbsp;details&nbsp;like&nbsp;Toys&nbsp;Information&nbsp;&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">IF</span>&nbsp;<span class="sql__keyword">EXISTS</span>&nbsp;(&nbsp;<span class="sql__keyword">SELECT</span>&nbsp;[<span class="sql__keyword">name</span>]&nbsp;<span class="sql__keyword">FROM</span>&nbsp;<span class="sql__id">sys</span>.<span class="sql__keyword">tables</span>&nbsp;<span class="sql__keyword">WHERE</span>&nbsp;[<span class="sql__keyword">name</span>]&nbsp;=&nbsp;<span class="sql__string">'MenuMaster'</span>&nbsp;)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">DROP</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;<span class="sql__id">MenuMaster</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;<span class="sql__id">MenuMaster</span>&nbsp;&nbsp;&nbsp;
+(&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">Menu_ID</span>&nbsp;<span class="sql__keyword">int</span>&nbsp;<span class="sql__id">identity</span>(<span class="sql__number">1</span>,<span class="sql__number">1</span>),&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">Menu_RootID</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">30</span>)&nbsp;&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">Menu_ChildID</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">30</span>)&nbsp;&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">UserID</span>&nbsp;<span class="sql__keyword">varchar</span>(<span class="sql__number">50</span>),&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">CreatedDate</span>&nbsp;<span class="sql__keyword">datetime</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">CONSTRAINT</span>&nbsp;[<span class="sql__id">PK_MenuMaster</span>]&nbsp;<span class="sql__keyword">PRIMARY</span>&nbsp;<span class="sql__keyword">KEY</span>&nbsp;<span class="sql__id">CLUSTERED</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;[<span class="sql__id">Menu_ID</span>]&nbsp;<span class="sql__keyword">ASC</span>&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;[<span class="sql__id">Menu_RootID</span>]&nbsp;<span class="sql__keyword">ASC</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;[<span class="sql__id">Menu_ChildID</span>]&nbsp;<span class="sql__keyword">ASC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)<span class="sql__keyword">WITH</span>&nbsp;(<span class="sql__id">PAD_INDEX</span>&nbsp;&nbsp;=&nbsp;<span class="sql__id">OFF</span>,&nbsp;<span class="sql__id">STATISTICS_NORECOMPUTE</span>&nbsp;&nbsp;=&nbsp;<span class="sql__id">OFF</span>,&nbsp;<span class="sql__id">IGNORE_DUP_KEY</span>&nbsp;=&nbsp;<span class="sql__id">OFF</span>,&nbsp;<span class="sql__id">ALLOW_ROW_LOCKS</span>&nbsp;&nbsp;=&nbsp;<span class="sql__keyword">ON</span>,&nbsp;<span class="sql__id">ALLOW_PAGE_LOCKS</span>&nbsp;&nbsp;=&nbsp;<span class="sql__keyword">ON</span>)&nbsp;<span class="sql__keyword">ON</span>&nbsp;[<span class="sql__keyword">PRIMARY</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)&nbsp;<span class="sql__keyword">ON</span>&nbsp;[<span class="sql__keyword">PRIMARY</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+--<span class="sql__keyword">delete</span>&nbsp;<span class="sql__keyword">from</span>&nbsp;<span class="sql__id">MenuMaster</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__com">--&nbsp;Insert&nbsp;the&nbsp;sample&nbsp;records&nbsp;to&nbsp;the&nbsp;ToysDetails&nbsp;Table&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Root'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+--<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Home'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Home'</span>,<span class="sql__string">'About'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Home'</span>,<span class="sql__string">'Contact'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Root'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Masters'</span>,<span class="sql__string">'ITM001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+--<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'ITM001'</span>,<span class="sql__string">'ITM001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'ITM001'</span>,<span class="sql__string">'ITM002'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'ITM001'</span>,<span class="sql__string">'ITM003'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Masters'</span>,<span class="sql__string">'CAT001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'CAT001'</span>,<span class="sql__string">'CAT001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'CAT001'</span>,<span class="sql__string">'CAT002'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'CAT001'</span>,<span class="sql__string">'CAT003'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Root'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'Inventory'</span>,<span class="sql__string">'INV001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'INV001'</span>,<span class="sql__string">'FG001'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuMaster</span>(<span class="sql__id">Menu_RootID</span>,<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;<span class="sql__keyword">values</span>(<span class="sql__string">'INV001'</span>,<span class="sql__string">'FG002'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">select</span>&nbsp;*&nbsp;<span class="sql__keyword">from</span>&nbsp;<span class="sql__id">MenuMaster</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__com">--&nbsp;1)&nbsp;END&nbsp;//&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__com">--&nbsp;2)&nbsp;Cart&nbsp;Details&nbsp;Table&nbsp;&nbsp;</span>&nbsp;
+<span class="sql__keyword">IF</span>&nbsp;<span class="sql__keyword">EXISTS</span>&nbsp;(&nbsp;<span class="sql__keyword">SELECT</span>&nbsp;[<span class="sql__keyword">name</span>]&nbsp;<span class="sql__keyword">FROM</span>&nbsp;<span class="sql__id">sys</span>.<span class="sql__keyword">tables</span>&nbsp;<span class="sql__keyword">WHERE</span>&nbsp;[<span class="sql__keyword">name</span>]&nbsp;=&nbsp;<span class="sql__string">'MenuDetails'</span>&nbsp;)&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">DROP</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;<span class="sql__id">MenuDetails</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;<span class="sql__id">MenuDetails</span>&nbsp;&nbsp;&nbsp;
+(&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">MDetail_ID</span>&nbsp;<span class="sql__keyword">int</span>&nbsp;<span class="sql__id">identity</span>(<span class="sql__number">1</span>,<span class="sql__number">1</span>),&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">Menu_ChildID</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">20</span>)&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">MenuName</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">100</span>)&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">MenuDisplayTxt</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">200</span>)&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">MenuFileName</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">100</span>)&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">MenuURL</span>&nbsp;<span class="sql__keyword">VARCHAR</span>(<span class="sql__number">500</span>)&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">USE_YN</span>&nbsp;<span class="sql__keyword">Char</span>(<span class="sql__number">1</span>)&nbsp;<span class="sql__keyword">DEFAULT</span>&nbsp;<span class="sql__string">'Y'</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">UserID</span>&nbsp;<span class="sql__keyword">varchar</span>(<span class="sql__number">50</span>),&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="sql__id">CreatedDate</span>&nbsp;<span class="sql__keyword">datetime</span>&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">CONSTRAINT</span>&nbsp;[<span class="sql__id">PK_MenuDetails</span>]&nbsp;<span class="sql__keyword">PRIMARY</span>&nbsp;<span class="sql__keyword">KEY</span>&nbsp;<span class="sql__id">CLUSTERED</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;[<span class="sql__id">MDetail_ID</span>]&nbsp;<span class="sql__keyword">ASC</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;[<span class="sql__id">Menu_ChildID</span>]&nbsp;<span class="sql__keyword">ASC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)<span class="sql__keyword">WITH</span>&nbsp;(<span class="sql__id">PAD_INDEX</span>&nbsp;&nbsp;=&nbsp;<span class="sql__id">OFF</span>,&nbsp;<span class="sql__id">STATISTICS_NORECOMPUTE</span>&nbsp;&nbsp;=&nbsp;<span class="sql__id">OFF</span>,&nbsp;<span class="sql__id">IGNORE_DUP_KEY</span>&nbsp;=&nbsp;<span class="sql__id">OFF</span>,&nbsp;<span class="sql__id">ALLOW_ROW_LOCKS</span>&nbsp;&nbsp;=&nbsp;<span class="sql__keyword">ON</span>,&nbsp;<span class="sql__id">ALLOW_PAGE_LOCKS</span>&nbsp;&nbsp;=&nbsp;<span class="sql__keyword">ON</span>)&nbsp;<span class="sql__keyword">ON</span>&nbsp;[<span class="sql__keyword">PRIMARY</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)&nbsp;<span class="sql__keyword">ON</span>&nbsp;[<span class="sql__keyword">PRIMARY</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;&nbsp;
+----<span class="sql__keyword">delete</span>&nbsp;<span class="sql__keyword">from</span>&nbsp;<span class="sql__id">MenuDetails</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'Root'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu&nbsp;Home'</span>,<span class="sql__string">'Index'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'Home'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu&nbsp;Home'</span>,<span class="sql__string">'Index'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'About'</span>,<span class="sql__string">'About'</span>,<span class="sql__string">'About&nbsp;Shanu'</span>,<span class="sql__string">'About'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">43</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'Contact'</span>,<span class="sql__string">'Contact'</span>,<span class="sql__string">'Contact&nbsp;Shanu'</span>,<span class="sql__string">'Contact'</span>,<span class="sql__string">'Home'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'Masters'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'ItemDetails'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'ITM001'</span>,<span class="sql__string">'ItemMaster'</span>,<span class="sql__string">'Item&nbsp;Master'</span>,<span class="sql__string">'ItemDetails'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'ITM002'</span>,<span class="sql__string">'ItemDetail'</span>,<span class="sql__string">'Item&nbsp;Details'</span>,<span class="sql__string">'ItemDetails'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'ITM003'</span>,<span class="sql__string">'ItemManage'</span>,<span class="sql__string">'Item&nbsp;Manage'</span>,<span class="sql__string">'ItemManage'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'CAT001'</span>,<span class="sql__string">'CatMaster'</span>,<span class="sql__string">'Category&nbsp;Masters'</span>,<span class="sql__string">'CATDetails'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'CAT002'</span>,<span class="sql__string">'CATDetail'</span>,<span class="sql__string">'Category&nbsp;Details'</span>,<span class="sql__string">'CATDetails'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'CAT003'</span>,<span class="sql__string">'CATManage'</span>,<span class="sql__string">'Category&nbsp;Manage'</span>,<span class="sql__string">'CATManage'</span>,<span class="sql__string">'Masters'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Index'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'INV001'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Inventory&nbsp;Details'</span>,<span class="sql__string">'Index'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">23</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'FG001'</span>,<span class="sql__string">'FGIN'</span>,<span class="sql__string">'FG&nbsp;Receipt'</span>,<span class="sql__string">'FGIN'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">43</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">Insert</span>&nbsp;<span class="sql__keyword">into</span>&nbsp;<span class="sql__id">MenuDetails</span>(<span class="sql__id">Menu_ChildID</span>,<span class="sql__id">MenuName</span>,<span class="sql__id">MenuDisplayTxt</span>,<span class="sql__id">MenuFileName</span>,<span class="sql__id">MenuURL</span>,<span class="sql__id">UserID</span>,<span class="sql__id">CreatedDate</span>)&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">values</span>(<span class="sql__string">'FG002'</span>,<span class="sql__string">'FGOUT'</span>,<span class="sql__string">'FG&nbsp;Issue'</span>,<span class="sql__string">'FGOUT'</span>,<span class="sql__string">'Inventory'</span>,<span class="sql__string">'Shanu'</span>,<span class="sql__id">getdate</span>()-<span class="sql__number">13</span>)&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">select</span>&nbsp;*&nbsp;<span class="sql__keyword">from</span>&nbsp;<span class="sql__id">MenuMaster</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="sql__keyword">select</span>&nbsp;*&nbsp;<span class="sql__keyword">from</span>&nbsp;<span class="sql__id">MenuDetails</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__keyword">select</span>&nbsp;&nbsp;&nbsp;<span class="sql__id">A</span>.<span class="sql__id">Menu_RootID</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">MDetail_ID</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">Menu_ChildID</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">MenuName</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">MenuDisplayTxt</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">MenuFileName</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">MenuURL</span>&nbsp;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">B</span>.<span class="sql__id">UserID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__keyword">FROM</span>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">MenuMaster</span>&nbsp;<span class="sql__id">A</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__keyword">INNER</span>&nbsp;<span class="sql__keyword">JOIN</span>&nbsp;<span class="sql__id">MenuDetails</span>&nbsp;<span class="sql__id">B</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__keyword">ON</span>&nbsp;<span class="sql__id">A</span>.<span class="sql__id">Menu_ChildID</span>=<span class="sql__id">B</span>.<span class="sql__id">Menu_ChildID</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<span style="font-size:20px; font-weight:bold">Description</span></div>
+</div>
+<div><em>Now we have created our Tables lest start with creating WCF Rest service to access the data abd display in our Angular JS MVC page.
+<ul style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px">Create WCF REST Service</strong>
+</li></ul>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Open Visual Studio 2013 then select &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Project...&quot; then select WCF Service Application then select your project path and name your WCF service and click OK.</span></div>
+</em></div>
+<h1><span><img id="141038" src="description/1.jpg" alt="" width="450" height="268"></span></h1>
+<h1><span><span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">Once we have
+ created the WCF Service we can see &ldquo;IService.CS&rdquo; and &ldquo;Service1.svc&rdquo; in the Solution Explorer as in the following.</span></span></h1>
+<h1><span><img id="141039" src="description/2.jpg" alt="" width="240" height="187"></span></h1>
+<ul type="disc" style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><strong style="outline:0px"><span style="outline:0px">IService.CS</span></strong><span style="outline:0px">: In &ldquo;</span><strong style="outline:0px"><span style="outline:0px">IService.CS</span></strong><span style="outline:0px">&rdquo;
+ we can see 3 contracts by default.</span> </li><li style="outline:0px"><span style="outline:0px">[</span><strong style="outline:0px"><span style="outline:0px">ServiceContract</span></strong><span style="outline:0px">]: Describes the methods or any operations available for the service. The Service Contract
+ is an interface and methods can be declared inside the Service Interface using the Operation Contract attribute.</span>
+</li><li style="outline:0px"><span style="outline:0px">[</span><strong style="outline:0px"><span style="outline:0px">OperationContract</span></strong><span style="outline:0px">]: is similar to the web service [WEBMETHOD].</span>
+</li><li style="outline:0px"><span style="outline:0px">[</span><strong style="outline:0px"><span style="outline:0px">DataContract</span></strong><span style="outline:0px">]: describes the data exchange between the client and the service.</span>
+</li><li style="outline:0px"><span style="outline:0px">[</span><strong style="outline:0px"><span style="outline:0px">ServiceContract</span></strong><span style="outline:0px">]</span>
+</li></ul>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">The following code will be automatically created for all the IService.CS files. We can change and write our own code here.</span></div>
+<h1><span>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public interface IService1  
+{  
+  
+    [OperationContract]  
+    string GetData(int value);  
+  
+    [OperationContract]  
+    CompositeType GetDataUsingDataContract(CompositeType composite);  
+  
+    // TODO: Add your service operations here  
+}  
+// Use a data contract as illustrated in the sample below to add composite types to service operations.  
+[DataContract]  
+public class CompositeType  
+{  
+    bool boolValue = true;  
+    string stringValue = &quot;Hello &quot;;  
+  
+    [DataMember]  
+    public bool BoolValue  
+    {  
+        get { return boolValue; }  
+        set { boolValue = value; }  
+    }  
+  
+    [DataMember]  
+    public string StringValue  
+    {  
+        get { return stringValue; }  
+        set { stringValue = value; }  
+    }  
+}  </pre>
+<div class="preview">
+<pre class="js">public&nbsp;interface&nbsp;IService1&nbsp;&nbsp;&nbsp;
+<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[OperationContract]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;GetData(int&nbsp;value);&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[OperationContract]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;CompositeType&nbsp;GetDataUsingDataContract(CompositeType&nbsp;composite);&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TODO:&nbsp;Add&nbsp;your&nbsp;service&nbsp;operations&nbsp;here&nbsp;&nbsp;</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+<span class="js__sl_comment">//&nbsp;Use&nbsp;a&nbsp;data&nbsp;contract&nbsp;as&nbsp;illustrated&nbsp;in&nbsp;the&nbsp;sample&nbsp;below&nbsp;to&nbsp;add&nbsp;composite&nbsp;types&nbsp;to&nbsp;service&nbsp;operations.&nbsp;&nbsp;</span>&nbsp;
+[DataContract]&nbsp;&nbsp;&nbsp;
+public&nbsp;class&nbsp;CompositeType&nbsp;&nbsp;&nbsp;
+<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;boolValue&nbsp;=&nbsp;true;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;stringValue&nbsp;=&nbsp;<span class="js__string">&quot;Hello&nbsp;&quot;</span>;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;bool&nbsp;BoolValue&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;boolValue;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;<span class="js__brace">{</span>&nbsp;boolValue&nbsp;=&nbsp;value;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;string&nbsp;StringValue&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__statement">return</span>&nbsp;stringValue;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;<span class="js__brace">{</span>&nbsp;stringValue&nbsp;=&nbsp;value;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+<span class="js__brace">}</span>&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span style="outline:0px">Data
+ Contract<span class="Apple-converted-space">&nbsp;</span></span></strong><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">In
+ our example we need to get all the Menu Details from the database, so I have created the Data Contracts</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span class="Apple-converted-space">&nbsp;</span>&ldquo;</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">MenuDataContract</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">&rdquo;.</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span class="Apple-converted-space">&nbsp;</span>Here
+ we can see we have decelerated our entire table column name as Data Member.</span></div>
+</span></h1>
+<h1>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public class MenuDataContract  
+    {  
+        [DataContract]  
+        public class MenuMasterDataContract  
+        {  
+            [DataMember]  
+            public string Menu_ID { get; set; }  
+  
+            [DataMember]  
+            public string Menu_RootID { get; set; }  
+  
+            [DataMember]  
+            public string Menu_ChildID { get; set; }  
+  
+            [DataMember]  
+            public string UserID { get; set; }  
+  
+        }  
+  
+        [DataContract]  
+        public class MenuDetailDataContract  
+        {  
+            [DataMember]  
+            public string MDetail_ID { get; set; }  
+  
+            [DataMember]  
+            public string Menu_RootID { get; set; }  
+  
+            [DataMember]  
+            public string Menu_ChildID { get; set; }  
+  
+            [DataMember]  
+            public string MenuName { get; set; }  
+  
+            [DataMember]  
+            public string MenuDisplayTxt { get; set; }  
+  
+            [DataMember]  
+            public string MenuFileName { get; set; }  
+  
+            [DataMember]  
+            public string MenuURL { get; set; }  
+  
+            [DataMember]  
+            public string UserID { get; set; }  
+        }  
+  
+    }</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;MenuDataContract&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataContract]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;MenuMasterDataContract&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;Menu_ID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;Menu_RootID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;Menu_ChildID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;UserID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataContract]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;MenuDetailDataContract&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;MDetail_ID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;Menu_RootID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;Menu_ChildID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;MenuName&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;MenuDisplayTxt&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;MenuFileName&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;MenuURL&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DataMember]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;UserID&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span style="outline:0px">Service
+ Contract:&nbsp;</span></strong><span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">In
+ the Operation Contract we can see &ldquo;</span><strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">WebInvoke</strong><span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">&rdquo;
+ and &ldquo;</span><strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">WebGet</strong><span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">&rdquo;
+ for retrieving the data from the database in the REST Serivce.&nbsp;</span></div>
+</h1>
+<h1>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">RequestFormat = WebMessageFormat.Json,  
+ResponseFormat = WebMessageFormat.Json,  </pre>
+<div class="preview">
+<pre class="csharp">RequestFormat&nbsp;=&nbsp;WebMessageFormat.Json,&nbsp;&nbsp;&nbsp;
+ResponseFormat&nbsp;=&nbsp;WebMessageFormat.Json,&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+</h1>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+Here we can see both of the request and response formats. Here I have used the JavaScript Object Notation (JSON) format.</div>
+<ul type="disc" style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<li style="outline:0px"><span style="outline:0px">JSON is a lightweight data interchange format.</span>
+</li><li style="outline:0px"><span style="outline:0px">UriTemplate: Here we provide our Method Name.</span>
+</li></ul>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Here I have declared the 3 methods &ldquo;</span><strong style="outline:0px"><span style="outline:0px">GetMenuDetails</span></strong><span style="outline:0px">&rdquo;. The &ldquo;</span><strong style="outline:0px"><span style="outline:0px">GetMenuDetails</span></strong><span style="outline:0px">&rdquo;
+ method gets all the Menu Master and Details that will be used in our AngularJS to display the menu using a filter for each hierarchy.</span></div>
+<div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">[ServiceContract]  
+    public interface IService1  
+    {  
+[OperationContract]  
+        [WebInvoke(Method = &quot;GET&quot;,  
+           RequestFormat = WebMessageFormat.Json,  
+           ResponseFormat = WebMessageFormat.Json,  
+           UriTemplate = &quot;/GetMenuDetails/&quot;)]  
+        List&lt;MenuDataContract.MenuDetailDataContract&gt; GetMenuDetails();  
+ }  </pre>
+<div class="preview">
+<pre class="csharp">[ServiceContract]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">interface</span>&nbsp;IService1&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;
+[OperationContract]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[WebInvoke(Method&nbsp;=&nbsp;<span class="cs__string">&quot;GET&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RequestFormat&nbsp;=&nbsp;WebMessageFormat.Json,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ResponseFormat&nbsp;=&nbsp;WebMessageFormat.Json,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UriTemplate&nbsp;=&nbsp;<span class="cs__string">&quot;/GetMenuDetails/&quot;</span>)]&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;MenuDataContract.MenuDetailDataContract&gt;&nbsp;GetMenuDetails();&nbsp;&nbsp;&nbsp;
+&nbsp;}&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span lang="EN-US" style="outline:0px">Add
+ Database usingADO.NET Entity Data Model</span></strong>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span lang="EN-US" style="outline:0px">Right-click your WCF project and select Add New Item then select ADO.NETEntity Data Model and click Add.</span></div>
+&nbsp;<img id="141040" src="description/3.jpg" alt="" width="516" height="249"></div>
+<div>&nbsp;<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">Select EF Designer
+ from Database and click Next.</span></div>
+<div>&nbsp;<img id="141041" src="description/4.jpg" alt="" width="415" height="293"></div>
+<div>&nbsp;<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">Click New Connection.</span></div>
+<div>&nbsp;<img id="141042" src="description/5.jpg" alt="" width="454" height="267"></div>
+<div>&nbsp;<span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">Here we can select our Database Server
+ Name and enter the DB server SQL Server Authentication User ID and Password. We have already created our database as &ldquo;</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">MenuDB</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">&rdquo;
+ so we can select the database and click OK.</span></div>
+<div>&nbsp;<img id="141043" src="description/6.jpg" alt="" width="397" height="360"></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Click Next and select the tables to be used and click Finish.</span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<div style="outline:0px"><span style="outline:0px">Here we can see we have now created our ShanuMenuModel.</span></div>
+</div>
+<div><img id="141044" src="description/7.jpg" alt="" width="302" height="224">&nbsp;</div>
+<div>&nbsp;<strong>Service1.SVC</strong></div>
+<div>&ldquo;Service.SVC.CS&rdquo; implements the IService Interface and overrides and defines all the methods of the Operation Contract.&nbsp;For example here we can see I have implemented the&nbsp;<strong>IService1</strong>&nbsp;in the&nbsp;<strong>Service1</strong>&nbsp;class.
+ I have created the object for our Entity model and in&nbsp;GetMenuDetails&nbsp;using a LINQ join query I get both Menu Master and Detaildatas.&nbsp;</div>
+<div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public class Service1 : IService1  
+    {  
+        ShanuMenuCreation_WCF.MenuDBEntities OME;  
+  
+        public Service1()  
+        {  
+            OME = new ShanuMenuCreation_WCF.MenuDBEntities();  
+        }  
+  
+        public List&lt;MenuDataContract.MenuDetailDataContract&gt; GetMenuDetails()  
+        {  
+            ////var query = (from a in OME.MenuDetails  
+            ////             select a).Distinct();  
+             var query = (from A in OME.MenuMaster     
+                         join B in OME.MenuDetails on A.Menu_ChildID equals B.Menu_ChildID   
+                         select new     
+                         {     
+                            A.Menu_RootID,  
+                            B.MDetail_ID,  
+                            B.Menu_ChildID,  
+                            B.MenuName,  
+                            B.MenuDisplayTxt,  
+                            B.MenuFileName,  
+                            B.MenuURL ,  
+                            B.UserID  
+                         }).ToList().OrderBy(q =&gt; q.MDetail_ID);    
+  
+            List&lt;MenuDataContract.MenuDetailDataContract&gt; MenuList = new List&lt;MenuDataContract.MenuDetailDataContract&gt;();  
+  
+            query.ToList().ForEach(rec =&gt;  
+            {  
+                MenuList.Add(new MenuDataContract.MenuDetailDataContract  
+                {  
+                    MDetail_ID = Convert.ToString(rec.MDetail_ID),  
+                    Menu_RootID = rec.Menu_RootID,  
+                    Menu_ChildID = rec.Menu_ChildID,  
+                    MenuName = rec.MenuName,  
+                    MenuDisplayTxt = rec.MenuDisplayTxt,  
+                    MenuFileName = rec.MenuFileName,  
+                    MenuURL = rec.MenuURL,  
+                    UserID = rec.UserID,  
+                });  
+            });  
+            return MenuList;  
+        }        
+    }  </pre>
+<div class="preview">
+<pre class="js">public&nbsp;class&nbsp;Service1&nbsp;:&nbsp;IService1&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShanuMenuCreation_WCF.MenuDBEntities&nbsp;OME;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Service1()&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OME&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;ShanuMenuCreation_WCF.MenuDBEntities();&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;List&lt;MenuDataContract.MenuDetailDataContract&gt;&nbsp;GetMenuDetails()&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span><span class="js__sl_comment">////var&nbsp;query&nbsp;=&nbsp;(from&nbsp;a&nbsp;in&nbsp;OME.MenuDetails&nbsp;&nbsp;</span><span class="js__sl_comment">////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;a).Distinct();&nbsp;&nbsp;</span><span class="js__statement">var</span>&nbsp;query&nbsp;=&nbsp;(from&nbsp;A&nbsp;<span class="js__operator">in</span>&nbsp;OME.MenuMaster&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;join&nbsp;B&nbsp;<span class="js__operator">in</span>&nbsp;OME.MenuDetails&nbsp;on&nbsp;A.Menu_ChildID&nbsp;equals&nbsp;B.Menu_ChildID&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span><span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.Menu_RootID,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.MDetail_ID,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.Menu_ChildID,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.MenuName,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.MenuDisplayTxt,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.MenuFileName,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.MenuURL&nbsp;,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.UserID&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>).ToList().OrderBy(q&nbsp;=&gt;&nbsp;q.MDetail_ID);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;MenuDataContract.MenuDetailDataContract&gt;&nbsp;MenuList&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;List&lt;MenuDataContract.MenuDetailDataContract&gt;();&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query.ToList().ForEach(rec&nbsp;=&gt;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MenuList.Add(<span class="js__operator">new</span>&nbsp;MenuDataContract.MenuDetailDataContract&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MDetail_ID&nbsp;=&nbsp;Convert.ToString(rec.MDetail_ID),&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu_RootID&nbsp;=&nbsp;rec.Menu_RootID,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu_ChildID&nbsp;=&nbsp;rec.Menu_ChildID,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MenuName&nbsp;=&nbsp;rec.MenuName,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MenuDisplayTxt&nbsp;=&nbsp;rec.MenuDisplayTxt,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MenuFileName&nbsp;=&nbsp;rec.MenuFileName,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MenuURL&nbsp;=&nbsp;rec.MenuURL,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UserID&nbsp;=&nbsp;rec.UserID,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;MenuList;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span><span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<div style="outline:0px"><strong style="outline:0px"><span style="outline:0px">Web.Config</span></strong></div>
+</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+In the WCF project's &ldquo;Web.Config&rdquo; make the following changes.<br style="outline:0px">
+Change</div>
+<div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;add binding=&quot;basicHttpsBinding&quot; scheme=&quot;https&quot; /&gt; to &lt;add binding=&quot;webHttpBinding&quot; scheme=&quot;http&quot; /&gt; </pre>
+<div class="preview">
+<pre class="xml"><span class="xml__tag_start">&lt;add</span>&nbsp;<span class="xml__attr_name">binding</span>=<span class="xml__attr_value">&quot;basicHttpsBinding&quot;</span>&nbsp;<span class="xml__attr_name">scheme</span>=<span class="xml__attr_value">&quot;https&quot;</span>&nbsp;<span class="xml__tag_start">/&gt;</span>&nbsp;to&nbsp;<span class="xml__tag_start">&lt;add</span>&nbsp;<span class="xml__attr_name">binding</span>=<span class="xml__attr_value">&quot;webHttpBinding&quot;</span>&nbsp;<span class="xml__attr_name">scheme</span>=<span class="xml__attr_value">&quot;http&quot;</span>&nbsp;<span class="xml__tag_start">/&gt;</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">Replace
+ the behaviour as in the following:</span>&nbsp;</div>
+</div>
+<div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;/behaviors&gt;  
+   &lt;endpointBehaviors&gt;  
+        &lt;behavior&gt;  
+          &lt;webHttp helpEnabled=&quot;True&quot;/&gt;  
+        &lt;/behavior&gt;  
+    &lt;/endpointBehaviors&gt;  
+&lt;/behaviors&gt;  </pre>
+<div class="preview">
+<pre class="xml"><span class="xml__tag_end">&lt;/behaviors&gt;</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="xml__tag_start">&lt;endpointBehaviors</span><span class="xml__tag_start">&gt;&nbsp;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__tag_start">&lt;behavior</span><span class="xml__tag_start">&gt;&nbsp;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__tag_start">&lt;webHttp</span>&nbsp;<span class="xml__attr_name">helpEnabled</span>=<span class="xml__attr_value">&quot;True&quot;</span><span class="xml__tag_start">/&gt;</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__tag_end">&lt;/behavior&gt;</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__tag_end">&lt;/endpointBehaviors&gt;</span>&nbsp;&nbsp;&nbsp;
+<span class="xml__tag_end">&lt;/behaviors&gt;</span>&nbsp;&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span style="outline:0px">Run
+ WCF Service:<span class="Apple-converted-space">&nbsp;</span></span></strong><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">Now
+ that we have created our WCF Rest service, let's run and test our service. In our service URL we can add our method name and we can see the JSON result data from the database.</span></div>
+</div>
+<div>&nbsp;<img id="141045" src="description/8.jpg" alt="" width="622" height="292"></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px"><span style="outline:0px">Create MVC Web Application</span></strong></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">We can add a new project to our existing project and create a new MVC web application as in the following.</span><span style="outline:0px">Right-click the project in the solution and click Add New Project then enter your project name
+ and click &quot;OK&quot;.</span></div>
+<div>&nbsp;<img id="141046" src="description/9.jpg" alt="" width="555" height="292"></div>
+<div>&nbsp;<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">Select MVC
+ and click &quot;OK&quot;.</span></div>
+<div>&nbsp;<span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">We have now
+ created our MVC application and it's time to add our WCF Service and install the AngularJS package to our solution.</span><br style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span style="outline:0px">Add
+ WCF Service</span></strong><span style="font:14px/21px Roboto,sans-serif; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; float:none; display:inline!important; white-space:normal; widows:1; background-color:#ffffff">:
+ Right-click MVC Solution and click Add then click Service Reference.</span></div>
+<div>&nbsp;<img id="141047" src="description/11.jpg" alt="" width="476" height="324"></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Enter your WCF URL and click GO. Here my WCF URL is<span class="Apple-converted-space">&nbsp;</span></span>http://localhost:3514/Service1.svc/</div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Add your name and click OK.</span></div>
+<div style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">
+<span style="outline:0px">Now we have successfully added our WCF Service to our MVC application.
+</span></div>
+<div><img id="141048" src="description/12.jpg" alt="" width="256" height="90">&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><em>source code file name #1 - summary for this source code file.</em> </li><li><em><em>source code file name #2 - summary for this source code file.</em></em>
+</li></ul>
+<h1>More Information</h1>
+<div><em>For more information on X, see ...?</em></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

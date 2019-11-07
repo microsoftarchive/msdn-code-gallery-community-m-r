@@ -1,0 +1,20 @@
+﻿<Application x:Class="MyShuttle.Client.W10.UniversalApp.App" 
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                     RequestedTheme="Light">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Dictionaries/Assets.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/VehiclesTemplatesResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/RidesTemplatesResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/RatingResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/BorderResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/ButtonResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/ImageResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/TextBlockResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/TextBoxResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,289 @@
+﻿<basics:ChildWindow
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+  x:Class="ListsSample.ModifyItemChildWindow"
+  Title="Modify Item: "
+  Width="450" Height="Auto" MaxWidth="450" MaxHeight="480" mc:Ignorable="d">
+  <Grid
+    x:Name="LayoutRoot"
+    Background="White">
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition
+        Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Grid
+      Grid.Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition
+          Width="Auto" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <TextBlock
+        Grid.Row="0"
+        Text="Item details: "
+        FontSize="15"
+        FontWeight="Bold"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Left"
+        Grid.ColumnSpan="2" />
+
+      <!-- Name -->
+      <TextBlock
+        Text="Name: "
+        Grid.Row="1"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+        Margin="0,10" />
+      <TextBox
+        Text="{Binding Name, Mode=TwoWay}"
+        Grid.Row="1"
+        Grid.Column="1"
+        MaxLength="50"
+        VerticalAlignment="Center"
+        Margin="0,10"/>
+
+      <!-- Description -->
+      <TextBlock
+        Text="Description: "
+        Grid.Row="2"
+        Grid.Column="0"
+        VerticalAlignment="Top"
+        Margin="0,10" />
+      <TextBox
+        Text="{Binding Description, Mode=TwoWay}"
+        Grid.Row="2"
+        Grid.Column="1"
+        MaxLength="140"
+        Height="100"
+        VerticalAlignment="Stretch"
+        TextWrapping="Wrap"
+        Margin="0,10" />
+
+      <!-- Priority -->
+      <TextBlock
+        Text="Priority: "
+        Grid.Row="3"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+        Margin="0,10" />
+      <StackPanel
+        Grid.Row="3"
+        Grid.Column="1"
+        Orientation="Horizontal"
+        Margin="0,10">
+        <ComboBox
+          ItemsSource="{Binding Priorities}"
+          SelectedItem="{Binding Priority, Mode=TwoWay}"
+          Grid.Row="3"
+          Grid.Column="1"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Center"
+          ItemTemplate="{StaticResource ComboBoxTemplate}"
+          MinWidth="80"/>
+        <HyperlinkButton
+          Content="X"
+          Foreground="DarkRed"
+          VerticalContentAlignment="Center"
+          Visibility="{Binding Priority, Converter={StaticResource ItemVisibilityConverter}}"
+          Click="ClearPriorityButtonClick"
+          VerticalAlignment="Center"
+          Margin="5,0"/>
+      </StackPanel>
+
+      <!-- Status -->
+      <TextBlock
+        Text="Status: "
+        Grid.Row="4"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+        Margin="0,10" />
+      <StackPanel
+        Grid.Row="4"
+        Grid.Column="1"
+        Orientation="Horizontal"
+        Margin="0,10" >
+        <ComboBox
+          ItemsSource="{Binding Statuses}"
+          SelectedItem="{Binding Status, Mode=TwoWay}"
+          Grid.Row="4"
+          Grid.Column="1"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Center"
+          ItemTemplate="{StaticResource ComboBoxTemplate}"
+          MinWidth="80"/>
+        <HyperlinkButton
+          Content="X"
+          Foreground="DarkRed"
+          VerticalContentAlignment="Center"
+          Click="ClearStatusButtonClick"
+          Visibility="{Binding Status, Converter={StaticResource ItemVisibilityConverter}}"
+          VerticalAlignment="Center"
+          Margin="5,0"/>
+      </StackPanel>
+
+      <!-- Start Date-->
+      <TextBlock
+        Text="Start: "
+        Grid.Row="5"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+        Margin="0,10" />
+      <StackPanel
+        Grid.Row="5"
+        Grid.Column="1"
+        Orientation="Horizontal">
+        <basics:DatePicker
+          HorizontalAlignment="Left"
+          VerticalAlignment="Bottom"
+          Grid.Column="1"
+          Grid.Row="5"
+          SelectedDate="{Binding StartDate, Mode=TwoWay}"
+          Margin="0,10"/>
+        <HyperlinkButton
+          Content="X"
+          Foreground="DarkRed"
+          VerticalContentAlignment="Center"
+          Visibility="{Binding StartDate, Converter={StaticResource ItemVisibilityConverter}}"
+          Click="ClearStartDateButtonClick"
+          VerticalAlignment="Center"
+          Margin="5,0"/>
+      </StackPanel>
+
+      <!-- End Date-->
+      <TextBlock
+        Text="End: "
+        Grid.Row="6"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+        Margin="0,10" />
+      <StackPanel
+        Grid.Row="6"
+        Grid.Column="1"
+        Orientation="Horizontal">
+        <basics:DatePicker
+          HorizontalAlignment="Left"
+          VerticalAlignment="Bottom"
+          Grid.Column="1"
+          Grid.Row="6"
+          SelectedDate="{Binding EndDate, Mode=TwoWay}"
+          Margin="0,10" />
+        <HyperlinkButton
+          Content="X"
+          Foreground="DarkRed"
+          VerticalContentAlignment="Center"
+          Visibility="{Binding EndDate, Converter={StaticResource ItemVisibilityConverter}}"
+          Click="ClearEndDateButtonClick"
+          VerticalAlignment="Center"
+          Margin="5,0"/>
+      </StackPanel>
+
+      <!-- Tags -->
+      <TextBlock
+        Text="Tags: "
+        Grid.Row="7"
+        Grid.Column="0"
+        VerticalAlignment="Top"
+        Margin="0,10" />
+      <Grid
+        Grid.Row="7"
+        Grid.Column="1"
+        VerticalAlignment="Top"
+        Margin="0,10" >
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition
+            Height="Auto" />
+        </Grid.RowDefinitions>
+        <ItemsControl
+          Grid.Row="0"
+          ItemsSource="{Binding Tags}"
+          VerticalAlignment="Stretch"
+          HorizontalAlignment="Stretch" >
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <controlsToolkit:WrapPanel
+                Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel
+                Orientation="Horizontal"
+                Margin="5">
+                <TextBlock
+                  Text="{Binding Name}" />
+                <TextBlock
+                  Text=" (" Margin="0" Padding="0"/>
+                <HyperlinkButton
+                  Content="x"
+                  Tag="{Binding}"
+                  Click="RemoveTagButtonClick"
+                  Margin="0"
+                  Padding="0"/>
+                <TextBlock
+                  Text=")"
+                  Margin="0"
+                  Padding="0"/>
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <StackPanel
+          Grid.Row="1"
+          Orientation="Horizontal">
+          <ComboBox
+            x:Name="UnusedTagsCombo"
+            ItemsSource="{Binding UnusedTags}"
+            ItemTemplate="{StaticResource ComboBoxTemplate}"
+            MinWidth="110" />
+          <Button 
+            Content="+" 
+            Visibility="{Binding SelectedItem, ElementName=UnusedTagsCombo, Converter={StaticResource ItemVisibilityConverter}}" 
+            Tag="{Binding SelectedItem, ElementName=UnusedTagsCombo}"
+            Click="AddTagButtonClick" />
+        </StackPanel>
+      </Grid>
+
+    </Grid>
+
+    <Button
+      x:Name="OKButton"
+      Content="OK"
+      Click="OKButton_Click"
+      Width="75"
+      Height="23"
+      HorizontalAlignment="Right"
+      Grid.Row="1" />
+    <Button
+      x:Name="CancelButton"
+      Content="Cancel"
+      Click="CancelButton_Click"
+      Width="75"
+      Height="23"
+      HorizontalAlignment="Right"
+      Margin="0,0,79,0"
+      Grid.Row="1" />
+  </Grid>
+</basics:ChildWindow>

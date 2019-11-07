@@ -1,0 +1,114 @@
+<section data-ng-controller="RidesController">
+    <div class="panel panel-default rides-list">
+        <div class="panel-heading clearfix">
+            <h3>Rides</h3>
+
+            <div class="filters-container pull-right clearfix">
+                <label class="control-label">
+                    <span>Vehicle</span>
+                    <select class="form-control"
+                            ng-model="vehicleIdFilter"
+                            ng-options="vehicle.VehicleId as vehicle.Name for vehicle in vehicles"
+                            ng-change="filterChange()">
+                        <option value="">All</option>
+                    </select>
+                </label>
+                <label class="control-label">
+                    <span>Driver</span>
+                    <select class="form-control"
+                            ng-model="driverIdFilter"
+                            ng-options="driver.DriverId as driver.Name for driver in drivers"
+                            ng-change="filterChange()">
+                        <option value="">All</option>
+                    </select>
+                </label>
+
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h3 ng-show="count == 0" class="ng-hide">Your filter selection did not match any ride</h3>
+                </div>
+                <h4 class="pull-right"><strong>{{count}}</strong> results</h4>
+            </div>
+            <div class="list-container">
+                <table class="table table-striped table-hover" ng-hide="count == 0">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Date</th>
+                        <th>Pick-Up Time</th>
+                        <th>Duration</th>
+                        <th>Cost</th>
+                        <th>Vehicle</th>
+                        <th>Rate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr bindonce="rides" ng-repeat-start="ride in rides"
+                        ng-click="ride.collapsed = !ride.collapsed"
+                        class="table-row" ng-class="{'table-row-selected': !ride.collapsed}">
+                        <td class="vertical-middle">
+                            <img src="App/Modules/Rides/Images/greyarroww.png" ng-if="ride.collapsed" />
+                            <img src="App/Modules/Rides/Images/whitearrow.png" ng-if="!ride.collapsed" />
+                        </td>
+                        <td bo-bind="ride.StartDateTime | amDateFormat:'MM/DD/YYYY'"></td>
+                        <td bo-bind="ride.StartDateTime | amDateFormat:'hh:mm a'"></td>
+                        <td>{{ride.Duration}} min</td>
+                        <td bo-bind="ride.Cost | currency"></td>
+                        <td>{{ride.Vehicle.Make}} {{ride.Vehicle.Model}}</td>
+                        <td>${{ride.Vehicle.Rate}}/<span title="miles">mi</span></td>
+                    </tr>
+                    <tr bindonce="rides" ng-repeat-end class="ride-detail-row" ng-class="{'ride-detail-row-selected': !ride.collapsed}">
+                        <td colspan="7">
+                            <div class="ride-detail-container animate-if" ng-if="!ride.collapsed">
+                                <img bo-src="ride.Vehicle.Picture | imageBase64" class="hidden-xs" />
+                                <div class="data-container">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <span>Start</span>
+                                            <h3 bo-bind="ride.StartDateTime | amDateFormat:'hh:mm a'"></h3>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <span>End</span>
+                                            <h3 bo-bind="ride.EndDateTime | amDateFormat:'hh:mm a'"></h3>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <span>Distance</span>
+                                            <h3>{{ride.Distance}} miles</h3>
+                                        </div>
+                                        <div class="col-xs-3 text-right">
+                                            <span>Cost</span>
+                                            <h3 bo-bind="ride.Cost | currency"></h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <span>Driver</span>
+                                            <h3 bo-bind="ride.Driver.Name"></h3>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <span>Rating</span>
+                                            <ms-rating model="ride.Rating" big="true"></ms-rating>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 comment-container">
+                                            <span>Comment: </span>
+                                            <span bo-bind="ride.Comments"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <list-pager count="count" page="page" go-to="goTo(numPage)" page-size="pageSize"></list-pager>
+        </div>
+    </div>
+</section>

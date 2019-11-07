@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "My Company mobile";
+}
+
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Expenses</li>
+    <!-- ko foreach: expenses -->
+    <li>
+        <a href="#" data-bind="click: $parent.goToDetail">
+            <img src="#" data-bind="attr: { src: 'data:image/png;base64,' + employeePicture }" />
+            <span class="block" data-bind="text: employeeFullName"></span>
+            <span class="block" data-bind="text: creationDate"></span>
+            <span class="block" data-bind="text: amount"></span>
+            <span class="block" data-bind="text: status"></span>
+        </a>
+    </li>
+    <!-- /ko -->
+</ul>
+
+<script type="text/javascript">
+    var securityToken = '@ViewBag.SecurityToken';
+    Security.setAccessToken(securityToken);
+    if('@ViewBag.IsNoAuth' === 'true')
+        Security.setIsNoAuth(true);
+</script>
+
+@section scripts{
+    @Scripts.Render("~/bundles/home")
+}

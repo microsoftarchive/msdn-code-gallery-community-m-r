@@ -1,0 +1,75 @@
+﻿@using System.Web.Optimization
+@model MyEvents.Model.Session
+@{
+    ViewBag.Title = "my events - " + @Model.Title;
+}
+@section Meta
+{
+    <meta name="title" content="@Model.Title" />
+    <meta name="description" content="@Model.Description" />
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".description header a").click(function (e) {
+                $(".description .content").toggle();
+                e.preventDefault();
+            });
+            $(".description .content").hide();
+        });
+    </script>
+    @Scripts.Render("~/Attendee/Session/DetailScripts/")
+}
+
+@Html.Partial("_ShareMenu")
+
+@Html.HiddenFor(model => model.Title)
+@Html.HiddenFor(model => model.Description)
+@Html.HiddenFor(model => model.TwitterAccount)
+<article id="session-detail">
+    <header>
+        <h1>@Model.Title</h1>
+    </header>
+    <section class="description">
+        <header>
+            <a href="#">
+                <h2>description</h2>
+            </a>
+        </header>
+        <div class="content">
+            @Model.Description
+        </div>
+    </section>
+    <section class="speakers">
+        <header>
+            <h2>speakers</h2>
+            <p>
+                <img src="@Url.Content("~/Styles/Images/organizer-icon.png")" />
+                <strong>@Model.Speaker</strong>
+            </p>
+            <p>
+                <a href="http://www.twitter.com/@Model.TwitterAccount" class="twitter">
+                    <img src="@Url.Content("~/Styles/Images/twitter-speaker.png")" />
+                    @Model.TwitterAccount
+                </a>
+            </p>
+        </header>
+
+        <p>@Model.Biography</p>
+    </section>
+
+    <footer>
+        <h2>Materials</h2>
+        @foreach (var material in Model.Materials)
+        {
+            <ul class="material">
+                <li><a href="@Url.Action("GetMaterial", "Event", new { materialId = material.MaterialId })" target="_blanck">
+                        <img src="@Url.Content("~/Styles/Images/document.png")" />
+                        @material.Name</a></li>
+            </ul>
+        }
+    </footer>
+</article>

@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Changes to these file need to be kept in sync with the deserialization classes in modulesxml.cs-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Gadgeteer/2011/Hardware" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.microsoft.com/Gadgeteer/2011/Hardware">
+
+  <xs:element name="GadgeteerDefinitions">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="ModuleDefinitions" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ModuleDefinition">
+                <xs:annotation>
+                  <xs:documentation>
+                    Description of a Microsoft .NET Gadgeteer compatible module, for use by the Visual Studio designer view.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Assemblies" type="Assemblies" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Sockets" type="Sockets" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="ProvidedSockets" type="ProvidedSockets" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="ExtraLibrariesRequired" minOccurs="0" maxOccurs="1" type="Assemblies" />
+                    <xs:element name="LibrariesProvided" minOccurs="0" maxOccurs="1" type="Assemblies" />
+                    <xs:element name="Power" type="Power" minOccurs="0" maxOccurs="1" />
+                  </xs:all>
+                  <xs:attributeGroup ref="MainboardModuleSharedAttributes" />
+                  <xs:attribute name="UniqueId" type="guid" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Guid that uniquely identifies this module. If multiple modules with the same UniqueId are found, the one with the latest version will be used.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="Manufacturer" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Manufacturer of this module.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="Description" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Description of the functionality of this module.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="InstanceName" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Base name to be used for instances of this module. When more than one module of the same type is used, a number is appended to distinguish between instances (e.g. "button1" and "button2").</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="ModuleSuppliesPower" type="xs:boolean" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Whether or not the module supplies power to the other electronics. Modules that supply power should be red.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MainboardDefinitions" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="MainboardDefinition">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Power" type="Power" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="Assemblies" type="Assemblies" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProvidedSockets" type="ProvidedSockets" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="LibrariesProvided" minOccurs="0" maxOccurs="1" type="Assemblies" />
+                  </xs:all>
+                  <xs:attributeGroup ref="MainboardModuleSharedAttributes" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!--<xs:complexType name="AssemblyList">
+    <xs:sequence>
+      <xs:element name="AssemblyName" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>-->
+
+  <xs:attributeGroup name="MainboardModuleSharedAttributes">
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Name of this module/mainboard, as printed on the circuit board.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Type" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Class name of the driver for this module/mainboard.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="HardwareVersion" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Hardware version number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Image" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>An image of the module/mainboard showing the sockets. This image should exactly match the size specified in BoardWidth and BoardHeight and should not exceed 1Mb in size.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="BoardWidth" type="xs:double" use="required">
+      <xs:annotation>
+        <xs:documentation>Width of circuit board in millimeters (including any components which overhang the edge of the board).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="BoardHeight" type="xs:double" use="required">
+      <xs:annotation>
+        <xs:documentation>Height of circuit board in millimeters (including any components which overhang the edge of the board).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MinimumGadgeteerCoreVersion" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Minimum version of Gadgeteer core libraries that this mainboard/module's driver requires.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="HelpUrl" type="xs:string" use="optional" default="">
+      <xs:annotation>
+        <xs:documentation>Url pointing to online help for this mainboard/module.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:complexType name="Power">
+    <xs:annotation>
+      <xs:documentation>Power characteristics.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PowerRequirements" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>List of power requirements.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="TypicalCurrent" type="inCurrent">
+              <xs:annotation>
+                <xs:documentation>The current typically drawn at specified voltage (in Amps). Use 'Infinity' if not bounded.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="MaximumCurrent" type="inCurrent">
+              <xs:annotation>
+                <xs:documentation>The peak current that can be drawn at specified voltage (in Amps). Use 'Infinity' if not bounded.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="Voltage" type="powerVoltage" use="required">
+            <xs:annotation>
+              <xs:documentation>Voltage (in Volts) to which the requirements apply.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Assemblies">
+    <xs:annotation>
+      <xs:documentation>List of assemblies.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Assembly" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Details of an assembly that will be automatically added as a project reference when using this hardware.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="MFVersion" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation>.NET Micro Framework version this assembly targets.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="Name" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation>Assembly name, usually the DLL name without the extension.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ErrorMessage" type="xs:string" use="optional">
+            <xs:annotation>
+              <xs:documentation>Custom error message to be displayed to the user when a dependency cannot be fulfilled. If this is not present the name of the assembly is used.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="guid">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A globally unique identifier.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\{?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="powerVoltage">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:enumeration value="3.3" />
+          <xs:enumeration value="5.0" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:minExclusive value="0.0" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:maxExclusive value="0.0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="inCurrent">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Infinity" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:minInclusive value="0.0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:complexType name="Sockets">
+    <xs:annotation>
+      <xs:documentation>List of consumer-sockets on the module, which must be attached to provider-sockets that support functionality, e.g. on mainboards.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="Socket" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Description of a consumer-socket and the functions required from the provider-socket it is connected to.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Types">
+              <xs:annotation>
+                <xs:documentation>A structure representing the types that the socket is compatible with.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Type" type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation>Single type.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="CompositeType">
+                    <xs:annotation>
+                      <xs:documentation>Composite type, i.e. requiring connection to a provider-socket with more than one socket type.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="1" maxOccurs="1" name="Types">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" name="Type" type="xs:string" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Pins">
+              <xs:annotation>
+                <xs:documentation>List of pins on this socket that are used by the module.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Pin">
+                    <xs:annotation>
+                      <xs:documentation>Socket pin number.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="SocketPin">
+                          <xs:attribute name="Shared" type="xs:boolean" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>Whether the use of this pin permits sharing it with other modules.  E.g. this is true for SPI's MISO, MOSI and SCK or for I2C's SDA and SCL, but false for SPI's CS or an Interrupt GPIO.</xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="NetId"  type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation>Name of the PCB net to which the pin is attached. The scope of this name is this PCB (different PCBs can reuse names and those are regarded as different nets).</xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attributeGroup ref="SocketAttributes" />
+          <xs:attribute name="TypesLabel" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation>The label printed beside this socket, usually listing the compatible socket types.  E.g. "H" for a USB Host module's socket.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="Optional" type="xs:boolean" use="optional" default="false">
+            <xs:annotation>
+              <xs:documentation>Whether this socket must be connected.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ConstructorOrder" type="xs:integer" use="required" >
+            <xs:annotation>
+              <xs:documentation>The ordering of this socket's number in the module constructor. The designer uses this to generate the constructor calling code, by sorting socket numbers in ascending order of this field.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="SocketPin">
+    <xs:restriction base="xs:int">
+      <xs:maxInclusive value="9" />
+      <xs:minInclusive value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:attributeGroup name="SocketAttributes" >
+    <xs:attribute name="Left" type="xs:double" use="required">
+      <xs:annotation>
+        <xs:documentation>Distance, in millimeters, from the center of the socket to the left edge of the mainboard/module.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Top" type="xs:double" use="required">
+      <xs:annotation>
+        <xs:documentation>Distance, in millimeters, from the center of the socket to the top edge of the mainboard/module.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Orientation" type="xs:float" use="optional" default="0" >
+      <xs:annotation>
+        <xs:documentation>Angle in degrees of the direction of the socket's notch. 0 (the default) specifies a vertical socket with the notch facing right; 90 specifies a horizontal socket with the notch pointing up; 180 specifies a notch facing left; 270 specifies a notch facing down.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
+
+
+  <xs:complexType name="ProvidedSockets">
+    <xs:annotation>
+      <xs:documentation>List of provider-sockets present on this mainboard/module for other modules to plug in to.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ProvidedSocket" maxOccurs="unbounded" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Describes a single provider-socket.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Types" maxOccurs="1" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Describes the collection of supported types for this provider-socket.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Type" maxOccurs="unbounded" type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation>Specifies that this type is supported by this provider-socket.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="SharedPinMaps" maxOccurs="1" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>List of socket pin to PCB net mappings.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SharedPinMap" maxOccurs="unbounded" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>Socket pin to PCB net mapping.  This should be specified whenever a socket pin is shared between multiple sockets, i.e. they are connected to the same net on the PCB. It is not necessary to specify this for pins that are not shared. Specifying this allows the designer to perform constraint solving to avoid any PinConflictException events that might occur if the user plugs modules into sockets which share pins.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:attribute name="SocketPin" type="SocketPin"  use="required">
+                        <xs:annotation>
+                          <xs:documentation>Socket pin number that is attached to the PCB net specified by NetId.</xs:documentation>
+                        </xs:annotation>
+                      </xs:attribute>
+                      <xs:attribute name="NetId"  type="xs:string" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Name of the PCB net to which the pin is attached. The scope of this name is this PCB (different PCBs can reuse names and those are regarded as different nets).</xs:documentation>
+                        </xs:annotation>
+                      </xs:attribute>
+                      <xs:attribute name="SharedOnly"  type="xs:boolean" use="optional" default="false">
+                        <xs:annotation>
+                          <xs:documentation>Whether this socket pin can only be used in a shared fashion. This should be specified when the pin is used (in a shared fashion) with inbuilt mainboard/module functionality, e.g. for SPI bus pins where the mainboard uses an SPI-based flash chip on the same SPI bus.</xs:documentation>
+                        </xs:annotation>
+                      </xs:attribute>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attributeGroup ref="SocketAttributes" />
+          <xs:attribute name="Label" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation>The label printed beside this provider-socket. Usually a number for mainboard sockets, e.g. "4".</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ConstructorParameter" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation>Describes the parameter to be used when generating constructors. For mainboards, this is usually a number, e.g. "4".  For module provider-sockets, this is usually a text string which denotes an integer property of the module driver class that provides access to the auto-generated socket number, e.g., "DaisyLinkSocketNumber" for DaisyLink modules.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,203 @@
+﻿<style>
+    ul, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+        background: transparent;
+        height: 30px;
+        padding: 0 10px;
+        color: #FFFFFF;
+    }
+
+        .menu > li {
+            display: inline-block;
+            padding: 2px 6px 22px 2px;
+            display: inline-block;
+            text-align: center;
+            height: 32px;
+            width: 176px;
+            color: #FFFFFF;
+        }
+
+            .menu > li a {
+                display: inline-block;
+                background: url(../../Images/R1.PNG);
+                padding: 2px 6px 22px 2px;
+                display: inline-block;
+                text-align: center;
+                height: 32px;
+                width: 176px;
+                color: #FFFFFF;
+            }
+
+                .menu > li a:hover {
+                    display: inline-block;
+                    background: url(../../Images/R2.PNG);
+                    padding: 2px 6px 22px 2px;
+                    display: inline-block;
+                    text-align: center;
+                    height: 32px;
+                    width: 176px;
+                    color: #000000;
+                }
+
+    .sub-menu {
+        position: absolute;
+        display: none;
+        background-color: transparent;
+        padding: 5px;
+    }
+
+        .sub-menu > li {
+            display: block;
+            cursor: pointer;
+            background: url(../../Images/R1.PNG);
+        }
+
+            .sub-menu > li a:hover {
+                display: block;
+                cursor: pointer;
+                background: url(../../Images/R2.PNG);
+            }
+
+
+
+    .sub-menu2 {
+        position: absolute;
+        display: none;
+        background-color: pink;
+    }
+
+        .sub-menu2 > li {
+            display: block;
+            cursor: pointer;
+            background-color: green;
+        }
+
+            .sub-menu2 > li a:hover {
+                display: block;
+                cursor: pointer;
+                background-color: pink;
+            }
+
+
+    .sub-menu2 {
+        margin-top: -20px;
+        margin-left: 178px;
+    }
+
+    li:hover .sub-menu {
+        display: block;
+    }
+
+    li:hover .sub-menu2 {
+        display: block;
+    }
+</style>
+<html data-ng-app="RESTClientModule">
+@{
+    ViewBag.Title = "About SHANU";
+}
+
+
+<body data-ng-controller="AngularJsShanu_WCFController">
+    <img src="~/Images/blank.gif" alt="" width="1" height="10" />
+    <table width="99%" style=" border-bottom:3px solid #3273d5;">
+        <tr>
+
+            <td width="160">
+                <table width="99%">
+                    <tr>
+                        <td>
+                            Welcome Mr. {{'SHANU'}}
+
+                        </td>
+
+
+                    </tr>
+                </table>
+            </td>
+            <td class="style1" align="center">
+                <h3>Dynamic Menu Creation using AngularJs, MVC and WCF   :)</h3>
+
+
+            </td>
+            <td align="right">
+                <div>
+                    Today Date is :
+                    {{date | date:'yyyy-MM-dd'}}
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <img src="~/Images/blank.gif" alt="" width="1" height="6" />
+    <table id="tblContainer" style='width: 99%;table-layout:fixed;'>
+        <tr>
+            <td>
+                <table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Home > About Shanu</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="overflow:visible;height:100px;">
+                                <ul class="menu">
+                                    <li data-ng-repeat="menus in MenuDetailsDisp | filter:{Menu_RootID:'Root'}">
+                                        @{
+                                            var url = Url.Action("{{menus.MenuFileName}}", "{{menus.MenuURL}}", new { id = "{{id=menus.MenuURL}}" });
+                                            url = HttpUtility.UrlDecode(url);
+                                        }
+                                        <a data-ng-href="@url">{{menus.MenuDisplayTxt}}</a>
+
+                                        <ul class="sub-menu">
+                                            <li data-ng-repeat="submenus in MenuDetailsDisp | filter:{Menu_RootID:menus.Menu_ChildID}" ng-mouseover="showsubMenu(1,submenus.Menu_ChildID);" ng-mouseout="showsubMenu(0,submenus.Menu_ChildID);">
+                                                @{
+                                                    var url1 = Url.Action("{{submenus.MenuFileName}}", "{{submenus.MenuURL}}", new { id = "{{id=submenus.MenuURL}}" });
+                                                    url1 = HttpUtility.UrlDecode(url1);
+                                                }
+                                                <a data-ng-href="@url1">{{submenus.MenuDisplayTxt}}</a>
+
+                                                <ul ng-show="showSubDetails" class="sub-menu2">
+                                                    <li data-ng-repeat="sub1menus in MenuDetailsDisp  | filter:{Menu_RootID:subChildIDS}" ng-mouseover="showsubMenu(3,9);">
+                                                        @{
+                                                            var url2 = Url.Action("{{sub1menus.MenuFileName}}", "{{sub1menus.MenuURL}}", new { id = "{{id=sub1menus.MenuURL}}" });
+                                                            url2 = HttpUtility.UrlDecode(url2);
+                                                        }
+                                                        <a data-ng-href="@url2">{{sub1menus.MenuDisplayTxt}}</a>
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
+
+<script src="~/Scripts/angular.js"></script>
+
+<script src="~/Scripts/ShanuAngularScript/Modules.js"></script>
+
+<script src="~/Scripts/ShanuAngularScript/Services.js"></script>
+
+<script src="~/Scripts/ShanuAngularScript/shanuController.js"></script>
+
+

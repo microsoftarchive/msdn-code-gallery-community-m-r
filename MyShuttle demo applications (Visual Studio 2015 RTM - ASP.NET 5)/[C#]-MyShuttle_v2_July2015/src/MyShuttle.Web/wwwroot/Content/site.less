@@ -1,0 +1,289 @@
+@import "variables.less";
+
+body{
+  font-family: @app-font-family;
+  font-size: 15px;
+  font-weight: 300;
+  color: @text-base-color;
+  min-width: @app-min-width;
+  position: relative;
+}
+
+header{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.content{
+  position: relative;
+  padding-top: @header-height;
+  overflow-y: auto;
+}
+
+footer{
+  position: relative;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: @app-font-family;;
+}
+
+h1{
+  font-weight: 500;
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+h2{
+  font-weight: 600;
+  font-size: 2.7em;
+  font-style: italic;
+  color: @highlight-text-color;
+  margin-bottom: 0.8em;
+}
+
+h3{
+  font-size: 2.7em;
+  font-weight: 300;
+  color: @text-base-color;
+}
+
+h4{
+  font-size: 1.4em;
+  line-height: 1.3em;
+  color: @alternative-text-color;
+  font-weight: 300;
+}
+
+hr{
+  border-top: 1px solid @secondary-text-color;
+  opacity: 0.3;
+  width: 65%;
+}
+
+hr.page-marker{
+  margin: 0;
+  border: none;
+}
+
+.margin-zero{
+  margin: 0;
+}
+
+.padding-zero{
+  padding: 0;
+}
+
+.ms-container-fluid {
+  max-width: @app-content-max-width;
+  margin: 0 auto;
+
+  &.spaced, &.full-spaced{
+    padding: 0 @standard-space;
+  }
+}
+
+.vertical-text-wrapper{
+  height: 100%;
+  display: table;
+
+  >.vertical-text-container{
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.ms-navbar{
+  background-color: @navbar-bg;
+  margin-bottom: 0;
+  border-radius: 0;
+  border: none;
+  text-align: center;
+
+  .ms-navbar-brand{
+    margin-top: 8px;
+    margin-bottom: 7px;
+  }
+
+  .ms-navbar-toggle{
+    border: none;
+    border-radius: 0;
+    padding: 1.9em;
+    margin: 0;
+
+    &:hover, &:focus{
+      background-color: @navbar-elem-hover-bg;
+      outline: none;
+    }
+
+    .icon-bar{
+      background-color: @white;
+      width: 2.5em;
+      height: 0.2em;
+      border-radius: 2px;
+
+      +.icon-bar{
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  .ms-navbar-collapse{
+    border:none;
+    background-color: @navbar-elem-hover-bg;
+    box-shadow: @box-external-shadow-bg 0px 7px 0px;
+  }
+
+  .ms-navbar-nav{
+    margin-top: 0;
+    margin-bottom: 0;
+
+    >li{
+      >a{
+        padding: 2em 2.5em;
+        color: @white;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus{
+          color: @white;
+        }
+
+        &:hover{
+          background: @navbar-elem-alt-hover-bg;
+        }
+
+        &.login-item{
+          background-image: none;
+          padding: 2em 2.5em;
+        }
+      }
+    }
+
+    .active {
+      >a{
+        color: @white;
+        background-color: @navbar-selected-bg;
+
+        &:hover,
+        &:focus{
+          color: @white;
+        }
+
+        &:focus{
+          background-color: @navbar-selected-bg;
+        }
+
+        &:hover{
+          background-color: @navbar-selected-hover-bg;
+        }
+      }
+    }
+  }
+}
+
+// Company contact section styles
+.company-contact{
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-top: 1em;
+  padding-bottom: 4em;
+  color: @white;
+
+  ul.contact-ways-list{
+    list-style: none;
+    padding: 0;
+
+    li{
+      background-repeat: no-repeat;
+      padding: 0.5em 0 0.5em 2.5em;
+      background-position: 0 50%;
+
+      &.address-bg{
+        background-image: url('Images/address.png');
+      }
+
+      &.phone-bg{
+        background-image: url('Images/phone.png');
+      }
+      &.email-bg{
+        background-image: url('Images/email.png');
+      }
+
+    }
+  }
+
+  .copyrights{
+    font-style: italic;
+    color: @text-base-color;
+    margin-top: 2em;
+  }
+
+  .contact-form-col{
+    margin-top: 2em;
+  }
+}
+
+@media (min-width: @screen-sm-min){
+  .content{
+    overflow-y: hidden;
+  }
+
+  footer{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  h1{
+    font-size: 4.5em;
+  }
+
+  h4{
+    font-size: 1.8em;
+  }
+
+  hr{
+    width: 30%;
+  }
+
+  .ms-container-fluid {
+    &.spaced{
+      padding: 0;
+    }
+  }
+
+  .ms-navbar {
+    .ms-navbar-collapse {
+      background-color: @navbar-bg;
+      box-shadow: none;
+    }
+
+    .ms-navbar-nav {
+      > li {
+        > a {
+          padding: 2em 2.5em;
+
+          &:hover{
+            background-color: @navbar-elem-hover-bg;
+          }
+
+          &.login-item{
+            background-image: url('Images/login.png');
+            background-repeat: no-repeat;
+            background-position: 23% 50%;
+            padding: 2em 2.5em 2em 4em;
+            color: @navbar-secondary-elem-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .company-contact{
+    padding-top: 4em;
+  }
+}

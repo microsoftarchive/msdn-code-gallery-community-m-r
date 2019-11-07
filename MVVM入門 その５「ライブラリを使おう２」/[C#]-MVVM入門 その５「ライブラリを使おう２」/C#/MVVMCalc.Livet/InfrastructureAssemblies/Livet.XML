@@ -1,0 +1,812 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Livet</name>
+    </assembly>
+    <members>
+        <member name="T:Livet.Messaging.InteractionMessage">
+            <summary>
+            相互作用メッセージの基底クラスです。<br/>
+            Viewからのアクション実行後、戻り値情報が必要ない相互作用メッセージを作成する場合はこのクラスを継承して相互作用メッセージを作成します。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessage.#ctor(System.String)">
+            <summary>
+            メッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.InteractionMessage.MessageKey">
+            <summary>
+            メッセージキーを指定、または取得します。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.File.SelectFileMessage">
+            <summary>
+            ファイルを開く・ファイルを保存するアクション用の共通相互作用メッセージ基底抽象クラスです。<br/>
+            ファイルを開くアクションをViewに行わせたい場合は、SelectOpenFileMessageを使用してください。<br/>
+            ファイルを保存するアクションをViewに行わせたい場合は、SelectSaveFileMessageを使用してください。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.InteractionResponsibleMessage`1">
+            <summary>
+            戻り値のある相互作用メッセージの基底クラスです。
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Livet.Messaging.InteractionResponsibleMessage">
+            <summary>
+            戻り値のある相互作用メッセージの抽象基底クラスです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.InteractionResponsibleMessage`1.#ctor(System.String)">
+            <summary>
+            メッセージキーを使用して、戻り値のある新しい相互作用メッセージのインスタンスを生成します
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.InteractionResponsibleMessage`1.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.InteractionResponsibleMessage`1.Response">
+            <summary>
+            戻り値情報
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.File.SelectFileMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.File.SelectFileMessage.Title">
+            <summary>
+            ダイアログタイトルを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.File.SelectFileMessage.Filter">
+            <summary>
+            ファイルの拡張子Filterを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.File.SelectFileMessage.AddExtension">
+            <summary>
+            拡張子を指定しなかった場合、自動で拡張子を追加するかどうかを指定、または取得します。デフォルトはtrueです。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.Window.WindowAction">
+            <summary>
+            WindowActionMessageで使用する、Windowが遷移すべき状態を表します。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.Window.WindowAction.Close">
+            <summary>
+            Windowを閉じます。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.Window.WindowAction.Maximize">
+            <summary>
+            Windowを最大化します。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.Window.WindowAction.Minimize">
+            <summary>
+            Windowを最小化します。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.Window.WindowAction.Normal">
+            <summary>
+            Windowを通常状態にします。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.Window.WindowAction.Active">
+            <summary>
+            Windowをアクティブにします。
+            </summary>
+        </member>
+        <member name="T:Livet.IWeakEventListenerHaving">
+            <summary>
+            IWeakEventListenerのリストを持つクラスです。
+            通常このリストにIWeakEventListenerを追加することで、<br/>
+            IWeakEventListenerとこのインターフェースを実装したオブジェクトのライフサイクルを一致させます。
+            </summary>
+        </member>
+        <member name="T:Livet.ReadOnlyNotifyDispatcherCollection`1">
+            <summary>
+            DispatcherCollectionの読み取り専用ラッパーです。<br/>
+            ReadOnlyObservableCollectionなどと異なり、ソースコレクションの変更によってコレクションが変更された場合、<br/>
+            変更通知を行います。
+            </summary>
+            <typeparam name="T">コレクションアイテムの型</typeparam>
+        </member>
+        <member name="P:Livet.ReadOnlyNotifyDispatcherCollection`1.Dispatcher">
+            <summary>
+            このコレクションが変更通知を行うDispatcherを取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.ReadOnlyNotifyDispatcherCollection`1.ListenerList">
+            <summary>
+            このクラスが購読するWeakEventのListenerの参照を確保するためのリストです。
+            このクラスインスタンスの生存期間の間、保持しておきたいIWeakEventLisntenerはこのリストに入れてください。
+            </summary>
+        </member>
+        <member name="T:Livet.ViewModel">
+            <summary>
+            ViewModelの基底クラスです。
+            </summary>
+        </member>
+        <member name="T:Livet.NotifyObject">
+            <summary>
+            変更通知オブジェクトの基底クラスです。
+            </summary>
+        </member>
+        <member name="M:Livet.NotifyObject.RaisePropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            プロパティ変更通知イベントを発生させます。
+            </summary>
+            <param name="propertyExpression">() => プロパティ形式のラムダ式</param>
+        </member>
+        <member name="M:Livet.NotifyObject.RaisePropertyChanged(System.String)">
+            <summary>
+            プロパティ変更通知イベントを発生させます
+            </summary>
+            <param name="propertyName">プロパティ名</param>
+        </member>
+        <member name="E:Livet.NotifyObject.PropertyChanged">
+            <summary>
+            プロパティ変更通知イベントです。
+            </summary>
+        </member>
+        <member name="P:Livet.NotifyObject.ListenerList">
+            <summary>
+            このクラスが購読するWeakEventのListenerの参照を確保するためのリストです。
+            このクラスインスタンスの生存期間の間、保持しておきたいIWeakEventLisntenerはこのリストに入れてください。
+            </summary>
+        </member>
+        <member name="P:Livet.ViewModel.Messenger">
+            <summary>
+            このViewModelクラスの基本Messegerインスタンスです。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.ConfirmMessage">
+            <summary>
+            確認相互作用メッセージを表します。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.ConfirmMessage.#ctor(System.String,System.String,System.String)">
+            <summary>
+            表示するメッセージ・キャプション・メッセージキーを指定して、新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="text">表示するメッセージ</param>
+            <param name="caption">キャプション</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.ConfirmMessage.#ctor(System.String,System.String,System.Windows.MessageBoxImage,System.String)">
+            <summary>
+            表示するメッセージ・キャプション・メッセージボックスイメージ・メッセージキーを指定して、新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="text">表示するメッセージ</param>
+            <param name="caption">キャプション</param>
+            <param name="image">メッセージボックスイメージ</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.ConfirmMessage.#ctor(System.String,System.String,System.Windows.MessageBoxImage,System.Windows.MessageBoxButton,System.String)">
+            <summary>
+            表示するメッセージ・キャプション・メッセージボックスイメージ・メッセージボックスボタン・メッセージキーを指定して、新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="text">表示するメッセージ</param>
+            <param name="caption">キャプション</param>
+            <param name="image">メッセージボックスイメージ</param>
+            <param name="button">メッセージボックスボタン</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.ConfirmMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.ConfirmMessage.Text">
+            <summary>
+            表示するメッセージを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.ConfirmMessage.Caption">
+            <summary>
+            キャプションを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.ConfirmMessage.Image">
+            <summary>
+            メッセージボックスイメージを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.ConfirmMessage.Button">
+            <summary>
+            メッセージボックスボタンを指定、または取得します。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.File.InteractionOpenFileDialogAction">
+            <summary>
+            「ファイルを開く」ダイアログを表示するアクションです。SelectOpenFileMessageに対応します。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.InteractionMessageAction`1">
+            <summary>
+            ViewModelからの相互作用メッセージに対応するアクションの基底抽象クラスです<br/>
+            独自のアクションを定義する場合はこのクラスを継承してください。
+            </summary>
+            <typeparam name="T">このアクションがアタッチ可能な型を示します。</typeparam>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.InteractionMessageAction`1.DirectInteractionMessage">
+            <summary>
+            Viewで直接相互作用メッセージを定義する場合に使用する、DirectInteractionMessageを指定、または取得します。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.InformationMessage">
+            <summary>
+            情報をViewに通知するためのメッセージです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.InformationMessage.#ctor(System.String,System.String,System.String)">
+            <summary>
+            表示するメッセージ・キャプション・メッセージキーを指定して、新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="text">表示するメッセージ</param>
+            <param name="caption">キャプション</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.InformationMessage.#ctor(System.String,System.String,System.Windows.MessageBoxImage,System.String)">
+            <summary>
+            表示するメッセージ・キャプション・メッセージボックスイメージ・メッセージキーを指定して、新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="text">表示するメッセージ</param>
+            <param name="caption">キャプション</param>
+            <param name="image">メッセージボックスイメージ</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.InformationMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.InformationMessage.Text">
+            <summary>
+            表示するメッセージを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.InformationMessage.Caption">
+            <summary>
+            キャプションを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.InformationMessage.Image">
+            <summary>
+            メッセージボックスイメージを指定、または取得します。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.InteractionMessageTrigger">
+            <summary>
+            ViewModelからの相互作用メッセージを受信し、アクションを実行します。
+            </summary>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.InteractionMessageTrigger.Messenger">
+            <summary>
+            ViewModelのMessengerを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.InteractionMessageTrigger.MessageKey">
+            <summary>
+            このトリガーが反応する相互作用メッセージのメッセージキーを指定、または取得します。<br/>
+            このプロパティが指定されていない場合、このトリガーは全ての相互作用メッセージに反応します。
+            </summary>
+        </member>
+        <member name="T:Livet.DispatcherHelper">
+            <summary>
+            UIDispatcherへのアクセスを簡易化します。
+            </summary>
+        </member>
+        <member name="M:Livet.DispatcherHelper.BeginInvoke(System.Action)">
+            <summary>
+            UIDispatcherで指定されたアクションを実行します。
+            </summary>
+            <param name="action">アクション</param>
+        </member>
+        <member name="M:Livet.DispatcherHelper.BeginInvoke(System.Action,System.Windows.Threading.DispatcherPriority)">
+            <summary>
+            UIDispatcherで指定されたアクションを実行します。
+            </summary>
+            <param name="action">アクション</param>
+            <param name="priority">DispatcherPriority</param>
+        </member>
+        <member name="P:Livet.DispatcherHelper.UIDispatcher">
+            <summary>
+            UIDispatcherを指定、または取得します。通常このプロパティはApp_StartUpで指定されます。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.InteractionConfirmDialogAction">
+            <summary>
+            確認ダイアログを表示するアクションです。ConfirmMessageに対応します。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.DirectInteractionMessage">
+            <summary>
+            Viewから直接相互作用メッセージを定義する際に使用します。
+            </summary>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.DirectInteractionMessage.Message">
+            <summary>
+            相互作用メッセージ(各種InteractionMessage)を指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.DirectInteractionMessage.CallbackCommand">
+            <summary>
+            アクション実行後に実行するコマンドを指定、または取得します<br/>
+            このプロパティが設定されていた場合、アクションの実行後アクションの実行に使用した相互作用メッセージをパラメータとしてコマンドを呼び出します。
+            </summary>
+        </member>
+        <member name="T:Livet.ViewModelHelper">
+            <summary>
+            ViewModelの作成と実行をサポートするユーティリティクラスです。
+            </summary>
+        </member>
+        <member name="M:Livet.ViewModelHelper.CreateReadOnlyNotifyDispatcherCollection``2(System.Collections.ObjectModel.ObservableCollection{``1},System.Func{``1,``0},System.Windows.Threading.Dispatcher)">
+            <summary>
+            既存のObservableCollectionと同期された、読み取り専用のDispatcherCollectionを作成します。
+            </summary>
+            <typeparam name="TTargetItem">作成するReadOnlyNotifyDispatcherCollectionのコレクションアイテムの型</typeparam>
+            <typeparam name="TSourceItem">基となるObservableCollectionのコレクションアイテムの型</typeparam>
+            <param name="source">基となるObservableCollection</param>
+            <param name="create">TSourceItemからTTargetItemへの変換Func</param>
+            <param name="dispatcher">作成するコレクションに関連づけられるDispatcher</param>
+            <returns>ReadOnlyNotifyDispatcherCollection</returns>
+        </member>
+        <member name="M:Livet.ViewModelHelper.BindNotifyChanged(System.ComponentModel.INotifyPropertyChanged,Livet.ViewModel,System.ComponentModel.PropertyChangedEventHandler)">
+            <summary>
+            イベントハンドラとINotifyPropertyChanged(Model、あるいは他のViewModel)からのPropertyChangedイベントをWeakEventで紐づけします。
+            </summary>
+            <param name="source">Model(INotifyPropertyChanged)</param>
+            <param name="lifecycleObject">このイベントの購読期間をそのライフサイクルと一致させたいViewModelです。</param>
+            <param name="handler">PropertyChangedEventHandler</param>
+        </member>
+        <member name="M:Livet.ViewModelHelper.BindNotifyCollectionChanged(System.Collections.Specialized.INotifyCollectionChanged,Livet.ViewModel,System.Collections.Specialized.NotifyCollectionChangedEventHandler)">
+            <summary>
+            イベントハンドラとINotifyCollectionChanged(ObservableCollection)からのCollectionChangedイベントをWeakEventで紐づけします。
+            </summary>
+            <param name="source">INotifyCollectionChangedオブジェクト</param>
+            <param name="lifecycleObject">このイベントの購読期間をそのライフサイクルと一致させたいViewModelです。</param>
+            <param name="handler">NotifyCollectionChangedEventHandler</param>
+        </member>
+        <member name="M:Livet.ViewModelHelper.BindNotification``1(Livet.Notificator{``0},Livet.ViewModel,System.EventHandler{``0})">
+            <summary>
+            イベントハンドラとNotificatorからのRaisedイベントをWeakEventで紐づけします。
+            </summary>
+            <param name="source">Notificatorオブジェクト</param>
+            <param name="lifecycleObject">このイベントの購読期間をそのライフサイクルと一致させたいViewModelです。</param>
+            <param name="handler">EventHandler</param>
+            <typeparam name="T">イベント引数型</typeparam>
+        </member>
+        <member name="T:Livet.Messaging.File.SelectOpenFileMessage">
+            <summary>
+            ファイルを開く アクション用の相互作用メッセージです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.File.SelectOpenFileMessage.#ctor(System.String)">
+            <summary>
+            メッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.File.SelectOpenFileMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.File.SelectOpenFileMessage.MultiSelect">
+            <summary>
+            複数ファイルを選択可能かを取得、または設定します。
+            </summary>
+        </member>
+        <member name="T:Livet.Command.DelegateCommand`1">
+            <summary>
+            通常ViewModelで使用するコマンドクラスです。
+            </summary>
+            <typeparam name="T">このコマンドを実行する際のパラメータの型</typeparam>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.#ctor(System.Action{`0})">
+            <summary>
+            コマンドが実行するアクションを指定して、DelegateCommandの新しいインスタンスを作成します。
+            </summary>
+            <param name="execute">コマンドが実行するアクション</param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.#ctor(System.Action{`0},System.Func{`0,System.Boolean})">
+            <summary>
+            コマンドが実行するアクションを指定して、DelegateCommandの新しいインスタンスを作成します。
+            </summary>
+            <param name="execute">コマンドが実行するアクション</param>
+            <param name="canExecute">コマンドが実行可能かどうかを返すFunc</param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.CanExecute(`0)">
+            <summary>
+            コマンドが実行可能かを返します。
+            </summary>
+            <param name="parameter">コマンドの実行に使用するパラメータ</param>
+            <returns>コマンドの実行可非</returns>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.System#Windows#Input#ICommand#CanExecute(System.Object)">
+            <summary>
+            コマンドが実行可能かを返します。
+            </summary>
+            <param name="parameter">コマンドの実行に使用するパラメータ</param>
+            <returns>コマンドの実行可非</returns>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.Execute(`0)">
+            <summary>
+            このコマンドを実行します。
+            </summary>
+            <param name="parameter">コマンドの実行に使用するパラメータ</param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.System#Windows#Input#ICommand#Execute(System.Object)">
+            <summary>
+            このコマンドを実行します。
+            </summary>
+            <param name="parameter">コマンドの実行に使用するパラメータ</param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.RaiseCanExecuteChanged">
+            <summary>
+            コマンドの実行可非状態が変化した事をCommandManagerに通知します。
+            </summary>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand`1.RaisePropertyChanged(System.String)">
+            <summary>
+            プロパティ変更通知イベントを発生させます
+            </summary>
+            <param name="propertyName">プロパティ名</param>
+        </member>
+        <member name="E:Livet.Command.DelegateCommand`1.CanExecuteChanged">
+            <summary>
+            コマンドの実行可非状態が変化した場合に発行されるイベントです。
+            </summary>
+        </member>
+        <member name="E:Livet.Command.DelegateCommand`1.PropertyChanged">
+            <summary>
+            プロパティ変更通知イベントです。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.Window.WindowActionMessage">
+            <summary>
+            Windowを最大化・最小化・閉じる・通常化させるための相互作用メッセージです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.Window.WindowActionMessage.#ctor(System.String)">
+            <summary>
+            メッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.Window.WindowActionMessage.#ctor(System.String,Livet.Messaging.Window.WindowAction)">
+            <summary>
+            メッセージキーとWindowが遷移すべき状態を定義して、新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+            <param name="action">Windowが遷移すべき状態を表すWindowAction列挙体</param>
+        </member>
+        <member name="M:Livet.Messaging.Window.WindowActionMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.Window.WindowActionMessage.Action">
+            <summary>
+            Windowが遷移すべき状態を表すWindowAction列挙体を指定、または取得します。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.TransitionMode.Normal">
+            <summary>
+            新しくWindowを開きます。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.TransitionMode.Modal">
+            <summary>
+            新しいWindowをモーダルダイアログとして開きます。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.TransitionMode.NewOrActive">
+            <summary>
+            すでに同じ型のWindowが開かれている場合はそのWindowをアクティブにします。<br/>
+            同じ型のWindowが開かれていなかった場合、新しくWindowを開きます。
+            </summary>
+        </member>
+        <member name="F:Livet.Messaging.TransitionMode.UnKnown">
+            <summary>
+            指定されていません。Windowは表示されません。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.File.InteractionSaveFileDialogAction">
+            <summary>
+            「ファイルを保存する」ダイアログを表示するアクションです。SelectSaveFileMessageに対応します。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.TransitionMessage">
+            <summary>
+            画面遷移アクション用の相互作用メッセージです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.TransitionMessage.#ctor(System.String)">
+            <summary>
+            メッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.TransitionMessage.#ctor(Livet.ViewModel,System.String)">
+            <summary>
+            新しいWindowのDataContextに設定するViewModelとメッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="transitionViewModel">新しいWindowのDataContextに設定するViewModel</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.TransitionMessage.#ctor(Livet.ViewModel,Livet.Messaging.TransitionMode,System.String)">
+            <summary>
+            新しいWindowのDataContextに設定するViewModelとメッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="transitionViewModel">新しいWindowのDataContextに設定するViewModel</param>
+            <param name="mode">画面遷移の方法を決定するTransitionMode列挙体。初期値はUnKnownです。</param>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.TransitionMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.TransitionMessage.TransitionViewModel">
+            <summary>
+            新しいWindowのDataContextに設定するViewModelを指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.TransitionMessage.Mode">
+            <summary>
+            新しいWindowの表示方法を決定するTransitionModeを指定、または取得します。<br/>
+            初期値はUnKnownです。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.InteractionMessenger">
+            <summary>
+            ViewModelで使用するMessengerクラスです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessenger.Raise(Livet.Messaging.InteractionMessage)">
+            <summary>
+            指定された相互作用メッセージを同期的に送信します。
+            </summary>
+            <param name="message">相互作用メッセージ</param>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessenger.RaiseAsync(Livet.Messaging.InteractionMessage)">
+            <summary>
+            指定された相互作用メッセージを非同期で送信します。
+            </summary>
+            <param name="message">相互作用メッセージ</param>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessenger.GetResponse``1(``0)">
+            <summary>
+            指定された、戻り値情報のある相互作用メッセージを同期的に送信します。
+            </summary>
+            <typeparam name="T">戻り値情報のある相互作用メッセージの型</typeparam>
+            <param name="message">戻り値情報のある相互作用メッセージ</param>
+            <returns>アクション実行後に、戻り情報を含んだ相互作用メッセージ</returns>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessenger.GetResponseAsync``1(``0,System.Action{``0})">
+            <summary>
+            指定された、戻り値情報のある相互作用メッセージを非同期で送信します。
+            </summary>
+            <typeparam name="T">戻り値情報のある相互作用メッセージの型</typeparam>
+            <param name="message">戻り値情報のある相互作用メッセージ</param>
+            <param name="callback">コールバック</param>
+        </member>
+        <member name="E:Livet.Messaging.InteractionMessenger.Raised">
+            <summary>
+            相互作用メッセージが送信された時に発生するイベントです。
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.InteractionMessageRaisedEventArgs">
+            <summary>
+            相互作用メッセージ送信時イベント用のイベント引数です。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.InteractionMessageRaisedEventArgs.#ctor(Livet.Messaging.InteractionMessage)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="message">InteractionMessage</param>
+        </member>
+        <member name="P:Livet.Messaging.InteractionMessageRaisedEventArgs.Message">
+            <summary>
+            送信されたメッセージ
+            </summary>
+        </member>
+        <member name="T:Livet.Messaging.File.SelectSaveFileMessage">
+            <summary>
+            ファイルを保存する 用の相互作用メッセージです。
+            </summary>
+        </member>
+        <member name="M:Livet.Messaging.File.SelectSaveFileMessage.#ctor(System.String)">
+            <summary>
+            メッセージキーを指定して新しい相互作用メッセージのインスタンスを生成します。
+            </summary>
+            <param name="messageKey">メッセージキー</param>
+        </member>
+        <member name="M:Livet.Messaging.File.SelectSaveFileMessage.CreateInstanceCore">
+            <summary>
+            派生クラスでは必ずオーバーライドしてください。Freezableオブジェクトとして必要な実装です。<br/>
+            通常このメソッドは、自身の新しいインスタンスを返すように実装します。
+            </summary>
+            <returns>自身の新しいインスタンス</returns>
+        </member>
+        <member name="P:Livet.Messaging.File.SelectSaveFileMessage.CreatePrompt">
+            <summary>
+            ユーザーが存在しないファイルを指定した場合に、ファイルを作成することを確認するメッセージを表示するかどうかを指定、または取得します。デフォルトはfalseです。
+            </summary>
+        </member>
+        <member name="P:Livet.Messaging.File.SelectSaveFileMessage.OverwritePrompt">
+            <summary>
+            ユーザーが指定したファイルが存在する場合、上書き確認メッセージを表示するかどうかを指定、または取得します。デフォルトはtrueです。
+            </summary>
+        </member>
+        <member name="T:Livet.Command.DelegateCommand">
+            <summary>
+            通常ViewModelで使用するコマンドクラスです。
+            </summary>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.#ctor(System.Action)">
+            <summary>
+            コマンドが実行するアクションを指定して、DelegateCommandの新しいインスタンスを作成します。
+            </summary>
+            <param name="execute">コマンドが実行するアクション</param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+            コマンドが実行するアクションを指定して、DelegateCommandの新しいインスタンスを作成します。
+            </summary>
+            <param name="execute">コマンドが実行するアクション</param>
+            <param name="canExecute">コマンドが実行可能かどうかを返すFunc</param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.CanExecute">
+            <summary>
+            コマンドが実行可能かを返します。
+            </summary>
+            <returns>コマンドの実行可非</returns>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.System#Windows#Input#ICommand#CanExecute(System.Object)">
+            <summary>
+            型引数を持たないDelegateCommandでは実行しないでください。
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.Execute">
+            <summary>
+            このコマンドを実行します。
+            </summary>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.System#Windows#Input#ICommand#Execute(System.Object)">
+            <summary>
+            型引数を持たないDelegateCommandでは実行しないでください。
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.RaiseCanExecuteChanged">
+            <summary>
+            コマンドの実行可非状態が変化した事をCommandManagerに通知します。
+            </summary>
+        </member>
+        <member name="M:Livet.Command.DelegateCommand.RaisePropertyChanged(System.String)">
+            <summary>
+            プロパティ変更通知イベントを発生させます
+            </summary>
+            <param name="propertyName">プロパティ名</param>
+        </member>
+        <member name="E:Livet.Command.DelegateCommand.CanExecuteChanged">
+            <summary>
+            コマンドの実行可非状態が変化した場合に発行されるイベントです。
+            </summary>
+        </member>
+        <member name="E:Livet.Command.DelegateCommand.PropertyChanged">
+            <summary>
+            プロパティ変更通知イベントです。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.Window.InteractionWindowAction">
+            <summary>
+            Windowの最小化・最大化・閉じるを行うアクションです。WindowActionMessageに対応します。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.InteractionTransitionAction">
+            <summary>
+            画面遷移(Window)を行うアクションです。TransitionMessageに対応します。
+            </summary>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.InteractionTransitionAction.WindowType">
+            <summary>
+            遷移するウインドウの型を指定、または取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.Behaviors.Messaging.InteractionTransitionAction.Mode">
+            <summary>
+            画面遷移の種類を指定するTransitionMode列挙体を指定、または取得します。<br/>
+            TransitionMessageでModeがUnKnown以外に指定されていた場合、そちらが優先されます。
+            </summary>
+        </member>
+        <member name="T:Livet.Behaviors.Messaging.InteractionInformationDialogAction">
+            <summary>
+            情報ダイアログを表示するアクションです。InformationMessageに対応します。
+            </summary>
+        </member>
+        <member name="T:Livet.NotificatorHelper">
+            <summary>
+            Notificatorをサポートします。
+            </summary>
+        </member>
+        <member name="M:Livet.NotificatorHelper.BindNotification``1(Livet.Notificator{``0},Livet.IWeakEventListenerHaving,System.EventHandler{``0})">
+            <summary>
+            イベントハンドラとNotificatorからのRaisedイベントをWeakEventで紐づけします。ViewModelで利用する場合はViewModelHelperのメソッドを利用してください。
+            </summary>
+            <param name="source">Notificatorオブジェクト</param>
+            <param name="lifecycleObject">このイベントの購読期間をそのライフサイクルと一致させたいIWeakEventListenerHavingオブジェクトです。</param>
+            <param name="handler">EventHandler</param>
+            <typeparam name="T">イベント引数型</typeparam>
+        </member>
+        <member name="T:Livet.DispatcherCollection`1">
+            <summary>
+            コレクション変更通知を指定されたDisptcher経由で行うコレクションです。
+            </summary>
+            <typeparam name="T">コレクションアイテムの型</typeparam>
+        </member>
+        <member name="P:Livet.DispatcherCollection`1.Dispatcher">
+            <summary>
+            このコレクションに関連付けられたDispatcherを取得します。
+            </summary>
+        </member>
+        <member name="P:Livet.DispatcherCollection`1.CollectionChangedDispatcherPriority">
+            <summary>
+            コレクション変更通知時のDispatcherPriorityを指定、または取得します。
+            </summary>
+        </member>
+        <member name="T:Livet.Notificator`1">
+            <summary>
+            汎用変更通知オブジェクトです。通常ModelからViewModel(あるいは他のModelオブジェクト)への通知としてイベントの代わりに使用します。
+            </summary>
+            <typeparam name="T">イベント引数型</typeparam>
+        </member>
+        <member name="M:Livet.Notificator`1.Raise(`0)">
+            <summary>
+            イベントをNotificatorを利用して通知します。
+            </summary>
+            <param name="args">イベント引数う</param>
+        </member>
+        <member name="E:Livet.Notificator`1.Raised">
+            <summary>
+            通知が発生した時に発生するイベントです。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,52 @@
+﻿@using System.Globalization
+@using System.Web.Optimization
+@model MyEvents.Web.Models.HomeViewModel
+@{
+    ViewBag.Title = "my events";
+}
+@section Scripts {
+    @Scripts.Render("~/Attendee/HomeScripts/")
+}
+@helper EventBox(MyEvents.Model.EventDefinition eventDefinition)
+{
+    <article class="box">
+        <a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })" class="block">
+            <div class="only-highlighted logo">
+                <img src="@Url.Action("EventLogo", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })"/>
+            </div>
+            <div class="metadata">
+                <div class="ellipsis">
+                    <span class="date uppercase">@(eventDefinition.Date.ToString("MMMM")) @(eventDefinition.Date.Day). </span>
+                    <span class="city uppercase" title="@eventDefinition.City">@eventDefinition.City</span>
+                </div>
+                <div>
+                    <span class="ellipsis" title="@eventDefinition.Name">@eventDefinition.Name</span>
+                </div>
+                <div class="only-highlighted">
+                    <div class="multi-line-ellipsis">@eventDefinition.Description</div>
+                </div>
+                <div id="organizer" class="only-highlighted">
+                    <img src="@Url.Content("~/Styles/Images/organizer-icon-white.png")" />
+                    <span class="ellipsis organizerName" title="@eventDefinition.Organizer.Name">@eventDefinition.Organizer.Name</span>
+                </div>
+            </div>
+        </a>
+    </article>
+}
+
+<section id="coming-soon-events">
+    <span class="section-title">coming soon</span>
+    <section class="boxes highlighted">
+        @foreach (var eventDefinition in Model.ComingSoonHighlighted)
+        {
+            @EventBox(eventDefinition)
+        }
+    </section>
+    <section class="boxes">
+        @foreach (var eventDefinition in Model.ComingSoon)
+        {
+            @EventBox(eventDefinition)
+        }
+    </section>
+</section>
+@{Html.RenderPartial("EventList");}

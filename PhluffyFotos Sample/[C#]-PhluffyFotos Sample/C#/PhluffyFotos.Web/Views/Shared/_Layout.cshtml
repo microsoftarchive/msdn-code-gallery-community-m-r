@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
+    <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")" type="text/javascript"></script>
+</head>
+    <body>
+<div id="pagewrap">
+    <div id="container">
+        <div id="lvl1">
+            <div id="logo">
+                <a href="@Url.Action("Index", "Home")"></a>
+            </div>
+            <div id="topnav">
+                
+                @if (Context.User.Identity.IsAuthenticated) {
+                    <strong>
+                        <label>Welcome @this.Context.User.Identity.Name</label>
+                    </strong> 
+                    @:| @Html.ActionLink("(logout)", "Logoff", "Account")
+                } else {
+                    <strong>
+                        <label>Not registered yet?</label>
+                    </strong> @:&nbsp;
+                    <a href="@Html.AttributeEncode(Url.Action("Register", "Account"))">Register</a> 
+                    @:| <a href="@Html.AttributeEncode(Url.Action("LogOn", "Account"))">Sign In</a>
+                }
+                
+                <div id="searchBar">
+                    @using (Html.BeginForm("Tag", "Search", FormMethod.Post)) {
+                        <input type="text" value="@(this.Context.Request["searchTerms"] ?? "Search")" style="width: 175px" name="searchTerms" onfocus="if(this.value=='Search') this.value=''" onblur="if(this.value=='') this.value='Search'" />
+                        @:&nbsp;
+                        <input type="submit" style="border: solid 1px 003399; background: #0063DC; color: #fff;"
+                        value="Search"/><br /><span>Search by tags as: <strong>vacations; family; "new york"</strong></span>
+                    }
+                </div>
+            </div>
+            <div id="mainnav">
+                <ul id="nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @{ var owner = this.Context.User.Identity.Name.ToLowerInvariant(); }
+                    @if (!this.Context.User.Identity.IsAuthenticated) {
+                        <li>@Html.ActionLink("Albums", "Index", "Album")</li>
+                        <li><a href="@Html.AttributeEncode(Url.Action("Register", "Account"))">Register</a></li>
+                    } else {
+                        <li>@Html.ActionLink("Albums", "Index", "Album")</li>
+                        <li>@Html.ActionLink("My Albums", "MyAlbums", new { controller = "Album", owner = owner })</li>
+                        <li>@Html.ActionLink("Upload", "Upload", "Album")</li>
+                        <li>@Html.ActionLink("New Album", "Create", "Album")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        
+        @RenderBody()
+
+        <div id="footer">
+            <p>
+                PhluffyFotos is a sample application that allows users to upload and share photos.<br />
+                This sample is designed to demonstrate how you can develop an application in Windows Azure using blobs, tables, and queues.<br />
+                You can learn more about Windows Azure Platform from here: <a href="http://www.microsoft.com/windowsazure/getstarted">http://www.microsoft.com/windowsazure/getstarted</a>.
+            </p>
+            <p><strong>&copy; 2012. Microsoft Corporation. All Rights Reserved.</strong></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

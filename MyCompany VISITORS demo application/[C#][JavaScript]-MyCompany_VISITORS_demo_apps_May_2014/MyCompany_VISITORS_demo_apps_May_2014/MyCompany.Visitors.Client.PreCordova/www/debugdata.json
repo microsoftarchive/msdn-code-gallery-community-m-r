@@ -1,0 +1,501 @@
+{
+  "internal":{
+    "arraySequence":true,
+    "exceptionThreshold":0,
+	"startupDelay" : 200
+  },
+  "accelerometer":{
+    "acceleration":[
+      {
+        "x":1,
+        "y":0,
+        "z":0,
+        "timestamp":"2012-01-01 15:30:00"
+      },
+      {
+        "x":0,
+        "y":1,
+        "z":0,
+        "timestamp":"2012-01-01 15:30:20"
+      },
+      {
+        "x":0,
+        "y":0,
+        "z":1,
+        "timestamp":"2012-01-01 15:30:40"
+      },
+      {
+        "x":-1,
+        "y":0,
+        "z":-1,
+        "timestamp":"2012-01-01 15:31:00"
+      }
+    ]
+  },
+  "camera":{
+    "pictures_url":[
+      "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/600px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
+      "http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chicago_sunrise_1.jpg/800px-Chicago_sunrise_1.jpg",
+      "http://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Diatomaceous_Earth_BrightField.jpg/300px-Diatomaceous_Earth_BrightField.jpg",
+      "http://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/800px-Sunset_2007-1.jpg",
+      "http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/GD_Kennedy_SLV_AllanGreen.jpg/800px-GD_Kennedy_SLV_AllanGreen.jpg"
+    ],
+    "pictures_base64_png":[
+	  "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwUExURX8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfJIa8AAAAJcEhZcwAADsIAAA7CARUoSoAAAAAUSURBVBjTYxAEAgYQoJBBBSNADAAynwRBhKNiuAAAAABJRU5ErkJggg==",
+	  "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwUExURX8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfJIa8AAAAJcEhZcwAADsIAAA7CARUoSoAAAAAUSURBVBjTYxAEAgYQoJBBBSNADAAynwRBhKNiuAAAAABJRU5ErkJggg==",
+      "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwUExURQAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFulh5UAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAVSURBVBjTY2AAAkEgYKCQQQ0zgAAAMp8EQTkXHrEAAAAASUVORK5CYII=",
+      "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwUExURQD/If8A3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR4exUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAUSURBVBjTYxAEAgYQoJBBBSNADAAynwRBhKNiuAAAAABJRU5ErkJggg=="
+    ],
+	"pictures_base64_jpg" : "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwUExURQD/If8A3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR4exUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAUSURBVBjTYxAEAgYQoJBBBSNADAAynwRBhKNiuAAAAABJRU5ErkJggg=="
+  },
+  "capture":{
+    "error":[
+      0,
+      1,
+      2,
+      3,
+      20
+    ],
+    "media":[
+      [
+        {
+          "name":"Test file",
+          "fullPath":"TestFile.mpx",
+          "type":"made up media",
+          "lastModifiedDate":"2012-02-02",
+          "size":12354
+        }
+      ],
+      [
+        {
+          "name":"Big file",
+          "fullPath":"BigFile.mp3",
+          "type":"mp3 audio",
+          "lastModifiedDate":"2012-03-03",
+          "size":1354
+        },
+        {
+          "name":"Little file",
+          "fullPath":"LittleFile.mov",
+          "type":"quicktime",
+          "lastModifiedDate":"2012-01-01",
+          "size":123354
+        }
+      ]
+    ],
+    "mediaformat":[
+      {
+        "codecs":"jpg",
+        "bitrate":0,
+        "height":800,
+        "width":600,
+        "duration":0
+      },
+      {
+        "codecs":"mp3",
+        "bitrate":256,
+        "height":0,
+        "width":0,
+        "duration":20
+      },
+      {
+        "codecs":"mov",
+        "bitrate":1260,
+        "height":640,
+        "width":480,
+        "duration":400
+      }
+    ]
+  },
+  "compass":{
+    "heading":[
+      {
+        "magneticHeading":40,
+        "trueHeading":42,
+        "headingAccuracy":2,
+        "timestamp":3452
+      },
+      {
+        "magneticHeading":160,
+        "trueHeading":156,
+        "headingAccuracy":3,
+        "timestamp":6873
+      },
+      {
+        "magneticHeading":80,
+        "trueHeading":84,
+        "headingAccuracy":7,
+        "timestamp":6832
+      }
+    ],
+    "error":[
+      {
+        "code":0
+      },
+      {
+        "code":20
+      }
+    ]
+  },
+  "connection":{
+    "type":[
+      "wifi"
+    ]
+  },
+  "contacts":{
+    "error":[
+      {
+        "code":0
+      },
+      {
+        "code":1
+      }
+    ],
+    "data":[
+      {
+        "id":"1234567890",
+        "displayName":"John Smith",
+        "name":{
+          "formatted":"Mr John Smith",
+          "familyName":"Smith",
+          "givenName":"John",
+          "middleName":"",
+          "honorificPrefix":"Mr",
+          "honorificSuffix":""
+        },
+        "nickname":"Jack",
+        "phoneNumbers":[
+          {
+            "type":"work",
+            "value":"123-456789",
+            "pref":false
+          },
+          {
+            "type":"mobile",
+            "value":"555-385723",
+            "pref":true
+          }
+        ],
+        "emails":[
+          {
+            "type":"work",
+            "value":"john@work.com",
+            "pref":true
+          }
+        ],
+        "addresses":[
+          {
+            "pref":true,
+            "type":"Home",
+            "formatted":"23 High Street, Anytown",
+            "streetAddress":"23 High Street",
+            "locality":"Anytown",
+            "region":"Somewhere",
+            "postalCode":"ABC 123",
+            "country":"Urbania"
+          }
+        ],
+        "ims":[
+          {
+            "type":"mobile",
+            "value":"555-385724",
+            "pref":true
+          }
+        ],
+        "organizations":[
+
+        ],
+        "birthday":"1980-01-01",
+        "note":"Test data from phonegapdesktop",
+        "photos":[
+
+        ],
+        "categories":[
+
+        ],
+        "urls":[
+
+        ]
+      }
+    ],
+    "array":[
+      [
+        {
+          "id":"1234567890",
+          "displayName":"John Smith",
+          "name":{
+            "formatted":"Mr John Smith",
+            "familyName":"Smith",
+            "givenName":"John",
+            "middleName":"",
+            "honorificPrefix":"Mr",
+            "honorificSuffix":""
+          },
+          "nickname":"Jack",
+          "phoneNumbers":[
+            {
+              "type":"work",
+              "value":"123-456789",
+              "pref":false
+            },
+            {
+              "type":"mobile",
+              "value":"555-385723",
+              "pref":true
+            }
+          ],
+          "emails":[
+            {
+              "type":"work",
+              "value":"john@work.com",
+              "pref":true
+            }
+          ],
+          "addresses":[
+            {
+              "pref":true,
+              "type":"Home",
+              "formatted":"23 High Street, Anytown",
+              "streetAddress":"23 High Street",
+              "locality":"Anytown",
+              "region":"Somewhere",
+              "postalCode":"ABC 123",
+              "country":"Urbania"
+            }
+          ],
+          "ims":[
+            {
+              "type":"mobile",
+              "value":"555-385724",
+              "pref":true
+            }
+          ],
+          "organizations":[
+
+          ],
+          "birthday":"1980-01-01",
+          "note":"Test data from phonegapdesktop",
+          "photos":[
+
+          ],
+          "categories":[
+
+          ],
+          "urls":[
+
+          ]
+        }
+      ]
+    ]
+  },
+  "device":{
+    "name":[
+      "Desktop",
+      "Laptop",
+      "Tablet"
+    ],
+    "phonegap":"DEBUG",
+    "platform":"Windows",
+    "uuid":"1234567890",
+    "version":"0.1"
+  },
+  "events":{
+    "battery":[
+      {
+        "level":3,
+        "isPlugged":false
+      },
+      {
+        "level":7,
+        "isPlugged":true
+      }
+    ]
+  },
+  "fileSystem":{
+  	"error":[
+  	  {
+  	  	"message":"Need to fill in detail"
+  	  }
+  	],
+  	"systemObject":[
+  	  {
+  	  	"name":"temporaryObject"
+  	  },
+  	  {
+  	  	"name":"persistentObject"
+  	  }  	  
+  	],
+  	"directoryEntry":[
+  	  {
+  	  	"isFile":false,
+  	  	"isDirectory":true,
+  	  	"name":"dir1",
+  	  	"fullPath": "file:///dir1"
+  	  },
+  	  {
+  	  	"isFile":false,
+  	  	"isDirectory":true,
+  	  	"name":"dir2",
+  	  	"fullPath": "file:///dir2"
+  	  }
+  	],
+  	"metaData":[
+  		{ "modificationTime" : "2012-06-19T21:37:00"},
+  		{ "modificationTime" : "2012-04-19T21:37:00"}
+  	],
+  	"localUri":[
+  		"directoryEntry"
+  	],
+  	"readEntries":[
+  		[
+  		"fileEntry",
+  		"directoryEntry"
+  		],
+  		[
+  		"fileEntry",
+  		"fileEntry",
+  		"fileEntry"
+  		]
+  	],
+  	"fileEntry":[
+  	{
+  		"isFile":true,
+  		"isDirectory": false,
+  		"name":"file1.eg",
+  		"fullPath":"file:///dir1/file1.eg"
+  		},
+  	{
+  		"isFile":true,
+  		"isDirectory": false,
+  		"name":"file2.txt",
+  		"fullPath":"file:///dir2/file2.txt"
+  		}
+  		
+  	],
+  	"file":[
+  	{
+  		"name" : "example.jpg",
+  		"fullPath" : "file:///dir1/example.jpg",
+  		"type" : "image/jpeg",
+  		"lastModifiedDate" : "2012-06-28T21:18:00",
+  		"size": 1234567
+  	},
+  	{
+  		"name" : "sample.txt",
+  		"fullPath" : "file:///dir1/sample.txt",
+  		"type" : "text",
+  		"lastModifiedDate" : "2012-06-28T21:22:00",
+  		"size": 12345
+  	}
+  	],
+  	"fileWriter":[
+  	{
+  		"readyState":1,
+  		"fileName":"test.txt",
+  		"length":54321,
+  		"position":123
+  	},
+  	{
+  		"readyState":0,
+  		"fileName":"test2.txt",
+  		"length":123,
+  		"position":0
+  	}
+  	],
+  	"readerDataUrl":[
+  		"SGVsbG8gdGhlcmUuIFRoaXMgaXMgYSB0ZXN0IHZhbHVlIGZvciBwaG9uZWdhcCBkZXNrdG9w",
+  		"U2Vjb25kIGV4YW1wbGUgb2YgYmFzZTY0IGVuY29kZWQgdGV4dA=="
+  	],
+  	"readerText":[
+  		"Simple plain text example for fileReader",
+  		"A second fileReader plain text example"
+  	],
+  	"transferError":[
+  	{
+  		"code":0,
+  		"source":"http://localfile/one",
+  		"target":"http://phonegapdesktop.com/one",
+  		"http_status":404
+  	},
+  	{
+  		"code":0,
+  		"source":"http://localfile/two",
+  		"target":"http://phonegapdesktop.com/two",
+  		"http_status":403
+  	}
+  	],
+  	"uploadResult":[
+  	{
+  		"bytesSent": 12345,
+  		"responseCode": 200,
+  		"response":"Success"
+  	},
+  	{
+  		"bytesSent": 12345,
+  		"responseCode": 202,
+  		"response":"Accepted"
+  	}
+  	]
+  },
+  "geolocation":{
+    "arraySequence":false,
+    "error":[
+      {
+        "code":1,
+        "message":"Permission was denied"
+      },
+      {
+        "code":3,
+        "message":"Timed-out"
+      }
+    ],
+    "position":[
+      {
+        "timestamp":12335,
+        "coords":{
+          "latitude":23,
+          "longitude":120,
+          "altitude":200,
+          "accuracy":3,
+          "altitudeAccuracy":10,
+          "heading":200,
+          "speed":4
+        }
+      },
+      {
+        "timestamp":12335,
+        "coords":{
+          "latitude":-20,
+          "longitude":60,
+          "altitude":150,
+          "accuracy":4,
+          "altitudeAccuracy":7,
+          "heading":180,
+          "speed":6
+        }
+      }
+    ]
+  },
+  "media":{
+    "position":[
+      578327,
+      57372,
+      12945
+    ],
+    "duration":[
+      12345,
+      559478,
+      39598
+    ],
+    "error":[
+      {
+        "code":0,
+        "message":"No active media"
+      },
+      {
+        "code":1,
+        "message":"Operation aborted"
+      }
+    ]
+  }
+}

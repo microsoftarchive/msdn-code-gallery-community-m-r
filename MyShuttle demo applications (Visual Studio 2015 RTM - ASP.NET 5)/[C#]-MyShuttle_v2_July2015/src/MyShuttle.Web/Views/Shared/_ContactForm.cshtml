@@ -1,0 +1,23 @@
+@model MyShuttle.Web.Models.ContactViewModel
+
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-xs-6">
+            @Html.TextBoxFor(m => m.Name, new { @class = "ms-form-control black-style", @placeholder = "Your name..." })
+        </div>
+
+        <div class="col-xs-6">
+            @Html.TextBoxFor(m => m.Email, new { @class = "ms-form-control black-style", @placeholder = "Your email..." })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.TextAreaFor(m => m.Message, new { @class = "ms-form-control black-style", @placeholder = "Your message..." })
+        </div>
+    </div>
+
+    <input type="submit" class="ms-submit-btn black-style" value="Send"/>
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.1.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=108612E2CC4F976C14444324F9F015F7" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=EB101E94E2F72F68528E12AC56A6D446" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Reading and writing images to MS-Access 2007 and higher databases</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Reading and writing images to MS-Access 2007 and higher databases</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SQL, ADO.NET, ADO, Data Access, Visual Basic.NET, Access 2007, Image Processing
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Data Binding, Data Access, Image
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/23/2019</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Reading-and-writing-to-MS-945a0615">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><span style="font-size:small">This article details how to take a image file and insert the file into a table in an MS-Access database along with retrieving images from an MS-Access database and viewing the images in a DataGridView without using Visual Studio
+ data wizards. Before going any farther storing and retrieving images from databases is nothing new and is not a bad idea for databases such as MS-SQL Server, Oracle or IBM-DB2 but not a wise idea for MS-Access. Even though it is unwise to store images in MS-Access
+ (mainly because they are not durable and known for corruption) developers will do so anyways a) because it's beyond their control b) they are willing to take the chance. An alternate method for MS-Access is to store images in a local folder and in the database
+ reference them with a field for description, and base file name. The application would &quot;know&quot; where the images resides either from a configuration setting or perhaps in a table inside of the same database.</span></p>
+<p><span style="font-size:small">If you truly have to store images inside of an MS-Access database table be forewarned that with MS-Access 2007 and higher adding an image to a record from within MS-Access will not only store the image but also a header so conventional
+ methods to read this data works up to displaying the data in a control such as a PictureBox or image column in a DataGridView. I did some experiments and created code that will remove the header after getting the byes from the table but not one header is exactly
+ the same size so this is possible but not practical. If on the other hand you add or update images inside of an MS-Access table write code to add or update the field containing the image bytes.</span></p>
+<p><span style="font-size:small">If you search the web for just one decent example for storing and reading back images I did not find one that would allow a developer to work with an example without struggling to get the found example to work. So the VS2012
+ solution (now VS2017) included shows how to insert new records and read them back out into a DataGridView. I did not include updating since an update is only different by the syntax of the SQL and a delete is a standard delete. I did include a function for
+ exporting an image out to disk.</span></p>
+<p><span style="font-size:small">Database layout, there are two tables, one to store images and one reference table. The table for images has the following columns. A standard primary key, a category numeric field which uses the reference table for text, a
+ Ole Object column to store our images, BaseName (the file name with no path or file extension), FileExtension which stores the file extension with no period. All the above columns are required for the Windows form project. There is also a column for a description,
+ or perhaps a comment etc.</span></p>
+<p><span style="font-size:small">There are two projects (which I normally do for MSDN articles which is good practice), one Windows form project to insert and display data with conventional form controls while the second project handles all database operations.
+ Please note I use a special class for connection to the database yet you can use you normal OleDb method to connect to data, mine is modeled as a Singleton pattern.</span></p>
+<p><span style="font-size:small">Whenever there were long lines of code I broke them up across several lines for ease of reading and learning.</span></p>
+<p><span style="font-size:x-small"><strong>NEW 02/22/2019</strong> Somehow the database didn't get included in the last release, fixed.</span></p>
+<p><span style="font-size:small"><strong><span>NEW 08/25/2018</span></strong><span>&nbsp;added FlowLayoutPanel example and now in VS2017</span><br>
+</span></p>
+<p><span style="font-size:small"><strong><span style="color:#ff0000">NEW 12/06/2013</span></strong> added second example that shows how to work with a PictureBox control.<br>
+<br>
+<strong><span style="color:#ff0000">NEW 12/27/2013</span></strong> placed a <a title="VS2012 project on SkyDrive" href="https://code.msdn.microsoft.com/Reading-and-writing-to-MS-945a0615/https://skydrive.live.com/?cid=a3d5a9a9a28080d1&amp;id=A3D5A9A9A28080D1%21469&amp;ithint=file,.zip&authkey=!AO7w1WcRaePl2fo">
+third example here</a> that shows how to log when a user viewed a image.</span></p>
+<p><span style="font-size:small"><img id="94321" src="description/ScreenShot1.jpg" alt="" width="689" height="846"><img id="104181" src="description/PB.png" alt="" width="689" height="530"></span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

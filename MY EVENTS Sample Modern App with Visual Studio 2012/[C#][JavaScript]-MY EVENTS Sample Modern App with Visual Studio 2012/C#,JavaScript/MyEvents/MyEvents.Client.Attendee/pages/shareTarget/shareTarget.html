@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="ms-design-extensionType" content="ShareTarget" />
+    <title>Share image on My events</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="shareTarget.css" rel="stylesheet" />
+
+    <script src="/js/storageManager.js"></script>
+    <script src="/js/context.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/application.js"></script>
+    <script src="/js/formaters.js"></script>
+    <script src="/js/services/services.js"></script>
+    <script src="/js/services/eventService.js"></script>
+    <script src="/js/services/sessionService.js"></script>
+    <script src="shareTarget.js"></script>
+</head>
+<body>
+    <section aria-label="Main content" role="main">
+        <input class="commentbox" placeholder="add a comment" type="text"/>
+        <div class="event-list">
+            <p>associate with the event</p>
+            <select class="shareEventList">
+            </select>
+        </div>
+        <div class="session-list">
+            <p>associate with the session</p>
+            <select class="shareSessionList">
+            </select>
+        </div>
+        <div class="sharecontrols">
+            <div class="progressindicators">
+                <progress></progress>
+                <span>sharing...</span>
+            </div>
+            <input class="submitbutton button" type="submit" value="share" />
+        </div>
+    </section>
+</body>
+</html>

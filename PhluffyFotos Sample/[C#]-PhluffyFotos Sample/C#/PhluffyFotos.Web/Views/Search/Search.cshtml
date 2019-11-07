@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PhluffyFotos.Data.Photo>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<div id="lvl2"></div>
+<div id="lvl3">
+    <ul id="itemcontainer" class="photoList">
+        @if (this.Model.Count() != 0) { 
+            foreach (var item in this.Model) { 
+                <li>
+                    <div class="photoTitle">
+                        <h2><span style="color: #888;">@item.Title</span></h2>
+                    </div>
+                    <br />
+                    <a href="@Url.Action("Index", "Photo", new { owner = item.Owner, photoId = item.PhotoId, album = item.AlbumId } )">
+                        <img src="@item.ThumbnailUrl" alt="@item.Title" style="border:0" />
+                    </a>
+                    <br />
+                    <em>Filed under:</em>
+                        @if (!string.IsNullOrEmpty(item.RawTags))
+                        {
+                            foreach (var tag in item.RawTags.Split(';').Where(s => s.Trim().Length > 0).Select(s => s.Trim().ToLowerInvariant())) { 
+                                @Html.ActionLink(tag, "Search", new { controller = "Search", tag = tag }) @:;
+                            } 
+                        } 
+                    <br />
+                </li>
+            } 
+        } else {
+            <text>No Photos found...</text>
+        } 
+    </ul>
+</div>
+
+
+

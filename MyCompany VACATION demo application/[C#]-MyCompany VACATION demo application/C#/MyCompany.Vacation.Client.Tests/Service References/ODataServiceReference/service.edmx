@@ -1,0 +1,229 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="MyCompany.Vacation.Model" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Employee">
+        <Key>
+          <PropertyRef Name="EmployeeId" />
+        </Key>
+        <Property Name="EmployeeId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="JobTitle" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" Nullable="false" />
+        <Property Name="TeamId" Type="Edm.Int32" />
+        <Property Name="OfficeId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Team" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_Team_MyCompany_Vacation_Model_Team_TeamPartner" ToRole="Team" FromRole="TeamPartner" />
+        <NavigationProperty Name="Office" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_Office_MyCompany_Vacation_Model_Office_OfficePartner" ToRole="Office" FromRole="OfficePartner" />
+        <NavigationProperty Name="ManagedTeams" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_ManagedTeams_MyCompany_Vacation_Model_Team_ManagedTeamsPartner" ToRole="ManagedTeams" FromRole="ManagedTeamsPartner" />
+        <NavigationProperty Name="VacationRequests" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_VacationRequests_MyCompany_Vacation_Model_VacationRequest_VacationRequestsPartner" ToRole="VacationRequests" FromRole="VacationRequestsPartner" />
+        <NavigationProperty Name="EmployeePictures" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_EmployeePictures_MyCompany_Vacation_Model_EmployeePicture_EmployeePicturesPartner" ToRole="EmployeePictures" FromRole="EmployeePicturesPartner" />
+      </EntityType>
+      <EntityType Name="Team">
+        <Key>
+          <PropertyRef Name="TeamId" />
+        </Key>
+        <Property Name="TeamId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ManagerId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OfficeId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Manager" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Team_Manager_MyCompany_Vacation_Model_Employee_ManagerPartner" ToRole="Manager" FromRole="ManagerPartner" />
+        <NavigationProperty Name="Employees" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Team_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartner" ToRole="Employees" FromRole="EmployeesPartner" />
+      </EntityType>
+      <EntityType Name="Office">
+        <Key>
+          <PropertyRef Name="OfficeId" />
+        </Key>
+        <Property Name="OfficeId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CalendarId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Calendar" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Office_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartner" ToRole="Calendar" FromRole="CalendarPartner" />
+        <NavigationProperty Name="Employees" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Office_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartner" ToRole="Employees" FromRole="EmployeesPartner" />
+        <NavigationProperty Name="Teams" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Office_Teams_MyCompany_Vacation_Model_Team_TeamsPartner" ToRole="Teams" FromRole="TeamsPartner" />
+      </EntityType>
+      <EntityType Name="EmployeePicture">
+        <Key>
+          <PropertyRef Name="EmployeePictureId" />
+        </Key>
+        <Property Name="EmployeePictureId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PictureType" Type="Edm.String" Nullable="false" />
+        <Property Name="Content" Type="Edm.Binary" />
+        <Property Name="EmployeeId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Employee" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_EmployeePicture_Employee_MyCompany_Vacation_Model_Employee_EmployeePartner" ToRole="Employee" FromRole="EmployeePartner" />
+      </EntityType>
+      <EntityType Name="Calendar">
+        <Key>
+          <PropertyRef Name="CalendarId" />
+        </Key>
+        <Property Name="CalendarId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Vacation" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="CalendarHolidays" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Calendar_CalendarHolidays_MyCompany_Vacation_Model_CalendarHolidays_CalendarHolidaysPartner" ToRole="CalendarHolidays" FromRole="CalendarHolidaysPartner" />
+        <NavigationProperty Name="Offices" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Calendar_Offices_MyCompany_Vacation_Model_Office_OfficesPartner" ToRole="Offices" FromRole="OfficesPartner" />
+      </EntityType>
+      <EntityType Name="CalendarHolidays">
+        <Key>
+          <PropertyRef Name="CalendarHolidaysId" />
+        </Key>
+        <Property Name="CalendarHolidaysId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Day" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CalendarId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Calendar" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_CalendarHolidays_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartner" ToRole="Calendar" FromRole="CalendarPartner" />
+      </EntityType>
+      <EntityType Name="VacationRequest">
+        <Key>
+          <PropertyRef Name="VacationRequestId" />
+        </Key>
+        <Property Name="VacationRequestId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="From" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="To" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="NumDays" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" />
+        <Property Name="Comments" Type="Edm.String" />
+        <Property Name="CreationDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="LastModifiedDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="EmployeeId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Employee" Relationship="MyCompany.Vacation.Model.MyCompany_Vacation_Model_VacationRequest_Employee_MyCompany_Vacation_Model_Employee_EmployeePartner" ToRole="Employee" FromRole="EmployeePartner" />
+      </EntityType>
+      <Association Name="MyCompany_Vacation_Model_Employee_Team_MyCompany_Vacation_Model_Team_TeamPartner">
+        <End Type="MyCompany.Vacation.Model.Team" Role="Team" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.Employee" Role="TeamPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Employee_Office_MyCompany_Vacation_Model_Office_OfficePartner">
+        <End Type="MyCompany.Vacation.Model.Office" Role="Office" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.Employee" Role="OfficePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Employee_ManagedTeams_MyCompany_Vacation_Model_Team_ManagedTeamsPartner">
+        <End Type="MyCompany.Vacation.Model.Team" Role="ManagedTeams" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Employee" Role="ManagedTeamsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Employee_VacationRequests_MyCompany_Vacation_Model_VacationRequest_VacationRequestsPartner">
+        <End Type="MyCompany.Vacation.Model.VacationRequest" Role="VacationRequests" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Employee" Role="VacationRequestsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Employee_EmployeePictures_MyCompany_Vacation_Model_EmployeePicture_EmployeePicturesPartner">
+        <End Type="MyCompany.Vacation.Model.EmployeePicture" Role="EmployeePictures" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Employee" Role="EmployeePicturesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Team_Manager_MyCompany_Vacation_Model_Employee_ManagerPartner">
+        <End Type="MyCompany.Vacation.Model.Employee" Role="Manager" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.Team" Role="ManagerPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Team_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartner">
+        <End Type="MyCompany.Vacation.Model.Employee" Role="Employees" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Team" Role="EmployeesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Office_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartner">
+        <End Type="MyCompany.Vacation.Model.Calendar" Role="Calendar" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.Office" Role="CalendarPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Office_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartner">
+        <End Type="MyCompany.Vacation.Model.Employee" Role="Employees" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Office" Role="EmployeesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Office_Teams_MyCompany_Vacation_Model_Team_TeamsPartner">
+        <End Type="MyCompany.Vacation.Model.Team" Role="Teams" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Office" Role="TeamsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_EmployeePicture_Employee_MyCompany_Vacation_Model_Employee_EmployeePartner">
+        <End Type="MyCompany.Vacation.Model.Employee" Role="Employee" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.EmployeePicture" Role="EmployeePartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Calendar_CalendarHolidays_MyCompany_Vacation_Model_CalendarHolidays_CalendarHolidaysPartner">
+        <End Type="MyCompany.Vacation.Model.CalendarHolidays" Role="CalendarHolidays" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Calendar" Role="CalendarHolidaysPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_Calendar_Offices_MyCompany_Vacation_Model_Office_OfficesPartner">
+        <End Type="MyCompany.Vacation.Model.Office" Role="Offices" Multiplicity="*" />
+        <End Type="MyCompany.Vacation.Model.Calendar" Role="OfficesPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_CalendarHolidays_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartner">
+        <End Type="MyCompany.Vacation.Model.Calendar" Role="Calendar" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.CalendarHolidays" Role="CalendarPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="MyCompany_Vacation_Model_VacationRequest_Employee_MyCompany_Vacation_Model_Employee_EmployeePartner">
+        <End Type="MyCompany.Vacation.Model.Employee" Role="Employee" Multiplicity="0..1" />
+        <End Type="MyCompany.Vacation.Model.VacationRequest" Role="EmployeePartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="MyCompany.Vacation.Web.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="CurrentEmployee" BaseType="MyCompany.Vacation.Model.Employee" />
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="EmployeesOData" EntityType="MyCompany.Vacation.Model.Employee" />
+        <EntitySet Name="TeamsOData" EntityType="MyCompany.Vacation.Model.Team" />
+        <EntitySet Name="OfficesOData" EntityType="MyCompany.Vacation.Model.Office" />
+        <EntitySet Name="EmployeePicturesOData" EntityType="MyCompany.Vacation.Model.EmployeePicture" />
+        <EntitySet Name="CalendarsOData" EntityType="MyCompany.Vacation.Model.Calendar" />
+        <EntitySet Name="CalendarHolidaysOData" EntityType="MyCompany.Vacation.Model.CalendarHolidays" />
+        <EntitySet Name="VacationRequestsOData" EntityType="MyCompany.Vacation.Model.VacationRequest" />
+        <FunctionImport Name="AcceptVacation" IsBindable="true" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="MyCompany.Vacation.Model.VacationRequest" />
+          <Parameter Name="Reason" Type="Edm.String" FixedLength="false" Unicode="false" />
+        </FunctionImport>
+        <FunctionImport Name="RejectVacation" IsBindable="true" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="MyCompany.Vacation.Model.VacationRequest" />
+          <Parameter Name="Reason" Type="Edm.String" FixedLength="false" Unicode="false" />
+        </FunctionImport>
+        <AssociationSet Name="MyCompany_Vacation_Model_Employee_Team_MyCompany_Vacation_Model_Team_TeamPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_Team_MyCompany_Vacation_Model_Team_TeamPartner">
+          <End Role="TeamPartner" EntitySet="EmployeesOData" />
+          <End Role="Team" EntitySet="TeamsOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Employee_Office_MyCompany_Vacation_Model_Office_OfficePartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_Office_MyCompany_Vacation_Model_Office_OfficePartner">
+          <End Role="OfficePartner" EntitySet="EmployeesOData" />
+          <End Role="Office" EntitySet="OfficesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Employee_ManagedTeams_MyCompany_Vacation_Model_Team_ManagedTeamsPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_ManagedTeams_MyCompany_Vacation_Model_Team_ManagedTeamsPartner">
+          <End Role="ManagedTeamsPartner" EntitySet="EmployeesOData" />
+          <End Role="ManagedTeams" EntitySet="TeamsOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Employee_VacationRequests_MyCompany_Vacation_Model_VacationRequest_VacationRequestsPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_VacationRequests_MyCompany_Vacation_Model_VacationRequest_VacationRequestsPartner">
+          <End Role="VacationRequestsPartner" EntitySet="EmployeesOData" />
+          <End Role="VacationRequests" EntitySet="VacationRequestsOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Employee_EmployeePictures_MyCompany_Vacation_Model_EmployeePicture_EmployeePicturesPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Employee_EmployeePictures_MyCompany_Vacation_Model_EmployeePicture_EmployeePicturesPartner">
+          <End Role="EmployeePicturesPartner" EntitySet="EmployeesOData" />
+          <End Role="EmployeePictures" EntitySet="EmployeePicturesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Team_Manager_MyCompany_Vacation_Model_Employee_ManagerPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Team_Manager_MyCompany_Vacation_Model_Employee_ManagerPartner">
+          <End Role="ManagerPartner" EntitySet="TeamsOData" />
+          <End Role="Manager" EntitySet="EmployeesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Team_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Team_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartner">
+          <End Role="EmployeesPartner" EntitySet="TeamsOData" />
+          <End Role="Employees" EntitySet="EmployeesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Office_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Office_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartner">
+          <End Role="CalendarPartner" EntitySet="OfficesOData" />
+          <End Role="Calendar" EntitySet="CalendarsOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Office_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Office_Employees_MyCompany_Vacation_Model_Employee_EmployeesPartner">
+          <End Role="EmployeesPartner" EntitySet="OfficesOData" />
+          <End Role="Employees" EntitySet="EmployeesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Office_Teams_MyCompany_Vacation_Model_Team_TeamsPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Office_Teams_MyCompany_Vacation_Model_Team_TeamsPartner">
+          <End Role="TeamsPartner" EntitySet="OfficesOData" />
+          <End Role="Teams" EntitySet="TeamsOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_EmployeePicture_Employee_MyCompany_Vacation_Model_Employee_EmployeePartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_EmployeePicture_Employee_MyCompany_Vacation_Model_Employee_EmployeePartner">
+          <End Role="EmployeePartner" EntitySet="EmployeePicturesOData" />
+          <End Role="Employee" EntitySet="EmployeesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Calendar_CalendarHolidays_MyCompany_Vacation_Model_CalendarHolidays_CalendarHolidaysPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Calendar_CalendarHolidays_MyCompany_Vacation_Model_CalendarHolidays_CalendarHolidaysPartner">
+          <End Role="CalendarHolidaysPartner" EntitySet="CalendarsOData" />
+          <End Role="CalendarHolidays" EntitySet="CalendarHolidaysOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_Calendar_Offices_MyCompany_Vacation_Model_Office_OfficesPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_Calendar_Offices_MyCompany_Vacation_Model_Office_OfficesPartner">
+          <End Role="OfficesPartner" EntitySet="CalendarsOData" />
+          <End Role="Offices" EntitySet="OfficesOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_CalendarHolidays_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_CalendarHolidays_Calendar_MyCompany_Vacation_Model_Calendar_CalendarPartner">
+          <End Role="CalendarPartner" EntitySet="CalendarHolidaysOData" />
+          <End Role="Calendar" EntitySet="CalendarsOData" />
+        </AssociationSet>
+        <AssociationSet Name="MyCompany_Vacation_Model_VacationRequest_Employee_MyCompany_Vacation_Model_Employee_EmployeePartnerSet" Association="MyCompany.Vacation.Model.MyCompany_Vacation_Model_VacationRequest_Employee_MyCompany_Vacation_Model_Employee_EmployeePartner">
+          <End Role="EmployeePartner" EntitySet="VacationRequestsOData" />
+          <End Role="Employee" EntitySet="EmployeesOData" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

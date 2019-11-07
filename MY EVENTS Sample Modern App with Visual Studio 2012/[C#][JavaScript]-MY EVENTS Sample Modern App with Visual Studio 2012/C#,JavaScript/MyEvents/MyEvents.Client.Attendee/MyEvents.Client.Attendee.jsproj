@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>f5944452-85e5-411b-9d24-d9f070d28d80</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+    <DefaultLanguage>en</DefaultLanguage>
+    <PackageCertificateKeyFile>MyEvents.Client.Attendee_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>B25C6F89B1C17E2D5D7A31B23743B882D514141B</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="..\MyEvents.Web\Scripts\MyEvents\Controls\myEvents.controls.map.js">
+      <Link>js\controls\myEvents.controls.map.js</Link>
+    </Content>
+    <Content Include="Assets\eventTile.png" />
+    <Content Include="Assets\eventTileWide.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\sessionTile.png" />
+    <Content Include="Assets\sessionTileWide.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="images\content\background.jpg" />
+    <Content Include="images\content\clock.png" />
+    <Content Include="images\content\comment-ico.png" />
+    <Content Include="images\content\facebook-no-picture.png" />
+    <Content Include="images\content\favorite-red.png" />
+    <Content Include="images\content\favorite.png" />
+    <Content Include="images\content\offline-map.png" />
+    <Content Include="images\content\twitter-icon-black.png" />
+    <Content Include="images\content\organizer-icon-white.png" />
+    <Content Include="images\content\organizer-icon.png" />
+    <Content Include="default.html" />
+    <Content Include="images\fake\sample1.png" />
+    <Content Include="images\fake\sample2.png" />
+    <Content Include="images\fake\sample3.png" />
+    <Content Include="js\controls\myEvents.controls.roomMap.js" />
+    <Content Include="js\controls\myEvents.controls.schedule.painters.sessionPainter.js" />
+    <Content Include="js\controls\myEvents.controls.schedule.scheduleControl.js" />
+    <Content Include="js\enums.js" />
+    <Content Include="js\config.js" />
+    <Content Include="js\context.js" />
+    <Content Include="js\default.js" />
+    <Content Include="css\default.css" />
+    <Content Include="js\fakeData.js" />
+    <Content Include="js\formaters.js" />
+    <Content Include="js\application.js" />
+    <Content Include="js\lib\jquery-1.7.2.min.js" />
+    <Content Include="js\lib\jquery.dotdotdot-1.5.1.js" />
+    <Content Include="js\lib\moment.js" />
+    <Content Include="js\navigator.js" />
+    <Content Include="js\services\authenticationService.js" />
+    <Content Include="js\services\facebookService.js" />
+    <Content Include="js\services\services.js" />
+    <Content Include="js\services\sessionService.js" />
+    <Content Include="js\services\eventService.js" />
+    <Content Include="js\services\registeredUserService.js" />
+    <Content Include="js\storageManager.js" />
+    <Content Include="pages\eventDetail\eventDetail.html" />
+    <Content Include="pages\eventDetail\eventDetail.css" />
+    <Content Include="pages\eventDetail\eventDetail.js" />
+    <Content Include="pages\eventList\eventList.css" />
+    <Content Include="pages\eventList\eventList.html" />
+    <Content Include="pages\eventList\eventList.js" />
+    <Content Include="pages\eventNotes\eventNotes.css" />
+    <Content Include="pages\eventNotes\eventNotes.html" />
+    <Content Include="pages\eventNotes\eventNotes.js" />
+    <Content Include="pages\login\login.css" />
+    <Content Include="pages\login\login.html" />
+    <Content Include="pages\login\login.js" />
+    <Content Include="pages\sessionDetail\sessionDetail.css" />
+    <Content Include="pages\sessionDetail\sessionDetail.js" />
+    <Content Include="pages\sessionDetail\sessionDetail.html" />
+    <Content Include="pages\settings\settings.css" />
+    <Content Include="pages\settings\settings.html" />
+    <Content Include="pages\settings\settings.js" />
+    <Content Include="pages\shareTarget\shareTarget.css" />
+    <Content Include="pages\shareTarget\shareTarget.html" />
+    <Content Include="pages\shareTarget\shareTarget.js" />
+    <None Include="MyEvents.Client.Attendee_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Bing.Maps.JavaScript, Version=1.0" />
+    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

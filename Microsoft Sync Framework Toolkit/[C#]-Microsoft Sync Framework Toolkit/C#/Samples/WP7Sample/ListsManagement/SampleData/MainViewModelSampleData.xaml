@@ -1,0 +1,14 @@
+<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ListsManagement" 
+    SampleProperty="Sample Text Property Value">
+    
+    <local:MainViewModel.Items>
+        <local:ItemViewModel ListItemTitle="Lists" ListItemDetail="User defined lists"/>
+        <local:ItemViewModel ListItemTitle="Tags" ListItemDetail="List of available Tags"/>
+        <local:ItemViewModel ListItemTitle="By Completion Date" ListItemDetail="Tasks nearing completion or past due."/>
+        <local:ItemViewModel ListItemTitle="Completed Tasks" ListItemDetail="Completed and archived tasks."/>
+    </local:MainViewModel.Items>
+    
+</local:MainViewModel>

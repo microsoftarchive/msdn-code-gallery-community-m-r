@@ -1,0 +1,18 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ILoggerService" maxBufferSize="65536"
+                    maxReceivedMessageSize="65536">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:8731/LAgger.Service"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ILoggerService"
+                contract="ILoggerService"
+                name="BasicHttpBinding_ILoggerService" />
+        </client>
+    </system.serviceModel>
+</configuration>

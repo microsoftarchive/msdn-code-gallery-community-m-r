@@ -1,0 +1,23 @@
+{
+    "name": "AzureSQLTableOutput",
+    "properties": {
+        "structure": [
+            { "name": "WinStartTime", "type": "String" },
+            { "name": "WinEndTime", "type": "String" },
+            { "name": "DriverId", "type": "Int" },
+            { "name": "LicensePlate", "type": "String" },
+            { "name": "Name", "type": "String" },
+            { "name": "NumWarnings", "type": "Int" }
+        ],
+        "location": {
+            "type": "AzureSQLTableLocation",
+            "tableName": "OBDSecurityBeltWarnings",
+            "linkedServiceName": "AzureSQLDatabase"
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1
+        }
+    }
+}
+

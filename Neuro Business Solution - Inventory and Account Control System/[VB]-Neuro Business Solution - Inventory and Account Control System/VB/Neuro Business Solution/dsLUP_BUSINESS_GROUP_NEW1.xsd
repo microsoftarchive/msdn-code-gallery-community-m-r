@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLUP_BUSINESS_GROUP_NEW1" targetNamespace="http://tempuri.org/dsLUP_BUSINESS_GROUP_NEW1.xsd" xmlns:mstns="http://tempuri.org/dsLUP_BUSINESS_GROUP_NEW1.xsd" xmlns="http://tempuri.org/dsLUP_BUSINESS_GROUP_NEW1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLUP_BUSINESS_GROUP_NEW1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsLUP_BUSINESS_GROUP_NEW1" msprop:Generator_DataSetName="dsLUP_BUSINESS_GROUP_NEW1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_BUSINESS_GROUP" msprop:Generator_UserTableName="V_BUSINESS_GROUP" msprop:Generator_RowDeletedName="V_BUSINESS_GROUPRowDeleted" msprop:Generator_TableClassName="V_BUSINESS_GROUPDataTable" msprop:Generator_RowChangedName="V_BUSINESS_GROUPRowChanged" msprop:Generator_RowClassName="V_BUSINESS_GROUPRow" msprop:Generator_RowChangingName="V_BUSINESS_GROUPRowChanging" msprop:Generator_RowEvArgName="V_BUSINESS_GROUPRowChangeEvent" msprop:Generator_RowEvHandlerName="V_BUSINESS_GROUPRowChangeEventHandler" msprop:Generator_TablePropName="V_BUSINESS_GROUP" msprop:Generator_TableVarName="tableV_BUSINESS_GROUP" msprop:Generator_RowDeletingName="V_BUSINESS_GROUPRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="nID" msprop:Generator_ColumnPropNameInRow="nID" msprop:Generator_ColumnVarNameInTable="columnnID" msprop:Generator_ColumnPropNameInTable="nIDColumn" type="xs:decimal" />
+              <xs:element name="sGROUP_NAME" msprop:Generator_UserColumnName="sGROUP_NAME" msprop:Generator_ColumnPropNameInRow="sGROUP_NAME" msprop:Generator_ColumnVarNameInTable="columnsGROUP_NAME" msprop:Generator_ColumnPropNameInTable="sGROUP_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sGROUP_DEALER" msprop:Generator_UserColumnName="sGROUP_DEALER" msprop:Generator_ColumnPropNameInRow="sGROUP_DEALER" msprop:Generator_ColumnVarNameInTable="columnsGROUP_DEALER" msprop:Generator_ColumnPropNameInTable="sGROUP_DEALERColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATUS" msdata:ReadOnly="true" msprop:Generator_UserColumnName="STATUS" msprop:Generator_ColumnPropNameInRow="STATUS" msprop:Generator_ColumnVarNameInTable="columnSTATUS" msprop:Generator_ColumnPropNameInTable="STATUSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sBUSINESS_NAME" msprop:Generator_UserColumnName="sBUSINESS_NAME" msprop:Generator_ColumnPropNameInRow="sBUSINESS_NAME" msprop:Generator_ColumnVarNameInTable="columnsBUSINESS_NAME" msprop:Generator_ColumnPropNameInTable="sBUSINESS_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OPEN_BAL" msprop:Generator_UserColumnName="OPEN_BAL" msprop:Generator_ColumnPropNameInRow="OPEN_BAL" msprop:Generator_ColumnVarNameInTable="columnOPEN_BAL" msprop:Generator_ColumnPropNameInTable="OPEN_BALColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_BUSINESS_GROUP" />
+      <xs:field xpath="mstns:nID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

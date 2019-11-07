@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ReactivePropertyのコレクション</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>ReactivePropertyのコレクション</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="テクノロジ">テクノロジ</label>
+                        <div id="テクノロジ">
+                            ReactivePropert<wbr />y
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="トピック">トピック</label>
+                        <div id="トピック">
+                            ReactivePropert<wbr />y
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">ja-JP</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">最終更新日</label>
+                    <div id="LastUpdated">2014/10/18</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">ライセンス</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/ReactiveProperty-8f81712c">このサンプルをオンラインで表示する</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'コードをコピー';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>サンプルプログラムの概要</h1>
+<p>このサンプルプログラムは、ReactivePropertyのReadOnlyReactiveCollectionの使い方についてしめします。ReadOnlyReactiveCollectionを使うと、ModelにあるIObservable&lt;T&gt;やObservableCollection&lt;T&gt;から簡単に読み取り専用のCollectionを作成することができます。</p>
+<h1>サンプルプログラムの動作方法</h1>
+<p>サンプルプログラムを動作させるには、ソリューションのNuGetパッケージの復元を有効化してリビルドをしてください。リビルド後実行することで動作を確認できます。</p>
+<h1>サンプルプログラムの解説</h1>
+<p>サンプルプログラムでは、以下の方法でReadOnlyReactiveCollection&lt;T&gt;型を作成しています。</p>
+<ul>
+<li>IObservable&lt;T&gt;から作成 </li><li>IObservable&lt;CollectoionChanged&lt;T&gt;&gt;から作成 </li><li>ObservableCollection&lt;T&lt;&gt;から作成 </li></ul>
+<h2>IObservable&lt;T&gt;から作成</h2>
+<p>一番シンプルな作成方法です。IObservable&lt;T&gt;の拡張メソッドのToReadOnlyReactiveCollectionを呼び出すことで作成できます。もとになるIObservable&lt;T&gt;から値が発行されるたびにコレクションに値が追加されます。ToReadOnlyReactiveCollectionの引数にIObservable&lt;Unit&gt;を渡すことで、コレクションの値をリセットするタイミングを指定することもできます。</p>
+<p>コード例を以下に示します。</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// IO&lt;T&gt;からReacOnlyReactiveCollection&lt;T&gt;
+private Subject&lt;int&gt; source = new Subject&lt;int&gt;();
+
+public ReadOnlyReactiveCollection&lt;int&gt; SimpleCollection { get; private set; }
+
+public ReactiveCommand SimpleAddCommand { get; private set; }
+
+public ReactiveCommand SimpleResetCommand { get; private set; }
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;IO&lt;T&gt;からReacOnlyReactiveCollection&lt;T&gt;</span>&nbsp;
+<span class="cs__keyword">private</span>&nbsp;Subject&lt;<span class="cs__keyword">int</span>&gt;&nbsp;source&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Subject&lt;<span class="cs__keyword">int</span>&gt;();&nbsp;
+&nbsp;
+<span class="cs__keyword">public</span>&nbsp;ReadOnlyReactiveCollection&lt;<span class="cs__keyword">int</span>&gt;&nbsp;SimpleCollection&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;
+&nbsp;
+<span class="cs__keyword">public</span>&nbsp;ReactiveCommand&nbsp;SimpleAddCommand&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;
+&nbsp;
+<span class="cs__keyword">public</span>&nbsp;ReactiveCommand&nbsp;SimpleResetCommand&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">this.SimpleAddCommand = new ReactiveCommand();
+this.SimpleAddCommand.Subscribe(_ =&gt;
+    {
+        this.source.OnNext(random.Next());
+    });
+this.SimpleResetCommand = new ReactiveCommand();
+
+// IObservaboe&lt;T&gt;からコレクションへ変換。オプションとしてコレクションをリセットするIO&lt;Unit&gt;を渡せる
+this.SimpleCollection = this.source.ToReadOnlyReactiveCollection(this.SimpleResetCommand.ToUnit());
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">this</span>.SimpleAddCommand&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="js__operator">this</span>.SimpleAddCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.source.OnNext(random.Next());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>);&nbsp;
+<span class="js__operator">this</span>.SimpleResetCommand&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;ReactiveCommand();&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;IObservaboe&lt;T&gt;からコレクションへ変換。オプションとしてコレクションをリセットするIO&lt;Unit&gt;を渡せる</span>&nbsp;
+<span class="js__operator">this</span>.SimpleCollection&nbsp;=&nbsp;<span class="js__operator">this</span>.source.ToReadOnlyReactiveCollection(<span class="js__operator">this</span>.SimpleResetCommand.ToUnit());&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>これで、SimpleAddCommandが実行されるたびにランダムな数字がコレクションに追加され、SimpleResetCommandが実行されると、コレクションがクリアされます。</p>
+<h2>IObservable&lt;CollectoionChanged&lt;T&gt;&gt;から作成</h2>
+<p>次に、コレクションの変更通知を笑わす、IObservable&lt;CollectionChanged&lt;T&gt;&gt;から作成する方法をしめします。CollectionChanged&lt;T&gt;は、int型のIndexプロパティと、NotifyCollectionChangedAction型のActionプロパティとT型のValueプロパティをもつシンプルな型です。Add, Reset, Replace, Removeを簡単に作成できるようにファクトリメソッドが定義されています。</p>
+<p></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+/// CollectionChanged action
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;
+public class CollectionChanged&lt;T&gt;
+{
+    /// &lt;summary&gt;
+    /// Reset action
+    /// &lt;/summary&gt;
+    public static readonly CollectionChanged&lt;T&gt; Reset ;
+
+    /// &lt;summary&gt;
+    /// Create Remove action
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;index&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static CollectionChanged&lt;T&gt; Remove(int index);
+
+    /// &lt;summary&gt;
+    /// Create add action
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;index&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static CollectionChanged&lt;T&gt; Add(int index, T value);
+
+    /// &lt;summary&gt;
+    /// Create replace action
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;index&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static CollectionChanged&lt;T&gt; Replace(int index, T value);
+
+    public T Value { get; set; }
+    public int Index { get; set; }
+
+    /// &lt;summary&gt;
+    /// Support action is Add and Remove and Reset and Replace.
+    /// &lt;/summary&gt;
+    public NotifyCollectionChangedAction Action { get; set; }
+
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;CollectionChanged&nbsp;action</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;typeparam&nbsp;name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>&nbsp;
+<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;CollectionChanged&lt;T&gt;&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Reset&nbsp;action</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">readonly</span>&nbsp;CollectionChanged&lt;T&gt;&nbsp;Reset&nbsp;;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Create&nbsp;Remove&nbsp;action</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;index&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;CollectionChanged&lt;T&gt;&nbsp;Remove(<span class="cs__keyword">int</span>&nbsp;index);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Create&nbsp;add&nbsp;action</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;index&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;value&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;CollectionChanged&lt;T&gt;&nbsp;Add(<span class="cs__keyword">int</span>&nbsp;index,&nbsp;T&nbsp;<span class="cs__keyword">value</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Create&nbsp;replace&nbsp;action</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;index&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;value&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;CollectionChanged&lt;T&gt;&nbsp;Replace(<span class="cs__keyword">int</span>&nbsp;index,&nbsp;T&nbsp;<span class="cs__keyword">value</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;T&nbsp;Value&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;Index&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Support&nbsp;action&nbsp;is&nbsp;Add&nbsp;and&nbsp;Remove&nbsp;and&nbsp;Reset&nbsp;and&nbsp;Replace.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;NotifyCollectionChangedAction&nbsp;Action&nbsp;{&nbsp;<span class="cs__keyword">get</span>;&nbsp;<span class="cs__keyword">set</span>;&nbsp;}&nbsp;
+&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p></p>
+<p>この型を使ったコレクションの作成例を以下に示します。</p>
+<p></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// IO&lt;CollectionChanged&lt;T&gt;&gt;からReadOnlyReactiveCollection&lt;T&gt;
+private Subject&lt;CollectionChanged&lt;int&gt;&gt; collectionChangedSource = new Subject&lt;CollectionChanged&lt;int&gt;&gt;();
+
+public ReadOnlyReactiveCollection&lt;int&gt; CollectionChangedCollection { get; private set; }
+
+
+public ReactiveCommand CollectionChangedAddCommand { get; private set; }
+public ReactiveCommand CollectionChangedRemoveCommand { get; private set; }
+public ReactiveCommand CollectionChangedClearCommand { get; private set; }
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__sl_comment">//&nbsp;IO&lt;CollectionChanged&lt;T&gt;&gt;からReadOnlyReactiveCollection&lt;T&gt;</span>&nbsp;
+private&nbsp;Subject&lt;CollectionChanged&lt;int&gt;&gt;&nbsp;collectionChangedSource&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;Subject&lt;CollectionChanged&lt;int&gt;&gt;();&nbsp;
+&nbsp;
+public&nbsp;ReadOnlyReactiveCollection&lt;int&gt;&nbsp;CollectionChangedCollection&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;
+public&nbsp;ReactiveCommand&nbsp;CollectionChangedAddCommand&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+public&nbsp;ReactiveCommand&nbsp;CollectionChangedRemoveCommand&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+public&nbsp;ReactiveCommand&nbsp;CollectionChangedClearCommand&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">this.CollectionChangedCollection = this.collectionChangedSource.ToReadOnlyReactiveCollection();
+this.CollectionChangedAddCommand = new ReactiveCommand();
+this.CollectionChangedAddCommand.Subscribe(_ =&gt;
+    {
+        this.collectionChangedSource.OnNext(
+            CollectionChanged&lt;int&gt;.Add(0, random.Next()));
+    });
+
+this.CollectionChangedClearCommand = new ReactiveCommand();
+this.CollectionChangedClearCommand.Subscribe(_ =&gt;
+    {
+        this.collectionChangedSource.OnNext(
+            CollectionChanged&lt;int&gt;.Reset);
+    });
+
+this.CollectionChangedRemoveCommand = new ReactiveCommand();
+this.CollectionChangedRemoveCommand.Subscribe(_ =&gt;
+    {
+        this.collectionChangedSource.OnNext(
+            CollectionChanged&lt;int&gt;.Remove(0));
+    });
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">this</span>.CollectionChangedCollection&nbsp;=&nbsp;<span class="cs__keyword">this</span>.collectionChangedSource.ToReadOnlyReactiveCollection();&nbsp;
+<span class="cs__keyword">this</span>.CollectionChangedAddCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="cs__keyword">this</span>.CollectionChangedAddCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.collectionChangedSource.OnNext(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CollectionChanged&lt;<span class="cs__keyword">int</span>&gt;.Add(<span class="cs__number">0</span>,&nbsp;random.Next()));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+&nbsp;
+<span class="cs__keyword">this</span>.CollectionChangedClearCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="cs__keyword">this</span>.CollectionChangedClearCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.collectionChangedSource.OnNext(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CollectionChanged&lt;<span class="cs__keyword">int</span>&gt;.Reset);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+&nbsp;
+<span class="cs__keyword">this</span>.CollectionChangedRemoveCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="cs__keyword">this</span>.CollectionChangedRemoveCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.collectionChangedSource.OnNext(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CollectionChanged&lt;<span class="cs__keyword">int</span>&gt;.Remove(<span class="cs__number">0</span>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p></p>
+<p>この方法は、一番コード量は多くなりますが、一番細かくコレクションの状態を操作できる方法になります。</p>
+<h2>ObservableCollection&lt;T&gt;から作成</h2>
+<p>MVVMパターンで作成していると、すでにModel側にObservableCollection&lt;T&gt;型があって、それをもとにVMで表示するためのコレクションを作成することが多いと思います。そういうケースに対応するため、ObservableCollection&lt;T&gt;からReadOnlyReactiveCollection＜U&gt;を作成する方法を提供しています。コード例を以下に示します。</p>
+<p></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// ObservableCollection&lt;T&gt;からReadOnlyObservableCollection&lt;T&gt;
+private ObservableCollection&lt;string&gt; sourceCollection = new ObservableCollection&lt;string&gt;();
+public ReadOnlyReactiveCollection&lt;string&gt; ObservableCollectionToReadOnlyReactiveCollection { get; private set; }
+
+public ReactiveCommand SourceCollectionAddCommand { get; private set; }
+
+public ReactiveCommand SourceCollectionRemoveCommand { get; private set; }
+
+public ReactiveCommand SourceCollectionResetCommand { get; private set; }
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__sl_comment">//&nbsp;ObservableCollection&lt;T&gt;からReadOnlyObservableCollection&lt;T&gt;</span>&nbsp;
+private&nbsp;ObservableCollection&lt;string&gt;&nbsp;sourceCollection&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;ObservableCollection&lt;string&gt;();&nbsp;
+public&nbsp;ReadOnlyReactiveCollection&lt;string&gt;&nbsp;ObservableCollectionToReadOnlyReactiveCollection&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+public&nbsp;ReactiveCommand&nbsp;SourceCollectionAddCommand&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+public&nbsp;ReactiveCommand&nbsp;SourceCollectionRemoveCommand&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+public&nbsp;ReactiveCommand&nbsp;SourceCollectionResetCommand&nbsp;<span class="js__brace">{</span>&nbsp;get;&nbsp;private&nbsp;set;&nbsp;<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">スクリプトの編集</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// ObservableCollection&lt;T&gt;からReadOnlyObservableCollection&lt;U&gt;への変換
+this.ObservableCollectionToReadOnlyReactiveCollection = this.sourceCollection
+    .ToReadOnlyReactiveCollection(x =&gt; x &#43; &quot; value.&quot;);
+
+this.SourceCollectionAddCommand = new ReactiveCommand();
+this.SourceCollectionAddCommand.Subscribe(_ =&gt;
+    {
+        this.sourceCollection.Add(random.Next().ToString());
+    });
+this.SourceCollectionRemoveCommand = new ReactiveCommand();
+this.SourceCollectionRemoveCommand.Subscribe(_ =&gt;
+    {
+        this.sourceCollection.RemoveAt(this.sourceCollection.Count - 1);
+    });
+this.SourceCollectionResetCommand = new ReactiveCommand();
+this.SourceCollectionResetCommand.Subscribe(_ =&gt;
+    {
+        this.sourceCollection.Clear();
+    });
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;ObservableCollection&lt;T&gt;からReadOnlyObservableCollection&lt;U&gt;への変換</span>&nbsp;
+<span class="cs__keyword">this</span>.ObservableCollectionToReadOnlyReactiveCollection&nbsp;=&nbsp;<span class="cs__keyword">this</span>.sourceCollection&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;.ToReadOnlyReactiveCollection(x&nbsp;=&gt;&nbsp;x&nbsp;&#43;&nbsp;<span class="cs__string">&quot;&nbsp;value.&quot;</span>);&nbsp;
+&nbsp;
+<span class="cs__keyword">this</span>.SourceCollectionAddCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="cs__keyword">this</span>.SourceCollectionAddCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.sourceCollection.Add(random.Next().ToString());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+<span class="cs__keyword">this</span>.SourceCollectionRemoveCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="cs__keyword">this</span>.SourceCollectionRemoveCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.sourceCollection.RemoveAt(<span class="cs__keyword">this</span>.sourceCollection.Count&nbsp;-&nbsp;<span class="cs__number">1</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+<span class="cs__keyword">this</span>.SourceCollectionResetCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ReactiveCommand();&nbsp;
+<span class="cs__keyword">this</span>.SourceCollectionResetCommand.Subscribe(_&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.sourceCollection.Clear();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+ToReadOnlyReactiveCollection拡張メソッドに、T型からU型へ変換するラムダ式を渡すことで、ObservableCollection&lt;T&gt;の変更に追従するReadOnlyReactiveCollection＜U&gt;が作成できます。
+<p></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

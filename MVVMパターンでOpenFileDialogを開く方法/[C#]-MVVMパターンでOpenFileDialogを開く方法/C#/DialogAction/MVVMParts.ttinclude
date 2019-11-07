@@ -1,0 +1,234 @@
+﻿<#+
+// 提供しているメソッド
+// Command(string commandName)
+// Command(string commandName, string parameterType)
+// Property(string typeName, string propertyName)
+// ProxyProperty(string modelName, string typeName, string propertyName)
+#>
+<#+
+const string RaisePropertyChanged = "RaisePropertyChanged";
+const string DelegateCommand = "Microsoft.Practices.Prism.Commands.DelegateCommand";
+#>
+<#+ 
+/// <summary>
+/// 引数のないコマンドを作成する
+/// </summary>
+/// <param name="commandName">コマンドの名前</param>
+private void Command(string commandName)
+{
+#>
+
+		#region "<#= commandName #>コマンド"
+		private <#= DelegateCommand #> _<#= commandName #>Command;
+		
+		partial void <#= commandName #>Execute();
+		
+		partial void Can<#= commandName #>Execute(ref bool result);
+		
+		partial void <#= commandName #>Error(Exception ex, ref bool handleError);
+	
+		public <#= DelegateCommand #> <#= commandName #>Command
+		{
+			get
+			{
+				return this._<#= commandName #>Command = this._<#= commandName #>Command ??
+					new <#= DelegateCommand #>(
+						() => 
+						{
+							try
+							{
+								this.<#= commandName #>Execute();
+							}
+							catch (Exception ex)
+							{
+								bool handleError = false;
+								this.<#= commandName #>Error(ex, ref handleError);
+								if (!handleError)
+								{
+									throw;
+								}
+							}
+						},
+						() =>
+						{
+							bool ret = true;
+							this.Can<#= commandName #>Execute(ref ret);
+							return ret;
+						});
+			}
+		}
+		#endregion
+<#+
+}
+#>
+
+<#+
+/// <summary>
+/// 引数のあるコマンドを定義する
+/// </summary>
+/// <param name="commandName">コマンド名</param>
+/// <param name="parameterType">コマンドのパラメータの型</param>
+private void Command(string commandName, string parameterType)
+{
+#>
+
+		#region "<#= commandName #>コマンド"
+		private <#= DelegateCommand #><<#= parameterType #>> _<#= commandName #>Command;
+		
+		partial void <#= commandName #>Execute(<#= parameterType #> parameter);
+		
+		partial void Can<#= commandName #>Execute(<#= parameterType #> parameter, ref bool result);
+
+		partial void <#= commandName #>Error(<#= parameterType #> parameter, Exception ex, ref bool handleError);
+	
+		public <#= DelegateCommand #><<#= parameterType #>> <#= commandName #>Command
+		{
+			get
+			{
+				return this._<#= commandName #>Command = this._<#= commandName #>Command ??
+					new <#= DelegateCommand #><<#= parameterType #>>(
+						p => 
+						{
+							try
+							{
+								this.<#= commandName #>Execute(p);
+							}
+							catch (Exception ex)
+							{
+								bool handleError = false;
+								this.<#= commandName #>Error(p, ex, ref handleError);
+								if (!handleError)
+								{
+									throw;
+								}
+							}
+						},
+						p =>
+						{
+							bool ret = true;
+							this.Can<#= commandName #>Execute(p, ref ret);
+							return ret;
+						});
+			}
+		}
+		#endregion
+<#+
+}
+#>
+
+<#+
+/// <summary>
+/// プロパティを定義する
+/// </summary>
+/// <param name="typeName">プロパティの型名</param>
+/// <param name="propertyName">プロパティ名</param>
+/// <param name="readOnly">読み込み専用かどうか</param>
+private void Property(string typeName, string propertyName, bool readOnly = false)
+{
+#>
+
+		#region "<#= propertyName #>プロパティ"
+		private <#= typeName #> _<#= propertyName #>;
+
+		partial void <#= propertyName #>Changing(<#= typeName #> newValue, ref bool canSetValue);
+		partial void <#= propertyName #>Changed();
+
+		public <#= typeName #> <#= propertyName #>
+		{
+			get
+			{
+				return this._<#= propertyName #>;
+			}
+			
+			<#= readOnly ? "private " : "" #>set
+			{
+				if (this._<#= propertyName #> == value)
+				{
+					return;
+				}
+				
+				bool canSetValue = true;
+				this.<#= propertyName #>Changing(value, ref canSetValue);
+				if (!canSetValue)
+				{
+					return;
+				}
+				
+				this._<#= propertyName #> = value;
+				this.<#= RaisePropertyChanged #>("<#= propertyName #>");
+				this.<#= propertyName #>Changed();
+			}
+		}
+		#endregion
+<#+
+}
+#>
+<#+
+/// <summary>
+/// ModelのプロパティをViewModelのプロパティとして定義する
+/// </summary>
+/// <param name="modelName">モデルのフィールド名</param>
+/// <param name="typeName">プロパティの型名</param>
+/// <param name="propertyName">プロパティ名</param>
+/// <param name="readOnly">読み込み専用かどうか</param>
+private void ProxyProperty(string modelName, string typeName, string propertyName, bool readOnly = false)
+{
+#>
+
+
+		#region "<#= propertyName #>プロパティ"
+<#+
+if (readOnly)
+{
+#>
+		partial void <#= propertyName #>Changing(<#= typeName #> newValue, ref bool canSetValue);
+		partial void <#= propertyName #>Changed();
+<#+
+}
+#>
+		public <#= typeName #> <#= propertyName #>
+		{
+			get
+			{
+				return this.<#= modelName #>.<#= propertyName #>;
+			}
+<#+
+if (readOnly)
+{
+#>			
+			set
+			{
+				bool canSetValue = true;
+				this.<#= propertyName #>Changing(value, ref canSetValue);
+				if (!canSetValue)
+				{
+					return;
+				}
+				
+				this.<#= modelName #>.<#= propertyName #> = value;
+				this.<#= propertyName #>Changed();
+			}
+<#+
+}
+#>
+		}
+		#endregion
+<#+
+}
+#>
+
+<#+
+private void AssociatedMetadataTypeTypeDescriptionProvider(string viewModelName)
+{
+#>
+
+		class <#= viewModelName #>AssociatedMetadataTypeTypeDescriptionProvider : System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider
+		{
+			public <#= viewModelName #>AssociatedMetadataTypeTypeDescriptionProvider()
+				: base(typeof(<#= viewModelName #>))
+			{
+			}
+		}
+<#+
+}
+#>

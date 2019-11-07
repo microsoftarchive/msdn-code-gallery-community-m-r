@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>my events</title>
+    <!-- References added only for design time purpose -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="/js/default.js"></script>
+    <!-- Page references -->
+    <link href="/pages/eventlist/eventList.css" rel="stylesheet" />
+    <script src="/pages/eventlist/eventList.js"></script>
+</head>
+<body>
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template"
+        style="display: none">
+        <div class="simpleHeaderItem">
+            <h2 data-win-bind="innerText: title"></h2>
+        </div>
+    </div>
+    <div id="semanticZoomTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="semanticZoomItem">
+            <h2 class="semanticZoomItem-Text" data-win-bind="innerText: title"></h2>
+        </div>
+    </div>
+    <div id="eventTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="item">
+            <div class="logo">
+                <img data-win-bind="src: Logo MyEvents.Formaters.formatLogo" alt="event logo" />
+            </div>
+            <div class="item-date">
+                <div class="wrapper">
+                    <span class="item-date-day" data-win-bind="textContent: Date MyEvents.Formaters.getDay"></span>
+                    <span class="item-date-month" data-win-bind="textContent: Date MyEvents.Formaters.getMonth"></span>
+                </div>
+            </div>
+            <div class="item-city" data-win-bind="textContent: City"></div>
+            <div class="item-name multi-line-ellipsis" data-win-bind="textContent: Name"></div>
+            <div class="item-organizer" data-win-bind="textContent: Organizer.Name"></div>
+        </div>
+    </div>
+    <div id="eventTemplate-highlighted" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="item highlighted blue">
+            <div class="logo">
+                <img data-win-bind="src: Logo MyEvents.Formaters.formatLogo" alt="event logo" />
+            </div>
+            <div class="item-date">
+                <div class="wrapper">
+                    <div class="item-date-day" data-win-bind="textContent: Date MyEvents.Formaters.getDay"></div>
+                    <div class="item-date-month" data-win-bind="textContent: Date MyEvents.Formaters.getMonth"></div>
+                </div>
+            </div>
+            <div class="item-city" data-win-bind="textContent: City"></div>
+            <div class="item-name" data-win-bind="textContent: Name"></div>
+            <div class="item-description multi-line-ellipsis" data-win-bind="textContent: Description"></div>
+            <div class="item-organizer" data-win-bind="textContent: Organizer.Name"></div>
+        </div>
+    </div>
+    <div class="itemTemplate-snapped" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="item-snapped">
+            <div class="logo">
+                <img alt="event logo" data-win-bind="src: Logo MyEvents.Formaters.formatLogo" />
+            </div>
+            <div class="item-date">
+                <div class="item-date-day" data-win-bind="textContent: Date MyEvents.Formaters.getDay"></div>
+                <div class="item-date-month" data-win-bind="textContent: Date MyEvents.Formaters.getMonth"></div>
+            </div>
+            <div class="item-city" data-win-bind="textContent: City"></div>
+            <div class="item-name" data-win-bind="textContent: Name"></div>
+            <div class="item-organizer" data-win-bind="textContent: Organizer.Name"></div>
+        </div>
+    </div>
+    <div class="fragment eventlistpage">
+        <header aria-label="Header content" role="banner">
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">my events</span>
+            </h1>
+            <div class="user-data">
+                <span class="user-name" data-win-bind="innerText: user.name"></span>
+                <img src="" class="user-image" data-win-bind="src: user.facebookId MyEvents.Formaters.facebookImage" alt="user image" />
+            </div>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="semanticZoomDiv" data-win-control="WinJS.UI.SemanticZoom">
+                <div id="eventsList"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{
+	                selectionMode:'none', 
+	                swipeBehavior:'none', 
+	                tapBehavior:'invoke', 
+	                groupHeaderTemplate: 
+                    select('#headerTemplate')}">
+                </div>
+                <div id="zoomedOutEventsList"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{ 
+                    itemTemplate: select('#semanticZoomTemplate'), 
+                    selectionMode: 'none', 
+                    tapBehavior: 'invoke', 
+                    swipeBehavior: 'none'}">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

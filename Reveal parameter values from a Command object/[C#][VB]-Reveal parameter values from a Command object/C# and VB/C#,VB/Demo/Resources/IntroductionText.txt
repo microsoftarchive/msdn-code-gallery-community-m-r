@@ -1,0 +1,11 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>About</title>
+</head>
+<body>
+<h3 style="border-bottom: thin solid Gray; color: #5F9EA0;">About</h3>
+<p>This project demonstrates the basics for viewing SQL statement which were created using parameters via the data provider parameter collection. The two buttons take one SQL statement and display the values for the parameters. The first button differs from the seconds button only by the naming convention of the parameters.</p>
+<p>Please note for the language extension to function correctly each parameter must have a name prefixed with @ symbol.</p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>Tetris</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Tetris</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60FD5F90-F355-4469-B93B-850C47B94D3E}</ProjectGuid>
+    <TargetFrameworkVersion>v4.3</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="Constants\BoardConsts.cs" />
+    <Compile Include="Constants\BrickConsts.cs" />
+    <Compile Include="Constants\GameConsts.cs" />
+    <Compile Include="Constants\TimeConsts.cs" />
+    <Compile Include="Helpers\BitHelper.cs" />
+    <Compile Include="Game\Brick.cs" />
+    <Compile Include="Game\GameBoard.cs" />
+    <Compile Include="Game\GameController.cs" />
+    <Compile Include="Game\GameInfo.cs" />
+    <Compile Include="Game\GameState.cs" />
+    <Compile Include="Presentation\ControlsManager.cs" />
+    <Compile Include="Presentation\ResourcesManager.cs" />
+    <Compile Include="Presentation\MainWindow.cs" />
+    <Compile Include="Constants\WindowConsts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="STM32F429I_Discovery.Netmf.Hardware\STM32F429I_Discovery.Netmf.Hardware.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Graphics" />
+    <Reference Include="Microsoft.SPOT.Hardware" />
+    <Reference Include="Microsoft.SPOT.Native">
+    </Reference>
+    <Reference Include="Microsoft.SPOT.TinyCore" />
+    <Reference Include="Microsoft.SPOT.Touch" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game_End.bmp" />
+    <None Include="Resources\HomegirlGetLow.fontdef" />
+    <None Include="Resources\HomegirlGetLow.tinyfnt" />
+    <None Include="Resources\HomegirlGetLow.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game_Init.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game_Board.bmp" />
+  </ItemGroup>
+</Project>

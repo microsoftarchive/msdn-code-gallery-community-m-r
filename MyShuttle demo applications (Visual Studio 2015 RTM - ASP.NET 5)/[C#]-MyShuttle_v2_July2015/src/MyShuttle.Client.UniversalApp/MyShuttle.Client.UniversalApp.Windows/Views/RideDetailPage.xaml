@@ -1,0 +1,227 @@
+﻿<base:WindowsBasePage
+    x:Class="MyShuttle.Client.UniversalApp.Views.RideDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:MyShuttle.Client.UniversalApp.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:base="using:MyShuttle.Client.UniversalApp.Views.Base"
+    xmlns:controls="using:Callisto.Controls"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <converters:DateTimeToTimeConverter x:Key="DateTimeToTimeConverterKey"/>
+        <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverterKey"/>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey"/>
+        <converters:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverterKey"/>
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="8.9*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Loading feedback-->
+        <ProgressRing Visibility="{Binding IsLoadingRide, Converter={StaticResource BooleanToVisibilityConverterKey}}"
+                      Style="{StaticResource WhiteCenterProgressRing}" Grid.RowSpan="3"/>               
+        
+        <Hub Grid.Row="1" Visibility="{Binding IsLoadingRide, Converter={StaticResource ReverseBooleanToVisibilityConverterKey}}">
+            <Hub.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="backButton" Click="GoBack" 
+                                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" 
+                                Style="{StaticResource MyShuttleBackButtonStyle}" />
+
+                        <TextBlock Text="{Binding [RideDetails], Source={StaticResource LocalizedStrings}}" 
+                                   Style="{StaticResource TitlePageStandard}" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </Hub.HeaderTemplate>
+
+            <HubSection Margin="80 0 0 0">
+                <DataTemplate>
+                    <Viewbox>
+                        <Grid Height="470" Width="180">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="7*"></RowDefinition>
+                                <RowDefinition Height="3*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Row="0" Source="{Binding Ride.Employee.Picture,Converter={StaticResource ByteArrayToImageConverterKey}, FallbackValue='Assets/Fallback/DemoEmployeePicture.png'}"
+                                       Style="{StaticResource DetailRideItemImage}"/>
+                                <TextBlock Grid.Row="1" Style="{StaticResource NameDetailTextBlock}"
+							               Text="{Binding Ride.Employee.Name, FallbackValue='Lanna Lane'}" />
+                                <TextBlock Grid.Row="2" Style="{StaticResource DateDetailTextBlock}"
+                                           Text="{Binding Ride.StartDateTime, Converter={StaticResource DateTimeToFormattedDateConverterKey}, FallbackValue='March, 21th 2014'}" />
+                            </Grid>
+
+                            <Button Grid.Row="1" Style="{StaticResource InvoiceButtonStyle}"
+                                    Command="{Binding DownloadInvoiceCommand}"/>
+                        </Grid>
+                    </Viewbox>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection>
+                <DataTemplate>
+                    <Viewbox>
+                        <Grid Height="470">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="7*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Style="{StaticResource HubHeaderTextBlock}"
+                                           Text="{Binding [Summary], Source={StaticResource LocalizedStrings}}"/>                                
+                                <TextBlock Grid.Row="1" Style="{StaticResource RedInfoItemTitleTextBlock}" 
+							               Text="{Binding [From], Source={StaticResource LocalizedStrings}}"/>
+                                <TextBlock Grid.Row="2" Style="{StaticResource SubHeaderTextBlock}" 
+							               Text="{Binding Ride.StartAddress, FallbackValue='Saffron St. 23'}"/>
+                                <TextBlock Grid.Row="3" Style="{StaticResource RedInfoItemTitleTextBlock}" 
+							               Text="{Binding [To], Source={StaticResource LocalizedStrings}}" />
+                                <TextBlock Grid.Row="4" Style="{StaticResource SubHeaderTextBlock}" 
+							               Text="{Binding Ride.EndAddress, FallbackValue='Clerkenwell Road 120'}"/>
+
+                                <Grid Grid.Row="5" Style="{StaticResource DriverItemStyle}" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="110" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Image Grid.Row="0" Grid.Column="0" Source="{Binding Ride.Vehicle.Picture,Converter={StaticResource ByteArrayToImageConverterKey}, FallbackValue='Assets/Fallback/DemoCar.png'}"
+                                           Style="{StaticResource DriverItemImage}" />
+                                    <StackPanel Grid.Row="0" Grid.Column="1" Style="{StaticResource DriverItemTextStyle}">
+                                        <TextBlock Style="{StaticResource RedInfoItemTitleDriverTextBlock}" Grid.Row="3"    
+									               Text="{Binding Ride.Driver.Name, FallbackValue='Jhon Talbot'}" />
+                                        <TextBlock Style="{StaticResource SubHeaderDriverTextBlock}" Grid.Row="3">
+									        <Run Text="{Binding Ride.Vehicle.Make, FallbackValue='Audi A5 8T'}"/>    
+                                            <Run Text="{Binding Ride.Vehicle.Model, FallbackValue='TDI Quattro'}"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource ResumeRideDetailGridStyle}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".5*" />
+                                    <RowDefinition Height=".5*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".33*" />
+                                    <ColumnDefinition Width=".33*" />
+                                    <ColumnDefinition Width=".33*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <StackPanel Grid.Row="0" Grid.Column="0" Style="{StaticResource StackPanelGridCell}">
+                                    <TextBlock Text="{Binding [Start], Source={StaticResource LocalizedStrings}}" Style="{StaticResource TextGridCellTitle}"/>
+                                    <TextBlock Text="{Binding Ride.StartDateTime, Converter={StaticResource DateTimeToTimeConverterKey}, FallbackValue='14:35 am'}" Style="{StaticResource TextGridCellText}"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Grid.Column="0" Style="{StaticResource StackPanelGridCell}">
+                                    <TextBlock Text="{Binding [Distance], Source={StaticResource LocalizedStrings}}" Style="{StaticResource TextGridCellTitle}"/>
+                                    <TextBlock Style="{StaticResource TextGridCellText}">
+                                        <Run Text="{Binding Ride.Distance}"></Run>
+                                        <Run Text="{Binding [LocalMeasuringLengthUnit], Source={StaticResource LocalizedStrings}}"></Run>
+                                    </TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="0" Grid.Column="1" Style="{StaticResource StackPanelGridCell}">
+                                    <TextBlock Text="{Binding [End], Source={StaticResource LocalizedStrings}}" Style="{StaticResource TextGridCellTitle}"/>
+                                    <TextBlock Text="{Binding Ride.EndDateTime, Converter={StaticResource DateTimeToTimeConverterKey}, FallbackValue='14:50 am'}"  Style="{StaticResource TextGridCellText}"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Grid.Column="1" Style="{StaticResource StackPanelGridCell}">
+                                    <TextBlock Text="{Binding [Cost], Source={StaticResource LocalizedStrings}}" Style="{StaticResource TextGridCellTitle}"/>
+                                    <TextBlock Style="{StaticResource TextGridCellText}">     
+                                        <Run Text="{Binding Ride.Vehicle.Rate}"/>
+                                        <Run Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}"/><Run Text="{Binding [LocalMeasuringLengthUnitWithBar], Source={StaticResource LocalizedStrings}}" />
+                                    </TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="0" Grid.Column="2" Style="{StaticResource StackPanelGridCellImage}">
+                                    <Image Style="{StaticResource RideGridCellImageClock}"/>
+                                    <TextBlock Text="{Binding Ride.Duration, Converter={StaticResource MinutesToHumanizedTimeConverterKey}, FallbackValue='1h10m'}" Style="{StaticResource TextGridCellTextWhite}"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource StackPanelGridCellImage}">
+                                    <Image Style="{StaticResource RideGridCellImageMoney}"/>
+                                    <TextBlock Text="{Binding Ride.Cost, Converter={StaticResource PriceToStringConverterKey}, FallbackValue='$60.50'}" Style="{StaticResource TextGridCellTextWhite}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Viewbox>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection>
+                <DataTemplate>
+                    <Viewbox>                                           
+                        <Grid Height="470" Width="350">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".3*"></RowDefinition>
+                                <RowDefinition Height=".7*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Text="{Binding [Comments], Source={StaticResource LocalizedStrings}}"
+                                           Style="{StaticResource HubHeaderTextBlock}" />
+
+                                <controls:Rating Grid.Row="1"
+                                         Margin="{StaticResource TopMarginThickness}"
+                                         ItemCount="5" 
+                                         Style="{StaticResource LargeRatingDisabled}"
+                                         ItemContainerStyle="{StaticResource BigRatingItemContainer}" 
+                                         Value="{Binding Ride.Rating, Mode=OneWay, FallbackValue='4'}"/>
+                            </Grid>                           
+
+                            <Border Grid.Row="1" Style="{StaticResource CommentBorderStyle}">
+                                <ScrollViewer Style="{StaticResource CommentScrollStyle}" VerticalScrollBarVisibility="Auto">
+                                    <TextBlock Style="{StaticResource CommentRideTextBlock}" Text="{Binding Ride.Comments, FallbackValue='Great service!'}" />
+                                </ScrollViewer>
+                            </Border>
+                        </Grid>
+                    </Viewbox>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+    </Grid>
+</base:WindowsBasePage>

@@ -1,0 +1,85 @@
+﻿<section class="view">
+    <header>
+        <div class="content-input">
+            <input class="input-search" type="text" data-bind="value: filter, valueUpdate: 'afterkeydown'">
+        </div>
+        <div class="content-travels">
+            <div class="content-have-travels">
+                <span class="have-travels">Team travel requests</span>
+            </div>
+            <div class="travels-number">
+                <span data-bind="text: travelsCount"></span>
+            </div>
+            <button class="refresh-button" data-bind="click: refresh" title="Refresh"></button>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </header>
+    <!-- ko if: !anyRecord()-->
+    <section class="list-no-articles">
+        No records found
+    </section>
+    <!-- /ko -->
+    <!-- ko if: anyRecord()-->
+    <section id="team-travels-list" data-bind="foreach: { data: travels }">
+        <article class="article-of-list">
+            <div class="avatar">
+                <img class="avatar-img" data-bind="attr: { src: employee.picture }" alt="employee photo" />
+            </div>
+            <div class="row-header row-header-right row-text">
+                <div>
+                    <span class="row-text big" data-bind="text: employee.fullName"></span>
+                </div>
+                <div class="row-text">
+                    <span data-bind="text: employee.jobTitle"></span>
+                </div>
+            </div>
+            <div class="row-body">
+                <div class="row-cell longColumn">
+                    <div class="row-text">
+                        <span class="row-text big" data-bind="dateString: depart, datePattern: 'MMMM DD, YYYY'"></span>
+                    </div>
+                    <div class="row-text">
+                        <span class="row-text capitalize" data-bind="text: travelTypeName"></span>
+                    </div>
+                </div>
+                <div class="row-cell longColumn">
+                    <div class="row-text">
+                        <span class="row-text big" data-bind="text: from"></span>
+                        <span class="row-text big">-</span>
+                        <span class="row-text big" data-bind="text: to"></span>
+                    </div>
+                    <div class="row-text">
+                        <span class="row-text" data-bind="text: relatedProject"></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <button class="button-box button-info" type="button" data-bind="click: $parent.openDetail" title="View request details"></button>
+            <button class="button-box button-accept" type="button" data-bind="click: $parent.approveTravel" title="Approve this request"></button>
+            <button class="button-box button-delete" type="button" data-bind="click: $parent.rejectTravel" title="Reject this request"></button>
+            <div class="clear"></div>
+        </article>
+    </section>
+    <section class="content-pagination">
+        <ul data-bind="foreach: pages">
+            <li data-bind="css: { active: activated}">
+                <div data-bind="if: clickable">
+                    <a href="#" data-bind="text: number, click: $root.paginate"></a>
+                </div>
+                <div data-bind="if: !clickable">...</div>
+            </li>
+        </ul>
+        <div class="content-arrows">
+            <div class="arrow-type">
+                <button class="arrow" data-bind="click: previousPage" title="Previous page"><</button>
+            </div>
+            <div class="arrow-type margin-arrow">
+                <button class="arrow" data-bind="click: nextPage" title="Next page">></button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </section>
+    <!-- /ko -->
+</section>

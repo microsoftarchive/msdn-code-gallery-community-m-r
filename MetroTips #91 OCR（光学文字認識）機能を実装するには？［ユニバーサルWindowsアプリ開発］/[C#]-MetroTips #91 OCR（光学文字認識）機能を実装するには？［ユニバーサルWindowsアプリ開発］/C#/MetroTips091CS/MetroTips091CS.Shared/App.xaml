@@ -1,0 +1,14 @@
+﻿<Application
+    x:Class="MetroTips091CS.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetroTips091CS"
+  >
+
+  <Application.Resources>
+    <x:String x:Key="AppName">WinRT/Metro TIPS #091 (C#)</x:String>
+    <SolidColorBrush x:Key="bluewaterColor">#00a2e8</SolidColorBrush>
+    
+  </Application.Resources>
+  
+</Application>

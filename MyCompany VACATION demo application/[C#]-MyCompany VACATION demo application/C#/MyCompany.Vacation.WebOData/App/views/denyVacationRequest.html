@@ -1,0 +1,29 @@
+﻿<div class="modal small autoclose">
+    <div class="modal-header">
+        <span class="title-modal">{{title}}</span>
+        <button class="button-close" ng-click="cancel()"></button>
+    </div>
+    <div class="modal-body modal-body-padding">
+        <div class="modal-body-in">
+            <span class="body-in-title">From</span>
+            <span class="main-text main-text-visited">{{startDay}}</span>
+        </div>
+        <div class="modal-body-in">
+            <span class="body-in-title">To</span>
+            <span class="main-text main-text-visited">{{endDay}}</span>
+        </div>
+        <div class="modal-body-in">
+            <span class="body-in-title">Days</span>
+            <span class="main-text main-text-visited">{{workDays}}</span>
+        </div>
+        <div class="clear"></div>
+        <div>
+            <input class="reason-input" type="text" placeholder="reason" ng-model="reason" maxlength="150" autofocus="autofocus" />
+        </div>
+        <div class="clear"></div>
+        <div class="contain-buttons">
+            <button class="button-primary button-propierties save-float" ng-click="deny()">deny</button>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

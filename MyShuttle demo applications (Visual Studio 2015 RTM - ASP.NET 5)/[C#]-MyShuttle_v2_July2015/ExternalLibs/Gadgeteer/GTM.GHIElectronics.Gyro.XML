@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GTM.GHIElectronics.Gyro</name>
+    </assembly>
+    <members>
+        <member name="T:Gadgeteer.Modules.GHIElectronics.Gyro">
+            <summary>
+            A Gyro module for Microsoft .NET Gadgeteer.
+            </summary>
+        </member>
+        <member name="M:Gadgeteer.Modules.GHIElectronics.Gyro.#ctor(System.Int32)">
+            <summary>Constructs a new instance.</summary>
+            <param name="socketNumber">The socket that this module is plugged in to.</param>
+        </member>
+        <member name="M:Gadgeteer.Modules.GHIElectronics.Gyro.Calibrate">
+            <summary>
+            Calibrates the gyro values. Ensure that the sensor is not moving when calling this method.
+            </summary>
+        </member>
+        <member name="M:Gadgeteer.Modules.GHIElectronics.Gyro.RequestSingleMeasurement">
+            <summary>
+            Obtains a single measurement and raises the event when complete.
+            </summary>
+        </member>
+        <member name="M:Gadgeteer.Modules.GHIElectronics.Gyro.StartTakingMeasurements">
+            <summary>
+            Starts taking measurements and fires MeasurementComplete when a new measurement is available.
+            </summary>
+        </member>
+        <member name="M:Gadgeteer.Modules.GHIElectronics.Gyro.StopTakingMeasurements">
+            <summary>
+            Stops taking measurements.
+            </summary>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.LowPassFilter">
+            <summary>
+            The low pass filter configuration. Note that setting the low pass filter to 256Hz results in a maximum internal sample rate
+            of 8kHz. Any other setting results in a maximum sample rate of 1kHz. The sample rate can be further divided by using SampleRateDivider.
+            </summary>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.SampleRateDivider">
+            <summary>
+            the internal sample rate divider. The gyro outputs are sampled internally at either 8kHz (if the LowPassFilter is set to 256Hz) or 1kHz for any other LowPassFilter settings. This setting can be used to further divide the sample rate.
+            </summary>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementInterval">
+            <summary>
+            The interval at which measurements are taken.
+            </summary>
+        </member>
+        <member name="E:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementComplete">
+            <summary>
+            Raised when a measurement reading is complete.
+            </summary>
+        </member>
+        <member name="T:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth">
+            <summary>
+            Available low pass filter bandwidth settings.
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz256">
+            <summary>
+            256Hz
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz188">
+            <summary>
+            188Hz
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz98">
+            <summary>
+            98Hz
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz42">
+            <summary>
+            42Hz
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz20">
+            <summary>
+            20Hz
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz10">
+            <summary>
+            10Hz
+            </summary>
+        </member>
+        <member name="F:Gadgeteer.Modules.GHIElectronics.Gyro.Bandwidth.Hertz5">
+            <summary>
+            5Hz
+            </summary>
+        </member>
+        <member name="T:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventArgs">
+            <summary>
+            Event arguments for the MeasurementComplete event.
+            </summary>
+        </member>
+        <member name="M:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventArgs.ToString">
+            <summary>
+            Provides a string representation of the instance.
+            </summary>
+            <returns>A string describing the values contained in the object.</returns>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventArgs.X">
+            <summary>
+            Angular rate around the X axis (roll) in degree per second.
+            </summary>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventArgs.Y">
+            <summary>
+            Angular rate around the Y axis (pitch) in degree per second.
+            </summary>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventArgs.Z">
+            <summary>
+            Angular rate around the Z axis (yaww) in degree per second.
+            </summary>
+        </member>
+        <member name="P:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventArgs.Temperature">
+            <summary>
+            Temperature in degree celsius.
+            </summary>
+        </member>
+        <member name="T:Gadgeteer.Modules.GHIElectronics.Gyro.MeasurementCompleteEventHandler">
+            <summary>
+            Represents the delegate used for the MeasurementComplete event.
+            </summary>
+            <param name="sender">The object that raised the event.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+    </members>
+</doc>

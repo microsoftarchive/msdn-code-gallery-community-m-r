@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Data", "04 Data", "{1C2B940D-1BC9-4D35-AA6A-9BB4E49378AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCEF3TCS.Data", "MVCEF3TCS.Data\MVCEF3TCS.Data.csproj", "{492839F8-896E-47EC-83E1-90B804EF8018}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Business", "03 Business", "{9BA0B5AA-B955-45CA-A540-99CF8A5B8FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCEF3TCS.Business", "MVCEF3TCS.Business\MVCEF3TCS.Business.csproj", "{5A66216E-D698-480A-9994-55FA07B31811}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Common", "02 Common", "{14A32BE3-4670-4A66-8710-614D0B28CD7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCEF3TCS.Entities", "MVCEF3TCS.Entities\MVCEF3TCS.Entities.csproj", "{37769899-6D09-4216-8475-0164313E58FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Presentation", "01 Presentation", "{57A6768E-60AA-43ED-BA9F-7372CEE5A3DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCEF3TCS.Web", "MVCEF3TCS.Web\MVCEF3TCS.Web.csproj", "{1AB585F6-7AE9-45E1-8475-C1806258590E}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://edsonbryan.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MVCEF3TCS.Data\\MVCEF3TCS.Data.csproj
+		SccProjectTopLevelParentUniqueName1 = MVC_EF_3Tier_CSharp.sln
+		SccProjectName1 = MVCEF3TCS.Data
+		SccLocalPath1 = MVCEF3TCS.Data
+		SccProjectUniqueName2 = MVCEF3TCS.Business\\MVCEF3TCS.Business.csproj
+		SccProjectTopLevelParentUniqueName2 = MVC_EF_3Tier_CSharp.sln
+		SccProjectName2 = MVCEF3TCS.Business
+		SccLocalPath2 = MVCEF3TCS.Business
+		SccProjectUniqueName3 = MVCEF3TCS.Entities\\MVCEF3TCS.Entities.csproj
+		SccProjectTopLevelParentUniqueName3 = MVC_EF_3Tier_CSharp.sln
+		SccProjectName3 = MVCEF3TCS.Entities
+		SccLocalPath3 = MVCEF3TCS.Entities
+		SccProjectUniqueName4 = MVCEF3TCS.Web\\MVCEF3TCS.Web.csproj
+		SccProjectTopLevelParentUniqueName4 = MVC_EF_3Tier_CSharp.sln
+		SccProjectName4 = MVCEF3TCS.Web
+		SccLocalPath4 = MVCEF3TCS.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{492839F8-896E-47EC-83E1-90B804EF8018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492839F8-896E-47EC-83E1-90B804EF8018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492839F8-896E-47EC-83E1-90B804EF8018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492839F8-896E-47EC-83E1-90B804EF8018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A66216E-D698-480A-9994-55FA07B31811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A66216E-D698-480A-9994-55FA07B31811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A66216E-D698-480A-9994-55FA07B31811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A66216E-D698-480A-9994-55FA07B31811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37769899-6D09-4216-8475-0164313E58FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37769899-6D09-4216-8475-0164313E58FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37769899-6D09-4216-8475-0164313E58FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37769899-6D09-4216-8475-0164313E58FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB585F6-7AE9-45E1-8475-C1806258590E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB585F6-7AE9-45E1-8475-C1806258590E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB585F6-7AE9-45E1-8475-C1806258590E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB585F6-7AE9-45E1-8475-C1806258590E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{492839F8-896E-47EC-83E1-90B804EF8018} = {1C2B940D-1BC9-4D35-AA6A-9BB4E49378AF}
+		{5A66216E-D698-480A-9994-55FA07B31811} = {9BA0B5AA-B955-45CA-A540-99CF8A5B8FFC}
+		{37769899-6D09-4216-8475-0164313E58FC} = {14A32BE3-4670-4A66-8710-614D0B28CD7B}
+		{1AB585F6-7AE9-45E1-8475-C1806258590E} = {57A6768E-60AA-43ED-BA9F-7372CEE5A3DF}
+	EndGlobalSection
+EndGlobal

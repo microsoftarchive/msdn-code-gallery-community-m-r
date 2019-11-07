@@ -1,0 +1,149 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="PlayReadyUAP.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PlayReadyUAP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"  HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Top" >
+            <!-- Back button and page title -->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="backButton" Margin="0,5,5,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+				          Style="{StaticResource NavigationBackButtonNormalStyle}"
+				          VerticalAlignment="Top"
+				          AutomationProperties.Name="Back"
+				          AutomationProperties.AutomationId="BackButton"
+				          AutomationProperties.ItemType="Navigation Button" />
+                <TextBlock Text="License Configuration" Margin="20,10,0,0" />
+            </StackPanel>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+            <StackPanel x:Name="spConfigurations"  HorizontalAlignment="Left" Margin="10,0,0,0" Width="400" VerticalAlignment="Top" >
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Key="HelpTextBlockStyle">
+                        <Setter Property="Foreground" Value="Navy"/>
+                        <Setter Property="FontSize" Value="11"/>
+                        <Setter Property="FontStyle" Value="Italic"/>
+                        <Setter Property="Margin" Value="5,0,0,0"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </Style>
+                </StackPanel.Resources>
+                <StackPanel Margin="0,0,0,5">
+                    <TextBlock x:Name="tbComplianceLinkHelp" Text="Please see http://www.microsoft.com/playready/licensing/compliance/ for detailed information" Style="{StaticResource HelpTextBlockStyle}" />
+                    <CheckBox x:Name="cbOptoutHWDRM" Content="Software DRM" />
+                    <TextBlock x:Name="cbOptoutHWDRMHelp" Text="Playback uses PlayReady software DRM." Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbPersistent" Content="Persistent License" />
+                    <TextBlock x:Name="cbPersistentHelp" Text="License that will be saved in persistent storage." Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbBoundToDomain" Content="Domain Bound License" />
+                    <TextBlock x:Name="cbBoundToDomainHelp" Text="License that contains a Content Key encrypted using a Domain Public Key" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5" >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Min. Security Level:" Margin="0,5,5,0"/>
+                        <RadioButton x:Name="rbSL150" Content="150" GroupName="SecurityLevel" IsChecked="false" />
+                        <RadioButton x:Name="rbSL2000" Content="2000" GroupName="SecurityLevel" IsChecked="false" />
+                        <RadioButton x:Name="rbSL3000" Content="3000" GroupName="SecurityLevel" IsChecked="false" />
+                    </StackPanel>
+                    <TextBlock x:Name="rbSLHelp" Text="SL150 indicates the associated PlayReady Content is of non-commercial quality, SL2000 is commercial quality, and SL3000 is commercial quality and the device must implement a PlayReady Trusted Execution Environment" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Play Enabler Guid:" Margin="0,0,5,0"/>
+                        <ComboBox x:Name="cbPlayEnabler" >
+                            <x:String>None</x:String>
+                            <x:String>Unknown Output</x:String>
+                            <x:String>Unknown Output Constrained</x:String>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock x:Name="cbPlayEnablerHelp" Text="unknown output or constrained unknown output play enabler" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <TextBlock Text="Video Output Protection Level:" />
+                    <StackPanel Margin="10,5,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Uncompressed Digital Video:" Margin="0,3,0,0" />
+                            <TextBox x:Name="tbUncompressVideo" Margin="5,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Compressed Digital Video:" Margin="0,3,0,0" />
+                            <TextBox x:Name="tbCompressVideo" Margin="5,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Analog Video:" Margin="0,3,0,0" />
+                            <TextBox x:Name="tbAnalogVideo" Margin="5,0,0,0" />
+                        </StackPanel>
+                        <TextBlock x:Name="tbVideoOPLHelp" Text="Output protection level (0-100, 101-150, 151-200,201-250,251-300 or 301+) of uncompressed digital video, compressed digital video and analog video" Style="{StaticResource HelpTextBlockStyle}" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <TextBlock Text="Audio Output Protection Level:" />
+                    <StackPanel Margin="10,5,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Uncompressed Digital Audio:" Margin="0,3,0,0" />
+                            <TextBox x:Name="tbUncompressedAudio" Margin="5,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Compressed Digital Audio:" Margin="0,3,0,0" />
+                            <TextBox x:Name="tbCompressAudio" Margin="5,0,0,0" />
+                        </StackPanel>
+                        <TextBlock x:Name="tbAudioOPLHelp" Text="Output protection level (0-100, 101-150, 151-200,201-250,251-300 or 301+) of uncompressed digital audio and compressed digital audio" Style="{StaticResource HelpTextBlockStyle}" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbBestEffortCGMS_A" Content="Best Effort CGMS-A" />
+                    <TextBlock x:Name="cbBestEffortCGMS_AHelp" Text="Best Effort Explicit Analog Television Output Restriction" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbCGMS_A" Content="CGMS-A" />
+                    <TextBlock x:Name="cbCGMS_AHelp" Text="Explicit Analog Television Output Restriction" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbDigitalOnlyToken" Content="Digital Only Token" />
+                    <TextBlock x:Name="cbDigitalOnlyTokenHelp" Text="Digital Video Only Content" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbAGCColorStrip" Content="AGC Color Strip" />
+                    <TextBlock x:Name="cbAGCColorStripHelp" Text="Automatic Gain Control and Color Strip" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbMaxVGARes" Content="Max. VGA Resolution: Down Res" />
+                    <TextBlock x:Name="cbMaxVGAResHelp" Text="Image constraint for Analog Computer Monitor Output" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbMaxComonentRes" Content="Max. Component Resolution: Down Res" />
+                    <TextBlock x:Name="cbMaxComonentResHelp" Text="Analog Component Video Output" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbHCMSorHDCP" Content="HCMS or HDCP" />
+                    <TextBlock x:Name="cbHCMSorHDCPHelp" Text="Explicit Digital Audio Output Restriction" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <CheckBox x:Name="cbHDCPType1" Content="HDCP Type 1" />
+                    <TextBlock x:Name="cbHDCPType1Help" Text="Version 2.2 or higher of the High-bandwidth Digital Content Protection" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,5">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Max. Resolution Decode Width:" />
+                        <TextBox x:Name="tbMaxResDecoderWidth" />
+                        <TextBlock Text="Height:" />
+                        <TextBox x:Name="tbMaxResDecoderHeight" />
+                    </StackPanel>
+                    <TextBlock x:Name="cbMaxResDecoder1Help" Text="" Style="{StaticResource HelpTextBlockStyle}" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

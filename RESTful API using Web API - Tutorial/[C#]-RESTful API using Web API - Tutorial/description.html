@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=B13725333DE73FED14392EE0AFB02E40" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a99e8592-b830-42ac-b19e-2ff3cb862a35Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=0BC47A6384E0BB007E15A2B454098745" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>RESTful API using Web API - Tutorial</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>RESTful API using Web API - Tutorial</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET, REST, Entity Framework, ASP.NET Web API
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            REST, Web Services, Entity Framework, ASP.NET Web API, Web API
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">12/16/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/RESTful-API-using-Web-API-9e7f3e49">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><strong>Introduction</strong></h1>
+<p><span style="font-size:small">The ASP.NET Web API shipped with ASP.NET MVC4, it has been around more than one year and half. It is considered a framework for building HTTP services which can be consumed by broad&nbsp;range of clients such as browsers, smart
+ phones, and desktop applications. It is not considered as a part of the MVC framework, it is part of the core ASP.NET platform and can be used in MVC projects,&nbsp;ASP.NET&nbsp;WebForms, or as stand alone web service.</span></p>
+<p><span style="font-size:small">Today with the increase of using smart phones and the trend of building Single Page Apps (SPA); having a light weight Web API which exposes your services data to clients is very important.&nbsp;ASP.NET&nbsp;Web API will help
+ you out of the box in creating RESTFul compliant&nbsp;services using features of HTTP like (URIs, request/response, headers, versioning, and different content formats).</span></p>
+<p><img id="104597" src="description/ASPNET-WebAPI.png" alt="" width="594" height="262"></p>
+<h1>What we'll build in this sample?</h1>
+<p><span style="font-size:small">We&rsquo;ll be building RESTful API for eLearning system, this API allows students to enroll in different courses, allows tutors to view students enrolled in each course, do CRUD operations on courses and students, and many
+ more operations.</span></p>
+<p><span style="font-size:small">We&rsquo;ll discuss and implement different ASP.NET Web API features such as:</span></p>
+<ul>
+<li><span style="font-size:small">Using different routing configuration, controllers, resources association, formatting response, and filters.</span>
+</li><li><span style="font-size:small">Implementing Dependency Injection using Ninject.</span>
+</li><li><span style="font-size:small">Apply results pagination using different formatting techniques.</span>
+</li><li><span style="font-size:small">Implementing complex CRUD operations on multiple resources.</span>
+</li><li><span style="font-size:small">Securing Web API by using Basic authentication, forcing SSL.</span>
+</li><li><span style="font-size:small">Implementing API Versioning using different techniques (URL versioning, by query string, by version header, and by accept header).</span>
+</li><li><span style="font-size:small">Implement resources cashing.</span> </li></ul>
+<p><span style="font-size:small">I broke down this series into multiple posts, posts are:</span></p>
+<ul>
+<li><span style="font-size:small"><a title="Building the Database Model using Entity Framework Code First" href="http://bitoftech.net/2013/11/25/building-database-model-entityframework-code-first" >Building the Database Model using Entity Framework
+ Code First &ndash; Part 1</a>.</span> </li><li><span style="font-size:small"><a title="Applying the Repository Pattern for the Data Access Layer" href="http://bitoftech.net/2013/11/25/applying-repository-pattern-data-access-layer" >Applying the Repository Pattern for the Data Access Layer
+ &ndash; Part 2</a>.</span> </li><li><span style="font-size:small"><a title="Getting started with ASP.Net Web API" href="http://bitoftech.net/2013/11/25/getting-started-asp-net-web-api" >Getting started with ASP.Net Web API&nbsp;- Part 3</a>.</span>
+</li><li><span style="font-size:small"><a title="Implement Model Factory, Dependency Injection and Configuring Formatters" href="http://bitoftech.net/2013/11/25/implement-model-factory-dependency-injection-configuring-formatters-web-api" >Implement
+ Model Factory, Dependency Injection and Configuring Formatters&nbsp;- Part 4</a>.</span>
+</li><li><span style="font-size:small"><a title="Implement HTTP actions POST, PUT, and DELETE In Web API" href="http://bitoftech.net/2013/11/25/implement-http-actions-post-put-delete-web-api" >Implement HTTP actions POST, PUT, and DELETE In Web API&nbsp;-
+ Part 5</a>.</span> </li><li><span style="font-size:small"><a title="Implement Resources Association ASP.Net Web API" href="http://bitoftech.net/2013/11/25/implement-resources-association-asp-net-web-api" >Implement Resources Association&nbsp;- Part 6</a>.</span>
+</li><li><span style="font-size:small"><a title="Implement Resources Pagination ASP.Net Web API" href="http://bitoftech.net/2013/11/25/implement-resources-pagination-asp-net-web-api" >Implement Resources Pagination&nbsp;- Part 7</a>.</span>
+</li><li><span style="font-size:small"><a title="enforce https asp net web api basic authentication" href="http://bitoftech.net/2013/12/03/enforce-https-asp-net-web-api-basic-authentication/" >Securing Web API &ndash; Part 8</a>.</span>
+</li><li><span style="font-size:small"><a title="asp net web api versioning strategy" href="http://bitoftech.net/2013/12/16/asp-net-web-api-versioning-strategy/" >Preparing Web API for Versioning &ndash; Part 9.</a></span>
+</li><li><span style="font-size:small"><a title="asp net web api versioning accept header query string" href="http://bitoftech.net/2013/12/16/asp-net-web-api-versioning-accept-header-query-string/" >Different techniques to Implement Versioning &ndash;
+ Part 10</a>.<em><br>
+</em></span></li><li><span style="font-size:small">Cashing resources using eTags &ndash; Part 11.&nbsp;(<em>Coming Soon)</em></span>
+</li></ul>
+<p>&nbsp;</p>
+<h1>Requirements</h1>
+<ul>
+<li><span style="font-size:small">Visual Studio 2012, Visual Studio 2010 SP1, Visual Web Developer 2010 SP1.ASP.NET</span>
+</li><li><span style="font-size:small">MVC 4 - Already installed in Visual Studio 2012.</span>
+</li><li><span style="font-size:small">IIS 7.5 Express.SQL</span> </li><li><span style="font-size:small">Server LocalDB (SqlLocalDB.MSI) or SQLExpress.</span>
+</li></ul>
+<p>&nbsp;</p>
+<h1>More Information</h1>
+<p><span style="font-size:small">For detailed step by step instructions where you can follow with this code sample, please visit:<a title="Detailed Tutorial for Building ASP.Net Web API RESTful Service" href="http://bitoftech.net/2013/11/25/detailed-tutorial-building-asp-net-web-api-restful-service/">&nbsp;Detailed
+ Tutorial for Building ASP.Net Web API RESTful Service</a></span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

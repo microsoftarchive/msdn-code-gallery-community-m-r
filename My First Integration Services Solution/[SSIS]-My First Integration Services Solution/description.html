@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=E26C1359372FE948C3C39B3F0FB94413" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/007decc8-6c12-4163-b4b5-9d2256e5c10eCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=76DF6246C5394201214B48DD1A8F406B" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>My First Integration Services Solution</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>My First Integration Services Solution</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SSIS, SQL Server Integration Services, SSIS 2012, SQL Server Integration Services 2012
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Getting Started
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/1/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/My-First-Integration-fa41c0b1">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<div>This sample serves as an introduction to the SQL Server Integration Services development environment. By following along with the steps in the video you'll create a simple data flow that transfers data from a CSV file into a table in SQL Server.</div>
+<div></div>
+<div>The solution attached to this sample is a copy of what you'll have at the end of the process of following along with this lesson.</div>
+<h1><div style="background:#FFFFCC;border:dotted 1px #FF0000;width:350px;height:300px;padding:10px;"><a href="http://code.msdn.microsoft.com/site/view/file/60422/1/My%20First%20SSIS%20Package.wmv">http://code.msd<wbr />n.microsoft.com<wbr />/site/view/file<wbr />/60422/1/My%20F<wbr />irst%20SSIS%20P<wbr />ackage.wmv</a></div> <br>
+<a id="x_/site/view/file/60422/1/My%20First%20SSIS%20Package.wmv" href="http://code.msdn.microsoft.com/site/view/file/60422/1/My%20First%20SSIS%20Package.wmv">Download video</a></h1>
+<h1>Prerequisites</h1>
+<div>Before attempting to follow along with the video you'll need to perform two points of configuration:</div>
+<ul>
+<li>Copy a data file to c:\SSIS . The file is named Product data.csv, and is contained within the sample archive.
+</li><li>Create a table in a SQL Server database into which you have permission to insert data.
+</li></ul>
+<div>The table can be created by executing the following SQL in the context of the database:</div>
+<div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">CREATE TABLE [dbo].[Products](
+	[ProductCode] [int] NOT NULL,
+	[ShippingWeight] [float] NOT NULL,
+	[ShippingLength] [float] NOT NULL,
+	[ShippingWidth] [float] NOT NULL,
+	[ShippingHeight] [float] NOT NULL,
+	[UnitCost] [float] NOT NULL,
+	[PerOrder] [tinyint] NOT NULL
+) ON [PRIMARY]
+
+GO
+</pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;[<span class="sql__id">dbo</span>].[<span class="sql__id">Products</span>](&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">ProductCode</span>]&nbsp;[<span class="sql__keyword">int</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">ShippingWeight</span>]&nbsp;[<span class="sql__keyword">float</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">ShippingLength</span>]&nbsp;[<span class="sql__keyword">float</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">ShippingWidth</span>]&nbsp;[<span class="sql__keyword">float</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">ShippingHeight</span>]&nbsp;[<span class="sql__keyword">float</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">UnitCost</span>]&nbsp;[<span class="sql__keyword">float</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">PerOrder</span>]&nbsp;[<span class="sql__keyword">tinyint</span>]&nbsp;<span class="sql__keyword">NOT</span>&nbsp;<span class="sql__value">NULL</span>&nbsp;
+)&nbsp;<span class="sql__keyword">ON</span>&nbsp;[<span class="sql__keyword">PRIMARY</span>]&nbsp;
+&nbsp;
+<span class="sql__id">GO</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<h1 class="endscriptcode">Transcript</h1>
+<p class="endscriptcode">If you'd prefer to read along rather than listen to the video, a rough transcipt is below:</p>
+<p>I&rsquo;ve just created a new Integration Services project in Sql Server Development Tools.</p>
+<p>The center pane is the design canvas. This is where I&rsquo;ll build the logic that performs my data integration.</p>
+<p>The left pane contains the SSIS Toolbox. The toolbox contains the things I use to build the data integration logic.</p>
+<p>In SSIS all the data integration logic one constructs is contained within &ldquo;Packages&rdquo;.</p>
+<p>Since I&rsquo;ve just created this project, it has a default package named &ldquo;Package.dtsx&rdquo;, which is what I&rsquo;m looking at, now.</p>
+<p>Each package contains a single &ldquo;Control Flow&rdquo; design surface.</p>
+<p>You can tell that&rsquo;s what I&rsquo;m looking at because this tab is selected.</p>
+<p>Now I&rsquo;ll add something to the design surface: A Data Flow Task.</p>
+<p>I added the Data Flow task to the surface by double-clicking it in the toolbox, but I could have dragged and dropped it from the toolbox to the canvas if I wanted to place it somewhere specific.</p>
+<p>This Data Flow task doesn&rsquo;t do anything, yet, because I haven&rsquo;t configured it.</p>
+<p>I now double-click the Data Flow task to configure it.</p>
+<p>Notice two things that just happened:</p>
+<p>First, the Data Flow tab is now active.</p>
+<p>Second, the toolbox contents have changed.</p>
+<p>These are the Data Flow Components from which a Data Flow is constructed.</p>
+<p>I&rsquo;ll now construct data flow logic that loads data from a CSV file into a table in SQL Server.</p>
+<p>I start by adding the Source Adapter. I&rsquo;ll use the Source Assistant for this. I activate the Source Assistant by double-clicking it in the Toolbox.</p>
+<p>I follow the instructions in the Source Assistant.</p>
+<p>I pick the file that I want to use.</p>
+<p>The rest of the information on this page looks correct. But I see this instruction to specify the Column information for my file, so I switch to the Columns page to review the columns SSIS has detected.</p>
+<p>This information looks correct, as well, so I could click OK, now.</p>
+<p>However, the Flat File Source adapter reads in the contents of files as strings, by default.</p>
+<p>Since I know that I&rsquo;m going to be loading this data into a table in SQL Server that has typed columns, I want the source adapter to convert the strings it reads from the file into numbers.</p>
+<p>So I switch to the Advanced page and tell SSIS to suggest data types by scanning the file.</p>
+<p>I can review the suggestions here.</p>
+<p>These look good, so I click OK.</p>
+<p>Now a Flat File Source adapter has been created for me and placed on the canvas.</p>
+<p>This represents the entry point of data into this data flow.</p>
+<p><br>
+Next I&rsquo;ll add a destination adapter which will define where data leaves the data flow. I&rsquo;ll use the Destination Assistant, again by double-clicking it in the toolbox.</p>
+<p>I follow the instructions in the Assistant.</p>
+<p>I&rsquo;ll be using my local server.</p>
+<p>I specify the database.</p>
+<p>Now a destination adapter has been added to the canvas.</p>
+<p>I&rsquo;ll reposition it by dragging it.</p>
+<p>At this point there&rsquo;s an error, which I can read by hovering my mouse over the error icon: The message indicates that a destination table has not been specified.</p>
+<p>Before I edit the component to address this error I&rsquo;m going to connect it to the source of the data. Let me explain why:</p>
+<p>Right now the destination adapter isn&rsquo;t associated with any source of data. These two components on the canvas don&rsquo;t know about each other. By connecting the source to the destination adapter, I enable the destination adapter to figure things
+ out about how to configure itself. For this reason it&rsquo;s a good idea in general to connect components to the upstream sources of data before configuring them.</p>
+<p>To connect the destination adapter to the source for its data, I first select the source. Notice the two arrows that appeared. The blue arrow represents the normal data output and the red arrow represents the error output. Ignore the error output, for now,
+ since it&rsquo;s the normal data output I&rsquo;ll be using.</p>
+<p>I click the output, move over onto the destination adapter, and click again to connect the two.</p>
+<p>Now I configure the destination adapter.</p>
+<p>I double-click the destination adapter to open its editor.</p>
+<p>The instructional message at the bottom of this window tells me I need to specify the name of the table.</p>
+<p>I pick the table.</p>
+<p>Now the instructional message tells me that I need to provide a column mapping, so I switch to the mapping page.</p>
+<p>A destination adapter typically knows about two sets of columns: The columns that enter it from upstream, and the columns that exist in the external data store that it will load data into, in this case the SQL Server table.</p>
+<p>The mapping being defined here is between these two sets of columns.</p>
+<p>You might recall that these columns names on the left side are the column names that I saw earlier in the Flat File Source adapter editor.</p>
+<p><br>
+The column names on the right came from the table I selected on the previous page of the destination adapter editor. To establish the mapping between the columns I can drag and drop the columns, or I can specify the mappings in the grid below.</p>
+<p>My data flow is now defined, and ready to transfer data.</p>
+<p><br>
+To run the package inside the debugger, I click this &ldquo;Play&rdquo;<br>
+button.</p>
+<p>These green check marks indicate that each component has completed successfully. This count represents the number of rows that transferred along this path.</p>
+<p>To leave debugging mode and return to package editing mode I click this &ldquo;Stop&rdquo; button.</p>
+<p>REVIEW</p>
+<p>Data Integration logic is defined on canvases using items from toolboxes.</p>
+<p>Control Flow and Data Flow are defined separately, and Data Flow is defined within Data Flow tasks.</p>
+<p>Within a Data Flow there are source adapters that bring data into the SSIS data flow as well as Destination adapters that export data out of the Data Flow to external data repositories.</p>
+<p>The Data Integration logic can be run inside the development environment.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

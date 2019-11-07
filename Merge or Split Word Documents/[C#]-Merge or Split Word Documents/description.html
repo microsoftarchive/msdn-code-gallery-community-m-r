@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=67FACA54A9C9010F9CE48151D286A93C" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=2A4AFA1EEC54CB3FA19913D582528B41" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Merge or Split Word Documents</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Merge or Split Word Documents</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, Visual Studio 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Merge or Split Word Documents
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/26/2017</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-size:medium">Introduction</span></h1>
+<div><span style="font-size:medium"><span style="font-size:small">When dealing with Word
+</span><span style="font-size:small">documents, sometimes developers need to merge multiple Word documents into a
+</span><span style="font-size:small">single Word document or </span><span style="font-size:small">split one Word document into multiple Word documents. This sample aims at introducing a solution to implement the function.</span></span></div>
+<div><span style="font-size:medium"><strong>&nbsp;</strong></span></div>
+<div><span style="font-size:medium"><strong>Tools we need</strong></span></div>
+<div><span style="font-size:small">-Free Spire.Doc for .NET</span></div>
+<div><span style="font-size:small">-Visual&nbsp; Studio</span></div>
+<div></div>
+<div><span style="font-size:medium"><span style="font-size:small">Free Spire.Doc for .NET is a professional word
+</span><span style="font-size:small">component for commercial and personal use. With this component, developers can quickly
+</span><span style="font-size:small">and easily &nbsp;generate, read, write, save,</span><span style="font-size:small">print and convert Word documents in .NET application.</span></span></div>
+<div><span style="font-size:medium"><strong>&nbsp;</strong></span></div>
+<div><span style="font-size:medium"><strong>Using the code</strong></span></div>
+<div><span style="font-size:medium">&nbsp;</span></div>
+<div><span style="font-size:medium">Merge</span></div>
+<div><span style="font-size:medium">&lt;code&gt;</span></div>
+<div><span>
+<h1 class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">编辑脚本</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using Spire.Doc;
+using System;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;
+
+namespace merge_word_documents
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   //Initialize a new word document object and load the original word file &quot;A good man.docx&quot;.
+            Document document1 = new Document();
+            document1.LoadFromFile(@&quot;C:\Users\Administrator\Desktop\A good man.docx&quot;, FileFormat.Docx);
+            //Merge another word file &quot;The Kite Runner.docx&quot; to the original one.
+            document1.InsertTextFromFile(@&quot;C:\Users\Administrator\Desktop\The Kite Runner.docx&quot;, FileFormat.Docx);
+            //Save and launch the file.
+            document1.SaveToFile(&quot;MergedFile.docx&quot;, FileFormat.Docx);
+            <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Diagnostics.Process.Start.aspx"  title="Auto generated link to System.Diagnostics.Process.Start">System.Diagnostics.Process.Start</a>(&quot;MergedFile.docx&quot;);
+
+        }
+    }
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">using</span>&nbsp;Spire.Doc;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;System;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;&nbsp;
+&nbsp;
+<span class="cs__keyword">namespace</span>&nbsp;merge_word_documents&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;Program&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span><span class="cs__keyword">void</span>&nbsp;Main(<span class="cs__keyword">string</span>[]&nbsp;args)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;<span class="cs__com">//Initialize&nbsp;a&nbsp;new&nbsp;word&nbsp;document&nbsp;object&nbsp;and&nbsp;load&nbsp;the&nbsp;original&nbsp;word&nbsp;file&nbsp;&quot;A&nbsp;good&nbsp;man.docx&quot;.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document&nbsp;document1&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Document();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document1.LoadFromFile(@<span class="cs__string">&quot;C:\Users\Administrator\Desktop\A&nbsp;good&nbsp;man.docx&quot;</span>,&nbsp;FileFormat.Docx);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Merge&nbsp;another&nbsp;word&nbsp;file&nbsp;&quot;The&nbsp;Kite&nbsp;Runner.docx&quot;&nbsp;to&nbsp;the&nbsp;original&nbsp;one.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document1.InsertTextFromFile(@<span class="cs__string">&quot;C:\Users\Administrator\Desktop\The&nbsp;Kite&nbsp;Runner.docx&quot;</span>,&nbsp;FileFormat.Docx);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Save&nbsp;and&nbsp;launch&nbsp;the&nbsp;file.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document1.SaveToFile(<span class="cs__string">&quot;MergedFile.docx&quot;</span>,&nbsp;FileFormat.Docx);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Diagnostics.Process.Start.aspx"  title="Auto generated link to System.Diagnostics.Process.Start">System.Diagnostics.Process.Start</a>(<span class="cs__string">&quot;MergedFile.docx&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</h1>
+</span><span style="font-size:medium"><strong>The&nbsp; effective screenshot:</strong></span></div>
+<h1><span style="font-size:medium"><img id="172594" src="description/合并效果图.png" alt="" width="933" height="646"></span></h1>
+<div><br>
+<span style="font-size:medium">Split by section break</span></div>
+<div><span style="font-size:medium">&lt;code&gt;</span></div>
+<h1><span>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">编辑脚本</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using Spire.Doc;
+using Spire.Doc.Documents;
+using System;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Drawing.aspx"  title="Auto generated link to System.Drawing">System.Drawing</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;
+
+namespace Split_Word_Document
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   //Initialize a new word document object and load the original word document which has two sections.
+            Document document2 = new Document();
+            document2.LoadFromFile(@&quot;C:\Users\Administrator\Desktop\Text.docx&quot;,FileFormat.Docx);
+            //Define another new word document object.
+            Document newWord;
+            //Traverse through all sections of the original word document, clone each section and add it to a new word document as new section, then save the document to specific path.
+            for (int i = 0; i &lt; document2.Sections.Count; i&#43;&#43;)
+            {
+                newWord = new Document();
+                newWord.Sections.Add(document2.Sections[i].Clone());
+                newWord.SaveToFile(String.Format(@&quot;test\out_{0}.docx&quot;, i));
+
+            }
+        }
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">using</span>&nbsp;Spire.Doc;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;Spire.Doc.Documents;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;System;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Drawing.aspx"  title="Auto generated link to System.Drawing">System.Drawing</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;&nbsp;
+&nbsp;
+<span class="cs__keyword">namespace</span>&nbsp;Split_Word_Document&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;Program&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span><span class="cs__keyword">void</span>&nbsp;Main(<span class="cs__keyword">string</span>[]&nbsp;args)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;<span class="cs__com">//Initialize&nbsp;a&nbsp;new&nbsp;word&nbsp;document&nbsp;object&nbsp;and&nbsp;load&nbsp;the&nbsp;original&nbsp;word&nbsp;document&nbsp;which&nbsp;has&nbsp;two&nbsp;sections.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document&nbsp;document2&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Document();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document2.LoadFromFile(@<span class="cs__string">&quot;C:\Users\Administrator\Desktop\Text.docx&quot;</span>,FileFormat.Docx);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Define&nbsp;another&nbsp;new&nbsp;word&nbsp;document&nbsp;object.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document&nbsp;newWord;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Traverse&nbsp;through&nbsp;all&nbsp;sections&nbsp;of&nbsp;the&nbsp;original&nbsp;word&nbsp;document,&nbsp;clone&nbsp;each&nbsp;section&nbsp;and&nbsp;add&nbsp;it&nbsp;to&nbsp;a&nbsp;new&nbsp;word&nbsp;document&nbsp;as&nbsp;new&nbsp;section,&nbsp;then&nbsp;save&nbsp;the&nbsp;document&nbsp;to&nbsp;specific&nbsp;path.</span><span class="cs__keyword">for</span>&nbsp;(<span class="cs__keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="cs__number">0</span>;&nbsp;i&nbsp;&lt;&nbsp;document2.Sections.Count;&nbsp;i&#43;&#43;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newWord&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Document();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newWord.Sections.Add(document2.Sections[i].Clone());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newWord.SaveToFile(String.Format(@<span class="cs__string">&quot;test\out_{0}.docx&quot;</span>,&nbsp;i));&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+</span><span style="font-size:medium"><strong>The&nbsp; effective screenshot:</strong></span></h1>
+<h1><span><img id="172598" src="description/分页效果图.png" alt="" width="659" height="430"></span></h1>
+<div><br>
+<span style="font-size:medium">Split by page break</span></div>
+<div><span style="font-size:medium">&lt;code&gt;</span></div>
+<h1><span>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">编辑脚本</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using Spire.Doc;
+using Spire.Doc.Documents;
+using System;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;
+using <a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;
+
+namespace another
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   //Create a word document and load the original word document.
+            Document original = new Document();
+            original.LoadFromFile(@&quot;C:\Users\Administrator\Desktop\daffodil.docx&quot;,FileFormat.Docx);
+            //Create a new word document and add a section to it.
+            Document document3 = new Document();
+            Section section = document3.AddSection();
+            //Split the original word document into separate documents according to page break.
+            int index = 0;
+            foreach (Section sec in original.Sections)
+            {
+                foreach (DocumentObject obj in sec.Body.ChildObjects)
+                {
+                    if (obj is Paragraph)
+                    {
+                        Paragraph para = obj as Paragraph;
+                        section.Body.ChildObjects.Add(para.Clone());
+
+                        foreach (DocumentObject parobj in para.ChildObjects)
+                        {
+                            if (parobj is Break &amp;&amp; (parobj as Break).BreakType == BreakType.PageBreak)
+                            {
+                                int i = para.ChildObjects.IndexOf(parobj);
+                                section.Body.LastParagraph.ChildObjects.RemoveAt(i);
+                                document3.SaveToFile(String.Format(&quot;result/out-{0}.docx&quot;, index), FileFormat.Docx);
+                                index&#43;&#43;;
+
+                                document3 = new Document();
+                                section = document3.AddSection();
+                                section.Body.ChildObjects.Add(para.Clone());
+                                if (section.Paragraphs[0].ChildObjects.Count == 0)
+                                {
+                                    section.Body.ChildObjects.RemoveAt(0);
+                                }
+                                else
+                                {
+                                    while (i &gt;= 0)
+                                    {
+                                        section.Paragraphs[0].ChildObjects.RemoveAt(i);
+                                        i--;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (obj is Table)
+                    {
+                        section.Body.ChildObjects.Add(obj.Clone());
+                    }
+                }
+            }
+            //save the file
+            document3.SaveToFile(String.Format(@&quot;result/out-{0}.docx&quot;, index), FileFormat.Docx);
+
+        }
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">using</span>&nbsp;Spire.Doc;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;Spire.Doc.Documents;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;System;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Collections.Generic.aspx"  title="Auto generated link to System.Collections.Generic">System.Collections.Generic</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Linq.aspx"  title="Auto generated link to System.Linq">System.Linq</a>;&nbsp;
+<span class="cs__keyword">using</span>&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://msdn.microsoft.com/en-US/library/System.Text.aspx"  title="Auto generated link to System.Text">System.Text</a>;&nbsp;
+&nbsp;
+<span class="cs__keyword">namespace</span>&nbsp;another&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;Program&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span><span class="cs__keyword">void</span>&nbsp;Main(<span class="cs__keyword">string</span>[]&nbsp;args)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;<span class="cs__com">//Create&nbsp;a&nbsp;word&nbsp;document&nbsp;and&nbsp;load&nbsp;the&nbsp;original&nbsp;word&nbsp;document.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document&nbsp;original&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Document();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;original.LoadFromFile(@<span class="cs__string">&quot;C:\Users\Administrator\Desktop\daffodil.docx&quot;</span>,FileFormat.Docx);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Create&nbsp;a&nbsp;new&nbsp;word&nbsp;document&nbsp;and&nbsp;add&nbsp;a&nbsp;section&nbsp;to&nbsp;it.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Document&nbsp;document3&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Document();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section&nbsp;section&nbsp;=&nbsp;document3.AddSection();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Split&nbsp;the&nbsp;original&nbsp;word&nbsp;document&nbsp;into&nbsp;separate&nbsp;documents&nbsp;according&nbsp;to&nbsp;page&nbsp;break.</span><span class="cs__keyword">int</span>&nbsp;index&nbsp;=&nbsp;<span class="cs__number">0</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(Section&nbsp;sec&nbsp;<span class="cs__keyword">in</span>&nbsp;original.Sections)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(DocumentObject&nbsp;obj&nbsp;<span class="cs__keyword">in</span>&nbsp;sec.Body.ChildObjects)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(obj&nbsp;<span class="cs__keyword">is</span>&nbsp;Paragraph)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paragraph&nbsp;para&nbsp;=&nbsp;obj&nbsp;<span class="cs__keyword">as</span>&nbsp;Paragraph;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.Body.ChildObjects.Add(para.Clone());&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(DocumentObject&nbsp;parobj&nbsp;<span class="cs__keyword">in</span>&nbsp;para.ChildObjects)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(parobj&nbsp;<span class="cs__keyword">is</span>&nbsp;Break&nbsp;&amp;&amp;&nbsp;(parobj&nbsp;<span class="cs__keyword">as</span>&nbsp;Break).BreakType&nbsp;==&nbsp;BreakType.PageBreak)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">int</span>&nbsp;i&nbsp;=&nbsp;para.ChildObjects.IndexOf(parobj);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.Body.LastParagraph.ChildObjects.RemoveAt(i);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document3.SaveToFile(String.Format(<span class="cs__string">&quot;result/out-{0}.docx&quot;</span>,&nbsp;index),&nbsp;FileFormat.Docx);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&#43;&#43;;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document3&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Document();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section&nbsp;=&nbsp;document3.AddSection();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.Body.ChildObjects.Add(para.Clone());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(section.Paragraphs[<span class="cs__number">0</span>].ChildObjects.Count&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.Body.ChildObjects.RemoveAt(<span class="cs__number">0</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">while</span>&nbsp;(i&nbsp;&gt;=&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.Paragraphs[<span class="cs__number">0</span>].ChildObjects.RemoveAt(i);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i--;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(obj&nbsp;<span class="cs__keyword">is</span>&nbsp;Table)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.Body.ChildObjects.Add(obj.Clone());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//save&nbsp;the&nbsp;file</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document3.SaveToFile(String.Format(@<span class="cs__string">&quot;result/out-{0}.docx&quot;</span>,&nbsp;index),&nbsp;FileFormat.Docx);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+</span><span style="font-size:medium"><strong>The&nbsp; effective screenshot:</strong></span></h1>
+<h1><span><img id="172599" src="description/分页2效果图.png" alt="" width="661" height="432"></span></h1>
+<h1><span style="font-size:medium">More Information</span></h1>
+<div><span style="font-size:small">The featured function of Free Spire.Doc for .NET, conversion allows converting Word documents (Word 97-2003, Word 2007, Word
+</span><span style="font-size:small">2010, Word2013) to commonly used file format, such as XML, RTF, TXT, PDF, XPS, EPUB, HTML and Image etc.</span></div>
+<div><br>
+<span style="font-size:medium"><strong>Main Features:</strong></span></div>
+<ul>
+<li><span style="font-size:small">No Microsoft Automation</span> </li><li><span style="font-size:small">High quality conversion</span> </li><li><span style="font-size:small">Speed and Easy-to-use</span> </li><li><span style="font-size:small">Inserting, Editing and Removing Objects</span> </li><li><span style="font-size:small">Mail Merge</span> </li><li><span style="font-size:small">Totally Free</span> </li></ul>
+<div><span style="font-size:medium"><strong>Related Links:</strong></span></div>
+<div><span style="font-size:small">Website: <a title="www.e-iceblue.com" href="http://www.e-iceblue.com/">
+www.e-iceblue.com</a></span></div>
+<div><span style="font-size:small">Product: <a href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://www.e-iceblue.com/Introduce/free-doc-component.html#.WQBQa3aS3IU">
+https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://www.e-iceblue.com/Introduce/free-doc-component.html#.WQBQa3aS3IU</a></span></div>
+<div><span style="font-size:small">Download: <a href="https://code.msdn.microsoft.com/Merge-or-Split-Word-8f80769b/https://www.e-iceblue.com/Download/download-word-for-net-free.html">
+Free Spire.Doc for .NET</a></span><strong>&nbsp;</strong></div>
+<div><em>&nbsp;</em></div>
+<div><em>&nbsp;</em></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

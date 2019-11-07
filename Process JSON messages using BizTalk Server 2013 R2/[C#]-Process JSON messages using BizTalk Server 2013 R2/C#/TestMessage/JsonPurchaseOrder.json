@@ -1,0 +1,49 @@
+{
+  "PO": {
+    "poNum": "poNum_0",
+    "poDate": "1999-05-31",
+    "shipDate": "1999-05-31",
+    "subTotal": "10.4",
+    "shipCost": "10.4",
+    "shipMethod": "shipMethod_0",
+    "paymentMethod": "paymentMethod_0",
+    "totalQty": "10",
+    "poTotal": "10.4",
+    "discount": "10.4",
+    "status": "status_0",
+    "fulfillment": "fulfillment_0",
+    "customer": {
+      "customerID": "customerID_0",
+      "companyName": "companyName_0",
+      "address": "address_0",
+      "city": "city_0",
+      "state": "state_0",
+      "zip": "zip_0",
+      "country": "country_0",
+      "phone": "phone_0",
+      "email": "email_0"
+    },
+    "shipTo": {
+      "customerID": "customerID_0",
+      "companyName": "companyName_0",
+      "address": "address_0",
+      "city": "city_0",
+      "state": "state_0",
+      "zip": "zip_0",
+      "country": "country_0",
+      "phone": "phone_0",
+      "email": "email_0"
+    },
+    "items": {
+      "item": {
+        "lineNo": "10",
+        "partNum": "partNum_0",
+        "productName": "productName_0",
+        "qty": "10",
+        "itemPrice": "10.4",
+        "itemTotal": "10.4",
+        "manufacturer": "manufacturer_0"
+      }
+    }
+  }
+}

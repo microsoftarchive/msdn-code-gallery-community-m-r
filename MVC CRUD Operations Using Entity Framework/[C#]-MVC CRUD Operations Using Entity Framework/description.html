@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.0.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=D230DC278C5D2008759BCAAF1ABCBAC6" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=BB208CA7577BB26F9BF04A6EC76C08A9" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MVC CRUD Operations Using Entity Framework</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>MVC CRUD Operations Using Entity Framework</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, ASP.NET, .NET, .NET Framework, .NET Framework 4.0, C# Language, MVC Examples, ASP.NET MVC 5, MVC5, MVC Scaffolding
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            C#, ASP.NET, Model View Controller (MVC), ASP.NET MVC, Master Detail CRUD with MVC 3 and EF, MVC Samples, MVC Example
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/23/2018</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/MVC-CRUD-Operations-Using-a372f7d6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><em><span style="font-size:small">In this article i am going talkig about MVC CRUD Operations Using Entity Framework 6 without writting any code.before that you should learn about what is MVC &amp; entity framework and basics.</span></em></p>
+<p><strong><span style="font-size:x-large">MVC</span></strong></p>
+<ul>
+<li><span style="font-size:small">The View is responsible for the look and feel.</span>
+</li><li><span style="font-size:small">Model represents the real world object and provides data to the View.</span>
+</li><li><span style="font-size:small">The Controller is responsible for taking the end user request and loading the appropriate Model and View.</span>
+</li></ul>
+<h1><span>Building the Sample</span></h1>
+<p><em><span style="font-size:small">1.Create sample employee sql table</span></em></p>
+<p><em><span style="font-size:small">&nbsp;</span></em></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><em><span>SQL</span></em></div>
+<div class="pluginLinkHolder"><em><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></em></div>
+<em><span class="hidden">mysql</span>
+<pre class="hidden">CREATE TABLE [dbo].[Employee](
+	[EmployeeId] [int] primary key identity(1,1),
+	[FirstName] [nvarchar](50) NULL,
+	[LastName] [nvarchar](50) NULL,
+	[Address1] [nvarchar](50) NULL,
+	[Address2] [nvarchar](50) NULL,
+	[EmailID] [nvarchar](50) NULL,
+	)</pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;[<span class="sql__id">dbo</span>].[<span class="sql__id">Employee</span>](&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">EmployeeId</span>]&nbsp;[<span class="sql__keyword">int</span>]&nbsp;<span class="sql__keyword">primary</span>&nbsp;<span class="sql__keyword">key</span>&nbsp;<span class="sql__id">identity</span>(<span class="sql__number">1</span>,<span class="sql__number">1</span>),&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">FirstName</span>]&nbsp;[<span class="sql__keyword">nvarchar</span>](<span class="sql__number">50</span>)&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">LastName</span>]&nbsp;[<span class="sql__keyword">nvarchar</span>](<span class="sql__number">50</span>)&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">Address1</span>]&nbsp;[<span class="sql__keyword">nvarchar</span>](<span class="sql__number">50</span>)&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">Address2</span>]&nbsp;[<span class="sql__keyword">nvarchar</span>](<span class="sql__number">50</span>)&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">EmailID</span>]&nbsp;[<span class="sql__keyword">nvarchar</span>](<span class="sql__number">50</span>)&nbsp;<span class="sql__value">NULL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;)</pre>
+</div>
+</em></div>
+</div>
+<div class="endscriptcode"><em>&nbsp;</em></div>
+<p>&nbsp;</p>
+<p><span style="font-size:small">2.Open Visual studio -&gt; Create New Project Asp.net WebApplication with MVC</span></p>
+<p><img id="186790" src="/site/view/file/186790/1/2018-01-23%20(6).png" alt="" width="750" height="450"></p>
+<p><span style="font-size:small">3.Right Click on the Project and go to Manage NuGet Packages..</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><img id="186791" src="/site/view/file/186791/1/2018-01-23%20(9).png" alt="" width="750" height="450" style="vertical-align:baseline"><br>
+</span></p>
+<p><span style="font-size:small">4.Click on the browse button then find entity framework. In this article i have selected framework 6</span></p>
+<p><img id="186792" src="/site/view/file/186792/1/2018-01-23%20(10).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p><span style="font-size:small">5.Right Click on the project -&gt; go to Add -&gt; New Item - &gt;Select ADO.NET Entity Data Model.Give Modle Name</span></p>
+<p><span style="font-size:small"><img id="186793" src="/site/view/file/186793/1/2018-01-23%20(12).png" alt="" width="750" height="450" style="vertical-align:baseline"><br>
+</span></p>
+<p><span style="font-size:small">6.Click on the&nbsp; New Connection -&gt; Select Data Source as Microsoft SQL Server</span></p>
+<p><span style="font-size:small"><img id="186803" src="/site/view/file/186803/1/2018-01-23%20(14).png" alt="" width="750" height="450" style="vertical-align:baseline"></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small">7.Choose Server Name &amp; Database Name Then Click OK</span></p>
+<p><img id="186805" src="/site/view/file/186805/1/2018-01-23%20(15).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p><span style="font-size:small">8.By Default Connection String will be generated -&gt; Select Table Data
+</span></p>
+<p><img id="186806" src="/site/view/file/186806/1/2018-01-23%20(16).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p><img id="186808" src="/site/view/file/186808/1/2018-01-23%20(17).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p><span style="font-size:small">9.Add New Controller with Name as &quot;Employee&quot; the Controller Template as MVC 5 Controller with views,...</span></p>
+<p><img id="186809" src="/site/view/file/186809/1/2018-01-23%20(18).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p><img id="186810" src="/site/view/file/186810/1/2018-01-23%20(19).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small">10.Select Model class,Data context class from combo box.Select Generate View Checkbox and give controller Name.</span></p>
+<p><img id="186811" src="/site/view/file/186811/1/2018-01-23%20(20).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p>&nbsp;</p>
+<p><img id="186812" src="/site/view/file/186812/1/2018-01-23%20(21).png" alt="" width="750" height="450"></p>
+<p><span style="font-size:small"><br>
+</span></p>
+<p><span style="font-size:20px; font-weight:bold">Description</span></p>
+<p><span style="font-size:small"><em>11.Change default <span style="font-size:small">
+<em>&quot;Home&quot; </em></span>controller</em><em> to&nbsp;</em></span><span class="cs__string"><span style="font-size:small"><em> &quot;</em>Employees&quot;. and Hit F5 to run the sample.</span><br>
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute(&quot;{resource}.axd/{*pathInfo}&quot;);
+
+            routes.MapRoute(
+                name: &quot;Default&quot;,
+                url: &quot;{controller}/{action}/{id}&quot;,
+                defaults: new { controller = &quot;Employees&quot;, action = &quot;Index&quot;, id = UrlParameter.Optional }
+            );
+        }
+    }</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;RouteConfig&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;RegisterRoutes(RouteCollection&nbsp;routes)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;routes.IgnoreRoute(<span class="cs__string">&quot;{resource}.axd/{*pathInfo}&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;routes.MapRoute(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;<span class="cs__string">&quot;Default&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url:&nbsp;<span class="cs__string">&quot;{controller}/{action}/{id}&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defaults:&nbsp;<span class="cs__keyword">new</span>&nbsp;{&nbsp;controller&nbsp;=&nbsp;<span class="cs__string">&quot;Employees&quot;</span>,&nbsp;action&nbsp;=&nbsp;<span class="cs__string">&quot;Index&quot;</span>,&nbsp;id&nbsp;=&nbsp;UrlParameter.Optional&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<p><img id="186822" src="/site/view/file/186822/1/2018-01-23%20(23).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><em>12.Without write any single of code application is created with CRUD views.</em></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><em><img id="186824" src="/site/view/file/186824/1/2018-01-23%20(24).png" alt="" width="750" height="450" style="vertical-align:baseline"></em></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><em><img id="186825" src="/site/view/file/186825/1/2018-01-23%20(25).png" alt="" width="750" height="450" style="vertical-align:baseline"></em></span></p>
+<p>&nbsp;</p>
+<p><img id="186826" src="/site/view/file/186826/1/2018-01-23%20(26).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p>&nbsp;</p>
+<p><img id="186827" src="/site/view/file/186827/1/2018-01-23%20(29).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img id="186828" src="/site/view/file/186828/1/2018-01-23%20(30).png" alt="" width="750" height="450" style="vertical-align:baseline"></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><em><br>
+</em></span></p>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><span style="font-size:small"><em>MVC_CRUD_Entity.Zip</em></span> </li></ul>
+<p><em>&nbsp;</em></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

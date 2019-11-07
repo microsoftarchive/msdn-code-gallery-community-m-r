@@ -1,0 +1,85 @@
+﻿<base:WindowsPhoneBasePage
+    x:Class="MyShuttle.Client.UniversalApp.Views.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:base="using:MyShuttle.Client.UniversalApp.Views.Base"
+    xmlns:partials="using:MyShuttle.Client.UniversalApp.Views.Partials"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar Style="{StaticResource AppCommandBar}" ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Setting"
+                              Label="{Binding [Settings], Source={StaticResource LocalizedStrings}}"
+                              Command="{Binding NavigateToSettingsCommand}">
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Hub Grid.Row="1" Style="{StaticResource MainHub}">
+            <Hub.Header>
+                <Image Grid.Row="0" Style="{StaticResource BrandImage}"/>
+            </Hub.Header>
+
+            <!--Closest vehicles list-->
+            <HubSection>
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource PrimaryTextBlock}" Text="{Binding [Nearest], Source={StaticResource LocalizedStrings}}"/>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <partials:VehiclesByDistance DataContext="{Binding VehiclesByDistanceViewModel}"/>
+                </DataTemplate>
+            </HubSection>
+
+            <!--Cheapest vehicles list-->
+            <HubSection>
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource PrimaryTextBlock}" Text="{Binding [Price], Source={StaticResource LocalizedStrings}}"/>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <partials:VehiclesByPrice DataContext="{Binding VehiclesByPriceViewModel}"/>
+                </DataTemplate>
+            </HubSection>
+
+            <!--Closest vehicles map-->
+            <HubSection>
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource PrimaryTextBlock}" Text="{Binding [Map], Source={StaticResource LocalizedStrings}}"/>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+
+                    <Grid Name="VehiclesInMapWrapper" DataContext="{Binding VehiclesInMapViewModel}" DataContextChanged="VehiclesInMapWrapper_OnDataContextChanged" Unloaded="VehiclesInMapWrapper_OnUnloaded">
+                    </Grid>
+
+                </DataTemplate>
+            </HubSection>
+
+            <!--My last rides list-->
+            <HubSection>
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource PrimaryTextBlock}" Text="{Binding [MyRides], Source={StaticResource LocalizedStrings}}"/>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <partials:MyRides DataContext="{Binding MyRidesViewModel}"/>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+    </Grid>
+</base:WindowsPhoneBasePage>
