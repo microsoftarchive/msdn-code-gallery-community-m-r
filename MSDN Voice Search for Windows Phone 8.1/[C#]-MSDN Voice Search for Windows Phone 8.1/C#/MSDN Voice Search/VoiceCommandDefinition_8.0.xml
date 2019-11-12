@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+    <!-- The CommandSet Name is used to programmatically access the CommandSet -->
+    <CommandSet xml:lang="en-us" Name="englishCommands">
+        <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+        <CommandPrefix> MSDN </CommandPrefix>
+        <!-- The CommandSet Example appears in the global help alongside your app name -->
+        <Example> search </Example>
+
+        <Command Name="MSDNSearch">
+            <!-- The Command example appears in the drill-down help page for your app -->
+            <Example> do a search </Example>
+
+            <!-- ListenFor elements provide ways to say the command, including references to 
+            {PhraseLists} and {PhraseTopics} as well as [optional] words -->
+            <ListenFor> [do a] Search [for] {*} </ListenFor>
+            <ListenFor> Find {*} </ListenFor>
+            <ListenFor> Look [for] {*} </ListenFor>
+
+            <!--Feedback provides the displayed and spoken text when your command is triggered -->
+            <Feedback> Searching MSDN... </Feedback>
+
+            <!-- Navigate specifies the desired page or invocation destination for the Command-->
+            <Navigate Target="MainPage.xaml" />
+        </Command>
+    </CommandSet>
+</VoiceCommands>

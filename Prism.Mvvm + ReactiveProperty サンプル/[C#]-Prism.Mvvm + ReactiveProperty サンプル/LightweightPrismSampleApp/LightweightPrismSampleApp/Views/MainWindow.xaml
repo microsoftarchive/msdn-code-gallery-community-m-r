@@ -1,0 +1,43 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:DesignTime="clr-namespace:LightweightPrismSampleApp.DesignTime" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Custom="http://www.codeplex.com/prism" 
+    mc:Ignorable="d" 
+    x:Class="LightweightPrismSampleApp.Views.MainWindow"
+    Title="MainWindow" Height="300" Width="300" 
+    d:DataContext="{d:DesignInstance {x:Type DesignTime:MainWindowViewModel}, IsDesignTimeCreatable=True}">
+    <i:Interaction.Triggers>
+        <Custom:InteractionRequestTrigger SourceObject="{Binding ConfirmRequest, Mode=OneWay}">
+            <Custom:PopupWindowAction CenterOverAssociatedObject="True" IsModal="True"/>
+        </Custom:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="139*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.ColumnSpan="3" Content="計算" Grid.Row="4" Command="{Binding CalcCommand, Mode=OneWay}" Margin="0,4,0,5" Grid.RowSpan="2"/>
+        <Label Content="右辺値" Grid.Row="2" Target="{Binding ElementName=textBoxRhs, Mode=OneWay}" Margin="0,2,0,7" Grid.RowSpan="2"/>
+        <Label Content="左辺値" Target="{Binding ElementName=textBoxLhs, Mode=OneWay}" Margin="0,0,0,9" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBoxLhs" Grid.Column="2" TextWrapping="Wrap" Text="{Binding Lhs.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource Self}}" Margin="0,0,0,9" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBoxRhs" Grid.Column="2" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Rhs.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource Self}}" Margin="0,2,0,7" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="6" TextWrapping="Wrap" Text="{Binding Answer.Value}" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+        <Button Content="リセット" Grid.Row="8" Grid.ColumnSpan="3" Command="{Binding ResetCommand, Mode=OneWay}"/>
+    </Grid>
+</Window>

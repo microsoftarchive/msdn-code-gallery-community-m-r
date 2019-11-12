@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "Microsoft"
+  ],
+  "description": "MyShuttle",
+  "version": "1.0.0-beta5",
+  "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-beta5",
+    "Microsoft.Framework.Configuration.Json": "1.0.0-beta5",
+	  "Microsoft.AspNet.SignalR.Server": "3.0.0-beta5",
+    "MyShuttle.Data": "",
+    "MyShuttle.Model": ""
+  },
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Net.Http": ""
+      }
+    },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0-beta-*",
+        "System.Xml.XDocument": "4.0.0-beta-23015",
+        "System.Xml.XmlDocument": "4.0.0-beta-23015",
+        "System.Collections": "4.0.10-beta-23015",
+        "System.Linq": "4.0.0-beta-23015",
+        "System.Threading": "4.0.10-beta-23015",
+        "System.Runtime": "4.0.20-beta-23015",
+        "Microsoft.CSharp": "4.0.0-beta-23015"
+      }
+    }
+  }
+}

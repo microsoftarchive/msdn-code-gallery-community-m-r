@@ -1,0 +1,61 @@
+﻿@model Microsoft.WindowsAzure.ActiveDirectory.Group
+
+@{
+    ViewBag.Title = "Create Group";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    <label style="color: #FF0000" >*</label><label>indicates a mandatory field</label><br />
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Group</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.displayName) <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.displayName)
+            @Html.ValidationMessageFor(model => model.displayName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mailNickname) <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mailNickname)
+            @Html.ValidationMessageFor(model => model.mailNickname)
+        </div>
+
+       <div class="editor-label">
+            @Html.LabelFor(model => model.securityEnabled) <label style="color: #FF0000" >*</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.securityEnabled)
+            @Html.ValidationMessageFor(model => model.securityEnabled)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.description)
+            @Html.ValidationMessageFor(model => model.description)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

@@ -1,0 +1,550 @@
+﻿
+<html data-ng-app="OrderModule">
+@{
+    ViewBag.Title = "Home Page";
+}
+<body data-ng-controller="AngularJsOrderController">
+    <img src="~/Images/blank.gif" alt="" width="1" height="10" />
+    <table width="99%" style=" border-bottom:3px solid #3273d5;">
+        <tr>
+
+            <td width=" 180">
+                <table width="99%">
+                    <tr>
+                        <td>
+                            Welcome Mr. {{'SHANU'}}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="style1">
+                <h3>Shanu - MVC Angular JS Master/Detail  CRUD using WEB API 2 (Stored Procedure) :)</h3>
+                <h3>Master/Detail HTML Grid with Filter, Sorting and Detail Grid Grand Total Row</h3>
+            </td>
+
+        </tr>
+    </table>
+    <img src="~/Images/blank.gif" alt="" width="1" height="2" />
+    <table id="tblContainer" style='width: 99%;table-layout:fixed;'>
+        <tr ng-show="showItem">
+            <td>
+                <table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Search Order Master</h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+
+                                    <td width="20"></td>
+                                    <td valign="top">
+
+                                        <table style="color:#9F000F;font-size:large" cellpadding="4" cellspacing="6">
+
+                                            <tr>
+                                                <td>
+                                                    <b>order Number</b>
+                                                </td>
+
+                                                <td>
+                                                    : <input type="text" name="txtOrderNos" ng-model="OrderNos" value="" />
+                                                    <br />
+                                                </td>
+
+                                                <td>
+                                                    <b>   TableID </b>
+                                                </td>
+
+                                                <td>
+                                                    :
+                                                    <input type="text" name="txtTable_IDs" ng-model="Table_IDs" />
+
+                                                </td>
+                                                <td>
+                                                    <input type="submit" value="Search" style="background-color:#336699;color:#FFFFFF" ng-click="searchOrderMasters()" />
+
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <img src="~/Images/blank.gif" alt="" width="1" height="4" />
+            </td>
+        </tr>
+        <tr ng-show="showOrderMasterAdd">
+            <td>
+                <table width="99%">
+                    <tr>
+                        <td align="right">
+                            <input type="button" value="Add Order Master" style="background-color:#e5390f;color:#FFFFFF;font-size:large;width:200px;
+                              border-color:#a2aabe;border-style:dashed;border-width:2px;" ng-click="showOrderMasters()" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr ng-show="addEditOrderMaster">
+            <td>
+
+                <table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Add/Edit Order Master</h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+
+                                    <td width="20"></td>
+                                    <td valign="top">
+                                        <form novalidate name="f2" ng-submit="saveDetails()">
+                                            <table style="color:#9F000F;font-size:large" cellpadding="4" cellspacing="6">
+
+                                                <tr>
+                                                    <td>
+                                                        <b>Order Number : </b>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" name="txtOrderNo" ng-model="OrderNo" value="0" style="background-color:tan" readonly />
+                                                        <br />
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <b> Table Name : </b>
+                                                    </td>
+
+                                                    <td>
+
+                                                        <input type="text" name="txtTable_ID" ng-model="Table_ID" placeholder=" Table Name..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f2.file.$dirty || IsFormSubmitted) && f2.txtTable_ID.$error.required">Table Name required!</span>
+
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>
+                                                        <b>Description : </b>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" name="txtDescription" ng-model="Description" placeholder=" Description..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f2.file.$dirty || IsFormSubmitted) && f2.txtDescription.$error.required">Description required!</span>
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <b> Waiter Name : </b>
+                                                    </td>
+
+                                                    <td>
+
+                                                        <input type="text" name="txtWaiter_Name" ng-model="Waiter_Name" placeholder=" Waiter Name ..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f2.file.$dirty || IsFormSubmitted) && f2.txtWaiter_Name.$error.required">Waiter Name required!</span>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>                                               
+
+                                                    <td colspan="4">
+
+
+                                                        <input type="submit" value="Save Item" style="background-color:#336699;color:#FFFFFF" required />
+
+                                                    </td>
+                                                </tr>
+
+
+
+                                            </table>
+
+                                        </form>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <img src="~/Images/blank.gif" alt="" width="1" height="4" />
+
+
+            </td>
+        </tr>
+
+        @* Add /Edit Detail *@
+
+        <tr ng-show="addEditOrderDetail">
+            <td>
+
+                <table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td>
+                            <h3> Add/Edit Order Detail</h3>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+
+                                    <td width="20"></td>
+                                    <td valign="top">
+                                        <form novalidate name="f1" ng-submit="saveOrderDetails()">
+                                            <table style="color:#9F000F;font-size:large" cellpadding="4" cellspacing="6">
+
+                                                <tr>
+                                                    <td>
+                                                        <b>Order Number : </b>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" name="txtOrderNo" ng-model="OrderNo" value="0" style="background-color:tan" readonly />
+                                                        <br />
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <b> Order Detail Number  : </b>
+                                                    </td>
+
+                                                    <td>
+
+                                                        <input type="text" name="txtOrder_Detail_No" ng-model="Order_Detail_No" value="0" style="background-color:tan" readonly />
+                                                        <br />
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>
+                                                        <b>Item Name : </b>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" name="txtItem_Name" ng-model="Item_Name" placeholder=" Item Name..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtItem_Name.$error.required">Item Name required!</span>
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <b> Notes : </b>
+                                                    </td>
+
+                                                    <td>
+
+                                                        <input type="text" name="txtNotes" ng-model="Notes" placeholder=" Notes ..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtNotes.$error.required">txtNotes required!</span>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    
+
+                                                    <td>
+                                                        <b> QTY : </b>
+                                                    </td>
+
+                                                    <td>
+
+                                                        <input type="text" name="txtQTY" ng-model="QTY" value="1" placeholder=" QTY ..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtQTY.$error.required">QTY required!</span>
+
+                                                    </td>
+
+                                                    <td>
+                                                        <b> Price : </b>
+                                                    </td>
+
+                                                    <td>
+
+                                                        <input type="text" name="txtPrice" ng-model="Price" value="0" placeholder=" Price ..." required />
+                                                        <br />
+                                                        <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.txtPrice.$error.required">Price required!</span>
+
+                                                    </td>
+                                                    </tr>
+
+                                                <tr>
+
+                                                    <td colspan="2">
+
+                                                        <input type="submit" value="Save Item" style="background-color:#336699;color:#FFFFFF" required />
+
+                                                    </td>
+                                                </tr>
+
+
+
+                                            </table>
+
+                                        </form>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <img src="~/Images/blank.gif" alt="" width="1" height="4" />
+
+
+            </td>
+        </tr>
+
+
+        <tr ng-show="OrderMasterList">
+
+            <td>
+
+                <table style=" background-color:#FFFFFF; border: solid 2px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td width="100"></td>
+                        <td width="40" align="center"><b>Edit</b></td>
+                        <td width="40" align="center"><b>Delete</b></td>
+                        <td width="180" align="center" ng-click="predicate = 'Order_No'; reverse=!reverse" style="cursor: pointer;">
+                        <b>OrderNo</b> &nbsp;<img src="~/Images/sortNo.jpg" />
+                        </td>
+                        <td width="180" align="center" ng-click="predicate = 'Table_ID'; reverse=!reverse" style="cursor: pointer;"><b>Table</b>
+                            &nbsp;<img src="~/Images/sortA.jpg" /></td>
+                        <td width="200" align="center"><b>Description</b></td>
+                        <td width="200" align="center" ng-click="predicate = 'Order_DATE'; reverse=!reverse" style="cursor: pointer;"><b>Order DATE</b>
+                            &nbsp;<img src="~/Images/sortA.jpg" /></td>
+                        <td width="200" align="center" ng-click="predicate = 'Waiter_Name'; reverse=!reverse" style="cursor: pointer;"><b>Waiter Name</b>
+                           &nbsp;<img src="~/Images/sortA.jpg" /></td>
+
+                    </tr>
+                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                        <td width="100" align="center" colspan="3">
+                            <img src="~/Images/filter.png" />  Filter By 
+                        </td>
+
+
+                        <td width="180" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                            <input ng-model="search.Order_No" placeholder="Order..." width="90">
+                        </td>
+
+                        <td width="180" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                            <input ng-model="search.Table_ID" placeholder="Table...">
+                        </td>
+
+                        <td width="200" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                            
+                        </td>
+
+                        <td width="200" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                           
+                        </td>
+                        <td width="200" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                            <input ng-model="search.Waiter_Name" placeholder="Name...">
+                        </td>
+                    </tr>
+                    <tbody data-ng-repeat="stds in OrderMasters | filter:search | orderBy:predicate:reverse">
+                        <tr>
+                            <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">
+
+                                    <input type="button" id="Detail" value="Detail" ng-click="OrderDetailDisplay(stds.Order_No)" />
+                                                                          
+                                </span>
+                            </td>
+
+                            <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">
+                                    <img src="~/Images/edit.gif" alt="Edit" width="24px" height="24px" ng-click="OrderMasterEdit(stds.Order_No,stds.Table_ID,stds.Description,stds.Waiter_Name)">
+                                </span>
+                            </td>
+
+                            <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">
+                                    <img src="~/Images/delete.gif" alt="Delete" width="24px" height="24px" ng-click="OrderMasterDelete(stds.Order_No)">
+                                </span>
+                            </td>
+
+                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">{{stds.Order_No}}</span>
+                            </td>
+
+                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">{{stds.Table_ID}}</span>
+                            </td>
+
+                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">{{stds.Description}}</span>
+                            </td>
+
+                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">{{stds.Order_DATE}}</span>
+                            </td>
+
+                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                <span style="color:#9F000F">{{stds.Waiter_Name}}</span>
+                            </td>
+                        </tr>
+
+                        <tr ng-show="activeRow==stds.Order_No" >
+
+                            <td valign="top">
+
+                                <input type="button" value="Add Detail" style="background-color:#439633;color:#FFFFFF;font-size:large;width:100px;
+                              border-color:#a2aabe;border-style:dashed;border-width:2px;" ng-click="showNewOrderDetails()" />
+                            </td>
+                            <td colspan="7">
+
+                                <table style=" background-color:#ECF3F4; border: solid 2px #3273d5; padding: 5px;width: 99%;table-layout:fixed;">
+
+                                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;">
+                                        <td width="40" align="center"><b>Edit</b></td>
+                                        <td width="40" align="center"><b>Delete</b></td>
+                                        <th width="80" align="center"><b>Order No</b></th>
+
+                                        <th width="100" align="center" ng-click="predicate = 'Order_Detail_No'; reverse=!reverse" style="cursor: pointer;">
+                                        <b>Order Detail No</b>&nbsp;<img src="~/Images/sortNo.jpg" /></th>
+
+                                        <th width="160" align="center" ng-click="predicate = 'Item_Name'; reverse=!reverse" style="cursor: pointer;">
+                                        <b>Item Name</b>&nbsp;<img src="~/Images/sortA.jpg" /></th>
+
+                                        <th width="200" align="center"><b>Comments</b></th>
+
+                                        <th width="80" align="center" ng-click="predicate = 'QTY'; reverse=!reverse" style="cursor: pointer;">
+                                        <b>QTY</b>&nbsp;<img src="~/Images/sortNo.jpg" /></th>
+
+                                        <th width="80" align="center" ng-click="predicate = 'Price'; reverse=!reverse" style="cursor: pointer;">
+                                        <b>Price</b>&nbsp;<img src="~/Images/sortNo.jpg" /></th>
+
+                                    </tr>
+                                    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                                        <td width="80" align="center" colspan="3">
+                                         <img src="~/Images/filter.png" />  Filter By
+                                        </td>
+
+                                       
+
+                                        <td width="100" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                                            <input ng-model="search.Order_Detail_No" placeholder="Order DNO..." style="width:90px;">
+                                        </td>
+
+                                        <td width="160" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+
+                                            <input ng-model="search.Item_Name" placeholder="Item..." style="width:150px;">
+                                        </td>
+                                        <td width="200" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;"></td>
+                                        <td width="200" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                                            <input ng-model="search.QTY" placeholder="QTY..." width="90" style="width:80px;">
+                                        </td>
+                                        <td width="200" align="center" style="border: solid 1px #FFFFFF; padding: 5px;table-layout:fixed;">
+                                            <input ng-model="search.Price" placeholder="Price..." style="width:80px;">
+                                        </td>
+                                    </tr>
+                                    <tbody data-ng-repeat="detail in OrderDetailDisp  | filter:search | orderBy:predicate:reverse">
+
+                                        <tr>
+                                            <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                                <span style="color:#9F000F">
+                                                    <img src="~/Images/edit.gif" alt="Edit" width="24px" height="24px" ng-click="OrderDetailEdit(detail.Order_Detail_No,detail.Order_No,detail.Item_Name,detail.Notes,detail.QTY,detail.Price)">
+                                                </span>
+                                            </td>
+
+                                            <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                                                <span style="color:#9F000F">
+                                                    <img src="~/Images/delete.gif" alt="Delete" width="24px" height="24px" ng-click="OrderDetailDelete(detail.Order_Detail_No)">
+                                                </span>
+                                            </td>
+
+
+                                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;"><span>{{detail.Order_No}}</span></td>
+
+                                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;"><span>{{detail.Order_Detail_No}}</span></td>
+
+                                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;"><span>{{detail.Item_Name}}</span></td>
+
+                                            <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;"><span>{{detail.Notes}}</span></td>
+
+                                            <td align="right" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;"><span>{{detail.QTY}}</span></td>
+
+                                            <td align="right" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;"><span>{{detail.Price}}</span></td>
+
+                                        </tr>
+                                    </tbody>
+                                    <tr>
+                                        <td colspan="6"></td>
+                                        <td align="right"><b>Qty : {{ totalQty }}</b></td>
+                                        <td align="right"><b>Price: {{ totalPrice | number:0 }}</b></td>
+                                      
+                                       
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+    @*<table>
+        <tr>
+
+            <td>sdfsdf</td>
+        </tr>
+        <tr>
+            <td data-ng-repeat="cell in Students">{{cell.name}}</td>
+        </tr>
+        <tr data-ng-repeat="cell in Students">
+            <td>
+                <span style="color:#9F000F">{{cell.fieldname}}</span>
+            </td>
+        </tr>
+    </table>*@
+
+</body>
+</html>
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-animate.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+<script src="~/Scripts/MYAngular/controller.js"></script>
+

@@ -1,0 +1,63 @@
+@model MyEvents.Web.Areas.Organizer.Models.HomeViewModel
+@{
+    ViewBag.Title = "my events list";
+}
+@section Actions
+{
+    <section class="actions right menu">
+        @Html.ActionLink("create new event", "Create", "Event", null, new { @class = "button button-highlighted" })
+    </section>
+}
+
+<section>
+    <span class="section-title">my events</span>
+    <section class="list">
+        <section>
+            <span class="field uppercase center">Date</span>
+            <span class="field extra-big uppercase">Event</span>
+            <span class="field uppercase">City</span>
+            <span class="field uppercase center">Attendees</span>
+            <span class="field small uppercase center">Edit</span>
+            <span class="field small uppercase center">Sessions</span>
+            <span class="field small uppercase center">Delete</span>
+        </section>
+        <div>
+            @foreach (var eventDefinition in Model.Events)
+            {
+                <article class="detail">
+                    <span class="field button center" title="@eventDefinition.Date.ToShortDateString()">@eventDefinition.Date.ToShortDateString()</span>
+                    <span class="field extra-big" title="@eventDefinition.Name">@eventDefinition.Name</span>
+                    <span class="field uppercase" title="@eventDefinition.City">@eventDefinition.City</span>
+                    <span class="field center">
+                        <span>@eventDefinition.AttendeesCount</span>
+                        <a class="middle" href="@Url.Action("Index", "RegisteredUsers", new { eventDefinitionId = eventDefinition.EventDefinitionId })" title="see attendees">
+                            <img src="@Url.Content("~/Styles/Images/users.png")" />
+                        </a>
+                    </span>
+                    <span class="field small center">
+                        <a href="@Url.Action("Edit", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })" title="edit event">
+                            <img src="@Url.Content("~/Styles/Images/pencil.png")" />
+                        </a>
+                    </span>
+                    <span class="field small center">
+                        <a href="@Url.Action("Manage", "Session", new { eventDefinitionId = eventDefinition.EventDefinitionId })" title="manage sessions">
+                            <img src="@Url.Content("~/Styles/Images/sessions.png")" />
+                        </a>
+                    </span>
+                    <form class="field small center" action="@Url.Action("Delete", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })" method="post">
+                    <button type="button" value="delete" class="image-button" title="delete event" data-confirm="true" data-confirm-text="are you sure you want to delete this event?">
+                        <img src="@Url.Content("~/Styles/Images/delete.png")" />
+                    </button>
+                    </form>
+                </article>
+            }
+            @if (!Model.Events.Any())
+            {
+                <article class="detail no-data">
+                    there are no available events at this moment. 
+                    <a href="@Url.Action("Create", "Event")">Do you want to create one?</a>
+                </article>
+            }
+        </div>
+    </section>
+</section>

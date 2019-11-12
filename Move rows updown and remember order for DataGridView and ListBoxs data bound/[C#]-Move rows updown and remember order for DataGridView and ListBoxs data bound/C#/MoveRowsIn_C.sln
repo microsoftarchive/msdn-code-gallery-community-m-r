@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveRowsUpDown_Access_Database", "MoveRowsUpDown_Access_Database.csproj", "{39A86163-05A1-4C81-9C43-AAA79521B2FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39A86163-05A1-4C81-9C43-AAA79521B2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A86163-05A1-4C81-9C43-AAA79521B2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A86163-05A1-4C81-9C43-AAA79521B2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A86163-05A1-4C81-9C43-AAA79521B2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

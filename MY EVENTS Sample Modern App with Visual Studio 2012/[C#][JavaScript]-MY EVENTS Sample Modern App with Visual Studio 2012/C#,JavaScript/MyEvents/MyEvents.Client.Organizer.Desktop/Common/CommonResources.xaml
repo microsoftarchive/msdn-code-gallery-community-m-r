@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:vm="clr-namespace:MyEvents.Client.Organizer.Desktop.ViewModel" 
+                    xmlns:converters="clr-namespace:MyEvents.Client.Organizer.Desktop.Converters"
+                    xmlns:lang="clr-namespace:MyEvents.Client.Organizer.Desktop.Resources.Language">
+    
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <converters:FacebookIdToPhotoURLConverter x:Key="FacebookIdToPhotoURLConverter"/>
+    <converters:CollectionCountToVisibilityConverter x:Key="CollectionCountToVisibility"/>
+    <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    <converters:BooleanValidationMultiConverter x:Key="MultiBoolean"/>
+    <converters:ByteArrayToImageConverter x:Key="ByteToImageConverter"></converters:ByteArrayToImageConverter>
+    <vm:ViewModelLocator x:Key="Locator" />
+    <ObjectDataProvider x:Key="languages" ObjectType="{x:Type lang:LanguageProvider}" MethodName="GetResourceInstance"/>
+    <ObjectDataProvider x:Key="CultureResourcesDS" ObjectType="{x:Type lang:LanguageProvider}"/>
+    
+</ResourceDictionary>

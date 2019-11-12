@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="TitlesBackgroundBrush" Color="Black"/>
+	<LinearGradientBrush x:Key="TitleRectangleBackgroundBrush" StartPoint="0.532809,4.22103e-005" EndPoint="0.532809,0.999958">
+		<GradientStop Color="#FF4C4C4C" Offset="0"/>
+		<GradientStop Color="#FF262626" Offset="0.486842"/>
+		<GradientStop Color="#FF000000" Offset="1"/>
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="TitlePathFillBrush" Color="#80FFFFFF"/>
+    <Style x:Key="TitlesPathStyle" TargetType="Path">
+    	<Setter Property="Fill" Value="{StaticResource TitlePathFillBrush}"/>
+    </Style>
+</ResourceDictionary>

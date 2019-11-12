@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Role";
+}
+
+<h2>My Roles</h2>
+<ul>
+    @foreach (string str in (List<string>)ViewData["myroles"]){
+        <li>@str</li>
+    }
+</ul>

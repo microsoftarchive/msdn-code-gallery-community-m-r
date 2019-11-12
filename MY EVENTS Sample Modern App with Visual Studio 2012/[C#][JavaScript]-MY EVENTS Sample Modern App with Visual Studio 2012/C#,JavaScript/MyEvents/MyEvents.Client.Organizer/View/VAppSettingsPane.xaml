@@ -1,0 +1,61 @@
+﻿<UserControl
+    x:Class="MyEvents.Client.Organizer.View.VAppSettingsPane"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyEvents.Client.Organizer.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="346"
+    DataContext="{Binding AppSettings, Source={StaticResource Locator}}">
+
+    <Border BorderThickness="1,0,0,0">
+        <Grid Background="White" VerticalAlignment="Stretch">
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <!-- Header area for panel -->
+            <Grid Grid.Row="0" Background="{StaticResource SessionInfoBrush}">
+                <Grid VerticalAlignment="Center" Margin="10,0,0,0">
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromHorizontalOffset="50" />
+                        </TransitionCollection>
+                    </Grid.Transitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btnBack" Style="{StaticResource BackButtonStyle}"
+                            Grid.Column="0" Margin="0" VerticalAlignment="Center" Click="SettingsBack_Clicked">
+                    </Button>
+                    <TextBlock Text="preferences"
+                               Grid.Column="1"
+                               Style="{StaticResource SettingsSubTitleStyle}"/>
+
+                    <Image Source="/Assets/clearLogo.png"
+                           HorizontalAlignment="Left"
+                           Grid.Column="2"
+                           Margin="15" />
+                </Grid>
+            </Grid>
+
+          
+            <StackPanel Grid.Row="1" >
+                <TextBlock Text="WebAddress"  Margin="10,10,10,0" Foreground="Black" Style="{StaticResource NormalText}" x:Uid="WebAddress"/>
+                <TextBox Text="{Binding WebUrlPrefix, Mode=TwoWay}" Margin="10,0,10,10" BorderBrush="Black"/>
+                <TextBlock Text="ServiceAddress"  Margin="10,10,10,0"  Foreground="Black" Style="{StaticResource NormalText}" x:Uid="ServiceAddress"/>
+                <TextBox Text="{Binding ApiUrlPrefix, Mode=TwoWay}" Margin="10,0,10,10"  BorderBrush="Black"/>
+                <CheckBox Margin="10,0,10,10" Height="30" HorizontalAlignment="Left"
+                          IsChecked="{Binding IsOfflineMode, Mode=TwoWay}" Style="{StaticResource CheckBoxSettings}" Content="InternetMode" Foreground="Black" x:Uid="InternetMode"></CheckBox>
+                <Button Content="SaveButton" Command="{Binding SaveCommand}" Margin="10" Width="90" Height="30" Style="{StaticResource RedButtonStyle}"
+                        x:Uid="SaveButton" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

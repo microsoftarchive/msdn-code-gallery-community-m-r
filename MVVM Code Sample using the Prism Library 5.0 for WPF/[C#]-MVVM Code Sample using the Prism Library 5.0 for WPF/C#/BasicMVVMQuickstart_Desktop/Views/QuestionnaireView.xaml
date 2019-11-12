@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="BasicMVVMQuickstart_Desktop.Views.QuestionnaireView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="0"
+                      Grid.ColumnSpan="3"
+                      VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        Style="{StaticResource HeaderedBorderStyle}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   VerticalAlignment="Bottom"><Run Text="Name" /></TextBlock>
+                        <TextBox x:Name="NameTextBox"
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 Text="{Binding Questionnaire.Name, Mode=TwoWay}"
+                                 Width="150"
+                                 Margin="2" AutomationProperties.AutomationId="NameText"/>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1"
+                                   VerticalAlignment="Bottom"><Run Text="Age" /></TextBlock>
+                        <TextBox x:Name="AgeTextBox"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 HorizontalAlignment="Left"
+                                 Text="{Binding Questionnaire.Age, Mode=TwoWay}"
+                                 MaxLength="3"
+                                 Width="40"
+                                 Margin="2" AutomationProperties.AutomationId="AgeText" />
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1"
+                      Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Text="What is your quest?"
+                               Style="{StaticResource QuestionLabelStyle}" />
+                    <TextBox x:Name="Question1Response"
+                             Grid.Row="1"
+                             Text="{Binding Questionnaire.Quest, Mode=TwoWay}" 
+                             AutomationProperties.AutomationId="Question1Text" />
+                </Grid>
+                <Grid Grid.Row="2"
+                      Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Style="{StaticResource QuestionLabelStyle}">
+                        <Run Text="What is your favorite " /><Run x:Name="ColorRun"
+                                                                  Text="color"
+                                                                  Foreground="{Binding Questionnaire.FavoriteColor, TargetNullValue=Black}" /><Run Text="?" />
+                    </TextBlock>
+                    <Border Grid.Row="1"
+                            Style="{StaticResource BorderBrush}">
+                        <ListBox x:Name="Colors"
+                                 IsTabStop="False"
+                                 ItemsSource="{Binding AllColors}"
+                                 Margin="5"
+                                 SelectedItem="{Binding Questionnaire.FavoriteColor, Mode=TwoWay}">
+                        </ListBox>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

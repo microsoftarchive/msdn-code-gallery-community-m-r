@@ -1,0 +1,12 @@
+﻿<Window x:Class="PrismEdu.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://www.codeplex.com/prism"
+        Title="Shell" Height="300" Width="300">
+    <Grid>
+        <!-- メインのリージョン -->
+        <ContentControl
+            Focusable="False"
+            prism:RegionManager.RegionName="Main" />
+    </Grid>
+</Window>

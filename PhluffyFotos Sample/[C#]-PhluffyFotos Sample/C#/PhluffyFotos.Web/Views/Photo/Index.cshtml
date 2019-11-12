@@ -1,0 +1,32 @@
+﻿@model PhluffyFotos.Data.Photo
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<div id="lvl3">
+    <div class="photoTitle">
+    <h2><span style="color: #888;">@this.Model.Title</span></h2>
+    </div>
+        
+    <a href="@this.Model.Url">
+        <img src="@this.Model.Url" alt="@this.Model.Title" border="0" />
+    </a>
+        
+    <p>@this.Model.Description</p>
+    <h3>Tags</h3>
+    <div class="tagResume">
+        @if (!string.IsNullOrEmpty(this.Model.RawTags)) {
+            foreach (var tag in this.Model.RawTags.Split(';').Where(s => s.Trim().Length > 0).Select(s => s.Trim().ToLowerInvariant())) { 
+                @Html.ActionLink(tag, "Search", new { controller = "Search", tag = tag }) @:;
+            } 
+        }
+    </div>
+    <br />
+    <div class="tagNavigation">
+        @Html.ActionLink("Back to " + this.Model.Owner + "'s pictures", "MyAlbums", "Album", new { this.Model.Owner }, null)
+    </div>
+</div>
+
+
+

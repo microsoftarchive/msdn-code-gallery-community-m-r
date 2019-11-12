@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<env>
+  <azuresubscription name="Microsoft Azure Account" />
+  <!-- the name must be between 3 and 24 characters in length and use numbers and lower-case letters only -->
+  <storageaccount name="myshuttletest" />
+  <!-- The name must uniquely identify the resource group within the subscription. It must be no longer than 80 characters long. It can contain only alphanumeric characters, dash, underscore, opening parenthesis, closing parenthesis, and period. The name cannot end with a period. -->
+  <resourcegroup name="myshuttletest" location="West US" />
+  <!--The field can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or a number-->
+  <!-- The field must be a string that contains between 2 and 60 characters -->
+  <websiteaspnet name="myshuttletest" />
+  <!-- The name must contain only letters, numbers and hyphens, and must not be a reserved word. The first character must be a letter, and the last character must be a letter or number -->
+  <websitemobileservice name="myshuttletestMS" />
+  <!--The field can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or a number-->
+  <!-- The field must be a string that contains between 2 and 60 characters -->
+  <websitewebjob name="myshuttletestWJ" />
+  <!-- SQL Server name can only be made up of lowercase letters 'a'-'z', the numbers 0-9 and the hyphen. The hyphen may not lead or trail in the name. -->
+  <sqlserver name="myshuttletest" login="myshuttleadmin" password="myshuttle1234!" dbname="MyShuttle" />
+  <sharepoint name="MyShuttleSharepointName" username="MyShuttleSharepointUsername" password="MyShuttleSharepointPassword" />
+  <salesforce consumerkey="SalesforceConsumerKey" username="SalesforceUsername" password="SalesforcePassword" consumersecret="SalesforceConsumerSecret" accountid="SalesforceAccountId" />
+  <!--Name should be at least 1 and at most 50 characters long. The name can contain only letters, numbers, periods, hyphens and underscores. The name must start and end with a letter or number.-->
+  <eventhub namespace="myshuttletestns" name="myshuttletest" />
+  <!-- The field can contain only letters, numbers, and hyphens. The field must be a string that contains between 3 and 63 characters -->
+  <!-- Password must contain at least 10 characters. The field cannot contain any three consecutive characters from the user name
+          The field must contain the following:
+          an uppercase letter
+          a lowercase letter
+          a number
+          a special character -->
+  <hdinsight name="myshuttletesthd" clusternodes="1" username="admin" password="MyShuttle1#" />
+  <!-- alphanumeric characters and hyphen. And it must be 3-63 characters long -->
+  <streamanalytics name="myshuttletest" location="West US" />
+  <!--The field can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or a number-->
+  <datafactory name="myshuttletest" location="West US" />
+  <!-- The field can contain only letters and numbers. And it must be 3-50 characters long -->
+  <documentdb name="myshuttletest" />
+  <!--The field can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or a number-->
+  <!-- The field must be a string that contains between 2 and 60 characters -->
+  <websitewebapi name="myshuttletestWA" />
+</env>

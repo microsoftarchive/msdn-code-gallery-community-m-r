@@ -1,0 +1,76 @@
+﻿<UserControl
+    x:Class="MyShuttle.Client.UniversalApp.Views.Partials.VehiclesInMap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:MyShuttle.Client.UniversalApp.Converters"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <converters:VehicleToGeopointConverter x:Key="VehicleToGeopointConverterKey"/>
+        <converters:LocationToGeopointConverter x:Key="LocationToGeopointConverterKey"/>
+        <converters:VehicleStatusToImageStyleConverter x:Key="VehicleStatusToImageStyleConverterKey"/>
+        <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverterKey"/>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey"/>
+        <converters:NormalizedCenteredAnchorPointConverter x:Key="NormalizedCenteredAnchorPointConverterKey"/>
+        <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverterKey"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <maps:MapControl Name="ClosestVehiclesMapControl" ZoomLevel="14" Style="Terrain"
+                         Center="{Binding CurrentLocation, Converter={StaticResource LocationToGeopointConverterKey}}"
+                         MapServiceToken="{Binding ApplicationSettingService.BingMapsToken}">
+            <maps:MapItemsControl ItemsSource="{Binding FilteredVehicles}">
+                <maps:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid maps:MapControl.Location="{Binding Converter={StaticResource VehicleToGeopointConverterKey}}"
+                              maps:MapControl.NormalizedAnchorPoint="{Binding Converter={StaticResource NormalizedCenteredAnchorPointConverterKey}}">
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0" Style="{StaticResource SelectedVehicleCarrierBorder}"
+                                    Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverterKey}}">
+                                <Image Source="{Binding Carrier.Picture, Converter={StaticResource ByteArrayToImageConverterKey}}"
+                                       Style="{StaticResource CarrierImage}"/>
+                            </Border>
+
+                            <Polygon Grid.Row="1" Points="0,0 12,0 6,10" Style="{StaticResource BottomArrowPoligon}"
+                                     Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverterKey}}"
+                                     Margin="{StaticResource SmallBottomMarginThickness}"/>
+
+                            <Image Grid.Row="2" Style="{Binding Converter={StaticResource VehicleStatusToImageStyleConverterKey}}">
+                                <i:Interaction.Behaviors>
+                                    <core:EventTriggerBehavior EventName="Tapped">
+                                        <core:InvokeCommandAction Command="{Binding DataContext.SwitchSelectedVehicleCommand, ElementName=ClosestVehiclesMapControl}"
+                                            CommandParameter="{Binding VehicleId}"/>
+                                    </core:EventTriggerBehavior>
+                                </i:Interaction.Behaviors>
+                            </Image>
+                        </Grid>
+                    </DataTemplate>
+                </maps:MapItemsControl.ItemTemplate>
+            </maps:MapItemsControl>
+
+            <!--Device position pushpin-->
+            <Image Style="{StaticResource DevicePushpinImage}" 
+                   maps:MapControl.Location="{Binding CurrentLocation, Converter={StaticResource LocationToGeopointConverterKey}}"
+                   maps:MapControl.NormalizedAnchorPoint="0.5 , 1.0"/>
+        </maps:MapControl>
+
+        <Border Style="{StaticResource SelectedVehicleBorder}">
+            <ContentControl Content="{Binding SelectedVehicle}" Style="{StaticResource SelectedVehicleContainer}"
+                            Visibility="{Binding SelectedVehicle, Converter={StaticResource NullToVisibilityConverterKey}}"
+                            ContentTemplate="{StaticResource SelectedVehicleItemTemplate}" Name="VehiclesInMapContentControl"/>
+        </Border>
+    </Grid>
+</UserControl>

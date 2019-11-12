@@ -1,0 +1,46 @@
+﻿@using System.Web.Optimization
+@model dynamic
+@{
+    ViewBag.Title = "my events - schedule for " + @ViewBag.EventTitle;
+}
+@section Meta
+{
+    <meta name="title" content="@ViewBag.EventTitle" />
+    <meta name="description" content="schedule information for (@ViewBag.EventTitle) event" />
+}
+@section Actions
+{
+    @Html.Partial("_ShareMenu")
+}
+@section scripts
+{
+    @Scripts.Render("~/Attendee/Event/Schedule/")
+
+    <script>
+        var eventDefinitionId = parseInt('@(Model)');
+        var scheduleControl = new myEvents.controls.schedule.ScheduleControl({
+                eventDefinitionId: eventDefinitionId,
+                getAction: '@Url.Action("GetSheduleInfo")'
+            }, 
+            new myEvents.controls.schedule.painters.SessionPainter());
+    </script>
+}
+
+@helper ShowGMT(int timeZone){
+    var sign = "";
+    if (0 <= timeZone){
+        sign = "+";
+    }
+    
+    <text>@("GMT" + sign + timeZone)</text>
+}
+
+<section class="event-title">
+    @ViewBag.EventTitle
+</section>
+<section class="message right">* the times are shown in @ShowGMT(ViewBag.TimeZoneOffset)</section>
+<section id="schedule-container">
+</section>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.22/themes/base/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />

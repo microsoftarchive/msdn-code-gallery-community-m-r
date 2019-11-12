@@ -1,0 +1,263 @@
+======================================================================
+Microsoft .NET Gadgeteer Core 
+RELEASE NOTES
+Version 2.43.900       28 February 2014
+
+======================================================================
+Supported Platforms
+======================================================================
+
+Microsoft Visual Studio 2012 (any edition) http://www.microsoft.com/visualstudio/
+  OR Microsoft Visual Studio Express 2012 for Windows Desktop http://www.microsoft.com/express/downloads/  
+Requirements:
+- Microsoft Windows 8 or Windows 7
+- Microsoft .NET Micro Framework SDK 4.3 (QFE1) http://netmf.codeplex.com/releases/view/118283
+    (supports .NET Gadgeteer devices compatible with NETMF 4.1, 4.2 or 4.3)
+
+Microsoft Visual Studio 2010 (any edition)
+  OR Microsoft Visual C# 2010 Express http://www.microsoft.com/express/downloads/ 
+  OR Microsoft Visual Basic 2010 Express http://www.microsoft.com/express/downloads/  
+Requirements:
+- Microsoft Windows 8, Windows 7, Windows Vista or Windows XP SP3
+- EITHER Microsoft .NET Micro Framework SDK 4.2 (RTM QFE2) http://netmf.codeplex.com/downloads/get/470705
+    (supports .NET Gadgeteer devices compatible with NETMF 4.1 or 4.2)
+  OR Microsoft .NET Micro Framework SDK 4.1 http://www.microsoft.com/download/en/details.aspx?id=8515
+    (supports .NET Gadgeteer devices compatible with NETMF 4.1 only)
+
+======================================================================
+Change Logs
+======================================================================
+
+Version 2.43.900, 28 February 2014
+
+MAJOR CHANGES
+ - NETMF 4.3.1 (NETMF 4.3 QFE1) support
+
+ MINOR CHANGES:
+ - 4.3/4.2/4.1 NetworkModule UseDHCP race condition [CodePlex #1752]
+ - 4.3/4.2/4.1 NetworkModule DHCP thread is GC candidate bugfix
+ - 4.3/4.2 NETMF StringBuilder bug workaround [CodePlex #1679]
+ - 4.3/4.2 Serial linereceived buffer bugfix
+ - 4.2 Serial duplicate linereceived event registration bugfix [CodePlex #1678]
+ - 4.2 SPI CS pin reservation bugfix [CodePlex #1683]
+ - 4.3 NativeAnalogOutput constructor bugfix [CodePlex #1666]
+ - 4.3 SimpleGraphics redraw area calculation bugfixes
+ - 4.3 SimpleGraphics DisplayEllipse API brought inline with DisplayRectangle
+ - 4.3/4.2 Daisylink didnt reference AssemblyInfoGlobal.cs (versions were incorrect)
+ - Various XMLdoc fixes
+
+
+======================================================================
+
+Version 2.43.800, 26 July 2013
+
+MAJOR CHANGES
+ - NETMF 4.3 support added alongside NETMF 4.2 and 4.1 support
+    - Onboard display controller Mainboard API improved
+    - Small performance and footprint improvements throughout the core and libraries
+ - Modules can provide sockets as well as consume them (NETMF 4.2 and 4.3)
+
+MINOR CHANGES
+ - Serial port events are not subscribed to until needed [CodePlex #1462] 
+ - CS pin is not tied to pin 6 on S socket specification [CodePlex #1461]
+ - NetworkModule.NetworkSettings returns the correct interface [CodePlex #1356]
+ - Pin reservations functionality removed [CodePlex #526 #1539]
+ - Microsoft.SPOT.Presentation.Shapes using added to C# application template
+ - Removed unnecessary references from the application templates [CodePlex #748]
+ - Fixes in Serial interface: UTF-8 decoding, exceptions when hardware does not support timeouts, support for unsafe events
+ - Designer always show all toolbox items, with warning/error overlays
+ - Designer autoconnects to modules' provided sockets as well [CodePlex #707]
+ - Exposed the default web event [CodePlex #1416]
+ - Fixes for WebServer [CodePlex #1565]
+
+KNOWN ISSUES
+ - Autoconnect feature in the designer can create loops when using modules with provided sockets
+
+======================================================================
+
+Version 2.42.700, 19 April 2013
+
+MAJOR CHANGES
+- VS 2012 support (if using NETMF 4.3 SDK) added alongside VS 2010 support (using NETMF 4.2 or earlier)
+  (When using VS 2012 you can target NETMF 4.2 or 4.1 devices too)
+- Visual Studio Express 2012 for Windows Desktop support (and older 2010 Express version support maintained)
+- Application template wizard which checks for compatibility between VS, NETMF SDK and mainboard
+- Power consumption data is specifiable in GadgeteerHardware.xml schema and shown in VS designer
+
+MINOR CHANGES
+- Socket type D and H compatibility check fixed
+- Managed software I2C (used by DaisyLink) uses repeated start condition when appropriate
+- Added StorageDevice.DeleteDirectory method and fixed StorageDevice.Delete to delete files
+- Text templates no longer used by designer, avoiding permissions warning
+- License updated to clarify that VS extensions are binary-only
+
+**** ALPHA SUPPORT *****
+This release also includes alpha support for the following. This is for evaluation purposes only, and features may change.
+- NETMF 4.3, with feature changes:
+   - AnalogOutput uses NETMF native support
+
+======================================================================
+
+Version 2.42.600, 11 May 2012
+
+MAJOR CHANGES
+- NETMF 4.2 support added alongside NETMF 4.1 support
+- Visual Basic apps supported in NETMF 4.2, using Visual Studio or Visual Basic 2010 Express
+- Module/mainboard/kit templates changed to enable simultaneous NETMF 4.1/4.2 support, and wizard added to ease module/mainboard creation
+- For NETMF 4.2, GadgeteerCore's SPI, Serial and DaisyLink/SoftwareI2C features are split into separate DLLs so they can be left out to save RAM when not necessary.
+
+MINOR CHANGES
+- Bugfix in Gadgeteer.Interfaces.SPI 
+- Blocking the dispatcher now causes a runtime warning
+- Reboot() call added to GT.Program
+- Documentation updates to some of the APIs
+- Designer checks for more dependencies between hardware (from GadgeteerHardware.xml files)
+
+KNOWN ISSUES
+- VC# Express and VB Express installation fails if VS is also installed and VS and VC#/VB do not share the same directory root
+   i.e. if VC# Express is installed under where VS is, e.g. C:\Program Files\Microsoft Visual Studio 10.0\ then it works OK.
+- DaisyLink assigns global addresses but it could use per-bus addresses (normally one bus per socket) to increase total addressable devices
+
+======================================================================
+
+Version 2.41.500, 13 February 2012
+
+MINOR CHANGES
+- GTI.I2CBus bugfix to Read method
+- Software I2C exposed under Gadgeteer.Interfaces - previously it was a hidden part of the DaisyLink implementation
+- NetworkModule bugfix to NetworkSettings, UseDHCP and IsNetworkUp behaviour
+- Added PDB files for all assemblies
+- Added XML doc files for web client/server assemblies
+- Added reference to System.Collections to default App template
+- Added Invoke event to Program as a way of easily invoking methods on the dispatcher
+- DisplayModule reboots less frequently to update display settings, and allows WPF on any display
+- Mainboard interface supports abstraction of storage device mounting/unmounting allows storage device modules (e.g. SD card) to be written in a mainboard-independent way.
+
+======================================================================
+
+Version 2.41.401, 30 November 2011
+
+MINOR CHANGES
+- Fixed bug with caused Visual Studio Designer to not upgrade correctly
+
+======================================================================
+
+Version 2.41.400, 25 November 2011
+
+MAJOR CHANGES 
+- Web client and web server libraries moved from Gadgeteer.dll into separate assemblies Gadgeteer.WebServer.dll and Gadgeteer.WebClient.dll. These are referenced by default in the app template. API location moved from GTM.NetworkModule to Gadgeteer.Networking.
+- Cloud library moved from GadgeteerCore into separate dll MicrosoftResearch.Gadgeteer.Cloud.dll, and not referenced by default from app template. GadgeteerCore MSI still includes the DLL though (so Add Reference works)
+
+MINOR CHANGES
+- Added I2C transactions API to Gadgeteer.Interfaces.I2CBus class
+- System.Threading and Microsoft.SPOT.Touch references added to App Template
+- References created by Designer now set SpecificVersion=false so that newer versions of module/mainboard libraries are picked up by projects
+- Designer now deletes references and "usings" when a module/mainbaord is no longer used by a project 
+- Fixes to how DisplayModule handles switching between display types and display <-> headless.
+
+======================================================================
+
+Version 2.41.301, 30 September 2011
+
+MINOR CHANGES
+- Fixed bug with rendering F1 help content in designer
+
+======================================================================
+
+Version 2.41.300, 26 September 2011
+
+MAJOR CHANGES 
+- Graphical hardware configuration view included!
+- Kit template updated since kit-specific end user templates are no longer required 
+   (designer does a better job - auto adds only the required references, and works with any manufacturer's modules)
+- Module template moved to GadgeteerBuilderTemplates MSI 
+
+MINOR CHANGES
+- GTI.I2CBus.Address setter bugfix
+- GTI.AnalogInput.Active property added
+- StorageDevice: added CreateDirectory and Delete methods
+- DisplayModule: added automatic reboots when display configuration changes, and better error messages 
+- NetworkModule: added web proxy support 
+
+======================================================================
+
+Version 2.41.200, 19 August 2011
+
+MINOR CHANGES
+- GadgeteerCore now checks that NETMF is installed when installing
+- Module template MSIs now check that GadgeteerCore is installed when installing
+- Module template - lots of inline documentation updates
+- GTI.Serial now reserves pins 6 and 7 if hardware handshaking is supported by the module.
+- Gadgeteer.Module and Gadgeter.Program expose a Mainboard property enabling modules and advanced end users to directly use this API.
+
+======================================================================
+
+Version 2.41.100, 26 July 2011
+
+Initial public release.
+
+======================================================================
+
+
+
+======================================================================
+License
+======================================================================
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Except as otherwise noted, Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+---
+
+VISUAL STUDIO EXTENSIONS:
+The .NET Gadgeteer Visual Studio Extensions are not licensed under the Apache License, Version 2.0 and are licensed under the separate terms set forth below:
+
+MICROSOFT SOFTWARE LICENSE TERMS
+MICROSOFT .NET GADGETEER VISUAL STUDIO EXTENSIONS 
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
+•	updates,
+•	supplements,
+•	Internet-based services, and
+•	support services
+for this software, unless other terms accompany those items. If so, those terms apply.
+By using the software, you accept these terms. If you do not accept them, do not use the software.
+If you comply with these license terms, you have the perpetual rights below.
+1.	INSTALLATION AND USE RIGHTS. You may install and use any number of copies of the software on your devices for your use solely with .NET Gadgeteer 2.42.700.
+2.	SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+•	disclose the results of any benchmark tests of the software to any third party without Microsoft’s prior written approval;
+•	work around any technical limitations in the software;
+•	reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
+•	make more copies of the software than specified in this agreement or allowed by applicable law, despite this limitation;
+•	publish the software for others to copy;
+•	rent, lease or lend the software;
+•	transfer the software or this agreement to any third party; or
+•	use the software for commercial software hosting services.
+3.	BACKUP COPY. You may make one backup copy of the software. You may use it only to reinstall the software.
+4.	DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+5.	EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
+6.	SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+7.	ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+8.	APPLICABLE LAW.
+a.	United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+b.	Outside the United States. If you acquired the software in any other country, the laws of that country apply.
+9.	LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+10.	DISCLAIMER OF WARRANTY. The software is licensed “as-is.” You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+FOR AUSTRALIA – You have statutory guarantees under the Australian Consumer Law and nothing in these terms is intended to affect those rights.
+11.	LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
+This limitation applies to
+•	anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and
+•	claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+Please note: As this software is distributed in Quebec, Canada, these license terms are provided below in French.
+Remarque : Ce logiciel étant distribué au Québec, Canada, les termes de cette licence sont fournis ci-dessous en français.
+EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d’autres droits prévus par les lois de votre pays. Vous pourriez également avoir des droits à l’égard de la partie de qui vous avez acquis le logiciel. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre ou pays si celles-ci ne le permettent pas.
+EXCLUSIONS DE GARANTIE. Le logiciel est concédé sous licence « en l’état ». Vous assumez tous les risques liés à son utilisation. Microsoft n’accorde aucune garantie ou condition expresse. Vous pouvez bénéficier de droits des consommateurs supplémentaires ou de garanties statutaires dans le cadre du droit local, que ce contrat ne peut modifier. Lorsque cela est autorisé par le droit local, Microsoft exclut les garanties implicites de qualité, d’adéquation à un usage particulier et d’absence de contrefaçon.
+POUR L’AUSTRALIE – La loi australienne sur la consommation (Australian Consumer Law) vous accorde des garanties statutaires qu’aucun élément du présent accord ne peut affecter.
+LIMITATION ET EXCLUSION DE RECOURS ET DE DOMMAGES. Vous pouvez obtenir de Microsoft et de ses fournisseurs une indemnisation en cas de dommages directs limitée uniquement à hauteur de 5,00 $ US. Vous ne pouvez prétendre à aucune indemnisation pour les autres dommages, y compris les dommages spéciaux, indirects ou accessoires et pertes de bénéfices.
+Cette limitation concerne :
+•	toute affaire liée au logiciel, aux services ou au contenu (y compris le code) figurant sur des sites Internet tiers ou dans des programmes tiers et
+•	les réclamations au titre de violation de contrat ou de garantie, ou au titre de responsabilité stricte, de négligence ou d’une autre faute dans la limite autorisée par la loi en vigueur.
+Elle s’applique également même si Microsoft connaissait l'éventualité d'un tel dommage. La limitation ou exclusion ci-dessus peut également ne pas vous être applicable, car votre pays n’autorise pas l’exclusion ou la limitation de responsabilité pour les dommages indirects, accessoires ou de quelque nature que ce soit.

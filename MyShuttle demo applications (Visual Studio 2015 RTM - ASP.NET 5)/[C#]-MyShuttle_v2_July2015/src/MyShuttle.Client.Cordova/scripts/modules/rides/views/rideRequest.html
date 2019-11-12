@@ -1,0 +1,23 @@
+<section class="ride-request-content">
+    <div class="employee-row clearfix">
+        <div class="employee-info-col">
+            <img class="employee-img" ng-src="{{employee.picture | imageBase64}}" />
+
+            <div class="employee-data">
+                <p class="employee-name">{{employee.name}}</p>
+                <span class="employee-data-field">{{employee.email}}</span>
+            </div>
+        </div>
+        <div class="menu-container">
+            <a ng-click="$close(false)" class="button secondary button-settings">
+                <img src="images/close_icon.png" />
+            </a>
+        </div>
+    </div>
+    <div class="request-bing-map">
+        <ms-bing-maps-routes end-location="position"></ms-bing-maps-routes>
+    </div>
+    <a class="button primary button-bottom" ng-click="$close(true)">
+        <span>Accept</span>
+    </a>
+</section>

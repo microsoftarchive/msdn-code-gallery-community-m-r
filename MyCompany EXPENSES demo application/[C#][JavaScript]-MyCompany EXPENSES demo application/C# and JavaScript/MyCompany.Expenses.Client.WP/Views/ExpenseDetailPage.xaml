@@ -1,0 +1,106 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MyCompany.Expenses.Client.WP.Views.ExpenseDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:MyCompany.Expenses.Client.WP.Converters"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP8"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False"
+    DataContext="{Binding ExpenseDetail, Source={StaticResource Locator}}">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="BackKeyPress">
+            <cmd:EventToCommand Command="{Binding Mode=OneWay, Path=BackKeyCommand}"
+                            PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid Background="{StaticResource ModuleColor}">
+        <Border Padding="20" Visibility="{Binding IsBusy, Converter={StaticResource ReverseBooleanToVisibilityConverter}}">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="LayoutRoot">
+                    <TextBlock Text="{Binding Expense.Name}" 
+                   Style="{StaticResource DetailExpenseTitle}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource DetailExpenseAmountBigLabel}" 
+                       Text="{Binding LocalizedResources.ExpenseDetailPageAmountLabel, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                        <TextBlock Text="{Binding Expense.Amount, Converter={StaticResource NumberToString}}"
+                       Style="{StaticResource AmountDetailTextBlock}"></TextBlock>
+                        <TextBlock FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
+                           Foreground="{StaticResource ContrastFontColor}"
+                           Text="{Binding LocalizedResources.CurrencySymbol, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                    </StackPanel>
+                    <Grid Margin="0,20,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" 
+                       Margin="0,0,20,0"
+                       Source="{Binding Expense, Converter={StaticResource ExpenseToEmployeeImage}}"></Image>
+                        <TextBlock Grid.Column="1"
+                       Grid.Row="0"
+                       Text="{Binding Expense.CreationDate, Converter={StaticResource DateToLocalString}}"
+                       Style="{StaticResource DetailExpenseData}"></TextBlock>
+                        <TextBlock Grid.Column="1"
+                       Grid.Row="1"
+                       Text="{Binding Expense.Employee.FullName}"
+                       Style="{StaticResource DetailExpenseBoldData}"></TextBlock>
+                        <StackPanel Grid.Column="1" Grid.Row="2" 
+                            Orientation="Horizontal"
+                            VerticalAlignment="Bottom">
+                            <Image Source="{Binding Expense.Status, Converter={StaticResource StatusToImage}}"
+                           Style="{StaticResource StatusImageStyle}"></Image>
+                            <TextBlock VerticalAlignment="Bottom" 
+                               Text="{Binding Expense.Status, Converter={StaticResource LowerStringConverter}}"
+                               Style="{StaticResource DetailExpenseData}"
+                               FontSize="20">
+                            </TextBlock>
+                        </StackPanel>
+
+                    </Grid>
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource DetailExpenseLabel}" 
+                           Text="{Binding LocalizedResources.ExpenseDetailPageDescriptionLabel, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                        <TextBlock Style="{StaticResource PrimaryWrapTextBlock}" 
+                           Text="{Binding Expense.Description}"></TextBlock>
+                    </StackPanel>
+                    <Grid Margin="0,20,0,0" HorizontalAlignment="Center" Visibility="{Binding ViewActions, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource ExpenseDetailButton}" 
+                            Command="{Binding ApproveExpenseCommand}" 
+                            Content="{Binding LocalizedResources.ExpenseDetailPageApproveButtonText, Source={StaticResource LocalizedStrings}}"></Button>
+                            <Button Style="{StaticResource ExpenseDetailRefuseButton}" 
+                            Command="{Binding RefuseExpenseCommand}" 
+                            Content="{Binding LocalizedResources.ExpenseDetailPageRefuseButtonText, Source={StaticResource LocalizedStrings}}"></Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        
+        <ProgressBar IsIndeterminate="True"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Stretch"
+                     Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar></shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Photo Cloud</h1>
+    <h2>by Windows Azure Storage</h2>
+</div>
+
+<div class="alert alert-warning" id="secondarywarning" align="center" style="display: none">
+    <h3>Primary storage location is not accessible! Switching to secondary storage location!</h3>
+</div>
+
+<div class="alert alert-danger" id="secondaryerror" align="center" style="display: none">
+    <h3>Neither primary nor secondary storage location is accessible! Will try again later!</h3>
+</div>
+
+<div id="photos"></div>
+
+<script>
+
+    var grid = [];
+    var secondaryUsed = false;
+    getPhotos();
+    setInterval(getPhotos, 8000);
+
+    function getPhotos() {
+        $.get('/Home/GetContainerReadToken?time=' + Date.now())
+            .done(function (sas) {
+                _getPhotos(false, sas);
+            });
+    }
+
+    function _getPhotos(useSecondary, sas) {
+        var containerUrl = useSecondary ? '@ViewBag.ContainerSecondaryUri' : '@ViewBag.ContainerPrimaryUri';
+        $.get(containerUrl + sas + '&restype=container&comp=list')
+            .done(function (blobListing) {
+                $('#secondarywarning').toggle(useSecondary);
+                $('#secondaryerror').toggle(false);
+
+                // If we switched between primary and secondary, we should remove all photos
+                if (secondaryUsed != useSecondary) {
+                    secondaryUsed = useSecondary;
+                    $('#photos').html('');
+                    grid = [];
+                }
+
+                // Enumerate all blobs
+                var existing = [];
+                var blobs = $(blobListing).find('EnumerationResults Blobs Blob Name');
+                blobs.each(function (index, blob) {
+                    var blobName = $(blob).text();
+                    existing.push(blobName);
+                    var shown = $.inArray(blobName, grid);
+                    if (shown < 0) {
+                        var empty = _getEmptyGridCell();
+                        $('#grid' + empty).html('<div class="thumbnail">' +
+                            '<img src="' + containerUrl + '/' + blobName + sas + '">' +
+                            '<div class="caption">' + blobName + '</div>' +
+                            '</div>');
+                        grid[empty] = blobName;
+                    }
+                });
+
+                // Now remove all deleted photos
+                for (var i = 0; i < grid.length; i++) {
+                    if (grid[i] != '' && $.inArray(grid[i], existing) < 0) {
+                        $('#grid' + i).html('');
+                        grid[i] = '';
+                    }
+                }
+            })
+            .fail(function () {
+                if (!useSecondary) {
+                    // Try listing blobs on the secondary
+                    _getPhotos(true, sas);
+                } else {
+                    // If secondary also failed, we will wait for the next interval to refresh
+                    $('#secondarywarning').toggle(false);
+                    $('#secondaryerror').toggle(true);
+                }
+            });
+    }
+
+    function _getEmptyGridCell() {
+        var empty = $.inArray('', grid);
+        if (empty < 0) {
+            // If we have no space left, let's add a new row with 3 empty cells
+            empty = grid.length;
+            grid[empty] = '';
+            grid[empty + 1] = '';
+            grid[empty + 2] = '';
+            $('#photos').append(
+                '<div class="row">' +
+                '<div class="col-md-4" id="grid' + empty + '"></div>' +
+                '<div class="col-md-4" id="grid' + (empty + 1) + '"></div>' +
+                '<div class="col-md-4" id="grid' + (empty + 2) + '"></div>' +
+                '</div>');
+        }
+        return empty;
+    }
+
+</script>

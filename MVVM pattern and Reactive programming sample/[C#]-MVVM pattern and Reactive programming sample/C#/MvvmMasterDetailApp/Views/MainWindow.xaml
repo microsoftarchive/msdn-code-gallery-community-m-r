@@ -1,0 +1,34 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:commons="clr-namespace:MvvmMasterDetailApp.Commons"
+    xmlns:views="clr-namespace:MvvmMasterDetailApp.Views"
+    x:Class="MvvmMasterDetailApp.Views.MainWindow"
+    Title="MainWindow" Height="543" Width="830" 
+    DataContext="{Binding MainWindowViewModel, Mode=OneWay, Source={StaticResource ViewModelLocator}}">
+    <i:Interaction.Triggers>
+        <commons:MessageBaseTrigger Target="EditWindow">
+            <commons:ShowWindowAction WindowType="{x:Type views:DetailWindow}" ShowModal="True" />
+        </commons:MessageBaseTrigger>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand, Mode=OneWay}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson.Value}" AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name.Value}" ClipboardContentBinding="{x:Null}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Age.Value}" ClipboardContentBinding="{x:Null}" Header="Age"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Add" Style="{DynamicResource MenuButtonStyle}" Command="{Binding AddCommand, Mode=OneWay}"/>
+            <Button Content="Edit" Style="{DynamicResource MenuButtonStyle}" Command="{Binding EditCommand, Mode=OneWay}"/>
+        </StackPanel>
+    </Grid>
+</Window>

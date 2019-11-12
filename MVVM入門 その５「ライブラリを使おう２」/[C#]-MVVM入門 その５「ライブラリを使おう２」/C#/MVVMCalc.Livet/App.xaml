@@ -1,0 +1,27 @@
+﻿<Application x:Class="MVVMCalc.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:MVVMCalc.ViewModels"
+             StartupUri="Views\MainWindow.xaml"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:CalculateTypeViewModel}">
+            <TextBlock Text="{Binding Label}" />
+        </DataTemplate>
+
+        <!-- 入力値のエラーのフィードバック機能を持たせたTextBoxのスタイル -->
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <!-- バリデーションエラーがある場合に -->
+                <Trigger Property="Validation.HasError" Value="True">
+                    <!-- ツールチップにエラーメッセージと -->
+                    <Setter Property="ToolTip"  
+                            Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource Mode=Self}}" />
+                    <!-- 背景色を設定する -->
+                    <Setter Property="Background"  
+                            Value="Pink" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Application.Resources>
+</Application>

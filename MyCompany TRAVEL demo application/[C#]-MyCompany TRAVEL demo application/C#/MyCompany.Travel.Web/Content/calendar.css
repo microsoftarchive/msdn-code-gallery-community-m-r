@@ -1,0 +1,66 @@
+﻿/*General fonts*/
+/*General*/
+/*Module*/
+/*List*/
+.datepicker {
+  position: absolute;
+  background-color: white;
+}
+.prev {
+  background-image: url("images/back.png") !important;
+  background-color: #fa961d;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  -moz-background-size: 8px auto !important;
+  -webkit-background-size: 8px auto !important;
+  -o-background-size: 8px auto !important;
+  background-size: 8px auto !important;
+  color: transparent !important;
+}
+.next {
+  background-image: url("images/next.png") !important;
+  background-color: #fa961d !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  -moz-background-size: 8px auto !important;
+  -webkit-background-size: 8px auto !important;
+  -o-background-size: 8px auto !important;
+  background-size: 8px auto !important;
+  color: transparent !important;
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled.disabled:hover,
+.datepicker table tr td.active[disabled],
+.datepicker table tr td.active[disabled]:hover,
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active.disabled[disabled]:hover {
+  background-color: #fa961d !important;
+}
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover {
+  background-image: none !important;
+}
+.datepicker thead tr:first-child th:hover {
+  background-color: #9e5d26 !important;
+}
+.datepicker.dropdown-menu {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #9e5d26;
+}

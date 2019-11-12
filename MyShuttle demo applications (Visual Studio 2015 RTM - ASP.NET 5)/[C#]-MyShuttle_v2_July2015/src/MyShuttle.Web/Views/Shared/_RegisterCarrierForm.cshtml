@@ -1,0 +1,63 @@
+@model MyShuttle.Web.Models.CarrierViewModel
+
+@{bool isValid = ViewData.ModelState.IsValid ? true : false;}
+<div class="carrier-form-wrapper col-sm-12 padding-zero full-spaced @((!isValid)?"cover-background" :"") ">
+    <div class="carrier-form  ms-container-fluid full-spaced clearfix">
+        <div class="row">
+            <div class="col-sm-7">
+                <h2 class="become-carrier">Become a carrier company</h2>
+                <h3 class="become-carrier-description">If you want to start enjoying the benefits of MyShuttle, complete the registration form.</h3>
+            </div>
+            <div class="col-sm-5 text-right">
+                <input type="button" class="@((isValid)?"" :"hide") ms-submit-btn green-style md-style" id="registerExpand" value="Register" />
+            </div>
+        </div>
+        @using (Html.BeginForm("RegisterCarrier", "CarrierList", "Index", FormMethod.Post, new { @class = ((isValid) ? "collapse" : "") + " register-carrier-form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-sm-6 padding-zero padding-right-row-md">
+                <p>
+                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "ms-form-control green-style", @placeholder = "Company name..." })
+                </p>
+                <p>
+                    @Html.TextBoxFor(m => m.Address, new { @class = "ms-form-control green-style", @placeholder = "Address..." })
+                </p>
+                <div class="row">
+                    <div class="col-xs-6">
+                        @Html.TextBoxFor(m => m.ZipCode, new { @class = "ms-form-control green-style", @placeholder = "Zip Code..." })
+                    </div>
+                    <div class="col-xs-6">
+                        @Html.TextBoxFor(m => m.City, new { @class = "ms-form-control green-style control-right", @placeholder = "City..." })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        @Html.TextBoxFor(m => m.State, new { @class = "ms-form-control green-style", @placeholder = "State..." })
+                    </div>
+                    <div class="col-xs-6">
+                        @Html.TextBoxFor(m => m.Country, new { @class = "ms-form-control green-style control-right", @placeholder = "Country..." })
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6  padding-zero padding-left-row-md">
+                <p>
+                    @Html.TextBoxFor(m => m.CompanyID, new { @class = "ms-form-control green-style", @placeholder = "ID..." })
+                </p>
+                <p>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "ms-form-control green-style", @placeholder = "Email..." })
+                </p>
+                <p>
+                    @Html.TextBoxFor(m => m.Description, new { @class = "ms-form-control green-style description-style", @placeholder = "Description..." })
+                </p>
+                <p>
+                    <input id="sendNewCarrierBtn" type="submit" class="ms-submit-btn green-style" value="Register" />
+                </p>
+            </div>
+            <span class="validation"></span>
+            <div class="clearfix"></div>
+            @Html.ValidationSummary()
+        }
+    </div>
+    <div class="separator">
+    </div>
+</div>

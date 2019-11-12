@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLUP_CLIENT_OPEN_BAL_dt" targetNamespace="http://tempuri.org/dsLUP_CLIENT_OPEN_BAL_dt.xsd" xmlns:mstns="http://tempuri.org/dsLUP_CLIENT_OPEN_BAL_dt.xsd" xmlns="http://tempuri.org/dsLUP_CLIENT_OPEN_BAL_dt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLUP_CLIENT_OPEN_BAL_dt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsLUP_CLIENT_OPEN_BAL_dt" msprop:Generator_DataSetName="dsLUP_CLIENT_OPEN_BAL_dt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_CLIENT_OPEN_BAL" msprop:Generator_UserTableName="V_CLIENT_OPEN_BAL" msprop:Generator_RowDeletedName="V_CLIENT_OPEN_BALRowDeleted" msprop:Generator_TableClassName="V_CLIENT_OPEN_BALDataTable" msprop:Generator_RowChangedName="V_CLIENT_OPEN_BALRowChanged" msprop:Generator_RowClassName="V_CLIENT_OPEN_BALRow" msprop:Generator_RowChangingName="V_CLIENT_OPEN_BALRowChanging" msprop:Generator_RowEvArgName="V_CLIENT_OPEN_BALRowChangeEvent" msprop:Generator_RowEvHandlerName="V_CLIENT_OPEN_BALRowChangeEventHandler" msprop:Generator_TablePropName="V_CLIENT_OPEN_BAL" msprop:Generator_TableVarName="tableV_CLIENT_OPEN_BAL" msprop:Generator_RowDeletingName="V_CLIENT_OPEN_BALRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:decimal" />
+              <xs:element name="CLIENT_NAME" msprop:Generator_UserColumnName="CLIENT_NAME" msprop:Generator_ColumnPropNameInRow="CLIENT_NAME" msprop:Generator_ColumnVarNameInTable="columnCLIENT_NAME" msprop:Generator_ColumnPropNameInTable="CLIENT_NAMEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GROUP_NAME" msprop:Generator_UserColumnName="GROUP_NAME" msprop:Generator_ColumnPropNameInRow="GROUP_NAME" msprop:Generator_ColumnVarNameInTable="columnGROUP_NAME" msprop:Generator_ColumnPropNameInTable="GROUP_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OPEN_BAL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OPEN_BAL" msprop:Generator_ColumnPropNameInRow="OPEN_BAL" msprop:Generator_ColumnVarNameInTable="columnOPEN_BAL" msprop:Generator_ColumnPropNameInTable="OPEN_BALColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SHOP_NAME" msprop:Generator_UserColumnName="SHOP_NAME" msprop:Generator_ColumnPropNameInRow="SHOP_NAME" msprop:Generator_ColumnVarNameInTable="columnSHOP_NAME" msprop:Generator_ColumnPropNameInTable="SHOP_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dDATE" msprop:Generator_UserColumnName="dDATE" msprop:Generator_ColumnPropNameInRow="dDATE" msprop:Generator_ColumnVarNameInTable="columndDATE" msprop:Generator_ColumnPropNameInTable="dDATEColumn" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_CLIENT_OPEN_BAL" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

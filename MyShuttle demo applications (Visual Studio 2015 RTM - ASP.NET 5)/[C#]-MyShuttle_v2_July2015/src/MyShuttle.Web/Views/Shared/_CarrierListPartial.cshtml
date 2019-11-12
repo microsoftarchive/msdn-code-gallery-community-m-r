@@ -1,0 +1,29 @@
+@using MyShuttle.Model
+@model List<Carrier>
+<div class="carrier-results text-right">
+    <span class="n-results">@Html.Raw(@Model.Count)</span>
+    <span class="text-results">results</span>
+</div>
+<div class=" row margin-zero carrier-info-wrapper">
+    @{ var odd = true; }
+    @foreach (var Tile in Model)
+    {
+        <article class="col-md-6 carrier-tile row  margin-zero">
+            <div class="carrier-info row @(odd ? "" : "even")">
+                <div class="col-xs-3 text-center img-wrapper ">
+                    @{
+                        var imgSrc = String.Format("data:image/png;base64,{0}",
+                            Convert.ToBase64String(Tile.Picture));
+                        <img src="@imgSrc" class=" carrier-pic" />
+                    }
+                </div>
+                <div class="col-xs-9">
+                    <p class="carrier-name">@Tile.Name</p>
+                    <p class="carrier-description">@Tile.Description</p>
+                    <div class="customer-rating" data-score="@Tile.RatingAvg"></div>
+                </div>
+            </div>
+        </article>
+        odd = !odd;
+    }
+</div>

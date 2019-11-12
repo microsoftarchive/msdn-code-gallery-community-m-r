@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBDRecorder", "OBDRecorder\OBDRecorder.csproj", "{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBD II_42", "gadgeteer-24955\Main\Modules\GHIElectronics\OBD II\Software\OBD II\OBD II_42\OBD II_42.csproj", "{B314DD82-A006-402F-BF22-5C17BC362350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elm327.Core", "gadgeteer-24955\Main\Modules\GHIElectronics\OBD II\Software\OBD II\Elm327.Core\Elm327.Core.csproj", "{16AFE004-4A9F-446F-B6A1-391AA6D92336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.ServiceBus.Micro", "MSDNMagJuly2012\Microsoft.ServiceBus.Micro\Microsoft.ServiceBus.Micro.csproj", "{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FD277B9B-131D-46CA-B6D1-104A35A5EFA2}"
+	ProjectSection(SolutionItems) = preProject
+		CreateDrop.cmd = CreateDrop.cmd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Emulator|Any CPU = Debug Emulator|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Debug Emulator|Any CPU.ActiveCfg = Debug Emulator|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Debug Emulator|Any CPU.Build.0 = Debug Emulator|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Debug Emulator|Any CPU.Deploy.0 = Debug Emulator|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57EA3F51-1E9B-4BF4-8F17-D67A1EFD0D86}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B314DD82-A006-402F-BF22-5C17BC362350}.Debug Emulator|Any CPU.ActiveCfg = Debug|Any CPU
+		{B314DD82-A006-402F-BF22-5C17BC362350}.Debug Emulator|Any CPU.Build.0 = Debug|Any CPU
+		{B314DD82-A006-402F-BF22-5C17BC362350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B314DD82-A006-402F-BF22-5C17BC362350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B314DD82-A006-402F-BF22-5C17BC362350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B314DD82-A006-402F-BF22-5C17BC362350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16AFE004-4A9F-446F-B6A1-391AA6D92336}.Debug Emulator|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AFE004-4A9F-446F-B6A1-391AA6D92336}.Debug Emulator|Any CPU.Build.0 = Debug|Any CPU
+		{16AFE004-4A9F-446F-B6A1-391AA6D92336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AFE004-4A9F-446F-B6A1-391AA6D92336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AFE004-4A9F-446F-B6A1-391AA6D92336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AFE004-4A9F-446F-B6A1-391AA6D92336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}.Debug Emulator|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}.Debug Emulator|Any CPU.Build.0 = Debug|Any CPU
+		{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA3F3B1-86ED-4FA1-9448-2ABF5D0774D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80D0C64-C34A-4DF4-9E26-E1D2F4FFEFC8}.Debug Emulator|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80D0C64-C34A-4DF4-9E26-E1D2F4FFEFC8}.Debug Emulator|Any CPU.Build.0 = Debug|Any CPU
+		{C80D0C64-C34A-4DF4-9E26-E1D2F4FFEFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80D0C64-C34A-4DF4-9E26-E1D2F4FFEFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80D0C64-C34A-4DF4-9E26-E1D2F4FFEFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80D0C64-C34A-4DF4-9E26-E1D2F4FFEFC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

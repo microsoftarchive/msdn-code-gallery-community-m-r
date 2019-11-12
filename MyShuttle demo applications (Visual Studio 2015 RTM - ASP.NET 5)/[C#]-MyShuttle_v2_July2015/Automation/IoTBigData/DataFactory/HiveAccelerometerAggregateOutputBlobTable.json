@@ -1,0 +1,22 @@
+{
+    "name": "HiveAccelerometerAggregateBlobTable",
+    "properties":
+    {
+        "location": 
+        {
+            "type": "AzureBlobLocation",
+            "folderPath": "myshuttledata/accelerometer/",
+            "format":
+            {
+                "type": "TextFormat",
+                "columnDelimiter": ","
+            },
+            "linkedServiceName": "AzureStorage"
+        },
+        "availability": 
+        {
+            "frequency": "Day",
+            "interval": 1
+        }
+    }
+}

@@ -1,0 +1,55 @@
+﻿@model PhluffyFotos.Web.ViewModels.AccountRegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<h2>
+    Create a New Account</h2>
+<p>
+    Use the form below to create a new account.
+</p>
+<p>
+    Passwords are required to be a minimum of @ViewData["PasswordLength"] characters
+    in length.
+</p>
+@Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+@using (Html.BeginForm())
+{ 
+    <div id="registerForm">
+        <fieldset>
+            <legend>Account Information</legend>
+            <p>
+                <label for="username">
+                    Username:</label>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </p>
+            <p>
+                <label for="email">
+                    Email:</label>
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </p>
+            <p>
+                <label for="password">
+                    Password:</label>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </p>
+            <p>
+                <label for="confirmPassword">
+                    Confirm password:</label>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </p>
+            <p>
+                <label for="email">
+                    Name your album:</label>
+                @Html.TextBoxFor(m => m.Album)
+                @Html.ValidationMessageFor(m => m.Album)
+            </p>
+            <p>
+                <input type="submit" value="Register" />
+            </p>
+        </fieldset>
+    </div>
+}

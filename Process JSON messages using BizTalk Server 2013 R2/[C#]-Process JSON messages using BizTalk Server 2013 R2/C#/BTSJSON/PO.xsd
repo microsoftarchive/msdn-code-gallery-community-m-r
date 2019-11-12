@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://BTSJSON" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ROOT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PO">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="poNum" type="xs:string" />
+              <xs:element minOccurs="0" name="poDate" type="xs:date" />
+              <xs:element minOccurs="0" name="shipDate" type="xs:date" />
+              <xs:element minOccurs="0" name="subTotal" type="xs:decimal" />
+              <xs:element minOccurs="0" name="shipCost" type="xs:decimal" />
+              <xs:element minOccurs="0" name="shipMethod" type="xs:string" />
+              <xs:element minOccurs="0" name="paymentMethod" type="xs:string" />
+              <xs:element minOccurs="0" name="totalQty" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="poTotal" type="xs:decimal" />
+              <xs:element minOccurs="0" name="discount" type="xs:decimal" />
+              <xs:element minOccurs="0" name="status" type="xs:string" />
+              <xs:element minOccurs="0" name="fulfillment" type="xs:string" />
+              <xs:element minOccurs="0" name="customer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="customerID" type="xs:string" />
+                    <xs:element minOccurs="0" name="companyName" type="xs:string" />
+                    <xs:element minOccurs="0" name="address" type="xs:string" />
+                    <xs:element minOccurs="0" name="city" type="xs:string" />
+                    <xs:element minOccurs="0" name="state" type="xs:string" />
+                    <xs:element minOccurs="0" name="zip" type="xs:string" />
+                    <xs:element minOccurs="0" name="country" type="xs:string" />
+                    <xs:element minOccurs="0" name="phone" type="xs:string" />
+                    <xs:element minOccurs="0" name="email" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="shipTo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="customerID" type="xs:string" />
+                    <xs:element minOccurs="0" name="companyName" type="xs:string" />
+                    <xs:element minOccurs="0" name="address" type="xs:string" />
+                    <xs:element minOccurs="0" name="city" type="xs:string" />
+                    <xs:element minOccurs="0" name="state" type="xs:string" />
+                    <xs:element minOccurs="0" name="zip" type="xs:string" />
+                    <xs:element minOccurs="0" name="country" type="xs:string" />
+                    <xs:element minOccurs="0" name="phone" type="xs:string" />
+                    <xs:element minOccurs="0" name="email" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="items">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="item">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="lineNo" type="xs:unsignedByte" />
+                          <xs:element minOccurs="0" name="partNum" type="xs:string" />
+                          <xs:element minOccurs="0" name="productName" type="xs:string" />
+                          <xs:element minOccurs="0" name="qty" type="xs:unsignedByte" />
+                          <xs:element minOccurs="0" name="itemPrice" type="xs:decimal" />
+                          <xs:element minOccurs="0" name="itemTotal" type="xs:decimal" />
+                          <xs:element minOccurs="0" name="manufacturer" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

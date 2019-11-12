@@ -1,0 +1,121 @@
+﻿@import "variables.less";
+
+.visitor-info {
+    overflow: hidden;
+
+    .box-avatar {
+        width: 150px;
+        float: left;
+
+        .box-avatar-image {
+            float: left;
+            display: inline-block;
+            width: 100%;
+            height: 150px;
+        }
+
+        .box-avatar-button {
+            font-family: @primary-font-light;
+            width: calc(~'100% - 1px');
+            margin: 1px 1px 0 0;
+            height: 30px;
+            float: left;
+            background-color: @second-font-color;
+            border: none;
+            cursor: pointer;
+            color: @white;
+            font-size: 1.2em;
+
+            &:focus {
+                border: none;
+                outline: none;
+            }
+
+            &:hover {
+                background-color: darken(@gray, 10%);
+            }
+        }
+    }
+
+    .box-info {
+        float: left;
+        display: inline-block;
+        padding-left: 5px;
+        padding-top: 3px;
+        background-color: @module-primary-color;
+        width: calc(~'100% - 155px');
+        color: @white;
+        height: 178px;
+
+        .info-up {
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .box-name {
+                font-family: @primary-font-light;
+                font-size: 1.5em;
+            }
+        }
+
+        .info {
+            ul {
+                list-style: none;
+                -webkit-margin-before: 0;
+                -webkit-margin-after: 0;
+                -webkit-padding-start: 0;
+                padding: 0;
+
+                li {
+                    overflow: hidden;
+                    -ms-text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    margin-top: 0.3em;
+
+                    &:last-child {
+                        margin-top: 4em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.employee-info {
+    overflow: hidden;
+
+    .box-avatar {
+        float: left;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+    }
+
+    .box-info {
+        float: left;
+        display: inline-block;
+        padding-left: 5px;
+        padding-top: 3px;
+        background-color: @module-primary-color;
+        width: calc(~'100% - 105px');
+        color: @white;
+        height: 97px;
+
+        .info-up {
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .box-name {
+                font-family: @primary-font-light;
+                font-size: 1.5em;
+            }
+        }
+    }
+}

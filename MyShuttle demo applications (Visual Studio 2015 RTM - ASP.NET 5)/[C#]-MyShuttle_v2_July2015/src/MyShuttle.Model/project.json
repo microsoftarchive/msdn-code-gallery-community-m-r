@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "Microsoft"
+  ],
+  "description": "MyShuttle",
+  "version": "1.0.0-beta5",
+  "dependencies": {
+    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta5"
+  },
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {}
+    },
+    "dnxcore50": {
+      "dependencies": {
+      "System.Collections": "4.0.10-beta-23015",
+      "System.Linq": "4.0.0-beta-23015",
+      "System.Threading": "4.0.10-beta-23015",
+      "System.Runtime": "4.0.20-beta-23015",
+      "Microsoft.CSharp": "4.0.0-beta-23015"
+      }
+    }
+  }
+}

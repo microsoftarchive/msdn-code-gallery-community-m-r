@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="dbo_Trigger_Reviews_Del_PreventTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Reviews_Del_Prevent
+DECLARE @ReviewId AS INT;
+SELECT @ReviewId = 1;
+
+DELETE [dbo].[Reviews]
+WHERE  ReviewId = @ReviewId;
+
+
+</value>
+  </data>
+  <data name="dbo_Trigger_Reviews_InsertTest_One_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.Trigger_Reviews_Insert
+-- insert one review
+DECLARE @UserId AS INT, @StyleId AS INT, @Rating AS TINYINT, @ReviewText AS NVARCHAR (MAX), @CreatedDateTime AS DATETIME2 (7), @CreatedDateTimeUTC AS DATETIME2 (7)
+SELECT @UserId = (SELECT UserId FROM dbo.UserIdentities WHERE Email = 'Alice.Brown@example.com'),
+       @StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = '999999'),
+       @Rating = 5,
+       @ReviewText = 'Great skis',
+       @CreatedDateTime = GETDATE(),
+       @CreatedDateTimeUTC = GETUTCDATE();
+
+INSERT  INTO [dbo].[Reviews] ([UserId], [StyleId], [Rating], [ReviewText], [CreatedDateTime], [CreatedDateTimeUTC])
+VALUES                      (@UserId, @StyleId, @Rating, @ReviewText, @CreatedDateTime, @CreatedDateTimeUTC)
+
+DECLARE @averageRating AS DECIMAL(2, 1), @reviewCount AS INT;
+SELECT @averageRating = AverageRatings, @reviewCount = ReviewCount FROM dbo.StyleStates 
+	WHERE StyleId = @StyleId;
+
+IF EXISTS (SELECT ReviewId FROM dbo.Reviews WHERE StyleId = @styleId)
+	AND @averageRating = @Rating
+	AND @reviewCount = 1
+	SELECT 1;
+ELSE
+	SELECT 0;</value>
+  </data>
+  <data name="testInitializeAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run before 
+each test method (unit test) in this test class is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+-- insert a style
+DECLARE @StyleId AS INT, @StyleNo AS CHAR (6), @StyleName AS NVARCHAR (200), @BrandId AS SMALLINT, 
+	@CategoryId AS TINYINT, @GenderId AS TINYINT, @ImageBig AS NVARCHAR (300), @ImageSmall AS NVARCHAR (300), 
+	@PriceCurrent AS DECIMAL (8, 2), @PriceRegular AS DECIMAL (8, 2);
+SELECT @StyleId = (SELECT MAX(StyleId) + 1 FROM dbo.Styles),
+       @StyleNo = '999999',
+       @StyleName = 'testingStyle',
+       @BrandId = 1,
+       @CategoryId = 1,
+       @GenderId = 1,
+       @ImageBig = 'big image',
+       @ImageSmall = 'small image',
+       @PriceCurrent = 99.99,
+       @PriceRegular = 199.99;
+
+INSERT INTO [dbo].[Styles] ([StyleId], [StyleNo], [StyleName], [BrandId], [CategoryId], [GenderId], [ImageBig], 
+	[ImageSmall], [PriceCurrent], [PriceRegular])
+VALUES (@StyleId, @StyleNo, @StyleName, @BrandId, @CategoryId, @GenderId, @ImageBig, @ImageSmall, @PriceCurrent, 
+	@PriceRegular);
+    
+IF EXISTS (SELECT StyleId FROM dbo.Styles WHERE StyleNo = @StyleNo)
+	SELECT 1;
+ELSE
+	SELECT 0;
+    </value>
+  </data>
+  <data name="testCleanupAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+each test method (unit test) in this test class is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DISABLE TRIGGER [dbo].[Trigger_Styles_Del_Prevent] ON dbo.Styles;
+
+DECLARE @styleNo AS CHAR (6) = '999999';
+
+DELETE FROM dbo.StyleStates
+	WHERE StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = @styleNo);
+
+DELETE FROM dbo.Styles
+	WHERE StyleNo = @styleNo;
+
+ENABLE TRIGGER [dbo].[Trigger_Styles_Del_Prevent] ON dbo.Styles;
+</value>
+  </data>
+  <data name="dbo_Trigger_Reviews_Del_PreventTest_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+SELECT ReviewId FROM dbo.Reviews WHERE ReviewId = 1;</value>
+  </data>
+  <data name="dbo_Trigger_Reviews_InsertTest_One_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DISABLE TRIGGER [dbo].[Trigger_Reviews_Del_Prevent] ON dbo.Reviews;
+
+DELETE FROM dbo.Reviews WHERE StyleId = (SELECT styleId FROM dbo.Styles WHERE StyleNo = '999999');
+
+ENABLE TRIGGER [dbo].[Trigger_OrderItems_Del_Prevent] ON dbo.OrderItems;
+
+</value>
+  </data>
+  <data name="dbo_Trigger_Reviews_InsertTest_Two_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run after 
+the test script is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+DISABLE TRIGGER [dbo].[Trigger_Reviews_Del_Prevent] ON dbo.Reviews;
+
+DELETE FROM dbo.Reviews WHERE StyleId = (SELECT styleId FROM dbo.Styles WHERE StyleNo = '999999');
+
+ENABLE TRIGGER [dbo].[Trigger_OrderItems_Del_Prevent] ON dbo.OrderItems;</value>
+  </data>
+  <data name="dbo_Trigger_Reviews_InsertTest_Two_TestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here to exercise the database object 
+that you want to test.
+
+To test a stored procedure, invoke it here by adding 
+an EXEC statement that has appropriate parameters.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+
+-- insert one review
+DECLARE @UserId AS INT, @StyleId AS INT, @Rating AS TINYINT, @ReviewText AS NVARCHAR (MAX), @CreatedDateTime AS DATETIME2 (7), @CreatedDateTimeUTC AS DATETIME2 (7)
+SELECT @UserId = (SELECT UserId FROM dbo.UserIdentities WHERE Email = 'Alice.Brown@example.com'),
+       @StyleId = (SELECT StyleId FROM dbo.Styles WHERE StyleNo = '999999'),
+       @Rating = 5,
+       @ReviewText = 'Great skis',
+       @CreatedDateTime = GETDATE(),
+       @CreatedDateTimeUTC = GETUTCDATE();
+
+INSERT  INTO [dbo].[Reviews] ([UserId], [StyleId], [Rating], [ReviewText], [CreatedDateTime], [CreatedDateTimeUTC])
+VALUES                      (@UserId, @StyleId, @Rating, @ReviewText, @CreatedDateTime, @CreatedDateTimeUTC)
+
+--insert another review on the same style
+DECLARE @Rating2 AS TINYINT, @ReviewText2 AS NVARCHAR (MAX), @CreatedDateTime2 AS DATETIME2 (7), @CreatedDateTimeUTC2 AS DATETIME2 (7)
+SELECT @Rating2 = 1,
+       @ReviewText2 = 'Not so great',
+       @CreatedDateTime2 = GETDATE(),
+       @CreatedDateTimeUTC2 = GETUTCDATE();
+
+INSERT  INTO [dbo].[Reviews] ([UserId], [StyleId], [Rating], [ReviewText], [CreatedDateTime], [CreatedDateTimeUTC])
+VALUES                      (@UserId, @StyleId, @Rating2, @ReviewText2, @CreatedDateTime2, @CreatedDateTimeUTC2)
+
+DECLARE @averageRating AS DECIMAL(2, 1), @reviewCount AS INT;
+SELECT @averageRating = AverageRatings, @reviewCount = ReviewCount FROM dbo.StyleStates 
+	WHERE StyleId = @StyleId;
+
+IF EXISTS (SELECT ReviewId FROM dbo.Reviews WHERE StyleId = @styleId)
+	AND @averageRating =  CONVERT( DECIMAL(2, 1), (@Rating + @Rating2)/2)
+	AND @reviewCount = 2
+	SELECT 1;
+ELSE
+	SELECT 0;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

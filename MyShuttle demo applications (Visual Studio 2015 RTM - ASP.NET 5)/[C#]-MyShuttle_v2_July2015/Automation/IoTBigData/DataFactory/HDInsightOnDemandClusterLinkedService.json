@@ -1,0 +1,11 @@
+{
+    "name": "HDInsightOnDemandCluster",
+    "properties": 
+    {
+        "type": "HDInsightOnDemandLinkedService",
+        "clusterSize": "1",
+        "timeToLive": "00:05:00",
+        "Location":  "EastUS",
+        "linkedServiceName": "AzureStorage"
+    }
+}

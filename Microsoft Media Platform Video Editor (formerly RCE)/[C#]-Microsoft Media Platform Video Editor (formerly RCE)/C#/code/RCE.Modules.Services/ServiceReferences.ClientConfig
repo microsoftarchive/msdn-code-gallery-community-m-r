@@ -1,0 +1,24 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IDataService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IAssetsDataService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://w7-mb-ejadib/RCE.Web/AssetsDataService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAssetsDataService"
+                contract="AssetsDataService.IAssetsDataService" name="BasicHttpBinding_IAssetsDataService" />
+            <endpoint address="http://w7-mb-ejadib/RCE.Web/DataService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDataService"
+                contract="DataService.IDataService" name="BasicHttpBinding_IDataService" />
+        </client>
+    </system.serviceModel>
+</configuration>

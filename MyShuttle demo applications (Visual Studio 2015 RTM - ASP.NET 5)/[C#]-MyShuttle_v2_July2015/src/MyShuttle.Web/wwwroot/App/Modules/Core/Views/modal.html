@@ -1,0 +1,17 @@
+<section ng-key-enter="$close(true)" ng-selector=".modal" tabindex="1">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">&times;</button>
+        <h4 class="modal-title">{{model.headerText}}</h4>
+    </div>
+    <div class="modal-body">
+        <p>{{model.bodyText}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$close(false)">
+            {{model.cancelActionText}}
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="$close(true)">
+            {{model.confirmActionText}}
+        </button>
+    </div>
+</section>

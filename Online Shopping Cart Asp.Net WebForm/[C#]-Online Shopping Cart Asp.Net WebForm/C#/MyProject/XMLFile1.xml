@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements
+xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+  <Ad>
+    <ImageUrl>img/ad/1.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>VB.NET</Keyword>
+    
+  </Ad>
+  <Ad>
+    <ImageUrl>img/ad/2.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>XML</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>img/ad/3.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>XML</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>img/ad/4.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>XML</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>img/ad/5.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>XML</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>img/ad/6.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>XML</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>img/ad/7.jpg</ImageUrl>
+    <NavigateUrl>http://www.facebook.com/prakash.mukund</NavigateUrl>
+    <AlternateText>Visit My profile</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>XML</Keyword>
+  </Ad>
+</Advertisements>

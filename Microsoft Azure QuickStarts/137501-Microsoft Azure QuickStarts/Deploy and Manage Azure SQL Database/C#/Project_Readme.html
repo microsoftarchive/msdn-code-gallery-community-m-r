@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Deploy and Manage Azure SQL Database</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans Unicode';
+        }
+
+        .subhead {
+            font-style: italic;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deploy and Manage Azure SQL Database</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+    <p>
+        The <a href="https://msdn.microsoft.com/en-us/library/azure/dn722415.aspx">Microsoft Azure Management Libraries</a>
+        are intended for developers who want to automate
+        the management, provisioning, deprovisioning and test of cloud infrastructure with ease.
+        These services support Microsoft Azure Virtual Machines, Cloud Services, Storage, Virtual Networks,
+        Web Sites and core data center infrastructure management.
+    </p>
+
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
+    </p>
+
+    <p>
+        This Quickstart demonstrates using WAML how to provision a new Microsoft Azure SQL DB Server,
+        configure the Firewall Rules, Create a new Database, Then drop the Database and Delete the Server.
+    </p>
+    <h2>Running this sample</h2>
+    <ol>
+        <li>
+            <a href="http://go.microsoft.com/fwlink/?LinkID=276844">Download your *.publishsettings file</a>
+            from the Microsoft Azure management portal and save to to your local dive
+        </li>
+        <li>Set the <code>PublishSettingsFilePath</code> property in Program.cs</li>
+        <li>
+            Choose an [ADMIN USER] and [ADMIN PASSWORD] that you wish to use for the server.
+        </li>
+        <li>
+            Update the <code>FirewallRuleStartIP</code> and <code>FirewallRuleEndIP</code> values.
+            If you wish to add a firewall rule to allow your local development computer access
+            to the Server / Database then configure FirewallRuleStartIP and FirewallRuleEndIP to the public IP of
+            your local development machine.
+        </li>
+        <li>
+            Adjust values of any other parameter as you wish
+        </li>
+<li>Run</li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="https://msdn.microsoft.com/en-us/library/azure/dn722415.aspx">Get Started with the Management Libraries for .NET</a></li>
+    </ul>
+</body>
+</html>

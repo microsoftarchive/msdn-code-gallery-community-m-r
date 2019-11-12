@@ -1,0 +1,108 @@
+﻿<Window x:Class="OnlineTradingSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Online Trading System" Height="460" Width="568"
+        Topmost="True"
+        Loaded="Window_Loaded" Activated="Window_Activated" 
+        Icon="IconPaint.ico" Closed="Window_Closed">
+        
+    <Window.Resources >
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Style\ButtonStyle.xaml"/>
+                <ResourceDictionary Source="Style\TabStyle.xaml"/>
+                <ResourceDictionary Source="Style\BorderStyle.xaml"/>
+                <ResourceDictionary Source="Style\DatagridStyle.xaml"/>
+
+
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+
+
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid MinHeight="311" HorizontalAlignment="Left" Name="grid1" VerticalAlignment="Stretch" MinWidth="503">
+            
+            <GroupBox Header="Menu" HorizontalAlignment="Left" Name="groupBox1" VerticalAlignment="Stretch" Width="114" MinHeight="305" AllowDrop="True">
+                <Grid MinWidth="97" Background="#FFAAAAAA" SnapsToDevicePixels="False">
+                    <Button Content="Add Item"   Height="43" HorizontalAlignment="Left" Name="ItemAdd" VerticalAlignment="Top" VerticalContentAlignment="Stretch" Width="89" Margin="2,6,0,0" Click="AddItem_Click" />
+                    <ToggleButton Content="Remove Item"  Height="43" HorizontalAlignment="Left" Margin="1,203,0,0" Name="RemoveItem" VerticalAlignment="Top" Width="89" Checked="RemoveItem_Click" />
+                    <Button Content="Add Colum"   Height="43" HorizontalAlignment="Left" Margin="2,55,0,0" Name="addcolum" VerticalAlignment="Top" Width="89" Click="addcolum_Click" />
+                    <Button Content="Export Data" Height="43" HorizontalAlignment="Left" Margin="2,104,0,0" Name="Export_data" VerticalAlignment="Top" Width="89" Click="Export_data_Click"/>
+
+                    <Button Content="Main Window" Height="43" HorizontalAlignment="Left" Margin="2,353,0,0" Name="BackMainWindow" VerticalAlignment="Top" Width="89" MouseDoubleClick="BackMainWindow_MouseDoubleClick" />
+                    <Button Content="Import Data" Height="43" HorizontalAlignment="Left" Margin="2,153,0,0" Name="Import_data" VerticalAlignment="Top" Width="89" Click="Import_data_Click" />
+                    <Button Content="Product Sales" Height="43" HorizontalAlignment="Left"  Margin="2,303,0,0" Name="Product_Sales" VerticalAlignment="Top" Width="89" Click="Product_Sales_Click"/>
+                    <Button Content="Costumer List" Height="43" HorizontalAlignment="Left" Margin="2,253,0,0" Name="Costumer_List" VerticalAlignment="Top" Width="89"/>
+                    
+                    
+                </Grid>
+                <GroupBox.Background>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop Color="Black" Offset="0" />
+                        <GradientStop Color="#FFF8EFEF" Offset="1" />
+                    </LinearGradientBrush>
+                </GroupBox.Background>
+                </GroupBox>
+           
+        </Grid>
+            
+         
+            <Grid Height="auto" Margin="0,0,35,0">
+           
+        </Grid>
+         
+          <Canvas Name="canvas1" Margin="331,0,60,278">
+            <TextBlock Height="33" Name="NameofStore"  Text="TextBlock" Canvas.Left="45" Canvas.Top="3" FontSize="25" FontFamily="Showcard Gothic" VerticalAlignment="Top" />
+            <Image Height="36" Name="image1" Stretch="Fill" Width="37" Source="/OnlineTradingSystem;component/Images/market.jpg" Canvas.Left="0" Canvas.Top="3" />
+                </Canvas>
+       
+        <TabControl TabStripPlacement="Top" Margin="120,1,60,-1" HorizontalAlignment="Left">
+            <TabItem IsSelected="True" Header="Salse" Height="35">
+                <ScrollViewer>
+                  
+                    <WrapPanel MinHeight="300" MinWidth="370" MaxWidth="600" Height="Auto" HorizontalAlignment="Left" Margin="10,5,0,0" Name="Warp" VerticalAlignment="Top" Width="Auto">
+                       
+                    </WrapPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Product List" Loaded="TabItem_Loaded">
+                <!--DataGrid-->
+             
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <DataGrid Name="dataGrid1" AutoGenerateColumns="True"
+                              CanUserSortColumns="true" RowBackground="LightYellow"
+                              AlternatingRowBackground="LightBlue"
+                              SelectionMode="Extended" RowHeight="30"
+                              CanUserAddRows="False" CanUserDeleteRows="True"
+                              CanUserReorderColumns="True" CanUserResizeColumns="True"
+                              CanUserResizeRows="False" RowEditEnding="dataGrid1_RowEditEnding"    Sorting="dataGrid1_Sorting"  >
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+
+                                <Border BorderBrush="Black" >
+                                    <Canvas MinHeight="50">
+                                        
+                                    </Canvas>
+                                </Border>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Youre Site" Name="tabItem1">
+                <Grid>
+                    <WebBrowser Name="MyWebrowser"   Height="auto"
+                                HorizontalAlignment="Left" Margin="6,6,0,0"
+                                VerticalAlignment="Top"   Width="auto" Loaded="MyWebrowser_Loaded" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

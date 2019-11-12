@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html ng-app="MicrosoftGraphSPA">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Graph. AngularJS SPA</title>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/loading-bar.min.css" />
+    <link rel="stylesheet" href="/Content/font-awesome.min.css" />
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Microsoft Graph SPA</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#onedrive">
+                            <i class="fa fa-folder-o" aria-hidden="true"></i>&nbsp;OneDrive
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sp">
+                            <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;SharePoint
+                        </a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" placeholder="Search">
+                    </div>
+                    <button type="button" ng-click="search()" class="btn btn-default">Search</button>
+                </form>
+                <form class="navbar-form navbar-right" ng-if="isAuthenticated">
+                    <button type="button" ng-click="disconnect()" class="btn btn-warning">Logout</button>
+                </form>
+                <form class="navbar-form navbar-right" ng-if="!isAuthenticated">
+                    <button type="button" ng-click="connect()" class="btn btn-success">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <!-- Error message container -->
+            <div class="alert alert-danger alert-dismissible" role="alert"
+                 ng-if="error">
+                <button type="button" class="close" data-dismiss="alert" ng-click="clearError()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Error:</strong> {{error.message}}
+            </div>
+        </div>
+        <!-- AngularJS View -->
+        <div ng-view ng-if="isAuthenticated"></div>
+        <!-- User is not authenticated -->
+        <div class="alert alert-warning alert-dismissible" role="alert"
+             ng-if="!isAuthenticated">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            You are not authenticated. Click on the <strong>button at the top of page</strong>.
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">2016 - <a href="http://blog.vitalyzhukov.ru">Vitaly Zhukov</a></p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/loading-bar.min.js"></script>
+    <script src="/Scripts/angular-route.min.js"></script>
+
+    <!-- ADAL -->
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.7/js/adal.min.js"></script>
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.7/js/adal-angular.min.js"></script>
+
+    <!-- Приложение -->
+    <script src="/js/OneDriveApp.js"></script>
+
+    <!-- Контроллеры -->
+    <script src="/js/controllers/OneDriveController.js"></script>
+    <script src="/js/controllers/SearchController.js"></script>
+    <script src="/js/controllers/SPController.js"></script>
+
+    <!-- Фабрика -->
+    <script src="/js/services/OneDriveFactory.js"></script>
+    <script src="/js/services/SPFactory.js"></script>
+</body>
+</html>

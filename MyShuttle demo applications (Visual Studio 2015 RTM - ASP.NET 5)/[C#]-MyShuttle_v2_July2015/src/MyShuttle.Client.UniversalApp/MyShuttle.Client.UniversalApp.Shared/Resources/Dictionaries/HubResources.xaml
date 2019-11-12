@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="HubBase" TargetType="Hub">
+    </Style>
+
+    <Style  x:Key="HubSectionLeft" TargetType="HubSection">
+        <Setter Property="Margin" Value="75 0 0 0"/>
+        <Setter Property="IsTapEnabled" Value="True"/>
+    </Style>
+
+    <Style x:Key="MainHub" TargetType="Hub" BasedOn="{StaticResource HubBase}">
+        <Setter Property="Margin" Value="0 50 0 20"/>
+    </Style>
+
+</ResourceDictionary>

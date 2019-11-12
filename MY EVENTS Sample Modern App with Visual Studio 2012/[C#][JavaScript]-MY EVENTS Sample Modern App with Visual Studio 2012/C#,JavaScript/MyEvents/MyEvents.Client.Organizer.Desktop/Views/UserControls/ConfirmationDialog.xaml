@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.UserControls.ConfirmationDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="668" d:DesignWidth="900" Name="ConfirmDialog">
+    <Grid Background="#00FFFFFF" IsHitTestVisible="True">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="White"
+              Width="500" Height="250">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/images/faces.png" Width="180" Height="120" VerticalAlignment="Center"
+                   HorizontalAlignment="Left" Margin="20,0,20,0">
+            </Image>
+            <Button Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="15"
+                    Margin="0,10,10,0" Command="{Binding MessageDialogDeclineCommand}" Style="{DynamicResource BlankButtonStyle}" Cursor="Hand">
+                <Image Grid.Column="1" Source="/Resources/Images/ico-delete.png"></Image>
+            </Button>
+
+            
+            <TextBlock Grid.Column="1" Text="{Binding Dialog_Title, Source={StaticResource languages}}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,20,20,0"
+                       Style="{DynamicResource DialogTitleStyle}"></TextBlock>
+            
+            <TextBlock Grid.Column="1" Text="{Binding MessageText}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,70,20,0"
+                       Style="{DynamicResource DialogMessageStyle}" Height="100" TextWrapping="Wrap" TextTrimming="WordEllipsis">
+            </TextBlock>
+            
+            <Button Grid.Column="1" Content="{Binding acceptButton, Source={StaticResource languages}}" Style="{DynamicResource RedButtonStyle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,20,20,20"
+                    Width="75" Height="30" Command="{Binding MessageDialogAcceptCommand}"></Button>
+            <Button Grid.Column="1" Content="{Binding declineButton, Source={StaticResource languages}}" Style="{DynamicResource BlueButtonStyle}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,20,100,20"
+                    Width="75" Height="30" Command="{Binding MessageDialogDeclineCommand}"></Button>
+        </Grid>
+    </Grid>
+    
+    <UserControl.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding MessageDialogDeclineCommand}"></KeyBinding>
+    </UserControl.InputBindings>
+</UserControl>

@@ -1,0 +1,2881 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5695696-79C4-4D95-8A8A-C2A9BE653D0E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>bar_chart.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Neruo Business Solution</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>Neruo_Business_Solution</RootNamespace>
+    <StartupObject>Neruo_Business_Solution.My.MyApplication</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsForms</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/Neruo Business Solution/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Neruo Business Solution.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Neruo Business Solution.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Name>Accessibility</Name>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="gsxpbut10">
+      <Name>gsxpbut10</Name>
+      <HintPath>..\..\..\completed\1r-my\16 ff\16 ff\bin\gsxpbut10.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="MTGCCombobox">
+      <Name>mtgccombobox</Name>
+      <HintPath>..\..\..\completed\windows applications\mtgccombobox\testmtgccombobox\bin\mtgccombobox.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="asADO\AssConn.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asADO\AssDelete.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asADO\AssInsert.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asADO\AssSelect.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asADO\AssUpdate.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asBANK_ACCOUNT\frmBANK_WITHDRAWAL.Designer.vb">
+      <DependentUpon>frmBANK_WITHDRAWAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asBANK_ACCOUNT\frmBANK_WITHDRAWAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asCLASSES\AssComboBox.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asCLASSES\AssDataGrid.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asCLASSES\AssListBox.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asCLASSES\AssMaxNo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asCLASSES\AssNumPress.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asCLASSES\AssTextBox.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asFRENCHISE\frmPORT_REQUEST.Designer.vb">
+      <DependentUpon>frmPORT_REQUEST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asFRENCHISE\frmPORT_REQUEST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asFRENCHISE\frmCUST_AGREEMENT.Designer.vb">
+      <DependentUpon>frmCUST_AGREEMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asFRENCHISE\frmCUST_AGREEMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asFRENCHISE\frmCUST_SERVICES.Designer.vb">
+      <DependentUpon>frmCUST_SERVICES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asFRENCHISE\frmCUST_SERVICES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_PATIENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_AREA.vb">
+      <DependentUpon>dsLUP_AREA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ITEM_RTL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ITEM_CAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_EXPENSES_SUB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ITEM_OPEN_STK_ADJ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_SUPPLIER_OPEN_BAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_CLIENT_OPEN_BAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ITEM_OPEN_STK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_DESIGNATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_EMPLOYEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_BUSINESS_GROUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_BUSINESS_INFO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ITEM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_VAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_VENDORS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ROUTES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_AREA.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_AREA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_BANK.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BANK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_CLIENT_GD.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_CLIENT_GD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_CLIENT_TYPE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_CLIENT_TYPE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_EXPENSES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_EXPENSES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_SHOP_CAT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_SHOP_CAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\dsLUP_ZONE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_ZONE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_AREA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_BANK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_CLIENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_CLIENT_GD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_CLIENT_TYPE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_EXPENSES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_SHOP_CAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_SUPPLIER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asLUP_FORM\frmLUP_ZONE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asBANK_ACCOUNT\frmBANK_DEPOSIT.Designer.vb">
+      <DependentUpon>frmBANK_DEPOSIT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asBANK_ACCOUNT\frmBANK_DEPOSIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptPURCHASE_SUMMARY.Designer.vb">
+      <DependentUpon>frmRptPURCHASE_SUMMARY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptPURCHASE_SUMMARY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptCASH_LEDGER.Designer.vb">
+      <DependentUpon>frmRptCASH_LEDGER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptCASH_LEDGER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_RECOVERY_SUMMARY.Designer.vb">
+      <DependentUpon>frmRptSALESMAN_RECOVERY_SUMMARY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_RECOVERY_SUMMARY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_RECOVERY_DETAIL.Designer.vb">
+      <DependentUpon>frmRptSALESMAN_RECOVERY_DETAIL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_RECOVERY_DETAIL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_SALE_DETAIL.Designer.vb">
+      <DependentUpon>frmRptSALESMAN_SALE_DETAIL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_SALE_DETAIL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_SALE_SUMMARY.Designer.vb">
+      <DependentUpon>frmRptSALESMAN_SALE_SUMMARY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALESMAN_SALE_SUMMARY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSTOCK_HAND.Designer.vb">
+      <DependentUpon>frmRptSTOCK_HAND.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSTOCK_HAND.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALES_STOCK_SUMMARY.Designer.vb">
+      <DependentUpon>frmRptSALES_STOCK_SUMMARY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALES_STOCK_SUMMARY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALE_INVOICE.Designer.vb">
+      <DependentUpon>frmRptSALE_INVOICE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptSALE_INVOICE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptORDER_FORM.Designer.vb">
+      <DependentUpon>frmRptORDER_FORM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptORDER_FORM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptCASH_CHALLAN.Designer.vb">
+      <DependentUpon>frmRptCASH_CHALLAN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\asFORMS\frmRptCASH_CHALLAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptBANK\rptBANK_LEDGER_DS.vb">
+      <DependentUpon>rptBANK_LEDGER_DS.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptPURCHASE_SUMMARY_OVERALL.vb">
+      <DependentUpon>rptPURCHASE_SUMMARY_OVERALL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptPURCHASE_SUMMARY_SUPPLIER.vb">
+      <DependentUpon>rptPURCHASE_SUMMARY_SUPPLIER.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_RECEIPTS_HISTORY.vb">
+      <DependentUpon>rptSUPPLIER_RECEIPTS_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_PAYMENT_HISTORY.vb">
+      <DependentUpon>rptSUPPLIER_PAYMENT_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptRECOVERY_HISTORY.vb">
+      <DependentUpon>rptRECOVERY_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptRECEIPT_HISTORY.vb">
+      <DependentUpon>rptRECEIPT_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_LEDGER_DS.vb">
+      <DependentUpon>rptCASH_LEDGER_DS.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptCLIENT\rptCLIENT_LEDGER_DS.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCLIENT_LEDGER_DS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptSALES_SUMMARY_SALEMAN_WISE.vb">
+      <DependentUpon>rptSALES_SUMMARY_SALEMAN_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptSALES_SUMMARY_SALEMAN_DATE_WISE.vb">
+      <DependentUpon>rptSALES_SUMMARY_SALEMAN_DATE_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptRECOVERY_SUMMARY_SALEMAN_WISE.vb">
+      <DependentUpon>rptRECOVERY_SUMMARY_SALEMAN_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptRECOVERY_SUMMARY_SALEMAN_DATE_WISE.vb">
+      <DependentUpon>rptRECOVERY_SUMMARY_SALEMAN_DATE_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptRECOVERY_DETAIL_SALEMAN_DATE_WISE.vb">
+      <DependentUpon>rptRECOVERY_DETAIL_SALEMAN_DATE_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptRECOVERY_DETAIL_SALEMAN_WISE.vb">
+      <DependentUpon>rptRECOVERY_DETAIL_SALEMAN_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptSALES_DETAIL_SALEMAN_WISE.vb">
+      <DependentUpon>rptSALES_DETAIL_SALEMAN_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALESMAN\rptSALES_DETAIL_SALEMAN_DATE_WISE.vb">
+      <DependentUpon>rptSALES_DETAIL_SALEMAN_DATE_WISE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPANY_DT.vb">
+      <DependentUpon>rptSTOCK_HAND_COMPANY_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPLETE_DT.vb">
+      <DependentUpon>rptSTOCK_HAND_COMPLETE_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPANY_BATCH_DT.vb">
+      <DependentUpon>rptSTOCK_HAND_COMPANY_BATCH_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPLETE_BATCH_DT.vb">
+      <DependentUpon>rptSTOCK_HAND_COMPLETE_BATCH_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_CHALLAN_AREA_PREV_DT.vb">
+      <DependentUpon>rptCASH_CHALLAN_AREA_PREV_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_CHALLAN_COMPLETE_PREV_DT.vb">
+      <DependentUpon>rptCASH_CHALLAN_COMPLETE_PREV_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_CHALLAN_AREA_DT1.vb">
+      <DependentUpon>rptCASH_CHALLAN_AREA_DT1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_CHALLAN_AREA_DT.vb">
+      <DependentUpon>rptCASH_CHALLAN_AREA_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_CHALLAN_COMPLETE_DT.vb">
+      <DependentUpon>rptCASH_CHALLAN_COMPLETE_DT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_CHALLAN_COMPLETE.vb">
+      <DependentUpon>rptCASH_CHALLAN_COMPLETE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptDUMMY.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDUMMY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptITEMS\rptORDER_FORM_CATEGORY.vb">
+      <DependentUpon>rptORDER_FORM_CATEGORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptITEMS\rptORDER_FORM_COMPANY.vb">
+      <DependentUpon>rptORDER_FORM_COMPANY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptRECOVERY.vb">
+      <DependentUpon>rptRECOVERY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_STOCK_SUMMARY_AREA_DATE.vb">
+      <DependentUpon>rptSALES_STOCK_SUMMARY_AREA_DATE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_STOCK_SUMMARY_DATE.vb">
+      <DependentUpon>rptSALES_STOCK_SUMMARY_DATE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_INVOICE_NO_WS.vb">
+      <DependentUpon>rptSALES_INVOICE_NO_WS.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_INVOICE_RT.vb">
+      <DependentUpon>rptSALES_INVOICE_RT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmRECOVERY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_STOCK_SUMMARY_INV.vb">
+      <DependentUpon>rptSALES_STOCK_SUMMARY_INV.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSTOCK\rptSTOCK_LEDGER.vb">
+      <DependentUpon>rptSTOCK_LEDGER.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LEDGER_DS.vb">
+      <DependentUpon>rptSUPPLIER_LEDGER_DS.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmSALE_RETURN_PARTIAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmSALE_RETURN_WHOLE_INV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmLOADPASS_BILLING.Designer.vb">
+      <DependentUpon>frmLOADPASS_BILLING.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSALE\frmLOADPASS_BILLING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asPAYMENTS\frmEXPENSE_DETAIL.Designer.vb">
+      <DependentUpon>frmEXPENSE_DETAIL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asPAYMENTS\frmEXPENSE_DETAIL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmSUPPLIER_RECEIPT.Designer.vb">
+      <DependentUpon>frmSUPPLIER_RECEIPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmSUPPLIER_RECEIPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asPAYMENTS\frmPINV_PAYMENT.Designer.vb">
+      <DependentUpon>frmPINV_PAYMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asPAYMENTS\frmPINV_PAYMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asPURCHASE\frmPURCHASE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmRECOVERY_temp.Designer.vb">
+      <DependentUpon>frmRECOVERY_temp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmRECOVERY_temp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asPAYMENTS\frmSUPPLIER_PAYMENT.Designer.vb">
+      <DependentUpon>frmSUPPLIER_PAYMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asPAYMENTS\frmSUPPLIER_PAYMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmSINV_RECEIPT.Designer.vb">
+      <DependentUpon>frmSINV_RECEIPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmSINV_RECEIPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmCLIENT_RECEIPT.Designer.vb">
+      <DependentUpon>frmCLIENT_RECEIPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asRECEIPTS\frmCLIENT_RECEIPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREGISTER\frmREGISTRATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREGISTER\frmREG_CODE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\frmRPT1.Designer.vb">
+      <DependentUpon>frmRPT1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\frmRPT1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\frmRPT.Designer.vb">
+      <DependentUpon>frmRPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asREPORTS\frmRPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptBANK\rptBANK_ADJ_HISTORY.vb">
+      <DependentUpon>rptBANK_ADJ_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptBANK\rptBANK_WITHDRAWAL_HISTORY.vb">
+      <DependentUpon>rptBANK_WITHDRAWAL_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptBANK\rptBANK_DEPOSIT_HISTORY.vb">
+      <DependentUpon>rptBANK_DEPOSIT_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_RECEIPT_HISTORY.vb">
+      <DependentUpon>rptCASH_RECEIPT_HISTORY.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_PAYMENT_HISTORY.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCASH_PAYMENT_HISTORY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptCLIENT\rptCLIENT_CREDIT_REPORT_AREA.vb">
+      <DependentUpon>rptCLIENT_CREDIT_REPORT_AREA.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCLIENT\rptCLIENT_LIST_NON_ACTIVE.vb">
+      <DependentUpon>rptCLIENT_LIST_NON_ACTIVE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCLIENT\rptCLIENT_CREDIT_REPORT.vb">
+      <DependentUpon>rptCLIENT_CREDIT_REPORT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCLIENT\rptCLIENT_LIST_ACTIVE.vb">
+      <DependentUpon>rptCLIENT_LIST_ACTIVE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptPURCHASE\rptPURCHASE_INVOICE.vb">
+      <DependentUpon>rptPURCHASE_INVOICE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptLOADPASS_INVOICE.vb">
+      <DependentUpon>rptLOADPASS_INVOICE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_INVOICE_WS.vb">
+      <DependentUpon>rptSALES_INVOICE_WS.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asREPORTS\rptSALES\rptSALES_SUMMARY_ITEM_GpW.vb">
+      <DependentUpon>rptSALES_SUMMARY_ITEM_GpW.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCASH\rptCASH_LEDGER.vb">
+      <DependentUpon>rptCASH_LEDGER.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptCLIENT\rptCLIENT_LEDGER.vb">
+      <DependentUpon>rptCLIENT_LEDGER.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LIST_NON_ACTIVE.vb">
+      <DependentUpon>rptSUPPLIER_LIST_NON_ACTIVE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LIST_ACTIVE.vb">
+      <DependentUpon>rptSUPPLIER_LIST_ACTIVE.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_CREDIT_REPORT.vb">
+      <DependentUpon>rptSUPPLIER_CREDIT_REPORT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LEDGER.vb">
+      <DependentUpon>rptSUPPLIER_LEDGER.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="asREPORTS\rptBANK\rptBANK_LEDGER.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBANK_LEDGER.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmLOADPASS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmSALE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmSALE_RET_OPTION.Designer.vb">
+      <DependentUpon>frmSALE_RET_OPTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSALE\frmSALE_RET_OPTION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSALE\frmMOBILE_SUMMARY.Designer.vb">
+      <DependentUpon>frmMOBILE_SUMMARY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSALE\frmMOBILE_SUMMARY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_RECV_INV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSELECT_CLIENT.Designer.vb">
+      <DependentUpon>frmSELECT_CLIENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSEARCH\frmSELECT_CLIENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_LP_INV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_EXPENSE_DETAIL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_BANK_WITHDRAWAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_BANK_DEPOSIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_SUPPLIER_RECEIPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_CLIENT_RECEIPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_SUP_PAYMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSELECT_ITEM_BATCH.Designer.vb">
+      <DependentUpon>frmSELECT_ITEM_BATCH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSEARCH\frmSELECT_ITEM_BATCH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_S_INV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSEARCH_P_INV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSEARCH\frmSELECT_ITEM.Designer.vb">
+      <DependentUpon>frmSELECT_ITEM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSEARCH\frmSELECT_ITEM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmCHANGE_PASSWORD.Designer.vb">
+      <DependentUpon>frmCHANGE_PASSWORD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmCHANGE_PASSWORD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmDEFAULT_SETTING.Designer.vb">
+      <DependentUpon>frmDEFAULT_SETTING.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmDEFAULT_SETTING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmOPTIONS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmNEW_USER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\frmROTARENEG_YEK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asSECURITY_LIB\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="asUPDATION\frmUPDATE_ITEM.Designer.vb">
+      <DependentUpon>frmUPDATE_ITEM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="asUPDATION\frmUPDATE_ITEM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dsBANK_DEPOSIT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBANK_DEPOSIT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBANK_DEP_NEW.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBANK_DEP_NEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBANK_WITHDRAWAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBANK_WITHDRAWAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCLIENT_INFO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCLIENT_INFO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCLIENT_INFO1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCLIENT_INFO1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCLIENT_RECEIPT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCLIENT_RECEIPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCmbItem.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCmbItem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEXPENSE_DETAIL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEXPENSE_DETAIL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsITEM_LIST.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsITEM_LIST.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsITEM_OPEN_STK_ADJ.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsITEM_OPEN_STK_ADJ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsITEM_OPEN_STK_ADJ1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsITEM_OPEN_STK_ADJ1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_BANK_NEW.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BANK_NEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_BANK_NEW1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BANK_NEW1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_BUSINESS_GROUP.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BUSINESS_GROUP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsLUP_BUSINESS_GROUP1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsLUP_BUSINESS_GROUP1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_BUSINESS_GROUP_NEW.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BUSINESS_GROUP_NEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_BUSINESS_GROUP_NEW1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BUSINESS_GROUP_NEW1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_BUSINESS_INFO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_BUSINESS_INFO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_CLIENT_OPEN_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_CLIENT_OPEN_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_CLIENT_OPEN_BAL_dt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_CLIENT_OPEN_BAL_dt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_DESIGNATION.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_DESIGNATION.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_DISEASE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_DISEASE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_EMPLOYEE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_EMPLOYEE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_EMPLOYEE1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_EMPLOYEE1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_EXPENSE_SUB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_EXPENSE_SUB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_ITEM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_ITEM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_ITEM1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_ITEM1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_ITEM_CAT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_ITEM_CAT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_PANEL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_PANEL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_ROUTES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_ROUTES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_SUPPLIER_OPEN_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_SUPPLIER_OPEN_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_VAN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_VAN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_VAN1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_VAN1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_VENDOR.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_VENDOR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLUP_VENDOR1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLUP_VENDOR1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsNS_DEFAULT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNS_DEFAULT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPURCHASE_INVOICES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPURCHASE_INVOICES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPURCHASE_MASTER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPURCHASE_MASTER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRptBANK_LEDGER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRptBANK_LEDGER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRptCASH_LEDGER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRptCASH_LEDGER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRptCLIENT_LEDGER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRptCLIENT_LEDGER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRptSUPPLIER_LEDGER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRptSUPPLIER_LEDGER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSUPPLIER_INFO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSUPPLIER_INFO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSUPPLIER_INFO1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSUPPLIER_INFO1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSUPPLIER_PAYMENT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSUPPLIER_PAYMENT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSUPPLIER_RECEIPT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSUPPLIER_RECEIPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSV_BANK_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSV_BANK_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSV_CASH_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSV_CASH_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSV_STOCK_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSV_STOCK_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsTEMP_LEDGER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTEMP_LEDGER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_CLIENT_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_CLIENT_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_CLIENT_RECEIPT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_CLIENT_RECEIPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_CLIENT_STANDBY_CHEQ.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_CLIENT_STANDBY_CHEQ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_CLIENT_STANDBY_CHEQ.vb">
+      <DependentUpon>dsV_CLIENT_STANDBY_CHEQ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_EXPENSE_SUB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_EXPENSE_SUB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_ITEM_OPEN_STK.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_ITEM_OPEN_STK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_ITEM_OPEN_STK1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_ITEM_OPEN_STK1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_LUP_ITEM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_LUP_ITEM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_LUP_ITEM_NEW.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_LUP_ITEM_NEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_MOBILE_ISSUE_DETAIL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_MOBILE_ISSUE_DETAIL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_MOBILE_ISSUE_MASTER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_MOBILE_ISSUE_MASTER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_MOBILE_ISSUE_MASTER1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_MOBILE_ISSUE_MASTER1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_PATIENT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_PATIENT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_PATIENT1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_PATIENT1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_PURCHASE_DETAIL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_PURCHASE_DETAIL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_RECOVERY.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_RECOVERY.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SALE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SALE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SALE_DETAIL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SALE_DETAIL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SALE_INVOICES.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SALE_INVOICES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SALE_MASTER.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SALE_MASTER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SELECT_ITEM_BATCH.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SELECT_ITEM_BATCH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_STOCK_NET_TOT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_STOCK_NET_TOT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SUPPLIER_BAL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SUPPLIER_BAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsV_SUPPLIER_PAYMENT.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsV_SUPPLIER_PAYMENT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_FORM\AboutBox_NeuroBS.Designer.vb">
+      <DependentUpon>AboutBox_NeuroBS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_FORM\AboutBox_NeuroBS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN_FORM\Registration_NeuroBS.Designer.vb">
+      <DependentUpon>Registration_NeuroBS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_FORM\Registration_NeuroBS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN_FORM\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_FORM\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN_FORM\FrmMn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN_FORM\SplashScreen_NeuroBS.Designer.vb">
+      <DependentUpon>SplashScreen_NeuroBS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_FORM\SplashScreen_NeuroBS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN_FORM\WELCOME.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TESTING\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTING\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTING\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTING\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTING\Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTING\Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTING\FrmControls.Designer.vb">
+      <DependentUpon>FrmControls.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TESTING\FrmControls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTING\frmTESTING.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTING\TEMP_LEDGER.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TEMP_LEDGER.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="asBANK_ACCOUNT\frmBANK_WITHDRAWAL.resx">
+      <DependentUpon>frmBANK_WITHDRAWAL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asFRENCHISE\frmCUST_AGREEMENT.resx">
+      <DependentUpon>frmCUST_AGREEMENT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asFRENCHISE\frmCUST_SERVICES.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCUST_SERVICES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asFRENCHISE\frmPORT_REQUEST.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPORT_REQUEST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_PATIENT.resx">
+      <DependentUpon>frmLUP_PATIENT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ITEM_RTL.resx">
+      <DependentUpon>frmLUP_ITEM_RTL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ITEM_CAT.resx">
+      <DependentUpon>frmLUP_ITEM_CAT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_EXPENSES_SUB.resx">
+      <DependentUpon>frmLUP_EXPENSES_SUB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ITEM_OPEN_STK_ADJ.resx">
+      <DependentUpon>frmLUP_ITEM_OPEN_STK_ADJ.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_SUPPLIER_OPEN_BAL.resx">
+      <DependentUpon>frmLUP_SUPPLIER_OPEN_BAL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_CLIENT_OPEN_BAL.resx">
+      <DependentUpon>frmLUP_CLIENT_OPEN_BAL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ITEM_OPEN_STK.resx">
+      <DependentUpon>frmLUP_ITEM_OPEN_STK.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_DESIGNATION.resx">
+      <DependentUpon>frmLUP_DESIGNATION.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_EMPLOYEE.resx">
+      <DependentUpon>frmLUP_EMPLOYEE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_BUSINESS_GROUP.resx">
+      <DependentUpon>frmLUP_BUSINESS_GROUP.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_BUSINESS_INFO.resx">
+      <DependentUpon>frmLUP_BUSINESS_INFO.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ITEM.resx">
+      <DependentUpon>frmLUP_ITEM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_VAN.resx">
+      <DependentUpon>frmLUP_VAN.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_VENDORS.resx">
+      <DependentUpon>frmLUP_VENDORS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ROUTES.resx">
+      <DependentUpon>frmLUP_ROUTES.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_AREA.resx">
+      <DependentUpon>frmLUP_AREA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_BANK.resx">
+      <DependentUpon>frmLUP_BANK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_CLIENT.resx">
+      <DependentUpon>frmLUP_CLIENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_CLIENT_GD.resx">
+      <DependentUpon>frmLUP_CLIENT_GD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_CLIENT_TYPE.resx">
+      <DependentUpon>frmLUP_CLIENT_TYPE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_EXPENSES.resx">
+      <DependentUpon>frmLUP_EXPENSES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_SHOP_CAT.resx">
+      <DependentUpon>frmLUP_SHOP_CAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_SUPPLIER.resx">
+      <DependentUpon>frmLUP_SUPPLIER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asLUP_FORM\frmLUP_ZONE.resx">
+      <DependentUpon>frmLUP_ZONE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asBANK_ACCOUNT\frmBANK_DEPOSIT.resx">
+      <DependentUpon>frmBANK_DEPOSIT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptPURCHASE_SUMMARY.resx">
+      <DependentUpon>frmRptPURCHASE_SUMMARY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptCASH_LEDGER.resx">
+      <DependentUpon>frmRptCASH_LEDGER.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSALESMAN_RECOVERY_SUMMARY.resx">
+      <DependentUpon>frmRptSALESMAN_RECOVERY_SUMMARY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSALESMAN_RECOVERY_DETAIL.resx">
+      <DependentUpon>frmRptSALESMAN_RECOVERY_DETAIL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSALESMAN_SALE_DETAIL.resx">
+      <DependentUpon>frmRptSALESMAN_SALE_DETAIL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSALESMAN_SALE_SUMMARY.resx">
+      <DependentUpon>frmRptSALESMAN_SALE_SUMMARY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSTOCK_HAND.resx">
+      <DependentUpon>frmRptSTOCK_HAND.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSALES_STOCK_SUMMARY.resx">
+      <DependentUpon>frmRptSALES_STOCK_SUMMARY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptSALE_INVOICE.resx">
+      <DependentUpon>frmRptSALE_INVOICE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptORDER_FORM.resx">
+      <DependentUpon>frmRptORDER_FORM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\asFORMS\frmRptCASH_CHALLAN.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRptCASH_CHALLAN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptBANK\rptBANK_LEDGER_DS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBANK_LEDGER_DS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptPURCHASE_SUMMARY_OVERALL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPURCHASE_SUMMARY_OVERALL.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptPURCHASE_SUMMARY_SUPPLIER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPURCHASE_SUMMARY_SUPPLIER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_RECEIPTS_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_RECEIPTS_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_PAYMENT_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_PAYMENT_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptRECOVERY_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECOVERY_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptRECEIPT_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECEIPT_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_LEDGER_DS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_LEDGER_DS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCLIENT\rptCLIENT_LEDGER_DS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCLIENT_LEDGER_DS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptSALES_SUMMARY_SALEMAN_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_SUMMARY_SALEMAN_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptSALES_SUMMARY_SALEMAN_DATE_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_SUMMARY_SALEMAN_DATE_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptRECOVERY_SUMMARY_SALEMAN_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECOVERY_SUMMARY_SALEMAN_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptRECOVERY_SUMMARY_SALEMAN_DATE_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECOVERY_SUMMARY_SALEMAN_DATE_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptRECOVERY_DETAIL_SALEMAN_DATE_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECOVERY_DETAIL_SALEMAN_DATE_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptRECOVERY_DETAIL_SALEMAN_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECOVERY_DETAIL_SALEMAN_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptSALES_DETAIL_SALEMAN_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_DETAIL_SALEMAN_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALESMAN\rptSALES_DETAIL_SALEMAN_DATE_WISE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_DETAIL_SALEMAN_DATE_WISE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPANY_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSTOCK_HAND_COMPANY_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPLETE_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSTOCK_HAND_COMPLETE_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPANY_BATCH_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSTOCK_HAND_COMPANY_BATCH_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSTOCK\rptSTOCK_HAND_COMPLETE_BATCH_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSTOCK_HAND_COMPLETE_BATCH_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_CHALLAN_AREA_PREV_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_CHALLAN_AREA_PREV_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_CHALLAN_COMPLETE_PREV_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_CHALLAN_COMPLETE_PREV_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_CHALLAN_AREA_DT1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_CHALLAN_AREA_DT1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_CHALLAN_AREA_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_CHALLAN_AREA_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_CHALLAN_COMPLETE_DT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_CHALLAN_COMPLETE_DT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_CHALLAN_COMPLETE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_CHALLAN_COMPLETE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptDUMMY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDUMMY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptITEMS\rptORDER_FORM_CATEGORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptORDER_FORM_CATEGORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptITEMS\rptORDER_FORM_COMPANY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptORDER_FORM_COMPANY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptRECOVERY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRECOVERY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_STOCK_SUMMARY_AREA_DATE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_STOCK_SUMMARY_AREA_DATE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_STOCK_SUMMARY_DATE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_STOCK_SUMMARY_DATE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_INVOICE_NO_WS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_INVOICE_NO_WS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_INVOICE_RT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_INVOICE_RT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asRECEIPTS\frmRECOVERY.resx">
+      <DependentUpon>frmRECOVERY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_STOCK_SUMMARY_INV.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_STOCK_SUMMARY_INV.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSTOCK\rptSTOCK_LEDGER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSTOCK_LEDGER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LEDGER_DS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_LEDGER_DS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmSALE_RETURN_PARTIAL.resx">
+      <DependentUpon>frmSALE_RETURN_PARTIAL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmSALE_RETURN_WHOLE_INV.resx">
+      <DependentUpon>frmSALE_RETURN_WHOLE_INV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmLOADPASS_BILLING.resx">
+      <DependentUpon>frmLOADPASS_BILLING.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asPAYMENTS\frmEXPENSE_DETAIL.resx">
+      <DependentUpon>frmEXPENSE_DETAIL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asRECEIPTS\frmSUPPLIER_RECEIPT.resx">
+      <DependentUpon>frmSUPPLIER_RECEIPT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asPAYMENTS\frmPINV_PAYMENT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPINV_PAYMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asPURCHASE\frmPURCHASE.resx">
+      <DependentUpon>frmPURCHASE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asRECEIPTS\frmRECOVERY_temp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRECOVERY_temp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asPAYMENTS\frmSUPPLIER_PAYMENT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSUPPLIER_PAYMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asRECEIPTS\frmSINV_RECEIPT.resx">
+      <DependentUpon>frmSINV_RECEIPT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asRECEIPTS\frmCLIENT_RECEIPT.resx">
+      <DependentUpon>frmCLIENT_RECEIPT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREGISTER\frmREGISTRATION.resx">
+      <DependentUpon>frmREGISTRATION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREGISTER\frmREG_CODE.resx">
+      <DependentUpon>frmREG_CODE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\frmRPT1.resx">
+      <DependentUpon>frmRPT1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\frmRPT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptBANK\rptBANK_ADJ_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBANK_ADJ_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptBANK\rptBANK_WITHDRAWAL_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBANK_WITHDRAWAL_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptBANK\rptBANK_DEPOSIT_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBANK_DEPOSIT_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_RECEIPT_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_RECEIPT_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_PAYMENT_HISTORY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_PAYMENT_HISTORY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCLIENT\rptCLIENT_CREDIT_REPORT_AREA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCLIENT_CREDIT_REPORT_AREA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCLIENT\rptCLIENT_LIST_NON_ACTIVE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCLIENT_LIST_NON_ACTIVE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCLIENT\rptCLIENT_CREDIT_REPORT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCLIENT_CREDIT_REPORT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCLIENT\rptCLIENT_LIST_ACTIVE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCLIENT_LIST_ACTIVE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptPURCHASE\rptPURCHASE_INVOICE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPURCHASE_INVOICE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptLOADPASS_INVOICE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLOADPASS_INVOICE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_INVOICE_WS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_INVOICE_WS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSALES\rptSALES_SUMMARY_ITEM_GpW.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSALES_SUMMARY_ITEM_GpW.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCASH\rptCASH_LEDGER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCASH_LEDGER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptCLIENT\rptCLIENT_LEDGER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCLIENT_LEDGER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LIST_NON_ACTIVE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_LIST_NON_ACTIVE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LIST_ACTIVE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_LIST_ACTIVE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_CREDIT_REPORT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_CREDIT_REPORT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptSUPPLIER\rptSUPPLIER_LEDGER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUPPLIER_LEDGER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asREPORTS\rptBANK\rptBANK_LEDGER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBANK_LEDGER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmLOADPASS.resx">
+      <DependentUpon>frmLOADPASS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmSALE.resx">
+      <DependentUpon>frmSALE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmSALE_RET_OPTION.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSALE_RET_OPTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSALE\frmMOBILE_SUMMARY.resx">
+      <DependentUpon>frmMOBILE_SUMMARY.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_RECV_INV.resx">
+      <DependentUpon>frmSEARCH_RECV_INV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSELECT_CLIENT.resx">
+      <DependentUpon>frmSELECT_CLIENT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_LP_INV.resx">
+      <DependentUpon>frmSEARCH_LP_INV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_EXPENSE_DETAIL.resx">
+      <DependentUpon>frmSEARCH_EXPENSE_DETAIL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_BANK_WITHDRAWAL.resx">
+      <DependentUpon>frmSEARCH_BANK_WITHDRAWAL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_BANK_DEPOSIT.resx">
+      <DependentUpon>frmSEARCH_BANK_DEPOSIT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_SUPPLIER_RECEIPT.resx">
+      <DependentUpon>frmSEARCH_SUPPLIER_RECEIPT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_CLIENT_RECEIPT.resx">
+      <DependentUpon>frmSEARCH_CLIENT_RECEIPT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_SUP_PAYMENT.resx">
+      <DependentUpon>frmSEARCH_SUP_PAYMENT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSELECT_ITEM_BATCH.resx">
+      <DependentUpon>frmSELECT_ITEM_BATCH.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_S_INV.resx">
+      <DependentUpon>frmSEARCH_S_INV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSEARCH_P_INV.resx">
+      <DependentUpon>frmSEARCH_P_INV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSEARCH\frmSELECT_ITEM.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSELECT_ITEM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSECURITY_LIB\frmCHANGE_PASSWORD.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCHANGE_PASSWORD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSECURITY_LIB\frmDEFAULT_SETTING.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDEFAULT_SETTING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSECURITY_LIB\frmOPTIONS.resx">
+      <DependentUpon>frmOPTIONS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSECURITY_LIB\frmNEW_USER.resx">
+      <DependentUpon>frmNEW_USER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSECURITY_LIB\frmROTARENEG_YEK.resx">
+      <DependentUpon>frmROTARENEG_YEK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asSECURITY_LIB\LoginForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="asUPDATION\frmUPDATE_ITEM.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUPDATE_ITEM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN_FORM\AboutBox_NeuroBS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox_NeuroBS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN_FORM\Registration_NeuroBS.resx">
+      <DependentUpon>Registration_NeuroBS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN_FORM\frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN_FORM\FrmMn.resx">
+      <DependentUpon>FrmMn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN_FORM\SplashScreen_NeuroBS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen_NeuroBS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN_FORM\WELCOME.resx">
+      <DependentUpon>WELCOME.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTING\Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTING\Form2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTING\Form3.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTING\FrmControls.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmControls.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTING\frmTESTING.resx">
+      <DependentUpon>frmTESTING.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTING\TEMP_LEDGER.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TEMP_LEDGER.vb</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="asLUP_FORM\dsLUP_AREA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_AREA.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="asLUP_FORM\dsLUP_BANK.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BANK.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="asLUP_FORM\dsLUP_CLIENT_GD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_CLIENT_GD.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="asLUP_FORM\dsLUP_CLIENT_TYPE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_CLIENT_TYPE.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="asLUP_FORM\dsLUP_EXPENSES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_EXPENSES.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="asLUP_FORM\dsLUP_SHOP_CAT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_SHOP_CAT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="asLUP_FORM\dsLUP_ZONE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_ZONE.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bar_chart.ico" />
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+    <None Include="asLUP_FORM\dsLUP_AREA.xss">
+      <DependentUpon>dsLUP_AREA.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_CLIENT_OPEN_BAL_dt.xsc">
+      <DependentUpon>dsLUP_CLIENT_OPEN_BAL_dt.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_CLIENT_OPEN_BAL_dt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_CLIENT_OPEN_BAL_dt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_CLIENT_OPEN_BAL_dt.xss">
+      <DependentUpon>dsLUP_CLIENT_OPEN_BAL_dt.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_DISEASE.xsc">
+      <DependentUpon>dsLUP_DISEASE.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_DISEASE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_DISEASE.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_DISEASE.xss">
+      <DependentUpon>dsLUP_DISEASE.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_PANEL.xsc">
+      <DependentUpon>dsLUP_PANEL.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_PANEL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_PANEL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_PANEL.xss">
+      <DependentUpon>dsLUP_PANEL.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VENDOR1.xsc">
+      <DependentUpon>dsLUP_VENDOR1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VENDOR1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_VENDOR1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_VENDOR1.xss">
+      <DependentUpon>dsLUP_VENDOR1.xsd</DependentUpon>
+    </None>
+    <None Include="dsNS_DEFAULT.xsc">
+      <DependentUpon>dsNS_DEFAULT.xsd</DependentUpon>
+    </None>
+    <None Include="dsNS_DEFAULT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNS_DEFAULT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsNS_DEFAULT.xss">
+      <DependentUpon>dsNS_DEFAULT.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptBANK_LEDGER.xsc">
+      <DependentUpon>dsRptBANK_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptBANK_LEDGER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRptBANK_LEDGER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRptBANK_LEDGER.xss">
+      <DependentUpon>dsRptBANK_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptCASH_LEDGER.xsc">
+      <DependentUpon>dsRptCASH_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptCASH_LEDGER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRptCASH_LEDGER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRptCASH_LEDGER.xss">
+      <DependentUpon>dsRptCASH_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptCLIENT_LEDGER.xsc">
+      <DependentUpon>dsRptCLIENT_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptCLIENT_LEDGER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRptCLIENT_LEDGER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRptCLIENT_LEDGER.xss">
+      <DependentUpon>dsRptCLIENT_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptSUPPLIER_LEDGER.xsc">
+      <DependentUpon>dsRptSUPPLIER_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsRptSUPPLIER_LEDGER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRptSUPPLIER_LEDGER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRptSUPPLIER_LEDGER.xss">
+      <DependentUpon>dsRptSUPPLIER_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsSV_STOCK_BAL.xsc">
+      <DependentUpon>dsSV_STOCK_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsSV_STOCK_BAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSV_STOCK_BAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSV_STOCK_BAL.xss">
+      <DependentUpon>dsSV_STOCK_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsTEMP_LEDGER.xsc">
+      <DependentUpon>dsTEMP_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsTEMP_LEDGER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTEMP_LEDGER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsTEMP_LEDGER.xss">
+      <DependentUpon>dsTEMP_LEDGER.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_LUP_ITEM_NEW.xsc">
+      <DependentUpon>dsV_LUP_ITEM_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_LUP_ITEM_NEW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_LUP_ITEM_NEW.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_LUP_ITEM_NEW.xss">
+      <DependentUpon>dsV_LUP_ITEM_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_PATIENT.xsc">
+      <DependentUpon>dsV_PATIENT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_PATIENT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_PATIENT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_PATIENT.xss">
+      <DependentUpon>dsV_PATIENT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_PATIENT1.xsc">
+      <DependentUpon>dsV_PATIENT1.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_PATIENT1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_PATIENT1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_PATIENT1.xss">
+      <DependentUpon>dsV_PATIENT1.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE.xsc">
+      <DependentUpon>dsV_SALE.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SALE.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SALE.xss">
+      <DependentUpon>dsV_SALE.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\211124231_d7e8d06e66_o.jpg" />
+    <None Include="asLUP_FORM\dsLUP_AREA.xsc">
+      <DependentUpon>dsLUP_AREA.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_BANK.xsc">
+      <DependentUpon>dsLUP_BANK.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_CLIENT_GD.xsc">
+      <DependentUpon>dsLUP_CLIENT_GD.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_CLIENT_GD.xss">
+      <DependentUpon>dsLUP_CLIENT_GD.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_CLIENT_TYPE.xsc">
+      <DependentUpon>dsLUP_CLIENT_TYPE.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_EXPENSES.xsc">
+      <DependentUpon>dsLUP_EXPENSES.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_EXPENSES.xss">
+      <DependentUpon>dsLUP_EXPENSES.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_SHOP_CAT.xsc">
+      <DependentUpon>dsLUP_SHOP_CAT.xsd</DependentUpon>
+    </None>
+    <None Include="asLUP_FORM\dsLUP_ZONE.xsc">
+      <DependentUpon>dsLUP_ZONE.xsd</DependentUpon>
+    </None>
+    <None Include="dsBANK_DEPOSIT.xsc">
+      <DependentUpon>dsBANK_DEPOSIT.xsd</DependentUpon>
+    </None>
+    <None Include="dsBANK_DEPOSIT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBANK_DEPOSIT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsBANK_DEPOSIT.xss">
+      <DependentUpon>dsBANK_DEPOSIT.xsd</DependentUpon>
+    </None>
+    <None Include="dsBANK_DEP_NEW.xsc">
+      <DependentUpon>dsBANK_DEP_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsBANK_DEP_NEW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBANK_DEP_NEW.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsBANK_DEP_NEW.xss">
+      <DependentUpon>dsBANK_DEP_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsBANK_WITHDRAWAL.xsc">
+      <DependentUpon>dsBANK_WITHDRAWAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsBANK_WITHDRAWAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBANK_WITHDRAWAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsBANK_WITHDRAWAL.xss">
+      <DependentUpon>dsBANK_WITHDRAWAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsCLIENT_INFO.xsc">
+      <DependentUpon>dsCLIENT_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="dsCLIENT_INFO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCLIENT_INFO.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCLIENT_INFO.xss">
+      <DependentUpon>dsCLIENT_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="dsCLIENT_INFO1.xsc">
+      <DependentUpon>dsCLIENT_INFO1.xsd</DependentUpon>
+    </None>
+    <None Include="dsCLIENT_INFO1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCLIENT_INFO1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCLIENT_INFO1.xss">
+      <DependentUpon>dsCLIENT_INFO1.xsd</DependentUpon>
+    </None>
+    <None Include="dsCLIENT_RECEIPT.xsc">
+      <DependentUpon>dsCLIENT_RECEIPT.xsd</DependentUpon>
+    </None>
+    <None Include="dsCLIENT_RECEIPT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCLIENT_RECEIPT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCLIENT_RECEIPT.xss">
+      <DependentUpon>dsCLIENT_RECEIPT.xsd</DependentUpon>
+    </None>
+    <None Include="dsCmbItem.xsc">
+      <DependentUpon>dsCmbItem.xsd</DependentUpon>
+    </None>
+    <None Include="dsCmbItem.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCmbItem.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCmbItem.xss">
+      <DependentUpon>dsCmbItem.xsd</DependentUpon>
+    </None>
+    <None Include="dsEXPENSE_DETAIL.xsc">
+      <DependentUpon>dsEXPENSE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsEXPENSE_DETAIL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEXPENSE_DETAIL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsEXPENSE_DETAIL.xss">
+      <DependentUpon>dsEXPENSE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsITEM_LIST.xsc">
+      <DependentUpon>dsITEM_LIST.xsd</DependentUpon>
+    </None>
+    <None Include="dsITEM_LIST.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsITEM_LIST.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsITEM_LIST.xss">
+      <DependentUpon>dsITEM_LIST.xsd</DependentUpon>
+    </None>
+    <None Include="dsITEM_OPEN_STK_ADJ.xsc">
+      <DependentUpon>dsITEM_OPEN_STK_ADJ.xsd</DependentUpon>
+    </None>
+    <None Include="dsITEM_OPEN_STK_ADJ.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsITEM_OPEN_STK_ADJ.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsITEM_OPEN_STK_ADJ.xss">
+      <DependentUpon>dsITEM_OPEN_STK_ADJ.xsd</DependentUpon>
+    </None>
+    <None Include="dsITEM_OPEN_STK_ADJ1.xsc">
+      <DependentUpon>dsITEM_OPEN_STK_ADJ1.xsd</DependentUpon>
+    </None>
+    <None Include="dsITEM_OPEN_STK_ADJ1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsITEM_OPEN_STK_ADJ1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsITEM_OPEN_STK_ADJ1.xss">
+      <DependentUpon>dsITEM_OPEN_STK_ADJ1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BANK_NEW.xsc">
+      <DependentUpon>dsLUP_BANK_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BANK_NEW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BANK_NEW.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_BANK_NEW.xss">
+      <DependentUpon>dsLUP_BANK_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BANK_NEW1.xsc">
+      <DependentUpon>dsLUP_BANK_NEW1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BANK_NEW1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BANK_NEW1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_BANK_NEW1.xss">
+      <DependentUpon>dsLUP_BANK_NEW1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP.xsc">
+      <DependentUpon>dsLUP_BUSINESS_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BUSINESS_GROUP.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP.xss">
+      <DependentUpon>dsLUP_BUSINESS_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DsLUP_BUSINESS_GROUP1.xsc">
+      <DependentUpon>DsLUP_BUSINESS_GROUP1.xsd</DependentUpon>
+    </None>
+    <None Include="DsLUP_BUSINESS_GROUP1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsLUP_BUSINESS_GROUP1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsLUP_BUSINESS_GROUP1.xss">
+      <DependentUpon>DsLUP_BUSINESS_GROUP1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP_NEW.xsc">
+      <DependentUpon>dsLUP_BUSINESS_GROUP_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP_NEW.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BUSINESS_GROUP_NEW.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP_NEW.xss">
+      <DependentUpon>dsLUP_BUSINESS_GROUP_NEW.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP_NEW1.xsc">
+      <DependentUpon>dsLUP_BUSINESS_GROUP_NEW1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP_NEW1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BUSINESS_GROUP_NEW1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsLUP_BUSINESS_GROUP_NEW1.xss">
+      <DependentUpon>dsLUP_BUSINESS_GROUP_NEW1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_INFO.xsc">
+      <DependentUpon>dsLUP_BUSINESS_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_BUSINESS_INFO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_BUSINESS_INFO.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_BUSINESS_INFO.xss">
+      <DependentUpon>dsLUP_BUSINESS_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_CLIENT_OPEN_BAL.xsc">
+      <DependentUpon>dsLUP_CLIENT_OPEN_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_CLIENT_OPEN_BAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_CLIENT_OPEN_BAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_CLIENT_OPEN_BAL.xss">
+      <DependentUpon>dsLUP_CLIENT_OPEN_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_DESIGNATION.xsc">
+      <DependentUpon>dsLUP_DESIGNATION.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_DESIGNATION.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_DESIGNATION.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_DESIGNATION.xss">
+      <DependentUpon>dsLUP_DESIGNATION.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_EMPLOYEE.xsc">
+      <DependentUpon>dsLUP_EMPLOYEE.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_EMPLOYEE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_EMPLOYEE.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_EMPLOYEE.xss">
+      <DependentUpon>dsLUP_EMPLOYEE.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_EMPLOYEE1.xsc">
+      <DependentUpon>dsLUP_EMPLOYEE1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_EMPLOYEE1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_EMPLOYEE1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_EMPLOYEE1.xss">
+      <DependentUpon>dsLUP_EMPLOYEE1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_EXPENSE_SUB.xsc">
+      <DependentUpon>dsLUP_EXPENSE_SUB.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_EXPENSE_SUB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_EXPENSE_SUB.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_EXPENSE_SUB.xss">
+      <DependentUpon>dsLUP_EXPENSE_SUB.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ITEM.xsc">
+      <DependentUpon>dsLUP_ITEM.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ITEM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_ITEM.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_ITEM.xss">
+      <DependentUpon>dsLUP_ITEM.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ITEM1.xsc">
+      <DependentUpon>dsLUP_ITEM1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ITEM1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_ITEM1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_ITEM1.xss">
+      <DependentUpon>dsLUP_ITEM1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ITEM_CAT.xsc">
+      <DependentUpon>dsLUP_ITEM_CAT.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ITEM_CAT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_ITEM_CAT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_ITEM_CAT.xss">
+      <DependentUpon>dsLUP_ITEM_CAT.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ROUTES.xsc">
+      <DependentUpon>dsLUP_ROUTES.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_ROUTES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_ROUTES.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_ROUTES.xss">
+      <DependentUpon>dsLUP_ROUTES.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_SUPPLIER_OPEN_BAL.xsc">
+      <DependentUpon>dsLUP_SUPPLIER_OPEN_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_SUPPLIER_OPEN_BAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_SUPPLIER_OPEN_BAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_SUPPLIER_OPEN_BAL.xss">
+      <DependentUpon>dsLUP_SUPPLIER_OPEN_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VAN.xsc">
+      <DependentUpon>dsLUP_VAN.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VAN.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_VAN.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_VAN.xss">
+      <DependentUpon>dsLUP_VAN.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VAN1.xsc">
+      <DependentUpon>dsLUP_VAN1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VAN1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_VAN1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_VAN1.xss">
+      <DependentUpon>dsLUP_VAN1.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VENDOR.xsc">
+      <DependentUpon>dsLUP_VENDOR.xsd</DependentUpon>
+    </None>
+    <None Include="dsLUP_VENDOR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLUP_VENDOR.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLUP_VENDOR.xss">
+      <DependentUpon>dsLUP_VENDOR.xsd</DependentUpon>
+    </None>
+    <None Include="dsPURCHASE_INVOICES.xsc">
+      <DependentUpon>dsPURCHASE_INVOICES.xsd</DependentUpon>
+    </None>
+    <None Include="dsPURCHASE_INVOICES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPURCHASE_INVOICES.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPURCHASE_INVOICES.xss">
+      <DependentUpon>dsPURCHASE_INVOICES.xsd</DependentUpon>
+    </None>
+    <None Include="dsPURCHASE_MASTER.xsc">
+      <DependentUpon>dsPURCHASE_MASTER.xsd</DependentUpon>
+    </None>
+    <None Include="dsPURCHASE_MASTER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPURCHASE_MASTER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPURCHASE_MASTER.xss">
+      <DependentUpon>dsPURCHASE_MASTER.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_INFO.xsc">
+      <DependentUpon>dsSUPPLIER_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_INFO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSUPPLIER_INFO.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSUPPLIER_INFO.xss">
+      <DependentUpon>dsSUPPLIER_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_INFO1.xsc">
+      <DependentUpon>dsSUPPLIER_INFO1.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_INFO1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSUPPLIER_INFO1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSUPPLIER_INFO1.xss">
+      <DependentUpon>dsSUPPLIER_INFO1.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_PAYMENT.xsc">
+      <DependentUpon>dsSUPPLIER_PAYMENT.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_PAYMENT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSUPPLIER_PAYMENT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSUPPLIER_PAYMENT.xss">
+      <DependentUpon>dsSUPPLIER_PAYMENT.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_RECEIPT.xsc">
+      <DependentUpon>dsSUPPLIER_RECEIPT.xsd</DependentUpon>
+    </None>
+    <None Include="dsSUPPLIER_RECEIPT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSUPPLIER_RECEIPT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSUPPLIER_RECEIPT.xss">
+      <DependentUpon>dsSUPPLIER_RECEIPT.xsd</DependentUpon>
+    </None>
+    <None Include="dsSV_BANK_BAL.xsc">
+      <DependentUpon>dsSV_BANK_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsSV_BANK_BAL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSV_BANK_BAL.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsSV_BANK_BAL.xss">
+      <DependentUpon>dsSV_BANK_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsSV_CASH_BAL.xsc">
+      <DependentUpon>dsSV_CASH_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsSV_CASH_BAL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSV_CASH_BAL.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsSV_CASH_BAL.xss">
+      <DependentUpon>dsSV_CASH_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_CLIENT_BAL.xsc">
+      <DependentUpon>dsV_CLIENT_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_CLIENT_BAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_CLIENT_BAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_CLIENT_BAL.xss">
+      <DependentUpon>dsV_CLIENT_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_CLIENT_RECEIPT.xsc">
+      <DependentUpon>dsV_CLIENT_RECEIPT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_CLIENT_RECEIPT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_CLIENT_RECEIPT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_CLIENT_RECEIPT.xss">
+      <DependentUpon>dsV_CLIENT_RECEIPT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_CLIENT_STANDBY_CHEQ.xsc">
+      <DependentUpon>dsV_CLIENT_STANDBY_CHEQ.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_CLIENT_STANDBY_CHEQ.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_CLIENT_STANDBY_CHEQ.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_CLIENT_STANDBY_CHEQ.xss">
+      <DependentUpon>dsV_CLIENT_STANDBY_CHEQ.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_EXPENSE_SUB.xsc">
+      <DependentUpon>dsV_EXPENSE_SUB.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_EXPENSE_SUB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_EXPENSE_SUB.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_EXPENSE_SUB.xss">
+      <DependentUpon>dsV_EXPENSE_SUB.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_ITEM_OPEN_STK.xsc">
+      <DependentUpon>dsV_ITEM_OPEN_STK.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_ITEM_OPEN_STK.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_ITEM_OPEN_STK.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_ITEM_OPEN_STK.xss">
+      <DependentUpon>dsV_ITEM_OPEN_STK.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_ITEM_OPEN_STK1.xsc">
+      <DependentUpon>dsV_ITEM_OPEN_STK1.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_ITEM_OPEN_STK1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_ITEM_OPEN_STK1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_ITEM_OPEN_STK1.xss">
+      <DependentUpon>dsV_ITEM_OPEN_STK1.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_LUP_ITEM.xsc">
+      <DependentUpon>dsV_LUP_ITEM.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_LUP_ITEM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_LUP_ITEM.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_LUP_ITEM.xss">
+      <DependentUpon>dsV_LUP_ITEM.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_DETAIL.xsc">
+      <DependentUpon>dsV_MOBILE_ISSUE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_DETAIL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_MOBILE_ISSUE_DETAIL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_DETAIL.xss">
+      <DependentUpon>dsV_MOBILE_ISSUE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_MASTER.xsc">
+      <DependentUpon>dsV_MOBILE_ISSUE_MASTER.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_MASTER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_MOBILE_ISSUE_MASTER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_MASTER.xss">
+      <DependentUpon>dsV_MOBILE_ISSUE_MASTER.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_MASTER1.xsc">
+      <DependentUpon>dsV_MOBILE_ISSUE_MASTER1.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_MASTER1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_MOBILE_ISSUE_MASTER1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_MOBILE_ISSUE_MASTER1.xss">
+      <DependentUpon>dsV_MOBILE_ISSUE_MASTER1.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_PURCHASE_DETAIL.xsc">
+      <DependentUpon>dsV_PURCHASE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_PURCHASE_DETAIL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_PURCHASE_DETAIL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_PURCHASE_DETAIL.xss">
+      <DependentUpon>dsV_PURCHASE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_RECOVERY.xsc">
+      <DependentUpon>dsV_RECOVERY.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_RECOVERY.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_RECOVERY.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_RECOVERY.xss">
+      <DependentUpon>dsV_RECOVERY.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE_DETAIL.xsc">
+      <DependentUpon>dsV_SALE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE_DETAIL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SALE_DETAIL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SALE_DETAIL.xss">
+      <DependentUpon>dsV_SALE_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE_INVOICES.xsc">
+      <DependentUpon>dsV_SALE_INVOICES.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE_INVOICES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SALE_INVOICES.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SALE_INVOICES.xss">
+      <DependentUpon>dsV_SALE_INVOICES.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE_MASTER.xsc">
+      <DependentUpon>dsV_SALE_MASTER.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SALE_MASTER.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SALE_MASTER.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SALE_MASTER.xss">
+      <DependentUpon>dsV_SALE_MASTER.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SELECT_ITEM_BATCH.xsc">
+      <DependentUpon>dsV_SELECT_ITEM_BATCH.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SELECT_ITEM_BATCH.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SELECT_ITEM_BATCH.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SELECT_ITEM_BATCH.xss">
+      <DependentUpon>dsV_SELECT_ITEM_BATCH.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_STOCK_NET_TOT.xsc">
+      <DependentUpon>dsV_STOCK_NET_TOT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_STOCK_NET_TOT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_STOCK_NET_TOT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_STOCK_NET_TOT.xss">
+      <DependentUpon>dsV_STOCK_NET_TOT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SUPPLIER_BAL.xsc">
+      <DependentUpon>dsV_SUPPLIER_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SUPPLIER_BAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SUPPLIER_BAL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SUPPLIER_BAL.xss">
+      <DependentUpon>dsV_SUPPLIER_BAL.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SUPPLIER_PAYMENT.xsc">
+      <DependentUpon>dsV_SUPPLIER_PAYMENT.xsd</DependentUpon>
+    </None>
+    <None Include="dsV_SUPPLIER_PAYMENT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsV_SUPPLIER_PAYMENT.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsV_SUPPLIER_PAYMENT.xss">
+      <DependentUpon>dsV_SUPPLIER_PAYMENT.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\SS10074.JPG" />
+    <None Include="Resources\OS31028.JPG" />
+    <None Include="Resources\OS31012.JPG" />
+    <None Include="Resources\OS28069.JPG" />
+    <None Include="Resources\OS28017.JPG" />
+    <None Include="Resources\OS23116.JPG" />
+    <None Include="Resources\OS22072.JPG" />
+    <None Include="Resources\OS22071.JPG" />
+    <None Include="Resources\OS15098.JPG" />
+    <None Include="Resources\OS15013.JPG" />
+    <None Include="Resources\OS11099.JPG" />
+    <None Include="Resources\OS10120.JPG" />
+    <None Include="Resources\OS10024.JPG" />
+    <None Include="Resources\OS09042.JPG" />
+    <None Include="Resources\OS09037.JPG" />
+    <None Include="Resources\OS08098.JPG" />
+    <None Include="Resources\OS08088.JPG" />
+    <None Include="Resources\OS08039.JPG" />
+    <None Include="Resources\OS08038.JPG" />
+    <None Include="Resources\OS08037.JPG" />
+    <None Include="Resources\OS08036.JPG" />
+    <None Include="Resources\OS08032.JPG" />
+    <None Include="Resources\SS24059.JPG" />
+    <None Include="Resources\SS24052.JPG" />
+    <None Include="Resources\SS24013.JPG" />
+    <None Include="Resources\SS24009.JPG" />
+    <None Include="Resources\SS24003.JPG" />
+    <None Include="Resources\SS24001.JPG" />
+    <None Include="Resources\OS23085.JPG" />
+    <None Include="Resources\OS23080.JPG" />
+    <None Include="Resources\OS12022.JPG" />
+    <None Include="Resources\SS24049.JPG" />
+    <None Include="Resources\LaST %28Cobalt%29 Chat.png" />
+    <None Include="Resources\LaST %28Cobalt%29 Briefcase.png" />
+    <None Include="Resources\LaST %28Cobalt%29 Applications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="asBUSINESS\" />
+    <Folder Include="asCLINIC\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>my events</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <!-- Bing Maps references -->
+    <script type="text/javascript" src="ms-appx:///Bing.Maps.JavaScript//js/veapicore.js"></script>
+    <script type="text/javascript" src="ms-appx:///Bing.Maps.JavaScript//js/veapimodules.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <script src="/js/lib/moment.js"></script>
+    <script src="/js/lib/jquery-1.7.2.min.js"></script>
+    <script src="/js/lib/jquery.dotdotdot-1.5.1.js"></script>
+
+    <script src="/js/navigator.js"></script>
+    <script src="/js/context.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/default.js"></script>
+    <script src="/js/application.js"></script>
+    <script src="/js/formaters.js"></script>
+    <script src="/js/enums.js"></script>
+    <script src="/js/services/services.js"></script>
+    <script src="/js/services/authenticationService.js"></script>
+    <script src="/js/services/registeredUserService.js"></script>
+    <script src="/js/services/eventService.js"></script>
+    <script src="/js/services/sessionService.js"></script>
+    <script src="/js/services/facebookService.js"></script>
+    <script src="/js/storageManager.js"></script>
+</head>
+<body>
+    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/login/login.html'}"></div>
+    <div id="appbar" class="win-ui-dark" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'pin', label:'Pin', icon:'&#xE141;', tooltip:'Pin'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'notes', label:'View notes', icon:'view', tooltip:'View notes'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'favorite', label:'Attend', icon:'add', tooltip:'I will attend'}"></button>
+    </div>
+
+    <div id="loading">
+        <div class="overlay"></div>
+        <div class="wrapper">
+            <label>
+                <progress class="win-ring"></progress>loading
+            </label>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>RCE</Word>
+      <Word>Smpte</Word>
+      <Word>HDV</Word>
+      <Word>NTSC</Word>
+      <Word>PAL</Word>
+      <Word>PAR</Word>
+      <Word>BarOn</Word>
+    </Recognized>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>RCE</Acronym>
+      <Acronym>Smpte</Acronym>
+      <Acronym>HDV</Acronym>
+      <Acronym>NTSC</Acronym>
+      <Acronym>PAL</Acronym>
+      <Acronym>PAR</Acronym>
+      <Acronym>BarOn</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

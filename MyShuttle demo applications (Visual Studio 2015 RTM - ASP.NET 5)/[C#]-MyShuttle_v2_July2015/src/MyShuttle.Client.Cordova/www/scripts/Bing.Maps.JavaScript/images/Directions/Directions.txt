@@ -1,0 +1,52 @@
+﻿//Directions.TXT: ***** READ THIS BEFORE MODIFYING ******
+//Two rules:
+// -Add image files only if they're in Directions PLT1.  If not, make a separate slicing file 
+// -The css should be unaware of the slicing process and not depend on it.  Do 
+//       not include references to directions.png in any css/js/html.
+
+Directions/action_item_bullet.png
+Directions/icn_info15.png:nowidth
+Directions/traffic/trafficincidentminor.png:nowidth
+Directions/traffic/trafficincidentmoderate.png:nowidth
+Directions/traffic/trafficincidentmajor.png:nowidth
+Directions/ManueverIcons/bear_left.png
+Directions/ManueverIcons/bear_right.png
+Directions/ManueverIcons/keep_left.png
+Directions/ManueverIcons/keep_right.png
+Directions/ManueverIcons/merge.png
+Directions/ManueverIcons/merge_left.png
+Directions/ManueverIcons/merge_right.png
+Directions/ManueverIcons/exit_left.png
+Directions/ManueverIcons/exit_right.png
+Directions/ManueverIcons/straight.png
+Directions/ManueverIcons/turn_left.png
+Directions/ManueverIcons/turn_right.png
+Directions/ManueverIcons/stay_left.png
+Directions/ManueverIcons/stay_right.png
+Directions/ManueverIcons/u_turn.png
+Directions/ManueverIcons/u_turn_right.png
+Directions/ManueverIcons/transit.png
+Directions/ManueverIcons/walk.png
+Directions/ManueverIcons/enter_roundabout.png
+Directions/ManueverIcons/exit_roundabout.png
+Directions/ManueverIcons/enter_roundabout_left.png
+Directions/ManueverIcons/exit_roundabout_left.png
+Directions/delete.png
+Directions/delete_hover.png
+Directions/Reverse.png
+Directions/ReverseHover.png
+Directions/directions_mode_car.png
+Directions/directions_mode_transit.png
+Directions/directions_mode_tube.png
+Directions/directions_mode_walking.png
+Directions/directions_mode_car_selected.png
+Directions/directions_mode_transit_selected.png
+Directions/directions_mode_tube_selected.png
+Directions/directions_mode_walking_selected.png
+Directions/directions_mode_car_hover.png
+Directions/directions_mode_transit_hover.png
+Directions/directions_mode_tube_hover.png
+Directions/directions_mode_walking_hover.png
+Directions/directions_expander_closed.png:nowidth|noheight
+Directions/directions_expander_open.png:nowidth|noheight
+Directions/Calendar.png

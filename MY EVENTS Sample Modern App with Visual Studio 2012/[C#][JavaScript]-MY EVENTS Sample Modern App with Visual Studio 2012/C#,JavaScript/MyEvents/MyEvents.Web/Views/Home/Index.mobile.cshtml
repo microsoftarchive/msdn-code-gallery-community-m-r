@@ -1,0 +1,49 @@
+﻿@using System.Globalization
+@using System.Web.Optimization
+@model MyEvents.Web.Models.HomeViewModel
+@{
+    ViewBag.Title = "my events";
+}
+@section Scripts {
+    @Scripts.Render("~/Attendee/HomeScripts/")
+}
+@helper EventBox(MyEvents.Model.EventDefinition eventDefinition)
+{
+    <article class="box highlighted">
+        <a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })" class="block">
+            <header>
+                <h1><time datetime="@eventDefinition.Date.ToString("R")">@eventDefinition.Date.ToString("MMMM") @eventDefinition.Date.Day.</time> @eventDefinition.City</h1>
+            </header>
+            <div><strong>@eventDefinition.Name </strong><div class="multi-line-ellipsis">@eventDefinition.Description</div></div>
+            <footer>
+                <img src="@Url.Content("~/Styles/Images/organizer-icon-white.png")" />
+                @eventDefinition.Organizer.Name
+            </footer>
+        </a>
+    </article>
+}
+@helper EventBoxMini(MyEvents.Model.EventDefinition eventDefinition)
+{
+    <article class="box mini multi-line-ellipsis">
+        <a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })" class="block">
+            <header>
+                <h2><time datetime="@eventDefinition.Date.ToString("R")">
+                    @eventDefinition.Date.ToString("MMMM") @eventDefinition.Date.Day.</time><br />
+                    @eventDefinition.Name</h2>
+            </header>
+        </a>
+    </article>
+}
+
+<section id="coming-soon-events">
+    @foreach (var eventDefinition in Model.ComingSoonHighlighted.Take(1))
+    {
+        @EventBox(eventDefinition)
+    }
+    @foreach (var eventDefinition in Model.ComingSoon.Take(2))
+    {
+        @EventBoxMini(eventDefinition)
+    }
+</section>
+<div class="clear"></div>
+@{Html.RenderPartial("EventList");}

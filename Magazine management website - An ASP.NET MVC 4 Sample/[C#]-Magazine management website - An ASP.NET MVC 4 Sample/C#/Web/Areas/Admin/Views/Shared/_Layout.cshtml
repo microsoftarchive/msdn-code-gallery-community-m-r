@@ -1,0 +1,90 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Magazine Website Admin - @RenderSection("TitleContent", required: false)</title>
+        @Styles.Render("~/Content/admin/css")
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("HeaderContent", required: false)
+    </head>
+    <body>
+        <!-- Header -->
+        <div id="header">
+            <div class="shell">
+                <!-- Logo + Top Nav -->
+                <div id="top">
+                    <h1><a href="#">Magazine Administration Board</a></h1>
+                    <div id="top-navigation">
+                        @Html.ActionLink("Go to front page", "Index", new { area="", controller="Home"})
+                        &nbsp;Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage", area = "", href = "/Account/Manage" })!
+                        &nbsp;
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", area = "", action = "/Account/LogOff" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a>
+                        }
+                        @*@Html.ActionLink("Sign out", "LogOff", new { area="", controller="Account"})*@
+                    </div>
+                </div>
+                <!-- End Logo + Top Nav -->
+		
+                <!-- Main Nav -->
+                <div id="navigation">
+                    <ul>
+                        <li><a href="#" class="active"><span>Dashboard</span></a></li>
+                        <li><a href="#"><span>Category</span></a></li>
+                        <li><a href="#"><span>User Management</span></a></li>
+                    </ul>
+                </div>
+                <!-- End Main Nav -->
+            </div>
+        </div>
+        <!-- End Header -->
+
+        <!-- Container -->
+        <div id="container">
+            <div class="shell">
+		
+                <!-- Small Nav -->
+                <div class="small-nav">
+                    <a href="#">Dashboard</a>
+                    <span>&gt;</span>
+                    Current Articles
+                </div>
+                <!-- End Small Nav -->
+		
+                <!-- Message OK -->
+                @Html.Partial("_SucceedMessage")
+                <!-- End Message OK -->		
+		
+                <!-- Message Error -->
+                @Html.Partial("_ErrorMessage")
+                <!-- End Message Error -->
+                <br />
+                <!-- Main -->
+                <div id="main">
+                    <div class="cl">&nbsp;</div>
+			
+                    @RenderBody()
+			
+                    <div class="cl">&nbsp;</div>			
+                </div>
+                <!-- Main -->
+            </div>
+        </div>
+        <!-- End Container -->
+
+        <!-- Footer -->
+        <div id="footer">
+            <div class="shell">
+                <span class="left">&copy; @DateTime.Now.Year - Context is King</span>
+                <span class="right">
+                    Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>
+                </span>
+            </div>
+        </div>
+        <!-- End Footer -->
+	
+    </body>
+</html>

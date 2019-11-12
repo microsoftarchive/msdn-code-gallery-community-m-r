@@ -1,0 +1,40 @@
+﻿@model PhluffyFotos.Web.ViewModels.AccountLogOnViewModel
+@{
+    ViewBag.Title = "Log On";
+}
+
+@using (Html.BeginForm()) { 
+    <div id="lvl3">
+        <div id="clmLeft"><img src="@Url.Content("~/Content/images/left.jpg")" /></div>
+        <div id="clmRight">
+            <h2>Don't have an account?</h2>
+            <p>Create one now.</p>
+            <a href="@Url.Action("Register")">Sign up</a>
+            <br />
+            <hr />
+            <br />
+            <h2>Already have an account?</h2>
+            <h3>Sign in now.</h3>
+            <p>
+                <label for="username">Username</label>
+                <br />
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <br />
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </p>
+            <p>
+            @Html.CheckBoxFor(m => m.RememberMe) <label class="inline" for="rememberMe">Remember me?</label>
+            </p>
+            @Html.HiddenFor(m => m.ReturnUrl)
+            @Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+            <input type="submit" value="Submit" class="button" />
+        </div>
+    </div>
+}
+
+

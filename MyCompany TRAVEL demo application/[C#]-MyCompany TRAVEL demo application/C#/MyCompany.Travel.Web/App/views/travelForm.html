@@ -1,0 +1,167 @@
+﻿<link href="Content/form.css" rel="stylesheet" />
+<div id="travel-form">
+    <div class="form-header">
+        <div class="back-button" data-bind="{click: $root.cancel}" title="back"></div><span class="page-title" data-bind="html: title"></span>
+        <div data-bind="if: $root.isRRHHMode" style="float: right">
+            <div class="employee-data" data-bind="with: travelEntity">
+                <div class="avatar">
+                    <img class="avatar-img" data-bind="attr: { src: employee.picture }" alt="employee photo" />
+                </div>
+                <div class="employee-data-text">
+                    <div>
+                        <span class="row-text big" data-bind="text: employee.fullName"></span>
+                    </div>
+                    <div>
+                        <span class="row-text" data-bind="text: employee.jobTitle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-body row-fluid" data-bind="with: travelEntity">
+        <div class="form-body-left span6">
+            <ul>
+                <li>
+                    <div class="span11">
+                        <label>Name</label>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span11">
+                            <div class="validation-block span12">
+                                <input class="input-modal" type="text" data-bind="value: name" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="span11">
+                        <label>Type</label>
+                    </div>
+                    <div class="radio-list row-fluid">
+                        <div class="span6 radio-option">
+                            <input type="radio" id="roundTripOption" name="travelType" value="2" data-bind="checked: travelType" />
+                            <label for="roundTripOption">Round trip</label>
+                        </div>
+                        <div class="span6 radio-option">
+                            <input type="radio" id="oneWayOption" name="travelType" value="1" data-bind="checked: travelType" />
+                            <label for="oneWayOption">One way</label>
+                        </div>
+                    </div>
+                <li>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <label>Origin</label>
+                        </div>
+                        <div class="span6">
+                            <label>Destination</label>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span5">
+                            <div class="validation-block span12">
+                                <input class="input-modal" type="text" data-bind="value: from" />
+                            </div>
+                        </div>
+                        <div class="span5 offset1">
+                            <div class="validation-block span12">
+                                <input class="input-modal" type="text" data-bind="value: to" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <label>Departing</label>
+                        </div>
+                        <div class="span6" data-bind="visible: isRoundTrip">
+                            <label>Returning</label>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <div class="span8">
+                                <input class="input-modal" id="depart" type="text" data-bind="datepicker: $data.depart" readonly="true" />
+                            </div>
+                            <div class="span2 calendar-image" id="depart-calendar">
+                            </div>
+                        </div>
+                        <div class="span6" data-bind="visible: isRoundTrip">
+                            <div class="span8">
+                                <input class="input-modal" id="return" type="text" data-bind="datepicker: $data.return" readonly="true" />
+                            </div>
+                            <div class="span2 calendar-image" id="return-calendar">
+                            </div>
+                        </div>
+                    </div>
+                <li>
+                    <div class="span11">
+                        <label>Description</label>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span11">
+                            <div class="validation-block span12">
+                                <textarea class="input-modal" data-bind="value: description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="form-body-right span6">
+            <ul>
+                <li>
+                    <div class="span11">
+                        <label>Transportation</label>
+                    </div>
+                    <textarea class="input-modal" data-bind="value: transportationNeed"></textarea>
+                </li>
+                <li>
+                    <div class="span11">
+                        <label>Accommodation</label>
+                    </div>
+                    <textarea class="input-modal" data-bind="value: accommodationNeed"></textarea>
+                </li>
+                <li>
+                    <div class="span11">
+                        <label>Comments</label>
+                    </div>
+                    <textarea class="input-modal" data-bind="value: comments"></textarea>
+                </li>
+                <li>
+                    <div class="span11">
+                        <label>Related Project</label>
+                    </div>
+                    <input class="input-modal" type="text" data-bind="value: relatedProject" />
+                </li>
+            </ul>
+
+            <div class="buttons">
+                <button class="button-box button-accept" data-bind="{click: $root.accept}" title="Accept changes"></button>
+                <button class="button-box button-delete" data-bind="{click: $root.cancel}" title="Discard changes"></button>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div data-bind="if: $root.isRRHHMode">
+        <div class="attachments-zone">
+            <label>Attachments</label>
+            <div class="add-file">
+                <input class="input-modal" type="text" data-bind="value: $root.fileFriendlyName, valueUpdate: 'afterkeydown'" placeholder="Write a name for the file" />
+                <input type="button" class="button" onclick="$('input[type=file]').click()" data-bind="enable: canUpload" title="Upload file" />
+            </div>
+            <div class="explore">
+                <input type="file" name="attachment" data-bind="uploadFile: {file: $root.fileToUpload }" />
+            </div>
+            <div class="attachments-container" data-bind="foreach: travelEntity().attachments">
+                <div class="attachment">
+                    <div class="text two-icons"><a class="link-file" href="#" data-bind="text: name, attr: { href: 'api/travelattachments/files/' + travelAttachmentId() }"></a></div>
+                    <div class="icon delete" data-bind="click: $root.deleteAttachment"></div>
+                    <a class="link-file" href="#" data-bind="attr: { href: 'api/travelattachments/files/' + travelAttachmentId() }"><div class="icon download"></div></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

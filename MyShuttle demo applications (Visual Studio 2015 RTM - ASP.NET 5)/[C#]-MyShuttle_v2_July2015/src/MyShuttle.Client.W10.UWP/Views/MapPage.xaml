@@ -1,0 +1,121 @@
+﻿<base:WindowsBasePage
+    x:Class="MyShuttle.Client.W10.UniversalApp.Views.MapPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.W10.UniversalApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:MyShuttle.Client.W10.UniversalApp.ViewModels"
+    xmlns:base="using:MyShuttle.Client.W10.UniversalApp.Views.Base"
+    xmlns:converters="using:MyShuttle.Client.W10.UniversalApp.Converters"
+    xmlns:callisto="using:Callisto.Controls"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    mc:Ignorable="d" RequestedTheme="Light" Title="Map">
+
+    <Grid Background="{StaticResource AppBackgroundBrush}" >
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="SmallLayout1">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="VehicleStatusIcons.Margin" Value="0 51 20 0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="BigLayout1">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="VehicleStatusIcons.Margin" Value="0 51 40 0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF202C3A" x:Name="GridContent">
+            <Image Style="{StaticResource ImageHeader}" />
+            <Border Margin="0,76,0,0" Style="{StaticResource MapBorder}" x:Name="MapHeader"  >
+                <Grid>
+                    <Image d:IsHidden="False" Style="{StaticResource ImageHeader}" />
+                    <maps:MapControl ZoomLevel="16"
+                                     MapServiceToken="{Binding MapToken}"
+                                     Heading="0"
+                                     DesiredPitch="0"    
+                                     Center="{Binding VehiclesByDistanceViewModel.CurrentLocation, Converter={StaticResource LocationToGeopointConverter}}">
+                        <maps:MapItemsControl ItemsSource="{Binding VehiclesByDistanceViewModel.FilteredVehicles}">
+                            <maps:MapItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid maps:MapControl.Location="{Binding Converter={StaticResource VehicleToGeopointConverter}}"
+                              maps:MapControl.NormalizedAnchorPoint="{Binding Converter={StaticResource NormalizedCenteredAnchorPointConverter}}">
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Border Grid.Row="0" Style="{StaticResource SelectedVehicleCarrierBorder}"
+                                    Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                            <Image Source="{Binding Carrier.Picture, Converter={StaticResource ByteArrayToImageConverter}}"
+                                       Style="{StaticResource CarrierImage}"/>
+                                        </Border>
+
+                                        <Polygon Grid.Row="1" Points="0,0 12,0 6,10" Style="{StaticResource BottomArrowPoligon}"
+                                     Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                     Margin="{StaticResource SmallBottomMarginThickness}"/>
+
+                                        <Image Grid.Row="2" Style="{Binding Converter={StaticResource VehicleStatusToImageStyleConverter}}">
+                                            <interactivity:Interaction.Behaviors>
+                                                <core:EventTriggerBehavior EventName="Tapped">
+                                                    <core:InvokeCommandAction Command="{Binding DataContext.NavigateToVehicleDetailsCommand, 
+                                                                ElementName=GridContent}"
+                                                                CommandParameter="{Binding VehicleId}"/>
+                                                </core:EventTriggerBehavior>
+                                            </interactivity:Interaction.Behaviors>
+                                        </Image>
+                                    </Grid>
+                                </DataTemplate>
+                            </maps:MapItemsControl.ItemTemplate>
+                        </maps:MapItemsControl>
+
+                        <Image Style="{StaticResource DevicePushpinImage}" 
+                   maps:MapControl.Location="{Binding VehiclesByDistanceViewModel.CurrentLocation, Converter={StaticResource LocationToGeopointConverter}}"
+                   maps:MapControl.NormalizedAnchorPoint="0.5 , 1.0"/>
+
+                    </maps:MapControl>
+                </Grid>
+            </Border>
+            <StackPanel x:Name="VehicleStatusIcons" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,51,20,0">
+                <Border CornerRadius="28" Width="55" Height="55" Margin="0,0,8,0" Background="{StaticResource FreeStatusColorBrush}">
+                    <StackPanel Margin="0,-3,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="19" FontWeight="SemiBold" FontStyle="Italic" Foreground="White" Text="6"></TextBlock>
+                        <Image Margin="2,12,0,0" Source="/Resources/Images/freecar.png" Width="13" Height="11"></Image>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="23" Width="45" Height="45" Margin="0,0,8,0" Background="{StaticResource OccupiedStatusColorBrush}">
+                    <StackPanel Margin="0,-3,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="17"  FontWeight="SemiBold" FontStyle="Italic" Foreground="White" Text="3"></TextBlock>
+                        <Image Margin="2,12,0,0" Source="/Resources/Images/occupiedcar.png" Width="11" Height="10"></Image>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <ProgressRing HorizontalAlignment="Center" Width="40" Height="40" IsActive="True" Visibility="{Binding VehiclesByDistanceViewModel.IsLoadingFilteredVehicles, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Center" Foreground="#2E3B4B"/>
+
+        </Grid>
+
+
+
+    </Grid>
+</base:WindowsBasePage>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="DialogAction.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:DialogAction"
+        xmlns:kinkuma="clr-namespace:Okazuki.MVVM.PrismSupport.Interactivity;assembly=Okazuki.MVVM.PrismSupport"
+        Title="MainWindow" Height="108" Width="411" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:my="http://www.codeplex.com/prism">
+    <Window.DataContext>
+        <!-- ViewModelを設定 -->
+        <l:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <i:Interaction.Triggers>
+            <my:InteractionRequestTrigger SourceObject="{Binding Path=OpenFileRequest}">
+                <l:OpenFileDialogAction />
+            </my:InteractionRequestTrigger>
+        </i:Interaction.Triggers>
+        <TextBlock Text="View完結：" Height="24" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBlock Text="ViewModel経由：" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <Grid Grid.Column="1" Name="grid1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Content="..." Grid.Column="1">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <l:OpenFileDialogAction Title="View完結" FileName="{Binding ElementName=textBoxFileName, Path=Text, Mode=OneWayToSource}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <TextBox Name="textBoxFileName" />
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Name="grid2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="154*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding Path=FileName}" HorizontalContentAlignment="Left" />
+            <Button Content="..." Command="{Binding Path=OpenFileCommand}" Grid.Column="1" />
+        </Grid>
+    </Grid>
+</Window>

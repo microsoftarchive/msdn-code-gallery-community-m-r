@@ -1,0 +1,120 @@
+﻿@import 'variables';
+@import 'fonts';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: @background-color;
+    font-family: @font-family;
+    color: @font-color;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 0.7em 1em;
+    font-size: 1.3em;
+    color: @clear-data-font-color;
+}
+
+.main-content {
+    width: 100%;
+    min-height: 100%;
+}
+
+.header {
+    @size: 7em;
+    background-color: @header-background-color;
+    height: @size;
+    line-height: @size;
+    position: relative;
+    z-index: 2;
+
+    .logo {
+        max-width: 15em;
+        margin-left: 1em;
+    }
+}
+
+.menu-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 7em;
+}
+
+.button {
+    display: block;
+    text-align: center;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+    }
+
+    &.button-bottom {
+        #fonts > .contrast;
+        font-size: 1.5em;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: table;
+
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    &.primary {
+        background-color: @primary-color;
+    }
+
+    &.secondary {
+        background-color: @secondary-color;
+    }
+
+    &.button-settings {
+        height: 100%;
+        text-align: center;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            padding: 25px;
+        }
+    }
+}
+
+label {
+    #fonts .base;
+    margin: 0;
+}
+
+.input-row {
+    padding-top: 2.5em;
+    padding-bottom: 1.5em;
+
+    label {
+        margin-bottom: 0.5em;
+    }
+}
+
+input.ng-invalid {
+    border: solid 1px @secondary-color;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and ( min--moz-device-pixel-ratio: 2) and (min-width: 320px), only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 320px), only screen and ( min-device-pixel-ratio: 2) and (min-width: 320px), only screen and ( min-resolution: 192dpi) and (min-width: 320px), only screen and ( min-resolution: 2dppx) and (min-width: 320px) {
+
+    /* Small screen, retina, stuff to override above media query */
+    body {
+        font-size: 11px;
+    }
+}

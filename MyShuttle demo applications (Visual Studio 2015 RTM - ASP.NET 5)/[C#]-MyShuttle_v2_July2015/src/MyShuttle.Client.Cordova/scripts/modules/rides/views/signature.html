@@ -1,0 +1,22 @@
+﻿<section class="view-wrapper">
+    <form name="signatureForm" novalidate role="form">
+        <div class="row customer-email-row">
+            <div class="col-xs-12">
+                <label>Customer Email</label>
+            </div>
+            <div class="col-xs-12">
+                <input type="email" ng-model="email" required />
+            </div>
+        </div>
+    </form>
+    <div class="row customer-signature-row">
+        <div class="col-xs-12">
+            <label>Customer signature</label>
+        </div>
+        <ms-signature-pad></ms-signature-pad>
+    </div>
+
+    <a class="button primary button-bottom" ng-click="sendRide()" ng-disabled="!signatureForm.$valid">
+        <span>Accept</span>
+    </a>
+</section>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivetWPFSampleApp", "LivetWPFSampleApp\LivetWPFSampleApp.csproj", "{BB887C86-F536-4963-8592-8E27D7A4BFCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{157773F3-8C45-4D07-824C-A6368D3AB027}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB887C86-F536-4963-8592-8E27D7A4BFCF}.Debug|x86.ActiveCfg = Debug|x86
+		{BB887C86-F536-4963-8592-8E27D7A4BFCF}.Debug|x86.Build.0 = Debug|x86
+		{BB887C86-F536-4963-8592-8E27D7A4BFCF}.Release|x86.ActiveCfg = Release|x86
+		{BB887C86-F536-4963-8592-8E27D7A4BFCF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

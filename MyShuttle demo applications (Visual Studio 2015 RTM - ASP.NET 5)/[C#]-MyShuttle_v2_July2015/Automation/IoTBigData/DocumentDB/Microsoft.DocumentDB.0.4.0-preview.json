@@ -1,0 +1,29 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#", 
+    "contentVersion": "1.0.0.0", 
+    "parameters": {
+        "databaseAccountName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        }, 		
+        "capacityUnits": {
+            "type": "int"
+        }, 	
+    },
+    "variables": {
+    },
+    "resources": [
+        {
+            "apiVersion": "2014-07-10",
+            "type": "Microsoft.DocumentDb/databaseAccounts",
+            "name": "[parameters('databaseAccountName')]", 
+            "location": "[parameters('location')]", 
+            "properties": {
+                "name": "[parameters('databaseAccountName')]",
+                "capacityUnits":  "[parameters('capacityUnits')]",
+            }
+        }
+    ]
+}

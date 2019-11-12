@@ -1,0 +1,154 @@
+﻿@import url('variables.less');
+
+/*List*/
+.article-list {
+    width: 100%;
+}
+
+.avatar {
+    float: none;
+    width: @row-height-mobile;  /* that's correct, we want a square*/
+    height: @row-height-mobile;
+    text-align: left;
+    background-color:#dfe0e0;
+    overflow: hidden;
+}
+
+.avatar-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.article-of-list {
+    margin-top: 5px;
+    width: 100%;
+    display: table;
+    
+    .row-header {
+        display: table-cell !important;
+        background-color: @module-primary-color-light;
+        float: none;
+        vertical-align: middle;
+        height: @row-height-mobile;
+        margin-top: 0px;
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+
+        &.row-header-right {
+            width: 25pt;
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-align: right;
+            
+            span {
+                margin-right: 4pt;
+                vertical-align: super;
+                line-height: 0.9em;
+            }
+        }
+
+        &.row-header-left {
+            width: 30pt;
+            text-align: center;
+
+            .day {
+                height: 16pt;
+                overflow: hidden;
+                line-height: 0.8em !important;
+            }
+
+            .year {
+                margin-top: 1pt;
+            }
+        }
+    }
+
+    .grand-font {
+        font-size: 2em;
+        line-height: 0.9em;
+        vertical-align: super;
+    }
+}
+
+.row-body {
+    display: table-cell !important;
+    float: none;
+    overflow:hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    margin-right: 5px;
+    height: @row-height-mobile;
+    background-color: @second-background-color;
+    font-size: @base-font-size;
+   
+    .row-cell {
+        float: left;
+        padding-left: 10px;
+
+        span {
+            margin-top: 9px;
+            display: block;
+            color: @list-info-font-color;
+
+            &.left {
+                float: left;
+            }
+        }
+
+        div {
+            span {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+/* Status Icons*/
+
+.status {
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
+    height: 10pt;
+    float: none;
+    margin-right: 4pt;
+}
+
+.status.Pending { 
+    background-image: url("Images/statusPendingWhite.png");
+}
+
+.status.Approved {
+    background-image: url("Images/statusApprovedWhite.png");
+}
+
+.status.Denied {
+    background-image: url("Images/statusDeniedWhite.png");
+}
+
+.status.Completed {
+    background-image: url("Images/statusCompletedWhite.png");
+}
+
+/* End Status Icons*/
+
+.list-no-articles {    
+    height: @row-height;
+    margin-top: @row-height;
+    line-height: @row-height;
+    color: @module-primary-color;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button-faq {
+    display: none;
+}

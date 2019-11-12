@@ -1,0 +1,146 @@
+.row.analytics {
+  .panel {
+    min-height: 340px;
+  }
+}
+
+.panel-body {
+  .dashboard-panel-title {
+    margin-top: 0;
+  }
+
+  .rating-cotainer {
+    .rating-label {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .ms-rating {
+      vertical-align: middle;
+    }
+  }
+
+  .summary-container {
+    text-align: center;
+
+    .vehicles-container {
+      background: url('../Images/bluecar.png') no-repeat;
+      padding-left: 160px;
+      height: 58px;
+      margin-top: 50px;
+      display: inline-block;
+    }
+
+    .drivers-container {
+      background: url('../Images/greendriver.png') no-repeat;
+      padding-left: 70px;
+      height: 85px;
+      display: inline-block;
+      margin-right: 30px;
+      margin-top: 35px;
+    }
+
+    .passengers-container {
+      background: url('../Images/redpassenger.png') no-repeat;
+      padding-left: 70px;
+      height: 85px;
+      display: inline-block;
+      margin-top: 35px;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .number {
+    display: inline-block;
+    width: 30%;
+
+    &, strong {
+      vertical-align: top;
+    }
+
+    h1 {
+      float: left;
+      margin: 0;
+      padding: 0;
+      margin-right: 10px;
+    }
+
+    &.clients-data {
+      width: 220px;
+    }
+
+    &.rides-data {
+      width: 155px;
+      margin-left: 25px;
+    }
+  }
+
+  .graph-container {
+    margin-top: 15px;
+    height: 200px;
+  }
+}
+
+.top-item {
+  h4 {
+    margin: 5px 0 0;
+  }
+
+  .position-column {
+    width: 50px;
+
+    h3 {
+      padding-left: 15px;
+      line-height: 75px;
+      margin: 0;
+    }
+  }
+
+  .rating-column {
+    width: 80px;
+
+    .ms-rating {
+      margin-top: 4px;
+      display: inline-block;
+    }
+  }
+
+  .data-column {
+    position: relative;
+
+    h3 {
+      display: inline-block;
+      margin-top: 5px;
+    }
+  }
+
+  .driver-photo-column {
+    @width: 83px;
+    width: @width;
+    img {
+      max-width: @width;
+      border-radius: 50%;
+    }
+  }
+
+  .driver-data-column {
+    padding-top: 17px;
+  }
+
+  .vehicle-photo-column {
+    @width: 120px;
+    width: @width;
+    img {
+      max-width: @width;
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 4px;
+  }
+}

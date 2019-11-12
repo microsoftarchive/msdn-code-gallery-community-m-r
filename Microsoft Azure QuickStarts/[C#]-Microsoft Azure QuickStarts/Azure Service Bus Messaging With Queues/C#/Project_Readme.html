@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Azure Service Bus: Messaging With Queues</title>
+    <style>body { font-family: 'Lucida Sans Unicode'} .subhead { font-style:italic; color: gray }</style>
+</head>
+<body>
+    <h1>Azure Service Bus: Messaging With Queues</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+    <p>
+        Simple demonstration of how to use Azure Service Bus Queues for messaging.  
+        This approach can be applied to de-couple backend and frontend roles and can also be used to load balance 
+        and load level processing for variable load scenarios.
+    </p>
+    
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>. 
+    </p>
+    
+    <p>
+        This QuickStart demonstrates the following scenarios:
+        <ol>
+            <li>Creating a Service Bus Queue</li>
+            <li>Sending messages to a Queue</li>
+            <li>Receiving messages from a Queue</li>
+            <li>Handling transient errors.</li>
+        </ol>
+    </p>
+    <h2>Running this sample</h2>
+    <ol>
+        <li>
+            Open the <a href="http://manage.windowsazure.com">Azure Management Portal</a> to create a service
+            bus namespace and retrieve the connection string details (see the 
+            <a href="http://go.microsoft.com/fwlink/?LinkID=325250">documentation</a> for details)
+        </li>
+        <li>
+            Open app.config and update <code>[your namespace] </code>with your service bus namespace and
+            <code>[your access key]</code> with the access key for the corresponding namespace
+        </li>
+        <li>
+            Run the project
+        </li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="http://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-queues/">Azure Sevrice Bus Queues documentation</a></li>
+    </ul>
+</body>
+</html>

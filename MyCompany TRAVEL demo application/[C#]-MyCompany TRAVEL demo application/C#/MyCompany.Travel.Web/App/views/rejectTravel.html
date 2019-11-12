@@ -1,0 +1,15 @@
+﻿<div class="modal-msgBox autoclose"><!--modal modal-new-size modal-new-top autoclose-->
+    <div class="modal-msgBox-header">
+        <!--<span data-bind="html: title"></span>-->
+        <button class="button-close" data-bind="click: close"></button>
+    </div>
+    <div class="modal-msgBox-body">
+        <p class="msgBox-message" data-bind="html: message"></p>
+    </div>
+    <div>
+        <textarea class="msgBox-text-area" data-bind="value: $root.reason"></textarea>
+    </div>
+    <div class="modal-msgBox-footer" >
+        <button class="button-primary button-primary-padding" data-bind="click: $root.accept">accept</button>
+    </div>
+</div>

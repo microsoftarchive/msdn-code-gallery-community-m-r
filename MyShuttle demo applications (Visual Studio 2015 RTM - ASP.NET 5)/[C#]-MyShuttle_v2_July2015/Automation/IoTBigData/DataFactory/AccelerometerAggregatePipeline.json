@@ -1,0 +1,30 @@
+{
+    "name": "AccelerometerAggregatePipeline",
+    "properties": {
+        "description": "Copy data from a blob to Azure SQL table",
+        "activities": [
+            {
+                "name": "RunHiveQuery",
+                "description": "Runs a hive query",
+                "type": "HDInsightActivity",
+                "inputs": [ { "name": "HiveInputBlobTable" } ],
+                "outputs": [ { "name": "HiveAccelerometerAggregateBlobTable" } ],
+                "linkedServiceName": "HDInsightOnDemandCluster",
+                "transformation": {
+                    "type": "Hive",
+                    "extendedProperties": {
+                        "INPUT": "wasb://myshuttledata@[StorageName].blob.core.windows.net/accelerometer"
+                    },
+                    "scriptpath": "myshuttledata\\scripts\\AggregatedAccelerometerTable.hql",
+                    "scriptLinkedService": "AzureStorage"
+                },
+                "policy": {
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "retry": 1,
+                    "timeout": "01:00:00"
+                }
+            }
+        ]
+    }
+} 

@@ -1,0 +1,133 @@
+﻿@import url('variables.less');
+
+#mapDiv {
+    margin-top: 25px;
+    position:relative; 
+    width:1031px; 
+    height:580px;
+}
+
+.pushpin {
+    background-image: url("images/map-point.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(250, 150, 29, .5);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FA961D;
+}
+
+.infoboxText {
+    width: 200px;
+    height: 90px;
+    background-color: #FFFFFF;
+    border-style: none;
+    padding: 15px;
+    z-index: 50;
+}
+
+.infoboxText .header-item {
+    float: left;
+    width: 66px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.infoboxText .data-item {
+    float: left;
+    width: 66px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 25px;
+    text-align: center;
+    white-space: nowrap;
+    width: 66px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.infoboxText .photo {
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 6px;
+    float: left;
+    margin-top: 4px;
+}
+
+.infoboxText .photo:first-of-type {
+    margin-left: 0px;
+}
+
+.infoboxText .middle-font-size {
+    font-size: 16px;
+}
+
+.arrow-down-right {
+	width: 0; 
+	height: 0; 
+	border-left: 16px solid transparent;
+	border-right: 0px solid transparent;
+	
+	border-top: 16px solid #FFFFFF;
+
+    overflow: hidden; 
+    position: absolute; 
+    z-index: 1; 
+    right: 0px; 
+    top: 120px;
+    z-index: 50;
+}
+
+.arrow-down-left {
+	width: 0; 
+	height: 0; 
+	border-right: 16px solid transparent;
+	border-left: 0px solid transparent;
+	
+	border-top: 16px solid #FFFFFF;
+
+    overflow: hidden; 
+    position: absolute; 
+    z-index: 1; 
+    left: 0px; 
+    top: 120px;
+    z-index: 50;
+}
+
+.arrow-up-right {
+	width: 0; 
+	height: 0; 
+	border-left: 16px solid transparent;
+	border-right: 0px solid transparent;
+	
+	border-top: 16px solid #FFFFFF;
+
+    overflow: hidden; 
+    position: absolute; 
+    z-index: 1; 
+    right: 0px; 
+    top: -16px;
+    z-index: 50;
+}
+
+.arrow-up-left {
+	width: 0; 
+	height: 0; 
+	border-right: 16px solid transparent;
+	border-left: 0px solid transparent;
+	
+	border-top: 16px solid #FFFFFF;
+
+    overflow: hidden; 
+    position: absolute; 
+    z-index: 1; 
+    left: 0px; 
+    top: -16px;
+    z-index: 50;
+}

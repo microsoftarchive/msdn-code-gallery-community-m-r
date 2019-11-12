@@ -1,0 +1,55 @@
+﻿<UserControl
+    x:Class="MetroTips091CS.MyUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetroTips091CS"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="500"
+    d:DesignWidth="360"
+  Loaded="UserControl_Loaded"
+  >
+  
+  <UserControl.Resources>
+    <Style TargetType="TextBlock">
+      <Setter Property="FontSize" Value="24" />
+    </Style>
+  </UserControl.Resources>
+
+  <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel MaxWidth="500" VerticalAlignment="Stretch">
+      
+      <Viewbox Height="300">
+      <Image x:Name="SampleImage" Source="Sample/sample01.png" Stretch="None" />
+      </Viewbox>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal">
+          <Button Click="JapaneseButton_Click">日本語</Button>
+          <Button Click="EnglishButton_Click" Margin="5,0,0,0">English</Button>
+        </StackPanel>
+        <Button Grid.Column="1" HorizontalAlignment="Right"
+                Content="Sample">
+          <Button.Flyout>
+            <MenuFlyout>
+              <MenuFlyoutItem Click="MenuSample01_Click" >Sample01 (日本語)</MenuFlyoutItem>
+              <MenuFlyoutItem Click="MenuSample02_Click" >Sample02 (英語)</MenuFlyoutItem>
+              <MenuFlyoutItem Click="MenuSample03_Click" >Sample03 (書籍コード)</MenuFlyoutItem>
+            </MenuFlyout>
+          </Button.Flyout>
+        </Button>
+      </Grid>
+      <TextBox x:Name="ReadText" TextWrapping="Wrap" AcceptsReturn="True" 
+               ScrollViewer.VerticalScrollMode="Enabled"
+               ScrollViewer.VerticalScrollBarVisibility="Visible"
+               Height="150" VerticalAlignment="Stretch"
+               Text="(読み取ったテキスト)" />
+    </StackPanel>
+
+  </Grid>
+</UserControl>

@@ -1,0 +1,37 @@
+@model PhluffyFotos.Web.ViewModels.AlbumViewModel
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div id="lvl3">
+    <h3>PhluffyFotos</h3>
+    <p>PhluffyFotos is a sample application that simply allows users to upload and share photos.</p>
+    <p>You can explore the PhluffyFotos sample application from this online demo site. @Html.ActionLink("Register", "Register", "Account") for an account, @Html.ActionLink("create", "Create", "Album") an album, and @Html.ActionLink("upload", "Upload", "Album") some photos.
+       Just keep in mind that this is a sample and a demo web site so we will occasionally bring the site down for updates and delete user accounts and photos.</p>
+    
+    @if(this.Model.Albums.Count() > 0) { 
+        <h3>Sample Albums</h3>
+        <ul id="itemcontainer" class="photoList">
+            @foreach (var item in this.Model.Albums) { 
+                <li>
+                    <div class="albumTitle">
+                       <h2>@Html.ActionLink(item.Title, "Get", "Album", new { owner = item.Owner, album = item.AlbumId }, null) (by @Html.ActionLink(item.Owner, "Get", "Album", new { item.Owner }, null))</h2> 
+                    </div>
+                
+                    @if (!string.IsNullOrEmpty(item.ThumbnailUrl)) { 
+                        <a href="@Url.Action("Get", "Album", new { owner = item.Owner, album = item.AlbumId })">
+                            <img src="@item.ThumbnailUrl" alt="@item.Title" />
+                        </a>
+                    } 
+                                
+                    <br />
+                    <em>Owner:</em> @item.Owner
+                </li>
+            } 
+        </ul>
+     } 
+</div>
+
+
+

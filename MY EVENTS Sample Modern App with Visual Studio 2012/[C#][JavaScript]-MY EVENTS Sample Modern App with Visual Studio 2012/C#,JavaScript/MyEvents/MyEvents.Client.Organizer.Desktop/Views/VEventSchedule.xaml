@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.VEventSchedule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="450"
+             DataContext="{Binding EventSchedule, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource BackButtonStyle}"
+                HorizontalAlignment="Left" Margin="0"
+                Command="{Binding NavigateBackCommand}"></Button>
+        <TextBlock Grid.Row="0" Margin="40,3,0,0" TextWrapping="Wrap" TextTrimming="WordEllipsis" Style="{StaticResource SubTitleStyle}" VerticalAlignment="Top">
+            <Run Text="{Binding Event.Name, FallbackValue='event name'}"></Run>
+            <Run Text="{Binding EventTimeZone, Mode=OneWay, FallbackValue=(gmt+1)}"></Run>
+        </TextBlock>
+
+        <Grid Grid.Row="1" Height="42">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Viewbox Grid.Row="0" Grid.Column="0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Height="22">
+                    <Grid>
+                        <Grid Width="32" Height="32" Visibility="Collapsed" />
+                        <Path Data="M53.2285,10.5C47.7799,4.85278 40.4479,0.518188 29.3063,1.13416 20.8926,1.599 14.2773,5.45313 9.68616,10.3737 4.95245,15.4492 1.58624,22.2045 1.58624,31.0052 1.58624,39.5 5.27441,46.97 9.81281,51.5105 14.4193,56.1145 20.7122,60.302 29.5596,60.8763 30.7832,60.8763 32.0065,60.8763 33.2298,60.8763 41.5547,60.2916 48.7347,56.2552 53.1016,51.6367 57.5631,46.9167 61.1966,39.8177 61.3284,31.1328 61.4593,22.5496 57.8066,15.2473 53.2285,10.5z M34.1849,37C34.1315,37 34.0804,36.9908 34.0273,36.9896 34.0059,37.073 33.9935,37.1615 33.942,37.2344L24.681,50.2539C24.3658,50.6953,23.598,50.6902,22.9635,50.2383L22.5247,49.9258 22.4036,49.9635 22.4036,49.8398 21.8145,49.4219C21.1813,48.97,20.9212,48.2461,21.2357,47.8033L26.5361,40.3516C27.0674,39.556,27.6133,38.7787,28.1868,38.0299L30.4609,34.832C30.0957,34.2006 29.876,33.4739 29.876,32.6927 29.876,32.3411 29.9199,32 30,31.6744L13.8271,11.9127C13.2513,11.2058,13.2705,10.2332,13.8734,9.74353L14.4313,9.28638C14.4752,9.21094 14.541,9.15747 14.5455,9.04163 14.6061,9.04163 14.668,9.04163 14.7298,9.04163L14.9648,8.849C15.5674,8.35938,16.524,8.52991,17.0996,9.23438L32.9283,28.5781C33.3262,28.4558 33.7467,28.3867 34.1849,28.3867 36.5631,28.3867 38.4893,30.3151 38.4893,32.6927 38.4893,35.0717 36.5631,37 34.1849,37z" Stretch="Uniform" Fill="#FFFFFFFF" Width="32" Height="32" Margin="0,0,0,0">
+                        </Path>
+                    </Grid>
+                </Viewbox>
+            </Grid>
+            <ItemsControl Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+                                  ItemsSource="{Binding EventRooms}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="{Binding Event.RoomNumber}" Rows="1"></UniformGrid>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="Auto">
+                            <TextBlock x:Name="room" Grid.Row="0" Margin="0,10,0,10" Text="{Binding}" Style="{StaticResource CalendarRoomsHeader}"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+        
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Border Grid.Row="1"  Grid.Column="0" Background="White" Padding="5,5,5,5" VerticalAlignment="Top">
+                        <ItemsControl Grid.Row="1" Margin="0" HorizontalAlignment="Center" Width="Auto" VerticalAlignment="Top"
+                                  ItemsSource="{Binding EventHours}" ItemTemplate="{StaticResource CalendarHeaderTemplate}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical"></StackPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Border>
+                </Grid>
+                <ItemsControl Grid.Column="1" Margin="0,0,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+                                  ItemsSource="{Binding EventRooms}" ItemTemplate="{StaticResource CalendarRoomsTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="{Binding Event.RoomNumber}" Rows="1"></UniformGrid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

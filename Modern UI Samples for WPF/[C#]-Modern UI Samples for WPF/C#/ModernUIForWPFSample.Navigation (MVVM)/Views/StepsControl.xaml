@@ -1,0 +1,58 @@
+﻿<controls:ModernUserControl x:Class="ModernUIForWPFSample.Navigation.Views.StepsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:ModernUIForWPFSample.Navigation__MVVM_.Controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             d:DesignHeight="300"
+             d:DesignWidth="600" 
+             mc:Ignorable="d" 
+             DataContext="{Binding StepsViewModel, Source={StaticResource Locator}}">
+    <i:Interaction.Triggers>
+         <i:EventTrigger EventName="NavigatedTo">
+            <i:InvokeCommandAction Command="{Binding NavigatedToCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="NavigatedFrom">
+            <i:InvokeCommandAction Command="{Binding NavigatedFromCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="NavigatingFrom">
+            <i:InvokeCommandAction Command="{Binding NavigatingFromCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="FragmentNavigation">
+            <i:InvokeCommandAction Command="{Binding FragmentNavigationCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="IsVisibleChanged">
+            <i:InvokeCommandAction Command="{Binding IsVisibleChangedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+            Steps:
+            <LineBreak />
+            1st Install the ModernUI from Nuget
+            <LineBreak />
+            2nd Define in App.xaml the resources for ModernUI.xaml and ModernUI.Light.xaml
+            <LineBreak />
+            3rd Change the MainWindow: Replace the tag &quot;Window&quot; to ModernWindow
+            <LineBreak />
+            4th Define the content for the MainWindow using TitleLinks, MenuLinkGroups, LinkGroup...
+            <LineBreak />
+            5th Define which content is shown when the application start, by using the ContentSource
+            <LineBreak />
+            6th Define the ModernUserControl that is a UserControl and implements the IContent 
+            <LineBreak />
+            7th Create the events for each navigation supported
+            <LineBreak />
+            8th For each content (in this case for StepsControl and ResourcesControl) change the type for ModernUserControl
+            <LineBreak />
+            9th Define the events for navigation in xaml for each control
+            <LineBreak />
+            <LineBreak />
+            Note: For change the appearance use  AppearanceManager class
+        </TextBlock>
+    </Grid>
+</controls:ModernUserControl>

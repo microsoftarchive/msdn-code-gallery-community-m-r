@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbProyecto" Class="dclProyectoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=190.0.57.74,14433;Initial Catalog=dbProyecto;Persist Security Info=True;User ID=proyecto" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbProyectoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_ConsultarMenu" Method="usp_ConsultarMenu">
+    <ElementType Name="usp_ConsultarMenuResult">
+      <Column Name="intIdMenu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strDescripcion" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="intPosicion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intIdPadre" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bitActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="strUrl" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="bitAdministracion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

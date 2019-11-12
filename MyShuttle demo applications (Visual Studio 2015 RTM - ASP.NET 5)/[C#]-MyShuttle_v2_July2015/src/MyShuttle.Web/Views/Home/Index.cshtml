@@ -1,0 +1,235 @@
+﻿@model MyShuttle.Web.Models.MyShuttleViewModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="Content/jquery.raty.css" xmlns="http://www.w3.org/1999/html" />
+    <link rel="stylesheet" type="text/css" href="Content/home.css" xmlns="http://www.w3.org/1999/html" />
+    <link rel="stylesheet" type="text/css" href="Content/form.css" xmlns="http://www.w3.org/1999/html" />
+}
+
+<!-- Product carousel -->
+<section class="carousel slide ms-carousel" id="product-carousel" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators ms-carousel-indicators">
+        <li data-target="#product-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#product-carousel" data-slide-to="1"></li>
+        <li data-target="#product-carousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner ms-carousel-inner">
+        <div class="item item-slide-1 active"></div>
+        <div class="item item-slide-2"></div>
+        <div class="item item-slide-3"></div>
+    </div>
+
+    <!-- Static slides content -->
+    <div class="ms-carousel-static">
+        <div class="ms-carousel-wrapper vertical-text-wrapper">
+            <div class="vertical-text-container">
+                <h1>@Model.MainMessage</h1>
+                <h4>
+                    <i>MyShuttle is a B2B highly scalable multitenant SaaS solution that targets corporate scenarios in which carrier companies offer transport services to enterprise customers</i>
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product infographic -->
+<section class="wow fadeIn ms-container-fluid row product-infographic">
+    <img src="Content/Images/inf-right-arrow.png" class="infographic-arrow right-arrow" />
+    <img src="Content/Images/inf-left-arrow.png" class="infographic-arrow left-arrow" />
+
+    <div class="col-sm-4 infographic-section text-center">
+        <img src="Content/Images/inf-pin.png" class="img-responsive infographic-image">
+        <strong class="infographic-section-subtitle">Carrier companies</strong>
+        <ul class="infographic-section-advantages">
+            <li>Agreement and carrier registration</li>
+            <li>Provide Service through vehicle driver app</li>
+            <li>Vehicle fleet analysis</li>
+            <li>Carrier dashboard</li>
+        </ul>
+    </div>
+
+    <div class="col-sm-4 infographic-section text-center">
+        <img src="Content/Images/inf-screen.png" class="img-responsive infographic-image">
+        <p class="infographic-section-title">My Shuttle</p>
+        <strong class="infographic-section-subtitle">Hub/Marketplace</strong>
+        <ul class="infographic-section-advantages">
+            <li>Multi-tenant</li>
+            <li>Highly scalable</li>
+            <li>Any plattform</li>
+        </ul>
+    </div>
+
+    <div class="col-sm-4 infographic-section text-center">
+        <img src="Content/Images/inf-device.png" class="img-responsive infographic-image">
+        <strong class="infographic-section-subtitle">Enterprise</strong>
+        <br />
+        <strong class="infographic-section-subtitle">Customers/Employees</strong>
+        <ul class="infographic-section-advantages">
+            <li>Agreement and enterprise customer registration</li>
+            <li>Employees use the transport service with any carrier in the hub</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Discover product -->
+<section class="wow fadeInUp ms-container-fluid discover-product clearfix text-center">
+    <h2>Discover MyShuttle and enjoy our service</h2>
+    <hr />
+    <p>App available in the most popular mobile platforms</p>
+</section>
+
+<!-- Available platforms -->
+<section class="available-platforms">
+    <div class="ms-container-fluid available-platforms-container text-center">
+        <div class="row margin-zero">
+            <div class="wow fadeInUp col-xs-6 col-md-3">
+                <img src="Content/Images/downloadW8.png" class="img-responsive platform-banner" />
+            </div>
+            <div class="wow fadeInUp col-xs-6 col-md-3">
+                <img src="Content/Images/downloadWP.png" class="img-responsive platform-banner" />
+            </div>
+            <div class="wow fadeInUp col-xs-6 col-md-3">
+                <img src="Content/Images/downloadAppstore.png" class="img-responsive platform-banner" />
+            </div>
+            <div class="wow fadeInUp col-xs-6 col-md-3">
+                <img src="Content/Images/downloadAndroid.png" class="img-responsive platform-banner" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product stats -->
+<section id="product-stats" class="product-stats text-center">
+    <div class="ms-container-fluid">
+        <div class="row margin-zero">
+            <div class="col-md-3 stat-column">
+                <p id="clients-stats" class="stat-data">5,210</p>
+                <p class="stat-label">Clients</p>
+            </div>
+            <div class="col-md-3 stat-column">
+                <p id="vehicles-stats" class="stat-data">630</p>
+                <p class="stat-label">Vehicles</p>
+            </div>
+            <div class="col-md-3 stat-column">
+                <p id="drivers-stats" class="stat-data">870</p>
+                <p class="stat-label">Drivers</p>
+            </div>
+            <div class="col-md-3 stat-column">
+                <p id="rides-stats" class="stat-data">95,120</p>
+                <p class="stat-label">Rides</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product advantages -->
+<section class="product-advantages">
+    <div class="ms-container-fluid">
+        <div class="row margin-zero">
+            <div class="col-sm-5 wow fadeInLeft">
+                <img src="Content/Images/mockupW8.png" class="img-responsive product-preview" />
+            </div>
+            <div class="col-sm-7 wow fadeInRight advantages-list-column">
+                <ul class="advantages-list">
+                    <li class="clock-bg">Find availble vehicles quickly</li>
+                    <p class="advantage-description">With MyShuttle, you will be able to identify nearby vehicles in real-time, and make a reservation from any device.</p>
+                    <li class="fly-bg">Easy to get moving</li>
+                    <p class="advantage-description">MyShuttle is the perfect tool for your Company transport needs. This suite of multiplatform tools makes it easier to plan and manage your employee’s trips which results in important time and cost savings.</p>
+                    <li class="pin-bg">Detailed ride history</li>
+                    <p class="advantage-description">You have access to your complete trip history including dates, distances and costs.</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product customers -->
+<section class="product-customers">
+    <div class="ms-container-fluid full-spaced clearfix text-center">
+        <h3 class="wow fadeInRight">Our customers</h3>
+
+        <div class="wow fadeInRight row margin-zero customers-messages">
+            <article class="col-sm-6 padding-zero customer-tile">
+                <div class="customer-message">
+                    <span>With MyShuttle, my team is much more effective and doesn’t loose time looking for taxis.  They quickly find nearby vehicles and get a ride – right from their mobile device.  Since we started using MyShuttle, no one has been late for a meeting.</span>
+                    <div class="customer-rating" data-score="4"></div>
+                </div>
+                <table class="customer-info">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="Content/Images/Clients/client1.png" class="customer-pic" />
+                            </td>
+                            <td class="customer-data-col">
+                                <p class="customer-name">Jessica Blake</p>
+                                <p class="carrier-name">Team lead</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="col-sm-6 padding-zero customer-tile hidden-xs ">
+                <div class="customer-message">
+                    <span>My Company has been using MyShuttle for months now.  Thanks to this service, we have total control of expenses related to transportation.  With the mobile app, everything has become much simpler and MyShuttle is now an essential everyday tool.</span>
+                    <div class="customer-rating" data-score="5"></div>
+                </div>
+                <table class="customer-info">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="Content/Images/Clients/client2.png" class="customer-pic" />
+                            </td>
+                            <td class="customer-data-col">
+                                <p class="customer-name">Mark Doe</p>
+                                <p class="carrier-name">Product manager</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+
+        <div class="wow fadeInRight customers-pictures">
+            <div class="customer-picture-col">
+                <img src="Content/Images/Carriers/aquatio.png" class="customer-picture" />
+            </div>
+
+            <div class="customer-picture-col">
+                <img src="Content/Images/Carriers/emblem.png" class="customer-picture" />
+            </div>
+
+            <div class="customer-picture-col">
+                <img src="Content/Images/Carriers/softward.png" class="customer-picture" />
+            </div>
+
+            <div class="customer-picture-col hide-xs-width">
+                <img src="Content/Images/Carriers/solarflare.png" class="customer-picture" />
+            </div>
+
+            <div class="customer-picture-col hide-xs-width">
+                <img src="Content/Images/Carriers/threeangle.png" class="customer-picture" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Company location -->
+<div class="company-location">
+    <div class="map-inner-shadow"></div>
+    <div id='mapDiv' class="bing-map"></div>
+</div>
+
+@section scripts{
+    <script charset="UTF-8" type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+    <script src="Scripts/waypoints.min.js"></script>
+    <script src="Scripts/countUp.min.js"></script>
+    <script src="Scripts/wow.min.js"></script>
+    <script src="Scripts/Pages/Home/index.js"></script>
+}

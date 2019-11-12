@@ -1,0 +1,11 @@
+This application is divided in two panes, You can select Topic from left hand side tree view. Within each topic you will see different categories, and categories contain articles within them.
+Once you select an article from left hand side, right hand view is updated to include a short description of the selected article. In some of the articles we have provided code snippets in different language (C#, Console) which is populated in Drop Down. Select a language and you can see the code in code text box.
+
+Where-ever applicable you can click on Run button to run the C# code available. All the output going to console is shown in text box when you click on Run button.
+
+As soon as you start the application, it asks you for Host, Port where mongo daemon is running and give a database name which out application can use to query at runtime, while you learn the concepts. Though currently it is not using it, but it will be using it soon.
+
+==========
+You can also explore the given code from respective .cs files.
+==========
+If you find any mistake, or erroneous data, please feel free to contact us using any method listed in Contact Us Section of the application.

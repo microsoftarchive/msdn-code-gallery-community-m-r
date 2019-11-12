@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MyProject.Site1" EnableViewState="false"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .loginStatus
+        {
+            margin-left: 800px;
+        }
+        .ad
+        {
+            margin-top: 70px;
+        }
+        .header
+        {
+            width: 190px;
+            background-color: #B5C7DE;
+            font-weight: bolder;
+            color: Black;
+            font-weight: bold;
+        }
+        body
+        {
+            background-image: url('img/5.jpg');
+            <%-- background-color:#B5C7DE;--%>
+             background-color:#F0FFF0;
+            
+        }
+        .style1
+        {
+            width: 195px;
+        }
+        #main
+        {
+            background-color: #B5C7DE;
+        }
+        .add
+        {
+            margin-left: 195px;
+        }
+    </style>
+</head>
+<body style="height: 333px">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div>
+        <table width="100%" >
+            <tr>
+                <td>
+                    
+                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img/str/ADMINBUTTON/ADD PRODUCTS.png"
+                        CssClass="add" PostBackUrl="~/AdminEntry.aspx" CausesValidation="False" 
+                            Visible="False" />
+                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img/str/ADMINBUTTON/EDIT PRODUCTS.png"
+                        CssClass="add" PostBackUrl="~/AdminDelete.aspx" CausesValidation="False" 
+                            Visible="False" />
+                  </td></tr> <tr>  <td><asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="loginStatus" LoginImageUrl="~/img/str/buttons/Login.gif"
+                        LogoutAction="Redirect" LogoutPageUrl="~/default.aspx" LogoutImageUrl="~/img/str/buttons/logout.gif" />
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img/str/buttons/Register.gif"
+                        OnClick="ImageButton1_Click" PostBackUrl="~/reg/Register.aspx" CausesValidation="false" />
+                </td>
+            </tr>
+        </table>
+        <table width="100%" >
+            <tr valign="top">
+                <td class="style1">
+                    <asp:AdRotator ID="AdRotator1" CssClass="ad" runat="server" DataSourceID="XmlDataSource2"
+                        ToolTip="click to see developer profile" ViewStateMode="Disabled" Target="_blank"   />
+                    <div class="header">
+                        <h3>
+                            BHSBIET College Project</h3>
+                        <br />
+                        <br />
+                        Lehragaga<br />
+                        Dist. Sangrur<br />
+                        mob:xxxxxxxxxx<br />
+                        id:pramuk97@gmail.com<br />
+                        Skype: pramuk971<br />
+                        <br />
+                    </div>
+                </td>
+                <td id='main' >
+                    <%--<asp:AdRotator ID="AdRotator2" runat="server" DataSourceID="XmlDataSource2" Width=900 Height=150  />
+		<br />--%>
+                    <asp:XmlDataSource ID="XmlDataSource2" runat="server" DataFile="~/XMLFile1.xml">
+                    </asp:XmlDataSource>
+                    <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" BackColor="#B5C7DE"
+                        DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98"
+                        StaticSubMenuIndent="10px">
+                        <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#B5C7DE" />
+                        <DynamicSelectedStyle BackColor="#507CD1" />
+                        <Items>
+                            <asp:MenuItem ImageUrl="~/img/str/buttons/home.png" NavigateUrl="~/default.aspx"
+                                ToolTip="click for home page"></asp:MenuItem>
+                            <asp:MenuItem ImageUrl="~/img/str/buttons/Products.png" ToolTip="hower to see products">
+                                <asp:MenuItem ImageUrl="~/img/str/buttons/laptop.png" Text="Laptop" ToolTip="Laptop"
+                                    Value="Laptop" NavigateUrl="~/laptop.aspx"></asp:MenuItem>
+                                <asp:MenuItem ImageUrl="~/img/str/buttons/mobile.png" Text="Mobile" NavigateUrl="~/mobile.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem ImageUrl="~/img/str/buttons/car.png" Text="car" NavigateUrl="~/car.aspx">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem ImageUrl="~/img/str/buttons/accounts.png" 
+                                NavigateUrl="~/Account.aspx"></asp:MenuItem>
+                            <asp:MenuItem ImageUrl="~/img/str/buttons/contact.png" PopOutImageUrl="~/img/str/Products/pants.jpg"
+                                NavigateUrl="~/contact.aspx"></asp:MenuItem>
+                            <asp:MenuItem ImageUrl="~/img/str/buttons/CART.png" NavigateUrl="~/cCart.aspx"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#507CD1" />
+                    </asp:Menu>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class='style1'>
+                    
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

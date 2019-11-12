@@ -1,0 +1,141 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MSDN_Voice_Search.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle x:Name="LogoContainer" Grid.Row="0" HorizontalAlignment="Left" Width="250" Height="70" Margin="24,0" Fill="{StaticResource PhoneForegroundBrush}" Tap="OnLogoContainerTapped">
+            <Rectangle.OpacityMask>
+                <ImageBrush ImageSource="/Assets/MsdnLogo.png" />
+            </Rectangle.OpacityMask>
+        </Rectangle>
+
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+            <TextBlock x:Name="TitleText" Grid.Row="0" Text="{Binding Path=LocalizedResources.BigApplicationHeader, Source={StaticResource LocalizedStrings}}" Margin="24,-10,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Portable User Interface"/>
+            <phone:WebBrowser x:Name="BrowserControl" Canvas.ZIndex="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" Height="0" IsScriptEnabled="True" IsGeolocationEnabled="True" LoadCompleted="OnBrowserLoadCompleted" Navigating="OnBrowserNavigating">
+                <phone:WebBrowser.Resources>
+                    <Storyboard x:Name="BrowserControlSlideInStoryboard">
+                        <DoubleAnimation x:Name="BrowserControlSlideInAnimation" Storyboard.TargetName="BrowserControl" Storyboard.TargetProperty="Height" From="0" Duration="0:0:0.3" />
+                    </Storyboard>
+                    <Storyboard x:Name="BrowserControlSlideOutStoryboard">
+                        <DoubleAnimation x:Name="BrowserControlSlideOutAnimation" Storyboard.TargetName="BrowserControl" Storyboard.TargetProperty="Height" To="0" Duration="0:0:0.3" />
+                    </Storyboard>
+                </phone:WebBrowser.Resources>
+            </phone:WebBrowser>
+            <ScrollViewer x:Name="ButtonPanelScrollViewer" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,80,0,0">
+                <StackPanel x:Name="ButtonPanel" VerticalAlignment="Center" Margin="0,0,0,30">
+                    <Button x:Name="CortanaInfoButton" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Tap="OnInfoButtonTapped" FontFamily="Portable User Interface" VerticalAlignment="Top" Margin="12,0" Padding="12,6,10,6">
+                        <Button.Resources>
+                            <Storyboard x:Name="CortanaInfoButtonFadeOutAnimation">
+                                <DoubleAnimation Storyboard.TargetName="CortanaInfoButton" Storyboard.TargetProperty="Opacity" From="1.0" To="0.1" Duration="0:0:0.350" />
+                            </Storyboard>
+                            <Storyboard x:Name="CortanaInfoButtonFadeInAnimation">
+                                <DoubleAnimation Storyboard.TargetName="CortanaInfoButton" Storyboard.TargetProperty="Opacity" From="0.1" To="1.0" Duration="0:0:0.350" />
+                            </Storyboard>
+                        </Button.Resources>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/Assets/CortanaCircle.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding LocalizedResources.CortanaButtonTitle, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding LocalizedResources.CortanaButtonCaption, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,0" />
+                            </StackPanel>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="SourceCodeInfoButton" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Tap="OnInfoButtonTapped" VerticalAlignment="Top" Margin="12,0" Padding="12,6,10,6">
+                        <Button.Resources>
+                            <Storyboard x:Name="SourceCodeInfoButtonFadeOutAnimation">
+                                <DoubleAnimation Storyboard.TargetName="SourceCodeInfoButton" Storyboard.TargetProperty="Opacity" From="1.0" To="0.1" Duration="0:0:0.350" />
+                            </Storyboard>
+                            <Storyboard x:Name="SourceCodeInfoButtonFadeInAnimation">
+                                <DoubleAnimation Storyboard.TargetName="SourceCodeInfoButton" Storyboard.TargetProperty="Opacity" From="0.1" To="1.0" Duration="0:0:0.350" />
+                            </Storyboard>
+                        </Button.Resources>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/Assets/SDK/download.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding LocalizedResources.SourceCodeButtonTitle, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource PhoneAccentBrush}"/>
+                                <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding LocalizedResources.SourceCodeButtonCaption, Source={StaticResource LocalizedStrings}}" />
+                            </StackPanel>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="BlogInfoButton" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Tap="OnInfoButtonTapped" VerticalAlignment="Top" Margin="12,0" Padding="12,6,10,6">
+                        <Button.Resources>
+                            <Storyboard x:Name="BlogInfoButtonFadeOutAnimation">
+                                <DoubleAnimation Storyboard.TargetName="BlogInfoButton" Storyboard.TargetProperty="Opacity" From="1.0" To="0.1" Duration="0:0:0.350" />
+                            </Storyboard>
+                            <Storyboard x:Name="BlogInfoButtonFadeInAnimation">
+                                <DoubleAnimation Storyboard.TargetName="BlogInfoButton" Storyboard.TargetProperty="Opacity" From="0.1" To="1.0" Duration="0:0:0.350" />
+                            </Storyboard>
+                        </Button.Resources>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="/Assets/SDK/edit.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding LocalizedResources.BlogButtonTitle, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource PhoneAccentBrush}"/>
+                                <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding LocalizedResources.BlogButtonCaption, Source={StaticResource LocalizedStrings}}" />
+                            </StackPanel>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <Canvas x:Name="SearchArea" Grid.Row="2" Height="90" KeyDown="OnTextInputKeyDown">
+            <ProgressBar x:Name="SearchProgressBar" IsIndeterminate="True" Canvas.Top="0" Canvas.Left="0" Height="8" Width="480" Visibility="Collapsed" />
+            <TextBox x:Name="SearchTextBox" Canvas.Left="-9" Canvas.Top="-5" Width="414" Height="104" Padding="12,16,12,0" Text="{Binding LocalizedResources.DefaultSearchBoxText, Source={StaticResource LocalizedStrings}}" FontSize="24" GotFocus="OnTextInputGainedFocus" LostFocus="OnTextInputLostFocus" Foreground="Gray" />
+            <Canvas x:Name="SpeechActionButtonContainer" Canvas.Top="7" Canvas.Left="397" Height="80" Width="80" Tap="OnSpeechActionButtonTapped">
+                <Image x:Name="SpeechActionButtonMicrophone" Width="80" Height="80" Source="/Assets/CortanaMicrophone.png"/>
+                <Rectangle x:Name="SpeechActionButtonGoBackingRect" Width="40" Height="40" Margin="20,20" Fill="{StaticResource PhoneAccentBrush}" Opacity="0" />
+                <Image x:Name="SpeechActionButtonGo" Width="80" Height="80" Source="/Assets/CortanaGo.png" Opacity="0" />
+                <Border x:Name="SpeechActionButtonStopBorder" Width="80" Height="80" BorderBrush="{StaticResource PhoneForegroundBrush}" BorderThickness="1" Opacity="0" />
+                <Rectangle x:Name="SpeechActionButtonStop" Fill="{StaticResource PhoneAccentBrush}" Width="80" Height="80" Opacity="0">
+                    <Rectangle.OpacityMask>
+                        <ImageBrush ImageSource="/Assets/SDK/stop.png"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</phone:PhoneApplicationPage>

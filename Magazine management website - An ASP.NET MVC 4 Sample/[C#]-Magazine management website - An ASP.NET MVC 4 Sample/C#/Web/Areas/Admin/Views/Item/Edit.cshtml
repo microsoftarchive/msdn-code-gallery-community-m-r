@@ -1,0 +1,96 @@
+﻿@using System.Web.Optimization
+@using CIK.News.Web.Infras.Extensions
+@model CIK.News.Web.Infras.ViewModels.Admin.DashBoard.ItemEditingViewModel
+@{
+    ViewBag.Title = "Create News";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderContent{
+    @Scripts.Render("~/bundles/jqueryval")   
+    @Scripts.Render("~/bundles/ckeditor")
+    
+    <script type="text/javascript">
+        $(function () {
+            var config = {
+            toolbar:[
+                ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
+                ['UIColor']
+            ]};
+
+            $('#SortDescription').ckeditor(config);
+            
+            $('#Content').ckeditor(config);
+        });
+    </script>
+}
+
+@using (Html.BeginForm("Edit", "Item", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    @Html.HiddenFor(m => m.ItemId)
+    
+    <!-- Box -->
+    <div class="box">
+        <!-- Box Head -->
+        <div class="box-head">
+            <h2>Edit @Model.Title</h2>
+        </div>
+        <!-- End Box Head -->
+
+        <!-- Form -->
+        <div class="form">
+            <p class="inline-field">
+                <label>Category</label>
+                @Html.DropDownListFor(x => x.CategoryId, new SelectList(Model.Categories, "Id", "Name", Model.CategoryId), new {Class = "field size3"})
+            </p>
+            <p>
+                <span class="req">max 100 symbols</span>
+                <label>Article Title <span>(Required Field)</span></label>
+                @Html.TextBoxFor(x => x.Title, new {Class = "field size1"})
+            </p>
+            <p>
+                <span class="req">#</span>
+                <label>Short Description<span>(Required Field)</span></label>
+                @Html.TextAreaFor(x => x.SortDescription, new {Class = "field size1"})
+            </p>
+            <p>
+                <span class="req">#</span>
+                <label>Main Content<span>(Required Field)</span></label>
+                @Html.TextAreaFor(x => x.Content, new {Class = "field size1"})
+            </p>
+            <p>
+                <span class="req">#</span>
+                <label>Small image<span>(Required Field)</span></label>
+                @Html.TextBoxFor(m => m.SmallImage, new {type = "file"})
+                @Html.ValidationMessageFor(m => m.SmallImage)
+                
+                @Html.RenderImageWithPath(Model, m => m.SmallImagePath, "bordered", 100, 100)
+            </p>
+            <p>
+                <span class="req">#</span>
+                <label>Medium image<span>(Required Field)</span></label>
+                @Html.TextBoxFor(m => m.MediumImage, new {type = "file"})
+                @Html.ValidationMessageFor(m => m.MediumImage)
+                
+                @Html.RenderImageWithPath(Model, m => m.MediumImagePath, "bordered", 100, 100)
+            </p>
+            <p>
+                <span class="req">#</span>
+                <label>Large image<span>(Required Field)</span></label>
+                @Html.TextBoxFor(m => m.BigImage, new {type = "file"})
+                @Html.ValidationMessageFor(m => m.BigImage)
+                
+                @Html.RenderImageWithPath(Model, m => m.BigImagePath, "bordered", 100, 100)
+            </p>
+        </div>
+        <!-- End Form -->
+							
+        <!-- Form Buttons -->
+        <div class="buttons">
+            <input type="button" class="button" value="preview" />
+            <input type="submit" class="button" value="submit" />
+        </div>
+        <!-- End Form Buttons -->
+    </div>
+    <!-- End Box -->
+}

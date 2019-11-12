@@ -1,0 +1,338 @@
+﻿<Window x:Class="MyShuttle.Device.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MyShuttle.Device.ViewModels"
+        xmlns:controls="clr-namespace:MyShuttle.Device.Controls"
+        xmlns:converters="clr-namespace:MyShuttle.Device.Converters"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        Title="MainWindow" Height="700" Width="600"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        MouseLeftButtonDown="MainWindow_OnMouseLeftButtonDown"
+        Icon="Assets/Shuttle_Icon.png">
+    <Window.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </Window.DataContext>
+    <Window.Resources>
+        <converters:BoolToImageConverter x:Key="BoolToImageConverter"></converters:BoolToImageConverter>
+        <converters:SessionStatusToColorBrushConverter x:Key="SessionStatusToColorBrushConverter"></converters:SessionStatusToColorBrushConverter>
+        <converters:SessionStatusToVisibilityConverter x:Key="SessionStatusToVisibilityConverter"></converters:SessionStatusToVisibilityConverter>
+        <converters:DrivingSessionStartedToColorBrushConverter x:Key="DrivingSessionStartedToColorBrushConverter"></converters:DrivingSessionStartedToColorBrushConverter>
+
+        <Storyboard x:Key="DrivingOptionsFlyoutIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="X" Storyboard.TargetName="PanelPosition">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="100">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="DrivingOptionsFlyoutOut">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="X" Storyboard.TargetName="PanelPosition">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="DriverSelectionFlyoutIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="X" Storyboard.TargetName="DriverPanelPosition">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-62"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="100">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="DriverSelectionFlyoutOut">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="X" Storyboard.TargetName="DriverPanelPosition">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-62">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Key="CarCrashAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="X" Storyboard.TargetName="GridPosition" RepeatBehavior="5x">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.20" Value="-2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <ei:DataTrigger Binding="{Binding IsCarCrashed, Mode=OneWay}" Value="true">
+            <ei:ControlStoryboardAction Storyboard="{StaticResource CarCrashAnimation}"     
+                                                ControlStoryboardOption="Play"/>
+        </ei:DataTrigger>
+        <ei:DataTrigger Binding="{Binding ShowDriverPanel, Mode=OneWay}" Value="true">
+            <ei:ControlStoryboardAction Storyboard="{StaticResource DrivingOptionsFlyoutIn}"     
+                                                ControlStoryboardOption="Play"/>
+        </ei:DataTrigger>
+        <ei:DataTrigger Binding="{Binding ShowDriverPanel, Mode=OneWay}" Value="false">
+            <ei:ControlStoryboardAction Storyboard="{StaticResource DrivingOptionsFlyoutOut}"     
+                                                ControlStoryboardOption="Play"/>
+        </ei:DataTrigger>
+        <ei:DataTrigger Binding="{Binding ShowDriverSelectionPanel, Mode=OneWay}" Value="true">
+            <ei:ControlStoryboardAction Storyboard="{StaticResource DriverSelectionFlyoutIn}"     
+                                                ControlStoryboardOption="Play"/>
+        </ei:DataTrigger>
+        <ei:DataTrigger Binding="{Binding ShowDriverSelectionPanel, Mode=OneWay}" Value="false">
+            <ei:ControlStoryboardAction Storyboard="{StaticResource DriverSelectionFlyoutOut}"     
+                                                ControlStoryboardOption="Play"/>
+        </ei:DataTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="{StaticResource MainColorBrush}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Vertical" Background="{StaticResource AccentColorBrush}" ZIndex="1000">
+
+            <Grid>
+                <Ellipse IsEnabled="False" Width="60" Height="60" StrokeThickness="4"  Stroke="{StaticResource BorderDriverColorBrush}" Margin="0 69 0 0">
+                    <Ellipse.Fill >
+                        <ImageBrush ImageSource="{Binding CurrentDriver.Image}"/>
+                    </Ellipse.Fill>
+
+                </Ellipse>
+                <controls:ShuttleButton EnabledImage="Assets/trans.png"
+                                     EnabledTextColor="{StaticResource OnColorBrush}"
+                                     DisabledTextColor="{StaticResource OffColorBrush}"
+                                     IsEnabled="True"
+                                     Command="{Binding ToggleDriverSelectionPanelCommand}"
+                                     ButtonText="DRIVER"
+                                     Cursor="Hand" 
+                                     ImageSize="60"
+                                     Margin="0 80 0 0"/>
+
+            </Grid>
+
+            <controls:ShuttleButton  EnabledImage="Assets/accelerometer_on.png"
+                                     DisabledImage="Assets/accelerometer_off.png"
+                                     EnabledTextColor="{StaticResource OnColorBrush}"
+                                     DisabledTextColor="{StaticResource OffColorBrush}"
+                                     IsEnabled="{Binding DrivingSessionStarted}"
+                                     Command="{Binding ToggleDriversPanelCommand}"
+                                     ButtonText="ACCELEROMETER"
+                                     Cursor="Hand"
+                                     Margin="0 40 0 0"/>
+
+            <controls:ShuttleButton  EnabledImage="Assets/compass_on.png"
+                                     DisabledImage="Assets/compass_off.png"
+                                     EnabledTextColor="{StaticResource OnColorBrush}"
+                                     DisabledTextColor="{StaticResource OffColorBrush}"
+                                     IsEnabled="{Binding DrivingSessionStarted}"
+                                     ButtonText="COMPASS"
+                                     Margin="0 30 0 0"/>
+
+            <controls:ShuttleButton EnabledImage="Assets/OBD_on.png"
+                                    DisabledImage="Assets/OBD.png"
+                                    EnabledTextColor="{StaticResource OnColorBrush}"
+                                    DisabledTextColor="{StaticResource OffColorBrush}"
+                                    IsEnabled="{Binding DrivingSessionStarted}"
+                                    ButtonText="OBID"
+                                    Margin="0 30 0 0"/>
+
+        </StackPanel>
+
+        <StackPanel  x:Name="DriveOptionsPanel" ZIndex="999" Grid.Column="0" Width="100" HorizontalAlignment="Left" Orientation="Vertical" Background="{StaticResource OverlayColorBrush}" Margin="0 0 0 0" RenderTransformOrigin="0,0">
+            <StackPanel.RenderTransform>
+                <TranslateTransform x:Name="PanelPosition"></TranslateTransform>
+            </StackPanel.RenderTransform>
+            <StackPanel Margin="0 210 0 0">
+                <controls:ShuttleButton  EnabledImage="Assets/good_driver_icon.png"
+            		DisabledImage="Assets/good_driver_icon.png"
+            		EnabledTextColor="{StaticResource OnColorBrush}"
+            		DisabledTextColor="{StaticResource OnColorBrush}"
+            		ButtonText="good driver"
+            		Command="{Binding SelectGoodDriverCommand}"
+            		Margin="0 30 0 0" />
+
+                <controls:ShuttleButton EnabledImage="Assets/bad_driver_icon.png"
+            		DisabledImage="Assets/bad_driver_icon.png"
+            		EnabledTextColor="{StaticResource BadColorBrush}"
+            		DisabledTextColor="{StaticResource BadColorBrush}"
+            		ButtonText="bad driver"
+            		Command="{Binding SelectBadDriverCommand}"
+            		Margin="0 30 0 0" />
+
+                <controls:ShuttleButton EnabledImage="Assets/car_crash_icon.png"
+            		DisabledImage="Assets/car_crash_icon.png"
+            		EnabledTextColor="{StaticResource AlarmColorBrush}"
+            		DisabledTextColor="{StaticResource AlarmColorBrush}"
+            		ButtonText="car crash"
+            		Command="{Binding SelectCarCrashCommand}"
+            		Margin="0 30 0 0" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="DriverSelectionPanel" ZIndex="999" Grid.Column="0" Grid.ColumnSpan="2" Width="162" HorizontalAlignment="Left" Orientation="Vertical" Background="{StaticResource OverlayColorBrush}" Margin="0 0 0 0" RenderTransformOrigin="0,0">
+            <StackPanel.RenderTransform>
+                <TranslateTransform x:Name="DriverPanelPosition" X="-62"></TranslateTransform>
+            </StackPanel.RenderTransform>
+            <StackPanel Margin="0 28 0 0">
+
+                <ItemsControl ItemsSource="{Binding AvailableDrivers}" x:Name="RootItems">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="8,9,0,0">
+                                <Button Width="67" Height="67" Background="Transparent" BorderBrush="Transparent" Command="{Binding Path=DataContext.SelectDriverCommand, ElementName=RootItems}" CommandParameter="{Binding}">
+                                    <Button.Content>
+                                        <Image Source="{Binding Image}" />
+                                    </Button.Content>
+
+
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+            </StackPanel>
+        </StackPanel>
+
+
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel x:Name="Header">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="MinimizeButton" Width="20" Height="20" VerticalContentAlignment="Bottom" Background="Transparent" BorderThickness="0"  
+                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                                Click="MinimizeButton_OnClick">
+                            <Image Source="Assets/minimize_button.png"></Image>
+                        </Button>
+                        <Button x:Name="CloseButton" Width="20" Height="20" Background="Transparent" BorderThickness="0"  
+                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                                Click="CloseButton_OnClick">
+                            <Image Source="Assets/close_button.png"></Image>
+                        </Button>
+                    </StackPanel>
+                    <Image Width="150" Height="50" Margin="15 0 0 0" Source="Assets/logo.png" HorizontalAlignment="Left"></Image>
+                </StackPanel>
+
+                <Separator Margin="50 0 50 0" Background="{StaticResource BorderGrayColorBrush}"></Separator>
+
+                <DockPanel LastChildFill="False" Margin="10 50 50 0">
+                    <TextBlock Width="40" TextAlignment="Right" FontSize="10" FontFamily="Segoe UI" FontWeight="Medium" Foreground="{StaticResource BorderGrayColorBrush}" TextWrapping="Wrap" Text="License Plate" VerticalAlignment="Center" Padding="0 0 5 0" ></TextBlock>
+                    <Border Width="300" Style="{StaticResource ShuttleBorderStyle}">
+                        <TextBlock Style="{DynamicResource ShuttleTextBlockStyle}" Foreground="WhiteSmoke" Text="{Binding LicensePlate}" Margin="0,-1,0,1"></TextBlock>
+                    </Border>
+                    <controls:ShuttleToggleButton x:Name="StartSessionButton" Width="90"
+                                          ImageSize="8"
+                                          Background="{Binding DrivingSessionStarted, Converter={StaticResource DrivingSessionStartedToColorBrushConverter}}"
+                                          CheckedTextColor="{StaticResource MainColorBrush}"
+                                          UncheckedTextColor="{StaticResource MainColorBrush}"
+                                          Command="{Binding ToggleDrivingSessionCommand}"
+                                          IsChecked="{Binding DrivingSessionStarted}"
+                                          ButtonText="START"
+                                          IsEnabled="{Binding DriverSelected}"
+                                          FontSize="10"
+                                          FontWeight="SemiBold"
+                                          Margin="5 0 0 0" />
+                </DockPanel>
+
+                <Separator Margin="50 35 50 50 " Background="{StaticResource BorderGrayColorBrush}"></Separator>
+
+                <DockPanel LastChildFill="True" Margin="10 0 50 40">
+                    <Grid Margin="5 0 10 0">
+                        <Grid.RenderTransform>
+                            <TranslateTransform x:Name="GridPosition"></TranslateTransform>
+                        </Grid.RenderTransform>
+                        <Image Source="Assets/good_driver_icon.png"  Width="25" Height="25" Visibility="{Binding SessionStatus, Converter={StaticResource SessionStatusToVisibilityConverter}, ConverterParameter=1}"></Image>
+                        <Image Source="Assets/bad_driver_icon.png"  Width="25" Height="25" Visibility="{Binding SessionStatus, Converter={StaticResource SessionStatusToVisibilityConverter}, ConverterParameter=2}"></Image>
+                        <Image Source="Assets/car_crash_icon.png"  Width="25" Height="25" Visibility="{Binding SessionStatus, Converter={StaticResource SessionStatusToVisibilityConverter}, ConverterParameter=3}"></Image>
+                    </Grid>
+                    <Border Style="{StaticResource ShuttleBorderStyle}">
+                        <StackPanel Orientation="Horizontal" Background="{StaticResource AccentColorBrush}">
+                            <TextBlock Text="X" Style="{DynamicResource CoordinateAxisTextBlockStyle}" Margin="20 0 0 0"></TextBlock>
+                            <TextBlock Text="{Binding AccelerometerEvent.X, StringFormat=0.0000}" Width="100" Foreground="{Binding SessionStatus, Converter={StaticResource SessionStatusToColorBrushConverter}}" Style="{DynamicResource CoordinateTextBlockStyle}"></TextBlock>
+                            <TextBlock Text="Y" Style="{DynamicResource CoordinateAxisTextBlockStyle}"></TextBlock>
+                            <TextBlock  Text="{Binding AccelerometerEvent.Y, StringFormat=0.0000}" Width="100" Foreground="{Binding SessionStatus, Converter={StaticResource SessionStatusToColorBrushConverter}}"  Style="{DynamicResource CoordinateTextBlockStyle}"></TextBlock>
+                            <TextBlock Text="Z"  Style="{DynamicResource CoordinateAxisTextBlockStyle}"></TextBlock>
+                            <TextBlock  Text="{Binding AccelerometerEvent.Z, StringFormat=0.0000}" Width="100" Foreground="{Binding SessionStatus, Converter={StaticResource SessionStatusToColorBrushConverter}}"  Style="{DynamicResource CoordinateTextBlockStyle}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+
+                <Border Style="{StaticResource ShuttleBorderStyle}" Margin="50 10 50 0">
+                    <TextBlock Foreground="{StaticResource OffColorBrush}" Style="{DynamicResource ShuttleTextBlockStyle}">
+                        <Run Text="{Binding CompassEvent.HeadingDegrees}"></Run>
+                        <Run Text="º"></Run>
+                    </TextBlock>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="65 40 100 -12">
+
+                    <controls:ShuttleToggleButton CheckedImage="Assets/parking_brake_on.png"
+                                          UncheckedImage="Assets/parking_brake_off.png"
+                                          ButtonText="parking brake"
+                                          FontFamily="Segoe UI"
+                                          FontSize="12"
+                                          FontWeight="Medium"
+                                          CheckedTextColor="{StaticResource OnColorBrush}"
+                                          UncheckedTextColor="{StaticResource AlarmColorBrush}"
+                                          IsEnabled="{Binding DrivingSessionStarted}"
+                                          IsChecked="{Binding ParkingBrakeChecked}"
+                                          Command="{Binding SendOBDParkingCommand}"
+                                          Margin="60 5 0 0" />
+
+                    <controls:ShuttleToggleButton CheckedImage="Assets/seat_belt_on.png"
+                                          UncheckedImage="Assets/seat_belt_off.png"
+                                          ButtonText="seat belt"
+                                          FontFamily="Segoe UI"
+                                          FontSize="12"
+                                          FontWeight="Medium"
+                                          CheckedTextColor="{StaticResource OnColorBrush}"
+                                          UncheckedTextColor="{StaticResource AlarmColorBrush}"
+                                          IsEnabled="{Binding DrivingSessionStarted}"
+                                          IsChecked="{Binding SeatBeltChecked}"
+                                          Command="{Binding SendOBDSecurityBeltCommand}"
+                                          Margin="45 5 20 0" />
+
+                    <controls:ShuttleToggleButton CheckedImage="Assets/fuel_on.png"
+                                          UncheckedImage="Assets/fuel_off.png"
+                                          ButtonText="fuel"
+                                          FontFamily="Segoe UI"
+                                          FontSize="12"
+                                          FontWeight="Medium"
+                                          CheckedTextColor="{StaticResource OnColorBrush}"
+                                          UncheckedTextColor="{StaticResource AlarmColorBrush}"
+                                          IsEnabled="{Binding DrivingSessionStarted}"
+                                          IsChecked="{Binding FuelChecked}"
+                                          Command="{Binding SendOBDFuelCommand}"
+                                          Margin="35 5 20 0" />
+                </StackPanel>
+
+                <Image Source="Assets/Car_lines.png" Margin="20 0 20 0"></Image>
+
+                <Separator  Margin="50 2 50 0" Background="{StaticResource OverlayColorBrush}"></Separator>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
+
+    
+    

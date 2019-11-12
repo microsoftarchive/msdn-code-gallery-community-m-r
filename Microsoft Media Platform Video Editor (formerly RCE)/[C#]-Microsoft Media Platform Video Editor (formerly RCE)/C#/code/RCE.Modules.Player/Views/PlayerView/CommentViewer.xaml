@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="RCE.Modules.Player.CommentViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Bottom" 
+    LayoutUpdated="CommentViewer_OnLayoutUpdated">
+    <Grid VerticalAlignment="Stretch">
+		<Border x:Name="CommentTextRectangle" VerticalAlignment="Bottom" Background="#B2000000" HorizontalAlignment="Stretch" Visibility="Collapsed" Padding="5,5,5,5" Width="340" >
+            <StackPanel x:Name="TextualComments" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+        </Border>
+        <InkPresenter x:Name="InkComment" Width="320" Height="240" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.ZIndex="0" RenderTransformOrigin="0.5,0">
+            <InkPresenter.Clip>
+                <RectangleGeometry Rect="0,0,320,240" />
+            </InkPresenter.Clip>
+            <InkPresenter.RenderTransform>
+                <ScaleTransform ScaleY="1" ScaleX="1" x:Name="InkCommentScaleTransform" />
+            </InkPresenter.RenderTransform>
+        </InkPresenter>
+    </Grid>
+</UserControl>

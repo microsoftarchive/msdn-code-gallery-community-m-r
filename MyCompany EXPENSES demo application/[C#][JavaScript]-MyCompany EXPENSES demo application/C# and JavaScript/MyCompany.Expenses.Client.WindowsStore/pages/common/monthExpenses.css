@@ -1,0 +1,127 @@
+﻿#expensesEvolution {
+    -ms-grid-column: 3;
+    padding-left: 70px;
+    display: -ms-grid;
+    height: 554px;
+    width:556px;
+    -ms-grid-rows: 51px 1fr 53px;
+    -ms-grid-columns: 1fr;
+}
+
+    #expensesEvolution .simpleHeaderItem {
+        -ms-grid-row: 1;
+        white-space: nowrap;
+        padding-top: 12px;
+    }
+
+    #expensesEvolution .months {
+         -ms-grid-row: 2;
+    }
+
+    #expensesEvolution #button-bar {
+        -ms-grid-row: 3;
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 40px 44px 44px 44px 44px 1fr;
+        width: 536px;
+        height: 100%;
+    }
+
+    #expensesEvolution .monthBar {
+        width: 536px;
+        height: 32px;
+        background-color: #D8D8BB;
+        margin-top: 5px;
+    }
+
+        #expensesEvolution .monthBar.pastYear {
+            background-color: #E0E0E0;
+        }
+
+    #expensesEvolution .monthBar .left {
+        background-color: #C4C331;
+        float: left;
+        height: 28px;
+        width: 0px;
+        min-width: 100px;        
+        padding-top: 3px;
+        font-weight: 600;
+    }
+        #expensesEvolution .monthBar.pastYear .left {
+            background-color: #BDBDBC;
+        }
+
+        #expensesEvolution .monthBar .left .monthName {
+            margin-left: 10px;
+            margin-right: 10px;
+            color: white;
+        }
+
+        #expensesEvolution .monthBar.pastYear .left .monthName {
+            color: #808080;
+        }
+
+    #expensesEvolution .monthBar .right {
+        float: left; 
+        height: 29px;
+        color: #A3A343;
+        font-weight: 600;
+        margin-left: 10px;
+        padding-top: 3px;
+    }
+
+        #expensesEvolution .monthBar.pastYear .right {
+            color: #808080;
+        }
+
+        #expensesEvolution #button-bar div {
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+        }
+
+        #foodExpensesButton {
+            -ms-grid-column: 1;
+            background-image: url("/images/expenseTypeButtonFoodOff.png");
+        }
+
+        .expenses2 #foodExpensesButton {
+            background-image: url("/images/expenseTypeButtonFoodOn.png");
+        }
+
+        #travelExpensesButton {
+            -ms-grid-column: 2;
+            background-image: url("/images/expenseTypeButtonTravelOff.png");
+        }
+
+        .expenses1 #travelExpensesButton {
+            background-image: url("/images/expenseTypeButtonTravelOn.png");
+        }
+
+        #accommodationExpensesButton {
+            -ms-grid-column: 3;
+            background-image: url("/images/expenseTypeButtonAccommodationOff.png");
+        }
+
+        .expenses4 #accommodationExpensesButton {
+            background-image: url("/images/expenseTypeButtonAccommodationOn.png");
+        }
+
+       
+        #otherExpensesButton {
+            -ms-grid-column: 4;
+            background-image: url("/images/expenseTypeButtonOthersOff.png");
+        }
+
+        .expenses8 #otherExpensesButton {
+            background-image: url("/images/expenseTypeButtonOthersOn.png");
+        }
+       
+        #allExpensesButton {
+            -ms-grid-column: 5;
+            background-image: url("/images/expenseTypeButtonAllOff.png");
+        }                                        
+
+        .expenses15 #allExpensesButton {
+            background-image: url("/images/expenseTypeButtonAllOn.png");
+        }

@@ -1,0 +1,33 @@
+<div>
+    <div class="image-container" ng-class="{'image-container-default-background': !picture && !previewImage}" ng-cloak>
+        <button class="change-photo">CHANGE PHOTO</button>
+        <div class="img-placeholder ng-hide" ng-show="picture"></div>
+        <img class="img-result" ng-src="{{picture | imageBase64}}" ng-show="picture && !previewImage" />
+        <div class="img-placeholder ng-hide" ng-show="myImage"></div>
+        <img class="img-preview" ng-src="{{previewImage | imageBase64}}" ng-show="previewImage" />
+        <input class="ng-hide file-input" type="file" id="fileInput"/>
+    </div>
+    <div id="imageModal" class="image-modal modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Crop the image</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="cropArea">
+                        <img-crop class="img-crop"
+                                  image="myImage"
+                                  area-type="{{areaType}}"
+                                  aspect-ratio="aspectRatio"
+                                  result-image-size="{{imageSize}}"
+                                  result-image="previewImage"></img-crop>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn  btn-default" ng-click="cancelImage()">Cancel</button>
+                    <button class="btn btn-primary" ng-click="saveImage($event)">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

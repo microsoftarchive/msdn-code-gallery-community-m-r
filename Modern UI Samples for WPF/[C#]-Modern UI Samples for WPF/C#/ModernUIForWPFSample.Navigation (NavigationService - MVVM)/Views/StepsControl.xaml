@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ModernUIForWPFSample.Navigation.Views.StepsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="600"
+             DataContext="{Binding StepsViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+            Steps:
+            <LineBreak />
+            1st Install the ModernUI from Nuget
+            <LineBreak />
+            2nd Define in App.xaml the resources for ModernUI.xaml and ModernUI.Light.xaml
+            <LineBreak />
+            3rd Change the MainWindow: Replace the tag &quot;Window&quot; to ModernWindow
+            <LineBreak />
+            4th Define the content for the MainWindow using TitleLinks, MenuLinkGroups, LinkGroup...
+            <LineBreak />
+            5th Define which content is shown when the application start, by using the ContentSource
+            <LineBreak />
+            6th Define the IModernNavigationService that implements the INavigationService from MVVMLight
+            <LineBreak />
+            7th Define the implemention of the IModernNavigationService (the NavigationService)
+            <LineBreak />
+            8th Configure the navigation service in MainWindow
+            <LineBreak />
+            9th In StepsViewModel use the navigation service defined for navigate to the resources view.
+            <LineBreak />
+            <LineBreak />
+            Note: For change the appearance use  AppearanceManager class
+        </TextBlock>
+        <Button Content="See more resources" Command="{Binding ResourcesCommand}"/>
+    </StackPanel>
+</UserControl>

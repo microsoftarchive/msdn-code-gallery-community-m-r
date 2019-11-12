@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<GadgeteerDefinitions xmlns="http://schemas.microsoft.com/Gadgeteer/2011/Hardware">
+  <ModuleDefinitions>
+    <ModuleDefinition Name="Gyro"
+                  UniqueId="ec06226c-9297-4c36-bc75-aa1bd26ad2a1"
+                  Manufacturer="GHI Electronics"
+                  Description="A Gyro module"
+                  InstanceName="gyro"
+                  Type="Gadgeteer.Modules.GHIElectronics.Gyro"
+                  ModuleSuppliesPower="false"
+                  Image="Image.jpg"
+                  BoardHeight="32.2"
+                  BoardWidth="17.2"
+                  HardwareVersion="1.0"
+                  MinimumGadgeteerCoreVersion="2.43.800"
+                  HelpUrl="http://www.ghielectronics.com/catalog/product/336">
+
+      <Assemblies>
+        <Assembly MFVersion="4.3" Name="GTM.GHIElectronics.Gyro"/>
+      </Assemblies>
+
+      <Sockets>
+        <Socket Left="8.6" Top="27.7" Orientation="90" ConstructorOrder="1" TypesLabel="I">
+          <Types>
+            <Type>I</Type>
+          </Types>
+          <Pins>
+            <Pin Shared="false">3</Pin>
+            <Pin Shared="true">8</Pin>
+            <Pin Shared="true">9</Pin>
+          </Pins>
+        </Socket>
+      </Sockets>
+
+      <Power>
+        <PowerRequirements Voltage="3.3">
+          <TypicalCurrent>0.0</TypicalCurrent>
+          <MaximumCurrent>0.0</MaximumCurrent>
+        </PowerRequirements>
+        <PowerRequirements Voltage="5.0">
+          <TypicalCurrent>0.0</TypicalCurrent>
+          <MaximumCurrent>0.0</MaximumCurrent>
+        </PowerRequirements>
+      </Power>
+    </ModuleDefinition>
+  </ModuleDefinitions>
+</GadgeteerDefinitions>

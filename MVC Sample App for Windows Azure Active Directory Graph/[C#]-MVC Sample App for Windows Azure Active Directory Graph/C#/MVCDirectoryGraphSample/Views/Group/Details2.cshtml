@@ -1,0 +1,54 @@
+﻿@model Microsoft.WindowsAzure.ActiveDirectory.Group
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<fieldset>
+    <legend>Group</legend>
+    
+    <div>
+         @Html.DisplayNameFor(model => model.objectId) : @Html.DisplayFor(model => model.objectId)
+    </div>
+    
+    <div>
+         @Html.DisplayNameFor(model => model.dirSyncEnabled) : @Html.DisplayFor(model => model.dirSyncEnabled)
+    </div>
+    
+    <div>
+         @Html.DisplayNameFor(model => model.accountEnabled) : @Html.DisplayFor(model => model.accountEnabled)
+    </div>
+
+    <div>
+         @Html.DisplayNameFor(model => model.displayName) : @Html.DisplayFor(model => model.displayName)
+    </div>
+
+
+    <div>
+         @Html.DisplayNameFor(model => model.lastDirSyncTime) : @Html.DisplayFor(model => model.lastDirSyncTime)
+    </div>        
+     
+
+    <div>
+         @Html.DisplayNameFor(model => model.description) : @Html.DisplayFor(model => model.description)
+    </div>        
+
+    <div>
+         @Html.DisplayNameFor(model => model.preferredLanguage) : @Html.DisplayFor(model => model.preferredLanguage)
+    </div>        
+   
+    <div>
+         @Html.DisplayNameFor(model => model.owners) : @Html.DisplayFor(model => model.owners)
+    </div>
+
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.objectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

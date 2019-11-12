@@ -1,0 +1,53 @@
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9" />
+    <link rel="icon" href="@Url.Content("favicon.ico")" type="image/x-icon"/>
+    @RenderSection("Meta", required:false)
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/AttendeeStyles/")" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.2.js"></script>
+    @Scripts.Render("~/ThirdPartyScripts/", "~/AppScripts/")
+</head>
+<body>
+    <div class="page">
+        <header id="header">
+            <div class="wrapper">
+                <span class="title">my events</span>
+                <section class="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div>
+            <div>
+                <section class="left">
+                    <nav class="menu">
+                        <a href="@Url.Action("Index", "Home")">
+                            <div class="menu-option">
+                                <img src="@Url.Content("~/Styles/Images/button-home.png")" />
+                            </div>
+                            <span>home</span>
+                        </a>
+                        <a href="@Url.Action("Index", "Home", new { area = "Organizer" })">
+                            <div class="menu-option">
+                                <img src="@Url.Content("~/Styles/Images/button-manage.png")" />
+                            </div>
+                            <span>manage events</span>
+                        </a>
+                    </nav>
+                </section>
+                <section class="right">
+                    @RenderSection("Actions", required: false)
+                </section>
+            </div>
+        </header>
+
+        @RenderBody()
+    </div>
+    @JsConfiguration.SetConfigurations()
+    @JsHelper.CreateHelpers()
+    @RenderSection("scripts", required: false)
+</body>
+</html>

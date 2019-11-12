@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="dsLUP_BANK" targetNamespace="http://www.tempuri.org/dsLUP_BANK.xsd" xmlns:mstns="http://www.tempuri.org/dsLUP_BANK.xsd" xmlns="http://www.tempuri.org/dsLUP_BANK.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="dsLUP_BANK" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="LUP_BANK">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sACCOUNT_NO" type="xs:string" />
+              <xs:element name="sBANK_NAME" type="xs:string" />
+              <xs:element name="sBRANCH_NAME" type="xs:string" />
+              <xs:element name="sBRANCH_code" type="xs:string" />
+              <xs:element name="sADDRESS" type="xs:string" />
+              <xs:element name="sCONTACT1" type="xs:string" minOccurs="0" />
+              <xs:element name="sCONTACT2" type="xs:string" minOccurs="0" />
+              <xs:element name="sMANAGER_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="sMANAGER_PH" type="xs:string" minOccurs="0" />
+              <xs:element name="sMANAGER_CELL" type="xs:string" minOccurs="0" />
+              <xs:element name="sSTATUS" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LUP_BANK" />
+      <xs:field xpath="mstns:sACCOUNT_NO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

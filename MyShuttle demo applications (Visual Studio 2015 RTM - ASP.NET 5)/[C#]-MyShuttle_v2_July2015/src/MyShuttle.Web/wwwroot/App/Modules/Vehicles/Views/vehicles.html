@@ -1,0 +1,43 @@
+<section data-ng-controller="VehiclesController">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h3>Vehicles</h3>
+            <list-input-search model="search" page="page"></list-input-search>
+        </div>
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <button type="button" class="btn btn-default" ui-sref="newVehicle">Add a new vehicle</button>
+                    <h3 ng-show="count == 0" class="ng-hide">Your search "{{search}}" did not match any vehicles</h3>
+                </div>
+                <h4 class="pull-right"><strong>{{count}}</strong> results</h4>
+            </div>
+            <div class="row list-container">
+                <div ng-repeat="vehicle in vehicles" class="col-xs-12 col-md-6 vehicle-list-item">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img ng-src="{{vehicle.Picture | imageBase64}}"/>
+                            <div class="data">
+                                <h4>{{vehicle.Make}} {{vehicle.Model}}</h4>
+                                <ms-rating model="vehicle.RatingAvg" big="true"></ms-rating>
+                                <div class="separation">
+                                    <span class="license-plate">{{vehicle.LicensePlate}}</span>
+                                    <div>
+                                        <h3>{{vehicle.TotalRides}}</h3> Rides
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer text-right">
+                            <button type="button" class="btn btn-warning btn-xs" ng-click="remove(vehicle)">Delete</button>
+                            <button type="button" class="btn btn-primary btn-xs" ui-sref="editVehicle({id: vehicle.VehicleId})">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <list-pager count="count" page="page" go-to="goTo(numPage)"></list-pager>
+        </div>
+    </div>
+</section>

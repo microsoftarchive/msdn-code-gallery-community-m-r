@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1>Azure AD OpenIDConnect Sample</h1>
+    <p class="lead">
+        This sample shows how to build a .Net MVC web application that uses OpenID Connect to
+        sign-in users from a single Azure Active Directory tenant, using the ASP.Net OpenID Connect OWIN middleware.
+    </p>
+
+    <p>
+        For instructions on how to set up your AAD tenant and configure this sample, please see the
+        <a href="https://github.com/AzureADSamples/WebApp-OpenIDConnect-DotNet/blob/master/README.md">Readme file</a>
+        on GitHub.
+    </p>
+</div>
+<div>
+    <p>To see OpenID Connect authentication in action, click the Sign In button on the top navigation bar.</p>
+    <div class="has-error">
+        @if (System.Configuration.ConfigurationManager.AppSettings["ida:ClientId"].StartsWith("["))
+        {
+            <p class="help-block">
+                ERROR: Please update the <code>ida.ClientId</code> AppSetting in web.config with the
+                Client ID for the AAD Application you have created in the
+                <a href="https://manage.windowsazure.com">Azure Management Portal</a>.
+            </p>
+        }
+        @if (System.Configuration.ConfigurationManager.AppSettings["ida:Tenant"].StartsWith("["))
+        {
+            <p class="help-block">
+                ERROR: Please update the <code>ida.Tenant</code> AppSetting in web.config with your AAD tenant name
+                (e.g. contoso.onmicrosoft.com).
+            </p>
+        }
+    </div>
+</div>

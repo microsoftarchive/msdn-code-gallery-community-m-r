@@ -1,0 +1,28 @@
+﻿<Page x:Class="MyShuttle.Client.Desktop.Views.CameraView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyShuttle.Client.Desktop"
+      xmlns:controls="clr-namespace:MyShuttle.Client.Desktop.Controls"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance local:DesignCameraViewModel, IsDesignTimeCreatable=True}"
+      d:DesignHeight="720" d:DesignWidth="1280">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <controls:Menu IsCameraNavigationEnabled="False" IsRefreshEnabled="False" />
+
+        <controls:Details Grid.Column="1" Grid.RowSpan="2" Width="{StaticResource DetailsColumnWidth}" Padding="{StaticResource DetailsColumnPadding}" DataContext="{Binding Details}"/>
+
+        <controls:VehicleCamera Grid.Row="1" />
+    </Grid>
+</Page>

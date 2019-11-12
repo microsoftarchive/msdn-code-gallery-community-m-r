@@ -1,0 +1,47 @@
+﻿<base:BasePage
+    x:Class="MyCompany.Visitors.Client.UniversalApp.WindowsPhone.Views.VisitsListingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyCompany.Visitors.Client.UniversalApp.WindowsPhone.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:base="using:MyCompany.Visitors.Client.UniversalApp.WindowsPhone.Views.Base"
+    xmlns:sharedControls="using:MyCompany.Visitors.Client.UniversalApp.Controls"
+    DataContext="{Binding VisitsListViewModel, Source={StaticResource Locator}}"
+    
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Style="{StaticResource HeaderTextStyle}" Margin="20,5,0,0" x:Uid="Visits"
+                   Foreground="{StaticResource AccentBrush}" VerticalAlignment="Top" FontSize="48"
+                   Text="Visits"></TextBlock>
+
+        <sharedControls:AuthenticatedEmployee x:Name="AuthEmployee" Grid.Row="0" Grid.Column="1"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Right"
+                                        Margin="0,5,20,0"/>
+        
+
+        <ListView x:Name="lstItems" Grid.Row="1" ItemsSource="{Binding VisitsList}" Visibility="Visible"
+                  ItemTemplate="{StaticResource ListVisitsTemplate}" ItemContainerStyle="{StaticResource ListViewItemContainer}" 
+                  SelectionMode="None" Margin="10,0,10,40" HorizontalAlignment="Stretch" Width="Auto" HorizontalContentAlignment="Stretch">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" Margin="0,20,0,0"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.GroupStyle>
+                <GroupStyle HeaderTemplate="{StaticResource VisitsGroupHeader}" Panel="{StaticResource SnappedVisitsGroupPanel}"></GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+        
+        <sharedControls:LoadingControl Grid.Row="0" Grid.RowSpan="2" IsBusy="{Binding IsBusy}"></sharedControls:LoadingControl>        
+        
+    </Grid>
+    
+</base:BasePage>

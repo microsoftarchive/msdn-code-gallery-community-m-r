@@ -1,0 +1,193 @@
+﻿<base:WindowsBasePage
+    x:Class="MyShuttle.Client.W10.UniversalApp.Views.RideDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.W10.UniversalApp"
+    xmlns:vm="using:MyShuttle.Client.W10.UniversalApp.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:base="using:MyShuttle.Client.W10.UniversalApp.Views.Base"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:callisto="using:Callisto.Controls"
+    Title="Ride detail"
+    mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=vm:VehicleDetailViewModel}" >
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="SmallLayout">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="RelativePanel.Margin" Value="10" />
+                        <Setter Target="ContentPanel.Orientation" Value="Vertical" />
+                        <Setter Target="BlockData1.Orientation" Value="Vertical" />
+                        <Setter Target="BlockData2.Orientation" Value="Vertical" />
+                        <Setter Target="SendButton.(RelativePanel.Below)" Value="CommentTextBox" />
+                        <Setter Target="SendButton.Margin" Value="0 5 0 0" />
+                        <Setter Target="SendButton.Width" Value="300" />
+                        <Setter Target="ContentSendButton.Orientation" Value="Horizontal" />
+                        <Setter Target="EvaluateForm.Margin" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="BigLayout">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="850" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="RelativePanel.Margin" Value="30 20 30 20" />
+                        <Setter Target="ContentPanel.Orientation" Value="Horizontal" />
+                        <Setter Target="BlockData1.Orientation" Value="Horizontal" />
+                        <Setter Target="BlockData2.Orientation" Value="Horizontal" />
+                        <Setter Target="SendButton.(RelativePanel.RightOf)" Value="CommentTextBox" />
+                        <Setter Target="SendButton.Margin" Value="0" />
+                        <Setter Target="ContentSendButton.Orientation" Value="Vertical" />
+                        <Setter Target="SendButton.Width" Value="145" />
+                        <Setter Target="SendButton.Height" Value="135" />
+                        <Setter Target="EvaluateForm.Margin" Value="20 0 0 0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF202C3A" VerticalAlignment="Top">
+            <Image Style="{StaticResource ImageHeader}" />
+        </Grid>
+
+        <ProgressRing  Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsHidden="True"  Width="40" Height="40" Margin="20" IsActive="True" Visibility="{Binding IsLoadingRide, Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="#2E3B4B"/>
+
+        <ScrollViewer Grid.Row="1">
+            <RelativePanel Margin="30,20,30,20" x:Name="RelativePanel">
+                <StackPanel>
+
+                    <TextBlock Text="{Binding Ride.StartDateTime, Converter={StaticResource DateTimeToUpperCaseFormattedDateConverter}, FallbackValue='March, 21th 2014'}" Style="{StaticResource PrimaryLabelBlock}"></TextBlock>
+                    <TextBlock FontWeight="SemiLight" FontSize="32" Margin="0,20,0,20" TextWrapping="WrapWholeWords">
+                    <Run Text="{Binding Ride.StartAddress}"/>
+                    <Run Text="to"/>
+                    <Run Text="{Binding Ride.EndAddress}"/>
+                    </TextBlock>
+
+                    <StackPanel Margin="0,0,0,20">
+
+                        <StackPanel Orientation="Horizontal" x:Name="BlockData1">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                                <StackPanel Orientation="Horizontal" Width="120">
+                                    <Image Width="20" Source="/Resources/Images/ride-start.png" Margin="0,0,5,0"></Image>
+                                    <TextBlock Text="START" Style="{StaticResource LabelBlock}"></TextBlock>
+                                </StackPanel>
+
+                                <TextBlock Width="80" Text="{Binding Ride.StartDateTime, Converter={StaticResource DateTimeToTimeConverter}, FallbackValue='14:35 am'}" Grid.Row="0"  Style="{StaticResource DarkLabelBlock}"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"  Margin="0,0,0,15">
+                                <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Horizontal" Width="120">
+                                    <Image Width="20" Source="/Resources/Images/ride-end.png" Margin="0,0,5,0"></Image>
+                                    <TextBlock Text="END" Style="{StaticResource LabelBlock}"></TextBlock>
+                                </StackPanel>
+
+                                <TextBlock Width="80" Text="{Binding Ride.EndDateTime, Converter={StaticResource DateTimeToTimeConverter}, FallbackValue='14:50 pm'}" Grid.Row="0"  Style="{StaticResource DarkLabelBlock}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" x:Name="BlockData2">
+
+
+                            <StackPanel Orientation="Horizontal"  Margin="0,0,0,15">
+                                <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" Width="120">
+                                    <Image Width="20" Source="/Resources/Images/ride-cost.png" Margin="0,0,5,0"></Image>
+                                    <TextBlock Text="COST" Style="{StaticResource LabelBlock}"></TextBlock>
+                                </StackPanel>
+
+
+                                <TextBlock Grid.Column="1" Grid.Row="2"  Style="{StaticResource DarkLabelBlock}" Width="80">     
+                                        <Run Text="{Binding Ride.Vehicle.Rate}"/>
+                                        <Run Text="$/mi" />
+                                </TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"  Margin="0,0,0,15">
+
+                                <StackPanel Grid.Column="3" Grid.Row="2" Orientation="Horizontal" Width="120">
+                                    <Image Width="20" Source="/Resources/Images/ride-distance.png" Margin="0,0,5,0"></Image>
+                                    <TextBlock Text="DISTANCE" Style="{StaticResource LabelBlock}"></TextBlock>
+                                </StackPanel>
+
+                                <TextBlock  Grid.Column="4" Text="9.3" Grid.Row="2"  Style="{StaticResource DarkLabelBlock}">
+                        <Run Text="{Binding Ride.Distance}"></Run>
+                        <Run Text="mi"></Run>
+                                </TextBlock>
+
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" x:Name="ContentPanel" HorizontalAlignment="Left">
+                        <Viewbox MaxWidth="320" Height="253" Margin="0,0,0,20">
+                            <Grid x:Name="VehicleData" DataContext="{Binding Ride.Vehicle}" Width="320" Height="253" HorizontalAlignment="Left">
+                                <Border Style="{StaticResource TileBorder}">
+                                    <Grid>
+                                        <Grid  Background="White">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="170"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="{Binding Picture, Converter={StaticResource ByteArrayToImageConverter}}" Stretch="UniformToFill"></Image>
+
+                                            <StackPanel Grid.Row="1" Margin="10">
+                                                <TextBlock Text="{Binding MakeAndModel}" Foreground="#30374A"></TextBlock>
+
+                                                <Grid>
+                                                    <callisto:Rating
+                                         Margin="0,5,0,0"
+                                         ItemCount="5" 
+                                         Style="{StaticResource SmallRating}"
+                                         ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                         Value="{Binding RatingAvg}"/>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,6,0,0">
+                                                        <TextBlock Text="distance" Style="{StaticResource ExtraSmallFontDetail}"></TextBlock>
+                                                        <TextBlock Text="{Binding DistanceFromGivenPosition, Converter={StaticResource DistanceToStringConverter}}" Style="{StaticResource GreenFontDetail}"></TextBlock>
+                                                        <TextBlock Text="mi" FontSize="11" Margin="2,0,0,0"  VerticalAlignment="Center"></TextBlock>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Grid>
+                                        <Ellipse Fill="{Binding VehicleStatus, Converter={StaticResource VehicleStatusToColorBrushConverter}}" Margin="0,162,15,0" HorizontalAlignment="Right"  Width="16" Height="16" VerticalAlignment="Top" ></Ellipse>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Viewbox>
+
+                        <StackPanel x:Name="EvaluateForm">
+                            <TextBlock Text="EVALUATE" Style="{StaticResource LabelBlock}"></TextBlock>
+                            <callisto:Rating Margin="0,3,0,0"
+                                     ItemCount="5" 
+                                     Style="{StaticResource LargeRating}"
+                                     ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                     Value="{Binding Ride.Rating, Mode=OneWay}" />
+                            <TextBlock Text="COMMENT" Style="{StaticResource LabelBlock}" Margin="0,20,0,10"></TextBlock>
+
+                            <RelativePanel>
+                                <TextBox x:Name="CommentTextBox" Style="{StaticResource CommentTextBox}" Width="300" Height="135" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
+                                <Button x:Name="SendButton" Style="{StaticResource ActionButton}" Width="300" Command="{Binding SaveRideRateCommand}" Foreground="White" Background="{StaticResource OccupiedStatusColorBrush}">
+                                    <Button.Content>
+                                        <StackPanel x:Name="ContentSendButton">
+                                            <Image Source="/Resources/Images/send.png" Width="36" Margin="10"></Image>
+                                            <TextBlock Text="Send" Margin="10"  VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </RelativePanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+            </RelativePanel>
+        </ScrollViewer>
+    </Grid>
+</base:WindowsBasePage>

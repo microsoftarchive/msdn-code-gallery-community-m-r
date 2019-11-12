@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="RCE.Modules.Timeline.AudioPreview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:RCE.Modules.Timeline.Controls"
+    xmlns:Controls1="clr-namespace:RCE.Infrastructure.Controls;assembly=RCE.Infrastructure"
+    mc:Ignorable="d"
+    Width="200" Height="33"
+    Loaded="UserControl_Loaded">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AudioChannelsGroup">
+                <VisualState x:Name="StereoVisible">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="StereoElement">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MonoVisible">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="MonoElement">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--
+        <Border CornerRadius="4,0,0,4" BorderThickness="0" Background="{StaticResource AudioPreviewVolumeControlBackground}" BorderBrush="{StaticResource AudioPreviewVolumeControlBackground}">
+            <Controls:VolumeControl Volume="{Binding Volume, Mode=TwoWay}"  Margin="0,-5,0,0" Height="35.9492" RenderTransformOrigin="0.5,0.5" Foreground="{StaticResource PreviewControlDefaultForeground}" >
+            	<Controls:VolumeControl.RenderTransform>
+            		<TransformGroup>
+            			<ScaleTransform ScaleX="0.80" ScaleY="0.80"/>
+            			<SkewTransform/>
+            			<RotateTransform/>
+            			<TranslateTransform/>
+            		</TransformGroup>
+            	</Controls:VolumeControl.RenderTransform>
+            </Controls:VolumeControl>
+    	</Border>
+        -->
+        <Border Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Stretch" Background="{StaticResource AudioPreviewControlBackground}" CornerRadius="0,4,4,0" BorderThickness="0,1,1,0" BorderBrush="{StaticResource AudioPreviewControlBorderBrush}" Margin="0,0,0,0" />
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Height="1" Margin="2,22,0,0" VerticalAlignment="Top" Width="Auto" Fill="{StaticResource AudioPreviewControlRectangleFill}" Stroke="#FF000000" StrokeThickness="0"/>
+            <Controls:VolumeLevels Grid.Column="0" x:Name="VolumeLevels" />
+        </Grid>
+        <Path Width="9.90692" Height="12" Stretch="Fill" Fill="{StaticResource AudioIconPathFill}" Data="F1 M 162.429,591.667L 162.429,599.781L 162.417,599.781C 162.547,600.43 162.194,601.33 161.462,602.063C 160.498,603.029 159.24,603.33 158.652,602.746C 158.064,602.154 158.369,600.895 159.332,599.934C 160.073,599.196 160.984,598.844 161.635,598.985L 161.635,595.915L 156.614,592.899L 156.614,596.29L 156.6,596.29C 156.73,596.939 156.379,597.839 155.646,598.573C 154.682,599.539 153.424,599.839 152.835,599.255C 152.247,598.663 152.553,597.405 153.516,596.445C 154.258,595.706 155.169,595.353 155.82,595.495L 155.82,588.176L 156.614,588.176L 156.614,588.222L 162.346,591.667L 162.429,591.667 Z " HorizontalAlignment="Left" Margin="1.804,3,0,0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="9.5" FontWeight="Bold" Grid.Column="1" Text="{Binding Path=Asset.Title}" TextWrapping="NoWrap" Foreground="{StaticResource ForegroundBrush}" HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+        <TextBlock FontSize="9.5" x:Name="StereoElement" Grid.Row="0" Grid.Column="2" FontWeight="Bold" Text="(STEREO)" TextWrapping="NoWrap" Foreground="{StaticResource ForegroundBrush}" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <TextBlock FontSize="9.5" x:Name="MonoElement" Grid.Row="0" Grid.Column="2" FontWeight="Bold" Text="(MONO)" TextWrapping="NoWrap" Foreground="{StaticResource ForegroundBrush}" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+
+        <Rectangle x:Name="SelectionBox" Grid.ColumnSpan="3"  Visibility="Collapsed" StrokeThickness="2" RadiusX="3" RadiusY="3" Stroke="{StaticResource AudioPreviewSelectionBoxStroke}" Grid.RowSpan="2"/>
+        <!--
+        <Border x:Name="DownloadProgressBar" HorizontalAlignment="Stretch" Background="{StaticResource AudioPreviewDownloadBarBackground}" Visibility="Collapsed" Grid.Column="1" Height="3" Margin="2,11,1,0">
+            <Rectangle x:Name="Link">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FF047804" Offset="0"/>
+                        <GradientStop x:Name="gradient1" Color="#FF024A02" Offset="0"/>
+                        <GradientStop x:Name="gradient2" Color="#FF99CC99" Offset="0"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+        -->
+    </Grid>
+</UserControl>

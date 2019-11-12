@@ -1,0 +1,10 @@
+bin\Release\SyntaxHighlighter.dll
+bin\Release\SyntaxHighlighter.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\SyntaxHighlighter.dll
+obj\Release\SyntaxHighlighter.pdb
+bin\Debug\SyntaxHighlighter.dll
+bin\Debug\SyntaxHighlighter.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\SyntaxHighlighter.dll
+obj\Debug\SyntaxHighlighter.pdb

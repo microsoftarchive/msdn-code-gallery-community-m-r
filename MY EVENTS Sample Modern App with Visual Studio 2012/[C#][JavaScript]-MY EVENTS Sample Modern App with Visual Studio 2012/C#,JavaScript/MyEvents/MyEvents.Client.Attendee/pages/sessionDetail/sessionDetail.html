@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Session Detail</title>
+    <!-- References added only for design time purpose -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="/js/default.js"></script>
+    <!-- Page references -->
+    <link href="/pages/sessionDetail/sessionDetail.css" rel="stylesheet" />
+    <script src="/js/controls/myEvents.controls.roomMap.js"></script>
+    <script src="/pages/sessionDetail/sessionDetail.js"></script>
+</head>
+<body>
+    <div class="itemTemplateFriends" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="item">
+            <div class="image">
+                <img alt="picture" src="" data-win-bind="src: FacebookId MyEvents.Formaters.facebookImage" />
+            </div>
+            <div class="item-header">
+                <div class="item-name" data-win-bind="innerText: Name"></div>
+                <div class="item-description" data-win-bind="innerText: Bio"></div>
+            </div>
+        </div>
+    </div>
+    <div class="itemTemplateComments" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="item">
+            <div class="item-header">
+                <div class="image"></div>
+                <div class="item-name win-type-ellipsis" data-win-bind="innerText: RegisteredUser.Name"></div>
+                <div class="item-time" data-win-bind="innerText: AddedDateTime MyEvents.Formaters.formatShortTime"></div>
+            </div>
+            <div class="item-description" data-win-bind="innerText: Text"></div>
+        </div>
+    </div>
+    <div class="fragment sessiondetailpage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle" data-win-bind="textContent: Title"></span>
+            </h1>
+            <div class="user-data">
+                <span class="user-name" data-win-bind="innerText: user.name"></span>
+                <img src="" class="user-image" data-win-bind="src: user.facebookId MyEvents.Formaters.facebookImage" alt="user image" />
+            </div>
+        </header>
+        <section aria-label="Main content" role="main">
+            <h2 class="title-details">details</h2>
+            <article class="details">
+                <div class="details-header">
+                    <div class="details-favorite" data-win-bind="style.display: IsFavorite MyEvents.Formaters.formatBoolToDisplay"></div>
+                    <div class="details-date" data-win-bind="innerText: StartTime MyEvents.Formaters.formatVerboseDate"></div>
+                    <div class="details-time">
+                        <div data-win-bind="innerText: StartTime MyEvents.Formaters.formatTime"></div>
+                        <div data-win-bind="innerText: TimeZoneOffset MyEvents.Formaters.formatGMTMessage"></div>
+                        <div class="details-duration" data-win-bind="innerText: Duration MyEvents.Formaters.formatDuration"></div>
+                    </div>
+                    <div class="details-speaker" data-win-bind="innerText: Speaker"></div>
+                </div>
+                <div class="details-description">
+                    <h2>description</h2>
+                    <h4 class="multi-line-ellipsis" data-win-bind="textContent: Description"></h4>
+                </div>
+                <div class="rating-zone">
+                    <span>rate this session</span>
+                    <div class="rating" data-win-control="WinJS.UI.Rating"></div>
+                </div>
+            </article>
+            <h2 class="title-comments">comments (<span class="title-comments-count"></span>)</h2>
+            <article class="comments">
+                <textarea class="text-comment"></textarea>
+                <button class="button-comment" disabled="disabled">comment</button>
+                <div class="commentsInSessionList"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{itemTemplate:select('.itemTemplateComments'), selectionMode:'none', swipeBehavior:'none', layout:{type:WinJS.UI.ListLayout}}">
+                </div>
+            </article>
+            <h2 class="title-friends">friends in this session (<span class="title-friends-count"></span>)</h2>
+            <article class="friendinsession">
+                <div class="friendInSessionList"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{itemTemplate:select('.itemTemplateFriends'), selectionMode:'none', swipeBehavior:'none', layout:{type:WinJS.UI.ListLayout, backdropColor: 'rgba(180,180,0,1)'}}">
+                </div>
+                <div class="no-friends">no friends attend this session</div>
+            </article>
+            <h2 class="title-room">room map</h2>
+            <article class="room-map" style="position: relative;">
+                <canvas id="map-image" style="position: absolute;"></canvas>
+                <img id="map-image-mapTransparent" border="0" usemap="#map-image-map" style="position: absolute; opacity: 0.0001;" />
+                <map name="map-image-map">
+                </map>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

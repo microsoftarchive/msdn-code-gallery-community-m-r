@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>Gadgeteer</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Gadgeteer</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16F46F9A-6FA2-4E4C-A0DD-5C53319DBCAB}</ProjectGuid>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Gadgeteer.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Release\Gadgeteer.xml</DocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoGlobal.cs">
+      <Link>AssemblyInfoGlobal.cs</Link>
+    </Compile>
+    <Compile Include="Interfaces\AnalogInput.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\AnalogOutput.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\DigitalInput.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\DigitalIO.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\DigitalOutput.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\I2CBus.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\Enums.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\InterruptInput.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Interfaces\PWMOutput.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Modules\DisplayModule.cs" />
+    <Compile Include="Modules\Module.cs" />
+    <Compile Include="Modules\NetworkModule.cs" />
+    <Compile Include="Mainboard.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Socket.cs" />
+    <Compile Include="Socket.SocketInterfaces.cs" />
+    <Compile Include="Socket.SocketInterfaces.Enums.cs" />
+    <Compile Include="Socket.SocketInterfaces.Serial.cs" />
+    <Compile Include="Timer.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Graphics, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware.PWM" />
+    <Reference Include="Microsoft.SPOT.IO, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Native, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Net, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.TinyCore, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.2821.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

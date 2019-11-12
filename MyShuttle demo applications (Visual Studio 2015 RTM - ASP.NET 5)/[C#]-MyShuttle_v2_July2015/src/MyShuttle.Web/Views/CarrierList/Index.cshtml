@@ -1,0 +1,35 @@
+﻿@model MyShuttle.Web.Models.CarrierListViewModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="Content/jquery.raty.css" xmlns="http://www.w3.org/1999/html" />
+    <link rel="stylesheet" type="text/css" href="Content/form.css" xmlns="http://www.w3.org/1999/html" />
+    <link rel="stylesheet" type="text/css" href="Content/carriers.css" xmlns="http://www.w3.org/1999/html" />
+    <link rel="stylesheet" type="text/css" href="Content/footer.css" xmlns="http://www.w3.org/1999/html" />
+}
+
+<!-- Carrier List -->
+<div>
+    @await Html.PartialAsync("_RegisterCarrierForm", Model.Carrier)
+</div>
+
+<section class="carrier-list">
+    <div class="ms-container-fluid full-spaced clearfix text-center ">
+        <div class="row carrier-controls margin-zero">
+            <div class="col-sm-offset-9 col-sm-3 search-carrier padding-zero">
+                @await Html.PartialAsync("_SearchPartial", Model.Search)
+            </div>
+        </div>
+        <div id="listContainer">
+            @await Html.PartialAsync("_CarrierListPartial", Model.CarrierList)
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script charset="UTF-8" type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+    <script src="Scripts/Pages/CarrierList/index.js"></script>
+}

@@ -1,0 +1,20 @@
+﻿@helper CreateHelpers()
+{    
+    var urlHelper = new System.Web.Mvc.UrlHelper(Context.Request.RequestContext);
+    var rootUrl = urlHelper.Content("~");
+    <text>
+        <script>
+            var myEvents = myEvents || {};
+            myEvents.url = myEvents.url || {};
+            myEvents.url.getUrl = function getUrl(action, controller, area) {
+                var url = "@rootUrl";
+                if (area) {
+                    url += area + "/";
+                }
+
+                url += controller + "/" + action + "/";
+                return url;
+            };
+        </script>
+    </text>
+}

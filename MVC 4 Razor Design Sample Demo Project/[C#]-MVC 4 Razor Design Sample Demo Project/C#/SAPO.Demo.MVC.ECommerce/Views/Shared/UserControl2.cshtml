@@ -1,0 +1,32 @@
+﻿@model SAPO.Demo.MVC.ECommerce.Models.Album
+<div class="review">
+   @* <h4>@Model.Title</h4>
+    <span>Rating: @Model.SubTitle</span>
+  
+    <p>
+        <span>
+            @Html.Raw(Model.Description)
+        </span>
+        <span class="right">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </span>        
+    </p>
+
+      
+        <asp:HyperLink ID="HyperLinkStorePage" runat="server" CssClass="store">
+            <strong>
+                <asp:Literal ID="LiteralStoreName" runat="server" /></strong><br />
+            <asp:Literal ID="LiteralAddress" runat="server" /><br />
+            <strong>
+                <EPiServer:Translate runat="server" Text="/myPages/openingHours" />
+            </strong>
+            <br />
+        </asp:HyperLink>
+        <div class="container-right">
+            HyperLink ID="HyperLinkDelete" runat="server" CssClass="delete" />
+            <asp:Label ID="LabelFavourite" runat="server" CssClass="favourite" />
+        </div>
+    </asp:Panel>*@
+
+</div>
+

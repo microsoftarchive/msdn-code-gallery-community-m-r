@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" role="navigation" data-ng-controller="HeaderController">
+    <div class="container">
+        <a ng-href="Carrier" class="header-logo"><img src="App/Modules/Core/Images/logo-header.png" /></a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="link in menu.options" ng-class="{'active': isActiveRoute('{{link.path}}')}">
+                    <a ng-href="Carrier#!/{{link.path}}">{{link.display}}</a>
+                </li>
+            </ul>
+            <section class="nav navbar-nav navbar-right">
+                <div class="current-user text-right">
+                    <a ng-href="Carrier#!/profile"><strong>{{profile.Name}}</strong></a>
+                    <a class="logout" href="Carrier/LogOff">Log out</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</nav>

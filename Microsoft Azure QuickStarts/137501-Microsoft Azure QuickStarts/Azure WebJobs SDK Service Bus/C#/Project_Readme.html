@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Azure WebJobs SDK: Service Bus</title>
+    <style>body { font-family: 'Lucida Sans Unicode'} .subhead { font-style:italic; color: gray }</style>
+</head>
+<body>
+    <h1>Azure WebJobs SDK: Service Bus</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+    <p>
+        This will show you how to perform common scenarios using the Microsoft Azure Service messaging using
+        the Microsoft Azure WebJobs SDK. The scenarios covered include triggering a function when a new message comes
+        on a queue or topic, and sending a message to another queue or topic.     
+    </p>
+    <p>
+        In this sample, the <code>Program</code> class starts the <code>JobHost</code>  and creates the demo data. 
+        The <code>Functions</code> class
+        contains methods that will be invoked when when messages are placed on the Service Bus, based on the attributes in 
+        the method headers.
+    </p>
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>. 
+    </p>
+    
+   
+    <h2>Running this sample</h2>
+    <ol>
+        <li>
+            Create a Storage Account and Service Bus Messaging namespace through the Azure Portal 
+        </li>
+        <li>
+            Open app.config and paste your Storage connection string into the <code>AzureWebJobsDashboard</code> and
+            <code>AzureWebJobsStorage</code> connection string settings.
+        </li>
+        <li>
+            Paste your Service Bus connection string into the <code>AzureWebJobsServiceBus</code> connection string setting.
+        </li>
+        <li>
+            Run the project
+        </li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkID=320976">Get Started with the Azure WebJobs SDK</a></li>
+    </ul>
+</body>
+</html>

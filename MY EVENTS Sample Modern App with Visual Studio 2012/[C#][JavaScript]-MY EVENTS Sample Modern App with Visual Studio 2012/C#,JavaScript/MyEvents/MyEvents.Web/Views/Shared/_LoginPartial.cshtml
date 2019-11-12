@@ -1,0 +1,11 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <span class="label">hi, @User.Identity.Name</span>
+    <a id="fb-logout-button" href="#" class="button">sign out</a>
+}
+else
+{
+    <a id="fb-login-button" class="button">
+        sign in with Facebook
+    </a>
+}

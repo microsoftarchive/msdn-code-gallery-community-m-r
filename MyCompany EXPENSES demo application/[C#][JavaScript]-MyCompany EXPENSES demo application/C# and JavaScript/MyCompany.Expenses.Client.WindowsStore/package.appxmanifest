@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="56148IbonLanda.MyCompanyExpenses" Version="1.1.0.0" Publisher="CN=A5D963B9-7950-42E9-941E-D753102AA3B4" />
+  <Properties>
+    <DisplayName>MyCompany Expenses</DisplayName>
+    <PublisherDisplayName>MyCompany</PublisherDisplayName>
+    <Logo>images\assets\Store Logo 50x50.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" StartPage="js\backgroundTask.js">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="pushNotification" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+      <m2:VisualElements DisplayName="MyCompany Expenses" Description="MyCompany Expenses" BackgroundColor="#C4C331" ForegroundText="light" ToastCapable="true" Square150x150Logo="images\assets\Logo150x150 White Background.png" Square30x30Logo="images\assets\Small Logo 30x30 White Background.png">
+        <m2:DefaultTile ShortName="MyCompany Expenses" Wide310x150Logo="images\assets\Wide Logo 310x150 White Background.png">
+        </m2:DefaultTile>
+        <m2:LockScreen Notification="badge" BadgeLogo="images\assets\Badge Logo 24x24.png" />
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="landscape" />
+        </m2:InitialRotationPreference>
+        <m2:SplashScreen BackgroundColor="#EDEDED" Image="images\assets\Splash Screen 620x300.png" />
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

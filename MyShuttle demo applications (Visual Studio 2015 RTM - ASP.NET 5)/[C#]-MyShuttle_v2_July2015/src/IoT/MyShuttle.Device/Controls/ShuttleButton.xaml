@@ -1,0 +1,60 @@
+﻿<Button x:Class="MyShuttle.Device.Controls.ShuttleButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100" 
+            Style="{DynamicResource ShuttleButtonStyle}">
+    <Button.Resources>
+        <Style x:Key="ShuttleButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+            <Setter Property="Foreground" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="border" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <StackPanel>
+                                <Image x:Name="ButtonImage" 
+                                           Width="{Binding ImageSize, RelativeSource={RelativeSource TemplatedParent}}" 
+                                           Height="{Binding ImageSize, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <TextBlock x:Name="ButtonLabel" 
+                                               Text="{Binding ButtonText, RelativeSource={RelativeSource TemplatedParent}}" 
+                                               Visibility="{Binding TextVisibility, RelativeSource={RelativeSource TemplatedParent}}"
+                                               TextAlignment="Center" 
+                                               Margin="0 5 0 0"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="true">
+                                <Setter Property="Source" TargetName="ButtonImage" Value="{Binding EnabledImage , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                <Setter Property="Foreground" TargetName="ButtonLabel" Value="{Binding EnabledTextColor , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Source" TargetName="ButtonImage" Value="{Binding DisabledImage , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                <Setter Property="Foreground" TargetName="ButtonLabel" Value="{Binding DisabledTextColor , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Button.Resources>
+    <Grid>
+
+    </Grid>
+</Button>

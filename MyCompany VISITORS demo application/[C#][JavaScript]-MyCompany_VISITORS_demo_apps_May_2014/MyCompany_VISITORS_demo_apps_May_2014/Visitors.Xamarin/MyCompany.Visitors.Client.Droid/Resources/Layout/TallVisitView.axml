@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <MyCompany.Visitors.Client.Droid.Views.FadeImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:id="@+id/imageView"
+        android:layout_margin="10px" />
+  <com.refractored.controls.RobotoTextView
+      android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       local:typeface="roboto_thin"
+        android:id="@+id/Name"
+        android:layout_marginLeft="10px" />
+  <com.refractored.controls.RobotoTextView
+      android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      local:typeface="roboto_bold"
+        android:id="@+id/position"
+        android:layout_marginLeft="10px" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4"
+        android:layout_marginTop="5px"
+        android:layout_marginLeft="10px">
+      <com.refractored.controls.RobotoTextView
+          android:text="VISIT TO"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6"
+          local:typeface="roboto_bold"
+            android:gravity="center" />
+      <com.refractored.controls.RobotoTextView
+          android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/visiting"
+            android:gravity="center"  
+          local:typeface="roboto_thin"
+            android:layout_marginLeft="5px" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:layout_marginLeft="10px">
+      <com.refractored.controls.RobotoTextView
+         android:text="REASON"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView7"
+         local:typeface="roboto_bold"
+            android:gravity="center" />
+      <com.refractored.controls.RobotoTextView
+          android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/reason"
+          local:typeface="roboto_thin"
+            android:layout_marginLeft="5px" />
+    </LinearLayout>
+</LinearLayout>

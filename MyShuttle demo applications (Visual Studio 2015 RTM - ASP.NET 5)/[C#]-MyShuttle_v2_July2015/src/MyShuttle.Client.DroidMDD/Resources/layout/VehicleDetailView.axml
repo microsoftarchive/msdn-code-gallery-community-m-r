@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="23dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <ImageView
+                android:id="@+id/vehicleImage"
+                android:layout_width="122dp"
+                android:layout_height="100dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                local:MvxBind="Bitmap InMemoryImage(CurrentVehicle.Picture)"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout3">
+                <TextView
+                    android:text="Mercedes-Benz DEMOTEXT"
+                    local:MvxBind="Text CurrentVehicle.Make"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1"
+                    android:textColor="#333"
+                    android:textSize="22dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true" />
+                <TextView
+                    android:text="S320 CDI"
+                    local:MvxBind="Text CurrentVehicle.Model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:textColor="#333"
+                    android:textSize="22dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true" />
+                <TextView
+                    android:text="John Talabot"
+                    local:MvxBind="Text CurrentVehicle.Driver.Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:textColor="#777"
+                    android:textSize="15dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true" />
+                <TextView
+                    android:text="Free"
+                    local:MvxBind="Text CurrentVehicle.VehicleStatus; Visible Visibility(VehicleStatusToBool(CurrentVehicle.VehicleStatus))"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#43a72e"
+                    android:textSize="15dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true" />
+                <TextView
+                    android:text="Occupied"
+                    local:MvxBind="Text CurrentVehicle.VehicleStatus; Visible InvertedVisibility(VehicleStatusToBool(CurrentVehicle.VehicleStatus))"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#f16044"
+                    android:textSize="15dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingOFF" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ratingON1"
+                    local:MvxBind="Visible Visibility(RatingToBool(CurrentVehicle.RatingAvg, 1))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON2"
+                    local:MvxBind="Visible Visibility(RatingToBool(CurrentVehicle.RatingAvg, 2))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON3"
+                    local:MvxBind="Visible Visibility(RatingToBool(CurrentVehicle.RatingAvg, 3))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON4"
+                    local:MvxBind="Visible Visibility(RatingToBool(CurrentVehicle.RatingAvg, 4))" />
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/ratingON5"
+                    local:MvxBind="Visible Visibility(RatingToBool(CurrentVehicle.RatingAvg, 5))" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout1"
+            android:layout_marginTop="25dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout4">
+                    <TextView
+                        android:text="Type: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#777"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:text="Medium"
+                        local:MvxBind="Text CurrentVehicle.Type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2e3b4b"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout4"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:text="Lic. Plate: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#777"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:text="NNN965"
+                        local:MvxBind="Text CurrentVehicle.LicensePlate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2e3b4b"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="37dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout4">
+                    <TextView
+                        android:text="Seats: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#777"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:text="5"
+                        local:MvxBind="Text CurrentVehicle.Seats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2e3b4b"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout4"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:text="Rate: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#777"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:text="7.50 $/mi"
+                        local:MvxBind="Text PriceToString(CurrentVehicle.Rate, true) + ' $/mi'"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2e3b4b"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="263dp"
+        android:layout_alignParentBottom="true">
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.MapFragment"
+            local:uiZoomControls="false" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/textView2"
+            android:background="#33000000" />
+        <LinearLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:weightSum="1.0"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp">
+            <Button
+                android:text="Call"
+                local:MvxBind="Click CallVehicleCommand; Enabled NullToBoolWithOptionalInverse(CurrentVehicle.Driver.Phone, true)"
+                android:layout_width="0dp"
+                android:layout_weight="0.50"
+                android:layout_height="wrap_content"
+                android:background="#2da38c"
+                android:layout_marginRight="7dp" />
+            <Button
+                android:id="@+id/requestButton"
+                android:text="Request"
+                android:layout_width="0dp"
+                android:layout_weight="0.50"
+                android:layout_height="wrap_content"
+                android:background="#46d1b6"
+                android:layout_marginLeft="7dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

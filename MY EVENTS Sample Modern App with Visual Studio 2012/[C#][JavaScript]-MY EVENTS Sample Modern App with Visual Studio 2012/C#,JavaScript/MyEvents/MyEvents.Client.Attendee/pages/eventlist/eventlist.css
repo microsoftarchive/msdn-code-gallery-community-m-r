@@ -1,0 +1,294 @@
+﻿/* This selector is used to prevent ui-dark/light.css from overwriting changes to .win-surface. */
+.eventlistpage .groupedeventslist .win-horizontal.win-viewport .win-surface {
+}
+
+.eventlistpage section[role=main] {
+    overflow-y: hidden;
+    display: -ms-grid;
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+.eventlistpage .win-container:hover {
+    outline: none;
+    cursor: pointer;
+}
+
+.eventlistpage .win-semanticzoom .win-horizontal .win-surface {
+    left: 120px !important;
+    width: calc(100% - 120px);
+    padding-right: 100px;
+    margin-bottom: 30px;
+}
+
+.eventlistpage .item {
+    width: 228px;
+    height: 238px;
+    display: -ms-grid;
+    -ms-grid-rows: 55px 50px 10px 20px 85px 18px;
+    -ms-grid-columns: 114px 114px;
+    background-color: rgba(181, 183, 186, 0.2);
+    border: 1px solid rgba(35, 88, 147, 0.2);
+    padding: 10px;
+}
+
+    .eventlistpage .item .logo {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-row-span: 2;
+        max-width: 90%;
+        position: relative;
+        height: 100%;
+    }
+
+        .eventlistpage .item .logo img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+    .eventlistpage .item .item-date {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        -ms-grid-row-span: 2;
+        text-align: center;
+        position: relative;
+    }
+
+        .eventlistpage .item .item-date .wrapper {
+            max-width: 85px;
+            display: inline-block;
+            text-align: left;
+            position: absolute;
+            margin: auto;
+            right: 18px;
+            bottom: 0;
+        }
+
+        .eventlistpage .item .item-date .item-date-day {
+            height: 80px;
+            font-size: 50pt;
+            display: block;
+        }
+
+    .eventlistpage .item .item-city {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    .eventlistpage .item .item-name {
+        -ms-grid-row: 5;
+        -ms-grid-column-span: 3;
+        overflow: hidden;
+        font-weight: 500;
+        font-size: 16pt;
+        font-weight: 300;
+        max-height: 70px;
+    }
+
+    .eventlistpage .item .item-organizer {
+        -ms-grid-row: 6;
+        -ms-grid-column-span: 2;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: calc(100% - 20px);
+        line-height: 1em;
+        padding-left: 20px;
+        background: url(/images/content/organizer-icon.png) center left no-repeat transparent;
+    }
+
+/* events list */
+.eventlistpage #semanticZoomDiv {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    height: 100%;
+}
+
+.eventlistpage #eventsList {
+    height: 100%;
+}
+
+.eventlistpage .win-container .item.highlighted {
+    width: 488px;
+    -ms-grid-rows: 55px 30px 20px 10px 35px 1fr 18px;
+    -ms-grid-columns: 115px 129px 130px 114px;
+}
+
+    .eventlistpage .win-container .item.highlighted .logo {
+        -ms-grid-row-span: 3;
+    }
+
+    .eventlistpage .win-container .item.highlighted .wrapper {
+        max-width: none;
+    }
+
+    .eventlistpage .win-container .item.highlighted .item-date {        
+        -ms-grid-row-span: 3;
+        -ms-grid-column: 4;
+    }
+
+    .eventlistpage .win-container .item.highlighted .item-city {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+    }
+
+    .eventlistpage .win-container .item.highlighted .item-name {
+        -ms-grid-row: 5;
+    }
+
+    .eventlistpage .win-container .item.highlighted .item-description {
+        display: block;
+        -ms-grid-row: 6;
+        -ms-grid-column-span: 4;
+        height: 65px;
+    }
+
+    .eventlistpage .win-container .item.highlighted .item-organizer {
+        -ms-grid-row: 7;
+    }
+
+.eventlistpage .win-container .item.blue {
+    background-color: #3b6492;
+    border: 1px solid #235893;
+    color: #FFF;
+}
+
+    .eventlistpage .win-container .item.blue .item-organizer {
+        background: url(/images/content/organizer-icon-white.png) center left no-repeat transparent;
+    }
+
+/* Template for items in the zoomed-out ListView */
+.semanticZoomItem {
+    width: 200px;
+    height: 120px;
+    background-color: #3b6492;
+}
+
+    .semanticZoomItem .semanticZoomItem-Text {
+        padding: 10px;
+        line-height: 100px;
+        white-space: nowrap;
+        color: white;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+@media screen and (-ms-view-state: snapped) {
+
+    .fragment.eventlistpage header[role=banner] {
+        margin-left: 15px;
+    }
+
+        .fragment.eventlistpage header[role=banner] .titlearea {
+            -ms-grid-column: 2;
+            margin-left: 0;
+            margin-top: 68px;
+        }
+
+    .eventlistpage section[role=main] {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 15px 1fr 15px;
+    }
+
+    .eventlistpage #semanticZoomDiv {
+        -ms-grid-column: 2;
+    }
+
+    .eventlistpage .win-semanticzoom .win-horizontal .win-surface {
+        left: 0 !important;
+    }
+
+    .eventlistpage .win-listview > .win-vertical .win-container {
+        margin-right: 0px;
+        margin-left: 2px;
+    }
+
+    .eventlistpage .item-snapped {
+        height: 98px;
+        width: 263px;
+        display: -ms-grid;
+        -ms-grid-rows: 24px 24px 24px 1fr 20px;
+        -ms-grid-columns: 90px 10px 1fr;
+        background-color: rgba(181, 183, 186, 0.2);
+        border: 1px solid rgba(35, 88, 147, 0.2);
+        padding: 10px;
+    }
+
+        .eventlistpage .item-snapped .logo {
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 5;
+            -ms-grid-column: 1;
+            text-align: center;
+        }
+
+            .eventlistpage .item-snapped .logo img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+        .eventlistpage .item-snapped .item-date {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+        }
+
+            .eventlistpage .item-snapped .item-date .item-date-day {
+                display: inline-block;
+            }
+
+            .eventlistpage .item-snapped .item-date .item-date-month {
+                display: inline-block;
+                padding-left: 5px;
+            }
+
+        .eventlistpage .item-snapped .item-city {
+            -ms-grid-row: 2;
+            -ms-grid-column: 3;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .eventlistpage .item-snapped .item-name {
+            -ms-grid-row: 3;
+            -ms-grid-column: 3;
+            overflow: hidden;
+            font-weight: 600;
+        }
+
+        .eventlistpage .item-snapped .item-organizer {
+            -ms-grid-row: 5;
+            -ms-grid-column: 3;
+            padding-left: 20px;
+            background: url(/images/content/organizer-icon.png) center left no-repeat transparent;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: calc(100% - 20px);
+        }
+
+    .user-data {
+        display: none;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .fragment.eventlistpage header[role=banner] {
+        -ms-grid-columns: 120px 1fr;
+    }        
+}

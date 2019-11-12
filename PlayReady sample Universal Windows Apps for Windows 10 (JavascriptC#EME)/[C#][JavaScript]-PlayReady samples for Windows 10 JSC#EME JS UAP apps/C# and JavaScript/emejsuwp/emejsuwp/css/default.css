@@ -1,0 +1,184 @@
+﻿body {
+	background-color: #000000; 
+	background-image: linear-gradient(to left, #666666 0%, #222222 60%, #000000 100%);
+}
+
+h2 {
+	margin-top: 5px; 
+	font-weight: normal; 
+	color: #ffffff;
+}
+
+p {
+	padding: 3px; 
+	color: #00a3ef;
+}
+
+p.title {
+	font-size: 1.30em; 
+	font-style: normal; 
+	font-weight: 500; 
+	color: #ffffff;
+}
+
+p.label {
+	font-size: 1.10em; 
+	font-style: normal; 
+	font-weight: 500; 
+	color: #ffffff;
+}
+
+p.attribution {
+	font-size: 0.90em; 
+	color: #00a3ef;
+}
+
+p.heading {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 1.2em; 
+	font-weight: 600; 
+	color: #00a3ef;
+}
+
+p.description {
+	margin-left: 20px;
+	font-size: 1.0em; 
+	color: #ffffff;
+}
+
+b.label {
+	margin-left: 2px;
+	font-size: 1.0em; 
+	color: #ffffff;
+}
+
+b.description {
+	margin-left: 2px;
+	font-weight: 300; 
+	font-size: 1.0em; 
+	color: #ffffff;
+}
+
+li.bullet{
+	font-size: 1.0em; 
+	padding: 1px; 
+	margin-left: 70px; 
+	color: #ffffff;
+}
+
+span.property {
+	font-size: 1.00em; 
+	font-style: italic; 
+	font-weight: 500; 
+	color: #ffffff;
+}
+
+video {
+	margin-bottom: 5px; 
+	background-color: #000000;
+}
+
+input[type=range]::-ms-tooltip {
+	display: none;
+}
+
+div.library {
+    margin-bottom: 30px;
+	width: 30%; 
+	float: left;
+}
+
+div.controls {
+	margin-left: 30px; 
+	width: calc(70% - 30px); 
+	float: left;
+}
+
+div.section {
+	float: left;
+}
+
+div.libraryelement {
+	margin-bottom: 5px; 
+	padding: 5px; 
+	opacity: 0.65; 
+	background-color: #333333; 
+	cursor: default; 
+	-ms-user-select: none;
+}
+
+div.libraryelement:hover {
+	background-color: #234354;
+}
+
+div.cell {
+	display: table-cell; 
+	padding: 5px; 
+	vertical-align: middle;
+}
+
+div.description {
+	margin-bottom: 30px;
+	clear: both;
+}
+
+footer {
+	clear: both;
+}
+	
+#upgrade {
+	display: none;
+	position: fixed;
+	width: 480px;
+	padding: 0px;
+	top: 230px;
+	margin-left: 270px;
+	text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 4px solid #000;
+}
+
+#upgrade_warning {
+	background-color: #ffffff;
+	position: relative;
+	width: 437px;
+	margin: auto auto;
+	padding: 10px;
+}
+
+#upgrade_content {
+	padding: 0px 0px 10px 20px;
+	text-align: left;
+	margin-bottom: 10px;	
+}
+
+#upgrade_button , #dismiss_button{
+	margin-top: 10px;
+	background-color: #F97B0C;
+	cursor: pointer;
+	padding: 5px;
+	width: 100px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+	color: #ffffff;
+	font-weight: bold;
+	display: inline-block;
+}
+
+#upgrade_ie_logo {
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 10px;
+	float: right;
+}
+
+#DemoTitle
+{
+    padding: 20px 0px 0px 0px;
+    font-size: 24pt;
+    font-weight: normal;
+    color: #00a3ef;
+}

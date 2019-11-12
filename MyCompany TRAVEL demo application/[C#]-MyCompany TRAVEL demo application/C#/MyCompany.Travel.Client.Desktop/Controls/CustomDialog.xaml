@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="MyCompany.Travel.Client.Desktop.Controls.CustomDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Background="Black" Opacity="0.5" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
+        <Border Background="{StaticResource module-background-color-brush}" Grid.Row="1" Grid.Column="0"
+                Width="400" Height="210" Grid.ColumnSpan="3" Padding="20,40,20,40">
+            <Grid>
+                <TextBlock Grid.Row="0" Text="{Binding Message}" VerticalAlignment="Top"
+                           HorizontalAlignment="Center" Style="{StaticResource MessagesTextStyle}"
+                           TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource PrimaryColorButtonStyle}"  Height="40" Width="80" Focusable="True" TabIndex="1"
+                        HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                        Command="{Binding AcceptCommand}" IsDefault="True">
+                        <Image Source="/Resources/Images/check-big.png" Stretch="None"></Image>
+                    </Button>
+                    <Button Name="CancelButton" Style="{StaticResource PrimaryColorButtonStyle}" Height="40" Width="80" Visibility="{Binding ShowCancel}" Focusable="True" TabIndex="0"
+                            IsVisibleChanged="CancelButton_IsVisibleChanged"    
+                            HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20,0,0,0" IsDefault="True"
+                            Command="{Binding CancelCommand}" IsCancel="True">
+                        <Image Source="/Resources/Images/cancel.png" Height="17" Width="17"></Image>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>   
+    </Grid>
+</UserControl>

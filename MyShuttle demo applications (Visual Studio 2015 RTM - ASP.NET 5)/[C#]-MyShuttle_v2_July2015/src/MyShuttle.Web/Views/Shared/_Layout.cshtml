@@ -1,0 +1,119 @@
+﻿@using MyShuttle.Web.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>MyShuttle</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<base href='@Url.Content("~/")' />	
+	<link rel="shortcut icon" href='@Url.Content("~/favicon.ico")' type="image/x-icon" />	
+	<link rel="icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />	
+    
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,400,600,800' rel='stylesheet' type='text/css' />    
+	<link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="Content/animate.css" />
+    <link rel="stylesheet" type="text/css" href="Content/site.css" />
+    @RenderSection("styles", required: false)
+</head>
+<body data-spy="scroll" data-offset="10">
+    <hr id="top-page" class="page-marker" />
+    <header>
+        <nav class="navbar navbar-default ms-navbar" role="navigation">
+            <div class="container-fluid ms-container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle ms-navbar-toggle collapsed" data-toggle="collapse" data-target="#ms-navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand ms-navbar-brand" href="#">
+                        <img src="Content/Images/logoheader.png" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse ms-navbar-collapse" id="ms-navbar">
+                    @{
+                        string actionName = (string)ViewContext.RouteData.Values["action"];
+                    }
+
+                    <ul class="nav navbar-nav navbar-right ms-navbar-nav">
+                        <li>
+                            @if (actionName == "Index" && (string)(ViewContext.RouteData.Values["Controller"]) == "Home")
+                            {
+                                <a href="#top-page" data-scroll>Home</a>
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Home", "Index", "Home")
+                            }
+                        </li>
+
+                        <li><a href="#contact" data-scroll>Contact</a></li>
+
+                        <li>
+                            @if ((string)(ViewContext.RouteData.Values["Controller"]) == "CarrierList")
+                            {
+                                <a href="#top-page" data-scroll>Carriers</a>
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Carriers", "Index", "CarrierList")
+                            }
+                        </li>
+                        <li>
+                            @Html.ActionLink("Login", "Index", "Carrier", null, new { @Class = "login-item" })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="content">
+        @RenderBody()
+        <hr id="contact" class="page-marker" />
+        <!-- Company contact -->
+        <footer>
+            <section class="company-contact">
+                <div class="ms-container-fluid">
+                    <div class="row margin-zero">
+                        <div class="col-sm-6">
+                            <h3>Contact us</h3>
+                            <p>For more information, please contact us.</p>
+                            <ul class="contact-ways-list">
+                                <li class="address-bg">Spring Studios, 50 Varick St, New York, NY 10012</li>
+                                <li class="phone-bg">+1 212 555 1871</li>
+                                <li class="email-bg">hello@myshuttle.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-offset-1 col-md-5 col-sm-6 contact-form-col">
+                            @await Html.PartialAsync("_ContactForm", new ContactViewModel())
+                        </div>
+                    </div>
+                    <div class="row margin-zero">
+                        <div class="col-sm-12">
+                            <p class="copyrights">
+                                <span>&copy;</span>
+                                <span>
+                                    @String.Format("{0} MyShuttle Trademarks and brands are the property of their respective owners.", DateTime.Now.Year)
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </section>
+
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bind-polyfill.min.js"></script>
+    <script src="Scripts/smooth-scroll.min.js"></script>
+    <script src="Scripts/jquery.raty.js"></script>
+    <script src="Scripts/wow.min.js"></script>
+    <script src="Scripts/Pages/Config.js"></script>
+    <script src="Scripts/Pages/Home/Common.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

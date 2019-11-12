@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="MyEvents.Client.Organizer.Desktop.Views.VManageSessions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:controls="clr-namespace:MyEvents.Client.Organizer.Desktop.Views.UserControls"
+             d:DesignHeight="635" d:DesignWidth="982"
+             DataContext="{Binding ManageSessions, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource BackButtonStyle}"
+                HorizontalAlignment="Left" Margin="0"
+                Command="{Binding NavigateBackCommand}"></Button>
+        
+        <StackPanel Orientation="Horizontal" Margin="40,2,0,0">
+            <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Style="{DynamicResource SubTitleStyle}">
+                <Run Text="{Binding allSessions, Mode=OneWay, Source={StaticResource languages}}"/>
+                <Run Text="{Binding EventDefinition.Name}"/>
+            </TextBlock>            
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="grdEvents" HeadersVisibility="Column" ItemsSource="{Binding Sessions}"
+                  AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}" IsReadOnly="True"
+                  CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CellStyle="{DynamicResource DataGridCellStyle}"
+                  SelectionMode="Single" Cursor="Hand" Grid.ColumnSpan="2" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="*" Header="title" CanUserSort="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button MaxHeight="50" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Stretch" Command="{Binding ManageSessions.EditSessionCommand, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#00FFFFFF" >
+                                            
+                                <TextBlock VerticalAlignment="Center" Margin="5,5,5,5" Text="{Binding Title}" TextWrapping="Wrap" TextTrimming="WordEllipsis"
+                                           HorizontalAlignment="Left" Style="{StaticResource CellTextStyle}"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="buttonColumnEdit" Width="Auto" Header="edit"  MinWidth="80">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Center" Command="{Binding ManageSessions.EditSessionCommand, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#FFFFFFFF"  ToolTip="{Binding Tooltip_edit, Source={StaticResource languages}}">
+                                <Image Source="/Resources/Images/ico-edit.png"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="buttonColumnMaterials" Width="Auto" Header="materials"  MinWidth="80">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Center" Command="{Binding ManageSessions.ManageMaterialsCommand, Mode=OneWay, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#FFFFFFFF"  ToolTip="{Binding Tooltip_materials, Source={StaticResource languages}}">
+                                <Image Source="/Resources/Images/ico-folder.png"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="buttonColumnDelete" Width="Auto" Header="delete"  MinWidth="80">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource CustomHeaderStyle}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="15" Style="{StaticResource BlankButtonStyle}" HorizontalAlignment="Center" Command="{Binding ManageSessions.DeleteSessionCommand, Mode=OneWay, Source={StaticResource Locator}}"
+                                    CommandParameter="{Binding}" Background="#FFFFFFFF"  ToolTip="{Binding Tooltip_delete, Source={StaticResource languages}}">
+                                <Image Source="/Resources/Images/ico-delete.png"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <TextBlock Text="{Binding NoSessions, Source={StaticResource languages}}" Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,0" Style="{StaticResource SubTitleStyle}" VerticalAlignment="Top"
+                   Visibility="{Binding Sessions.Count, Converter={StaticResource CollectionCountToVisibility}, FallbackValue=Collapsed}"></TextBlock>
+        
+        <controls:ConfirmationDialog x:Name="deleteEventConfirmation" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                     Grid.ColumnSpan="2" Grid.RowSpan="2"
+                                     Visibility="{Binding ShowConfirmation, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=false}" d:IsHidden="True"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:MyEvents.Client.Organizer.Desktop.Views"
+        xmlns:controls="clr-namespace:MyEvents.Client.Organizer.Desktop.Views.UserControls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        x:Class="MyEvents.Client.Organizer.Desktop.MainWindow"
+        Title="my events" Height="700" Width="1024" ShowInTaskbar="True"
+        WindowState="Maximized"  Icon="Resources/Images/desktopicon.ico"
+        WindowStyle="None" BorderThickness="0" Style="{x:Null}"
+        DataContext="{Binding MainPage, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="49"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0" Margin="0" Height="65" VerticalAlignment="Top" Background="{StaticResource SessionInfoBrush}" MouseLeftButtonDown="MainWindow_MouseLeftButtonDown"></Border>
+        <Border Grid.Row="0" Grid.RowSpan="3" IsHitTestVisible="False" Margin="0,27,0,0" VerticalAlignment="Stretch" Background="{StaticResource DesktopBackgroundBrush}"></Border>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="40,0,0,0" VerticalAlignment="Bottom" IsHitTestVisible="False" Text="{Binding applicationTitle, Source={StaticResource languages}}" Style="{StaticResource TitleStyle}"/>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1" Margin="0,5,20,0" VerticalAlignment="Top" Height="20">
+                <Button Command="{Binding ShowSettingsCommand}" Style="{StaticResource SettingsButtonStyle}" Width="18" ToolTip="{Binding Tooltip_settings, Source={StaticResource languages}}">
+                </Button>
+                <Button Click="MinimizeButton" Style="{StaticResource MinimizeButtonStyle}" Width="10" ToolTip="{Binding Tooltip_minimize, Source={StaticResource languages}}"></Button>
+                <Button Click="MaximizeButton" Style="{StaticResource MaximizeButtonStyle}" Width="18" ToolTip="{Binding Tooltip_restore, Source={StaticResource languages}}"></Button>
+                <Button Click="CloseButton" Style="{StaticResource CloseButtonStyle}" Height="15" ToolTip="{Binding Tooltip_close, Source={StaticResource languages}}"></Button>
+            </StackPanel>
+
+            <TextBlock Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,33,60,0" Style="{StaticResource EventDescription}"
+    			Foreground="{StaticResource NormalTextForegroundBrush}">
+                <Run Text="hi, "/>
+                <Run Text=" "/><Run Text="{Binding Username, Mode=OneWay}"/>
+            </TextBlock>
+            <Image Source="{Binding UserPhoto}" Width="30" VerticalAlignment="Bottom" Grid.Column="1"
+                   HorizontalAlignment="Right" Margin="0,0,20,7"></Image>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Margin="40,0,0,0" Orientation="Horizontal" VerticalAlignment="Bottom" Height="36">
+            <RadioButton Content="{Binding mainDesktopButton, Source={StaticResource languages}}" Style="{StaticResource MainDesktopStyle}" Command="{Binding ShowMainDesktopCommand, Mode=OneWay}" IsChecked="True" />
+            <RadioButton Content="{Binding manageEventsButton, Source={StaticResource languages}}" Style="{StaticResource ManageMyEventsStyle}"  Command="{Binding ShowMyeEventsCommand, Mode=OneWay}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2" x:Name="PARTContentHost" Margin="40,15,40,40"/>
+
+        <controls:FacebookLogin x:Name="fbLogin" Grid.Row="0" Grid.RowSpan="3" Margin="0,25,0,0" Visibility="{Binding ShowFacebookLogin, Converter={StaticResource BooleanToVisibilityConverter}}" d:IsHidden="True"/>
+        <views:VSettings x:Name="SettingsView" Grid.Row="0" Grid.RowSpan="3" Margin="0,25,0,0" Visibility="{Binding ShowSettings, Converter={StaticResource BooleanToVisibilityConverter}}" d:IsHidden="True"></views:VSettings>
+    </Grid>
+</Window>

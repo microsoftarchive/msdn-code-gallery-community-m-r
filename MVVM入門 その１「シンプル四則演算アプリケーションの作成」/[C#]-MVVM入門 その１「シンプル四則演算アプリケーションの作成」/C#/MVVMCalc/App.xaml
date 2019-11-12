@@ -1,0 +1,11 @@
+﻿<Application x:Class="MVVMCalc.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:MVVMCalc.ViewModel"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:CalculateTypeViewModel}">
+            <TextBlock Text="{Binding Label}" />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

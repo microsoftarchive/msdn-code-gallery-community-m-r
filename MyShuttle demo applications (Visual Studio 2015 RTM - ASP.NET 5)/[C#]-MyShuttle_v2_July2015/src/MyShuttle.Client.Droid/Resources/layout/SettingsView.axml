@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!--<include
+        android:id="@+id/include"
+        layout="@layout/ActionBar" />-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:paddingLeft="13.5dp"
+        android:paddingTop="30dp"
+        android:paddingRight="13.5dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:paddingLeft="2.5dp"
+            android:paddingRight="2.5dp">
+            <TextView
+                android:text="URL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textColor="#777"
+                android:textSize="17dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/editText1"
+                android:layout_marginTop="22dp"
+                android:text="http://www.example.com"
+                local:MvxBind="Text Url"
+                android:textColor="#802e3d50"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:ellipsize="end"
+                android:background="@drawable/edittext_roundedcorners"
+                android:singleLine="true"
+                android:layout_height="45dp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeLayout1">
+            <LinearLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11dp"
+                android:weightSum="1.0"
+                android:layout_alignParentBottom="true">
+                <Button
+                    android:text="Close"
+                    local:MvxBind="Click CancelSettingsCommand"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="wrap_content"
+                    android:background="#2da38c"
+                    android:layout_marginRight="7dp" />
+                <Button
+                    android:text="Save"
+                    local:MvxBind="Click SaveSettingsCommand"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.50"
+                    android:layout_height="wrap_content"
+                    android:background="#46d1b6"
+                    android:layout_marginLeft="7dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

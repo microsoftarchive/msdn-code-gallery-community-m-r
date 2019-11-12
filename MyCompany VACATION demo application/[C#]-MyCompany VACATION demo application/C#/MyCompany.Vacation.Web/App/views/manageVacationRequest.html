@@ -1,0 +1,27 @@
+﻿<div class="modal extra-small autoclose">
+    <div class="modal-header">
+        <span class="title-modal" data-bind="html: title"></span>
+        <button class="button-close" data-bind="click: close"></button>
+    </div>
+    <div class="modal-body modal-body-padding">
+
+        <div class="modal-body-in">
+            <span class="body-in-title">From</span>
+            <span class="main-text main-text-visited" data-bind="text: startDay"></span>
+        </div>
+        <div class="modal-body-in">
+            <span class="body-in-title">To</span>
+            <span class="main-text main-text-visited" data-bind="text: endDay"></span>
+        </div>
+        <div class="modal-body-in">
+            <span class="body-in-title">Days</span>
+            <span class="main-text main-text-visited" data-bind="text: workDays"></span>
+        </div>
+        <div class="clear"></div>
+        <div class="contain-buttons">
+            <button class="button-box button-accept" type="button" data-bind="visible: !isApproved(), click: acceptVacation" title="Accept"></button>
+            <button class="button-box button-reject" type="button" data-bind="visible: !isDenied(), click: rejectVacation" title="Reject"></button>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

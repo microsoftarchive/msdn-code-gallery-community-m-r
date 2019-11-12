@@ -1,0 +1,46 @@
+﻿<section class="view">
+    <div class="time-line">
+        <div class="time-line-tick"
+             ng-repeat="month in months"
+             ng-class="{active: month.isSelected}"
+             ng-click="selectMonth(month)">
+            <span ng-bind="month.name"></span>
+        </div>
+    </div>
+
+    <div class="weekDays">
+        <div class="day-header" ng-repeat="weekDay in weekDays">
+            <span ng-bind="weekDay"></span>
+        </div>
+    </div>
+
+    <div class="calendar" calendar>
+        <div class="day"
+             ng-repeat="day in days"
+             id="{{$index}}"
+             ng-click="openDetail(day)"
+             ng-class="{selectable: day.isSelectable(), selected: day.isSelected, holiday: day.isHoliday, outOfMonth: day.isOutOfMonth, vacation: day.isVacation, isToday: day.isToday, approved: day.isApproved, denied: day.isDenied, pending: day.isPending}">
+            <div class="day-content">
+                <span class="date" ng-bind="day.day"></span>
+                <span class="status" ng-bind="day.status()"></span>
+                <span class="status-ico"></span>
+            </div>
+        </div>
+    </div>
+    <aside class="calendar-help">
+        Click and drag on the calendar to request new vacation days
+    </aside>
+    <div class="historic-title">
+        <span>Your</span>
+        <span ng-bind="year"></span>
+        <span>vacations</span>
+    </div>
+    <div class="historic">
+        <div ng-repeat="userVacation in userVacationDays" ng-class="{pending: userVacation.isPending}"  class="historic-vacation">
+            <span ng-bind="userVacation.displayDate"></span>
+        </div>
+        <div ng-repeat="pendingVacationDay in pendingVacationDays" class="historic-pending">
+            <span >{{pendingVacationDay}}</span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:behaviors="clr-namespace:MyEvents.Client.Organizer.Desktop.Behaviors"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:converters="clr-namespace:MyEvents.Client.Organizer.Desktop.Converters">
+    
+    <DataTemplate x:Key="CalendarHeaderTemplate">
+        <Grid Width="Auto" Height="120">
+            <TextBlock Text="{Binding}" Style="{StaticResource DesktopCalendarHoursHeader}"
+                       VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CalendarRoomsTemplate">
+        <Grid Width="Auto">
+            <Grid.Resources>
+                <converters:EventsByRoomConverter x:Key="EventsByRoom"></converters:EventsByRoomConverter>
+                <converters:DurationToHeightConverter x:Key="DurationToHeight"></converters:DurationToHeightConverter>
+                <converters:TimeToPositionConverter x:Key="TimeToPositionOffset"></converters:TimeToPositionConverter>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="room" Grid.Row="0" Margin="0,10,0,10" Text="{Binding}" Style="{StaticResource CalendarRoomsHeader}" Visibility="Collapsed"></TextBlock>
+            <Border Grid.Row="1"  Grid.Column="0" Background="White"></Border>
+            <ItemsControl Margin="0,0,0,0" Grid.Row="1" ItemsSource="{Binding Path=Text, ElementName=room, Converter={StaticResource EventsByRoom}}" HorizontalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,5,0,5"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Rectangle Fill="{StaticResource EventItemBackgroundBrush}" Width="Auto" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="110" Margin="0,5,20,5">
+                        </Rectangle>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl Grid.Row="1" Margin="0,0,0,0" ItemsSource="{Binding Path=Text, ElementName=room, Converter={StaticResource EventsByRoom}}" HorizontalAlignment="Stretch">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid Margin="0,5,0,5"></Grid>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalAlignment="Top" Height="Auto" Cursor="Hand">
+                            <Grid Height="{Binding Duration, Converter={StaticResource DurationToHeight}}" Background="{StaticResource SessionInfoBrush}" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,5,20,5">
+                                <TextBlock Margin="10" TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify" Style="{StaticResource EventDescription}" Foreground="{StaticResource NormalTextForegroundBrush}">
+                                        <Run FontWeight="Bold" Text="{Binding Title}"></Run>
+                                        <Run FontWeight="Bold" Text="."></Run>
+                                        <Run Text="{Binding Description}"></Run>
+                                </TextBlock>
+                            </Grid>
+                            <Grid.RenderTransform>
+                                <TranslateTransform Y="{Binding StartTime, Converter={StaticResource TimeToPositionOffset}}"></TranslateTransform>
+                            </Grid.RenderTransform>
+                            <i:Interaction.Behaviors>
+                                <behaviors:NavigateToSessionDetailsBehavior/>
+                            </i:Interaction.Behaviors>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

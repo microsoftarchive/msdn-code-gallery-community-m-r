@@ -1,0 +1,45 @@
+{
+    "name": "myShuttle.client.cordova",
+    "version": "0.0.1",
+    "description": "MyShuttle Cordova App.",
+    "dependencies": {
+        "angular": "~1.2.25",
+        "angular-mocks": "~1.2.25",
+        "bootstrap": "~3.2.0",
+        "angular-bootstrap": "~0.11.2",
+        "angular-moment": "~0.8.2",
+        "angular-route": "~1.2.25",
+        "signalr": "~2.1.2",
+        "signature-pad": "~2.5.2"
+    },
+    "overrides": {
+        "bootstrap": {
+            "main": [
+                "dist/js/bootstrap.js",
+                "dist/css/bootstrap.css",
+                "dist/css/bootstrap.css.map"
+            ],
+            "normalize": {
+                "js": "*.js",
+                "css": [
+                    "*.css",
+                    "*.map"
+                ]
+            }
+        },
+        "signature-pad": {
+            "main": [
+                "jquery.signaturepad.js",
+                "assets/jquery.signaturepad.css",
+                "assets/pen.cur"
+            ],
+            "normalize": {
+                "js": "*.js",
+                "css": [
+                    "*.css",
+                    "*.cur"
+                ]
+            }
+        }
+    }
+}

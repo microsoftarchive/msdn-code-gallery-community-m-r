@@ -1,0 +1,102 @@
+{  
+   "location":"($location)",
+   "properties":{  
+      "sku":{  
+         "name":"standard"
+      },
+      "outputStartMode":"JobStartTime",
+      "eventsOutOfOrderPolicy":"Adjust",
+      "eventsOutOfOrderMaxDelayInSeconds": 0,
+      "inputs":[  
+         {  
+            "name":"EventHub",
+            "properties":{  
+               "type":"stream",
+               "serialization":{  
+                  "type":"JSON",
+                  "properties":{  
+                     "encoding":"UTF8"
+                  }
+               },
+               "datasource":{  
+                  "type":"Microsoft.ServiceBus/EventHub",
+                  "properties":{  
+                     "serviceBusNamespace":"($eventhubnamespace)",
+                     "sharedAccessPolicyName":"($sharedAccessPolicyName)",
+                     "sharedAccessPolicyKey":"($sharedAccessPolicyKey)",
+                     "eventHubName":"($eventhubname)"
+                  }
+               }
+            }
+         },
+         {
+          "Name": "vehicles",
+          "Properties": {
+            "DataSource": {
+              "Properties": {
+                "BlobName": "vehicles/vehicles.csv",
+                "Container": "myshuttledata",
+                "StorageAccounts": [
+                  {
+                    "AccountKey": "($storageaccountkey)",
+                    "AccountName": "($storageaccountname)"
+                  }
+                ]
+              },
+              "Type": "Microsoft.Storage/Blob"
+            },
+              "Serialization": {
+              "Properties": {
+                "Encoding": "UTF8",
+                "FieldDelimiter": ","
+              },
+              "Type": "Csv"
+            },
+            "Type": "Reference"
+          }
+        }
+      ],
+      "transformation":{  
+         "name":"MyShuttle-OBD-SecurityBelt",
+         "properties":{  
+            "streamingUnits":1,
+            "query":"WITH step1 AS ( \r\n        Select \r\n           DateAdd(minute, -1 , 
+                    System.TimeStamp) As WinStartTime, System.TimeStamp as WinEndTime,\r\n    \t   count(DeviceId) As 
+                    SecurityBeltWarnings, DeviceId, DriverId\r\n           FROM eventhub\r\n           WHERE 
+                    eventhub.Type = 'OBDEvent' and Code = 'OBD_SB001' -- Security Belt On\r\n\t       GROUP BY 
+                    DeviceId, DriverId, TumblingWindow(minute, 1)\r\n) \r\n\r\nSELECT \r\n    step1.WinStartTime, 
+                    step1.WinEndTime, step1.DriverId, vehicles.LicensePlate, vehicles.Name, \r\n    
+                    step1.SecurityBeltWarnings\r\n    FROM step1 \r\n    JOIN vehicles \r\n    ON step1.DeviceId = 
+                    vehicles.LicensePlate"
+         }
+      },
+      "outputs":[  
+         {  
+            "name":"output",
+            "properties":{  
+               "datasource":{  
+                  "type":"Microsoft.Storage/Blob",
+                  "properties":{  
+                     "BlobPathPrefix":"OBD-SecurityBelt",
+                     "Container":"myshuttledata",
+                     "StorageAccounts": [
+                                  {
+                                    "AccountKey": "($storageaccountkey)",
+                                    "AccountName": "($storageaccountname)"
+                                  }
+                                ]
+                  }
+               },
+               "Serialization": {
+                              "Properties": {
+                                "Encoding": "UTF8",
+                                "FieldDelimiter": ","
+                              },
+                              "Type": "Csv"
+                            }
+               
+            }
+         }
+      ]
+   }
+}

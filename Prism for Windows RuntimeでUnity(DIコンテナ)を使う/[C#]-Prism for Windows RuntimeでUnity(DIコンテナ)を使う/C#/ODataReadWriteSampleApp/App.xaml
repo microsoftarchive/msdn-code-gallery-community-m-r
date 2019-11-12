@@ -1,0 +1,25 @@
+﻿<mvvm:MvvmAppBase
+    x:Class="ODataReadWriteSampleApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:ODataReadWriteSampleApp"
+    xmlns:OData="using:ODataReadWriteSampleApp.Models.OData"
+    mc:Ignorable="d">
+    <mvvm:MvvmAppBase.Resources>
+        <DataTemplate x:Key="PersonDataTemplate">
+            <Grid d:DataContext="{d:DesignInstance Type=OData:Person, IsDesignTimeCreatable=True}" d:DesignWidth="362" d:DesignHeight="131">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Name}" Style="{StaticResource TitleTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="{Binding PersonDetail.Address.City}" Style="{StaticResource BodyTextBlockStyle}"/>
+            </Grid>
+        </DataTemplate>
+    </mvvm:MvvmAppBase.Resources>
+
+</mvvm:MvvmAppBase>

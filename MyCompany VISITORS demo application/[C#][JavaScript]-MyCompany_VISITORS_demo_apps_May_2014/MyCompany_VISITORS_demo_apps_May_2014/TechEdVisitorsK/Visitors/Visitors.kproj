@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ProjectK\Microsoft.Web.ProjectK.Props" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>ff4fc21c-db76-492f-91a7-2e4603df1666</ProjectGuid>
+    <OutputType>Web</OutputType>
+    <ActiveTargetFramework>net45</ActiveTargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+  </PropertyGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DevelopmentServerPort>28704</DevelopmentServerPort>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DevelopmentServerPort>1970</DevelopmentServerPort>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VisitorsController.cs" />
+    <Compile Include="Infrastructure\EFOptions.cs" />
+    <Compile Include="Infrastructure\NotNullAttribute.cs" />
+    <Compile Include="Infrastructure\Security\ISecurityHelper.cs" />
+    <Compile Include="Infrastructure\Security\SecurityHelper.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeePicture.cs" />
+    <Compile Include="Models\PictureType.cs" />
+    <Compile Include="Models\Visitor.cs" />
+    <Compile Include="Models\VisitorContext.cs" />
+    <Compile Include="Models\VisitorPicture.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\app.js" />
+    <Content Include="App\controllers.js" />
+    <Content Include="App\directives.js" />
+    <Content Include="App\services.js" />
+    <Content Include="Config.ini" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Images\arrow_time.png" />
+    <Content Include="Content\Images\border-anim-h.gif" />
+    <Content Include="Content\Images\border-anim-v.gif" />
+    <Content Include="Content\Images\border-h.gif" />
+    <Content Include="Content\Images\border-v.gif" />
+    <Content Include="Content\Images\cancel.png" />
+    <Content Include="Content\Images\clock-button.png" />
+    <Content Include="Content\Images\clock_pending.png" />
+    <Content Include="Content\Images\close.png" />
+    <Content Include="Content\Images\delete-icon.png" />
+    <Content Include="Content\Images\edit-icon.png" />
+    <Content Include="Content\Images\edit.png" />
+    <Content Include="Content\Images\info.png" />
+    <Content Include="Content\Images\last-visit.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\lync-ico.png" />
+    <Content Include="Content\Images\no-photo-big.png" />
+    <Content Include="Content\Images\no-photo.jpg" />
+    <Content Include="Content\Images\refresh.png" />
+    <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\visitor-icons.png" />
+    <Content Include="Content\Images\visitor_.png" />
+    <Content Include="Content\Images\visits-icons.png" />
+    <Content Include="Content\list.css" />
+    <Content Include="Content\list.less" />
+    <Content Include="Content\messagebox.css" />
+    <Content Include="Content\messageBox.less" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.less" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Content\Variables.css" />
+    <Content Include="Content\variables.less" />
+    <Content Include="Content\visitDetail.css" />
+    <Content Include="Content\visitDetail.less" />
+    <Content Include="Content\visitForm.css" />
+    <Content Include="Content\visitForm.less" />
+    <Content Include="Content\visitordetail.css" />
+    <Content Include="Content\visitorDetail.less" />
+    <Content Include="Content\visitorForm.css" />
+    <Content Include="Content\visitorForm.less" />
+    <Content Include="Content\Visitors.css" />
+    <Content Include="Content\visitors.less" />
+    <Content Include="Content\visits.css" />
+    <Content Include="Content\visits.less" />
+    <Content Include="FakeImages\Adam Barr - small.jpg" />
+    <Content Include="FakeImages\Adam Barr.jpg" />
+    <Content Include="FakeImages\Adriana Bors - small.jpg" />
+    <Content Include="FakeImages\Adriana Bors.jpg" />
+    <Content Include="FakeImages\Andrew Davis - small.jpg" />
+    <Content Include="FakeImages\Andrew Davis.jpg" />
+    <Content Include="FakeImages\Beth Massi - small.jpg" />
+    <Content Include="FakeImages\Beth Massi.jpg" />
+    <Content Include="FakeImages\Brandon Bray - small.jpg" />
+    <Content Include="FakeImages\Brandon Bray.jpg" />
+    <Content Include="FakeImages\Brian Harry - small.jpg" />
+    <Content Include="FakeImages\Brian Harry.jpg" />
+    <Content Include="FakeImages\Brian Keller - small.jpg" />
+    <Content Include="FakeImages\Brian Keller.jpg" />
+    <Content Include="FakeImages\Carlos Zimmermann - small.jpg" />
+    <Content Include="FakeImages\Carlos Zimmermann.jpg" />
+    <Content Include="FakeImages\Carole Poland - small.jpg" />
+    <Content Include="FakeImages\Carole Poland.jpg" />
+    <Content Include="FakeImages\Cesar de_la_Torre - small.jpg" />
+    <Content Include="FakeImages\Cesar de_la_Torre.jpg" />
+    <Content Include="FakeImages\Chloe Smith - small.jpg" />
+    <Content Include="FakeImages\Chloe Smith.jpg" />
+    <Content Include="FakeImages\Christa Geller - small.jpg" />
+    <Content Include="FakeImages\Christa Geller.jpg" />
+    <Content Include="FakeImages\Christen Anderson - small.jpg" />
+    <Content Include="FakeImages\Christen Anderson.jpg" />
+    <Content Include="FakeImages\Craig Kitterman - small.jpg" />
+    <Content Include="FakeImages\Craig Kitterman.jpg" />
+    <Content Include="FakeImages\Cristina Potra - small.jpg" />
+    <Content Include="FakeImages\Cristina Potra.jpg" />
+    <Content Include="FakeImages\David Alexander - small.jpg" />
+    <Content Include="FakeImages\David Alexander.jpg" />
+    <Content Include="FakeImages\David Carmona - small.jpg" />
+    <Content Include="FakeImages\David Carmona.jpg" />
+    <Content Include="FakeImages\David Salgado - small.jpg" />
+    <Content Include="FakeImages\David Salgado.jpg" />
+    <Content Include="FakeImages\Dmitry Lyalin - small.jpg" />
+    <Content Include="FakeImages\Dmitry Lyalin.jpg" />
+    <Content Include="FakeImages\Dorothy White - small.jpg" />
+    <Content Include="FakeImages\Dorothy White.jpg" />
+    <Content Include="FakeImages\Ed Blankenship - small.jpg" />
+    <Content Include="FakeImages\Ed Blankenship.jpg" />
+    <Content Include="FakeImages\Erich Gamma - small.jpg" />
+    <Content Include="FakeImages\Erich Gamma.jpg" />
+    <Content Include="FakeImages\Evelyn Padrino - small.jpg" />
+    <Content Include="FakeImages\Evelyn Padrino.jpg" />
+    <Content Include="FakeImages\Garth Fort - small.jpg" />
+    <Content Include="FakeImages\Garth Fort.jpg" />
+    <Content Include="FakeImages\Habib Heydarian - small.jpg" />
+    <Content Include="FakeImages\Habib Heydarian.jpg" />
+    <Content Include="FakeImages\Jay Schmelzer - small.jpg" />
+    <Content Include="FakeImages\Jay Schmelzer.jpg" />
+    <Content Include="FakeImages\Jim Nakashima - small.jpg" />
+    <Content Include="FakeImages\Jim Nakashima.jpg" />
+    <Content Include="FakeImages\Josh Bailey - small.jpg" />
+    <Content Include="FakeImages\Josh Bailey.jpg" />
+    <Content Include="FakeImages\Matt Mostad - small.jpg" />
+    <Content Include="FakeImages\Matt Mostad.jpg" />
+    <Content Include="FakeImages\Mitra Azizirad - small.jpg" />
+    <Content Include="FakeImages\Mitra Azizirad.jpg" />
+    <Content Include="FakeImages\Nicole Herskowitz - small.jpg" />
+    <Content Include="FakeImages\Nicole Herskowitz.jpg" />
+    <Content Include="FakeImages\Orville McDonald - small.jpg" />
+    <Content Include="FakeImages\Orville McDonald.jpg" />
+    <Content Include="FakeImages\Phil Webb - small.jpg" />
+    <Content Include="FakeImages\Phil Webb.jpg" />
+    <Content Include="FakeImages\Rob Caron - small.jpg" />
+    <Content Include="FakeImages\Rob Caron.jpg" />
+    <Content Include="FakeImages\Robin Counts - small.jpg" />
+    <Content Include="FakeImages\Robin Counts.jpg" />
+    <Content Include="FakeImages\S. Somasegar - small.jpg" />
+    <Content Include="FakeImages\S. Somasegar.jpg" />
+    <Content Include="FakeImages\Scott Guthrie - small.jpg" />
+    <Content Include="FakeImages\Scott Guthrie.jpg" />
+    <Content Include="FakeImages\Scott Hanselman - small.jpg" />
+    <Content Include="FakeImages\Scott Hanselman.jpg" />
+    <Content Include="FakeImages\Scott Hunter - small.jpg" />
+    <Content Include="FakeImages\Scott Hunter.jpg" />
+    <Content Include="FakeImages\Scott Woodgate - small.jpg" />
+    <Content Include="FakeImages\Scott Woodgate.jpg" />
+    <Content Include="FakeImages\Sean Laberee - small.jpg" />
+    <Content Include="FakeImages\Sean Laberee.jpg" />
+    <Content Include="FakeImages\Thomas Andersen - small.jpg" />
+    <Content Include="FakeImages\Thomas Andersen.jpg" />
+    <Content Include="FakeImages\Violeta Arroyo - small.jpg" />
+    <Content Include="FakeImages\Violeta Arroyo.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Project.json" />
+    <Content Include="project.json.140509113823.bak" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\ProjectK\Microsoft.Web.ProjectK.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

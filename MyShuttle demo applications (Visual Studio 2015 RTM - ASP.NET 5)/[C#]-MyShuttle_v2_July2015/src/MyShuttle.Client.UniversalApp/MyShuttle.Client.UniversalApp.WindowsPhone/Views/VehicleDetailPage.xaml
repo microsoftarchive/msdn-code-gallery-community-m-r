@@ -1,0 +1,170 @@
+﻿<base:WindowsPhoneBasePage
+    x:Class="MyShuttle.Client.UniversalApp.Views.VehicleDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:base="using:MyShuttle.Client.UniversalApp.Views.Base"
+    xmlns:controls="using:Callisto.Controls"
+    xmlns:converters="using:MyShuttle.Client.UniversalApp.Converters"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey"/>
+        <converters:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverterKey"/>
+        <converters:NativeDistanceToStringConverter x:Key="DistanceToStringConverterKey"/>
+        <converters:VehicleStatusToImageStyleConverter x:Key="VehicleStatusToImageStyleConverterKey"/>
+        <converters:LocationToGeopointConverter x:Key="LocationToGeopointConverterKey"/>
+        <converters:VehicleToGeopointConverter x:Key="VehicleToGeopointConverterKey"/>
+        <converters:NormalizedCenteredAnchorPointConverter x:Key="NormalizedCenteredAnchorPointConverterKey"/>
+    </UserControl.Resources>
+
+    <Page.BottomAppBar>
+        <CommandBar Style="{StaticResource AppCommandBar}">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Mail" 
+                              Label="{Binding [Request], Source={StaticResource LocalizedStrings}}"
+                              Command="{Binding RequestVehicleCommand}"/>
+                <AppBarButton Icon="Phone" 
+                              Label="{Binding [Call], Source={StaticResource LocalizedStrings}}"
+                              Command="{Binding CallVehicleCommand}"/>
+                <AppBarButton Icon="Map" 
+                              Label="{Binding [ChangePosition], Source={StaticResource LocalizedStrings}}"
+                              Click="ButtonBase_OnClick"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+
+        <Grid.RowDefinitions>
+            <!--Allvays visible title-->
+            <RowDefinition Height="Auto"/>
+            <!--Just loaded information-->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Page title-->
+        <TextBlock Grid.Row="0" 
+                   Text="{Binding [VehicleDetail], Source={StaticResource LocalizedStrings}}"
+                   Style="{StaticResource PrimaryWithLeftMarginTextBlock}" />
+
+        <!--Loading information-->
+        <ProgressRing Grid.Row="1" 
+                      Grid.RowSpan="2" 
+                      Visibility="{Binding IsLoadingVehicle, Converter={StaticResource BooleanToVisibilityConverterKey}}" 
+                      Style="{StaticResource WhiteProgressRing}" />
+
+
+        <!--Vehicle information-->
+        <Grid Grid.Row="1" 
+              Name="VehicleInformation" 
+              Style="{StaticResource ContainerGrid}" 
+              Visibility="{Binding IsLoadingVehicle, Converter={StaticResource ReverseBooleanToVisibilityConverterKey}}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--Vehicle header-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Style="{StaticResource TopMarginGrid}">
+                    <Image Style="{StaticResource VehicleItemImage}" VerticalAlignment="Top" Source="{Binding CurrentVehicle.Picture,Converter={StaticResource ByteArrayToImageConverterKey}, FallbackValue='/Assets/Fallback/DemoCar.png'}"/>
+                    <Polygon Points="-15,0 0,0 0,15" Style="{Binding CurrentVehicle.VehicleStatus, Converter={StaticResource VehicleStatusToPolygonStyleConverterKey}}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" VerticalAlignment="Top" Orientation="Horizontal" Margin="{StaticResource SmallTopMarginThickness}">
+                        <TextBlock Text="{Binding CurrentVehicle.Make, FallbackValue='Audi A5 8T'}" Style="{StaticResource DefaultTextBlock}"/>
+                        <TextBlock Text="{Binding CurrentVehicle.Model, FallbackValue='TDI'}" Style="{StaticResource DefaultWithLeftMarginTextBlock}" />
+                    </StackPanel>
+                    <TextBlock Grid.Row="1" 
+                               Text="{Binding CurrentVehicle.Driver.Name, FallbackValue='Jhon Talbot'}" 
+                               Style="{StaticResource HighlightNoteWithSmallTopMarginTextBlock}"  />
+                    <controls:Rating Grid.Row="2" 
+                                     Style="{StaticResource SmallWithSmallTopMarginRating}"
+                                     ItemContainerStyle="{StaticResource SmallRatingItemContainer}" 
+                                     Value="{Binding CurrentVehicle.RatingAvg, FallbackValue='3'}"/>
+                </Grid>
+            </Grid>
+
+            <!--Vehicle extended information-->
+            <Grid Grid.Row="1" Style="{StaticResource TopMarginGrid}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <!--Type-->
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="{Binding [Type], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}" />
+                    <TextBlock Text="{Binding [KeyValueSeparator], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}"/>
+                    <TextBlock Text="{Binding CurrentVehicle.Type, FallbackValue='medium'}" 
+                               Style="{StaticResource ValueNoteLeftMarginTextBlock}"/>
+                </StackPanel>
+                <!--Seats-->
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding [Seats], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}" />
+                    <TextBlock Text="{Binding [KeyValueSeparator], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}" />
+                    <TextBlock Text="{Binding CurrentVehicle.Seats, FallbackValue='5'}" 
+                               Style="{StaticResource ValueNoteLeftMarginTextBlock}" />
+                </StackPanel>
+                <!--License type-->
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="{StaticResource TopAndBottomMarginThickness}">
+                    <TextBlock Text="{Binding [LicensePlate], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}" />
+                    <TextBlock Text="{Binding [KeyValueSeparator], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}"/>
+                    <TextBlock Text="{Binding CurrentVehicle.LicensePlate, FallbackValue='AVG6544'}" 
+                               Style="{StaticResource ValueNoteLeftMarginTextBlock}" />
+                </StackPanel>
+                <!--Rate-->
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="{StaticResource TopAndBottomMarginThickness}">
+                    <TextBlock Text="{Binding [Rate], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}" />
+                    <TextBlock Text="{Binding [KeyValueSeparator], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource LabelNoteTextBlock}"/>
+                    <TextBlock Text="{Binding CurrentVehicle.Rate, FallbackValue='4.5'}" 
+                               Style="{StaticResource ValueNoteLeftMarginTextBlock}" />
+                    <TextBlock Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}" 
+                               Style="{StaticResource ValueNoteTextBlock}" 
+                               Margin="5 0 0 0" />
+                    <TextBlock Text="{Binding [LocalMeasuringLengthUnitWithBar], Source={StaticResource LocalizedStrings}}"
+                               Style="{StaticResource ValueNoteTextBlock}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!--Vehicle map-->
+        <Grid Grid.Row="2" Visibility="{Binding Visibility, ElementName=VehicleInformation}">
+            <maps:MapControl ZoomLevel="14" Style="Terrain" Center="{Binding CurrentVehicle, Converter={StaticResource VehicleToGeopointConverterKey}}" 
+                         MapServiceToken="{Binding ApplicationSettingService.BingMapsToken}">
+
+                <Image Style="{Binding CurrentVehicle, Converter={StaticResource VehicleStatusToImageStyleConverterKey}}"
+                       maps:MapControl.Location="{Binding CurrentVehicle, Converter={StaticResource VehicleToGeopointConverterKey}}"
+                       maps:MapControl.NormalizedAnchorPoint="{Binding CurrentVehicle, Converter={StaticResource NormalizedCenteredAnchorPointConverterKey}}"/>
+
+                <!--Device position pushpin-->
+                <Image Style="{StaticResource DevicePushpinImage}" 
+                       maps:MapControl.Location="{Binding CurrentLocation, Converter={StaticResource LocationToGeopointConverterKey}}"
+                       maps:MapControl.NormalizedAnchorPoint="0.5 , 1.0"/>
+            </maps:MapControl>
+        </Grid>
+    </Grid>
+</base:WindowsPhoneBasePage>

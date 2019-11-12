@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ItemsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ItemMaster">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SaleCount" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Function Name="USP_Item_Edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItemName" Type="varchar" Mode="In" />
+          <Parameter Name="SaleCount" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_Item_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItemName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_ItemMaxMin_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItemName" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ItemsDBModelStoreContainer">
+          <EntitySet Name="ItemMaster" EntityType="Self.ItemMaster" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ItemsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ItemMaster">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SaleCount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ItemsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ItemMasters" EntityType="Self.ItemMaster" />
+          <FunctionImport Name="USP_Item_Edit" ReturnType="Collection(String)">
+            <Parameter Name="ItemName" Mode="In" Type="String" />
+            <Parameter Name="SaleCount" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Item_Select" ReturnType="Collection(ItemsDBModel.USP_Item_Select_Result)">
+          <Parameter Name="ItemName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ItemMaxMin_Select" ReturnType="Collection(ItemsDBModel.USP_ItemMaxMin_Select_Result)">
+          <Parameter Name="ItemName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="USP_Item_Select_Result">
+          <Property Type="String" Name="ItemName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="SaleCount" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="USP_ItemMaxMin_Select_Result">
+          <Property Type="Int32" Name="MinValue" Nullable="true" />
+          <Property Type="Int32" Name="MaxValue" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ItemsDBModelStoreContainer" CdmEntityContainer="ItemsDBEntities">
+          <EntitySetMapping Name="ItemMasters">
+            <EntityTypeMapping TypeName="ItemsDBModel.ItemMaster">
+              <MappingFragment StoreEntitySet="ItemMaster">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="SaleCount" ColumnName="SaleCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_Item_Edit" FunctionName="ItemsDBModel.Store.USP_Item_Edit" />
+          <FunctionImportMapping FunctionImportName="USP_Item_Select" FunctionName="ItemsDBModel.Store.USP_Item_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ItemsDBModel.USP_Item_Select_Result">
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="SaleCount" ColumnName="SaleCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ItemMaxMin_Select" FunctionName="ItemsDBModel.Store.USP_ItemMaxMin_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ItemsDBModel.USP_ItemMaxMin_Select_Result">
+                <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+                <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

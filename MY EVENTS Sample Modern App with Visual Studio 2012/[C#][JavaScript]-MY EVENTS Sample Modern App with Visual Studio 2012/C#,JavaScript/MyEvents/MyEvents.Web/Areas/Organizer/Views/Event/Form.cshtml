@@ -1,0 +1,91 @@
+@using System.Web.Optimization
+@model MyEvents.Web.Areas.Organizer.Models.EditEventViewModel
+@{
+    ViewBag.Title = "my events - Event";
+}
+<section id="event-form" class="form">
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.EventDefinitionId)
+    @Html.HiddenFor(model => model.TimeZoneOffset)
+
+    <section class="box opacity-background">
+        <div class="wrapper">
+            <div class="left">
+                <div id="logo-wrapper">
+                    <label class="block ellipsis">event logo</label>
+                    <div class="file-picker-wrapper">
+                        <div class="file-picker">
+                            @Html.HiddenFor(model => model.HasLogo)
+                            <input type="file" title="Choose your image" name="logoFile" id="logoFileUploader" />
+                            @if (Model.IsLogoSetted)
+                            {
+                                <img id="logoImage" src="@Url.Action("CurrentLogo", new { eventDefinitionId = Model.EventDefinitionId })" />
+                            }
+                            else
+                            {
+                                <img id="logoImage" src="@Url.Action("EventLogo", new { eventDefinitionId = Model.EventDefinitionId })" />
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div id="metadata-wrapper">
+                    <div class="field">
+                        <label for="Name">event title</label>
+                        @Html.EditorFor(model => model.Name)
+                    </div>
+                    <div class="field">
+                        <label for="Date" class="block">date</label>
+                        <input id="Date" name="Date" type="text" class="double" value="@Model.Date"/>
+                    </div>
+                    <div class="field">
+                        <label for="StartTime" class="block">starts at</label>
+                        @Html.EditorFor(model => model.StartTime)
+                    </div>
+                    <div class="field">
+                        <label for="EndTime" class="block">ends at</label>
+                        @Html.EditorFor(model => model.EndTime)
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="field big">
+                    <label for="Description">description</label>
+                    @Html.TextAreaFor(model => model.Description, new { rows = "10", @class = "text-box" })
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="left">
+                <label>localization</label>
+                <div id="localizationMap" class="map"></div>
+            </div>
+            <div class="right">
+                <div class="field">
+                    <label for="City">city</label>
+                    @Html.EditorFor(model => model.City)
+                    <label for="Address">address</label>
+                    @Html.EditorFor(model => model.Address)
+                    @Html.HiddenFor(model => model.ZipCode)
+                    @Html.HiddenFor(model => model.Latitude)
+                    @Html.HiddenFor(model => model.Longitude)
+                </div>
+                <div class="field">
+                    <label for="Tags">tags</label>
+                    @Html.EditorFor(model => model.Tags)
+                </div>
+                <div class="field">
+                    <label for="TwitterAccount">twitter account</label>
+                    @Html.EditorFor(model => model.TwitterAccount)
+                </div>
+                <div class="field">
+                    <label for="RoomNumber" class="block">number of rooms</label>
+                    @Html.DropDownListFor(model => model.RoomNumber, Model.Rooms)
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="buttons" class="right">
+        @Html.ActionLink("cancel", "Index", "Home", null, new { @class = "button" })
+        <input type="submit" value="save" class="button button-highlighted" />
+    </section>
+</section>

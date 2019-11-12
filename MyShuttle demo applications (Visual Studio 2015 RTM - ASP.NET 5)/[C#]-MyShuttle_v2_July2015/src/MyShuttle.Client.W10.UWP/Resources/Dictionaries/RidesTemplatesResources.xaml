@@ -1,0 +1,50 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:MyShuttle.Client.W10.UniversalApp.Converters"
+    xmlns:callisto="using:Callisto.Controls"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    mc:Ignorable="d">
+
+    <converters:DateTimeToFormattedDateConverter x:Key="DateTimeToFormattedDateConverter"/>
+    <converters:DateTimeToFormattedDateConverter x:Key="DateTimeToUpperCaseFormattedDateConverter" IsUpperCase="True"/>
+
+    <DataTemplate x:Key="RideTemplate">
+        <Border BorderBrush="#E5E5E7" BorderThickness="1">
+            <Grid Width="260" Height="118" Background="#FF8067">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Tapped">
+                        <core:InvokeCommandAction Command="{Binding DataContext.NavigateToRideDetailsCommand, 
+                                                                ElementName=RidesGridView}"
+                                                                CommandParameter="{Binding RideId}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Margin="20,0,0,0" Grid.Column="0" VerticalAlignment="Center" Text="{Binding StartDateTime, Converter={StaticResource DateTimeToFormattedDateConverter}}" Foreground="White" FontSize="12" FontWeight="SemiBold"></TextBlock>
+                <StackPanel Margin="0,0,25,0" Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock Text="$" FontStyle="Oblique" FontSize="25" Foreground="#973C29"></TextBlock>
+                    <TextBlock Text="{Binding Cost}" FontStyle="Oblique" FontSize="25" Foreground="#973C29"></TextBlock>
+
+                </StackPanel>
+
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" Foreground="White" Margin="20,0,20,10"  TextTrimming="CharacterEllipsis">
+                <Run Text="{Binding StartAddress}"/>
+                <Run Text="to"/>
+                <Run Text="{Binding EndAddress}"/>
+                </TextBlock>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+</ResourceDictionary>

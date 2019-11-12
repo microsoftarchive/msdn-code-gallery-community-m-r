@@ -1,0 +1,21 @@
+﻿<Window x:Class="PrimsModulityWithWPF.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://www.codeplex.com/CompositeWPF"
+        Title="Shell" Height="300" Width="300">
+    <Grid Background="#FFD6E0EC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0" prism:RegionManager.RegionName="EmployeeRegion"
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"
+            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+        </ContentControl>
+
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ProductRegion"
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"
+            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+        </ContentControl>
+    </Grid>
+</Window>

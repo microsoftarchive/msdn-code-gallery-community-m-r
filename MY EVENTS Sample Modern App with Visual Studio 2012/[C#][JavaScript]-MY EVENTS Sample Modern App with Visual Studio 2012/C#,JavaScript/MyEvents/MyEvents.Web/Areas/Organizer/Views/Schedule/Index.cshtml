@@ -1,0 +1,55 @@
+﻿@using System.Web.Optimization
+@model int
+@{
+    ViewBag.Title = "my events - schedule";
+}
+@section scripts
+{
+    <script type="text/javascript" src="../../../../Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/jquery.ui.draggable.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/jquery.ui.droppable.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/jquery.ui.resizable.min.js"></script>
+
+    @Scripts.Render("~/Organizer/Schedule/ManegeSchedule/")
+
+    <script>
+        (function ($) {
+            var eventDefinitionId = parseInt('@(Model)');
+            var getScheduleInfoAction = '@Url.Action("GetSheduleInfo", new { eventDefinitionId = Model })';
+            var updateSessionAction = '@Url.Action("UpdateSession")';
+
+            var url = myEvents.app.settings.apiAddress +
+                'EventDefinitions/GetScheduleInformation?eventDefinitionId=' +
+                eventDefinitionId;
+            
+            $.ajax({
+                dataType: "jsonp",
+                url: url,
+                success: function (data) {
+                    var scheduleControl = new myEvents.controls.schedule.ScheduleControl({
+                        eventDefinitionId: eventDefinitionId,
+                        model: data,
+                        updateAction: updateSessionAction
+                    },
+                    new myEvents.controls.schedule.painters.EditableSessionPainter(),
+                    new myEvents.controls.schedule.painters.AvailableEditableSessionPainter());
+                }
+            });
+
+        }(jQuery));
+    </script>
+}
+
+<div class="drag-message">
+    <span>drag a session box to the grid below to set time and location</span>
+</div>
+
+<section id="editable-schedule" class="schedule">
+    <section id="available-sessions" class="box opacity-background">
+    </section>
+    <section id="schedule-container">
+    </section>
+</section>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.22/themes/base/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />

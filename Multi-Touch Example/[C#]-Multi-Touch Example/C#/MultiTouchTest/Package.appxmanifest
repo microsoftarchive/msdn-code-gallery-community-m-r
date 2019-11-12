@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="MultiTouchTest" Publisher="CN=johnny" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>MultiTouchTest</DisplayName>
+    <PublisherDisplayName>Johnny</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MultiTouchTest.App">
+      <VisualElements DisplayName="Multi-Touch Test" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="MultiTouchTest" ForegroundText="dark" BackgroundColor="#f4cd19">
+        <DefaultTile ShowName="logoOnly" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

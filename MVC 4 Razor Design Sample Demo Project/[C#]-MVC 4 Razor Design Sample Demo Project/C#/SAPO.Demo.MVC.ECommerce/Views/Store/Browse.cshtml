@@ -1,0 +1,15 @@
+﻿@model SAPO.Demo.MVC.ECommerce.Models.Genre
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+
+<h2>You're Viewing Genre: @Model.Name</h2>
+
+<p>You can view more details here</p>@Html.ActionLink("View Details", "Details")
+
+@section Footer {
+
+    <p>This is the footer</p>    
+}

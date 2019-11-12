@@ -1,0 +1,9 @@
+﻿Image Functions
+Created Dave Gordon [davesama@hotmail.co.uk]
+Alpha Release
+12th January 2014
+Added	:	Susan Corner Detection
+Added	:	Moravec Corner Detection
+Added	:	Color differences for the different Corner Detection Algorithms
+Changed	:	The List boxes to DomainUpDown controls
+Bug		:	If you do a Moravec and then a SUSAN the program crashes.

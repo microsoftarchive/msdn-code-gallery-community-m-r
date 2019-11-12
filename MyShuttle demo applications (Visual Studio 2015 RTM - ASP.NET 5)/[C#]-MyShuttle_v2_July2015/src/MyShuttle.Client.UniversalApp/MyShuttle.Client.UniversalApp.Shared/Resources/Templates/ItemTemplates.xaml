@@ -1,0 +1,366 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:MyShuttle.Client.UniversalApp.Converters"
+    xmlns:converterscore="using:MyShuttle.Client.Core.Converters"
+    xmlns:controls="using:Callisto.Controls"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity">
+
+    <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverterKey"/>
+    <converters:VehicleStatusToPolygonStyleConverter x:Key="VehicleStatusToPolygonStyleConverterKey"/>
+    <converters:DateTimeToFormattedDateConverter x:Key="DateTimeToFormattedDateConverterKey"/>
+    <converters:NativeDistanceToStringConverter x:Key="DistanceToStringConverterKey"/>
+    <converters:DateTimeToDateConverter x:Key="DateTimeToDateConverterKey"/>
+    <converters:MinutesToHumanizedTimeConverter x:Key="MinutesToHumanizedTimeConverterKey"/>
+    <converters:PriceToStringConverter x:Key="PriceToStringConverterKey"/>
+    <converters:ItemClickedConverter x:Key="ItemClickedConverterKey"/>
+
+    <DataTemplate x:Key="ClosestVehiclesItemTemplate">
+        <Button Command="{Binding DataContext.NavigateToVehicleDetailsCommand, ElementName=ClosestVehiclesListView}"
+                CommandParameter="{Binding VehicleId}" Style="{StaticResource TransparentButtonStyle}">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Style="{StaticResource VehicleItemImage}"
+                           Source="{Binding Picture,Converter={StaticResource ByteArrayToImageConverterKey}}"/>
+
+                    <Polygon Grid.Column="0" Points="-15,0 0,0 0,15"
+                     Style="{Binding VehicleStatus, Converter={StaticResource VehicleStatusToPolygonStyleConverterKey}}"/>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource VehicleItemTitleTextBlock}" >
+                    <Run Text="{Binding Make}"/>    
+                    <Run Text="{Binding Model}"/>
+                        </TextBlock>
+
+                        <controls:Rating Grid.Row="1" Grid.Column="0" Style="{StaticResource SmallRating}"
+                                 ItemContainerStyle="{StaticResource SmallRatingItemContainer}" Value="{Binding RatingAvg}"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource VehicleItemDataTextBlock}">
+                    <Run Text="{Binding DistanceFromGivenPosition, Converter={StaticResource DistanceToStringConverterKey}}"/>
+                    <Run Text="{Binding [LocalMeasuringLengthUnit], Source={StaticResource LocalizedStrings}}"/>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Button.Content>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CheapestVehiclesItemTemplate">
+        <Button Command="{Binding DataContext.NavigateToVehicleDetailsCommand, ElementName=CheapestVehiclesListView}"
+                CommandParameter="{Binding VehicleId}" Style="{StaticResource TransparentButtonStyle}">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Style="{StaticResource VehicleItemImage}"
+                   Source="{Binding Picture,Converter={StaticResource ByteArrayToImageConverterKey}}"/>
+
+                    <Polygon Grid.Column="0" Points="-14,0 0,0 0,14"
+                     Style="{Binding VehicleStatus, Converter={StaticResource VehicleStatusToPolygonStyleConverterKey}}"/>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource VehicleItemTitleTextBlock}">
+                    <Run Text="{Binding Make}"/>    
+                    <Run Text="{Binding Model}"/>
+                        </TextBlock>
+
+                        <controls:Rating Grid.Row="1" Grid.Column="0" ItemCount="5" Style="{StaticResource SmallRating}"
+                                 ItemContainerStyle="{StaticResource SmallRatingItemContainer}" Value="{Binding RatingAvg}"/>
+
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Style="{StaticResource VehicleItemDataTextBlock}" Text="{Binding Rate}"/>
+                            <TextBlock xml:space="preserve" Style="{StaticResource VehicleItemDataTextBlock}" Text="&#160;"/>
+                            <TextBlock Style="{StaticResource VehicleItemDataTextBlock}" Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}"/>
+                            <TextBlock Style="{StaticResource VehicleItemDataTextBlock}" Text="{Binding [LocalMeasuringLengthUnitWithBar], Source={StaticResource LocalizedStrings}}"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+    </DataTemplate>
+
+    <DataTemplate x:Key="SelectedVehicleItemTemplate">
+        <Button Command="{Binding DataContext.NavigateToVehicleDetailsCommand, ElementName=VehiclesInMapContentControl}"
+                CommandParameter="{Binding VehicleId}" Style="{StaticResource TransparentButtonStyle}">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Style="{StaticResource SelectedVehicleItemImage}"
+                   Source="{Binding Picture,Converter={StaticResource ByteArrayToImageConverterKey}}"/>
+
+                    <Polygon Grid.Column="0" Style="{Binding VehicleStatus, Converter={StaticResource VehicleStatusToPolygonStyleConverterKey}}"/>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SelectedVehicleItemTitleTextBlock}">
+                    <Run Text="{Binding Make}"/>    
+                    <Run Text="{Binding Model}"/>
+                        </TextBlock>
+
+                        <controls:Rating Grid.Row="1" Grid.Column="0" Style="{StaticResource SmallRating}" RequestedTheme="Light"
+                                 ItemContainerStyle="{StaticResource SmallRatingItemContainer}" Value="{Binding RatingAvg}"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource SelectedVehicleItemDataTextBlock}">
+                    <Run Text="{Binding DistanceFromGivenPosition, Converter={StaticResource DistanceToStringConverterKey}}"/>
+                    <Run Text="{Binding [LocalMeasuringLengthUnit], Source={StaticResource LocalizedStrings}}"/>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Button.Content>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MyRidesMainItemTemplate">
+        <Grid x:Name="OuterContainer" Background="{StaticResource HighlightForegroundBrush}">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Tapped">
+                    <core:InvokeCommandAction Command="{Binding DataContext.NavigateToRideDetailsCommand, 
+                                                                ElementName=MyRidesListView}"
+                                                                CommandParameter="{Binding RideId}"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource RideItemTitleTextBlock}" Text="{Binding StartDateTime, Converter={StaticResource DateTimeToFormattedDateConverterKey}}"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="{StaticResource RightMarginThickness}">
+                <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}"/>
+                <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding Cost}"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource RideItemDataTextBlock}">
+                <Run Text="{Binding StartAddress}"/>
+                <Run Text="{Binding [To], Source={StaticResource LocalizedStrings}}"/>
+                <Run Text="{Binding EndAddress}"/>
+            </TextBlock>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="MyRidesItemTemplate">
+        <Grid x:Name="OuterContainer">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Tapped">
+                    <core:InvokeCommandAction Command="{Binding DataContext.NavigateToRideDetailsCommand, 
+                                                                ElementName=MyRidesListView}"
+                                                                CommandParameter="{Binding RideId}"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource RideItemTitleTextBlock}" Text="{Binding StartDateTime, Converter={StaticResource DateTimeToFormattedDateConverterKey}}"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="{StaticResource RightMarginThickness}">
+                <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}"/>
+                <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding Cost}"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource RideItemDataTextBlock}">
+                <Run Text="{Binding StartAddress}"/>
+                <Run Text="{Binding [To], Source={StaticResource LocalizedStrings}}"/>
+                <Run Text="{Binding EndAddress}"/>
+            </TextBlock>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MyRidesMainItemTemplateW8">
+        <Button Command="{Binding DataContext.NavigateToRideDetailsCommand,ElementName=MyRidesListView}"
+                CommandParameter="{Binding RideId}" Style="{StaticResource TransparentButtonStyle}"
+                VerticalAlignment="Stretch">
+            <Grid x:Name="OuterContainer" Height="100" Width="430" Background="{StaticResource HighlightForegroundBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Style="{StaticResource RideItemTitleTextBlock}" Text="{Binding StartDateTime, Converter={StaticResource DateTimeToFormattedDateConverterKey}}"/>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="{StaticResource RightMarginThickness}">
+                    <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}"/>
+                    <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding Cost}"/>
+                </StackPanel>
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource RideItemDataTextBlock}">
+                <Run Text="{Binding StartAddress}"/>
+                <Run Text="{Binding [To], Source={StaticResource LocalizedStrings}}"/>
+                <Run Text="{Binding EndAddress}"/>
+                </TextBlock>
+            </Grid>
+        </Button>
+    </DataTemplate>
+    <DataTemplate x:Key="MyRidesItemTemplateW8">
+        <Button Command="{Binding DataContext.NavigateToRideDetailsCommand,ElementName=MyRidesListView}"
+                CommandParameter="{Binding RideId}" Style="{StaticResource TransparentButtonStyle}"
+                VerticalAlignment="Stretch">
+            <Grid x:Name="OuterContainer" Height="100" Width="430" Background="{StaticResource RidesItemBackgroundBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Style="{StaticResource RideItemTitleTextBlock}" Text="{Binding StartDateTime, Converter={StaticResource DateTimeToFormattedDateConverterKey}}"/>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="{StaticResource RightMarginThickness}">
+                    <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding [LocalCurrency], Source={StaticResource LocalizedStrings}}"/>
+                    <TextBlock Style="{StaticResource RideItemPriceTextBlock}" Text="{Binding Cost}"/>
+                </StackPanel>
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource RideItemDataTextBlock}">
+                <Run Text="{Binding StartAddress}"/>
+                <Run Text="{Binding [To], Source={StaticResource LocalizedStrings}}"/>
+                <Run Text="{Binding EndAddress}"/>
+                </TextBlock>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <!--Company rides item templates (only used in W8) -->
+    <DataTemplate x:Key="MainCompanyRideItemTemplate">
+        <Button Command="{Binding DataContext.NavigateToRideDetailsCommand, ElementName=CompanyRideGrid}" 
+                CommandParameter="{Binding RideId}" Style="{StaticResource TransparentButtonStyle}"
+                VerticalAlignment="Stretch">
+            <Grid HorizontalAlignment="Left"  Background="{StaticResource PrimaryForegroundBrush}" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Image Source="{Binding Employee.Picture,Converter={StaticResource ByteArrayToImageConverterKey}}"
+                       Style="{StaticResource DefaultCompanyItemImage}" HorizontalAlignment="Stretch" />
+
+                <Grid Grid.Row="1" Margin="{StaticResource LeftRightMarginThickness}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding Employee.Name}" Style="{StaticResource TitleMainCompanyTextBlock}" />
+                        <TextBlock Grid.Row="1" Style="{StaticResource OriginDestinyMainCompanyTextBlock}"> 
+					        <Run Text="{Binding StartAddress}" /> 
+					        <Run Text="{Binding [To], Source={StaticResource LocalizedStrings}}" /> 
+					        <Run Text="{Binding EndAddress}" />
+                        </TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource DateMainCompanyTextBlock}" 
+					           Text="{Binding StartDateTime, Converter={StaticResource DateTimeToDateConverterKey}}"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="{StaticResource BottomMarginThickness}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"></ColumnDefinition>
+                            <ColumnDefinition Width=".5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Style="{StaticResource TimeDetailsMainCompanyTextBlock}" Text="{Binding Duration, Converter={StaticResource MinutesToHumanizedTimeConverterKey}}" />
+                        <TextBlock Grid.Column="1" Style="{StaticResource CostDetailsMainCompanyTextBlock}" Text="{Binding Cost, Converter={StaticResource PriceToStringConverterKey}}"   />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Button>
+    </DataTemplate>
+    <DataTemplate x:Key="DefaultCompanyRideItemTemplate">
+        <Button Command="{Binding DataContext.NavigateToRideDetailsCommand, ElementName=CompanyRideGrid}" 
+                CommandParameter="{Binding RideId}" Style="{StaticResource TransparentButtonStyle}"
+                VerticalAlignment="Stretch">
+            <Grid IsHitTestVisible="True" IsTapEnabled="True" Height="100" Width="430">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.33*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".9*"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image x:Name="image" Grid.Row="0" Grid.Column="0" Source="{Binding Employee.Picture,Converter={StaticResource ByteArrayToImageConverterKey}}"  />
+                <Grid  Grid.Column="2" Grid.Row="0" Margin="{StaticResource LeftMarginThickness}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{Binding Employee.Name}" Style="{StaticResource TitleDefaultCompanyTextBlock}"/>
+                    <TextBlock VerticalAlignment="Center"  Grid.Row="1"   Style="{StaticResource SubTitleDefaultCompanyTextBlock}" >
+                    <Run Text="{Binding StartAddress}"/>
+                <Run Text="{Binding [To], Source={StaticResource LocalizedStrings}}"/>
+                <Run Text="{Binding EndAddress}"/>
+                    </TextBlock>
+                    <Grid  Grid.Row="2"  Grid.Column="2"  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.45*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock VerticalAlignment="Bottom" Grid.Column="0"  Text="{Binding StartDateTime, Converter={StaticResource DateTimeToDateConverterKey}}"   Style="{StaticResource DateDetailsDefaultCompanyTextBlock}"   />
+                        <TextBlock VerticalAlignment="Bottom" Grid.Column="1"  Text="{Binding Duration, Converter={StaticResource MinutesToHumanizedTimeConverterKey}}"  Style="{StaticResource TimeDetailsDefaultCompanyTextBlock}"  />
+                        <TextBlock VerticalAlignment="Bottom" Grid.Column="2"  Text="{Binding Cost, Converter={StaticResource PriceToStringConverterKey}}"  Style="{StaticResource PriceDetailsDefaultCompanyTextBlock}" />
+                    </Grid>
+                </Grid>
+                <Border    Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Style="{StaticResource CompanyRideBorder}" >
+                    <Grid></Grid>
+                </Border>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <ItemsPanelTemplate x:Key="CompanyGroupPanel">
+        <VariableSizedWrapGrid Orientation="Vertical">
+        </VariableSizedWrapGrid>
+    </ItemsPanelTemplate>
+</ResourceDictionary>

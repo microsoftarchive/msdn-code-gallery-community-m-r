@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft Office 365 Service Health Watcher", "Microsoft Office 365 Service Health Watcher\Microsoft Office 365 Service Health Watcher.csproj", "{C7E32FF6-32D4-4B94-A553-7473303AE8CA}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Service Installer", "Service Installer\Service Installer.isproj", "{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		CD_ROM|x64 = CD_ROM|x64
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		DVD-5|Any CPU = DVD-5|Any CPU
+		DVD-5|x64 = DVD-5|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		SingleImage|Any CPU = SingleImage|Any CPU
+		SingleImage|x64 = SingleImage|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.CD_ROM|x64.ActiveCfg = Release|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.CD_ROM|x64.Build.0 = Release|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Debug|x64.ActiveCfg = Debug|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Debug|x64.Build.0 = Debug|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.DVD-5|x64.ActiveCfg = Debug|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.DVD-5|x64.Build.0 = Debug|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Release|x64.ActiveCfg = Release|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.Release|x64.Build.0 = Release|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.SingleImage|x64.ActiveCfg = Release|x64
+		{C7E32FF6-32D4-4B94-A553-7473303AE8CA}.SingleImage|x64.Build.0 = Release|x64
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.CD_ROM|x64.ActiveCfg = CD_ROM
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.Debug|Any CPU.ActiveCfg = SingleImage
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.Debug|Any CPU.Build.0 = SingleImage
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.Debug|x64.ActiveCfg = DVD-5
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.DVD-5|Any CPU.Build.0 = DVD-5
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.DVD-5|x64.ActiveCfg = DVD-5
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.Release|Any CPU.ActiveCfg = SingleImage
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.Release|Any CPU.Build.0 = SingleImage
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.Release|x64.ActiveCfg = DVD-5
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.SingleImage|Any CPU.Build.0 = SingleImage
+		{4B30BA7B-00CF-43C5-B09A-79266A8C0E82}.SingleImage|x64.ActiveCfg = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

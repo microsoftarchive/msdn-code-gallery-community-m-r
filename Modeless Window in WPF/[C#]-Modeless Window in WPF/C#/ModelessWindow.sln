@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelessWindow", "ModelessWindow\ModelessWindow.csproj", "{53FB82E1-90B3-4172-AC35-0EF0D5EBAC60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53FB82E1-90B3-4172-AC35-0EF0D5EBAC60}.Debug|x86.ActiveCfg = Debug|x86
+		{53FB82E1-90B3-4172-AC35-0EF0D5EBAC60}.Debug|x86.Build.0 = Debug|x86
+		{53FB82E1-90B3-4172-AC35-0EF0D5EBAC60}.Release|x86.ActiveCfg = Release|x86
+		{53FB82E1-90B3-4172-AC35-0EF0D5EBAC60}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,57 @@
+﻿<section class="view-wrapper">
+    <div class="row time-row start-time">
+        <div class="col-xs-5 label-col">
+            <label class="time">Start time</label>
+        </div>
+        <div class="col-xs-7 data-col">
+            <span>{{startRideTime | amDateFormat:'h:mm:ss a'}}</span>
+            <span ng-hide="startRideTime">-- : --</span>
+        </div>
+    </div>
+    <div class="row time-row end-time" ng-show="startRideTime">
+        <div class="col-xs-5 label-col">
+            <label class="time">End time</label>
+        </div>
+        <div class="col-xs-7 data-col">
+            <span>{{endRideTime | amDateFormat:'h:mm:ss a'}}</span>
+            <span ng-hide="endRideTime">-- : --</span>
+        </div>
+    </div>
+    <div class="row summary-row" ng-show="startRideTime && endRideTime">
+        <div class="col-xs-4 summary-col">
+            <img src="images/route_icon.png" />
+            <label>Distance</label>
+            <p class="ride-data">
+                {{distance}}
+                <span class="data-unit"> miles</span>
+            </p>
+        </div>
+        <div class="col-xs-4 summary-col">
+            <img src="images/length_icon.png" />
+            <label>Duration</label>
+            <p class="ride-data">{{duration | amDateFormat:'mm:ss'}}</p>
+        </div>
+        <div class="col-xs-4 summary-col">
+            <img src="images/cost_icon.png" />
+            <label>Cost</label>
+            <p class="ride-data">
+                ${{cost}}
+            </p>
+        </div>
+    </div>
+    <div class="bing-map" ng-if="startRideTime && endRideTime">
+        <ms-bing-maps-routes start-location="startRideLocation"
+                             end-location="endRideLocation"
+                             end-route-callback="endOfRoute(distanceArg)"></ms-bing-maps-routes>
+    </div>
+    <a class="button primary button-bottom" ng-click="startRide()" ng-show="!startRideTime && !endRideTime">
+        <span>Start</span>
+    </a>
+    <a class="button secondary button-bottom" ng-click="endRide()" ng-show="startRideTime && !endRideTime">
+        <span>Finish</span>
+    </a>
+    <a class="button secondary button-bottom button-next" ng-show="startRideTime && endRideTime" ng-click="sign()">
+        <img src="images/signature_icon.png" class="button-signature-img" />
+        <span>Signature</span>
+    </a>
+</section>

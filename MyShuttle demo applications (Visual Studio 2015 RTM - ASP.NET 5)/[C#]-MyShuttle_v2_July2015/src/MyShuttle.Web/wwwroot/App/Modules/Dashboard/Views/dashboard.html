@@ -1,0 +1,104 @@
+<section data-ng-controller="DashboardController">
+    <div class="row analytics">
+        <div class="col-md-4">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="dashboard-panel-title">Our Company</h3>
+                    <div class="rating-cotainer">
+                        <span class="rating-label"><strong><abbr title="Average">Avg.</abbr> Rating</strong></span>
+                        <ms-rating model="summary.Rating" big="true"></ms-rating>
+                    </div>
+                    <div class="summary-container">
+                        <div>
+                            <div class="vehicles-container">
+                                <h1>{{summary.TotalVehicles}}</h1>
+                                <span>Vehicles</span>
+                            </div>
+                        </div>
+                        <div class="drivers-container">
+                            <h1>{{summary.TotalDrivers}}</h1>
+                            <span>Drivers</span>
+                        </div>
+                        <div class="passengers-container">
+                            <h1>{{summary.TotalPassengers}}</h1>
+                            <span>Passengers</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="dashboard-panel-title">Last 30 days</h3>
+                    <div class="number clients-data">
+                        <h1>{{rides.LastDaysPassengers}}</h1>
+                        <strong>Clients</strong> who have traveled with us the last days
+                    </div>
+                    <div class="number rides-data">
+                        <h1>{{rides.LastDaysRides}}</h1>
+                        <strong>Rides</strong> in the last 30 days
+                    </div>
+                    <div class="graph-container">
+                        <cjs-line dataset="rides.evolution" options="chartOptions" autofit="true"></cjs-line>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="dashboard-panel-title">Top Vehicles</h3>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                    <tr ng-repeat="vehicle in vehicles" class="top-item">
+                        <td class="position-column">
+                            <h3>{{$index+1}}</h3>
+                        </td>
+                        <td class="vehicle-photo-column"><img ng-src="{{vehicle.Picture | imageBase64}}"/></td>
+                        <td class="vehicle-data-column data-column">
+                            <h4>{{vehicle.Make}} {{vehicle.Model}}</h4>
+                            <div class="bottom">
+                                <span class="license-plate">{{vehicle.LicensePlate}}</span>
+                                <h3>{{vehicle.TotalRides}}</h3> Rides
+                            </div>
+                        </td>
+                        <td class="rating-column">
+                            <ms-rating model="vehicle.RatingAvg"></ms-rating>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="dashboard-panel-title">Top Drivers</h3>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                    <tr ng-repeat="driver in drivers" class="top-item">
+                        <td class="position-column">
+                            <h3>{{$index+1}}</h3>
+                        </td>
+                        <td class="driver-photo-column"><img ng-src="{{driver.Picture | imageBase64}}"/></td>
+                        <td class="driver-data-column data-column">
+                            <h4>{{driver.Name}}</h4>
+                            <div>
+                                <h3>{{driver.TotalRides}}</h3> Rides
+                            </div>
+                        </td>
+                        <td class="rating-column">
+                            <ms-rating model="driver.RatingAvg"></ms-rating>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</section>

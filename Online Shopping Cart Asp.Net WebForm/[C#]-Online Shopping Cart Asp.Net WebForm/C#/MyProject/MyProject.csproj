@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0905A2B-0346-4338-8355-7EA0A77ABA26}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyProject</RootNamespace>
+    <AssemblyName>MyProject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DesktopBuildPackageLocation>C:\Users\prakash\Desktop\New folder %282%29\</DesktopBuildPackageLocation>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account.aspx" />
+    <Content Include="AdminDelete.aspx" />
+    <Content Include="car.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="img\5.jpg" />
+    <Content Include="AdminEntry.aspx" />
+    <Content Include="App_Data\shoping.mdf" />
+    <Content Include="App_Data\shoping_log.LDF">
+      <DependentUpon>shoping.mdf</DependentUpon>
+    </Content>
+    <Content Include="cCart.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="img\acer aspire 5315.jpg" />
+    <Content Include="img\acer travelmate 4730.jpg" />
+    <Content Include="img\ad\1.jpg" />
+    <Content Include="img\ad\2.jpg" />
+    <Content Include="img\ad\3.jpg" />
+    <Content Include="img\ad\4.jpg" />
+    <Content Include="img\ad\5.jpg" />
+    <Content Include="img\ad\6.jpg" />
+    <Content Include="img\ad\7.jpg" />
+    <Content Include="img\ad\8.jpg" />
+    <Content Include="img\audi‑r8.jpg" />
+    <Content Include="img\bugatti‑veyron‑main‑post‑1.jpg" />
+    <Content Include="img\buy_now.png" />
+    <Content Include="img\coampac presario a901tu.jpg" />
+    <Content Include="img\dell axise7943.jpg" />
+    <Content Include="img\detail.jpg" />
+    <Content Include="img\hcl n30.jpg" />
+    <Content Include="img\Honda‑CRV.jpg" />
+    <Content Include="img\Honda‑CRV‑Diesel‑Car‑India‑1.j.jpg" />
+    <Content Include="img\Lamborghini_Car_5.jpg" />
+    <Content Include="img\lamborghini‑murcielago‑r‑gt.jpg" />
+    <Content Include="img\laptop.jpg" />
+    <Content Include="img\lg kf600.jpg" />
+    <Content Include="img\lg kg13.jpg" />
+    <Content Include="img\lg prada.jpg" />
+    <Content Include="img\lg-kf510.jpg" />
+    <Content Include="img\Lotus-Flower-DSCN1628.jpg" />
+    <Content Include="img\nokia 2730 classic.jpg" />
+    <Content Include="img\nokia 5000.jpg" />
+    <Content Include="img\nokia 5530.jpg" />
+    <Content Include="img\nokia 6300.jpg" />
+    <Content Include="img\samsung d880 duos.jpg" />
+    <Content Include="img\samsung pda.jpg" />
+    <Content Include="img\samsung pixon.jpg" />
+    <Content Include="img\sony c905.jpg" />
+    <Content Include="img\sony k790.jpg" />
+    <Content Include="img\str\ADMINBUTTON\ADD CATEGORIES.png" />
+    <Content Include="img\str\ADMINBUTTON\ADD PRODUCTS.png" />
+    <Content Include="img\str\ADMINBUTTON\EDIT CATEGORIES.png" />
+    <Content Include="img\str\ADMINBUTTON\EDIT PRODUCTS.png" />
+    <Content Include="img\str\ADMINBUTTON\MANAGE.png" />
+    <Content Include="img\str\buttons\accounts.png" />
+    <Content Include="img\str\buttons\AddToCart.gif" />
+    <Content Include="img\str\buttons\btn_send.png" />
+    <Content Include="img\str\buttons\car.bmp" />
+    <Content Include="img\str\buttons\car.png" />
+    <Content Include="img\str\buttons\cars.png" />
+    <Content Include="img\str\buttons\CART.png" />
+    <Content Include="img\str\buttons\checkout.jpg" />
+    <Content Include="img\str\buttons\computer-music-561760.jpeg" />
+    <Content Include="img\str\buttons\contact.png" />
+    <Content Include="img\str\buttons\EditGiftRegistry.gif" />
+    <Content Include="img\str\buttons\home.png" />
+    <Content Include="img\str\buttons\IMG0276A.jpg" />
+    <Content Include="img\str\buttons\lap.bmp" />
+    <Content Include="img\str\buttons\laptop.png" />
+    <Content Include="img\str\buttons\loadingAnimation.gif" />
+    <Content Include="img\str\buttons\Login.gif" />
+    <Content Include="img\str\buttons\logout.gif" />
+    <Content Include="img\str\buttons\midl.jpg" />
+    <Content Include="img\str\buttons\mob.bmp" />
+    <Content Include="img\str\buttons\mobile.png" />
+    <Content Include="img\str\buttons\n1.jpg" />
+    <Content Include="img\str\buttons\Products.png" />
+    <Content Include="img\str\buttons\Register.gif" />
+    <Content Include="img\str\buttons\saddtocart2.gif" />
+    <Content Include="img\str\buttons\sign in.bmp" />
+    <Content Include="img\str\buttons\submit_blue.png" />
+    <Content Include="img\str\buttons\Untitled.png" />
+    <Content Include="img\str\buttons\visa.gif" />
+    <Content Include="laptop.aspx" />
+    <Content Include="login1.aspx" />
+    <Content Include="ManageUser.aspx" />
+    <Content Include="mobile.aspx" />
+    <Content Include="productDetail.aspx" />
+    <Content Include="reg\Password recover.aspx" />
+    <Content Include="reg\Register.aspx" />
+    <Content Include="reg\StyleSheet1.css" />
+    <Content Include="reg\WebForm1.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDelete.aspx.cs">
+      <DependentUpon>AdminDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDelete.aspx.designer.cs">
+      <DependentUpon>AdminDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEntry.aspx.cs">
+      <DependentUpon>AdminEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminEntry.aspx.designer.cs">
+      <DependentUpon>AdminEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login1.aspx.cs">
+      <DependentUpon>login1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login1.aspx.designer.cs">
+      <DependentUpon>login1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="car.aspx.cs">
+      <DependentUpon>car.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="car.aspx.designer.cs">
+      <DependentUpon>car.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cCart.aspx.cs">
+      <DependentUpon>cCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cCart.aspx.designer.cs">
+      <DependentUpon>cCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="laptop.aspx.cs">
+      <DependentUpon>laptop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="laptop.aspx.designer.cs">
+      <DependentUpon>laptop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mobile.aspx.cs">
+      <DependentUpon>mobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mobile.aspx.designer.cs">
+      <DependentUpon>mobile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productDetail.aspx.cs">
+      <DependentUpon>productDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productDetail.aspx.designer.cs">
+      <DependentUpon>productDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reg\Password recover.aspx.cs">
+      <DependentUpon>Password recover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reg\Password recover.aspx.designer.cs">
+      <DependentUpon>Password recover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reg\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reg\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reg\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reg\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="authenticated\" />
+    <Folder Include="code\" />
+    <Folder Include="img\product\" />
+    <Folder Include="img\str\Products\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="reg\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\Web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1345</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MyProject</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

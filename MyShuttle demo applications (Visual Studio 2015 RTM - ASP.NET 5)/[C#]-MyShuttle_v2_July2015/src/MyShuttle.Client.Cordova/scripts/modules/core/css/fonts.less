@@ -1,0 +1,46 @@
+﻿@import 'variables';
+
+#fonts {
+    .primary {
+        color: @primary-color;
+    }
+
+    .contrast {
+        color: @contrast-color;
+        font-weight: 600;
+    }
+
+    .base {
+        color: @font-color;
+        font-style: italic;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .primary-label {
+        .base;
+        color: darken(@primary-color, 15%);
+    }
+
+    .summary-data {
+        color: @contrast-color;
+        font-size: 2.1em;
+        font-weight: bold;
+    }
+
+    .secondary-data {
+        font-weight: bold;
+        font-size: 2.3em;
+    }
+
+    .primary-data {
+        color: @primary-color;
+        font-size: 2em;
+    }
+
+    .no-data {
+        color: @no-data-font-color;
+        font-style: italic;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="SqlConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
+  <metadata name="daLUP_BANK.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>268, 17</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlDeleteCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="SqlDeleteCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM LUP_BANK WHERE (sACCOUNT_NO = @Original_sACCOUNT_NO) AND (sADDRESS = @Original_sADDRESS) AND (sBANK_NAME = @Original_sBANK_NAME) AND (sBRANCH_NAME = @Original_sBRANCH_NAME) AND (sBRANCH_code = @Original_sBRANCH_code) AND (sCONTACT1 = @Original_sCONTACT1 OR @Original_sCONTACT1 IS NULL AND sCONTACT1 IS NULL) AND (sCONTACT2 = @Original_sCONTACT2 OR @Original_sCONTACT2 IS NULL AND sCONTACT2 IS NULL) AND (sMANAGER_CELL = @Original_sMANAGER_CELL OR @Original_sMANAGER_CELL IS NULL AND sMANAGER_CELL IS NULL) AND (sMANAGER_NAME = @Original_sMANAGER_NAME OR @Original_sMANAGER_NAME IS NULL AND sMANAGER_NAME IS NULL) AND (sMANAGER_PH = @Original_sMANAGER_PH OR @Original_sMANAGER_PH IS NULL AND sMANAGER_PH IS NULL) AND (sSTATUS = @Original_sSTATUS)</value>
+  </data>
+  <metadata name="SqlInsertCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlInsertCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlInsertCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO LUP_BANK(sACCOUNT_NO, sBANK_NAME, sBRANCH_NAME, sBRANCH_code, sADDRESS, sCONTACT1, sCONTACT2, sMANAGER_NAME, sMANAGER_PH, sMANAGER_CELL, sSTATUS) VALUES (@sACCOUNT_NO, @sBANK_NAME, @sBRANCH_NAME, @sBRANCH_code, @sADDRESS, @sCONTACT1, @sCONTACT2, @sMANAGER_NAME, @sMANAGER_PH, @sMANAGER_CELL, @sSTATUS); SELECT sACCOUNT_NO, sBANK_NAME, sBRANCH_NAME, sBRANCH_code, sADDRESS, sCONTACT1, sCONTACT2, sMANAGER_NAME, sMANAGER_PH, sMANAGER_CELL, sSTATUS FROM LUP_BANK WHERE (sACCOUNT_NO = @sACCOUNT_NO)</value>
+  </data>
+  <metadata name="SqlSelectCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlSelectCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="SqlUpdateCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlUpdateCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlUpdateCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE LUP_BANK SET sACCOUNT_NO = @sACCOUNT_NO, sBANK_NAME = @sBANK_NAME, sBRANCH_NAME = @sBRANCH_NAME, sBRANCH_code = @sBRANCH_code, sADDRESS = @sADDRESS, sCONTACT1 = @sCONTACT1, sCONTACT2 = @sCONTACT2, sMANAGER_NAME = @sMANAGER_NAME, sMANAGER_PH = @sMANAGER_PH, sMANAGER_CELL = @sMANAGER_CELL, sSTATUS = @sSTATUS WHERE (sACCOUNT_NO = @Original_sACCOUNT_NO) AND (sADDRESS = @Original_sADDRESS) AND (sBANK_NAME = @Original_sBANK_NAME) AND (sBRANCH_NAME = @Original_sBRANCH_NAME) AND (sBRANCH_code = @Original_sBRANCH_code) AND (sCONTACT1 = @Original_sCONTACT1 OR @Original_sCONTACT1 IS NULL AND sCONTACT1 IS NULL) AND (sCONTACT2 = @Original_sCONTACT2 OR @Original_sCONTACT2 IS NULL AND sCONTACT2 IS NULL) AND (sMANAGER_CELL = @Original_sMANAGER_CELL OR @Original_sMANAGER_CELL IS NULL AND sMANAGER_CELL IS NULL) AND (sMANAGER_NAME = @Original_sMANAGER_NAME OR @Original_sMANAGER_NAME IS NULL AND sMANAGER_NAME IS NULL) AND (sMANAGER_PH = @Original_sMANAGER_PH OR @Original_sMANAGER_PH IS NULL AND sMANAGER_PH IS NULL) AND (sSTATUS = @Original_sSTATUS); SELECT sACCOUNT_NO, sBANK_NAME, sBRANCH_NAME, sBRANCH_code, sADDRESS, sCONTACT1, sCONTACT2, sMANAGER_NAME, sMANAGER_PH, sMANAGER_CELL, sSTATUS FROM LUP_BANK WHERE (sACCOUNT_NO = @sACCOUNT_NO)</value>
+  </data>
+  <metadata name="DsLUP_BANK1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="daNS_DEFAULT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>522, 17</value>
+  </metadata>
+  <metadata name="SqlCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="SqlCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM [NS_DEFAULT] WHERE (([nID] = @Original_ID) AND ((@IsNull_GROUP = 1 AND [sBUSINESS_GP] IS NULL) OR ([sBUSINESS_GP] = @Original_GROUP)) AND ((@IsNull_BANK_ACC = 1 AND [sBANK_ACC] IS NULL) OR ([sBANK_ACC] = @Original_BANK_ACC)) AND ((@IsNull_S_MAN = 1 AND [sS_MAN] IS NULL) OR ([sS_MAN] = @Original_S_MAN)) AND ((@IsNull_P_MAN = 1 AND [sP_MAN] IS NULL) OR ([sP_MAN] = @Original_P_MAN)) AND ((@IsNull_D_MAN = 1 AND [sD_MAN] IS NULL) OR ([sD_MAN] = @Original_D_MAN)) AND ((@IsNull_R_MAN = 1 AND [sR_MAN] IS NULL) OR ([sR_MAN] = @Original_R_MAN)) AND ((@IsNull_CLIENT = 1 AND [sCLIENT] IS NULL) OR ([sCLIENT] = @Original_CLIENT)) AND ((@IsNull_CLIENT_TYPE = 1 AND [sCLIENT_TYPE] IS NULL) OR ([sCLIENT_TYPE] = @Original_CLIENT_TYPE)) AND ((@IsNull_CLIENT_CAT = 1 AND [sCLIENT_CAT] IS NULL) OR ([sCLIENT_CAT] = @Original_CLIENT_CAT)) AND ((@IsNull_CLIENT_GD = 1 AND [sCLIENT_GD] IS NULL) OR ([sCLIENT_GD] = @Original_CLIENT_GD)) AND ((@IsNull_ZONE = 1 AND [sZONE] IS NULL) OR ([sZONE] = @Original_ZONE)) AND ((@IsNull_ROUTE = 1 AND [sROUTE] IS NULL) OR ([sROUTE] = @Original_ROUTE)) AND ((@IsNull_AREA = 1 AND [sAREA] IS NULL) OR ([sAREA] = @Original_AREA)) AND ((@IsNull_EXP_SUB_HEAD = 1 AND [sEXP_SUB_HEAD] IS NULL) OR ([sEXP_SUB_HEAD] = @Original_EXP_SUB_HEAD)) AND ((@IsNull_PRINTER = 1 AND [sPRINTER] IS NULL) OR ([sPRINTER] = @Original_PRINTER)) AND ((@IsNull_RPT_TITLE = 1 AND [sREPORT_TITLE] IS NULL) OR ([sREPORT_TITLE] = @Original_RPT_TITLE)) AND ((@IsNull_RPT_WARRANTY = 1 AND [sREPORT_WARRANTY] IS NULL) OR ([sREPORT_WARRANTY] = @Original_RPT_WARRANTY)))</value>
+  </data>
+  <metadata name="SqlCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>385, 17</value>
+  </metadata>
+  <data name="SqlCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO [NS_DEFAULT] ([nID], [sBUSINESS_GP], [sBANK_ACC], [sS_MAN], [sP_MAN], [sD_MAN], [sR_MAN], [sCLIENT], [sCLIENT_TYPE], [sCLIENT_CAT], [sCLIENT_GD], [sZONE], [sROUTE], [sAREA], [sEXP_SUB_HEAD], [sPRINTER], [sREPORT_TITLE], [sREPORT_WARRANTY]) VALUES (@ID, @GROUP, @BANK_ACC, @S_MAN, @P_MAN, @D_MAN, @R_MAN, @CLIENT, @CLIENT_TYPE, @CLIENT_CAT, @CLIENT_GD, @ZONE, @ROUTE, @AREA, @EXP_SUB_HEAD, @PRINTER, @RPT_TITLE, @RPT_WARRANTY);
+SELECT nID AS ID, sBUSINESS_GP AS [GROUP], sBANK_ACC AS BANK_ACC, sS_MAN AS S_MAN, sP_MAN AS P_MAN, sD_MAN AS D_MAN, sR_MAN AS R_MAN, sCLIENT AS CLIENT, sCLIENT_TYPE AS CLIENT_TYPE, sCLIENT_CAT AS CLIENT_CAT, sCLIENT_GD AS CLIENT_GD, sZONE AS ZONE, sROUTE AS ROUTE, sAREA AS AREA, sEXP_SUB_HEAD AS EXP_SUB_HEAD, sPRINTER AS PRINTER, sREPORT_TITLE AS RPT_TITLE, sREPORT_WARRANTY AS RPT_WARRANTY FROM NS_DEFAULT WHERE (nID = @nID)</value>
+  </data>
+  <metadata name="SqlCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>508, 17</value>
+  </metadata>
+  <data name="SqlCommand3.CommandText" xml:space="preserve">
+    <value>SELECT     nID AS ID, sBUSINESS_GP AS [GROUP], sBANK_ACC AS BANK_ACC, sS_MAN AS S_MAN, sP_MAN AS P_MAN, sD_MAN AS D_MAN, 
+                      sR_MAN AS R_MAN, sCLIENT AS CLIENT, sCLIENT_TYPE AS CLIENT_TYPE, sCLIENT_CAT AS CLIENT_CAT, sCLIENT_GD AS CLIENT_GD, 
+                      sZONE AS ZONE, sROUTE AS ROUTE, sAREA AS AREA, sEXP_SUB_HEAD AS EXP_SUB_HEAD, sPRINTER AS PRINTER, 
+                      sREPORT_TITLE AS RPT_TITLE, sREPORT_WARRANTY AS RPT_WARRANTY
+FROM         NS_DEFAULT</value>
+  </data>
+  <metadata name="SqlCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="SqlCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>631, 17</value>
+  </metadata>
+  <data name="SqlCommand4.CommandText" xml:space="preserve">
+    <value>UPDATE [NS_DEFAULT] SET [nID] = @ID, [sBUSINESS_GP] = @GROUP, [sBANK_ACC] = @BANK_ACC, [sS_MAN] = @S_MAN, [sP_MAN] = @P_MAN, [sD_MAN] = @D_MAN, [sR_MAN] = @R_MAN, [sCLIENT] = @CLIENT, [sCLIENT_TYPE] = @CLIENT_TYPE, [sCLIENT_CAT] = @CLIENT_CAT, [sCLIENT_GD] = @CLIENT_GD, [sZONE] = @ZONE, [sROUTE] = @ROUTE, [sAREA] = @AREA, [sEXP_SUB_HEAD] = @EXP_SUB_HEAD, [sPRINTER] = @PRINTER, [sREPORT_TITLE] = @RPT_TITLE, [sREPORT_WARRANTY] = @RPT_WARRANTY WHERE (([nID] = @Original_ID) AND ((@IsNull_GROUP = 1 AND [sBUSINESS_GP] IS NULL) OR ([sBUSINESS_GP] = @Original_GROUP)) AND ((@IsNull_BANK_ACC = 1 AND [sBANK_ACC] IS NULL) OR ([sBANK_ACC] = @Original_BANK_ACC)) AND ((@IsNull_S_MAN = 1 AND [sS_MAN] IS NULL) OR ([sS_MAN] = @Original_S_MAN)) AND ((@IsNull_P_MAN = 1 AND [sP_MAN] IS NULL) OR ([sP_MAN] = @Original_P_MAN)) AND ((@IsNull_D_MAN = 1 AND [sD_MAN] IS NULL) OR ([sD_MAN] = @Original_D_MAN)) AND ((@IsNull_R_MAN = 1 AND [sR_MAN] IS NULL) OR ([sR_MAN] = @Original_R_MAN)) AND ((@IsNull_CLIENT = 1 AND [sCLIENT] IS NULL) OR ([sCLIENT] = @Original_CLIENT)) AND ((@IsNull_CLIENT_TYPE = 1 AND [sCLIENT_TYPE] IS NULL) OR ([sCLIENT_TYPE] = @Original_CLIENT_TYPE)) AND ((@IsNull_CLIENT_CAT = 1 AND [sCLIENT_CAT] IS NULL) OR ([sCLIENT_CAT] = @Original_CLIENT_CAT)) AND ((@IsNull_CLIENT_GD = 1 AND [sCLIENT_GD] IS NULL) OR ([sCLIENT_GD] = @Original_CLIENT_GD)) AND ((@IsNull_ZONE = 1 AND [sZONE] IS NULL) OR ([sZONE] = @Original_ZONE)) AND ((@IsNull_ROUTE = 1 AND [sROUTE] IS NULL) OR ([sROUTE] = @Original_ROUTE)) AND ((@IsNull_AREA = 1 AND [sAREA] IS NULL) OR ([sAREA] = @Original_AREA)) AND ((@IsNull_EXP_SUB_HEAD = 1 AND [sEXP_SUB_HEAD] IS NULL) OR ([sEXP_SUB_HEAD] = @Original_EXP_SUB_HEAD)) AND ((@IsNull_PRINTER = 1 AND [sPRINTER] IS NULL) OR ([sPRINTER] = @Original_PRINTER)) AND ((@IsNull_RPT_TITLE = 1 AND [sREPORT_TITLE] IS NULL) OR ([sREPORT_TITLE] = @Original_RPT_TITLE)) AND ((@IsNull_RPT_WARRANTY = 1 AND [sREPORT_WARRANTY] IS NULL) OR ([sREPORT_WARRANTY] = @Original_RPT_WARRANTY)));
+SELECT nID AS ID, sBUSINESS_GP AS [GROUP], sBANK_ACC AS BANK_ACC, sS_MAN AS S_MAN, sP_MAN AS P_MAN, sD_MAN AS D_MAN, sR_MAN AS R_MAN, sCLIENT AS CLIENT, sCLIENT_TYPE AS CLIENT_TYPE, sCLIENT_CAT AS CLIENT_CAT, sCLIENT_GD AS CLIENT_GD, sZONE AS ZONE, sROUTE AS ROUTE, sAREA AS AREA, sEXP_SUB_HEAD AS EXP_SUB_HEAD, sPRINTER AS PRINTER, sREPORT_TITLE AS RPT_TITLE, sREPORT_WARRANTY AS RPT_WARRANTY FROM NS_DEFAULT WHERE (nID = @nID)</value>
+  </data>
+  <metadata name="DsNS_DEFAULT1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>385, 17</value>
+  </metadata>
+</root>

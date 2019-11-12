@@ -1,0 +1,29 @@
+@using System.Globalization
+@model MyEvents.Web.Models.HomeViewModel
+@{
+    ViewBag.Title = "my events";
+}
+
+<section id="all-events">
+    <table class="event-table">
+        <tbody>
+            @foreach (var eventDefinition in Model.Events)
+            {   
+                <tr>
+                    <td><a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })">
+                        <time datetime="@eventDefinition.Date.ToString("R")"> @eventDefinition.Date.ToString("M/d/yy")</time>
+                    </a></td>
+                    <td><a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })">
+                        @eventDefinition.Name
+                        </a></td>
+                    <td><a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })">
+                        @eventDefinition.City
+                        </a></td>
+                    <td class="number"><a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })">
+                        <strong>@eventDefinition.AttendeesCount</strong>
+                        </a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

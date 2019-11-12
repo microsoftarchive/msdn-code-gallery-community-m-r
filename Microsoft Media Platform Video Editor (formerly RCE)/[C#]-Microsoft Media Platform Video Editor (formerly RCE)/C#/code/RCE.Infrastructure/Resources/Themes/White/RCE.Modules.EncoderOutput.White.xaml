@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="EncoderOutputTabBackgroundBrush" StartPoint="0.0934784,-0.00099265" EndPoint="0.0934784,1.00255">
+        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+        <GradientStop Color="#FFE6F2FA" Offset="0.523013"/>
+        <GradientStop Color="#FFCEE5F5" Offset="1"/>
+    </LinearGradientBrush>
+</ResourceDictionary>

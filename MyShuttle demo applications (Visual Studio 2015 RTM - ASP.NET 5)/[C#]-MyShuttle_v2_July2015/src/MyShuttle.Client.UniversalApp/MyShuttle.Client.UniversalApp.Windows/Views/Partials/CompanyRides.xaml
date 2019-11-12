@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="MyShuttle.Client.UniversalApp.Views.Partials.CompanyRides"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:MyShuttle.Client.UniversalApp.Converters"
+    xmlns:selector="using:MyShuttle.Client.UniversalApp.Selectors"
+    xmlns:controls="using:MyShuttle.Client.UniversalApp.Controls"
+    mc:Ignorable="d"    >
+
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey"/>
+        <selector:TileTemplatesSelector x:Key="TileTemplateSelector" 
+                                        MainTileItemTemplate="{StaticResource MainCompanyRideItemTemplate}"                                            
+                                        DefaultTileItemTemplate="{StaticResource DefaultCompanyRideItemTemplate}" />
+
+        <CollectionViewSource x:Name="CompanySource"
+                              IsSourceGrouped="True"
+                              ItemsPath="Names"
+                              Source="{Binding LastCompanyRidesGrouped}"
+                              d:Source="{Binding LastCompanyRidesGrouped,Source={d:DesignInstance Type=controls:VariableTileControl,IsDesignTimeCreatable=True}}" />
+    </UserControl.Resources>
+    <Grid>
+        <ProgressRing Visibility="{Binding IsLoadingLastCompanyRides, Converter={StaticResource BooleanToVisibilityConverterKey}}"
+                      Style="{StaticResource WhiteProgressRing}"/>
+
+        <controls:VariableTileControl x:Name="CompanyRideGrid" SelectionMode="None"
+                                      ItemsSource="{Binding Source={StaticResource CompanySource}}"
+                                      ItemTemplateSelector="{StaticResource TileTemplateSelector}"
+                                      ItemContainerStyle="{StaticResource CompanyRidesItemContainer}">
+            <controls:VariableTileControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </controls:VariableTileControl.ItemsPanel>
+
+            <controls:VariableTileControl.GroupStyle>
+                <GroupStyle HeaderTemplate="{StaticResource CompanyRidesHeader}" Panel="{StaticResource CompanyRidesGroupPanel}" />
+            </controls:VariableTileControl.GroupStyle>
+        </controls:VariableTileControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,49 @@
+﻿<Page x:Class="MyShuttle.Client.Desktop.Views.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:MyShuttle.Client.Desktop"
+      xmlns:controls="clr-namespace:MyShuttle.Client.Desktop.Controls"
+      xmlns:behaviours="clr-namespace:MyShuttle.Client.Desktop.Behaviors"
+      xmlns:e="http://schemas.microsoft.com/expression/2010/interactivity"
+      mc:Ignorable="d"
+      d:DesignHeight="720" d:DesignWidth="1280"
+      d:DataContext="{d:DesignInstance local:DesignMainViewModel, IsDesignTimeCreatable=True}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <controls:Menu IsVehiclesNavigationEnabled="False" IsRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" />
+        
+        <controls:Details Grid.Column="1" Grid.RowSpan="2" Width="{StaticResource DetailsColumnWidth}" Padding="{StaticResource DetailsColumnPadding}" DataContext="{Binding Details}"/>
+
+        <ListView Grid.Row="1"
+                  Background="{StaticResource VehicleListBackground}"
+                  Style="{StaticResource ListViewWithouMarginStyle}" 
+                  ItemContainerStyle="{StaticResource VehicleListViewItemStyle}"
+                  SelectedItem="{Binding Details.SelectedVehicle, Mode=TwoWay}"
+                  IsEnabled="{Binding IsLoadingVehicles, Converter={StaticResource NotBoolConverter}}"
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  behaviours:NullPlaceHoldersBehavior.ItemsSource="{Binding Vehicles}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2" 
+                                 VerticalAlignment="Top"
+                                 behaviours:DynamicColumnsBehavior.MinWidth="{StaticResource VehicleItemMinWidth}"
+                                 behaviours:DynamicColumnsBehavior.MaxWidth="{StaticResource VehicleItemMaxWidth}" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+</Page>

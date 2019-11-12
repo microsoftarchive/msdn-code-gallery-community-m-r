@@ -1,0 +1,53 @@
+@model PhluffyFotos.Web.ViewModels.PhotoViewModel
+@{
+    ViewBag.Title = "Photos";
+    var album = this.Model.Album;
+    var owner = this.Model.Owner; 
+}
+<div id="lvl2">
+</div>
+<div id="lvl3">
+    @if (this.Model.Photos == null)
+    {
+        <p>No photos available for this user</p>
+    }
+    else
+    {
+        <ul id="itemcontainer" class="photoList">
+            @foreach (var item in this.Model.Photos)
+            { 
+                <li>
+                    <div class="photoTitle">
+                        <h2>
+                            <span style="color: #888;">@item.Title</span></h2>
+                    </div>
+                    <br />
+                    <a href="@Url.Action("Index", "Photo", new { owner = item.Owner, album = item.AlbumId, photoId = item.PhotoId })">
+                        <img src="@item.ThumbnailUrl" alt="@item.Title" style="border:0" />
+                    </a>
+                    <br />
+                    <em>Filed under:</em>
+                    @if (!string.IsNullOrEmpty(item.RawTags))
+                    {
+                        foreach (var tag in item.RawTags.Split(';').Where(s => s.Trim().Length > 0).Select(s => s.Trim().ToLowerInvariant()))
+                        { 
+                        @Html.ActionLink(tag, "Search", new { controller = "Search", tag = tag }) @:;
+                                            }
+                    }
+                    @if (User.IsInRole("Administrator") || User.Identity.Name.Equals(item.Owner, StringComparison.InvariantCultureIgnoreCase))
+                    { 
+                        <div class="admin">
+                            @Html.ActionLink(
+                                "Delete",
+                                "Delete",
+                                "Photo",
+                                new { owner = item.Owner, album = item.AlbumId, photoId = item.PhotoId, },
+                                new { onclick = "return confirm('Are you sure you want to delete this picture?'); " })
+                        </div>
+                    }
+                    <br />
+                </li>
+            }
+        </ul>
+    }
+</div>

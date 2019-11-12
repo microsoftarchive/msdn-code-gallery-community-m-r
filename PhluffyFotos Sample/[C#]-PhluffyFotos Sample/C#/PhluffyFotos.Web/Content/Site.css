@@ -1,0 +1,245 @@
+body
+{
+    color: #555;
+    font: normal 11px Arial, Helvetica;
+}
+
+a
+{
+    color: #0063DC;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+img a, img
+{
+    border: none;
+    outline: none;
+}
+
+p, h1, h2, h3, ul
+{
+    margin: 0 0 5px 0;
+}
+
+p
+{
+    line-height: 16px;
+}
+
+h1
+{
+    color: #0063DC;
+    font: normal 16px Arial, Helvetica;
+    padding: 0;
+    margin: 0;
+}
+
+h2
+{
+    font: bold 14px Arial;
+    color: #555;
+}
+
+h3
+{
+    font: bold 12px Arial;
+}
+
+h4
+{
+    font: bold 10px Arial;
+}
+
+#pagewrap
+{
+    background: url(../images/bg.gif) 0 0 repeat-x #fff;
+}
+
+
+/* Navigation Menu */
+
+ul#nav
+{
+    height: 30px;
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#nav span
+{
+    display: none;
+}
+#nav li
+{
+    float: left;
+    color: #555;
+    font: normal 14px Arial, Helvetica;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: .5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+#nav li a
+{
+    color: #0063DC;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .5px;
+    display: block;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px 0 0;
+    white-space: nowrap;
+    outline: none;
+}
+
+#nav li a:hover
+{
+    text-decoration: underline;
+}
+
+/* Logo */
+
+#logo a
+{
+    background: url(../images/logo.png) no-repeat left bottom;
+    display: block;
+    width: 382px;
+    height: 90px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+/* Level 3 Styles */
+
+#lvl3 p
+{
+    color: #555;
+    font: normal 11px Arial, Helvetica;
+    margin: 0 0 10px 0;
+}
+
+#lvl3 h2
+{
+    color: #000;
+    font: bold 16px/ Arial, Helvetica;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+#lvl3 a:hover
+{
+}
+
+/* Footer*/
+
+#footer
+{
+    text-align: left;
+}
+
+
+/* Listview */
+
+.photoList li
+{
+    display: inline;
+    float: left;
+    width: 200px;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+}
+
+/*.photoList img
+{
+	width: 200px;
+	height: 150px;
+}*/
+
+.photoTitle
+{
+    min-height: 40px;
+    height: auto;
+}
+
+.albumTitle
+{
+    min-height: 40px;
+    height: auto;
+}
+
+/* Pager */
+
+#dataPager
+{
+    display: block;
+    font: normal 12px Arial, Helvetica;
+    text-align: center;
+    clear: both;
+    padding: 10px 0 10px 0;
+    color: #FF0084;
+}
+#dataPager a
+{
+    font: normal 12px Arial, Helvetica;
+    border: 1px solid #808080;
+    color: #0063DC;
+    text-decoration: none;
+    padding: 1px 4px 1px 4px;
+    margin: 0 5px 0 5px;
+}
+
+#dataPager a:hover
+{
+    border: 1px solid #003399;
+    color: #FFFFFF;
+    background-color: #0063DC;
+}
+
+.tagResume
+{
+    background: #ffe28a;
+    width: 400px;
+    padding: 5px 5px 5px 5px;
+}
+
+.tagNavigation
+{
+    width: 400px;
+    text-align: right;
+}
+
+.button
+{
+    border: solid 1px 003399;
+    background: #0063DC;
+    color: #fff;
+}
+
+.validation-summary-errors
+{
+    padding: 10px 0;
+}
+
+.error, .field-validation-error, .validation-summary-errors
+{
+    color: Red;
+}
+
+#registerForm input[type=text], #registerForm input[type=password]
+{
+    width: 200px;
+}
+

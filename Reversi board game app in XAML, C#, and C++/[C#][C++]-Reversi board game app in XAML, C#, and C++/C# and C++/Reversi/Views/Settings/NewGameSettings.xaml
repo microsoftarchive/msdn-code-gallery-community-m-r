@@ -1,0 +1,80 @@
+﻿<SettingsFlyout
+  x:Class="Reversi.Views.Settings.NewGameSettings"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Reversi.Views.Settings"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  IconSource="/Assets/SmallLogo.png"
+  Title="Game options"
+  d:DesignWidth="346"  
+  d:DataContext="{d:DesignData Source=../DesignerData/SettingsDesignerData.xaml}"
+  RequestedTheme="Dark"
+  HeaderBackground="Black"
+  HeaderForeground="{StaticResource SettingsFlyoutHeaderForegroundThemeBrush}"
+  Background="{StaticResource SettingsBackgroundBrush}">
+
+  <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+
+    <StackPanel Orientation="Horizontal">
+      <TextBlock Text="Board size" FontSize="15" FontWeight="Medium" Margin="6,14,17,16"/>
+      <ComboBox Width="100" Height="30" SelectedIndex="{Binding BoardSizeIndex, Mode=TwoWay}">
+        <ComboBoxItem>6 x 6</ComboBoxItem>
+        <ComboBoxItem>8 x 8</ComboBoxItem>
+        <ComboBoxItem>10 x 10</ComboBoxItem>
+        <ComboBoxItem>12 x 12</ComboBoxItem>
+        <ComboBoxItem>14 x 14</ComboBoxItem>
+      </ComboBox>
+    </StackPanel>
+
+    <TextBlock FontSize="20" Style="{StaticResource SubheaderTextBlockStyle}" Margin="6,15,0,10">Player 1</TextBlock>
+
+    <ToggleSwitch x:Name="PlayerOneSwitch" 
+      OffContent="Human" OnContent="Computer"
+      IsOn="{Binding PlayerOneIsAiSetting, Mode=TwoWay}"/>
+
+    <StackPanel Orientation="Horizontal" 
+      Visibility="{Binding IsOn, ElementName=PlayerOneSwitch, 
+        Converter={StaticResource BooleanToVisibilityConverter}}">
+      <TextBlock Text="Level" FontSize="15" FontWeight="Medium" Margin="6,14,52,16"/>
+      <ComboBox Width="65" Height="30" SelectedValue="{Binding PlayerOneAiSearchDepthSetting, Mode=TwoWay}">
+                <x:Int32>1</x:Int32>
+                <x:Int32>2</x:Int32>
+                <x:Int32>3</x:Int32>
+                <x:Int32>4</x:Int32>
+                <x:Int32>5</x:Int32>
+                <x:Int32>6</x:Int32>
+                <x:Int32>7</x:Int32>
+                <x:Int32>8</x:Int32>
+                <x:Int32>9</x:Int32>
+                <x:Int32>10</x:Int32>
+            </ComboBox>
+    </StackPanel>
+
+    <TextBlock FontSize="20" Style="{StaticResource SubheaderTextBlockStyle}" Margin="6,15,0,10">Player 2</TextBlock>
+
+    <ToggleSwitch x:Name="PlayerTwoSwitch" 
+      OffContent="Human" OnContent="Computer"
+      IsOn="{Binding PlayerTwoIsAiSetting, Mode=TwoWay}"/>
+
+    <StackPanel Orientation="Horizontal"
+      Visibility="{Binding IsOn, ElementName=PlayerTwoSwitch, 
+        Converter={StaticResource BooleanToVisibilityConverter}}">
+      <TextBlock Text="Level" FontSize="15" FontWeight="Medium" Margin="6,14,52,16"/>
+      <ComboBox Width="65" Height="30" SelectedValue="{Binding PlayerTwoAiSearchDepthSetting, Mode=TwoWay}">
+        <x:Int32>1</x:Int32>
+        <x:Int32>2</x:Int32>
+        <x:Int32>3</x:Int32>
+        <x:Int32>4</x:Int32>
+        <x:Int32>5</x:Int32>
+        <x:Int32>6</x:Int32>
+        <x:Int32>7</x:Int32>
+        <x:Int32>8</x:Int32>
+        <x:Int32>9</x:Int32>
+        <x:Int32>10</x:Int32>
+      </ComboBox>
+    </StackPanel>
+
+  </StackPanel>
+</SettingsFlyout>

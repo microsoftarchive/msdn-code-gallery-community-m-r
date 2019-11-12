@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>RCE</Word>
+      <Word>Rce</Word>
+      <Word>Smpte</Word>
+      <Word>SQL</Word>
+      <Word>Sql</Word>
+      <Word>sql</Word>
+    </Recognized>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>RCE</Acronym>
+      <Acronym>Rce</Acronym>
+      <Acronym>Smpte</Acronym>
+      <Word>SQL</Word>
+      <Word>sql</Word>
+      <Word>Sql</Word>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

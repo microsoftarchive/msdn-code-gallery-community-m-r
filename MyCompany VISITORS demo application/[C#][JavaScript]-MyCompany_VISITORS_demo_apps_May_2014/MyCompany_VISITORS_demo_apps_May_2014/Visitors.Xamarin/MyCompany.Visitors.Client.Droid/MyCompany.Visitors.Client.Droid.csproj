@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD135851-5E6F-4521-AA33-E9D8C62995FC}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyCompany.Visitors.Client.Droid</RootNamespace>
+    <AssemblyName>MyCompany.Visitors.Client.Droid</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize />
+    <JavaOptions />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip>
+    </AndroidLinkSkip>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkSkip />
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\portable-net40+sl5+wp80+win8+monotouch+monoandroid\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Mobile">
+      <HintPath>..\Components\xamarin.mobile-0.7\lib\android\Xamarin.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>..\SharedCode\packages\signalr-2.0.0\lib\mobile\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Android">
+      <HintPath>..\SharedCode\packages\MvvmLightLibs.4.1.27.0\lib\Android\GalaSoft.MvvmLight.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MyCompany.Visitors.Client.iOS\ViewModels\VisitsGroup.cs">
+      <Link>ViewModels\VisitsGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\MyCompany.Visitors.Client.iOS\ViewModels\VMBase.cs">
+      <Link>ViewModels\VMBase.cs</Link>
+    </Compile>
+    <Compile Include="..\MyCompany.Visitors.Client.iOS\ViewModels\VMEmployee.cs">
+      <Link>ViewModels\VMEmployee.cs</Link>
+    </Compile>
+    <Compile Include="..\MyCompany.Visitors.Client.iOS\ViewModels\VMMainPage.cs">
+      <Link>ViewModels\VMMainPage.cs</Link>
+    </Compile>
+    <Compile Include="..\MyCompany.Visitors.Client.iOS\ViewModels\VMVisit.cs">
+      <Link>ViewModels\VMVisit.cs</Link>
+    </Compile>
+    <Compile Include="..\MyCompany.Visitors.Client.iOS\ViewModels\VMVisitor.cs">
+      <Link>ViewModels\VMVisitor.cs</Link>
+    </Compile>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Extensions\RobotoTextView.cs" />
+    <Compile Include="Fragments\MainFragment.cs" />
+    <Compile Include="Fragments\OtherVisitFragment.cs" />
+    <Compile Include="Fragments\TodaysVisitsFragment.cs" />
+    <Compile Include="Fragments\VisitViewFragment.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Dispatcher\DispatcherService.cs" />
+    <Compile Include="Services\Dispatcher\IDispatcherService.cs" />
+    <Compile Include="Services\Messages\IMessageService.cs" />
+    <Compile Include="Services\Messages\MessageService.cs" />
+    <Compile Include="Services\Navigation\INavigationService.cs" />
+    <Compile Include="Services\SampleData\ISampleDataService.cs" />
+    <Compile Include="Services\SampleData\SampleDataService.cs" />
+    <Compile Include="Services\Storage\IStorageService.cs" />
+    <Compile Include="Services\Storage\StorageService.cs" />
+    <Compile Include="Settings\AppSettings.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="Views\ImageFader.cs" />
+    <Compile Include="Views\OtherVisitView.cs" />
+    <Compile Include="Views\TallVisitView.cs" />
+    <Compile Include="Views\VisitView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\fonts\Roboto-Black.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-BlackItalic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Bold.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-BoldCondensed.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-BoldCondensedItalic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-BoldItalic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Condensed.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-CondensedItalic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Italic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Light.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-LightItalic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Medium.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-MediumItalic.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Regular.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Thin.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-ThinItalic.ttf" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\Layout\VisitView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\BaseLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\TodaysVisitsView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Settings.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\TallVisitView.axml">
+      <SubType>AndroidResource</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout-sw600dp-land\Main.axml" />
+    <AndroidResource Include="Resources\layout-sw600dp-land\VisitView.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\Main.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Drawable\icon.png" />
+    <AndroidResource Include="Resources\Drawable\no_photo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ab_bottom_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ab_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ab_stacked_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ab_texture_tile_myvisitor.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ab_transparent_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_cab_done_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_cab_done_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\btn_cab_done_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cab_background_bottom_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cab_background_top_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_content_new.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\list_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\list_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\menu_dropdown_panel_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\progress_bg_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\progress_primary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\progress_secondary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\spinner_ab_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\spinner_ab_disabled_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\spinner_ab_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\spinner_ab_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tab_selected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tab_selected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tab_selected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tab_unselected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tab_unselected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tab_unselected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_bottom_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_stacked_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_texture_tile_myvisitor.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ab_transparent_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_cab_done_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_cab_done_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\btn_cab_done_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cab_background_bottom_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cab_background_top_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_content_new.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\menu_dropdown_panel_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress_bg_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress_primary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress_secondary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_disabled_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\spinner_ab_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_selected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_selected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_selected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_unselected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_unselected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tab_unselected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_bottom_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_stacked_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_texture_tile_myvisitor.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ab_transparent_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_cab_done_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_cab_done_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\btn_cab_done_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cab_background_bottom_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cab_background_top_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_content_new.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\list_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\list_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\menu_dropdown_panel_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_bg_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_primary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_secondary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_disabled_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_ab_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_selected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_selected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_selected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_unselected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_unselected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tab_unselected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_bottom_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_stacked_solid_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_texture_tile_myvisitor.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ab_transparent_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cab_done_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cab_done_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\btn_cab_done_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cab_background_bottom_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cab_background_top_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_content_new.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu_dropdown_panel_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress_bg_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress_primary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress_secondary_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_default_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_disabled_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\spinner_ab_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_selected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_selected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_selected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_unselected_focused_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_unselected_myvisitor.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tab_unselected_pressed_myvisitor.9.png" />
+    <AndroidResource Include="Resources\Drawable\progress_horizontal_myvisitor.xml" />
+    <AndroidResource Include="Resources\Drawable\selectable_background_myvisitor.xml" />
+    <AndroidResource Include="Resources\Drawable\spinner_background_ab_myvisitor.xml" />
+    <AndroidResource Include="Resources\Drawable\tab_indicator_ab_myvisitor.xml" />
+    <AndroidResource Include="Resources\Drawable\ab_background_textured_myvisitor.xml" />
+    <AndroidResource Include="Resources\Drawable\background_card.9.png" />
+    <AndroidResource Include="Resources\Drawable\btn_cab_done_myvisitor.xml" />
+    <AndroidResource Include="Resources\menu\menu_main.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml" />
+    <AndroidResource Include="Resources\Values\styles_myvisitor.xml" />
+    <AndroidResource Include="Resources\Values\attrs.xml" />
+    <AndroidResource Include="Resources\Values\Colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyCompany.Visitors.Client\MyCompany.Visitors.Client.csproj">
+      <Project>{def833f3-4d83-494a-848f-a700b3ad933c}</Project>
+      <Name>MyCompany.Visitors.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamarin.mobile">
+      <Version>0.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LiveSmoothStreamingSettings>
+  <BufferingEngineSettings
+        ForceAccurateSeeks="true" 
+        MaxPlaybackBufferSizeMilliseconds="10000"/>
+</LiveSmoothStreamingSettings>

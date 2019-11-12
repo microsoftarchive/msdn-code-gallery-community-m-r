@@ -1,0 +1,24 @@
+﻿@model PhluffyFotos.Web.ViewModels.AlbumCreateViewModel
+
+@{
+    ViewBag.Title = "Create an Album";
+}
+
+@using (Html.BeginForm()) {
+    <div id="lvl3">
+        <label>Create an Album<br />
+            @Html.TextBoxFor(m => m.Title)
+            @Html.ValidationMessageFor(m => m.Title)
+            @* @Html.TextBox("album", "My Pics", new { style="width: 240px" })
+            @Html.ValidationMessage("album")*@
+        </label>
+        <br />
+        <input type="submit" value="Submit" style="border: solid 1px 003399; background: #0063DC; color: #fff;" />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+} 
+
+

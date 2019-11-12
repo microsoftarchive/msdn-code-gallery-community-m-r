@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLUP_ITEM_CAT" targetNamespace="http://tempuri.org/dsLUP_ITEM_CAT.xsd" xmlns:mstns="http://tempuri.org/dsLUP_ITEM_CAT.xsd" xmlns="http://tempuri.org/dsLUP_ITEM_CAT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLUP_ITEM_CAT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsLUP_ITEM_CAT" msprop:Generator_DataSetName="dsLUP_ITEM_CAT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LUP_ITEM_CAT" msprop:Generator_UserTableName="LUP_ITEM_CAT" msprop:Generator_RowDeletedName="LUP_ITEM_CATRowDeleted" msprop:Generator_TableClassName="LUP_ITEM_CATDataTable" msprop:Generator_RowChangedName="LUP_ITEM_CATRowChanged" msprop:Generator_RowClassName="LUP_ITEM_CATRow" msprop:Generator_RowChangingName="LUP_ITEM_CATRowChanging" msprop:Generator_RowEvArgName="LUP_ITEM_CATRowChangeEvent" msprop:Generator_RowEvHandlerName="LUP_ITEM_CATRowChangeEventHandler" msprop:Generator_TablePropName="LUP_ITEM_CAT" msprop:Generator_TableVarName="tableLUP_ITEM_CAT" msprop:Generator_RowDeletingName="LUP_ITEM_CATRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nCODE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="nCODE" msprop:Generator_ColumnPropNameInRow="nCODE" msprop:Generator_ColumnVarNameInTable="columnnCODE" msprop:Generator_ColumnPropNameInTable="nCODEColumn" type="xs:decimal" />
+              <xs:element name="sDESC" msprop:Generator_UserColumnName="sDESC" msprop:Generator_ColumnPropNameInRow="sDESC" msprop:Generator_ColumnVarNameInTable="columnsDESC" msprop:Generator_ColumnPropNameInTable="sDESCColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LUP_ITEM_CAT" />
+      <xs:field xpath="mstns:nCODE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

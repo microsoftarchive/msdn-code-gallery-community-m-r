@@ -1,0 +1,38 @@
+﻿[role=dialog] {
+    background-color: #e9eef4 !important;
+}
+
+    [role=dialog] .logo {
+        position: absolute; 
+        right: 40px;
+        top: 10px;
+        background-color: #FFFFFF;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #FFFFFF;
+    }
+
+    [role=dialog] input[type="text"] {
+        width: 100%;
+    }
+
+    [role=dialog] .link {
+        color: #C4C331;
+    }
+
+    [role=dialog] .offline {
+        margin-top: 2em;
+    }
+    
+    [role=dialog] .offline h3, [role=dialog] .offline-item {
+        display: inline-block;
+    }
+
+    [role=dialog] .win-header {
+        background-color:#C4C331;
+    }
+
+    [role=dialog] .win-label {
+        color:#FFFFFF;
+    }
+    

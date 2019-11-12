@@ -1,0 +1,68 @@
+@using System.Globalization
+@model MyEvents.Web.Models.HomeViewModel
+@{
+    ViewBag.Title = "my events";
+}
+
+<section id="all-events">
+    <span class="section-title">all events</span>
+    <div style="position: relative; width: 100%; height: 100%; overflow: hidden;">
+        <section id="loading-events-page" class="overlay">
+            <div class="loading">
+                <span>Loading </span>
+                <img src="@Url.Content("~/Styles/Images/ajax-loader.gif")" />
+            </div>
+        </section>
+    <section class="list">
+        <section>
+            <span class="field uppercase center" title="Date">Date</span>
+            <span class="field big uppercase" title="Event">Event</span>
+            <span class="field extra-big uppercase" title="Event">Description</span>
+            <span class="field uppercase" title="City">City</span>
+            <span class="field uppercase" title="Organizer">Organizer</span>
+            <span class="field small uppercase center" title="Attendees">Attendees</span>
+        </section>
+        <div>
+            @foreach (var eventDefinition in Model.Events)
+            {
+                string className = null;
+                <a href="@Url.Action("Detail", "Event", new { eventDefinitionId = eventDefinition.EventDefinitionId })">
+                    @if (Model.PageIndex == 0 && Model.Events.OrderBy(e => e.Date).First().EventDefinitionId == eventDefinition.EventDefinitionId)
+                    {
+                        className = "highlighted";
+                    }
+                    <article class="detail @className">
+                        <span class="field button center" title="@eventDefinition.Date.ToShortDateString()">@eventDefinition.Date.ToShortDateString()</span>
+                        <span class="field big" title="@eventDefinition.Name">@eventDefinition.Name</span>
+                        <span class="field extra-big" title="@eventDefinition.Description">@eventDefinition.Description</span>
+                        <span class="field uppercase" title="@eventDefinition.City">@eventDefinition.City</span>
+                        <span class="field uppercase" title="@eventDefinition.Organizer.Name">@eventDefinition.Organizer.Name</span>
+                        <span class="field small center" title="@eventDefinition.RegisteredUsers.Count">@eventDefinition.AttendeesCount</span>
+                    </article>
+                </a>
+            }
+                @if (!Model.Events.Any())
+            {
+                    <article class="detail no-data">there are no available events at this moment.</article>
+            }
+        </div>
+    </section>
+        <section class="pagination right">
+        <ul>
+            @for (int i = 0; i < Model.TotalPages; i++)
+            {
+                    <li class='page-link @(i == (Model.PageIndex) ? "current" : "")'>
+                    @Ajax.ActionLink((i + 1).ToString(CultureInfo.InvariantCulture), "Index", "Home", new { pageIndex = i },
+                       new AjaxOptions
+                           {
+                            HttpMethod = "get", 
+                            UpdateTargetId = "all-events", 
+                            InsertionMode = InsertionMode.Replace,
+                            LoadingElementId = "loading-events-page"
+                        })
+                </li>
+            }
+        </ul>
+    </section>
+    </div>
+</section>

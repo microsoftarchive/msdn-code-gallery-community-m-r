@@ -1,0 +1,467 @@
+@import "variables.less";
+
+// Product carousel section styles
+.ms-carousel {
+    color: @white;
+
+    .ms-carousel-indicators {
+        margin-bottom: 0;
+
+        li {
+            background-color: @slider-indicator-bg;
+            border: none;
+            width: 10px;
+            height: 10px;
+            margin: 0.2em;
+            padding: 0.3em;
+
+            &.active {
+                background-color: @white;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+    .ms-carousel-inner {
+        .item {
+            height: 355px;
+            background-position: center center;
+            background-size: cover;
+
+            &.item-slide-1 {
+                background-image: url('Images/slide1.png');
+            }
+
+            &.item-slide-2 {
+                background-image: url('Images/slide2.png');
+            }
+
+            &.item-slide-3 {
+                background-image: url('Images/slide3.png');
+            }
+        }
+    }
+
+    .ms-carousel-static {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+
+        .ms-carousel-wrapper {
+            max-width: 875px;
+            padding: 0 @standard-space;
+            margin: 0 auto;
+        }
+    }
+}
+
+// Product infographic section styles
+.product-infographic {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    position: relative;
+
+    .infographic-section {
+
+        .infographic-image {
+            margin: 1.8em auto;
+            width: 9em;
+        }
+
+        .infographic-section-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 1.3em;
+            margin: 0;
+        }
+
+        .infographic-section-subtitle {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        ul.infographic-section-advantages {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li:before {
+                content: "•";
+                font-size: 1em;
+                padding-right: 0.2em;
+            }
+        }
+    }
+
+    .infographic-arrow {
+        position: absolute;
+        -ms-transform: rotate(55deg);
+        -webkit-transform: rotate(55deg);
+        transform: rotate(55deg);
+
+        &.right-arrow {
+            top: 35%;
+            left: 15%;
+        }
+
+        &.left-arrow {
+            bottom: 28%;
+            right: 15%;
+        }
+    }
+}
+
+// Discover product section styles
+.discover-product {
+    p {
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.7em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+// Available platforms section styles
+.available-platforms {
+    background-image: none;
+    padding-top: 0em;
+    padding-bottom: 1.5em;
+
+    .available-platforms-container {
+        max-width: @extended-row-max-width;
+
+        .platform-banner {
+            margin: 1em auto;
+        }
+    }
+}
+
+// Product stats section styles
+.product-stats {
+    background-color: @secondary-text-color;
+    padding-top: 2.5em;
+    padding-bottom: 3em;
+    color: @stats-text-color;
+
+    .stat-column {
+        margin-bottom: 1em;
+
+        &:last-of-type {
+            margin: 0;
+        }
+
+        .stat-data {
+            font-weight: 500;
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .stat-label {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.3em;
+        }
+    }
+}
+
+// Product advantages section styles
+.product-advantages {
+    background-color: @advantages-bg-color;
+    color: @text-base-light-color;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+
+    img.product-preview {
+        margin: 0 auto;
+        max-width: 23em;
+    }
+
+    .advantages-list-column {
+        text-align: center;
+        margin-top: 3em;
+
+        ul.advantages-list {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            li {
+                font-size: 2.7em;
+                color: @advantages-list-text-color;
+                padding-left: 0;
+                background-repeat: no-repeat;
+                background-position: 50% 0;
+                line-height: 1.3em;
+                padding-bottom: 0.2em;
+                padding-top: 1.5em;
+
+                &.clock-bg {
+                    background-image: url('Images/clock.png');
+                }
+
+                &.fly-bg {
+                    background-image: url('Images/fly.png');
+                }
+
+                &.pin-bg {
+                    background-image: url('Images/pin.png');
+                }
+            }
+
+            p.advantage-description {
+                padding-left: 0;
+                line-height: 1.2em;
+                margin-bottom: 2.5em;
+            }
+        }
+    }
+}
+
+// Product customers section styles
+.product-customers {
+    padding-top: 0;
+    padding-bottom: 2.5em;
+
+    .customers-messages {
+        text-align: left;
+        margin-top: 2em;
+
+        .customer-tile {
+            .customer-message {
+                border: solid 1px @customer-message-border-color;
+                padding: 1.5em 2em 1em 2em;
+                color: @text-base-light-color;
+                line-height: 1.2em;
+
+                .customer-rating {
+                    margin-top: 0.6em;
+                }
+            }
+
+            .customer-info {
+                margin-top: 0.7em;
+
+                img.customer-pic {
+                    border-radius: 50%;
+                }
+
+                .customer-data-col {
+                    padding-left: 1em;
+
+                    .customer-name {
+                        font-weight: 300;
+                        font-size: 1.6em;
+                        margin-bottom: 0;
+                    }
+
+                    .carrier-name {
+                        font-style: italic;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .customers-pictures {
+        text-align: justify;
+        margin-top: 2em;
+        padding: 0 @default-column-spacing;
+
+        &:after {
+            content: '';
+            width: 100%;
+            display: inline-block;
+        }
+
+        .customer-picture-col {
+            width: 130px;
+            display: inline-block;
+
+            &.hide-xs-width {
+                display: none;
+            }
+        }
+    }
+}
+
+// Company location section styles
+.company-location {
+    height: 285px;
+    position: relative;
+
+    .map-inner-shadow {
+        height: 6px;
+        background-color: @box-external-shadow-bg;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 89;
+    }
+
+    .bing-map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .map-infoBox {
+        color: @infoBox-base-text-color;
+        padding: 0.6em;
+        font-style: italic;
+        font-size: 1.2em;
+        text-align: center;
+        width: 200px;
+        position: relative;
+        background: @white;
+        border: 1px solid @infoBox-border-color;
+
+        &:after, &:before {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &:after {
+            border-top-color: @white;
+            border-width: 10px;
+            margin-left: -12px;
+        }
+
+        &:before {
+            border-top-color: @infoBox-border-color;
+            border-width: 12px;
+            margin-left: -14px;
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .ms-carousel {
+        .ms-carousel-indicators {
+            margin-bottom: 10px;
+        }
+
+        .ms-carousel-inner {
+            .item {
+                height: @slider-height;
+            }
+        }
+    }
+
+    .product-infographic {
+        margin-top: 2.5em;
+        margin-bottom: 3em;
+
+        .infographic-section {
+            .infographic-image {
+                margin: 2.2em auto;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        .infographic-arrow {
+            position: absolute;
+            top: 25%;
+            -ms-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+
+            &.right-arrow {
+                left: 27%;
+            }
+
+            &.left-arrow {
+                right: 27%;
+            }
+        }
+    }
+
+    .available-platforms {
+        background-image: url('Images/downloadbg.png');
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+
+    .product-stats {
+        .stat-column {
+            margin: 0em;
+        }
+    }
+
+    .product-advantages {
+        padding-top: 5.5em;
+        padding-bottom: 5.5em;
+
+        img.product-preview {
+            max-width: 100%;
+        }
+
+        .advantages-list-column {
+            margin-top: 0;
+
+            ul.advantages-list {
+                text-align: left;
+                margin-left: 8%;
+
+                li {
+                    padding-left: @advantage-left-padding;
+                    padding-top: 0;
+                    background-position: 0 5px;
+                }
+
+                p.advantage-description {
+                    padding-left: @advantage-left-padding;
+                }
+            }
+        }
+    }
+
+    .product-customers {
+        padding-top: 2.5em;
+
+        .customers-messages {
+            margin-top: 4.5em;
+
+            .customer-tile {
+                padding-left: 5%;
+                padding-right: 0;
+
+                &:first-of-type {
+                    padding-right: 5%;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .customers-pictures {
+            padding: 0;
+            margin-top: 4em;
+
+            .customer-picture-col {
+                &.hide-xs-width {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .company-location {
+        height: 780px;
+    }
+}

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Azure Redis Cache</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans Unicode';
+        }
+
+        .subhead {
+            font-style: italic;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Azure Redis Cache</h1>
+    <div class="subhead">Microsoft Azure QuickStarts</div>
+    <p>
+        The sample demonstrates how to programatically use the Azure Redis Cache to add, put, get and remove items from the cache.
+        In this example the
+        ConnectionMultiplexer is configured using lazy initialization which provides a thread safe way to ensure that only
+        one ConnectedMultiplexer instance is used. 
+    </p>
+
+    <p>
+        If you don't have a Microsoft Azure subscription you can
+        get a FREE trial account <a href="http://go.microsoft.com/fwlink/?LinkId=330212">here</a>.
+    </p>
+    <p>This sample demonstrates the following scenarios:</p>
+    <ol>
+        <li>Connecting to a Redis cache using the StackExchange Redis client</li>
+        <li>Storing and retrieving primitive values</li>
+        <li>Storing and retrieving .NET objects</li>
+        <li>Retrieving and/or adding cache entries</li>
+        <li>Removing items from the cache</li>
+        <li>Storing items with an expiration time</li>
+    </ol>
+
+    <h2>Running this sample</h2>
+    <ol>
+        <li>Use the <a href="https://portal.azure.com">Azure Portal</a> to create a new Redis Cache</li>
+        <li>Edit app.config and replace the <code>redisCacheName</code> and <code>redisCachePassword</code> with values
+            provided from the portal</li>
+        <li>Run the sample</li>
+    </ol>
+
+    <h2>More information</h2>
+    <ul>
+        <li><a href="http://azure.microsoft.com/en-us/documentation/services/cache/">Cache Documentation</a></li>
+        <li><a href="http://aka.ms/CreateAzureRedisCache">Create a cache in Azure Redis Cache</a></li>
+        <li><a href="http://aka.ms/ConfigureAzureRedisCacheClients">Configure .NET cache clients for Azure Redis Cache</a></li>
+        <li><a href="http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/">Windows Azure Web Sites: How Application Strings and Connection Strings Work</a></li>
+    </ul>
+</body>
+</html>

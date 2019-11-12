@@ -1,0 +1,194 @@
+﻿<base:WindowsBasePage
+    x:Class="MyShuttle.Client.W10.UniversalApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyShuttle.Client.W10.UniversalApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:MyShuttle.Client.W10.UniversalApp.ViewModels"
+    xmlns:base="using:MyShuttle.Client.W10.UniversalApp.Views.Base"
+    xmlns:converters="using:MyShuttle.Client.W10.UniversalApp.Converters"
+    xmlns:callisto="using:Callisto.Controls"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d" RequestedTheme="Light" Title="Home">
+
+    <Page.Resources>
+        <Style x:Key="SectionTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#30374A" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="SemiLight" />
+            <Setter Property="Margin" Value="0,16" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="OneColumn">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MapHeader.Height" Value="0" />
+                        <Setter Target="VehicleStatusIcons.Visibility" Value="Collapsed" />
+                        <Setter Target="RideList.(RelativePanel.Below)" Value="VehiclesList" />
+                        <Setter Target="RideList.Width" Value="260" />
+                        <Setter Target="VehiclesList.Width" Value="260" />
+                        <Setter Target="RelativePanel.Margin" Value="8,0,5,5" />
+                        <Setter Target="CurrentViewState.Text" Value="0" />
+                        <Setter Target="VehiclesDistanceTitle.FontSize" Value="11"/>
+                        <Setter Target="VehiclesPriceTitle.FontSize" Value="11"/>
+                        <Setter Target="RidesTitle.FontSize" Value="11"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="TwoColumns">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="540" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MapHeader.Height" Value="0" />
+                        <Setter Target="VehicleStatusIcons.Visibility" Value="Collapsed" />
+                        <Setter Target="RideList.(RelativePanel.Below)" Value="VehiclesList" />
+                        <Setter Target="RideList.Width" Value="540" />
+                        <Setter Target="VehiclesList.Width" Value="540" />
+                        <Setter Target="RelativePanel.Margin" Value="10,0,5,5" />
+                        <Setter Target="CurrentViewState.Text" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="ThreeColumns">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MapHeader.Visibility" Value="Visible" />
+                        <Setter Target="VehicleStatusIcons.Visibility" Value="Visible" />
+                        <Setter Target="RideList.(RelativePanel.Below)" Value="VehiclesList" />
+                        <Setter Target="RideList.Width" Value="800" />
+                        <Setter Target="VehiclesList.Width" Value="800" />
+                        <Setter Target="CurrentViewState.Text" Value="2" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="FourColumns">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MapHeader.Visibility" Value="Visible" />
+                        <Setter Target="VehicleStatusIcons.Visibility" Value="Visible" />
+                        <Setter Target="RideList.(RelativePanel.RightOf)" Value="VehiclesList" />
+                        <Setter Target="RideList.Width" Value="260" />
+                        <Setter Target="VehiclesList.Width" Value="800" />
+                        <Setter Target="CurrentViewState.Text" Value="3" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="FiveColumns">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1400" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MapHeader.Visibility" Value="Visible" />
+                        <Setter Target="VehicleStatusIcons.Visibility" Value="Visible" />
+                        <Setter Target="RideList.(RelativePanel.RightOf)" Value="VehiclesList" />
+                        <Setter Target="RideList.Width" Value="260" />
+                        <Setter Target="VehiclesList.Width" Value="1070" />
+                        <Setter Target="CurrentViewState.Text" Value="4" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="SixColumns">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1660" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MapHeader.Visibility" Value="Visible" />
+                        <Setter Target="VehicleStatusIcons.Visibility" Value="Visible" />
+                        <Setter Target="RideList.(RelativePanel.RightOf)" Value="VehiclesList" />
+                        <Setter Target="RideList.Width" Value="260" />
+                        <Setter Target="VehiclesList.Width" Value="1340" />
+                        <Setter Target="CurrentViewState.Text" Value="5" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF202C3A" VerticalAlignment="Top">
+            <StackPanel>
+                <TextBlock x:Name="CurrentViewState" Visibility="Collapsed" Text="{Binding CurrentViewState, Mode=TwoWay}"></TextBlock>
+                <Image Source="/Resources/Images/bg1920.png" Stretch="UniformToFill" Height="76" />
+                <Border Style="{StaticResource MapBorder}" x:Name="MapHeader"  >
+                    <maps:MapControl ZoomLevel="16"
+                                     MapServiceToken="VkqSOmkj3SSULEbHw8lQ~aQd5YRdaIBow2ZVdBQgzLHCvJ4LjpYbdREVIEsMZklcYNmEa52pSaWx5XPRxh5S93OD1TbOhDCjp3zrZBdxQyQ~Ai5YQKy9eR002fsSvDGC3cPXRFIX_W1vGvOasA8Bkn9PDN6BzChjob8onCBtR9or"
+                                     Heading="0"
+                                     DesiredPitch="0"    
+                                     Style="Terrain"
+                                     Height="230"
+                                     Center="{Binding MapCenter}">
+                        <Image Source="/Resources/Images/pin.png" Height="41"
+                                           maps:MapControl.NormalizedAnchorPoint="1,0.5" 
+                                           maps:MapControl.Location="{Binding MapCenter}" />
+                    </maps:MapControl>
+                </Border>
+            </StackPanel>
+            <StackPanel x:Name="VehicleStatusIcons" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,51,40,0">
+                <Border CornerRadius="28" Width="55" Height="55" Margin="0,0,8,0" Background="{StaticResource FreeStatusColorBrush}">
+                    <StackPanel Margin="0,-3,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="19" FontWeight="SemiBold" FontStyle="Italic" Foreground="White" Text="6"></TextBlock>
+                        <Image Margin="2,12,0,0" Source="/Resources/Images/freecar.png" Width="13" Height="11"></Image>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="23" Width="45" Height="45" Margin="0,0,8,0" Background="{StaticResource OccupiedStatusColorBrush}">
+                    <StackPanel Margin="0,-3,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="17"  FontWeight="SemiBold" FontStyle="Italic" Foreground="White" Text="3"></TextBlock>
+                        <Image Margin="2,12,0,0" Source="/Resources/Images/occupiedcar.png" Width="11" Height="10"></Image>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+        <ScrollViewer Grid.Row="1" Margin="0" x:Name="viewBox">
+            <Viewbox VerticalAlignment="Top" >
+                <RelativePanel Margin="20,0,20,20" x:Name="RelativePanel">
+                    <StackPanel x:Name="VehiclesList">
+                        <TextBlock Text="VEHICLES BY DISTANCE"  x:Name="VehiclesDistanceTitle" Style="{StaticResource SectionTitle}"></TextBlock>
+                        <ProgressRing HorizontalAlignment="Center" Width="40" Height="40" IsActive="True" Visibility="{Binding VehiclesByDistanceViewModel.IsLoadingFilteredVehicles, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Top" Foreground="#2E3B4B"/>
+                        <GridView x:Name="VehiclesByDistanceGridView" MinHeight="183" ItemTemplate="{StaticResource VehicleByDistanceTemplate}"
+                                  ItemsSource="{Binding VehiclesByDistance}">
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapGrid  Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                        </GridView>
+
+                        <TextBlock Text="VEHICLES BY PRICE" x:Name="VehiclesPriceTitle" Style="{StaticResource SectionTitle}"></TextBlock>
+                        <ProgressRing HorizontalAlignment="Center" Width="40" Height="40" IsActive="True" Visibility="{Binding VehiclesByPriceViewModel.IsLoadingFilteredVehicles, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Top" Foreground="#2E3B4B"/>
+
+                        <GridView x:Name="VehiclesByPriceGridView" MinHeight="183" ItemTemplate="{StaticResource VehicleByPriceTemplate}"
+                                  ItemsSource="{Binding VehiclesByPrice}">
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapGrid Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                        </GridView>
+                    </StackPanel>
+                    <StackPanel x:Name="RideList">
+                        <TextBlock Text="MY RIDES" x:Name="RidesTitle" Style="{StaticResource SectionTitle}"></TextBlock>
+                        <ProgressRing HorizontalAlignment="Center" Width="40" Height="40" IsActive="True" Visibility="{Binding MyRidesViewModel.IsLoadingMyLastRides, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Top" Foreground="#2E3B4B"/>
+                        <GridView x:Name="MyRidesGridView" ItemTemplate="{StaticResource RideTemplate}"
+                  ItemsSource="{Binding MyRides}">
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapGrid x:Name="RideGrid" Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                        </GridView>
+                    </StackPanel>
+                </RelativePanel>
+            </Viewbox>
+        </ScrollViewer>
+    </Grid>
+</base:WindowsBasePage>

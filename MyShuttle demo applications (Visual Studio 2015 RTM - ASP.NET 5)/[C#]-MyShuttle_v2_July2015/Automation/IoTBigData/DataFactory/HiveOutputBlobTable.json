@@ -1,0 +1,37 @@
+{
+    "name": "HiveOutputBlobTable",
+    "properties":
+    {
+        "structure":  
+         [ 
+            { "name": "winstarttime", "type": "String"},
+            { "name": "WinEndTime", "type": "String"},
+			{ "name": "DriverId", "type": "Int"},
+            { "name": "licenseplate", "type": "String" },
+            { "name": "name", "type": "String" },
+            { "name": "NumWarnings", "type": "Int" }
+        ],
+        "location": 
+        {
+            "type": "AzureBlobLocation",
+            "folderPath": "myshuttledata/OBD-SecurityBelt-Output/{Year}_{Month}_{Day}/",
+            "partitionedBy": 
+            [
+                { "name": "Year", "value": { "type": "DateTime", "date": "SliceStart", "format": "yyyy" } },
+                { "name": "Month", "value": { "type": "DateTime", "date": "SliceStart", "format": "%M" } }, 
+                { "name": "Day", "value": { "type": "DateTime", "date": "SliceStart", "format": "%d" } } 
+            ],
+            "format":
+            {
+                "type": "TextFormat",
+                "columnDelimiter": ","
+            },
+            "linkedServiceName": "AzureStorage"
+        },
+        "availability": 
+        {
+            "frequency": "Day",
+            "interval": 1
+        }
+    }
+}

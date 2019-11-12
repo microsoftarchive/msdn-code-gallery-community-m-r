@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsV_CLIENT_STANDBY_CHEQ" targetNamespace="http://tempuri.org/dsV_CLIENT_STANDBY_CHEQ.xsd" xmlns:mstns="http://tempuri.org/dsV_CLIENT_STANDBY_CHEQ.xsd" xmlns="http://tempuri.org/dsV_CLIENT_STANDBY_CHEQ.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsV_CLIENT_STANDBY_CHEQ" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsV_CLIENT_STANDBY_CHEQ" msprop:Generator_DataSetName="dsV_CLIENT_STANDBY_CHEQ">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_CLIENT_TOT_STANDBY_CHEQ" msprop:Generator_UserTableName="V_CLIENT_TOT_STANDBY_CHEQ" msprop:Generator_RowDeletedName="V_CLIENT_TOT_STANDBY_CHEQRowDeleted" msprop:Generator_RowChangedName="V_CLIENT_TOT_STANDBY_CHEQRowChanged" msprop:Generator_RowClassName="V_CLIENT_TOT_STANDBY_CHEQRow" msprop:Generator_RowChangingName="V_CLIENT_TOT_STANDBY_CHEQRowChanging" msprop:Generator_RowEvArgName="V_CLIENT_TOT_STANDBY_CHEQRowChangeEvent" msprop:Generator_RowEvHandlerName="V_CLIENT_TOT_STANDBY_CHEQRowChangeEventHandler" msprop:Generator_TableClassName="V_CLIENT_TOT_STANDBY_CHEQDataTable" msprop:Generator_TableVarName="tableV_CLIENT_TOT_STANDBY_CHEQ" msprop:Generator_RowDeletingName="V_CLIENT_TOT_STANDBY_CHEQRowDeleting" msprop:Generator_TablePropName="V_CLIENT_TOT_STANDBY_CHEQ">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TOT_STANDBY_CHEQ" msprop:Generator_UserColumnName="TOT_STANDBY_CHEQ" msprop:Generator_ColumnPropNameInRow="TOT_STANDBY_CHEQ" msprop:Generator_ColumnVarNameInTable="columnTOT_STANDBY_CHEQ" msprop:Generator_ColumnPropNameInTable="TOT_STANDBY_CHEQColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CLIENT_ID" msprop:Generator_UserColumnName="CLIENT_ID" msprop:Generator_ColumnVarNameInTable="columnCLIENT_ID" msprop:Generator_ColumnPropNameInRow="CLIENT_ID" msprop:Generator_ColumnPropNameInTable="CLIENT_IDColumn" type="xs:decimal" />
+              <xs:element name="GROUP_ID" msprop:Generator_UserColumnName="GROUP_ID" msprop:Generator_ColumnPropNameInRow="GROUP_ID" msprop:Generator_ColumnVarNameInTable="columnGROUP_ID" msprop:Generator_ColumnPropNameInTable="GROUP_IDColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

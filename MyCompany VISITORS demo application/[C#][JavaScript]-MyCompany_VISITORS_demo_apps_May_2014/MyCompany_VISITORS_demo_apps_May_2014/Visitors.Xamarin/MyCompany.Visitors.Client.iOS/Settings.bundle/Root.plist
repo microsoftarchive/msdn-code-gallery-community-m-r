@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>AppSettings</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+            <key>Key</key>
+            <string>Server_IP_Adress</string>
+            <key>DefaultValue</key>
+            <string>https://yoursiteinmicrosoftazure.azurewebsites.net/</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
+            <key>Title</key>
+            <string>Service URL</string>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+        </dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,443 @@
+﻿/*General fonts*/
+/*General*/
+/*Module*/
+/*List*/
+html {
+  overflow-y: scroll;
+}
+body {
+  margin: 0;
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 14px;
+  background-color: #ededed;
+}
+html,
+body,
+.durandal-wrapper,
+.progress-container {
+  height: 100%;
+  overflow: auto;
+}
+textarea {
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+}
+input {
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+}
+label {
+  cursor: inherit !important;
+}
+.capitalize:first-letter {
+  text-transform: uppercase;
+}
+.clear {
+  clear: both;
+}
+#main-container {
+  max-width: 1071px;
+  min-width: 675px;
+  margin: 0 auto;
+}
+#content {
+  position: relative;
+}
+/*User*/
+.user-name {
+  font-family: "Segoe UI Semilight", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 1.07em;
+  color: #9e5d26;
+  margin-right: 25px;
+  padding-top: 5px;
+  float: right;
+}
+.button-primary {
+  font-family: "wf_SegoeUI", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 1.07em;
+  background-color: #fa961d;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  padding: 5px 25px 5px 25px;
+  cursor: pointer;
+}
+.button-primary:hover {
+  background-color: #c77e2c;
+}
+.button-right {
+  float: right;
+}
+.user-data {
+  display: inline-block;
+  float: right;
+  font-size: 1.07em;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+.user-data img {
+  max-height: 30px;
+  float: right;
+}
+.button-faq {
+  margin-left: 5px;
+}
+.button-faq a:-webkit-any-link {
+  color: white;
+}
+/*End User*/
+.brand {
+  background-image: url(Images/logo.png);
+  background-repeat: no-repeat;
+  width: 314px;
+  height: 108px;
+  display: block;
+}
+/*Navigation*/
+.navigation.container-fluid {
+  margin-top: 20px;
+}
+.content-nav-buttons {
+  margin-top: 15px;
+  float: left;
+}
+.content-nav-buttons .content-nav-button {
+  position: relative;
+  float: left;
+  width: 204px;
+  height: 40px;
+  background-color: #dfe0e0;
+  border-bottom-color: #dfe0e0;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+}
+.content-nav-buttons .content-nav-button div {
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: inline;
+  padding-left: 35px;
+}
+.content-nav-buttons .content-nav-button .travels-icon {
+  background-image: url("images/trip-request-OFF.png");
+}
+.content-nav-buttons .content-nav-button .manager-travels-icon {
+  background-image: url("images/team-trip-request-OFF.png");
+}
+.content-nav-buttons .content-nav-button .rrhh-travels-icon {
+  background-image: url("images/all-trip-request-OFF.png");
+}
+.content-nav-buttons .content-nav-button .manager-heatmap-icon {
+  background-image: url("images/hotmap-OFF.png");
+}
+.content-nav-buttons .content-nav-button .nav-button {
+  height: 40px;
+  /*display: block;*/
+
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #9b9b9b;
+  font-size: 15px;
+  line-height: 40px;
+  text-decoration: none;
+  outline: 0;
+  white-space: nowrap;
+}
+.content-nav-buttons .content-nav-button:hover,
+.content-nav-buttons .content-nav-button.active {
+  border-bottom: solid 3px;
+  border-bottom-color: #c77e2c;
+}
+.content-nav-buttons .content-nav-button:hover .nav-button,
+.content-nav-buttons .content-nav-button.active .nav-button {
+  color: #9e5d26;
+}
+.content-nav-buttons .content-nav-button:hover .travels-icon,
+.content-nav-buttons .content-nav-button.active .travels-icon {
+  background-image: url("images/trip-request-ON.png");
+}
+.content-nav-buttons .content-nav-button:hover .manager-travels-icon,
+.content-nav-buttons .content-nav-button.active .manager-travels-icon {
+  background-image: url("images/team-trip-request-ON.png");
+}
+.content-nav-buttons .content-nav-button:hover .rrhh-travels-icon,
+.content-nav-buttons .content-nav-button.active .rrhh-travels-icon {
+  background-image: url("images/all-trip-request-ON.png");
+}
+.content-nav-buttons .content-nav-button:hover .manager-heatmap-icon,
+.content-nav-buttons .content-nav-button.active .manager-heatmap-icon {
+  background-image: url("images/hotmap-ON.png");
+}
+.content-nav-buttons .content-nav-button:first-child {
+  margin-left: 1px;
+}
+.content-nav-buttons .content-nav-button:first-child .nav-button {
+  /*padding-left: 16px;*/
+
+  width: 188px;
+}
+/*End Navigation*/
+/* Splash */
+.splash-container {
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 15%;
+  text-align: center;
+}
+.splash-container .progress {
+  height: 10px;
+  margin-bottom: 20px;
+  margin-left: 185px;
+  margin-top: 55px;
+  width: 250px;
+}
+.progress-warning .bar,
+.progress .bar-warning {
+  background-color: #c77e2c !important;
+}
+.progress-warning.progress-striped .bar,
+.progress-striped .bar-warning {
+  background-color: #fa961d !important;
+  /*#fbb450;*/
+
+}
+/* End Splash */
+/* Reset styles */
+ul {
+  list-style: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+  padding: 0;
+}
+.page-title {
+  font-family: "Segoe UI Semilight", "Tahoma", "Verdana", "Arial", "sans-serif";
+  font-size: 2em;
+  color: #9e5d26;
+  margin-right: 25px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+a:link {
+  text-decoration: none;
+  color: white;
+}
+/* End Reset styles */
+.button-close {
+  background-color: transparent;
+  background-image: url("Images/close.png");
+  background-repeat: no-repeat;
+  border: medium none;
+  height: 17px;
+  margin-right: 10px;
+  margin-top: 5px;
+  position: absolute;
+  right: 0;
+  width: 17px;
+}
+/* Loading */
+.row-fluid {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container-fluid {
+  padding-bottom: 50px;
+}
+#applicationHost {
+  position: relative;
+  min-height: 100%;
+}
+.loading-background {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+.loading-background .loading {
+  width: 150px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  margin-left: -75px;
+  margin-top: -9px;
+}
+.loading-background .loading .fountainG {
+  position: absolute;
+  top: 0;
+  background-color: #fa961d;
+  width: 19px;
+  height: 19px;
+  -moz-animation-name: bounce_fountainG;
+  -moz-animation-duration: 1.9s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: linear;
+  -moz-transform: scale(0.3);
+  -moz-border-radius: 12px;
+  -webkit-animation-name: bounce_fountainG;
+  -webkit-animation-duration: 1.9s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -webkit-transform: scale(0.3);
+  -webkit-border-radius: 12px;
+  -ms-animation-name: bounce_fountainG;
+  -ms-animation-duration: 1.9s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-direction: linear;
+  -ms-transform: scale(0.3);
+  -ms-border-radius: 12px;
+  -o-animation-name: bounce_fountainG;
+  -o-animation-duration: 1.9s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: linear;
+  -o-transform: scale(0.3);
+  -o-border-radius: 12px;
+  animation-name: bounce_fountainG;
+  animation-duration: 1.9s;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+  transform: scale(0.3);
+  border-radius: 12px;
+}
+.loading-background .loading #fountainG_1 {
+  left: 0;
+  -moz-animation-delay: 0.14s;
+  -webkit-animation-delay: 0.14s;
+  -ms-animation-delay: 0.14s;
+  -o-animation-delay: 0.14s;
+  animation-delay: 0.14s;
+}
+.loading-background .loading #fountainG_2 {
+  left: 19px;
+  -moz-animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  -ms-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.loading-background .loading #fountainG_3 {
+  left: 38px;
+  -moz-animation-delay: 0.66s;
+  -webkit-animation-delay: 0.66s;
+  -ms-animation-delay: 0.66s;
+  -o-animation-delay: 0.66s;
+  animation-delay: 0.66s;
+}
+.loading-background .loading #fountainG_4 {
+  left: 56px;
+  -moz-animation-delay: 0.82s;
+  -webkit-animation-delay: 0.82s;
+  -ms-animation-delay: 0.82s;
+  -o-animation-delay: 0.82s;
+  animation-delay: 0.82s;
+}
+.loading-background .loading #fountainG_5 {
+  left: 75px;
+  -moz-animation-delay: .98s;
+  -webkit-animation-delay: .98s;
+  -ms-animation-delay: .98s;
+  -o-animation-delay: .98s;
+  animation-delay: 0.98s;
+}
+.loading-background .loading #fountainG_6 {
+  left: 94px;
+  -moz-animation-delay: 1.14s;
+  -webkit-animation-delay: 1.14s;
+  -ms-animation-delay: 1.14s;
+  -o-animation-delay: 1.14s;
+  animation-delay: 1.14s;
+}
+.loading-background .loading #fountainG_7 {
+  left: 113px;
+  -moz-animation-delay: 1.3s;
+  -webkit-animation-delay: 1.3s;
+  -ms-animation-delay: 1.3s;
+  -o-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.loading-background .loading #fountainG_8 {
+  left: 131px;
+  -moz-animation-delay: 1.46s;
+  -webkit-animation-delay: 1.46s;
+  -ms-animation-delay: 1.46s;
+  -o-animation-delay: 1.46s;
+  animation-delay: 1.46s;
+}
+@-moz-keyframes bounce_fountainG {
+  0% {
+    -moz-transform: scale(1);
+    background-color: #fa961d;
+  }
+  100% {
+    -moz-transform: scale(0.3);
+    background-color: #dfe0e0;
+  }
+}
+@-webkit-keyframes bounce_fountainG {
+  0% {
+    -webkit-transform: scale(1);
+    background-color: #fa961d;
+  }
+  100% {
+    -webkit-transform: scale(0.3);
+    background-color: #dfe0e0;
+  }
+}
+@-ms-keyframes bounce_fountainG {
+  0% {
+    -ms-transform: scale(1);
+    background-color: #fa961d;
+  }
+  100% {
+    -ms-transform: scale(0.3);
+    background-color: #dfe0e0;
+  }
+}
+@-o-keyframes bounce_fountainG {
+  0% {
+    -o-transform: scale(1);
+    background-color: #fa961d;
+  }
+  100% {
+    -o-transform: scale(0.3);
+    background-color: #dfe0e0;
+  }
+}
+@keyframes bounce_fountainG {
+  0% {
+    transform: scale(1);
+    background-color: #fa961d;
+  }
+  100% {
+    transform: scale(0.3);
+    background-color: #dfe0e0;
+  }
+}
+/* End Loading */
+/* Notifications */
+.toast-info {
+  background-color: #fa961d;
+}
+#toast-container > .toast-info,
+#toast-container > .toast-demo {
+  background-image: url("Images/info.png") !important;
+}
+.toast-demo {
+  background-color: #9e5d26;
+  font-size: 1.3em;
+}
+/* End Notifications */
+.msgBox-text-area {
+  height: 80px;
+  margin-left: 5%;
+  resize: none;
+  width: 90%;
+}
+.error-page {
+  background-color: #fa961d;
+  color: #ffffff;
+  font-size: 3em;
+}
+.error-page-info {
+  text-align: center;
+  margin-top: 15%;
+}

@@ -1,0 +1,41 @@
+﻿@model UserViewModel
+@using OA.Web.Models
+
+<form asp-action="EditUser" role="form">
+    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = "Edit User" })
+    <div class="modal-body form-horizontal">
+        <div class="row">            
+            <input asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="FirstName" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-lg-6">
+                        <input asp-for="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-lg-6">
+                        <input asp-for="LastName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-lg-6">
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                </div>         
+          
+                <div class="form-group">
+                    <label asp-for="Address" class="col-lg-3 col-sm-3 control-label"></label>
+                    <div class="col-lg-6">
+                        <input asp-for="Address" class="form-control" />
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    @await Html.PartialAsync("_ModalFooter", new ModalFooter { })
+</form>
+
+
+

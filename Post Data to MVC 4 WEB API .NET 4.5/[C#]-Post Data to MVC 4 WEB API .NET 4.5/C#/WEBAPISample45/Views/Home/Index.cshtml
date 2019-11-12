@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ASP.NET Web API</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")"></script>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var CustomerCreate = {
+            Name: "Jackson",
+            Salary: 22222
+        };
+        createCustomer(CustomerCreate, function (newCustomer) {
+            alert("New Customer created with an Id of " + newCustomer.Id);
+        });
+        $("#AddCustomer").click(function () {
+            createCustomer(CustomerCreate, null);
+        });
+        function createCustomer(CustomerCreate, callback) {
+            $.ajax({
+                url: "/api/Customer",
+                data: JSON.stringify(CustomerCreate),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                statusCode: {
+                    201: function (newCustomer) {
+                        callback(newCustomer);
+                    }
+                }
+            });
+
+        }});
+    </script>
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title"><a href="/">ASP.NET Web API</a></p>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <a id="AddCustomer" href="#">Create New Customer</a>
+    </div>
+</body>
+</html>

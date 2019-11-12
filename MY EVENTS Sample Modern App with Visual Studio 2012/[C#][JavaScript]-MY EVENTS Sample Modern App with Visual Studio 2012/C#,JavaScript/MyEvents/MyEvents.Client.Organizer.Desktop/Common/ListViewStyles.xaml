@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                   
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    mc:Ignorable="d"
+                    xmlns:converters="clr-namespace:MyEvents.Client.Organizer.Desktop.Converters">
+    <converters:FacebookIdToPhotoURLConverter x:Key="FacebookIdToPhotoURLConverter"/>
+    
+    <DataTemplate  x:Key="RegisteredUsersListViewItem">
+        <Grid  d:DesignHeight="111" Height="90"  d:DesignWidth="458"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="10,6,8,5" Grid.ColumnSpan="1" Grid.Column="1">
+                <TextBlock Text="{Binding Name}"  Style="{StaticResource RegisteredUsersStyle}"/>
+                <TextBlock Text="{Binding Bio}" Style="{StaticResource RegisteredUsersStyle}" MaxHeight="40" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding City}"  Style="{StaticResource RegisteredUsersStyle}"  />
+            </StackPanel>
+            <Border Grid.ColumnSpan="2" x:Name="BorderBackground" Background="{StaticResource EventItemBackgroundBrush}" Opacity=".2"/>            
+            <Border Width="75" Height="75" Margin="8,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{DynamicResource SessionInfoBrush}" >
+                <Image Source="{Binding FacebookId, Converter={StaticResource FacebookIdToPhotoURLConverter}, FallbackValue=/MyEvents.Client.Organizer.Desktop;component/Resources/Images/FacebookUserWithoutPhoto.gif}"/>
+            </Border>            
+        </Grid>
+    </DataTemplate>
+    
+    <Style x:Key="ListViewItemContainer" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Grid Margin="0,5,5,0">
+                        <ContentPresenter/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

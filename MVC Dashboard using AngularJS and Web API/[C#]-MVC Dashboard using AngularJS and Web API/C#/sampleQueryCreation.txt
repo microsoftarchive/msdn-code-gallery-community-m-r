@@ -1,0 +1,15 @@
+	
+1) Dynamic Sql Query :select ID,ItemNo ,ItemName ,Comments ,Price from ItemDetail where Price>'1000'
+
+2)Column Names:ItemNo ,ItemName ,Comments ,Price
+Table Names:ItemDetail
+Where Condition:ItemName like 'm%'
+
+3) Column Names:ItemName,SUM(Price) as totalCost
+Table Names:ItemDetail
+Where Condition:ItemName like 'm%'
+Group By: ItemName
+
+4) Column Names:ID,ItemNo ,ItemName ,Comments ,Price
+Table Names:itemDetail
+Order By : Price desc

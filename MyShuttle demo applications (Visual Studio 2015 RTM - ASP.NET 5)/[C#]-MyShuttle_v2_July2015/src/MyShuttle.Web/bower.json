@@ -1,0 +1,16 @@
+{
+  "name": "myShuttle",
+  "version": "0.0.1",
+  "description": "MyShuttle Web.",
+  "dependencies": {
+    "angular": "~1.2.22",
+    "angular-animate": "~1.2.22",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "~0.2.11",
+    "angular-moment": "~0.8.0", 
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0",
+    "angular-bindonce": "~0.3.1",
+    "signalr": "~2.2.0"
+  }
+}

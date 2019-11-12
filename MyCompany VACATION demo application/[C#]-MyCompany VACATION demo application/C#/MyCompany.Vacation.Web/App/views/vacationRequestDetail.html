@@ -1,0 +1,26 @@
+﻿<div class="modal small autoclose">
+    <div class="modal-header">
+        <span class="title-modal" data-bind="html: title"></span>
+        <button class="button-close" data-bind="click: close"></button>
+    </div>
+    <div class="modal-body modal-body-padding">
+
+        <div class="modal-body-in">
+            <span class="body-in-title">From</span>
+            <span class="main-text main-text-visited" data-bind="text: startDay"></span>
+        </div>
+        <div class="modal-body-in">
+            <span class="body-in-title">To</span>
+            <span class="main-text main-text-visited" data-bind="text: endDay"></span>
+        </div>
+        <div class="modal-body-in">
+            <span class="body-in-title">Days</span>
+            <span class="main-text main-text-visited" data-bind="text: workDays"></span>
+        </div>
+        <div class="clear"></div>
+        <div class="contain-buttons" data-bind="visible: isDeletable">
+            <button class="button-primary button-propierties save-float" data-bind="click: deleteRequest">Cancel this request</button>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿[role=dialog] {
+    background-color: #e9eef4 !important;
+}
+
+    [role=dialog] .logo {
+        position: absolute; 
+        right: 40px;
+    }
+
+    [role=dialog] input[type="text"] {
+        width: 100%;
+    }
+
+    [role=dialog] .button-save {
+        margin-top: 3em;
+        float: right;
+    }
+
+    [role=dialog] .offline {
+        margin-top: 2em;
+    }
+    
+    [role=dialog] .offline h3, [role=dialog] .offline-item {
+        display: inline-block;
+    }

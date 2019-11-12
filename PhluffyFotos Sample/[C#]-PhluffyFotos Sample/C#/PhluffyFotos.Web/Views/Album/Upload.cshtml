@@ -1,0 +1,61 @@
+@model PhluffyFotos.Web.ViewModels.AlbumUploadViewModel
+
+@{
+    ViewBag.Title = "Upload a Picture";
+    var albums = this.Model.Albums;
+}
+
+<div id="lvl3">
+    @using (Html.BeginForm("Upload", "Album", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "if ($(this).valid()) document.getElementById('UploadSubmitBtn').disabled = 'disabled'" }))
+    { 
+    <div id="uploadClmLeft">
+        <p>
+        <label>
+                Select Photo <br />
+                <input type="file" name="Photo" />
+                <br />@Html.ValidationMessage("Photo")
+            </label>
+        </p>
+        <p>
+            <label>
+            Select Album<br />
+            @Html.DropDownListFor(
+                m => m.Album, 
+                Model.Albums.Select(a => new SelectListItem { Text = a.Title, Value = a.AlbumId, Selected = a.AlbumId == Model.Album }), 
+                new { style = "width: 240px" })    
+            </label>
+        </p>
+        <p>
+            <label>
+                Title<br />
+                @Html.TextBoxFor(m => m.Title, new { style = "width: 240px" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Title)
+            </label>
+        </p>
+           
+        <p>
+            <label>
+                Description<br />
+                @Html.TextAreaFor(m => m.Description, new { style = "width: 240px", cols = 2, rows = 4 })
+            </label>  
+        </p>
+            <p>
+            <label>
+                Tags<br />
+                @Html.TextBoxFor(m => m.Tags, new { style = "width: 240px", })<br />
+                <span>Add the tags as: <strong>vacations; family; "new york"</strong></span>
+            </label>
+        </p>
+        <p>
+            <input type="submit" style="border: solid 1px 003399; background: #0063DC; color: #fff;" value="Submit" id="UploadSubmitBtn" />
+        </p>
+    </div>
+    <div id="uploadClmRight">
+        <img src="@Url.Content("~/content/images/upload.png")" alt="Upload" />
+    </div>
+    } 
+</div>    
+
+
+

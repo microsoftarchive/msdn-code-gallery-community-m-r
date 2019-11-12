@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>notes</title>
+    <link href="/pages/eventNotes/eventNotes.css" rel="stylesheet" />
+    <!-- References added only for design time purpose -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="/js/default.js"></script>
+    <!-- Page references -->
+    <script src="/pages/eventNotes/eventNotes.js"></script>
+    <script src="/js/fakeData.js"></script>
+</head>
+<body>
+    <div id="imageTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="overlaidItemTemplate">
+            <img class="image" data-win-bind="src: picture" />
+            <div class="overlay">
+                <h3 class="ItemDate" data-win-bind="innerText: date"></h3>
+                <h4 class="ItemComment" data-win-bind="innerText: comment"></h4>
+            </div>
+        </div>
+    </div>
+    <div class="fragment eventNotes">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">notes</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="flipView"
+                data-win-control="WinJS.UI.FlipView"
+                data-win-options="{ itemTemplate : select('#imageTemplate') }">
+            </div>
+            <div id="contextContainer"></div>
+        </section>
+    </div>
+</body>
+</html>

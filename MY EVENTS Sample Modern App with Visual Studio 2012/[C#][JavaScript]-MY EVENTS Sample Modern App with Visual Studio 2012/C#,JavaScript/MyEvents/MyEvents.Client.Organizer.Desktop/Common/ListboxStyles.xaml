@@ -1,0 +1,185 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:behaviors="clr-namespace:MyEvents.Client.Organizer.Desktop.Behaviors"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:converters="clr-namespace:MyEvents.Client.Organizer.Desktop.Converters">
+
+    <converters:FormatStringConverter x:Key="FormatStringConverter"/>
+    <converters:ByteArrayToImageConverter x:Key="ByteToImageConverter"/>
+    <converters:FirstSpeakerIconConverter x:Key="FirstSpeakerIconConverter"/>
+    <converters:SpeakerNumberToWidthConverter x:Key="SpeakerNumberToWidthConverter"/>
+    
+    <DataTemplate x:Key="AllEventsItemTemplate">
+        <Grid x:Name="GridLayout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="125" Background="#00FFFFFF" Cursor="Hand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="2" x:Name="BorderBackground" Background="{StaticResource EventItemBackgroundBrush}" Opacity=".2"/>
+
+            <Image Grid.Column="0" Margin="10,5,5,5" Source="{Binding Logo, Converter={StaticResource ByteToImageConverter}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <Grid x:Name="GridData" Grid.Column="1" Margin="10,5,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="16"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel x:Name="InfoStack" Grid.Row="0" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="EventDay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Date, ConverterParameter=\{Day\}, Converter={StaticResource FormatStringConverter}}" VerticalAlignment="Top" Margin="0" Style="{DynamicResource MonthDesktopStyle}"/>
+                        <TextBlock Style="{StaticResource MonthDesktopStyle}" VerticalAlignment="Top"><Run Text=" "/></TextBlock>
+                        <TextBlock x:Name="EventMonth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Date, ConverterParameter=\{Month\}, Converter={StaticResource FormatStringConverter}}" VerticalAlignment="Top" Margin="0" Style="{DynamicResource MonthDesktopStyle}"/>
+                    </StackPanel>
+                    <TextBlock x:Name="EventCity" HorizontalAlignment="Left" TextTrimming="WordEllipsis" Text="{Binding City}" VerticalAlignment="Top" Style="{StaticResource MonthDesktopStyle}" Margin="0"/>
+                </StackPanel>
+
+                <TextBlock x:Name="EventTitle" TextWrapping="Wrap" Margin="0" Grid.Row="1"  Text="{Binding Name}" Style="{StaticResource EventTitleDesktopStyle}" />
+
+                <TextBlock  Grid.Row="2" x:Name="textBlock" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding AttendeesCount, FallbackValue=9}" VerticalAlignment="Center" Margin="0,0,16,0" Style="{StaticResource FacebookLikesDesktopStyle}" Height="Auto"/>
+                <Viewbox  Grid.Row="2" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" HorizontalAlignment="Right" Height="14" VerticalAlignment="Top" Width="14">
+                        <Grid>
+                            <Grid Name="backgroundGrid" Width="14" Height="14" Visibility="Visible">
+                                <Rectangle Fill="#00000000" Name="Rect" Visibility="Visible" />
+                            </Grid>
+                            <Path Data="M30.025426,8.4380001C31.236374,8.4380001 36.449965,8.4380001 37.624574,8.4380001 40.059387,8.4380001 42.049,10.410531 42.049,12.844083 42.049,14.083683 42.049,22.677487 42.049,23.508289 42.049,24.340189 41.395396,25.013489 40.56459,25.013489 39.733886,25.013489 39.059381,24.340189 39.059381,23.508289 39.059381,22.539489 39.059381,13.893583 39.059381,13.893584L38.283377,13.893584C38.283377,13.893583 38.283377,38.997799 38.283377,40.648998 38.283377,41.7635 37.369171,42.667 36.257364,42.667 35.142658,42.667 34.239052,41.7635 34.239052,40.648998 34.239052,38.997799 34.239052,25.112389 34.239052,25.112389L33.413578,25.112389C33.413578,25.112389 33.413578,38.997799 33.413578,40.648998 33.413578,41.7635 32.509852,42.667 31.395306,42.667 30.280628,42.667 29.369163,41.7635 29.369163,40.648998 29.369163,38.997799 29.369163,13.893583 29.369163,13.893584L28.593148,13.893584C28.593148,13.893583 28.593148,22.539489 28.593148,23.508289 28.593148,24.340189 27.918754,25.013489 27.087949,25.013489 26.254607,25.013489 25.601,24.340189 25.601,23.508289 25.601,22.677487 25.601,14.083683 25.601,12.844083 25.601,10.410531 27.595812,8.4380001 30.025426,8.4380001z M7.1083164,8.0040056C7.132122,8.0039455,7.1446743,8.0044135,7.1446743,8.0044138L12.482997,8.0044138C12.482997,8.0044135,15.696247,7.8846037,16.797796,11.723137L19.558069,21.328521C19.821156,22.225719 19.323679,22.913218 18.540016,23.137218 17.756152,23.363718 16.954089,22.967918 16.748399,22.24912L14.066223,12.885835 13.334557,12.884635 17.985241,29.098108 13.607844,29.098108 13.605345,29.100609 13.605345,41.001686C13.605345,41.906685 12.82668,42.663185 11.881425,42.666985 11.045563,42.671085 10.165304,41.824585 10.165304,40.918388L10.165304,29.098108 9.4648361,29.098108 9.4648361,40.918388C9.4648361,41.824585 8.582077,42.671085 7.7462368,42.666985 6.7982903,42.663185 6.0223255,41.906685 6.0223255,41.001686L6.0223255,29.100609 6.0196667,29.098108 1.63974,29.098108 6.2931232,12.884635 5.5614185,12.885835 2.879282,22.24912C2.6760921,22.967918 1.8714485,23.363718 1.0902958,23.137218 0.3038063,22.913218 -0.19351578,22.225719 0.072065353,21.328521L2.8298149,11.723137C3.8623943,8.124512,6.7512436,8.0048995,7.1083164,8.0040056z M33.824955,0.6789999C35.809504,0.6789999 37.419,2.2207098 37.419,4.119164 37.419,6.0175695 35.809504,7.5579997 33.824955,7.5579998 31.840566,7.5579997 30.231,6.0175695 30.230999,4.119164 30.231,2.2207098 31.840566,0.6789999 33.824955,0.6789999z M9.8134499,0C11.797712,0 13.407001,1.5404301 13.407001,3.4388247 13.407001,5.3385694 11.797712,6.8789997 9.8134499,6.8790001 7.8293571,6.8789997 6.2199993,5.3385694 6.2199993,3.4388247 6.2199993,1.5404301 7.8293571,0 9.8134499,0z"
+                                    Fill="{Binding Foreground, ElementName=textBlock}" Stretch="Uniform" Width="14" Height="14" Margin="0,0,0,0">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <TransformGroup.Children>
+                                            <RotateTransform Angle="0" />
+                                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        </TransformGroup.Children>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+               
+            </Grid>
+            <i:Interaction.Behaviors>
+                <behaviors:EventToEventDetailsBehavior/>
+            </i:Interaction.Behaviors>
+        </Grid>
+
+    </DataTemplate>
+
+    <Style x:Key="AllEventsItemContainer" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FocusVisualStyle">
+            <Setter.Value>
+                <Style>
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Border   TextElement.Foreground="{StaticResource NormalTextForegroundBrush}"  x:Name="Bd" BorderBrush="Transparent" BorderThickness="0,0,0,0" Background="{StaticResource EventItemBackgroundBrush}" Padding="0,0,0,0" SnapsToDevicePixels="True" Margin="0,0,10,10"></Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border   TextElement.Foreground="{StaticResource NormalTextForegroundBrush}"  x:Name="Bd" BorderBrush="Transparent" BorderThickness="0,0,0,0" Background="{TemplateBinding Background}" Padding="0,0,0,0" SnapsToDevicePixels="True" Margin="0,0,10,10">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource EventItemBackgroundBrush}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{StaticResource  SelectedTextForegroundBrush}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Selector.IsSelectionActive" Value="False"/>
+                                <Condition Property="IsSelected" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource EventItemBackgroundBrush}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{StaticResource  SelectedTextForegroundBrush}"/>
+
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Selector.IsSelectionActive" Value="True"/>
+                                <Condition Property="IsSelected" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource EventItemBackgroundBrush}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{StaticResource  SelectedTextForegroundBrush}"/>
+
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="Red"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <DataTemplate x:Key="MaterialItemTemplate">
+        <Grid>
+            <TextBlock />
+        </Grid>
+    </DataTemplate>
+    
+    <Style x:Key="TopSpeakersItemContainerStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Padding" Value="4,1"/>
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FocusVisualStyle">
+            <Setter.Value>
+                <Style>
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}" >
+                    <Border x:Name="Bd" HorizontalAlignment="Stretch" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <DataTemplate x:Key="TopSpeakersItemTemplate">
+        <Grid  HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Width="{Binding Position, Converter={StaticResource SpeakerNumberToWidthConverter}}" VerticalAlignment="Bottom" Grid.Column="0">
+                <Image  Source="{Binding Position, Converter={StaticResource FirstSpeakerIconConverter}}"    />
+            </Viewbox>
+            <Viewbox Width="{Binding Position, Converter={StaticResource SpeakerNumberToWidthConverter}}" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Grid.Column="1" >
+                <StackPanel Orientation="Vertical"  Margin="5,0,0,2" HorizontalAlignment="Left"  Width="100">
+                    <TextBlock MaxHeight="60" Text="{Binding Name, ConverterParameter=\{Upper\}, Converter={StaticResource FormatStringConverter}}" Style="{DynamicResource CellTextStyle}" TextTrimming="WordEllipsis" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Bottom"/>                    
+<ProgressBar  HorizontalAlignment="Left"  Margin="0,2,0,0" Value="{Binding Rating}" Maximum="10" Minimum="0" Style="{DynamicResource BarRatingStyle}" BorderBrush="{x:Null}" />
+                </StackPanel>
+            </Viewbox>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

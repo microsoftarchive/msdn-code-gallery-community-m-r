@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.25" name="AdventureWorksContext">
+  <DataContextMoniker Name="/AdventureWorksDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ed9ea82f-b0be-4962-9072-09fc73add3df" absoluteBounds="5.875, 2.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AdventureWorksDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64010809-2e6a-48ea-a801-6a056458afed" absoluteBounds="5.89, 2.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a92eaeff-6c69-47a1-9b48-41caa9c85e74" absoluteBounds="1.75, 3.75, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/AdventureWorksDataContext/SalesOrderHeader" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f67d5f8d-fda5-4c89-bf05-9d17726b1e48" absoluteBounds="1.7650000000000001, 4.21, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 4.14024983723958); (3.75 : 4.14024983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdventureWorksDataContext/Customer/Customer_SalesOrderHeader" />
+      <nodes>
+        <classShapeMoniker Id="ed9ea82f-b0be-4962-9072-09fc73add3df" />
+        <classShapeMoniker Id="a92eaeff-6c69-47a1-9b48-41caa9c85e74" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="03df45a3-cd14-404d-9075-87efa3cc5362" absoluteBounds="6.25, 7.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/AdventureWorksDataContext/SalesOrderDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec0c1f19-d520-456b-91f7-a9ba015e9d38" absoluteBounds="6.265, 7.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 8.34211344401042); (6.25 : 8.34211344401042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdventureWorksDataContext/SalesOrderHeader/SalesOrderHeader_SalesOrderDetail" />
+      <nodes>
+        <classShapeMoniker Id="a92eaeff-6c69-47a1-9b48-41caa9c85e74" />
+        <classShapeMoniker Id="03df45a3-cd14-404d-9075-87efa3cc5362" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

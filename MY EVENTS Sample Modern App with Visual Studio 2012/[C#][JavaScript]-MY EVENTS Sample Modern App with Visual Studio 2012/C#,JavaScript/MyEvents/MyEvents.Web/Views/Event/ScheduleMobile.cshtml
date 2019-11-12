@@ -1,0 +1,79 @@
+﻿@model MyEvents.Model.EventDefinition
+    ViewBag.Title = "my events -schedule for " + @Model.Name;
+}
+@section Meta
+{
+    <meta name="title" content="Schedule for @Model.Name" />
+    <meta name="description" content="@Model.Description" />
+}
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            var roomButtons = $('table.schedule thead a');
+            roomButtons.click(
+                function (e) {
+                    roomButtons.removeClass("selected");
+                    activateRoom($(this));
+                    e.preventDefault();
+                });
+            // Default is first room
+            activateRoom($(roomButtons[0]));
+        });
+
+        var activateRoom = function(roomButton) {
+            var $roomNumber = roomButton.data("roomnumber");
+            roomButton.addClass("selected");
+            $('table.schedule tbody tr').each(function(i, elem) {
+                if ($(this).data("roomnumber") == $roomNumber) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        };
+    </script>
+}
+<section id="session-schedule">
+    <table class="schedule">
+        <thead>
+            <tr>
+                <td></td>
+                <td>
+                    <h3>select room event:</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="clock">
+                    <img src="@Url.Content("~/Styles/Images/icon-clock.png")"/></td>
+                <td class="rooms">
+                    @foreach (var room in Model.Sessions.OrderBy(s => s.RoomNumber).Where(s => s.RoomNumber > 0).Select(s => s.RoomNumber).Distinct())
+                    {
+                        <a href="#" data-roomnumber="@room">@room</a>
+                    }
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Sessions.Where(s => s.RoomNumber > 0))
+            {
+                <tr data-roomnumber="@item.RoomNumber">
+                    <td class="time">
+                        <time class="start" datetime="@item.StartTime.ToString("R")">@item.StartTime.ToString("HH:mm")</time>
+                        <img src="@Url.Content("~/Styles/Images/time-span.png")"/>
+                        <time class="end" datetime="@item.StartTime.AddMinutes(item.Duration).ToString("R")">@item.StartTime.AddMinutes(item.Duration).ToString("HH:mm")</time>
+                    </td>
+                    <td class="session-info"><a href="@Url.Action("SessionDetail", new { sessionId = item.SessionId })">@item.Title
+                        <p class="speaker">
+                            <img src="@Url.Content("~/Styles/Images/organizer-icon-white.png")" />
+                            @item.Speaker
+                        </p>
+                    </a></td>
+                </tr>        
+            }
+        </tbody>
+
+    </table>
+</section>
+
+

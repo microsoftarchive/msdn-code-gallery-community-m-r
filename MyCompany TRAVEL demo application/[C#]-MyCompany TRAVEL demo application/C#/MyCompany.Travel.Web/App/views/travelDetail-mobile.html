@@ -1,0 +1,125 @@
+﻿<link href="Content/form-mobile.css" rel="stylesheet" />
+<div >
+    <div data-bind="ifnot: $root.isUserMode" >
+        <div class="form-header">
+            <div data-bind="ifnot: $root.isUserMode" style="float: right">
+                <div class="employee-data" data-bind="with: travelEntity">
+                    <div class="avatar">
+                        <img class="avatar-img" data-bind="attr: { src: employee.picture }" alt="employee photo" />
+                    </div>
+                    <div class="employee-data-text">
+                        <div>
+                            <span class="big" data-bind="text: employee.fullName"></span>
+                        </div>
+                        <div>
+                            <span data-bind="text: employee.jobTitle"></span>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+    </div>
+    <div class="form-body row-fluid" data-bind="with: travelEntity">
+        <div class="form-body-left span12">
+            <ul>
+                <li>
+                    <label>Name</label>
+                    <div class="row-fluid">
+                        <div class="span12 row-text">
+                            <span data-bind="text: name" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label>Kind</label>
+                    <div class="row-fluid">
+                        <div class="span12 row-text">
+                            <span data-bind="visible: !$root.isOneWay()">Round trip</span>
+                            <span data-bind="visible: $root.isOneWay()">One way</span>
+                        </div>
+                    </div>
+                <li>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <label>Origin</label>
+                        </div>
+                        <div class="span6">
+                            <label>Destination</label>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span5 row-text">
+                            <span data-bind="text: from" />
+                        </div>
+                        <div class="span5 offset1 row-text">
+                            <span data-bind="text: to" />
+                        </div>                                                
+                    </div>
+                </li>
+                <li>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <label>Departing</label>
+                        </div>
+                        <div class="span6">
+                            <label>Returning</label>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6 row-text">
+                            <span data-bind="dateString: $data.depart, datePattern: 'MMMM DD, YYYY'" />
+                        </div>
+                        <div class="span6">
+                            <span data-bind="dateString: $data.return, datePattern: 'MMMM DD, YYYY'" />
+                        </div>                                             
+                    </div>
+                <li>
+                    <label>Related Project</label>
+                    <div class="row-fluid row-text">
+                        <div class="span12">
+                            <span data-bind="text:  relatedProject" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label>Description</label>
+                    <div class="row-fluid row-text-multiline">
+                        <div class="span12" data-bind="text:  description">
+                        </div>
+                    </div>
+                </li>
+                <li class="row-height">
+                    <label>Transportation</label>
+                    <div class="span12 row-text-multiline" data-bind="text:  transportationNeed" ></div>
+                </li>
+                <li class="row-height">
+                    <label>Accommodation</label>
+                    <div class="span12 row-text-multiline" data-bind="text:  accommodationNeed" ></div>
+                </li>
+                <li class="row-height">
+                    <label>Comments</label>
+                    <div class="span12 row-text-multiline" data-bind="text:  comments" ></div>
+                </li>
+            </ul>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="attachments-zone">
+        <label>Attachments</label>
+        <div class="attachments-container"  data-bind="foreach: travelEntity().attachments">
+            <div class="attachment">
+                <div class="text two-icons"><a class="link-file" href="#" data-bind="text: name, attr: { href: 'api/travelattachments/files/' + travelAttachmentId() }"></a></div>
+                <div class="icon download" data-bind="click: $root.download"></div>
+            </div>
+        
+        </div>
+    </div>
+    <div class="buttons" data-bind="if: $root.isManagerMode">
+        <div  data-bind="with: travelEntity">
+            <button class="button-box button-accept" data-bind="{click: $root.approve}" title="Approve this request">approve</button>
+            <button class="button-box button-delete" data-bind="{click: $root.reject}" title="Reject this request">reject</button>
+        </div>
+        <div class="footer-div">&nbsp;</div>
+    </div>
+</div>

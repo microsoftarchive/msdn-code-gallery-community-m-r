@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="MyShuttle.Client.UniversalApp.Views.ChangePositionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Style="{StaticResource PrimaryWithLeftMarginTextBlock}"
+                   Text="{Binding [ChangePosition], Source={StaticResource LocalizedStrings}}"/>
+
+        <Grid Grid.Row="1" Style="{StaticResource ContainerGrid}">
+            <TextBlock Text="{Binding [ChangePositionDescription], Source={StaticResource LocalizedStrings}}"
+                       Style="{StaticResource SecondaryTextBlock}"/>
+        </Grid>
+
+        <maps:MapControl Name="MapControl" Grid.Row="2" ZoomLevel="16" Style="Terrain" Margin="0 20 0 0"                         
+                         Center="{Binding UserGeopoint}"
+                         MapTapped="MapControl_OnMapTapped">
+            <Image Style="{StaticResource DevicePushpinImage}" 
+                   maps:MapControl.Location="{Binding UserGeopoint, Mode=TwoWay}"
+                   maps:MapControl.NormalizedAnchorPoint="0.5 , 1.0"/>
+        </maps:MapControl>
+    </Grid>
+</Page>

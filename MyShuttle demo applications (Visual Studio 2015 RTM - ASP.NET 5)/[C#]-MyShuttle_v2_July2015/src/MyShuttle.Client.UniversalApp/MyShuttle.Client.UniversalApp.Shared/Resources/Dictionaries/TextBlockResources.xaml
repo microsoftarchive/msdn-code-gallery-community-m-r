@@ -1,0 +1,294 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="TextBlockBase" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe WP"/>
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+    </Style>
+
+    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+    </Style>
+
+    <Style x:Key="DefaultTextBlock" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="SecondaryTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="TextTrimming" Value="None"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="5 10 0 0"/>
+    </Style>
+
+    <Style x:Key="DefaultWithLeftMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Margin" Value="10 0 0 0"/>
+    </Style>
+
+    <Style x:Key="TitlePage" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="FontSize" Value="{StaticResource TitleFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="Global User Interface"/>
+    </Style>
+
+    <Style x:Key="TitlePageStandard" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="FontSize" Value="{StaticResource TitlePageFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+    </Style>
+    
+    <Style x:Key="PrimaryTextBlock" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource PrimaryFontSize}"/>
+    </Style>
+
+    <Style x:Key="PrimaryDisabledTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource DisabledColorBrush}"/>
+    </Style>
+
+    <Style x:Key="PrimaryWithLeftMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
+        <Setter Property="Margin" Value="20 0 0 0"/>
+    </Style>
+
+    <Style x:Key="PrimaryMediumTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource PrimaryMediumFontSize}"/>
+    </Style>
+
+    <Style x:Key="LabelTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+    </Style>
+
+    <!--Vehicle item styles-->
+    <Style x:Key="VehicleItemTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Margin" Value="0 10 0 0"/>
+    </Style>
+
+    <Style x:Key="VehicleItemLabelTextBlock" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Margin" Value="0,0,5,6"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="VehicleItemDataTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryMediumTextBlock}">
+        <Setter Property="Margin" Value="{StaticResource SmallBottomMarginThickness}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    <Style x:Key="LabelNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource ExtraSmallFontSize}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+
+    <Style x:Key="LargeLabelPrimaryNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource LabelNoteTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="LargeLabelNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource LabelNoteTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"/>
+    </Style>
+
+    <Style x:Key="ExtraLargeLabelNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource LabelNoteTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+    </Style>
+
+    <Style x:Key="LargeLabelNoteLeftMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource LargeLabelNoteTextBlock}">
+        <Setter Property="Margin" Value="5 0 0 0"/>
+    </Style>
+    
+    <Style x:Key="DarkValueNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="DarkValueNoteWithLeftMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DarkValueNoteTextBlock}">
+        <Setter Property="Margin" Value="5 0 0 0"/>
+    </Style>
+
+    <Style x:Key="ValueNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+
+    <Style x:Key="ValueNoteLeftMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ValueNoteTextBlock}">
+        <Setter Property="Margin" Value="5 0 0 0"/>
+    </Style>
+
+    <Style x:Key="SmallValueNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ValueNoteTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource ExtraSmallFontSize}"/>
+    </Style>
+
+    <Style x:Key="SmallValueNoteLeftMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource SmallValueNoteTextBlock}">
+        <Setter Property="Margin" Value="5 0 0 0"/>
+    </Style>
+
+    <Style x:Key="HighlightNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource LabelNoteTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource HighlightForegroundColor}"/>
+        <Setter Property="FontSize" Value="{StaticResource XExtraSmallFontSize}"/>
+    </Style>
+
+    <Style x:Key="LargeHighlightNoteTextBlock" TargetType="TextBlock" BasedOn="{StaticResource HighlightNoteTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"/>
+    </Style>
+    
+    <Style x:Key="HighlightNoteWithSmallTopMarginTextBlock" TargetType="TextBlock" BasedOn="{StaticResource HighlightNoteTextBlock}">
+        <Setter Property="Margin" Value="0 2 0 0"/>
+    </Style>
+
+    <!--Selected vehicle styles-->
+    <Style x:Key="SelectedVehicleItemTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource VehicleItemTitleTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource AppBackgroundBrush}"/>
+        <Setter Property="Margin" Value="0 10 0 0"></Setter>
+    </Style>
+
+    <Style x:Key="SelectedVehicleItemDataTextBlock" TargetType="TextBlock" BasedOn="{StaticResource VehicleItemDataTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource AppBackgroundBrush}"/>
+    </Style>
+
+    <!--Company item styles-->
+    <Style x:Key="TitleDefaultCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="TextLineBounds" Value="TrimToCapHeight"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+        <Setter Property="Margin" Value="{StaticResource RightMarginThickness}"/>
+        
+    </Style>
+    <Style x:Key="SubTitleDefaultCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="TextLineBounds" Value="TrimToCapHeight"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource PrimaryMediumFontSize}"/>
+        <Setter Property="Margin" Value="{StaticResource RightMarginThickness}"/>       
+
+    </Style>
+    <Style x:Key="DetailsDefaultCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource XXExtraSmallFontSize}"/> 
+        <Setter Property="Margin" Value="{StaticResource RightMarginThickness}"/>
+        
+    </Style>
+    <Style x:Key="DateDetailsDefaultCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DetailsDefaultCompanyTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="TimeDetailsDefaultCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DetailsDefaultCompanyTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource HighlightForegroundBrush}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="PriceDetailsDefaultCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DetailsDefaultCompanyTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="FontSize" Value="25"/>
+    </Style>
+
+    <Style x:Key="TitleMainCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource AppBarBackgroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource LongFontSize}"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextLineBounds" Value="TrimToCapHeight"/>
+        <Setter Property="Margin" Value="{StaticResource TopMarginThickness}"/>
+    </Style>
+    <Style x:Key="OriginDestinyMainCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource PrimaryMediumFontSize}"/>
+        <Setter Property="Height" Value="70"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="{StaticResource TopMarginThickness}"/>
+    </Style>
+    <Style x:Key="OriginDestinySquareCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource OriginDestinyMainCompanyTextBlock}">
+        <Setter Property="TextLineBounds" Value="TrimToCapHeight"/>
+    </Style>
+    <Style x:Key="DateMainCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource AppBarBackgroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource XExtraSmallFontSize}"/>
+        <Setter Property="Margin" Value="{StaticResource TopMarginThickness}"/>
+    </Style>
+    <Style x:Key="DetailsMainCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"/>
+
+    </Style>
+    <Style x:Key="TimeDetailsMainCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DetailsMainCompanyTextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="CostDetailsMainCompanyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DetailsMainCompanyTextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+
+    </Style>
+    
+    <!--Rides item styles-->
+    <Style x:Key="RideItemTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Margin" Value="15 4 0 0"/>
+    </Style>
+
+    <Style x:Key="RideItemPriceTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Margin" Value="0 4 0 0"/>
+    </Style>
+
+    <Style x:Key="RideItemDataTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryMediumTextBlock}">
+        <Setter Property="Margin" Value="15 2 0 15"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+    </Style>
+
+    <!--Rides Details styles-->
+    <Style x:Key="RedInfoItemTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource PrimaryMediumFontSize}"/>
+        <Setter Property="Foreground" Value="{StaticResource HighlightForegroundBrush}"/>    
+    </Style>
+    <Style x:Key="SubHeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource RedInfoItemTitleTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+    </Style>
+    
+    <Style x:Key="OriginDestinyTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        
+    </Style>
+    <Style x:Key="HubHeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource DefaultTitleFontSize}"/>
+        <Setter Property="Margin" Value="{StaticResource BottomMarginThickness}"></Setter>       
+    </Style>
+
+    <Style x:Key="NameDetailTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontWeight" Value="SemiLight"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="{StaticResource TopMarginThickness}"/>
+    </Style>
+    <Style x:Key="DateDetailTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource XExtraSmallFontSize}"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="TextGridCellTitle" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource XExtraSmallFontSize}"/>
+    </Style>
+
+    <Style x:Key="TextGridCellText" TargetType="TextBlock" BasedOn="{StaticResource TextGridCellTitle}">
+        <Setter Property="Foreground" Value="{StaticResource RideDetailTileColorBrush}"/>
+    </Style>
+    <Style x:Key="TextGridCellTextWhite" TargetType="TextBlock" BasedOn="{StaticResource TextGridCellText}">
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style x:Key="RedInfoItemTitleDriverTextBlock" TargetType="TextBlock" BasedOn="{StaticResource RedInfoItemTitleTextBlock}">
+        <Setter Property="Margin" Value="15 5 0 0"/>
+    </Style>
+    <Style x:Key="SubHeaderDriverTextBlock" TargetType="TextBlock" BasedOn="{StaticResource SubHeaderTextBlock}">
+        <Setter Property="Margin" Value="15 5 0 0"/>
+    </Style>
+    <Style x:Key="CommentRideTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="TextWrapping" Value="WrapWholeWords"/>
+        <Setter Property="FontSize" Value="{StaticResource XXExtraSmallFontSize}"/>
+    </Style>
+    <Style x:Key="DateCommentTextBlock" TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
+        <Setter Property="Margin" Value="0,30,0,0"/>
+       
+    </Style>
+    
+
+
+</ResourceDictionary>

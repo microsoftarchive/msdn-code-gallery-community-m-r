@@ -1,0 +1,29 @@
+﻿<Application x:Class="MyShuttle.Client.Desktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:MyShuttle.Client.Desktop.Converters"
+             xmlns:resources="clr-namespace:MyShuttle.Client.Desktop.Resources"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <resources:LocalizedResources x:Key="LocalizedResources"/>
+                    <converters:ImageDataConverter x:Key="ImageDataConverter" />
+                    <converters:ToUpperConverter x:Key="ToUpperConverter" />
+                    <converters:FormatConverter x:Key="FormatConverter" />
+                    <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                    <converters:NotBoolToVisibilityConverter x:Key="NotBoolToVisibilityConverter" />
+                    <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+                    <converters:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+                    <converters:NotBoolConverter x:Key="NotBoolConverter" />
+                    <converters:SumHalfOfConverter x:Key="SumHalfOfConverter"/>
+                    <converters:SumConverter x:Key="SumConverter"/>
+                    <converters:RectConverter x:Key="RectConverter"/>
+                </ResourceDictionary>
+                <ResourceDictionary Source="/Styles/Resources.xaml"/>
+                <ResourceDictionary Source="/Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

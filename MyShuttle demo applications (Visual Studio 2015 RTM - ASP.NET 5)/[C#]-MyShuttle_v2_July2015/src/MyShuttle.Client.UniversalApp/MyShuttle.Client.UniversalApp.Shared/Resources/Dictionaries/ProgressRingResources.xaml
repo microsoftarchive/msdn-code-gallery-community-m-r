@@ -1,0 +1,25 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ProgressRingkBase" TargetType="ProgressRing">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="IsActive" Value="True"/>
+    </Style>
+
+    <Style TargetType="ProgressRing" BasedOn="{StaticResource ProgressRingkBase}">
+    </Style>
+    
+    <Style x:Key="WhiteProgressRing" TargetType="ProgressRing" BasedOn="{StaticResource  ProgressRingkBase}">
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="Margin" Value="{StaticResource BigTopMarginThickness}"/>
+    </Style>
+    <Style x:Key="WhiteCenterProgressRing" TargetType="ProgressRing" BasedOn="{StaticResource  WhiteProgressRing}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageBrush x:Key="ApplicationPageBackgroundThemeBrush" ImageSource="/Assets/background_image.jpg"  Stretch="UniformToFill"/>
+
+    <SolidColorBrush x:Key="AccentBrush" Color="#FFc43052"></SolidColorBrush>
+    <SolidColorBrush x:Key="AccentBrushTransparent" Color="#DDc43052"></SolidColorBrush>
+    <SolidColorBrush x:Key="BackgroundLoading" Color="#AA000000"></SolidColorBrush>
+    <SolidColorBrush x:Key="BackgroundNoPhoto" Color="#BDBDBD"></SolidColorBrush>
+    <SolidColorBrush x:Key="GrayBackground" Color="#A4A4A2"></SolidColorBrush>
+</ResourceDictionary>
+ 

@@ -1,0 +1,98 @@
+﻿<navigation:PhoneApplicationPage xmlns:my="clr-namespace:ListsManagement.Controls"  
+    x:Class="ListsManagement.ItemDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:code="clr-namespace:ListsManagement.Converters"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    SupportedOrientations="PortraitOrLandscape"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480">
+
+    <navigation:PhoneApplicationPage.Resources>
+        <!-- TextBox styles -->
+        <Style x:Key="PhoneTextPageTitle1Style" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
+            <Setter Property="Margin" Value="20,20,0,0" />
+        </Style>
+
+        <Style x:Key="PhoneTextPageTitle2Style" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextTitle1Style}">
+            <Setter Property="Margin" Value="20,43,0,0" />
+        </Style>
+        <code:DateConverter x:Key="dateConverter"/>
+        <code:EnumConverter x:Key="enumConverter"/>
+        <code:TagsConverter x:Key="tagsConverter"/>
+    </navigation:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--This is the name of the application and page title-->
+        <Grid Grid.Row="0" x:Name="TitleGrid">
+            <TextBlock x:Name="ApplicationName" Text="List Manager" Style="{StaticResource PhoneTextPageTitle1Style}"/>
+            <TextBlock x:Name="ListName" Text="{Binding Name}" Style="{StaticResource PhoneTextPageTitle2Style}"/>
+        </Grid>
+
+        <Popup Grid.Row="1" x:Name="popupPanel">
+            <StackPanel Orientation="Vertical" Background="Black">
+                <Button x:Name="popupDone" Content="Done" Width="200" Click="popupDone_Click"/>
+                <my:TagsChooserControl x:Name="tagsChooser"/>
+            </StackPanel>
+        </Popup>
+        <!--This section is empty. Place new content here Grid.Row="1"-->
+        <Grid Grid.Row="1" x:Name="ContentGrid">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Name" Style="{StaticResource PhoneTextBodyTextStyle}" />
+                    <TextBlock Name="itemNameLbl"  Text="{Binding Name}" Style="{StaticResource PhoneTextBodyTextStyle}" Foreground="DarkSalmon" FontSize="28" />
+                    <TextBox Name="itemNameTxt" IsReadOnly="false" Text="{Binding Name, Mode=TwoWay}" Visibility="Collapsed" FontSize="28"/>
+                    <TextBlock Text="Due by" Style="{StaticResource PhoneTextBodyTextStyle}" />
+                    <TextBlock Name="dueByLbl" Text="{Binding EndDate, Mode=TwoWay}" Style="{StaticResource PhoneTextBodyTextStyle}" Foreground="{Binding EndDate, Converter={StaticResource dateConverter}}" FontSize="28"  />
+                    <TextBox Name="dueByTxt" Text="{Binding EndDate, Mode=TwoWay}" FontSize="28" Visibility="Collapsed">
+                        <TextBox.InputScope>
+                            <InputScope>
+                                <InputScopeName NameValue="Number"/>
+                            </InputScope>
+                        </TextBox.InputScope>
+                    </TextBox>
+                    <TextBlock Text="Status" Style="{StaticResource PhoneTextBodyTextStyle}" FontSize="28"/>
+                    <TextBlock Name="statusLbl" Style="{StaticResource PhoneTextBodyTextStyle}" Text="{Binding Status, Converter={StaticResource enumConverter}, ConverterParameter='Status'}"  Foreground="DarkSalmon" FontSize="28" />
+                    <TextBox Name="statusTxt" Visibility="Collapsed" Text="{Binding Status, Mode=TwoWay, Converter={StaticResource enumConverter}, ConverterParameter='Status'}" FontSize="28" GotFocus="statusTxt_GotFocus">
+                        <TextBox.InputScope>
+                            <InputScope>
+                                <InputScopeName NameValue="Number"/>
+                            </InputScope>
+                        </TextBox.InputScope>
+                    </TextBox>
+                    <TextBlock Text="Priority" Style="{StaticResource PhoneTextBodyTextStyle}" FontSize="28"/>
+                    <TextBlock Name="priorityLbl" Style="{StaticResource PhoneTextBodyTextStyle}" Text="{Binding Priority, Converter={StaticResource enumConverter}, ConverterParameter='Priority'}"  Foreground="DarkSalmon" FontSize="28" />
+                    <TextBox Name="priorityTxt" Visibility="Collapsed" Text="{Binding Priority, Mode=TwoWay, Converter={StaticResource enumConverter}, ConverterParameter='Priority'}" FontSize="28" GotFocus="priorityTxt_GotFocus">
+                        <TextBox.InputScope>
+                            <InputScope>
+                                <InputScopeName NameValue="Number"/>
+                            </InputScope>
+                        </TextBox.InputScope>
+                    </TextBox>
+                    <TextBlock Text="Tags" Style="{StaticResource PhoneTextBodyTextStyle}" FontSize="28"/>
+                    <TextBlock Name="tagsLbl" Style="{StaticResource PhoneTextBodyTextStyle}" Text="{Binding ID, Converter={StaticResource tagsConverter}}" Foreground="DarkSalmon" FontSize="28" TextWrapping="Wrap" MinHeight="100"/>
+                    <TextBox Name="tagsTxt" Visibility="Collapsed" Text="{Binding ID, Converter={StaticResource tagsConverter}}" TextWrapping="Wrap" MinHeight="100" FontSize="28" GotFocus="tagsTxt_GotFocus" IsReadOnly="True"/>
+                    <TextBlock Text="Detail" Style="{StaticResource PhoneTextBodyTextStyle}" />
+                    <TextBox Name="itemDescTxt" IsReadOnly="false" Text="{Binding Description, Mode=TwoWay}" TextWrapping="Wrap" MinHeight="200" FontSize="28"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+    <navigation:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBar.Buttons>
+                <shell:ApplicationBarIconButton x:Name="editBtn" IconUri="Images/appbar.edit.png" Click="editBtn_Click" Text="Edit"/>
+                <shell:ApplicationBarIconButton x:Name="cancelBtn" IconUri="Images/appbar.cancel.png" Click="cancelBtn_Click" IsEnabled="False" Text="Cancel"/>
+                <shell:ApplicationBarIconButton x:Name="doneBtn" IconUri="Images/appbar.check.png" Click="doneBtn_Click" IsEnabled="False" Text="Done"/>
+                <shell:ApplicationBarIconButton x:Name="deleteBtn" IconUri="Images/appbar.delete.png" Click="deleteBtn_Click" Text="Delete"/>
+            </shell:ApplicationBar.Buttons>
+        </shell:ApplicationBar>
+    </navigation:PhoneApplicationPage.ApplicationBar>
+</navigation:PhoneApplicationPage>

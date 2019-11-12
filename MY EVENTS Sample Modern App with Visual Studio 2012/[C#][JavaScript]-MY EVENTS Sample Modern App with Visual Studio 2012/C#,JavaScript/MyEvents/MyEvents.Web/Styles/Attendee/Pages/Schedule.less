@@ -1,0 +1,128 @@
+﻿.event-title {
+    font-size: 2em;    
+}
+
+.message{
+	font-size: 0.9em;
+}
+
+#schedule-container {
+    overflow: hidden;
+    font-size: 0.8em;
+    margin: 1.5em 0;
+    
+    .session-container {
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        background-color: @primary-color;
+        #font > .font-primary-color;
+        font-size: 1.1em;
+        cursor: pointer;
+        
+        .link {
+            padding: 0.6em 0.725em;
+        }
+              
+        .session-title {
+            max-height: 3em;
+            max-width: 75%;
+            @media all and (min-width: 1024px) {
+                max-width: 85%;
+            }
+        }
+        
+        .session-speaker {
+            font-size: 1.1em;
+            background-image: url('/Styles/Images/organizer-icon-white.png');
+            background-position: left center;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            position: absolute;
+            bottom: 0.5em;
+        }
+		
+		.session-time span{
+			font-size: 1.1em;
+			display: block;
+			text-align: right;
+		}
+    }
+    
+    #header-container {
+        overflow: hidden;
+    }
+        
+    #schedule {
+        margin-bottom: 2em;
+        padding: 1%;
+        background-color: @contrast-color;
+    }
+              
+    .times-column {
+        width: 5%;
+        min-width: 33px;
+        float: left;
+    }    
+
+    .times-column.header {
+        background-image: url('/Styles/Images/clock.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 21px;
+        padding: 0.5em;
+    }
+                  
+    .room-column {
+        margin-right: 2%;
+        float: left;
+    }
+    
+    &.total-rooms-1 {
+        .room-column {
+            width: 90.6%;
+            @media all and (min-width: 1024px) {
+                width: 93%;
+            }
+        }
+                     
+        .room-column.header {
+            width: 88%;
+        }
+    }
+    
+    &.total-rooms-2 {
+        .room-column {
+            width: 44.3%;
+            @media all and (min-width: 1024px) {
+                width: 45.5%;
+            }
+        }
+                     
+        .room-column.header {
+            width: 43%;
+        }
+    }
+    
+    &.total-rooms-3 {
+        .room-column {
+            width: 28.8%;
+            @media all and (min-width: 1024px) {
+                width: 29.6%;
+            }
+        }
+
+        .room-column.header {
+            width: 28%;
+        }
+    }
+    
+    .room-column.header {
+        font-size: 1.5em;
+    }
+
+    .time-gap {
+        background-color: rgba(181, 183, 186, 0.5);
+        position: relative;
+    }
+}

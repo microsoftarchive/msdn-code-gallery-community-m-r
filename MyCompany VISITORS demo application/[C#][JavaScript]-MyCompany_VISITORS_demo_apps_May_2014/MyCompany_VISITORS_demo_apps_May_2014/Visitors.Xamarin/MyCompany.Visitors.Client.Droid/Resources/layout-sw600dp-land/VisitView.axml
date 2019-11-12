@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="40px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <com.refractored.controls.RobotoTextView
+            android:text="NEXT VISIT"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/topLabel"
+            android:gravity="center"
+            local:typeface="roboto_thin"
+            android:layout_margin="10pt" />
+        <com.refractored.controls.RobotoTextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/topValue"
+            android:layout_marginLeft="10pt"
+            local:typeface="roboto_bold"
+            android:gravity="center" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:id="@+id/view1"
+        android:background="@color/pop" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/linearLayout2"
+        android:layout_margin="10dp"
+        android:background="@drawable/background_card"
+        android:padding="10dp">
+        <MyCompany.Visitors.Client.Droid.Views.FadeImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="100pt"
+            android:layout_height="100pt"
+            android:id="@+id/imageView"
+            android:layout_marginRight="10dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3">
+            <com.refractored.controls.RobotoTextView
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Name"
+                local:typeface="roboto_thin"
+                android:layout_marginTop="20pt" />
+            <com.refractored.controls.RobotoTextView
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/position"
+                local:typeface="roboto_bold"
+                android:layout_marginTop="5pt" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:id="@+id/view2"
+                android:layout_marginRight="10pt"
+                android:background="@color/pop"
+                android:layout_marginTop="10pt" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout4"
+                android:layout_marginTop="10pt">
+                <com.refractored.controls.RobotoTextView
+                    android:text="VISIT TO"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView6"
+                    local:typeface="roboto_bold"
+                    android:gravity="center" />
+                <com.refractored.controls.RobotoTextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/visiting"
+                    android:gravity="center"
+                    android:layout_marginLeft="5pt" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout5">
+                <com.refractored.controls.RobotoTextView
+                    android:text="REASON"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView7"
+                    local:typeface="roboto_bold"
+                    android:gravity="center" />
+                <com.refractored.controls.RobotoTextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/reason"
+                    android:layout_marginLeft="5pt" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

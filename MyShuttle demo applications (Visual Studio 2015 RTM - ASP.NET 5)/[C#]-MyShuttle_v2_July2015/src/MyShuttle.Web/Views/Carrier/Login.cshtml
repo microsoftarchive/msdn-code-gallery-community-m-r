@@ -1,0 +1,72 @@
+﻿@model MyShuttle.Web.Models.LoginViewModel
+<html>
+<head>
+    <title>MyShuttle Login</title>
+    <base href='@Url.Content("~/")' />
+	<link rel="shortcut icon" href='@Url.Content("~/favicon.ico")' type="image/x-icon" />	
+
+    <link rel="stylesheet" type="text/css" href="App/Themes/Lumen/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/core.css">
+    <link rel="stylesheet" type="text/css" href="Content/login.css">
+</head>
+
+<body>
+    <div class="container-fluid full-width-container">
+        <section class="container-fluid">
+            <div class="row">
+                <div class="login_container">
+                    <div class="row login_header" >
+                        <img src="Content/Images/logologin.png">
+                    </div>
+                    <div class="row">
+                        @using (Html.BeginForm("Login", "Carrier", new { ReturnUrl = ViewBag.ReturnUrl },
+                                                FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group login_message_summary">
+                                    @if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+                                    {
+                                        <div class="alert alert-dismissable alert-danger">
+                                            <button class="close" type="button" data-dismiss="alert">×</button>
+                                            @Html.ValidationSummary(true)
+                                        </div>
+                                    }
+                                 </div>
+
+                                <div class="form-group">
+                                    <h4>@Html.LabelFor(m => m.UserName, new { @class = "control-label" })</h4>
+                                    <div class="form-control-div">@Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Enter user name" })</div>
+                                    @Html.ValidationMessageFor(x => x.UserName, "Required")
+                                </div>
+
+                                <div class="form-group">
+                                    <h4>@Html.LabelFor(m => m.Password, new { @class = "control-label" })</h4>
+                                    <div class="form-control-div">@Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter password"})</div>
+                                    @Html.ValidationMessageFor(x => x.Password, "Required" )
+                                </div>
+
+                                <div class="form-group checkbox">
+                                    <label>
+                                        @Html.CheckBoxFor(m => m.RememberMe) <b>Remember me</b>
+                                     </label>
+                                </div>
+
+                                <div class="form-group pull-right login_submit">
+                                    <input type="submit" value="Log in" class="btn btn-primary" />
+                                </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="App/lib/jquery/dist/jquery.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+    <script src="Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="App/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="Scripts/login.validations.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+﻿@import '../../core/css/fonts';
+@import '../../core/css/variables';
+
+
+.employee-row {
+    position: relative;
+
+    .employee-info-col {
+        padding: 0.8em;
+        display: table;
+
+        .employee-img {
+            max-width: 6em;
+            border-radius: 50%;
+        }
+
+        .employee-data {
+            padding-left: 1em;
+            vertical-align: middle;
+            display: table-cell;
+            padding-right: 7em;
+
+            &.full-row {
+                padding-right: 0;
+            }
+
+            p.employee-name {
+                #fonts .primary-data;
+                margin-bottom: 0.2em;
+                line-height: 1em;
+            }
+
+            .employee-data-field {
+                font-weight: 600;
+
+                &.data-highlighted {
+                    color: @secondary-color;
+                }
+            }
+        }
+    }
+}
+
+.ride-request-content {
+
+    .request-bing-map {
+        height: 15em;
+        position: relative;
+    }
+
+    .button-bottom {
+        position: relative;
+        height: 4em;
+    }
+}
+
+// Bootstrap overriden styles
+.modal-dialog {
+    margin: 1em;
+    margin-top: 5em;
+
+    .modal-content {
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 2em auto;
+    }
+}

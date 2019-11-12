@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RCE.Services.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RCE.Services.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAudioStreamInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AudioStreamInfo" nillable="true" type="tns:AudioStreamInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAudioStreamInfo" nillable="true" type="tns:ArrayOfAudioStreamInfo" />
+  <xs:complexType name="AudioStreamInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsStereo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AudioStreamInfo" nillable="true" type="tns:AudioStreamInfo" />
+</xs:schema>

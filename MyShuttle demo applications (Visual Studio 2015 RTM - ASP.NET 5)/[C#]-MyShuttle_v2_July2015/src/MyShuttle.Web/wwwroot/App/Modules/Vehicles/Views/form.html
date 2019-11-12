@@ -1,0 +1,103 @@
+<section data-ng-controller="VehicleFormController" ng-key-enter="save()" tabindex="1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Vehicle</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <alert ng-animate="'custom'" ng-repeat="alert in alerts" type="{{alert.type}}"
+                       close="closeAlert($index)">
+                    {{alert.msg}}
+                </alert>
+            </div>
+            <div class="col-md-4 vehicle-image-container">
+                <ms-crop ms-crop-model-property="vehicle.Picture" ms-image-size="260" ms-area-type="rectangle" ms-aspect-ratio="1.444"></ms-crop>
+                <div class="text-center" ng-class="{'has-error': showValidationMessages && !vehicle.Picture}">
+                    <span class="ng-hide control-label" ng-show="showValidationMessages && !vehicle.Picture">Required</span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <form name="vehicleForm" novalidate class="form-horizontal ng-cloak" role="form" ng-cloak>
+                    <div class="form-group required">
+                        <label class="col-xs-2 col-xs-2 col-sm-2 control-label" for="make">Make</label>
+                        <div class="col-xs-10 col-sm-10"
+                             ng-class="{'has-error': showValidationMessages && vehicleForm.make.$invalid}">
+                            <input type="text" id="make" name="make" class="form-control" ng-model="vehicle.Make"
+                                   required focus-me />
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && vehicleForm.make.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="col-xs-2 col-sm-2 control-label" for="model">Model</label>
+                        <div class="col-xs-10 col-sm-10"
+                             ng-class="{'has-error': showValidationMessages && vehicleForm.model.$invalid}">
+                            <input type="text" id="model" name="model" class="form-control" ng-model="vehicle.Model"
+                                   required/>
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && vehicleForm.model.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="col-xs-2 col-sm-2 control-label" for="plate">License Plate</label>
+                        <div class="col-xs-4 col-sm-4" ng-class="{'has-error': showValidationMessages && vehicleForm.plate.$invalid}">
+                            <input type="text" class="form-control" id="plate" name="plate" ng-model="vehicle.LicensePlate" required />
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && vehicleForm.plate.$error.required">Required</span>
+                        </div>
+                        <label class="col-xs-2  col-sm-2 control-label" for="size">Size</label>
+                        <div class="col-xs-4  col-sm-4" ng-class="{'has-error': showValidationMessages && vehicleForm.size.$invalid}">
+                            <select class="form-control" id="size" name="size"
+                                    ng-model="vehicle.Type"
+                                    ng-options="size.value as size.display for size in sizes" required></select>
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && vehicleForm.size.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="col-xs-2 col-xs-2 col-sm-2 control-label" for="driver">Driver</label>
+                        <div class="col-xs-10 col-sm-10" ng-class="{'has-error': showValidationMessages && vehicleForm.driver.$invalid}">
+                            <select class="form-control" id="driver" name="driver"
+                                    ng-model="vehicle.DriverId"
+                                    ng-options="driver.DriverId as driver.Name for driver in drivers" required></select>
+                            <span class="ng-hide control-label"
+                                  ng-show="showValidationMessages && vehicleForm.driver.$error.required">Required</span>
+                        </div>
+                    </div>
+                    <div class="text-right help-block">* Field is required</div>
+                    <div class="form-group">
+                        <section class="read-only-data col-xs-offset-2 col-xs-10">
+                            <div class="well well-lg">
+                                <div class="row">
+                                    <div class="label-data">
+                                        Rating
+                                    </div>
+                                    <ms-rating model="vehicle.RatingAvg" big="true"></ms-rating>
+                                </div>
+                                <div class="row">
+                                    <div class="label-data">
+                                        Total Rides
+                                    </div>
+                                    <h3>{{vehicle.TotalRides}}</h3>
+                                    <button type="button" class="btn btn-primary btn-xs view-rides-button"
+                                            ui-sref="rides({vehicleId: vehicle.VehicleId})"
+                                            ng-disabled="!vehicle.TotalRides">
+                                        View All
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="profile-buttons-footer pull-right">
+                <button type="button" ng-click="reset()" ng-disabled="isUnchanged(vehicle)" class="btn btn-default">
+                    Reset
+                </button>
+                <button type="submit" ng-click="save()" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</section>

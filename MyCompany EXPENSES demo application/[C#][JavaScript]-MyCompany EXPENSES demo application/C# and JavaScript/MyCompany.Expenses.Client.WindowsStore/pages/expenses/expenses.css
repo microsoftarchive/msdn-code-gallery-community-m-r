@@ -1,0 +1,27 @@
+﻿.rawexpenseslist .back {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.rawexpenseslist #expensesList {
+    padding-right: 15px;
+    min-width: 1240px;
+}
+
+@media screen and (max-width: 500px){
+    .rawexpenseslist .back {
+        margin-left: 20px;
+    }
+    .rawexpenseslist .back {
+        padding-left: 0px;
+    }
+
+    .fragment header[role=banner] .logo.withback {
+        width: 200px;
+        height: 55px;
+        padding-left: 30px;
+        padding-top: 50px;
+    }
+}
