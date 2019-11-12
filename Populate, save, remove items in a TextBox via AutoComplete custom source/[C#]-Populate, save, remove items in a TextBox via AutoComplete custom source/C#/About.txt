@@ -1,9 +1,0 @@
-Shows how to setup a TextBox and a ComboBox for AutoComplete. 
-The data source used is from a database table but could come from
-other sources i.e. comma delimited text file etc.
-
-2/26/2014 Added Form2 demo.
-
-
-
- 

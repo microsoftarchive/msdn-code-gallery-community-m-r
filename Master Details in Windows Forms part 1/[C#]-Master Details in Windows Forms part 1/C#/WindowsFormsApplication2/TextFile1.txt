@@ -1,5 +1,0 @@
-﻿SELECT        [Order Details].OrderID, Products.ProductName, Categories.CategoryName, [Order Details].UnitPrice, [Order Details].Quantity, [Order Details].Discount
-FROM            [Order Details] INNER JOIN
-                         Products ON [Order Details].ProductID = Products.ProductID INNER JOIN
-                         Categories ON Products.CategoryID = Categories.CategoryID
-WHERE        ([Order Details].OrderID = 10643)

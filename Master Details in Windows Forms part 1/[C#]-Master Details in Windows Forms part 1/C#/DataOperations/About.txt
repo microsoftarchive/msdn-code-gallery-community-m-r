@@ -1,1 +1,0 @@
-﻿This project will be used in part 2 in tangent with WindowsFormsApplication2

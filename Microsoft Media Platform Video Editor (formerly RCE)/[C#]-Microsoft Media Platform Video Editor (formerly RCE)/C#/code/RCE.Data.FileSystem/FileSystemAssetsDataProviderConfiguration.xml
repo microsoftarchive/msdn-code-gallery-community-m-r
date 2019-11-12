@@ -1,9 +1,0 @@
-﻿<configuration>
-  <AssetsPath>D:\media\demo\SmoothStreaming\</AssetsPath>
-  <AssetsUriTemplate>http://localhost/smoothstreaming/{0}</AssetsUriTemplate>
-  <AssetsThumbnailUriTemplate>http://localhost/smoothstreaming/{0}_Thumb.jpg</AssetsThumbnailUriTemplate>
-  <AssetsThumbnailSuffix>_Thumb.jpg</AssetsThumbnailSuffix>
-  <AllowedVideoAssets>.WMV,.ISM,.ISML,.CSM</AllowedVideoAssets>
-  <AllowedAudioAssets>.MP3,.WMA</AllowedAudioAssets>
-  <AllowedImageAssets>.BMP,.JPG,.PNG</AllowedImageAssets>
-</configuration>

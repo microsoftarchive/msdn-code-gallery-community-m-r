@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Items xmlns="http://logistics">
-<Item><Id>1001</Id><Price>10.50</Price></Item>
-<Item><Id>1002</Id><Price>9.50</Price></Item>
-<Item><Id>1004</Id><Price>20.50</Price></Item>
-<Item><Id>1003</Id><Price>10.60</Price></Item>
-<Item><Id>1005</Id><Price>13.50</Price></Item>
-</Items>

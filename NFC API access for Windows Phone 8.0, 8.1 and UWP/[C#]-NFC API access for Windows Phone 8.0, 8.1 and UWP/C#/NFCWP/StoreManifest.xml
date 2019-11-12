@@ -1,8 +1,0 @@
-<StoreManifest xmlns="http://schemas.microsoft.com/appx/2010/StoreManifest">
-  <ProductFeatures>
-    <HardwareRequirements>
-      <Requirement Name="ID_REQ_NFC" />
-      <Requirement Name="ID_REQ_REARCAMERA" />
-    </HardwareRequirements>
-  </ProductFeatures>
-</StoreManifest>

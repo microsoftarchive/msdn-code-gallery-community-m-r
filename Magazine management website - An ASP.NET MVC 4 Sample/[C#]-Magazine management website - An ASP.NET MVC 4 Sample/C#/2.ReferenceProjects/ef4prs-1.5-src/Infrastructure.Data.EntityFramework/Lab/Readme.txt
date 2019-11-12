@@ -1,1 +1,0 @@
-﻿This folder is used as a lab to investigate the use of DbContext in EF
