@@ -38,27 +38,27 @@ I made this project in .NET 4.0 and using SQL Server 2008 R2 for the database Th
  file. </span></p>
 <p><span style="font-family:Verdana; font-size:x-small"><br>
 <br>
-<img src="-loginpage.gif" border="0" alt="login page" width="450" height="253"><br>
+<img src="http://www.c-sharpcorner.com/UploadFile/90e1f4/online-shopping-website-in-Asp-Net-open-source-project/Images/loginpage.gif" border="0" alt="login page" width="450" height="253"><br>
 <br>
 Login page:<br>
 <br>
-<img src="-homepage.gif" border="0" alt="home page" width="450" height="253"><br>
+<img src="http://www.c-sharpcorner.com/UploadFile/90e1f4/online-shopping-website-in-Asp-Net-open-source-project/Images/homepage.gif" border="0" alt="home page" width="450" height="253"><br>
 <br>
 Home page:<br>
 <br>
-<img src="-detailpage.gif" border="0" alt="detail page " width="450" height="253"><br>
+<img src="http://www.c-sharpcorner.com/UploadFile/90e1f4/online-shopping-website-in-Asp-Net-open-source-project/Images/detailpage.gif" border="0" alt="detail page " width="450" height="253"><br>
 <br>
 Detail page:<br>
 <br>
-<img src="-cartpage.gif" border="0" alt="cart page" width="450" height="253"><br>
+<img src="http://www.c-sharpcorner.com/UploadFile/90e1f4/online-shopping-website-in-Asp-Net-open-source-project/Images/cartpage.gif" border="0" alt="cart page" width="450" height="253"><br>
 <br>
 Cart page:<br>
 <br>
-<img src="-registrationpage.gif" border="0" alt="registration page" width="450" height="253"><br>
+<img src="http://www.c-sharpcorner.com/UploadFile/90e1f4/online-shopping-website-in-Asp-Net-open-source-project/Images/registrationpage.gif" border="0" alt="registration page" width="450" height="253"><br>
 <br>
 Registration page:<br>
 <br>
-<img src="-contactuspage.gif" border="0" alt="contact us page" width="450" height="253"><br>
+<img src="http://www.c-sharpcorner.com/UploadFile/90e1f4/online-shopping-website-in-Asp-Net-open-source-project/Images/contactuspage.gif" border="0" alt="contact us page" width="450" height="253"><br>
 <br>
 Contact us page:</span></p>
 <p>&nbsp;</p>

@@ -30,9 +30,9 @@
 <ol style="padding-left:20px">
 <li><a href="http://www.bing.com/developers/appids.aspx" target="_blank">Bing デベロッパー センター</a>に Windows Live ID アカウントでサイン インします。
 </li><li>Web ページの左側にあるリンク、「Create an AppID 」をクリックします。
-<p style="margin-left:0; margin-right:0"><img src="17316-image001.gif" alt="図 1" width="580" height="139"></p>
+<p style="margin-left:0; margin-right:0"><img src="http://i3.beta.code.msdn.microsoft.com/translator-howto-76e3f148/image/file/17316/0/image001.gif" alt="図 1" width="580" height="139"></p>
 </li><li>必要事項を記入および利用規約に同意のうえ、「Agree」をクリックします。 </li><li>作成されたアプリケーション ID (AppID) をコピーします。
-<p style="margin-left:0; margin-right:0"><img src="17317-image002.gif" alt="図 2" width="580" height="211"></p>
+<p style="margin-left:0; margin-right:0"><img src="http://i3.beta.code.msdn.microsoft.com/translator-howto-76e3f148/image/file/17317/0/image002.gif" alt="図 2" width="580" height="211"></p>
 </li></ol>
 <p>アプリケーション ID はコード中の ※部分の文字列に設定します。</p>
 <p style="margin-top:25px">正しくアプリケーション ID を設定したコードの実行結果は、以下のように表示されます。</p>
@@ -48,7 +48,7 @@
 <table>
 <tbody>
 <tr>
-<td><a href="http://msdn.microsoft.com/ja-jp/samplecode.recipe"><img title="Code Recipe" src="-ff950935.coderecipe_180x70%28ja-jp,msdn.10%29.jpg" border="0" alt="Code Recipe" width="180" height="70" style="margin-top:3px"></a></td>
+<td><a href="http://msdn.microsoft.com/ja-jp/samplecode.recipe"><img title="Code Recipe" src="http://i.msdn.microsoft.com/ff950935.coderecipe_180x70%28ja-jp,MSDN.10%29.jpg" border="0" alt="Code Recipe" width="180" height="70" style="margin-top:3px"></a></td>
 <td>
 <ul>
 <li>もっと他のコンテンツを見る &gt;&gt; <a href="http://msdn.microsoft.com/ja-jp/ff363212" target="_blank">
@@ -59,4 +59,4 @@ Code Recipe へ</a> </li></ul>
 </tr>
 </tbody>
 </table>
-<p style="margin-top:20px"><a href="#top"><img src="-top.gif" border="0" alt="">ページのトップへ</a></p>
+<p style="margin-top:20px"><a href="#top"><img src="http://www.microsoft.com/japan/msdn/nodehomes/graphics/top.gif" border="0" alt="">ページのトップへ</a></p>

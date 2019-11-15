@@ -17,7 +17,7 @@
 <p><span style="color:#ff6600"><strong><span style="font-family:verdana,sans-serif; font-size:small">You can also read this article from my original blog from
 <a title="RadioButton" href="http://bsubramanyamraju.blogspot.in/2018/03/how-to-create-radiobutton-in_13.html" target="_blank">
 here</a>.</span></strong></span></p>
-<p><span style="font-size:small"><a href="https://2.bp.blogspot.com/-6d1S4kJ_RwU/WqfIKFX3sII/AAAAAAAADiM/ws4_PQWUAFcXd1fPLMEdLPfpcVaLJUZTgCLcBGAs/s1600/RadioButton.png"><img src=":-radiobutton.png" border="0" alt="" width="317" height="320"></a></span></p>
+<p><span style="font-size:small"><a href="https://2.bp.blogspot.com/-6d1S4kJ_RwU/WqfIKFX3sII/AAAAAAAADiM/ws4_PQWUAFcXd1fPLMEdLPfpcVaLJUZTgCLcBGAs/s1600/RadioButton.png"><img src="https://2.bp.blogspot.com/-6d1S4kJ_RwU/WqfIKFX3sII/AAAAAAAADiM/ws4_PQWUAFcXd1fPLMEdLPfpcVaLJUZTgCLcBGAs/s320/RadioButton.png" border="0" alt="" width="317" height="320"></a></span></p>
 <div></div>
 <p><span style="font-size:small"><strong>Requirements:</strong></span></p>
 <ul>
@@ -46,13 +46,13 @@ here</a>.</span></strong></span></p>
 </li><li><span style="font-family:verdana,sans-serif; font-size:small">On the File menu, select New Solution.</span>
 </li><li><span style="font-family:verdana,sans-serif; font-size:small">The New Project dialog appears. The left pane of the dialog lets you select the type of templates to display. In the left pane, expand&nbsp;<strong>Multiplatform&nbsp;</strong>&gt;&nbsp;<strong>App&nbsp;</strong>&gt;&nbsp;<strong>Xamarin.Forms</strong>&nbsp;&gt;&nbsp;<strong>Forms
  App&nbsp;</strong>and click on&nbsp;<strong>Next</strong>. <a href="https://1.bp.blogspot.com/-G5KjrAxLlBY/WqNvoiY_mKI/AAAAAAAADdI/doBPbrs-LCoemZyvQDe6JYqag3ihJZGjQCLcBGAs/s1600/1.NewProject.png">
-<img src=":-1.newproject.png" border="0" alt="" width="640" height="464"></a>
+<img src="https://1.bp.blogspot.com/-G5KjrAxLlBY/WqNvoiY_mKI/AAAAAAAADdI/doBPbrs-LCoemZyvQDe6JYqag3ihJZGjQCLcBGAs/s640/1.NewProject.png" border="0" alt="" width="640" height="464"></a>
 </span></li><li><span style="font-size:small"><span style="font-family:verdana,sans-serif">Enter your App Name (Ex:&nbsp;RadioButtonSample). Select&nbsp;<strong>Target Platforms&nbsp;</strong>to Android &amp; iOS and click on&nbsp;<strong>Next</strong><span style="font-family:verdana,sans-serif">&nbsp;button.</span></span>
-<span style="font-family:verdana,sans-serif"><span style="font-family:verdana,sans-serif"><a href="https://3.bp.blogspot.com/--jOoJxEhLVY/WqfIzOJLAEI/AAAAAAAADiU/cxpixu17WvMpJMO_0bj8ctnjS1gatTUaQCLcBGAs/s1600/Screen%2BShot%2B2018-03-13%2Bat%2B6.18.03%2BPM.png"><img src=":-screen%2bshot%2b2018-03-13%2bat%2b6.18.03%2bpm.png" border="0" alt="" width="640" height="462"></a></span></span>
+<span style="font-family:verdana,sans-serif"><span style="font-family:verdana,sans-serif"><a href="https://3.bp.blogspot.com/--jOoJxEhLVY/WqfIzOJLAEI/AAAAAAAADiU/cxpixu17WvMpJMO_0bj8ctnjS1gatTUaQCLcBGAs/s1600/Screen%2BShot%2B2018-03-13%2Bat%2B6.18.03%2BPM.png"><img src="https://3.bp.blogspot.com/--jOoJxEhLVY/WqfIzOJLAEI/AAAAAAAADiU/cxpixu17WvMpJMO_0bj8ctnjS1gatTUaQCLcBGAs/s640/Screen%2BShot%2B2018-03-13%2Bat%2B6.18.03%2BPM.png" border="0" alt="" width="640" height="462"></a></span></span>
 </span><br>
 &nbsp; <br>
 </li><li><span style="font-size:small"><span style="font-family:verdana,sans-serif">You can choose your project location like below and&nbsp;<strong>Create</strong>&nbsp;new project.</span>
-<span style="font-family:verdana,sans-serif"><a href="https://3.bp.blogspot.com/-hVLiwf1bWZc/WqfI0OQP5TI/AAAAAAAADiY/G9JTMhjhv24vVSkboRBP-EknlXGmqvXQgCEwYBhgL/s1600/Screen%2BShot%2B2018-03-13%2Bat%2B6.18.29%2BPM.png"><img src=":-screen%2bshot%2b2018-03-13%2bat%2b6.18.29%2bpm.png" border="0" alt="" width="640" height="464"></a></span>
+<span style="font-family:verdana,sans-serif"><a href="https://3.bp.blogspot.com/-hVLiwf1bWZc/WqfI0OQP5TI/AAAAAAAADiY/G9JTMhjhv24vVSkboRBP-EknlXGmqvXQgCEwYBhgL/s1600/Screen%2BShot%2B2018-03-13%2Bat%2B6.18.29%2BPM.png"><img src="https://3.bp.blogspot.com/-hVLiwf1bWZc/WqfI0OQP5TI/AAAAAAAADiY/G9JTMhjhv24vVSkboRBP-EknlXGmqvXQgCEwYBhgL/s640/Screen%2BShot%2B2018-03-13%2Bat%2B6.18.29%2BPM.png" border="0" alt="" width="640" height="464"></a></span>
 </span><br>
 &nbsp; <br>
 &nbsp; </li></ul>
@@ -73,7 +73,7 @@ here</a>.</span></strong></span></p>
 </span></div>
 <div><span style="font-size:small"><span style="font-family:verdana,sans-serif">We are following default MVVM design pattern. And here we will place custom controls in Controls folder. So right click on your project name RadioButton Sample =&gt; Add =&gt; New
  Folder name is &quot;Controls&quot;. After that right click on your newly created the folder =&gt; Add =&gt; New File =&gt; Forms =&gt; Forms ContentView Xaml and name it RadioButton.</span>
-<span style="font-family:verdana,sans-serif"><a href="https://4.bp.blogspot.com/-JILNwl3nYrk/WqfKLQYGL1I/AAAAAAAADi0/qzhWJsZs71EOmDlXuAtf7PsOD6rDs8BVwCLcBGAs/s1600/Screen%2BShot%2B2018-03-13%2Bat%2B6.24.45%2BPM.png"><img src=":-screen%2bshot%2b2018-03-13%2bat%2b6.24.45%2bpm.png" border="0" alt="" width="640" height="486"></a></span><strong>Step
+<span style="font-family:verdana,sans-serif"><a href="https://4.bp.blogspot.com/-JILNwl3nYrk/WqfKLQYGL1I/AAAAAAAADi0/qzhWJsZs71EOmDlXuAtf7PsOD6rDs8BVwCLcBGAs/s1600/Screen%2BShot%2B2018-03-13%2Bat%2B6.24.45%2BPM.png"><img src="https://4.bp.blogspot.com/-JILNwl3nYrk/WqfKLQYGL1I/AAAAAAAADi0/qzhWJsZs71EOmDlXuAtf7PsOD6rDs8BVwCLcBGAs/s640/Screen%2BShot%2B2018-03-13%2Bat%2B6.24.45%2BPM.png" border="0" alt="" width="640" height="486"></a></span><strong>Step
  2: Add UI to&nbsp;</strong><span style="font-family:verdana,sans-serif">RadioButton</span>
 <span style="font-family:verdana,sans-serif">&nbsp;</span> </span></div>
 <div><span style="font-family:verdana,sans-serif; font-size:small">In general, RadioButton&nbsp;control required major four elements.
@@ -340,7 +340,7 @@ here</a>.</span></strong></span></p>
 <span style="font-family:verdana,sans-serif"><span style="font-family:verdana,sans-serif">&nbsp;</span></span>
 <span style="font-family:verdana,sans-serif">To create page, right click on Views folder =&gt; Add =&gt;New File =&gt; Forms =&gt; Forms ContentPage Xaml and name it HomePage like below.</span>
 <span style="font-family:verdana,sans-serif"><span style="font-family:verdana,sans-serif">&nbsp;</span></span>
-<span style="font-family:verdana,sans-serif"><span style="font-family:verdana,sans-serif"><a href="https://4.bp.blogspot.com/-W7g7bcypS9Y/WqODBnCUfPI/AAAAAAAADd4/1-bCiiBFxq4nARkDMwReTKFmQ1ry2k-iwCLcBGAs/s1600/4.AddContentPage.png"><img src=":-4.addcontentpage.png" border="0" alt="" width="640" height="488"></a></span></span>
+<span style="font-family:verdana,sans-serif"><span style="font-family:verdana,sans-serif"><a href="https://4.bp.blogspot.com/-W7g7bcypS9Y/WqODBnCUfPI/AAAAAAAADd4/1-bCiiBFxq4nARkDMwReTKFmQ1ry2k-iwCLcBGAs/s1600/4.AddContentPage.png"><img src="https://4.bp.blogspot.com/-W7g7bcypS9Y/WqODBnCUfPI/AAAAAAAADd4/1-bCiiBFxq4nARkDMwReTKFmQ1ry2k-iwCLcBGAs/s640/4.AddContentPage.png" border="0" alt="" width="640" height="488"></a></span></span>
 </span><span style="font-family:verdana,sans-serif"><span style="font-size:small"><span style="font-family:verdana,sans-serif">To use RadioButton&nbsp;in our xaml page. First we need declare namespace of RadioButton.
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">
@@ -443,7 +443,7 @@ For example, if you want to use RadioButton&nbsp;from code behind.
 </div>
 <div class="endscriptcode">&nbsp;In above code, we bind the RadioButton&nbsp;with Country class object properties (Name, IsSelected, IsVisibile). So let's create Country Class in Model folder. To create class, right click on Models folder =&gt; Add =&gt;New
  File =&gt; General =&gt; Empty Class and name it Country like below. <a href="https://3.bp.blogspot.com/-NVw_aRkLeHg/WqOGzbHL_TI/AAAAAAAADeE/fbKhuRn9W4kN8i9uUEIjLwHPuxupoqdjgCLcBGAs/s1600/Country.png">
-<img src=":-country.png" border="0" alt="" width="640" height="490"></a> Now open Country class and add below properties.
+<img src="https://3.bp.blogspot.com/-NVw_aRkLeHg/WqOGzbHL_TI/AAAAAAAADeE/fbKhuRn9W4kN8i9uUEIjLwHPuxupoqdjgCLcBGAs/s640/Country.png" border="0" alt="" width="640" height="490"></a> Now open Country class and add below properties.
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">
 <div class="title"><span>C#</span></div>

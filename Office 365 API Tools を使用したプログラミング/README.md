@@ -33,23 +33,23 @@ Office 365</a> のページからお申込みいただけます) </li><li>上記
 <p>Office 365 API Tools では、Windows ストア アプリ、Windows ストア ユニバーサル アプリ、Windows フォーム、Windows Presentation Foundation (以降、WPF と記載)、ASP.NET (ASP.NET Web フォーム、ASP.NET MVC の双方)、Xamarin、Windows Phone アプリ (および、Cordova によるハイブリッド アプリ用のツールも提供されています) での利用が可能ですが、今回は WPF を使用してデスクトップ
  アプリケーションで処理をおこないます。</p>
 <p>まず、Visual Studio を開いて [WPF アプリケーション] を新規作成します。</p>
-<p><img id="127479" src="127479-create_project.jpg" alt="" width="605" height="341"></p>
+<p><img id="127479" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127479/1/create_project.jpg" alt="" width="605" height="341"></p>
 <p>Office 365 API を使用するアプリケーションでは、事前に Microsoft Azure Active Directory にアプリケーション登録をおこないますが、Office 365 API Tools を使用すると作成したプロジェクトからこのアプリケーションの作成と管理 (変更) をおこなうことができます。</p>
 <p>上記で作成されたプロジェクトを右クリックして、[追加] - [接続済みサービス] を選択します。</p>
-<p><img id="127480" src="127480-connected_services.jpg" alt="" width="522" height="447"></p>
+<p><img id="127480" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127480/1/connected_services.jpg" alt="" width="522" height="447"></p>
 <p>表示される画面で、[Register your app] をクリックすると Azure Active Directory へのログイン画面 (ブラウザー) が表示されるので、Office 365 の管理者アカウントとパスワードを入力してログインをおこないます。</p>
 <p>今回は Exchange Online からメールの読み込みをおこなう簡単なアプリケーションを作成するため、ログイン後、[Mail] を選択して、[Permissions] をクリックします。(下図)</p>
-<p><img id="127481" src="127481-start_permission.jpg" alt="" width="557" height="279"></p>
+<p><img id="127481" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127481/1/start_permission.jpg" alt="" width="557" height="279"></p>
 <p>表示される画面で、[Read user's mail] を選択して [Apply] ボタンを押し、[OK] ボタンを押してダイアログを閉じます。</p>
-<p><img id="127482" src="127482-set_permission.jpg" alt="" width="309" height="169"></p>
+<p><img id="127482" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127482/1/set_permission.jpg" alt="" width="309" height="169"></p>
 <p>上記の設定により、Azure Active Directory にこのアプリケーションが登録され、アプリケーションの必要な設定情報 (Client ID など) が、プロジェクトの App.config に記述されます。(この登録されたアプリケーションのエントリを削除するには、Microsoft Azure 管理ポータルへのログインが必要です。)</p>
 <p>&nbsp;</p>
 <p><span style="text-decoration:underline">ライブラリを使用したプログラミング</span></p>
 <p>では、プログラミングをおこなってみましょう。今回、ボタンとリストを配置し、ボタンを押すと Office 365 にログインをおこなって、Exchange Online からメールの一覧を取得してリストに表示します。</p>
 <p>まず、MainWindow.xaml を表示して、ここに、下図の通り、ListBox と Button を配置します。(それぞれ、Name を「ListBox1」、「Button1」とします。)</p>
-<p><img id="127483" src="127483-wpf_design.jpg" alt="" width="497" height="311"></p>
+<p><img id="127483" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127483/1/wpf_design.jpg" alt="" width="497" height="311"></p>
 <p>プロジェクトを右クリックして [NuGet パッケージの管理] メニューを選択し、Microsoft Office 365 Authentication Library (Microsoft.Office365.OAuth) を選択してプロジェクトにインストールします。</p>
-<p><img id="130763" src="130763-add_oauth_library.png" alt="" width="767" height="222"></p>
+<p><img id="130763" src="https://i1.code.msdn.s-msft.com/windowsapps/office-365-api-tools-0f1d042c/image/file/130763/1/add_oauth_library.png" alt="" width="767" height="222"></p>
 <p>上図のボタンをダブルクリックして、下記の通り、ボタンクリックのイベント処理を実装します。(Client ID, Redirect Uri は App.config に記述されています。<a class="libraryLink" href="https://msdn.microsoft.com/ja-JP/library/System.Configuration.aspx" target="_blank" title="Auto generated link to System.Configuration">System.Configuration</a> を参照追加して、コードでこれらの値を参照しても構いません。)</p>
 <p>&nbsp;</p>
 <div class="scriptcode">
@@ -91,11 +91,11 @@ Office 365</a> のページからお申込みいただけます) </li><li>上記
 <p><span style="text-decoration:underline">動作確認</span></p>
 <p>F5 ボタンを押してデバッグ実行をおこなってみましょう。</p>
 <p>画面のボタンをクリックすると、下図のログイン画面の表示と、内部で Access Token, Refresh Token の取得がおこなわれます。</p>
-<p><img id="127484" src="127484-show_login.jpg" alt="" width="538" height="393"></p>
+<p><img id="127484" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127484/1/show_login.jpg" alt="" width="538" height="393"></p>
 <p>ログインをおこなうと、下図のような、このアプリへの権限付与を確認するコンセント UI が表示されます。</p>
-<p><img id="127486" src="127486-show_consent.jpg" alt="" width="463" height="361"></p>
+<p><img id="127486" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127486/1/show_consent.jpg" alt="" width="463" height="361"></p>
 <p>上図で [OK] を押すと、下図の通り、Inbox のメールの一覧のタイトル (Subject) が表示されます。</p>
-<p><img id="127487" src="127487-execute_result.jpg" alt="" width="413" height="276"></p>
+<p><img id="127487" src="https://i1.code.msdn.s-msft.com/office-365-api-tools-0f1d042c/image/file/127487/1/execute_result.jpg" alt="" width="413" height="276"></p>
 <p>&nbsp;</p>
 <p><span style="text-decoration:underline">Access Token と Refresh Token</span></p>
 <p>アプリケーションが Exchange のサービスに接続する際、内部で Access Token と呼ばれる文字列が使用されています。この Access Token を使用して、アプリケーションは、その他の処理も継続して実行できます。<br>

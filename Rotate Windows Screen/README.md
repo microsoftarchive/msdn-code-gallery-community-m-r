@@ -162,7 +162,7 @@
 </div>
 </div>
 </div>
-<div class="endscriptcode"><img id="178641" src="178641-right%20rotated.png" alt=""></div>
+<div class="endscriptcode"><img id="178641" src="https://i1.code.msdn.s-msft.com/rotate-windows-screen-d76d85c7/image/file/178641/1/right%20rotated.png" alt=""></div>
 <div class="endscriptcode"><strong><span style="font-size:small">Potrait View when rotated right</span></strong></div>
 <div class="endscriptcode">if you have any suggestions or queries you can ask me at Q &amp; A area. or email me</div>
 <div class="endscriptcode">at</div>

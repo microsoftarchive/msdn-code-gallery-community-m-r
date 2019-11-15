@@ -32,7 +32,7 @@ Office 365</a> のページからお申込みいただけます)</em> </li><li><
 <p>Excel を起動してオプション画面を表示し、リボンの [開発] タブを表示するように設定してください。(下図は Excel 2013 の場合の設定画面です。)</p>
 <p><img id="127470" src="127470-show_devtab.jpg" alt="" width="628" height="396"></p>
 <p>[開発] タブを選択して、シート上にボタンを配置します。この際、マクロの登録画面が表示されるので、[新規作成] ボタンを押して、ボタン クリック時の処理を以下の通り記述します。</p>
-<p><img id="127472" src="127472-create_macro.jpg" alt="" width="372" height="358"></p>
+<p><img id="127472" src="https://i1.code.msdn.s-msft.com/office-365-api-excel-vba-cffdbb44/image/file/127472/1/create_macro.jpg" alt="" width="372" height="358"></p>
 <p>下記の [redirect url]、[client id] には、上記で取得した内容を設定してください。</p>
 <p>&nbsp;</p>
 <div class="scriptcode">
@@ -121,9 +121,9 @@ refresh token は、次回 ブック利用時に使用することで、2 回目
 </div>
 <div class="endscriptcode"><span style="text-decoration:underline">動作確認</span></div>
 <p>Excel に張り付けたボタンをクリックすると、下図の通り、ブラウザーが起動してログイン画面が表示されます。</p>
-<p><img id="127474" src="127474-show_login.jpg" alt="" width="555" height="387"></p>
+<p><img id="127474" src="https://i1.code.msdn.s-msft.com/office-365-api-excel-vba-cffdbb44/image/file/127474/1/show_login.jpg" alt="" width="555" height="387"></p>
 <p>上図で Office 365 のアカウントとパスワードを入力すると、下図の通り、Inbox のメールの一覧の Json 文字列がセルに記述されます。実際の開発では、この文字列のパースをおこなって Subject の一覧を表示するなど、処理を記述してください。</p>
-<p><img id="127475" src="127475-execute_result.jpg" alt="" width="462" height="322"></p>
+<p><img id="127475" src="https://i1.code.msdn.s-msft.com/office-365-api-excel-vba-cffdbb44/image/file/127475/1/execute_result.jpg" alt="" width="462" height="322"></p>
 <p>なお、はじめてログインするユーザーの場合はアプリへの権限を付与するためのコンセント UI が表示されます。</p>
 <p>&nbsp;</p>
 <h1>More Information</h1>

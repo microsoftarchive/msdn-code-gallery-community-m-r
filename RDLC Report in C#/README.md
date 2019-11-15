@@ -27,35 +27,35 @@
 The RDLC Report in in Windows Forms (WinForms) application will be populated using Typed DataSet. &nbsp; &nbsp;&nbsp;</p>
 <h2>Create C# Project</h2>
 <p>Here you can take your C# project.</p>
-<h2><img id="137142" src="137142-slnrdlc.png" alt="" width="947" height="543"></h2>
+<h2><img id="137142" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137142/1/slnrdlc.png" alt="" width="947" height="543"></h2>
 <p>&nbsp;</p>
 <h2>Create DataSet in Your Project</h2>
 <p>Create Dataset to populate RDLC reports in to your project.</p>
-<p><img id="137143" src="137143-dataset1.png" alt="" width="984" height="533"></p>
+<p><img id="137143" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137143/1/dataset1.png" alt="" width="984" height="533"></p>
 <p>&nbsp;</p>
 <h2>ADD RDLC Report in Project</h2>
 <p>Now you can add RDLC report into your project.</p>
-<p><img id="137144" src="137144-rdlc_report.png" alt="" width="808" height="460"></p>
+<p><img id="137144" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137144/1/rdlc_report.png" alt="" width="808" height="460"></p>
 <p>&nbsp;</p>
 <h2>Add Binding Source to your Project</h2>
 <p>Now add binding source to your project so that can fill database to populate RDLC report.</p>
-<p><img id="137145" src="137145-bindingsource.png" alt="" width="415" height="368"></p>
+<p><img id="137145" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137145/1/bindingsource.png" alt="" width="415" height="368"></p>
 <p>&nbsp;</p>
 <p>Insert Table in your RDLC report</p>
 <p>Here you can drag required information to display Header and Footer in report.</p>
-<p><img id="137146" src="137146-rdlc_insert_header_footer.png" alt="" width="654" height="467"></p>
+<p><img id="137146" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137146/1/rdlc_insert_header_footer.png" alt="" width="654" height="467"></p>
 <h2>Choose Dataset</h2>
 <p>Here you can choose dataset to populate report in C#</p>
-<p><img id="137147" src="137147-choose_dataset.png" alt="" width="888" height="544"></p>
+<p><img id="137147" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137147/1/choose_dataset.png" alt="" width="888" height="544"></p>
 <p>&nbsp;</p>
 <h2>Add Report Viewer to display RDLC report</h2>
 <p>Here we are adding ReportViewer to display report.</p>
-<p><img id="137148" src="137148-report_viewer.png" alt="" width="329" height="445"></p>
+<p><img id="137148" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137148/1/report_viewer.png" alt="" width="329" height="445"></p>
 <h2>Provide Datasource and Path to RDLC Report</h2>
 <p>Here we can provide datasource and path of the RDLC report.</p>
-<p><img id="137149" src="137149-choose_report1.png" alt="" width="822" height="379"></p>
+<p><img id="137149" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137149/1/choose_report1.png" alt="" width="822" height="379"></p>
 <h2>Final View of RDLC report</h2>
-<p><img id="137150" src="137150-city_details.png" alt="" width="741" height="374"></p>
+<p><img id="137150" src="https://i1.code.msdn.s-msft.com/rdlc-report-in-c-b106fc20/image/file/137150/1/city_details.png" alt="" width="741" height="374"></p>
 <p>&nbsp;</p>
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">

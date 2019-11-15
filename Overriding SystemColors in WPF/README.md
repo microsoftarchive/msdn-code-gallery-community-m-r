@@ -63,4 +63,4 @@
 <li>MainWindow.xaml.cs - all the controls and resource overrides </li><li>App.xaml - All the control templates </li></ul>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><img src="-anithanks1.gif" alt="" style="margin-right:auto; margin-left:auto; display:block"></p>
+<p><img src="http://213.163.64.28/aniThanks1.gif" alt="" style="margin-right:auto; margin-left:auto; display:block"></p>

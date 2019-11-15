@@ -24,7 +24,7 @@
  and all of them are using Windows Azure Active Directory to support Single-Sign-On between all the applications in the suite.The companies can also federate the directory service with their on-premises directories (corporate Active Directory) to support SSO
  using the on-premises corporate AD credentials.A few of the web apps can also be integrated as apps for SharePoint within Office 365.<br>
 In summary, different technologies are used depending on the business application scenarios: Web Apps, Windows Store, Windows Phone, WPF desktop, etc.</em></p>
-<p><em><img id="101457" src="101457-vacation_logo.png" alt="" width="322" height="107"><br>
+<p><em><img id="101457" src="http://i1.code.msdn.s-msft.com/mycompany-vacation-demo-019145f6/image/file/101457/1/vacation_logo.png" alt="" width="322" height="107"><br>
 </em></p>
 <p><em>This concrete business application is called&nbsp;<strong>VACATION&nbsp;</strong>and it is described below.</em></p>
 <h1>Building the Sample</h1>
@@ -43,7 +43,7 @@ In summary, different technologies are used depending on the business applicatio
 <div></div>
 <div>
 <p><em><span style="font-size:medium"><strong>Vacation Web App (SPA - Single Page Application):</strong></span></em></p>
-<p><img id="101458" src="101458-vacation_web_app.png" alt="" width="851" height="481"></p>
+<p><img id="101458" src="http://i1.code.msdn.s-msft.com/mycompany-vacation-demo-019145f6/image/file/101458/1/vacation_web_app.png" alt="" width="851" height="481"></p>
 <h1><strong>Simplified Architecture Diagram</strong><em><span style="font-size:medium"><strong><br>
 </strong></span></em></h1>
 </div>

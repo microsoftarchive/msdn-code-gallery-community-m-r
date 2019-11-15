@@ -28,7 +28,7 @@
 <h1>Introduction</h1>
 <p><span style="font-size:small">Shows how to reveal values of parameters from a command object, which implements IDbCommand interface such as OleDb and SqlClient classes. For developers using parameterized SQL commands already and understand language extension
  methods you can place the project PeekerForCommands into your solution and use it immediately.</span></p>
-<p><span style="font-size:small"><img id="74966" src="74966-figure1.jpg" alt="" width="593" height="634"></span></p>
+<p><span style="font-size:small"><img id="74966" src="http://i1.code.msdn.s-msft.com/reveal-parameter-values-28725e53/image/file/74966/1/figure1.jpg" alt="" width="593" height="634"></span></p>
 <h1><span>Building the Sample</span></h1>
 <p><span style="font-size:small">As delivered you should be able to unzip the solution, compile, and run Demo and Demo2 projects within the solution. All other projects are support Class library projects which are used by Demo and Demo2. If you have any issues
  please let me know. The solution was created with VS2010, Client Framework 4 with Option Strict On, Option Infer On for all projects.</span></p>

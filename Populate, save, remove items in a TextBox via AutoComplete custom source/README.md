@@ -237,7 +237,7 @@ End&nbsp;Module&nbsp;
 <div>&nbsp;</div>
 <div><img id="94976" src="94976-form.jpg" alt="" width="367" height="457"></div>
 <div><span style="font-size:small">&nbsp;Showing removal of an item</span></div>
-<div><span style="font-size:small"><img id="94978" src="94978-form2.jpg" alt="" width="367" height="457"></span></div>
+<div><span style="font-size:small"><img id="94978" src="http://i1.code.msdn.s-msft.com/populate-save-remove-items-be87b5c7/image/file/94978/1/form2.jpg" alt="" width="367" height="457"></span></div>
 <div><span style="font-size:small">&nbsp;C# Code for loading data&nbsp;
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">
@@ -360,6 +360,6 @@ namespace&nbsp;AutoComplete_C_Version&nbsp;
 </div>
 </div>
 </div>
-<div class="endscriptcode">&nbsp;<img id="108714" src="108714-c1.png" alt="" width="600" height="320"></div>
+<div class="endscriptcode">&nbsp;<img id="108714" src="http://i1.code.msdn.s-msft.com/populate-save-remove-items-be87b5c7/image/file/108714/1/c1.png" alt="" width="600" height="320"></div>
 &nbsp;</div>
 <div>&nbsp;</div>

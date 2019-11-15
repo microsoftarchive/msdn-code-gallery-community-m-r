@@ -17,13 +17,13 @@
 - 06/09/2015
 ## Description
 
-<p><img id="138733" src="138733-quadraticequation.jpg" alt="" width="618" height="328"></p>
+<p><img id="138733" src="https://i1.code.msdn.s-msft.com/quadratic-equation-bdbf2389/image/file/138733/1/quadraticequation.jpg" alt="" width="618" height="328"></p>
 <p>&nbsp;</p>
 <h1>Introduction and <span style="font-size:20px; font-weight:bold">Description</span></h1>
 <p>&quot;In <a title="Elementary algebra" href="http://en.wikipedia.org/wiki/Elementary_algebra">
 elementary algebra</a>, a <strong>quadratic equation</strong> (from the <a title="Latin" href="http://en.wikipedia.org/wiki/Latin">
 Latin</a> <em>quadratus</em> for &quot;<a title="Square (algebra)" href="http://en.wikipedia.org/wiki/Square_%28algebra%29">square</a>&quot;) is any equation having the form</p>
-<dl><dd><img class="mwe-math-fallback-png-inline x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_tex" src="-0c4913db725b72609d4825124dda12aa.png" alt="ax^2&#43;bx&#43;c=0"></dd></dl>
+<dl><dd><img class="mwe-math-fallback-png-inline x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_tex" src="http://upload.wikimedia.org/math/0/c/4/0c4913db725b72609d4825124dda12aa.png" alt="ax^2&#43;bx&#43;c=0"></dd></dl>
 <p>where <span class="texhtml"><em>x</em></span> represents an unknown, and <span class="texhtml">
 <em>a</em></span>, <span class="texhtml"><em>b</em></span>, and <span class="texhtml">
 <em>c</em></span> represent <a title="Number" href="http://en.wikipedia.org/wiki/Number">
@@ -55,10 +55,10 @@ derive a general formula</a> for solving quadratic equations, called the quadrat
 mathematical proof</a> will now be briefly summarized.<sup id="cite_ref-6" class="reference"><a href="http://en.wikipedia.org/wiki/Quadratic_equation#cite_note-6"><span style="font-size:x-small">[</span><span style="font-size:x-small">6</span><span style="font-size:x-small">]</span></a></sup>
  It can easily be seen, by <a title="Polynomial expansion" href="http://en.wikipedia.org/wiki/Polynomial_expansion">
 polynomial expansion</a>, that the following equation is equivalent to the quadratic equation:</p>
-<dl><dd><img class="mwe-math-fallback-png-inline x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_tex" src="-6ee0ac4d5fad8cdfa2ddd45a843e7541.png" alt="\left(x&#43;\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}."></dd></dl>
+<dl><dd><img class="mwe-math-fallback-png-inline x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_tex" src="http://upload.wikimedia.org/math/6/e/e/6ee0ac4d5fad8cdfa2ddd45a843e7541.png" alt="\left(x&#43;\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}."></dd></dl>
 <p>Taking the <a title="Square root" href="http://en.wikipedia.org/wiki/Square_root">
 square root</a> of both sides, and isolating <span class="texhtml"><em>x</em></span>, gives:</p>
-<dl><dd><img class="mwe-math-fallback-png-inline x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_tex" src="-bba46479d07af61b6e596219ce4e2cd5.png" alt="x=\frac{-b\pm\sqrt{b^2-4ac\ }}{2a}."></dd></dl>
+<dl><dd><img class="mwe-math-fallback-png-inline x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_tex" src="http://upload.wikimedia.org/math/b/b/a/bba46479d07af61b6e596219ce4e2cd5.png" alt="x=\frac{-b\pm\sqrt{b^2-4ac\ }}{2a}."></dd></dl>
 <p>Some sources, particularly older ones, use alternative parameterizations of the quadratic equation such as
 <span class="texhtml"><em>ax</em><sup><span style="font-size:x-small">2</span></sup> &minus; 2<em>bx</em> &#43;
 <em>c</em> = 0</span>&nbsp;,<sup id="cite_ref-kahan_7-0" class="reference"><a href="http://en.wikipedia.org/wiki/Quadratic_equation#cite_note-kahan-7"><span style="font-size:x-small">[</span><span style="font-size:x-small">7</span><span style="font-size:x-small">]</span></a></sup>

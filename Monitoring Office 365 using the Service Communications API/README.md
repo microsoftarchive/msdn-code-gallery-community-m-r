@@ -43,7 +43,7 @@ here</a>. Below is the main body of code that creates&nbsp;a connection to the A
 <a href="https://support.office.com/en-US/client/results?Shownav=true&lcid=1033&ns=O365ENTADMIN&version=15&omkt=en-US&ver=15&services=INTUNE_O365%2cEXCHANGE_S_STANDARD&HelpID=O365E_AssignAdminRoles" target="_blank">
 here</a>.</p>
 <p style="text-align:center">Example: UserName=&quot;serviceHealthPoll@contoso.com&quot;</p>
-<p style="text-align:center"><img id="171919" src="171919-service_administrator_user_role.png" alt="" width="147" height="150"></p>
+<p style="text-align:center"><img id="171919" src="https://i1.code.msdn.s-msft.com/office-365-using-the-62314fde/image/file/171919/1/service_administrator_user_role.png" alt="" width="147" height="150"></p>
 <p><br>
 <span style="text-decoration:underline"><strong>Password </strong></span>- This is the password associated with the polling related user defined above</p>
 <p><strong><span style="color:#ff0000">NOTE: This sample code uses a user name and password stored in plain text. It is recommended that you either extend this sample with your own mechanism to protect these credentials or take measures to protect this file

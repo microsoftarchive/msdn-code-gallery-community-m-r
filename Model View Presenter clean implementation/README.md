@@ -36,7 +36,7 @@
 <p><strong>View</strong>: A view is any form or window that represents UI&nbsp;of the application.</p>
 <p><strong>Presenter</strong>: The presenter is an entity that presents the data to the view that is to be shown to the user.</p>
 <p><strong>Model</strong>: The model is the actual data that the Presenter will request and gets displayed in the View. The Model is responsible for obtaining the data.</p>
-<p><img id="59984" src="59984-mvp.jpg" alt=""></p>
+<p><img id="59984" src="http://i1.code.msdn.s-msft.com/model-view-presenter-clean-d33ee8d1/image/file/59984/1/mvp.jpg" alt=""></p>
 <p>&nbsp;</p>
 <p>The attached sample code contains four projects:-</p>
 <p>1. Service</p>
@@ -51,5 +51,5 @@
 <p>The business or domain object will have lot more attributes along with behavior while EModel class Person is just a container object and a DTO on service tier would populate it To and From business object.</p>
 <p>&nbsp;</p>
 <p>Presenter listens to View. It provides initial data required by the view. When view raises a request it is handled by presenter which talks to the service and provides the requested data.</p>
-<p><img id="60079" src="60079-classdiagram1.bmp" alt=""></p>
+<p><img id="60079" src="http://i1.code.msdn.s-msft.com/model-view-presenter-clean-d33ee8d1/image/file/60079/1/classdiagram1.bmp" alt=""></p>
 <p>I hope you find it as easy and understandable implementation.</p>

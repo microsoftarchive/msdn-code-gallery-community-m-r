@@ -31,7 +31,7 @@
 </li></ul>
 <p>Source:&nbsp;<a href="https://msdn.microsoft.com/en-us/library/ms711472%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396">Message Queuing (MSMQ)</a></p>
 <p>With this tool, you can easily send messages to a queue in order to evaluate whether other applications are reading correctly the messages.&nbsp;</p>
-<h1><img id="145147" src="145147-microsoft-message-queuing-testing-tool-v2.png" alt="" width="623" height="417"></h1>
+<h1><img id="145147" src="https://i1.code.msdn.s-msft.com/message-queuing-testing-20782d44/image/file/145147/1/microsoft-message-queuing-testing-tool-v2.png" alt="" width="623" height="417"></h1>
 <ul>
 </ul>
 <h1>Description</h1>
@@ -52,4 +52,4 @@
 <p><strong>Sandro Pereira</strong><br>
 <a href="http://www.devscope.net/">DevScope</a>&nbsp;| MVP &amp; MCTS BizTalk Server 2010<br>
 <a href="http://sandroaspbiztalkblog.wordpress.com/">http://sandroaspbiztalkblog.wordpress.com/</a>&nbsp;|&nbsp;<a href="http://twitter.com/sandro_asp">@sandro_asp</a></p>
-<p><a href="http://www.devscope.net/"><img id="129835" src="129835-devscope-monochrome-black.png" alt="" width="166" height="51"></a></p>
+<p><a href="http://www.devscope.net/"><img id="129835" src="https://gallery.technet.microsoft.com/site/view/file/129835/1/devscope-monochrome-black.png" alt="" width="166" height="51"></a></p>

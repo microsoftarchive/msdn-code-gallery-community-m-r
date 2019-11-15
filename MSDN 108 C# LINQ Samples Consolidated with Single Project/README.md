@@ -74,7 +74,7 @@
 <p><span style="font-size:small">Refer MSND LINQ topics for each sample's detailed information.&nbsp;</span></p>
 <p>&nbsp;</p>
 <div class="endscriptcode"></div>
-<div class="endscriptcode"><span style="font-size:small">Thank you for reading my article. Drop all your questions/comments in QA tab give me your feedback with&nbsp;<img id="67168" src="67168-ratings.png" alt="" width="74" height="15">&nbsp;star
+<div class="endscriptcode"><span style="font-size:small">Thank you for reading my article. Drop all your questions/comments in QA tab give me your feedback with&nbsp;<img id="67168" src="http://i1.code.msdn.s-msft.com/oops-principles-solid-7a4e69bf/image/file/67168/1/ratings.png" alt="" width="74" height="15">&nbsp;star
  rating (1 Star - Very Poor, 5&nbsp;Star -&nbsp;Very Good).</span></div>
 <div class="endscriptcode"><span style="font-size:small">
 <div class="endscriptcode">&nbsp;</div>

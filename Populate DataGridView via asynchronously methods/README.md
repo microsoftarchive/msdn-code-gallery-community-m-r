@@ -64,7 +64,7 @@ Now the backend database is MS-Access yet what is presented can and will work wi
  methods as shown here).<br>
 <br>
 UPDATE: The original database had three tables and only needed one so two were removed while the one needed was reduced from 100,000,000 records to 100,000 records since the original was very large 126MB and is now just under 400MB.<br>
-<img id="120272" src="120272-s1.png" alt="" width="756" height="485"><br>
+<img id="120272" src="http://i1.code.msdn.s-msft.com/populate-datagridview-via-a3ede35a/image/file/120272/1/s1.png" alt="" width="756" height="485"><br>
 </span></p>
 <p><span style="font-size:small">&nbsp;</span></p>
 <p><img id="120216" src="120216-s1.png" alt="" width="354" height="239"></p>

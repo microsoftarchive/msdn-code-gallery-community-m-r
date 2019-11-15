@@ -39,17 +39,17 @@
 <p><span style="font-size:large">web interface - intro</span></p>
 <p><object width="350" height="300" data="data:application/x-silverlight-2," type="application/x-silverlight-2"> <param name="source" value="/Content/Common/videoplayer.xap" /> <param name="initParams" value="deferredLoad=false,duration=0,m=https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131677/1/njk.wmv,autostart=false,autohide=true,showembed=true"
  /> <param name="background" value="#00FFFFFF" /> <param name="minRuntimeVersion" value="3.0.40624.0" /> <param name="enableHtmlAccess" value="true" /> <param name="src" value="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131677/1/njk.wmv"
- /> <param name="id" value="131677" /> <param name="name" value="njk.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="-?linkid=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
+ /> <param name="id" value="131677" /> <param name="name" value="njk.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
  </object> </p>
 <p><span style="font-size:2em">Web interface</span></p>
 <p>In This website the customer can register and start to conduct purchases on the website,</p>
 <p>On the opening page he have to choose the store that he wanted to visit,</p>
 <p>there is a link to every store</p>
-<p><img id="131108" src="131108-store.png" alt="" width="572" height="357"></p>
+<p><img id="131108" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131108/1/store.png" alt="" width="572" height="357"></p>
 <p>&nbsp;</p>
 <p>but first the customer need to register/ login in order to start to make purchases.</p>
 <p>&nbsp;</p>
-<p><img id="131109" src="131109-register.png" alt="" width="570" height="386"></p>
+<p><img id="131109" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131109/1/register.png" alt="" width="570" height="386"></p>
 <p>&nbsp;</p>
 <p>as soon as the customer enter to the store link it Opens a page with all the stores products for sale.</p>
 <p>&nbsp;</p>
@@ -60,7 +60,7 @@
 <li>To buy a product - mark a check in the checkbox And you can see the product thet you want to buy &nbsp;in the right shopping list
 </li><li>In order to realize your purchase, click on the button &quot;Buy Products&quot;. </li><li>to Cancel product from your shopping list, uncheck the mark in the checkbox. </li><li>Some of the products in the stores you can see a video about the&nbsp;product from YouTube . &nbsp; &nbsp; &nbsp; &nbsp; Simple, double-click on the panel that leads to the panel turns and you can see the videoDouble-clicking again will return the panel
  to the previous state . </li></ol>
-<p><img id="131110" src="131110-product.png" alt="" width="946" height="704"></p>
+<p><img id="131110" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131110/1/product.png" alt="" width="946" height="704"></p>
 <p><span style="text-decoration:underline"><strong>This application was made by the use of technologies client side:</strong></span></p>
 <p>&nbsp;</p>
 <ul>
@@ -69,13 +69,13 @@
 <p><strong>view purchases:</strong></p>
 <p>To view purchases made in the past, just go to the page &quot;View shopping&quot; from the menu above .<span style="white-space:pre">
 </span></p>
-<p><img id="131111" src="131111-mypurc.png" alt="" width="929" height="638"></p>
+<p><img id="131111" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131111/1/mypurc.png" alt="" width="929" height="638"></p>
 <p>&nbsp;</p>
 <p><span style="font-size:20px; font-weight:bold">___________________________________________________________________</span></p>
 <p><span style="font-size:20px; font-weight:bold">Administrator interface -desktop appliction</span></p>
 <p><span style="font-size:20px; font-weight:bold"><object width="350" height="300" data="data:application/x-silverlight-2," type="application/x-silverlight-2"> <param name="source" value="/Content/Common/videoplayer.xap" /> <param name="initParams" value="deferredLoad=false,duration=0,m=https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/132258/1/onlinetrading.wmv,autostart=false,autohide=true,showembed=true"
  /> <param name="background" value="#00FFFFFF" /> <param name="minRuntimeVersion" value="3.0.40624.0" /> <param name="enableHtmlAccess" value="true" /> <param name="src" value="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/132258/1/onlinetrading.wmv"
- /> <param name="id" value="132258" /> <param name="name" value="onlinetrading.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="-?linkid=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
+ /> <param name="id" value="132258" /> <param name="name" value="onlinetrading.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
  </object> <br>
 </span></p>
 <p><span style="text-decoration:underline"><strong>This application was made by the use of technologies :</strong></span></p>
@@ -84,7 +84,7 @@
 <p>This app allows the store owner to advertise his products on the site ,</p>
 <p>You can open a store and update products exported to the database of the site</p>
 <p>The products&nbsp;will be &nbsp;update automatically in to the store page &nbsp;And will be able be seen by the buyers&nbsp;</p>
-<p><img id="131112" src="131112-mainwindow.png" alt="" width="363" height="237"></p>
+<p><img id="131112" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131112/1/mainwindow.png" alt="" width="363" height="237"></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><span style="text-decoration:underline"><strong>Registered manager</strong></span></p>
@@ -101,7 +101,7 @@
 <p>&nbsp;</p>
 <ul>
 <li>update your products </li><li>View the products bought </li><li>view on the customer information </li></ul>
-<p><img id="131113" src="131113-car.png" alt="" width="588" height="501"></p>
+<p><img id="131113" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131113/1/car.png" alt="" width="588" height="501"></p>
 <p><span style="text-decoration:underline"><strong>Insert New product&nbsp;</strong></span></p>
 <p>to insert new product : click on the &quot;Add item&quot; button in the left menu&nbsp;</p>
 <p>and anew cyan panel will created&nbsp;</p>
@@ -277,7 +277,7 @@
 <p>from the&nbsp;<span>Administrator interface.</span>&nbsp;</p>
 <p>The browser is IE's browser so that some applications may not have been active such as watching &nbsp;on</p>
 <p>YouTube, Rotate the panel And the display will look different.</p>
-<p><img id="131114" src="131114-site.png" alt="" width="967" height="599"></p>
+<p><img id="131114" src="https://i1.code.msdn.s-msft.com/online-trading-system-935a449d/image/file/131114/1/site.png" alt="" width="967" height="599"></p>
 <p>&nbsp;</p>
 <p>This software was created by Oren Berkovich 2014.</p>
 <p>Email: orenber@hotmail.com</p>

@@ -96,4 +96,4 @@ Visual Studio Tools for Apache Cordova</a>. These tools are part of Visual Studi
 <a href="https://msdn.microsoft.com/en-us/library/gg585128.aspx" target="_blank">
 here</a></em> </li></ul>
 <p>&nbsp;</p>
-<p><img id="134554" src="134554-whitepaper.png" alt="" width="556" height="525"></p>
+<p><img id="134554" src="https://i1.code.msdn.s-msft.com/managing-and-visualizing-f42fdd5c/image/file/134554/1/whitepaper.png" alt="" width="556" height="525"></p>

@@ -26,7 +26,7 @@
  all of them are using Windows Azure Active Directory to support Single-Sign-On between all the applications in the suite.The companies can also federate the directory service with their on-premises directories (corporate Active Directory) to support SSO using
  the on-premises corporate AD credentials.A few of the web apps can also be integrated as apps for SharePoint within Office 365.<br>
 In summary, different technologies are used depending on the business application scenarios: Web Apps, Windows Store, Windows Phone, WPF desktop, etc.</em></p>
-<p><em><img id="101438" src="101438-expenses_logo.png" alt="" width="316" height="107"><br>
+<p><em><img id="101438" src="http://i1.code.msdn.s-msft.com/mycompany-expenses-demo-ed172993/image/file/101438/1/expenses_logo.png" alt="" width="316" height="107"><br>
 </em></p>
 <p><em>This concrete business application is called&nbsp;<strong>EXPENSES&nbsp;</strong>and it is described below.</em></p>
 <h1><span>Building the Sample</span></h1>
@@ -46,18 +46,18 @@ In summary, different technologies are used depending on the business applicatio
 <div></div>
 <div></div>
 <div><strong><span style="font-size:small">EXPENSES Windows Store app (HTML/WinJS)</span></strong></div>
-<div><img id="101440" src="101440-expenses_windows_store_app.png" alt="" width="702" height="434"></div>
+<div><img id="101440" src="http://i1.code.msdn.s-msft.com/mycompany-expenses-demo-ed172993/image/file/101440/1/expenses_windows_store_app.png" alt="" width="702" height="434"></div>
 <div></div>
 <div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><span style="font-size:small"><strong>EXPENSES Windows Phone native app (C#/XAML)</strong></span></p>
-<p><strong><img id="101444" src="101444-expenses_phone_native_app.png" alt="" width="256" height="457"><br>
+<p><strong><img id="101444" src="http://i1.code.msdn.s-msft.com/mycompany-expenses-demo-ed172993/image/file/101444/1/expenses_phone_native_app.png" alt="" width="256" height="457"><br>
 </strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><span style="font-size:small"><strong>EXPENSES Web Mobile app (ASP.NET MVC)</strong></span></p>
-<div><strong><span><img id="101443" src="101443-expenses_web_mobile_app.png" alt="" width="310" height="444"></span></strong></div>
+<div><strong><span><img id="101443" src="http://i1.code.msdn.s-msft.com/mycompany-expenses-demo-ed172993/image/file/101443/1/expenses_web_mobile_app.png" alt="" width="310" height="444"></span></strong></div>
 <div></div>
 <div></div>
 <h1><strong><span>Simplified Architecture Diagram </span></strong></h1>

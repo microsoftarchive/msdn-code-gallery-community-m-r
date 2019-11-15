@@ -63,7 +63,7 @@
 <p><span style="font-size:small">6. <a href="http://aka.ms/MyCompanyFaceRecognition">
 <strong>Face recognition</strong> app</a></span></p>
 <p>&nbsp;</p>
-<p><img alt="" id="101464" src="101464-global%20apps%20picture%20-%20small.png" width="786" height="521"></p>
+<p><img alt="" id="101464" src="http://i1.code.msdn.s-msft.com/mycompany-demo-applications-eedab900/image/file/101464/1/global%20apps%20picture%20-%20small.png" width="786" height="521"></p>
 <p>&nbsp;</p>
 <p>Each of these business applications follow these approaches and facts:</p>
 <p>Each business application may have&nbsp;several client-apps&nbsp;(Web, Windows 8.1, Windows Phone 8,&nbsp;and&nbsp;Desktop) depending on the scenarios targeting different type of users.</p>
@@ -82,7 +82,7 @@ The Services are based on Web API 2 and SignalR for services. The several web ap
  on-premises or into Windows Azure. <br>
 Regarding the client side and native apps, is has several Windows Store 8.1 clients (XAML/C# and HTML5/JS), several Windows Phone clients (XAML/C#), a WPF desktop client, and even related iOS and Android apps develop with C#/Xamarin (There last apps are not
  available in this download, but will be available soon in different URLs, probably in Xamarin's web site).</em></p>
-<p><img alt="" id="101465" src="101465-global%20screenshot.png" width="692" height="300"></p>
+<p><img alt="" id="101465" src="http://i1.code.msdn.s-msft.com/mycompany-demo-applications-eedab900/image/file/101465/1/global%20screenshot.png" width="692" height="300"></p>
 <p><em><em><img alt=""></em></em></p>
 <h1>Covered Technologies</h1>
 <p><span style="font-size:medium">Services technologies</span></p>

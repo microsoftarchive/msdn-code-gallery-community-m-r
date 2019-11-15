@@ -29,7 +29,7 @@
  on-premises corporate AD credentials.A few of the web apps can also be integrated as apps for SharePoint within Office 365.In summary, different technologies are used depending on the business application scenarios: Web Apps, Windows Store, Windows Phone,
  WPF desktop, etc.<br>
 <br>
-<img id="101445" src="101445-travel_logo.png" alt="" width="271" height="108"><br>
+<img id="101445" src="http://i1.code.msdn.s-msft.com/mycompany-travel-demo-36887ad8/image/file/101445/1/travel_logo.png" alt="" width="271" height="108"><br>
 This concrete business application is called <strong>TRAVEL </strong>and it is described below.</em></p>
 <h1><span>Building the Sample</span></h1>
 <p>Requirements</p>
@@ -51,14 +51,14 @@ This concrete business application is called <strong>TRAVEL </strong>and it is d
 <div></div>
 <div><span style="font-size:small"><strong>Travel WPF Desktop App:</strong></span></div>
 <div></div>
-<div><img id="101451" src="101451-travel_wpf_app.png" alt="" width="675" height="455"></div>
+<div><img id="101451" src="http://i1.code.msdn.s-msft.com/mycompany-travel-demo-36887ad8/image/file/101451/1/travel_wpf_app.png" alt="" width="675" height="455"></div>
 <div></div>
 <div></div>
 <div></div>
 <div></div>
 <div></div>
 <div><span style="font-size:small"><strong>Travel Web App (SPA - Single Page Application):</strong></span></div>
-<div><strong><img id="101448" src="101448-travel_web_app_heatmap_3.png" alt="" width="713" height="468"><br>
+<div><strong><img id="101448" src="http://i1.code.msdn.s-msft.com/mycompany-travel-demo-36887ad8/image/file/101448/1/travel_web_app_heatmap_3.png" alt="" width="713" height="468"><br>
 </strong></div>
 <p>&nbsp;</p>
 <div>

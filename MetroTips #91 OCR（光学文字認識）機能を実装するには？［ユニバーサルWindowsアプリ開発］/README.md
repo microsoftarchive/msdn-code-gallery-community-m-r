@@ -31,14 +31,14 @@
 <div>これは次の記事のサンプルコードです。</div>
 <blockquote>
 <div>@IT 2014/10/09 掲載<br>
-<img id="68637" src="68637-gyoumu_newallarticle_icon_61_1349480145.gif" alt="" width="80" height="60"><br>
+<img id="68637" src="http://i1.code.msdn.s-msft.com/windowsapps/metrotips-10-cb520e60/image/file/68637/1/gyoumu_newallarticle_icon_61_1349480145.gif" alt="" width="80" height="60"><br>
 <strong><a href="http://www.atmarkit.co.jp/ait/subtop/features/dotnet/app/winrttips_index.html" target="_blank">WinRT／Metro TIPS：</a><br>
 <a href="http://www.atmarkit.co.jp/ait/articles/1410/09/news119.html" target="_blank">OCR（光学文字認識）機能を実装するには？［ユニバーサルWindowsアプリ開発］</a></strong><br>
 <br>
 アプリの中でOCR（光学文字認識）機能を使いたいと思ったことはないだろうか？ 例えば、名刺を読み取って電話番号やメールアドレスなどをデータベースに登録したい、あるいは、商品コードを読み取って検索したいといったような場合だ。そのようなことが、マイクロソフトから提供された「<a href="http://blogs.windows.com/buildingapps/2014/09/18/microsoft-ocr-library-for-windows-runtime/" target="_blank">Microsoft
  OCR Library for Windows Runtime</a>」のOcrEngineで可能になった。</div>
 </blockquote>
-<div><img id="126526" src="126526-08.png" alt="" width="253" height="454"><br>
+<div><img id="126526" src="http://i1.code.msdn.s-msft.com/windowsapps/metrotips-91-2aa58172/image/file/126526/1/08.png" alt="" width="253" height="454"><br>
 <br>
 以下の解説は記事の概要である。ぜひ記事のほうもお読みいただきたい。</div>
 <div>&nbsp;</div>

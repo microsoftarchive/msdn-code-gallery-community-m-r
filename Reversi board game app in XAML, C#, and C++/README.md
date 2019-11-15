@@ -52,7 +52,7 @@ The Reversi sample uses XAML and C# for the main app, and includes both C# and C
 <a href="http://msdn.microsoft.com/library/windows/apps/dn342942.aspx">Learn about the Reversi C&#43;&#43; game engine</a>.&nbsp;</div>
 <div></div>
 <div>&nbsp;</div>
-<div><img id="109049" src="109049-reversisampleapp.png" alt="" width="480" height="270"></div>
+<div><img id="109049" src="http://i1.code.msdn.s-msft.com/windowsapps/reversi-xamlc-sample-board-816140fa/image/file/109049/1/reversisampleapp.png" alt="" width="480" height="270"></div>
 <div>&nbsp;</div>
 <div>The Reversi sample shows you:
 <ul>

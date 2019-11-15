@@ -27,12 +27,12 @@
 <a href="http://blogs.msdn.com/chrisromp/archive/2008/07/31/muenchian-grouping-and-sorting-in-biztalk-maps.aspx">
 Muenchian Grouping and Sorting in BizTalk Maps</a>, but it has one limitation, by creating and configures Custom XSL Path we lose all mapping features.<br>
 </span></p>
-<p style="text-align:center"><span style="font-size:small"><img src="-custom-xsl-path.jpg?w=274" alt=""></span></p>
+<p style="text-align:center"><span style="font-size:small"><img src="http://sandroaspbiztalkblog.files.wordpress.com/2009/10/custom-xsl-path.jpg?w=274" alt=""></span></p>
 <p><span style="font-size:small"><strong>So how can we use Muenchian Grouping without losing Map features?</strong></span></p>
 <h1><span>Building </span>my first approach</h1>
 <p style="font-family:Tahoma"><span style="font-size:small"><strong>My First approach</strong>: Was try to put an Inline XSLT functoid and put all the XSL inside<br>
 </span></p>
-<p style="font-family:Tahoma; text-align:center"><span style="font-size:small"><img src="-meunchian-grouping1.jpg?w=300" alt=""><br>
+<p style="font-family:Tahoma; text-align:center"><span style="font-size:small"><img src="http://sandroaspbiztalkblog.files.wordpress.com/2009/10/meunchian-grouping1.jpg?w=300" alt=""><br>
 </span></p>
 <div style="margin-left:40px; font-family:Courier New"><span style="font-size:small"><em>&lt;xsl:key name=&rdquo;groups&rdquo; match=&rdquo;Order&rdquo; use=&rdquo;OrderId&rdquo;/&gt;</em><br>
 </span><span style="font-size:small"><em>&lt;!&ndash; This will loop through our key (&ldquo;OrderId&rdquo;) &ndash;&gt;</em><br>
@@ -82,7 +82,7 @@ Muenchian Grouping and Sorting in BizTalk Maps</a>, but it has one limitation, b
 &lt;/Order&gt;<br>
 &lt;/xsl:for-each&gt;</em></span> </li></ul>
 </li></ul>
-<p style="font-family:Tahoma; text-align:center"><span style="font-size:small"><img src="-meunchian-grouping.jpg?w=300" alt=""><br>
+<p style="font-family:Tahoma; text-align:center"><span style="font-size:small"><img src="http://sandroaspbiztalkblog.files.wordpress.com/2009/10/meunchian-grouping.jpg?w=300" alt=""><br>
 </span></p>
 <p><span style="font-size:small">See Sample 1, map &ldquo;MapOrder.btm&rdquo;</span><span style="font-size:20px; font-weight:bold">&nbsp;</span></p>
 <p><span style="font-size:20px; font-weight:bold">How can we improved (a little more) this solution</span></p>
@@ -97,10 +97,10 @@ Muenchian Grouping and Sorting in BizTalk Maps</a>, but it has one limitation, b
 </li></ul>
 <p style="font-family:Tahoma"><span style="font-size:small">Here some performance stats that I found (see original
 <a href="http://www.tkachenko.com/blog/archives/000401.html">post</a>):</span></p>
-<p><a href="http://sandroaspbiztalkblog.files.wordpress.com/2009/10/muenchian-performance-table1.jpg"><img src="46268-muenchian-performance-table1.jpg" alt="" width="594" height="177"><br>
+<p><a href="http://sandroaspbiztalkblog.files.wordpress.com/2009/10/muenchian-performance-table1.jpg"><img src="https://code.msdn.microsoft.com/site/view/file/46268/1/muenchian-performance-table1.jpg" alt="" width="594" height="177"><br>
 </a></p>
 <p style="font-family:Tahoma"><span style="font-size:small">The graph view works better:</span></p>
-<p><span style="font-size:small"><img class="aligncenter" src="-muenchian-performance.jpg?w=300" alt="" style="display:block; margin-left:auto; margin-right:auto"></span></p>
+<p><span style="font-size:small"><img class="aligncenter" src="http://sandroaspbiztalkblog.files.wordpress.com/2009/10/muenchian-performance.jpg?w=300" alt="" style="display:block; margin-left:auto; margin-right:auto"></span></p>
 <h1><span>Samples files</span></h1>
 <p><span id="result_box" lang="en"><span class="hps">In the</span> <span class="hps">
 project directory</span><span>, there is</span> <span class="hps">a</span> <span class="hps">
@@ -114,4 +114,4 @@ files</span></span></p>
 <p><strong>Sandro Pereira</strong><br>
 <a href="http://www.devscope.net/">DevScope</a>&nbsp;| MVP &amp; MCTS BizTalk Server 2010<br>
 <a href="http://sandroaspbiztalkblog.wordpress.com/">http://sandroaspbiztalkblog.wordpress.com/</a>&nbsp;|&nbsp;<a href="http://twitter.com/sandro_asp">@sandro_asp</a></p>
-<p><a href="http://www.devscope.net/"><img id="129835" src="129835-devscope-monochrome-black.png" alt="" width="166" height="51"></a></p>
+<p><a href="http://www.devscope.net/"><img id="129835" src="https://gallery.technet.microsoft.com/site/view/file/129835/1/devscope-monochrome-black.png" alt="" width="166" height="51"></a></p>

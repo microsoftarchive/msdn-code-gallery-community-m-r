@@ -129,13 +129,13 @@
 </div>
 <p>The only way to truly get a program to do what you want it to do in the way you want it to; is to write it yourself. Do not expect to have a fully operation commercial application available after an hour or two of coding. Software development takes time
  and perseverance. However, following this series of articles will save you an immense amount of time and hassle.</p>
-<p><em>&nbsp;<img id="101220" src="101220-picture%202013-11-16%2000_09_35.png" alt="" width="1920" height="54"><img id="101215" src="101215-picture%202013-11-16%2000_12_05.png" alt="" width="710" height="57"><img id="101216" src="101216-picture%202013-11-16%2000_11_23.png" alt="" width="826" height="59"><img id="101217" src="101217-picture%202013-11-16%2000_10_43.png" alt="" width="958" height="113"></em></p>
+<p><em>&nbsp;<img id="101220" src="http://i1.code.msdn.s-msft.com/professional-webbrowser-dac9c5d0/image/file/101220/1/picture%202013-11-16%2000_09_35.png" alt="" width="1920" height="54"><img id="101215" src="http://i1.code.msdn.s-msft.com/professional-webbrowser-dac9c5d0/image/file/101215/1/picture%202013-11-16%2000_12_05.png" alt="" width="710" height="57"><img id="101216" src="http://i1.code.msdn.s-msft.com/professional-webbrowser-dac9c5d0/image/file/101216/1/picture%202013-11-16%2000_11_23.png" alt="" width="826" height="59"><img id="101217" src="http://i1.code.msdn.s-msft.com/professional-webbrowser-dac9c5d0/image/file/101217/1/picture%202013-11-16%2000_10_43.png" alt="" width="958" height="113"></em></p>
 <p>As you can see from the above pictures Browsers come in all kinds of designs. But in essence they all have the same components:</p>
 <ol>
 <li>A menu bar </li><li>A Tool bar </li><li>An Address Bar and Search Bar </li><li>A multi-tab Interface </li><li>The main display section for showing web pages </li><li>A status bar </li></ol>
 <p>The biggest changes in the design are the order of the components and the graphics that are used. Our browser will have the Menu bar at the top, followed by a toolbar, then the multi-tab interface, followed by the address bar (and search bar), the main display
  section, and finally showing the status bar.</p>
-<p><em><img id="101214" src="101214-picture%202013-11-16%2000_47_58.png" alt="" width="1920" height="117"></em></p>
+<p><em><img id="101214" src="http://i1.code.msdn.s-msft.com/professional-webbrowser-dac9c5d0/image/file/101214/1/picture%202013-11-16%2000_47_58.png" alt="" width="1920" height="117"></em></p>
 <p>This is not an arbitrary design decision but one based on providing you the ability to create your own web browser without causing you unnecessary difficulty. In creating our web browser in this way the toolbar, which will hold our favourites will be uniformed
  throughout our web browser &ndash; that is synched between all instances of tabs being displayed; this is also true of our main menu. Our address bar will be synchronised with the instance of browser that it is linked to as is the status bar.</p>
 <p>We are not actually going to use tabbed browsing as such but docked browsing allowing us to move pages around as we wish &ndash; similar to the visual studio interface.</p>

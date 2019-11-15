@@ -38,7 +38,7 @@
  application with the help of Knockout JS. I hope you will like this.</p>
 <p><span>Create an Empty MVC application</span></p>
 <p>To get started we will create an empty MVC application as follows.</p>
-<div class="wp-caption x_alignnone" id="attachment_11980"><a href="http://sibeeshpassion.com/wp-content/uploads/2016/12/Add_new_empty_MVC_project-e1481467845633.png"><img class="size-full x_wp-image-11980" src="-add_new_empty_mvc_project-e1481467845633.png" alt="add_new_empty_mvc_project" width="634" height="494"></a></div>
+<div class="wp-caption x_alignnone" id="attachment_11980"><a href="http://sibeeshpassion.com/wp-content/uploads/2016/12/Add_new_empty_MVC_project-e1481467845633.png"><img class="size-full x_wp-image-11980" src="http://sibeeshpassion.com/wp-content/uploads/2016/12/Add_new_empty_MVC_project-e1481467845633.png" alt="add_new_empty_mvc_project" width="634" height="494"></a></div>
 <p>You can always download the source code attached to see the complete code and application. Happy coding!.</p>
 <p><span>References</span></p>
 <li><a href="http://knockoutjs.com/index.html" target="_blank">Knockout JS</a> </li><li><a href="http://knockoutjs.com/documentation/observables.html" target="_blank">Knockout JS Observables</a>

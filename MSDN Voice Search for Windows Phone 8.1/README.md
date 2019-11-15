@@ -33,7 +33,7 @@
 <p>The included <em>Voice Command Definition</em>&nbsp;files (VCDs) are installed at application launch, which will provide integration into the system-level commands for queries like &quot;MSDN, find Windows Phone Voice Commands&quot; or &quot;MSDN, go to the Windows Phone
  Dev Center.&quot;</p>
 <p>The code in MainPage.xaml.cs demonstrates low- to mid-complexity management of Voice Command parsing, Speech Recognition use, and Speech Synthesis use.</p>
-<p><img id="112762" src="112762-ss_small.png" alt="" width="180" height="300">&nbsp;<img id="112763" src="112763-ss_small2.png" alt="" width="180" height="300">&nbsp;<img id="112765" src="112765-ss_small3.png" alt="" width="180" height="300"></p>
+<p><img id="112762" src="http://i1.code.msdn.s-msft.com/msdn-voice-search-for-95c16d92/image/file/112762/1/ss_small.png" alt="" width="180" height="300">&nbsp;<img id="112763" src="http://i1.code.msdn.s-msft.com/msdn-voice-search-for-95c16d92/image/file/112763/1/ss_small2.png" alt="" width="180" height="300">&nbsp;<img id="112765" src="http://i1.code.msdn.s-msft.com/msdn-voice-search-for-95c16d92/image/file/112765/1/ss_small3.png" alt="" width="180" height="300"></p>
 <h1><span>Source Code Files</span></h1>
 <ul>
 <li><strong>MainPage.xaml</strong> - The UI definitions associated with the application

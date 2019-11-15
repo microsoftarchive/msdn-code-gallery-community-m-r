@@ -32,14 +32,14 @@
 
 <h1>Microsoft Excel Favorites Ribbon</h1>
 <p>This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and <a href="https://github.com/aduguid/MicrosoftExcelFavorites/tree/master/VBA">
-VBA</a>.&nbsp;<img class="emoji" src=":-1f195.png" alt=":new:" width="20" height="20">&nbsp;I'm currently working on the Web Add-In in JavaScript. It gives the user a custom ribbon. Key distinctive attributes
+VBA</a>.&nbsp;<img class="emoji" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f195.png" alt=":new:" width="20" height="20">&nbsp;I'm currently working on the Web Add-In in JavaScript. It gives the user a custom ribbon. Key distinctive attributes
  include dedicated buttons for&nbsp;<a rel="nofollow" href="https://support.office.com/en-us/article/Copy-visible-cells-only-6e3a1f01-2884-4332-b262-8b814412847e">copying visible cells</a>,&nbsp;<a rel="nofollow" href="https://answers.microsoft.com/en-us/msoffice/forum/msoffice_excel-mso_winother/how-to-use-camera-function-in-microsoft-excel/44a97349-f694-4bd3-a5ca-e4097f6e9437?auth=1">Excel's
  camera feature</a>,&nbsp;<a rel="nofollow" href="https://support.microsoft.com/en-au/help/4027213/windows-open-snipping-tool-and-take-a-screenshot">Snipping Tool</a>,&nbsp;<a rel="nofollow" href="https://support.microsoft.com/en-au/help/22878/windows-10-record-steps">Problem
  Steps Recorder (PSR)</a>&nbsp;and&nbsp;<a rel="nofollow" href="https://en.wikipedia.org/wiki/Windows_Calculator">Windows Calculator</a>.&nbsp;This project is now on
 <a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md">
 GitHub</a>.</p>
 <p><span>Please rate this code. :)</span></p>
-<h1><img id="216203" src="216203-vsto.excel.ribbon.favorites.gif" alt="" width="725" height="410"></h1>
+<h1><img id="216203" src="https://i1.code.msdn.s-msft.com/excel-2010-favorites-ribbon-7dc841b8/image/file/216203/1/vsto.excel.ribbon.favorites.gif" alt="" width="725" height="410"></h1>
 <h2>Dependencies</h2>
 <table>
 <thead>
@@ -192,7 +192,7 @@ GitHub</a>.</p>
 <h3><a id="user-content-evaluate-group" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#evaluate-group"></a>Evaluate (Group)</h3>
 <p><a id="user-content-calculator" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#calculator"></a></p>
 <h4><a id="user-content-windows-calculator-button" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#windows-calculator-button"></a>Windows Calculator (Button)</h4>
-<p><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/windows_calculator.png" target="_blank"><img src=":-windows_calculator.png" alt="calculator"></a></p>
+<p><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/windows_calculator.png" target="_blank"><img src="https://github.com/aduguid/MicrosoftExcelFavorites/raw/master/Images/ReadMe/windows_calculator.png" alt="calculator"></a></p>
 <ul>
 <li>The Windows Calculator runs in standard mode, which resembles a four-function calculator. More advanced functions are available in scientific mode, including logarithms, numerical base conversions, some logical operators, operator precedence, radian, degree
  and gradians support as well as simple single-variable statistical functions </li></ul>
@@ -210,7 +210,7 @@ GitHub</a>.</p>
  documents as well. The image is automatically refreshed if the data changes. </li></ul>
 <p><a id="user-content-snip" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#snip"></a></p>
 <h4><a id="user-content-snipping-tool-button" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#snipping-tool-button"></a>Snipping Tool (Button)</h4>
-<p><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/snipping_tool.png" target="_blank"><img src=":-snipping_tool.png" alt="snipping_tool"></a></p>
+<p><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/snipping_tool.png" target="_blank"><img src="https://github.com/aduguid/MicrosoftExcelFavorites/raw/master/Images/ReadMe/snipping_tool.png" alt="snipping_tool"></a></p>
 <ul>
 <li>Capture all or part of your PC screen, add notes, save the snip, or email it from the Snipping Tool window. You can capture any of the following types of snips:
 <ul>
@@ -219,7 +219,7 @@ GitHub</a>.</p>
 </li></ul>
 <p><a id="user-content-psr" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#psr"></a></p>
 <h4><a id="user-content-problem-step-recorder-button" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#problem-step-recorder-button"></a>Problem Step Recorder (Button)</h4>
-<p><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/problem_steps_recorder.png" target="_blank"><img src=":-problem_steps_recorder.png" alt="psr"></a></p>
+<p><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/problem_steps_recorder.png" target="_blank"><img src="https://github.com/aduguid/MicrosoftExcelFavorites/raw/master/Images/ReadMe/problem_steps_recorder.png" alt="psr"></a></p>
 <ul>
 <li>Steps Recorder (called Problems Steps Recorder in Windows 7), is a program that helps you troubleshoot a problem on your device by recording the exact steps you took when the problem occurred. You can then send this record to a support professional to help
  them diagnose the problem. </li></ul>
@@ -227,7 +227,7 @@ GitHub</a>.</p>
 <h3><a id="user-content-options-group" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#options-group"></a>Options (Group)</h3>
 <h4><a id="user-content-add-in-settings-button" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#add-in-settings-button"></a>Add-In Settings (Button)</h4>
 <p>VSTO&nbsp;<br>
-<img src=":-vsto.ribbon.settings.png" alt=""></p>
+<img src="https://raw.githubusercontent.com/aduguid/MicrosoftExcelFavorites/master/Images/ReadMe/vsto.ribbon.settings.png" alt=""></p>
 <ul>
 <li>Types of VSTO Settings
 <ul>
@@ -240,7 +240,7 @@ GitHub</a>.</p>
 </li></ul>
 </li></ul>
 <p>VBA&nbsp;<br>
-<img src=":-vba.settings.form.png" alt=""></p>
+<img src="https://raw.githubusercontent.com/aduguid/MicrosoftExcelFavorites/master/Images/ReadMe/vba.settings.form.png" alt=""></p>
 <ul>
 <li>VBA Settings
 <ul>
@@ -264,7 +264,7 @@ GitHub</a>.</p>
 </li></ul>
 <p><a id="user-content-help" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#help"></a></p>
 <h3><a id="user-content-help-group" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#help-group"></a>Help (Group)</h3>
-<h1><a id="user-content----1" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#---1"></a><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/ribbon.group.help.png" target="_blank"><img src=":-ribbon.group.help.png" alt="help"></a></h1>
+<h1><a id="user-content----1" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#---1"></a><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/ribbon.group.help.png" target="_blank"><img src="https://github.com/aduguid/MicrosoftExcelFavorites/raw/master/Images/ReadMe/ribbon.group.help.png" alt="help"></a></h1>
 <p><a id="user-content-how-to" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#how-to"></a></p>
 <h4><a id="user-content-how-to-button" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#how-to-button"></a>How To... (Button)</h4>
 <ul>
@@ -280,7 +280,7 @@ GitHub</a>.</p>
 </li></ul>
 <p><a id="user-content-about" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#about"></a></p>
 <h3><a id="user-content-about-group" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#about-group"></a>About (Group)</h3>
-<h1><a id="user-content----2" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#---2"></a><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/ribbon.group.about.png" target="_blank"><img src=":-ribbon.group.about.png" alt="about"></a></h1>
+<h1><a id="user-content----2" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#---2"></a><a href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/Images/ReadMe/ribbon.group.about.png" target="_blank"><img src="https://github.com/aduguid/MicrosoftExcelFavorites/raw/master/Images/ReadMe/ribbon.group.about.png" alt="about"></a></h1>
 <p><a id="user-content-description" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#description"></a></p>
 <h4><a id="user-content-add-in-name-label" class="anchor" href="https://github.com/aduguid/MicrosoftExcelFavorites/blob/master/README.md#add-in-name-label"></a>Add-in Name (Label)</h4>
 <ul>

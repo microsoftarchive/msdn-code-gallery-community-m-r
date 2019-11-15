@@ -19,11 +19,11 @@
 <p style="font-size:small">We will demonstrate a simple conversion from RGBA to grayscale image using CUDA 5, we will build on a
 <a title="CUDA 5.0 and Visual Studio 2012 Configuration" href="http://code.msdn.microsoft.com/vstudio/CUDA-50-and-Visual-Studio-20e71aa1" target="_blank">
 previous example</a> of a simple CUDA kernel. For example, the following RGB picture of flowers</p>
-<p style="font-size:small"><img id="76206" src="76206-flowers.jpg" alt="" width="598" height="373"></p>
+<p style="font-size:small"><img id="76206" src="http://i1.code.msdn.s-msft.com/vstudio/rgba-to-gray-image-e07dd9f5/image/file/76206/1/flowers.jpg" alt="" width="598" height="373"></p>
 <p style="font-size:small">will look like this after running the filter:</p>
-<p style="font-size:small"><img id="76207" src="76207-flowers_copy.jpg" alt="" width="599" height="410"></p>
+<p style="font-size:small"><img id="76207" src="http://i1.code.msdn.s-msft.com/vstudio/rgba-to-gray-image-e07dd9f5/image/file/76207/1/flowers_copy.jpg" alt="" width="599" height="410"></p>
 <p style="font-size:small">and to execute the application we will call it like this:</p>
-<p style="font-size:small"><img id="76287" src="76287-call.png" alt="" width="1314" height="499"></p>
+<p style="font-size:small"><img id="76287" src="http://i1.code.msdn.s-msft.com/vstudio/rgba-to-gray-image-e07dd9f5/image/file/76287/1/call.png" alt="" width="1314" height="499"></p>
 <p style="font-size:small">&nbsp;</p>
 <p style="font-size:small">This code will work with RGBA images where each channel (Red, Green, Blue, and Alpha) is represented by one byte (8-bits) and a range of values between 0 and 255 (2^8 - 1) for a total of 4-bytes per pixel.&nbsp;</p>
 <p style="font-size:small">Gray scale images are represented by a single intensity value per pixel where each pixel is only 1 byte, so after conversion we will have an image with only one channel and a pixel size of 1 byte.</p>

@@ -43,4 +43,4 @@
 <br>
 <strong><span style="color:#ff0000">NEW 12/27/2013</span></strong> placed a <a title="VS2012 project on SkyDrive" href="https://skydrive.live.com/?cid=a3d5a9a9a28080d1&id=A3D5A9A9A28080D1%21469&ithint=file,.zip&authkey=!AO7w1WcRaePl2fo">
 third example here</a> that shows how to log when a user viewed a image.</span></p>
-<p><span style="font-size:small"><img id="94321" src="94321-screenshot1.jpg" alt="" width="689" height="846"><img id="104181" src="104181-pb.png" alt="" width="689" height="530"></span></p>
+<p><span style="font-size:small"><img id="94321" src="94321-screenshot1.jpg" alt="" width="689" height="846"><img id="104181" src="http://i1.code.msdn.s-msft.com/reading-and-writing-to-ms-945a0615/image/file/104181/1/pb.png" alt="" width="689" height="530"></span></p>

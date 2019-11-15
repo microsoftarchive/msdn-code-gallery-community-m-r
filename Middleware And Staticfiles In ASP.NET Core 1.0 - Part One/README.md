@@ -29,7 +29,7 @@
 <div></div>
 <p><span style="font-size:16px">The following are the Built-in Middlewares in ASP.Net Core 1.0.<br>
 </span><br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/1805.image001.jpg"><img src=":-1805.image001.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/1805.image001.jpg"><img src="https://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/1805.image001.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
 <em>Pic Source By : Microsoft ASP.NET Core Documents</em><br>
 <br>
 </p>
@@ -95,19 +95,19 @@
 <p><br>
 Right Click &quot;wwwroot&quot; and click Add -&gt; New Item -&gt; Click &quot;Client-side&quot; sub category and select HTML Page.<br>
 <br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/5314.image002.jpg"><img src=":-5314.image002.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/5314.image002.jpg"><img src="https://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/5314.image002.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
 <em><span style="font-size:10px">Pic Source By :&nbsp;<a title="RajeeshMenoth Blog" href="https://rajeeshmenoth.wordpress.com/" target="_blank">RajeeshMenoth Blog</a><br>
 </span></em></p>
 <h1>HTML Index Page Code</h1>
 <p><br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/4380.image003.jpg"><img src=":-4380.image003.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/4380.image003.jpg"><img src="https://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/4380.image003.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
 <span style="font-size:10px"><em>Pic Source By :&nbsp;<a title="RajeeshMenoth Blog" href="https://rajeeshmenoth.wordpress.com/" target="_blank">RajeeshMenoth Blog</a><br>
 </em></span></p>
 <h1>Output</h1>
 <p><span style="font-size:16px">When we run our application then you will get the following: &nbsp;Why are our StaticFiles not running ? Because StaticFiles are placed inside the &quot;wwwroot&quot; and when we want to call those files in ASP.NET Core 1.0 then you must
  install the StaticFiles package manager for ASP.NET Core through NuGet.<br>
 </span><br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6874.image004.jpg"><img src=":-6874.image004.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6874.image004.jpg"><img src="https://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/6874.image004.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
 <em><span style="font-size:10px">Pic Source By :&nbsp;<a title="RajeeshMenoth Blog" href="https://rajeeshmenoth.wordpress.com/" target="_blank">RajeeshMenoth Blog</a><br>
 </span></em></p>
 <h1>StaticFiles Configuration ASP.NET Core 1.0</h1>
@@ -115,7 +115,7 @@ Right Click &quot;wwwroot&quot; and click Add -&gt; New Item -&gt; Click &quot;C
 <span style="font-size:16px">Go to NuGet Package Manager and Type StaticFiles in &quot;Browse&quot; Category. Then it will display many staticfiles details but we need to choose and Install
 <em>&quot;Microsoft.AspNetCore.StaticFiles&quot;</em>.&nbsp;<br>
 </span><br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6758.image005.jpg"><img src=":-6758.image005.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6758.image005.jpg"><img src="https://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/6758.image005.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
 <em style="font-size:12.1px"><span style="font-size:10px">Pic Source By :&nbsp;<a title="RajeeshMenoth Blog" href="https://rajeeshmenoth.wordpress.com/" target="_blank">RajeeshMenoth Blog</a><br>
 </span></em></p>
 <h1>project.Json</h1>
@@ -249,7 +249,7 @@ Right Click &quot;wwwroot&quot; and click Add -&gt; New Item -&gt; Click &quot;C
 </code><code style="color:#008200">// For the wwwroot folder</code></span></div>
 </div>
 <h5><span style="font-size:16px">Output</span></h5>
-<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7127.image006.jpg"><img src=":-7127.image006.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
+<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7127.image006.jpg"><img src="https://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/7127.image006.jpg" alt="" style="border-width:0px; border-style:solid"></a><br>
 <br>
 <br>
 <em style="font-size:12.1px"><span style="font-size:10px">Pic Source By :&nbsp;<a title="RajeeshMenoth Blog" href="https://rajeeshmenoth.wordpress.com/" target="_blank">RajeeshMenoth Blog</a><br>

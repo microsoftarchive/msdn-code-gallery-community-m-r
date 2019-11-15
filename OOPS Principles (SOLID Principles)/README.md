@@ -621,7 +621,7 @@ If&nbsp;we&nbsp;have&nbsp;a&nbsp;class&nbsp;functionality&nbsp;that&nbsp;is&nbsp
 <div class="endscriptcode">I have explained each principle in detail with&nbsp;example in the sample. Download the sample and go through the code with comments.</div>
 <div class="endscriptcode"></div>
 <div class="endscriptcode"><span style="color:#000000; font-size:small">Thank you for reading my article. Drop all your questions/comments in QA tab give me your feedback with
-<span style="color:#3366ff"><img id="67168" src="67168-ratings.png" alt="" width="74" height="15">
+<span style="color:#3366ff"><img id="67168" src="http://i1.code.msdn.s-msft.com/oops-principles-solid-7a4e69bf/image/file/67168/1/ratings.png" alt="" width="74" height="15">
 <span style="color:#000000">star rating (1 Star - Very Poor, 5&nbsp;Star -&nbsp;Very Good).
 </span></span></span></div>
 <div class="endscriptcode"><span style="color:#3366ff">&nbsp;</span></div>

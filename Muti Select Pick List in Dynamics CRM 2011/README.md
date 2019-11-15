@@ -53,7 +53,7 @@ values (Picklist option field) is the heading, so suggest leaving it blank. Howe
 <p>Your solution is ready to use. I have tested this in Microsoft Dynamics CRM 2011 and should work in CRM 4 with a<br>
 change of code in one or two places. However you have to test it for your installation and your comments are always welcome. I have not made use of some java functions because of compatibility issues.</p>
 <p>&nbsp;</p>
-<p><strong>&nbsp;<img id="67795" src="67795-crm_mspl1.jpg" alt="" width="960" height="600" style="float:left"></strong></p>
+<p><strong>&nbsp;<img id="67795" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67795/1/crm_mspl1.jpg" alt="" width="960" height="600" style="float:left"></strong></p>
 <p><br>
 &nbsp; <br>
 </p>
@@ -220,17 +220,17 @@ alert (e.description);}</p>
 <p><br>
 1&nbsp;Create an option set and a multiline text field . You can choose your own names<br>
 Navigation: Contacts-&gt;Customize Contacts-&gt;Forms-&gt;formType Main-&gt;New field</p>
-<p>&nbsp;<img id="67800" src="67800-crm_mspl2.png" alt="" width="1920" height="1200" style="float:left"></p>
+<p>&nbsp;<img id="67800" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67800/1/crm_mspl2.png" alt="" width="1920" height="1200" style="float:left"></p>
 <p>Add a field of type optionset, name<br>
 the field, add header text as the first item and add list of values as shown<br>
 below, save the changes</p>
-<p><img id="67803" src="67803-crm_mspl2.jpg" alt="" width="1920" height="1200"></p>
+<p><img id="67803" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67803/1/crm_mspl2.jpg" alt="" width="1920" height="1200"></p>
 <p><br>
 <br>
 Repeat the same procedure to add another field, name<br>
 it,&nbsp; select Mutiple lines of text as type,<br>
 see below screen shot</p>
-<p><img id="67804" src="67804-crm_mspl3.5.jpg" alt="" width="1920" height="1200"><br>
+<p><img id="67804" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67804/1/crm_mspl3.5.jpg" alt="" width="1920" height="1200"><br>
 <br>
 </p>
 <p>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
@@ -238,23 +238,23 @@ On the display<br>
 tab of the field properties uncheck all of the options, this is to hide the field<br>
 as well as label</p>
 <p><br>
-<img id="67806" src="67806-crm_mspl4.jpg.png" alt="" width="1920" height="1200"></p>
+<img id="67806" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67806/1/crm_mspl4.jpg.png" alt="" width="1920" height="1200"></p>
 <p>&nbsp;3&nbsp;&nbsp;Add the script to Web Resource library&nbsp;&nbsp;&nbsp; <br>
 Navigate to:&nbsp;&nbsp;&nbsp; Settings-&gt;Customization-&gt;Cystomize the system-&gt;Components-&gt;Web Resource-&gt;New</p>
-<p><img id="67807" src="67807-crm_mspl5.jpg.png" alt="" width="1920" height="1200"><br>
+<p><img id="67807" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67807/1/crm_mspl5.jpg.png" alt="" width="1920" height="1200"><br>
 <br>
 </p>
 <p>&nbsp;Type a name for the javascript file,<br>
 type a name for the Display Name, under type select Script (Jscipt), click on<br>
 the Text Editor, paste our script, &nbsp;save.</p>
 <p><br>
-<img id="67808" src="67808-crm_mspl5.jpg" alt="" width="950" height="600" style="float:left"></p>
+<img id="67808" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67808/1/crm_mspl5.jpg" alt="" width="950" height="600" style="float:left"></p>
 <p>&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;Register a function on the onload event of the form and name the function as MultiPickList3</p>
 <p>Navigation: Contacts-&gt;Customize Contacts-&gt;Forms-&gt;formType= Main-&gt;Form Properties</p>
 <p>Under Event Handler select Form on Control, onLoad for Event-&gt;Add</p>
-<p><img id="67809" src="67809-crm_mspl6.jpg" alt="" width="1920" height="1200"></p>
+<p><img id="67809" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67809/1/crm_mspl6.jpg" alt="" width="1920" height="1200"></p>
 <p>Under Library select the javascript u registered earliar, under Function type MultiPickList3, under parameters type your field names as given on top of the page press OK save and Publish</p>
-<p><img id="67810" src="67810-crm_mspl7.jpg" alt="" width="1098" height="1215" style="float:left"></p>
+<p><img id="67810" src="http://i1.code.msdn.s-msft.com/muti-select-pick-list-in-bf68d254/image/file/67810/1/crm_mspl7.jpg" alt="" width="1098" height="1215" style="float:left"></p>
 <p>&nbsp;</p>
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">

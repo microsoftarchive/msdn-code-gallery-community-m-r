@@ -53,22 +53,22 @@
 <p><span style="font-size:xx-small">It will take a while for VS2017 to automatically install all the npm and .NET dependencies when you first open the app. &nbsp;</span></p>
 <p><span style="font-size:xx-small">Step 1: publish the database (and the test database)</span></p>
 <p><span style="font-size:xx-small">The publish profiles in the folder SkiShopSQL-&gt;Publishes &nbsp;work for SQL Server 2016 LocalDB. Please update the data source if you use SQL Server 2016 Express or other versions.</span></p>
-<p><span style="font-size:xx-small"><img id="220170" src="220170-publish_db_0.png" alt="" width="600" height="319"></span></p>
+<p><span style="font-size:xx-small"><img id="220170" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220170/1/publish_db_0.png" alt="" width="600" height="319"></span></p>
 <p><span style="font-size:xx-small">Step 2:&nbsp;Create the identity database using NuGet Package Manager Console&nbsp;</span></p>
 <p><span style="font-size:xx-small">Please select &ldquo;WebApiEfCore&rdquo; as the Starup project first.</span></p>
-<p><img id="220171" src="220171-pmc_auth_1.png" alt="" width="612" height="179"></p>
+<p><img id="220171" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220171/1/pmc_auth_1.png" alt="" width="612" height="179"></p>
 <p><span style="font-size:xx-small">Step 3: Make webpack bundles</span></p>
 <p><span style="font-size:xx-small">TOOLS -&gt; Node.js Tools -&gt; Node.js Interactive Window</span></p>
-<p><img id="220172" src="220172-npm_webpack_0.png" alt="" width="600" height="105"></p>
+<p><img id="220172" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220172/1/npm_webpack_0.png" alt="" width="600" height="105"></p>
 <p><span style="font-size:xx-small">Please check package.json for more scripts for bundle analysis and type checking.</span></p>
 <p><span style="font-size:xx-small">Step 4 Run testing code in Test Explorer</span></p>
 <p><span style="font-size:xx-small">All tests point to the test database.</span></p>
-<p><img id="220173" src="220173-test_results_0.png" alt="" width="300" height="263"></p>
+<p><img id="220173" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220173/1/test_results_0.png" alt="" width="300" height="263"></p>
 <p><span style="font-size:xx-small"><br>
 </span></p>
 <p><object width="350" height="300" data="data:application/x-silverlight-2," type="application/x-silverlight-2"> <param name="source" value="/Content/Common/videoplayer.xap" /> <param name="initParams" value="deferredLoad=false,duration=0,m=https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv,autostart=false,autohide=true,showembed=true"
  /> <param name="background" value="#00FFFFFF" /> <param name="minRuntimeVersion" value="3.0.40624.0" /> <param name="enableHtmlAccess" value="true" /> <param name="src" value="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv"
- /> <param name="id" value="220179" /> <param name="name" value="SkiShopReactEFCore.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="-?linkid=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
+ /> <param name="id" value="220179" /> <param name="name" value="SkiShopReactEFCore.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
  </object> <br>
 <span style="font-size:xx-small"><a id="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv" href="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220179/1/skishopreactefcore.wmv">Download
  video</a></span></p>
@@ -76,12 +76,12 @@
 <p><span style="font-size:xx-small"><a href="https://www.youtube.com/watch?v=laXNkReBlDo&t=40s">https://www.youtube.com/watch?v=laXNkReBlDo&amp;t=40s</a></span></p>
 <p>&nbsp;</p>
 <p><span style="font-size:xx-small">Pictures</span></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img id="220181" src="220181-filter_mobile_1.gif" alt="" width="123" height="248">&nbsp;
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img id="220182" src="220182-skis_mobile_2.gif" alt="" width="122" height="248"></p>
-<p>&nbsp; &nbsp;&nbsp;<img id="220183" src="220183-home_mobile_0.png" alt="" width="120" height="247">&nbsp; &nbsp; &nbsp;&nbsp;<img id="220184" src="220184-login_mobile_0.png" alt="" width="120" height="247">&nbsp;
- &nbsp; &nbsp;&nbsp;<img id="220185" src="220185-orderhistory_mobile_0.png" alt="" width="120" height="247">&nbsp; &nbsp; &nbsp;&nbsp;<img id="220186" src="220186-orderdetail_mobile_1.png" alt="" width="120" height="247"></p>
-<p><img id="220187" src="220187-combine_images_1.png" alt="" width="612" height="349"></p>
-<p><img id="220188" src="220188-combine_images_2.png" alt="" width="612" height="350"></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img id="220181" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220181/1/filter_mobile_1.gif" alt="" width="123" height="248">&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img id="220182" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220182/1/skis_mobile_2.gif" alt="" width="122" height="248"></p>
+<p>&nbsp; &nbsp;&nbsp;<img id="220183" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220183/1/home_mobile_0.png" alt="" width="120" height="247">&nbsp; &nbsp; &nbsp;&nbsp;<img id="220184" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220184/1/login_mobile_0.png" alt="" width="120" height="247">&nbsp;
+ &nbsp; &nbsp;&nbsp;<img id="220185" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220185/1/orderhistory_mobile_0.png" alt="" width="120" height="247">&nbsp; &nbsp; &nbsp;&nbsp;<img id="220186" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220186/1/orderdetail_mobile_1.png" alt="" width="120" height="247"></p>
+<p><img id="220187" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220187/1/combine_images_1.png" alt="" width="612" height="349"></p>
+<p><img id="220188" src="https://i1.code.msdn.s-msft.com/react-redux-spa-on-asp-net-e910901f/image/file/220188/1/combine_images_2.png" alt="" width="612" height="350"></p>
 <p>&nbsp;</p>
 <h1>Sample Codes:</h1>
 <p><span style="font-size:xx-small">Login.jsx</span></p>

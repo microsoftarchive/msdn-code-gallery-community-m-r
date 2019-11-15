@@ -735,7 +735,7 @@ Now we have Installed the AngularJS package into our MVC Project. Now let's crea
  and Services.js as in the following.</span></p>
 </div>
 </div>
-<h1>&nbsp;<img id="141049" src="141049-13.jpg" alt="" width="185" height="76"></h1>
+<h1>&nbsp;<img id="141049" src="https://i1.code.msdn.s-msft.com/angularjs-dynamic-menu-dc974920/image/file/141049/1/13.jpg" alt="" width="185" height="76"></h1>
 <h1>&nbsp;<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span style="outline:0px">Modules.js:<span>&nbsp;</span></span></strong><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">Here
  we add the reference to the Angular.js JavaScript. We provide the module name as</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">&ldquo;RESTClientModule</span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">&rdquo;<span>&nbsp;</span></span><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">.</span>&nbsp;</h1>
 <h1>
@@ -995,14 +995,14 @@ Here we can see I have filtered the menu by the rootId &quot;Root&quot;. During 
 <p style="outline:0px"><strong style="outline:0px"><span style="outline:0px">Run the Program</span></strong></p>
 <p style="outline:0px"><strong style="outline:0px"><span style="outline:0px">(Output Menu Type 1)</span></strong></p>
 </div>
-<p><img id="141050" src="141050-m1.jpg" alt="" width="607" height="241"></p>
+<p><img id="141050" src="https://i1.code.msdn.s-msft.com/angularjs-dynamic-menu-dc974920/image/file/141050/1/m1.jpg" alt="" width="607" height="241"></p>
 <p>&nbsp;<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span lang="EN-US" style="outline:0px">Output
  Menu Type 2)</span></strong></p>
-<p>&nbsp;<img id="141051" src="141051-m2.jpg" alt="" width="614" height="234"></p>
+<p>&nbsp;<img id="141051" src="https://i1.code.msdn.s-msft.com/angularjs-dynamic-menu-dc974920/image/file/141051/1/m2.jpg" alt="" width="614" height="234"></p>
 <p>&nbsp;<strong style="outline:0px; color:#333333; text-transform:none; line-height:21px; text-indent:0px; letter-spacing:normal; font-family:Roboto,sans-serif; font-size:14px; font-style:normal; font-variant:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff"><span style="outline:0px">Note:<span>&nbsp;</span></span></strong><span style="font:14px/21px Roboto,sans-serif; outline:0px; color:#333333; text-transform:none; text-indent:0px; letter-spacing:normal; word-spacing:0px; white-space:normal; widows:1; background-color:#ffffff">This
  code can be used in our MVC View page or this code can be used in Shared&gt;Layout.Cshtml so that the menu will be a common menu that can be used for all pages globally. Here we can see in the preceding that the same menu code has been added to the Layout.cshtm
  page. By this the menu will be added globally and can be accessed in all pages.</span></p>
-<p>&nbsp;<img id="141052" src="141052-m5.jpg" alt="" width="606" height="153"></p>
+<p>&nbsp;<img id="141052" src="https://i1.code.msdn.s-msft.com/angularjs-dynamic-menu-dc974920/image/file/141052/1/m5.jpg" alt="" width="606" height="153"></p>
 <p>&nbsp;</p>
 <h1><span>Source Code Files</span></h1>
 <ul>

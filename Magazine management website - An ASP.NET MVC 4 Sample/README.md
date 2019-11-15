@@ -44,7 +44,7 @@ Web API 2</strong> and <strong>AngularJS</strong>)</span></p>
 <p><span style="background-color:#ffffff; color:#000000">The <strong>new admin template</strong>&nbsp;using
 <strong>Bootstrap 3</strong> can be found at&nbsp;<a href="http://saka-webstack.github.io/templates/new-admin-layout/index.html">http://saka-webstack.github.io/templates/new-admin-layout/index.html</a></span></p>
 <p><strong><span style="background-color:#ffffff; color:#000000">Front-end page</span></strong></p>
-<p><span style="background-color:#ffff00; color:#ff0000"><img id="100502" src="100502-mvc5_1.png" alt="" width="500" height="400"><br>
+<p><span style="background-color:#ffff00; color:#ff0000"><img id="100502" src="http://i1.code.msdn.s-msft.com/aspnet-mvc-4-sample-37924d68/image/file/100502/1/mvc5_1.png" alt="" width="500" height="400"><br>
 </span></p>
 <p>&nbsp;</p>
 <p><span style="font-size:2em">Demo site</span></p>
@@ -63,7 +63,7 @@ Web API 2</strong> and <strong>AngularJS</strong>)</span></p>
 <p>Step 5: Changing a connection string to your own database server.</p>
 <p>Step 6: Running it</p>
 <p><strong><span style="font-size:medium">Structure of solutions:</span></strong></p>
-<p><img id="71207" src="71207-sample01.png" alt="" width="239" height="346"></p>
+<p><img id="71207" src="http://i1.code.msdn.s-msft.com/aspnet-mvc-4-sample-37924d68/image/file/71207/1/sample01.png" alt="" width="239" height="346"></p>
 <p><strong><span style="font-size:large">History:</span></strong></p>
 <p><span style="color:#ff0000">1.0:</span> finished the draft version</p>
 <p><span style="color:#ff0000">1.1:</span> removed some redundant code that commented from the community. Fixed bug, and removed the complex security model and changed it to the simple one. Re-structure the architecture of the application</p>

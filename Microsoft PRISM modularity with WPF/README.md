@@ -66,7 +66,7 @@
 <div>
 <p>4. Also add new reference called System.CompenentModel.Composition.dll from &nbsp;Framework Assemblies.</p>
 </div>
-<p class="separator"><a href="http://4.bp.blogspot.com/-Wd7aTG5nauM/Uc662oL964I/AAAAAAAAAhY/GWsFzvL3n7k/s795/1..JPG"><img src=":-proxy?url=http%3a%2f%2f4.bp.blogspot.com%2f-wd7atg5naum%2fuc662ol964i%2faaaaaaaaahy%2fgwsfzvl3n7k%2fs640%2f1..jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="443"></a></p>
+<p class="separator"><a href="http://4.bp.blogspot.com/-Wd7aTG5nauM/Uc662oL964I/AAAAAAAAAhY/GWsFzvL3n7k/s795/1..JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-Wd7aTG5nauM%2FUc662oL964I%2FAAAAAAAAAhY%2FGWsFzvL3n7k%2Fs640%2F1..JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="443"></a></p>
 <div>
 <p>&nbsp;</p>
 </div>
@@ -82,7 +82,7 @@
 <div>
 <p>&nbsp;</p>
 </div>
-<p class="separator"><a href="http://1.bp.blogspot.com/-tEdqz1uAIGI/Uc696Eyh1-I/AAAAAAAAAho/5QBCB04uHIw/s578/2.JPG"><img src=":-proxy?url=http%3a%2f%2f1.bp.blogspot.com%2f-tedqz1uaigi%2fuc696eyh1-i%2faaaaaaaaaho%2f5qbcb04uhiw%2fs400%2f2.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="202" height="400"></a></p>
+<p class="separator"><a href="http://1.bp.blogspot.com/-tEdqz1uAIGI/Uc696Eyh1-I/AAAAAAAAAho/5QBCB04uHIw/s578/2.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-tEdqz1uAIGI%2FUc696Eyh1-I%2FAAAAAAAAAho%2F5QBCB04uHIw%2Fs400%2F2.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="202" height="400"></a></p>
 <div>
 <p>&nbsp;</p>
 </div>
@@ -111,18 +111,18 @@
 <div>
 <p>10. Add new class called EmployeeModule.cs to EmployeeModule and implement this class as below.</p>
 </div>
-<p class="separator"><a href="http://2.bp.blogspot.com/-tFE3HKSfAMI/Uc7EVevKxoI/AAAAAAAAAh4/3EgKwVRV9XA/s584/3.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-tfe3hksfami%2fuc7evevkxoi%2faaaaaaaaah4%2f3egkwvrv9xa%2fs640%2f3.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="320"></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-tFE3HKSfAMI/Uc7EVevKxoI/AAAAAAAAAh4/3EgKwVRV9XA/s584/3.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-tFE3HKSfAMI%2FUc7EVevKxoI%2FAAAAAAAAAh4%2F3EgKwVRV9XA%2Fs640%2F3.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="320"></a></p>
 <p>To import module to our main application we need to create our module exportable. So we need to implement our module class as above. Module as should implement using IModule interface which has only one method called Initialize. This method used the Initialize
  your module before the loading. For example you can specify the view &nbsp;to navigate during the initial loading of your module. We will discuss more about this soon.</p>
 <p>&nbsp;</p>
 <p>Using ModuleExport attribute ([ModuleExport(typeof(ProductModule))]) We make this module as exportable.</p>
 <p>&nbsp;</p>
 <p>11.Now we want to implement the module class for EmployeeModule and Repository module.First write click on&nbsp;EmployeeModule and add new class called&nbsp;EmployeeModule.cs and implement it as below.</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-4QlgtkG4OQk/Uc7H6u2GwjI/AAAAAAAAAiI/kRd_jKrwWMc/s494/4.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-4qlgtkg4oqk%2fuc7h6u2gwji%2faaaaaaaaaii%2fkrd_jkrwwmc%2fs640%2f4.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="286"></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-4QlgtkG4OQk/Uc7H6u2GwjI/AAAAAAAAAiI/kRd_jKrwWMc/s494/4.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-4QlgtkG4OQk%2FUc7H6u2GwjI%2FAAAAAAAAAiI%2FkRd_jKrwWMc%2Fs640%2F4.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="286"></a></p>
 <p>&nbsp;</p>
 <p>Now right click on Repository class library and add new class called RepositoryModule and Implement it as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-QxF8PtmHPZ8/Uc7JVE9vBYI/AAAAAAAAAiY/PVbPp4AfXeU/s536/5.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-qxf8ptmhpz8%2fuc7jve9vbyi%2faaaaaaaaaiy%2fpvbpp4afxeu%2fs640%2f5.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="272"></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-QxF8PtmHPZ8/Uc7JVE9vBYI/AAAAAAAAAiY/PVbPp4AfXeU/s536/5.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-QxF8PtmHPZ8%2FUc7JVE9vBYI%2FAAAAAAAAAiY%2FPVbPp4AfXeU%2Fs640%2F5.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="272"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>12. Now again we will move to out main project (PrimsModulityWithWPF) and we will implement the our&nbsp;Bootstrapper class and Shell.</p>
@@ -136,10 +136,10 @@
 <p>In our example we use dependency injection container as MEF. So we need to implement &nbsp;our boostrapper class derive from MefBootstrapper.</p>
 <p>&nbsp;</p>
 <p>Before jump into bootstrapper implementation &nbsp;right click on References of&nbsp;PrimsModulityWithWPF project and add the&nbsp;EmployeeModule,ProductModule and Repository as solution references.</p>
-<p class="separator"><a href="http://1.bp.blogspot.com/-CBD2tYAn_1U/Uc7PcPswomI/AAAAAAAAAio/MxNa7RyASQM/s801/6.JPG"><img src=":-proxy?url=http%3a%2f%2f1.bp.blogspot.com%2f-cbd2tyan_1u%2fuc7pcpswomi%2faaaaaaaaaio%2fmxna7ryasqm%2fs640%2f6.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="440"></a></p>
+<p class="separator"><a href="http://1.bp.blogspot.com/-CBD2tYAn_1U/Uc7PcPswomI/AAAAAAAAAio/MxNa7RyASQM/s801/6.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-CBD2tYAn_1U%2FUc7PcPswomI%2FAAAAAAAAAio%2FMxNa7RyASQM%2Fs640%2F6.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="440"></a></p>
 <p>&nbsp;</p>
 <p>Now implement our Boostrapper class as below.</p>
-<p class="separator"><a href="http://4.bp.blogspot.com/-mcJ0e0zDmJ8/Uc7ldMgru0I/AAAAAAAAAi4/DI0FCy3AqjM/s1021/7.JPG"><img src=":-proxy?url=http%3a%2f%2f4.bp.blogspot.com%2f-mcj0e0zdmj8%2fuc7ldmgru0i%2faaaaaaaaai4%2fdi0fcy3aqjm%2fs1600%2f7.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://4.bp.blogspot.com/-mcJ0e0zDmJ8/Uc7ldMgru0I/AAAAAAAAAi4/DI0FCy3AqjM/s1021/7.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-mcJ0e0zDmJ8%2FUc7ldMgru0I%2FAAAAAAAAAi4%2FDI0FCy3AqjM%2Fs1600%2F7.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>Here we have to override some of virtual methods in which are in MefBootstrapper class</p>
 <p>&nbsp;</p>
@@ -175,11 +175,11 @@
 <p>&nbsp;</p>
 <p class="separator">&nbsp;</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-nv29Bh5YkJ0/Uc-tbpIiZaI/AAAAAAAAAjY/SW0iEQu66uI/s802/8.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-nv29bh5ykj0%2fuc-tbpiizai%2faaaaaaaaajy%2fsw0iequ66ui%2fs802%2f8.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="280"></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-nv29Bh5YkJ0/Uc-tbpIiZaI/AAAAAAAAAjY/SW0iEQu66uI/s802/8.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-nv29Bh5YkJ0%2FUc-tbpIiZaI%2FAAAAAAAAAjY%2FSW0iEQu66uI%2Fs802%2F8.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="280"></a></p>
 <p>&nbsp;</p>
 <p>Also we need to create this shell view as exportable. To do that go to Shell.xaml.cs file and add the [Export] attribute as bellow.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://4.bp.blogspot.com/-CSv_efc4Kvo/Uc-uRBvnPaI/AAAAAAAAAjk/SlYApSR8AdE/s376/9.JPG"><img src=":-proxy?url=http%3a%2f%2f4.bp.blogspot.com%2f-csv_efc4kvo%2fuc-urbvnpai%2faaaaaaaaajk%2fslyapsr8ade%2fs376%2f9.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="402"></a></p>
+<p class="separator"><a href="http://4.bp.blogspot.com/-CSv_efc4Kvo/Uc-uRBvnPaI/AAAAAAAAAjk/SlYApSR8AdE/s376/9.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-CSv_efc4Kvo%2FUc-uRBvnPaI%2FAAAAAAAAAjk%2FSlYApSR8AdE%2Fs376%2F9.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="402"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>14. Now we can &nbsp;run and test our application working as expected or not. Before that we need to perform two extra steps more. For all the modules (Except our main module) , Properties of prism libraries &quot;Copy Local&quot; attribute should be set as &quot;False&quot;.
@@ -187,17 +187,17 @@
 <p>&nbsp;</p>
 <p>Right click on &nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Practices.Prism.aspx" target="_blank" title="Auto generated link to Microsoft.Practices.Prism">Microsoft.Practices.Prism</a> which is in EmployeeModule class library and select the Properties &nbsp;and set &quot;Copy Local&quot; attribute as false.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-Xn3rwkAcs8g/Uc-wWvEIC4I/AAAAAAAAAj0/0g4KecsT5q0/s339/10.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-xn3rwkacs8g%2fuc-wwveic4i%2faaaaaaaaaj0%2f0g4kecst5q0%2fs339%2f10.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="357" height="400"></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-Xn3rwkAcs8g/Uc-wWvEIC4I/AAAAAAAAAj0/0g4KecsT5q0/s339/10.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-Xn3rwkAcs8g%2FUc-wWvEIC4I%2FAAAAAAAAAj0%2F0g4KecsT5q0%2Fs339%2F10.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="357" height="400"></a></p>
 <p>&nbsp;Follow these step for all other Prism libraries (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Practices.Prism.MefExtensions.aspx" target="_blank" title="Auto generated link to Microsoft.Practices.Prism.MefExtensions">Microsoft.Practices.Prism.MefExtensions</a>, <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Practices.ServiceLocation.aspx" target="_blank" title="Auto generated link to Microsoft.Practices.ServiceLocation">Microsoft.Practices.ServiceLocation</a>,<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Practices.Prism.Interactivity.aspx" target="_blank" title="Auto generated link to Microsoft.Practices.Prism.Interactivity">Microsoft.Practices.Prism.Interactivity</a>). And do the same steps for all other class libraries (EmployeeModule,Repository).</p>
 <p>&nbsp;</p>
 <p>Now open you App.xaml file and delete StartupUri part from it. After that your App.xaml file should be like this.</p>
 <p>&nbsp;</p>
 <p>Now go to the App.xaml.cs class and override OnStartup method as bellow.</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-d77d4pOW6MQ/Uc-yszHlk8I/AAAAAAAAAkE/bDj8oLrmimU/s553/11.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-d77d4pow6mq%2fuc-yszhlk8i%2faaaaaaaaake%2fbdj8olrmimu%2fs553%2f11.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="283"></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-d77d4pOW6MQ/Uc-yszHlk8I/AAAAAAAAAkE/bDj8oLrmimU/s553/11.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-d77d4pOW6MQ%2FUc-yszHlk8I%2FAAAAAAAAAkE%2FbDj8oLrmimU%2Fs553%2F11.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="283"></a></p>
 <p>&nbsp;</p>
 <p>Now rebuild your application and run it. if you complete above steps correctly you can see the empty shell like below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-dVsw3yszsGY/Uc-0WRKUejI/AAAAAAAAAkU/WqMDiMw0yxc/s624/12.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-dvsw3yszsgy%2fuc-0wrkueji%2faaaaaaaaaku%2fwqmdimw0yxc%2fs624%2f12.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="400" height="217"></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-dVsw3yszsGY/Uc-0WRKUejI/AAAAAAAAAkU/WqMDiMw0yxc/s624/12.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-dVsw3yszsGY%2FUc-0WRKUejI%2FAAAAAAAAAkU%2FWqMDiMw0yxc%2Fs624%2F12.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="400" height="217"></a></p>
 <p>&nbsp;</p>
 <p>15. we can implement our modules one by one. First we will implement the out Repository module which contain the all the business logic.</p>
 <p>&nbsp;</p>
@@ -205,34 +205,34 @@
 <p>&nbsp;</p>
 <p>Create new class called &quot;Employee&quot; and implement it as bellow.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-1s0K8630MRw/Uc-5GaaBONI/AAAAAAAAAkk/JrTul3o1FZ0/s371/13.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-1s0k8630mrw%2fuc-5gaaboni%2faaaaaaaaakk%2fjrtul3o1fz0%2fs371%2f13.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="400" height="221"></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-1s0K8630MRw/Uc-5GaaBONI/AAAAAAAAAkk/JrTul3o1FZ0/s371/13.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-1s0K8630MRw%2FUc-5GaaBONI%2FAAAAAAAAAkk%2FJrTul3o1FZ0%2Fs371%2F13.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="400" height="221"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Create new class called &quot;Product&quot; and implement it as bellow.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-fa-1wz0PVJI/Uc-5MBW3djI/AAAAAAAAAks/08BnKbPuK6M/s430/14.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-fa-1wz0pvji%2fuc-5mbw3dji%2faaaaaaaaaks%2f08bnkbpuk6m%2fs430%2f14.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="400" height="173"></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-fa-1wz0PVJI/Uc-5MBW3djI/AAAAAAAAAks/08BnKbPuK6M/s430/14.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-fa-1wz0PVJI%2FUc-5MBW3djI%2FAAAAAAAAAks%2F08BnKbPuK6M%2Fs430%2F14.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="400" height="173"></a></p>
 <p>&nbsp;</p>
 <p>Now we will implement the Interfaces for EmployeeRepository class and ProductRepository class. Right click on Repository module and create new folder called Repository and then right click on Repository folder and create new folder called Interfaces. Now
  create two interfaces named by IEmployeeRepository and IProducRepository and implement interface method definition as bellow.</p>
 <p>&nbsp;</p>
 <p>IEmployeeRepository</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://4.bp.blogspot.com/-N-FIw2mvfnQ/Uc-7ay8i1SI/AAAAAAAAAk8/2HhdqlGD93o/s383/15.JPG"><img src=":-proxy?url=http%3a%2f%2f4.bp.blogspot.com%2f-n-fiw2mvfnq%2fuc-7ay8i1si%2faaaaaaaaak8%2f2hhdqlgd93o%2fs383%2f15.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="400" height="176"></a></p>
+<p class="separator"><a href="http://4.bp.blogspot.com/-N-FIw2mvfnQ/Uc-7ay8i1SI/AAAAAAAAAk8/2HhdqlGD93o/s383/15.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-N-FIw2mvfnQ%2FUc-7ay8i1SI%2FAAAAAAAAAk8%2F2HhdqlGD93o%2Fs383%2F15.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="400" height="176"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>IProductRepository</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-dpSujHXbKAo/Uc-7gDDIG7I/AAAAAAAAAlE/1g3Z4ShgL4o/s392/16.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-dpsujhxbkao%2fuc-7gddig7i%2faaaaaaaaale%2f1g3z4shgl4o%2fs392%2f16.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="400" height="178"></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-dpSujHXbKAo/Uc-7gDDIG7I/AAAAAAAAAlE/1g3Z4ShgL4o/s392/16.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-dpSujHXbKAo%2FUc-7gDDIG7I%2FAAAAAAAAAlE%2F1g3Z4ShgL4o%2Fs392%2F16.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="400" height="178"></a></p>
 <p>&nbsp;</p>
 <p>Now right click on the Repository folder and create new class called EmployeeRepository and implement the class using IEmployeeRepository interface as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://1.bp.blogspot.com/-qYm8itXyrio/Uc_DbpSUa7I/AAAAAAAAAlU/nfpjfJVOpV0/s817/17.JPG"><img src=":-proxy?url=http%3a%2f%2f1.bp.blogspot.com%2f-qym8itxyrio%2fuc_dbpsua7i%2faaaaaaaaalu%2fnfpjfjvopv0%2fs817%2f17.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="316"></a></p>
+<p class="separator"><a href="http://1.bp.blogspot.com/-qYm8itXyrio/Uc_DbpSUa7I/AAAAAAAAAlU/nfpjfJVOpV0/s817/17.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-qYm8itXyrio%2FUc_DbpSUa7I%2FAAAAAAAAAlU%2FnfpjfJVOpV0%2Fs817%2F17.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="316"></a></p>
 <p>&nbsp;</p>
 <p>Here you can &nbsp;see [Export] attribute and it enable the Exportability of the EmployeeRepository (Since we use type as IEmployeeRepository &nbsp;interface and since our class derived from same interface it enable exportability for EmployeeRepository class).</p>
 <p>&nbsp;</p>
 <p>Now again right click on the Repository folder and create new class call ProductRepository and implement the class definition as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://1.bp.blogspot.com/-BBZnlK6FvDI/Uc_GlP5AmhI/AAAAAAAAAlk/QZNyDZqjAj4/s803/18.JPG"><img src=":-proxy?url=http%3a%2f%2f1.bp.blogspot.com%2f-bbznlk6fvdi%2fuc_glp5amhi%2faaaaaaaaalk%2fqznydzqjaj4%2fs803%2f18.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="328"></a></p>
+<p class="separator"><a href="http://1.bp.blogspot.com/-BBZnlK6FvDI/Uc_GlP5AmhI/AAAAAAAAAlk/QZNyDZqjAj4/s803/18.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-BBZnlK6FvDI%2FUc_GlP5AmhI%2FAAAAAAAAAlk%2FQZNyDZqjAj4%2Fs803%2F18.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="328"></a></p>
 <p>&nbsp;</p>
 <p>Our repository module implementation has completed now.</p>
 <p>&nbsp;</p>
@@ -246,7 +246,7 @@
 <p>&nbsp;</p>
 <p>Right click on the ViewModel class and create new class called EmployeeViewModel and implement the class as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-UkUudClb9D0/Uc_6MIciW6I/AAAAAAAAAmE/abc9lsC8KGE/s653/19.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-ukuudclb9d0%2fuc_6miciw6i%2faaaaaaaaame%2fabc9lsc8kge%2fs653%2f19.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-UkUudClb9D0/Uc_6MIciW6I/AAAAAAAAAmE/abc9lsC8KGE/s653/19.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-UkUudClb9D0%2FUc_6MIciW6I%2FAAAAAAAAAmE%2Fabc9lsC8KGE%2Fs653%2F19.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p class="separator">&nbsp;</p>
 <p>&nbsp;</p>
@@ -256,15 +256,15 @@
 <p>&nbsp;</p>
 <p>Now right click on View folder and create new WPF usercontrol. Implement the view as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://4.bp.blogspot.com/-uXQylwohhyE/Uc_6R4rDU1I/AAAAAAAAAmM/k6_4zkRHH_8/s937/20.JPG"><img src=":-proxy?url=http%3a%2f%2f4.bp.blogspot.com%2f-uxqylwohhye%2fuc_6r4rdu1i%2faaaaaaaaamm%2fk6_4zkrhh_8%2fs937%2f20.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://4.bp.blogspot.com/-uXQylwohhyE/Uc_6R4rDU1I/AAAAAAAAAmM/k6_4zkRHH_8/s937/20.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-uXQylwohhyE%2FUc_6R4rDU1I%2FAAAAAAAAAmM%2Fk6_4zkRHH_8%2Fs937%2F20.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>Now open the EmployeeView.xmal.cs &nbsp;and implement the class as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-3OQn3jNgTa4/Uc_6_qQBDvI/AAAAAAAAAmU/QYdj9xv5pfM/s572/21.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-3oqn3jngta4%2fuc_6_qqbdvi%2faaaaaaaaamu%2fqydj9xv5pfm%2fs572%2f21.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-3OQn3jNgTa4/Uc_6_qQBDvI/AAAAAAAAAmU/QYdj9xv5pfM/s572/21.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-3OQn3jNgTa4%2FUc_6_qQBDvI%2FAAAAAAAAAmU%2FQYdj9xv5pfM%2Fs572%2F21.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;Now open the EmployeeModule class and &nbsp;add extra line of code as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://1.bp.blogspot.com/-9qJ9Q8vn0KQ/UdAA7uQKgsI/AAAAAAAAAm0/1Aot2ZoRcRQ/s539/22.JPG"><img src=":-proxy?url=http%3a%2f%2f1.bp.blogspot.com%2f-9qj9q8vn0kq%2fudaa7uqkgsi%2faaaaaaaaam0%2f1aot2zorcrq%2fs539%2f22.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://1.bp.blogspot.com/-9qJ9Q8vn0KQ/UdAA7uQKgsI/AAAAAAAAAm0/1Aot2ZoRcRQ/s539/22.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-9qJ9Q8vn0KQ%2FUdAA7uQKgsI%2FAAAAAAAAAm0%2F1Aot2ZoRcRQ%2Fs539%2F22.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p class="separator">&nbsp;</p>
 <p>&nbsp;</p>
@@ -278,24 +278,24 @@
 <p>&nbsp;</p>
 <p>Right click on the ViewModel folder and create new class called ProductViewModel. Implement the class as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-LXNdICrAQQI/UdACcdRpjwI/AAAAAAAAAnE/cLwxs8Y_Zsw/s685/23.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-lxndicraqqi%2fudaccdrpjwi%2faaaaaaaaane%2fclwxs8y_zsw%2fs685%2f23.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-LXNdICrAQQI/UdACcdRpjwI/AAAAAAAAAnE/cLwxs8Y_Zsw/s685/23.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-LXNdICrAQQI%2FUdACcdRpjwI%2FAAAAAAAAAnE%2FcLwxs8Y_Zsw%2Fs685%2F23.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>Now right click on the View folder and create new WPF usercontrol called ProductView. Implement it as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://1.bp.blogspot.com/-vfAMoFHHAQ0/UdADAbbRNlI/AAAAAAAAAnM/sRJRgMowBI4/s925/24.JPG"><img src=":-proxy?url=http%3a%2f%2f1.bp.blogspot.com%2f-vfamofhhaq0%2fudadabbrnli%2faaaaaaaaanm%2fsrjrgmowbi4%2fs925%2f24.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://1.bp.blogspot.com/-vfAMoFHHAQ0/UdADAbbRNlI/AAAAAAAAAnM/sRJRgMowBI4/s925/24.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-vfAMoFHHAQ0%2FUdADAbbRNlI%2FAAAAAAAAAnM%2FsRJRgMowBI4%2Fs925%2F24.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>Now go to ProductView.xmal.cs and modified the class as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://2.bp.blogspot.com/-Ly_g8CyK4vI/UdADXa1oikI/AAAAAAAAAnU/ofahTz1ZPlk/s492/25.JPG"><img src=":-proxy?url=http%3a%2f%2f2.bp.blogspot.com%2f-ly_g8cyk4vi%2fudadxa1oiki%2faaaaaaaaanu%2fofahtz1zplk%2fs492%2f25.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://2.bp.blogspot.com/-Ly_g8CyK4vI/UdADXa1oikI/AAAAAAAAAnU/ofahTz1ZPlk/s492/25.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-Ly_g8CyK4vI%2FUdADXa1oikI%2FAAAAAAAAAnU%2FofahTz1ZPlk%2Fs492%2F25.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Now open the ProductModule.cs and modified the class as below.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-Rp_xva_1gXk/UdAEMVGic3I/AAAAAAAAAnc/vyowPKbjqXw/s531/26.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-rp_xva_1gxk%2fudaemvgic3i%2faaaaaaaaanc%2fvyowpkbjqxw%2fs531%2f26.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt=""></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-Rp_xva_1gXk/UdAEMVGic3I/AAAAAAAAAnc/vyowPKbjqXw/s531/26.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-Rp_xva_1gXk%2FUdAEMVGic3I%2FAAAAAAAAAnc%2FvyowPKbjqXw%2Fs531%2F26.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt=""></a></p>
 <p>&nbsp;</p>
 <p>Now we have completed our development.So rebuilt and run your application. If you are following steps correctly you will see the following window.</p>
 <p>&nbsp;</p>
-<p class="separator"><a href="http://3.bp.blogspot.com/-zcDK0iM-VXU/UdAE4eiZ_iI/AAAAAAAAAnk/ykKBEh2xs9s/s1365/27.JPG"><img src=":-proxy?url=http%3a%2f%2f3.bp.blogspot.com%2f-zcdk0im-vxu%2fudae4eiz_ii%2faaaaaaaaank%2fykkbeh2xs9s%2fs1365%2f27.jpg&container=blogger&gadget=a&rewritemime=image%2f*" border="0" alt="" width="640" height="339"></a></p>
+<p class="separator"><a href="http://3.bp.blogspot.com/-zcDK0iM-VXU/UdAE4eiZ_iI/AAAAAAAAAnk/ykKBEh2xs9s/s1365/27.JPG"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-zcDK0iM-VXU%2FUdAE4eiZ_iI%2FAAAAAAAAAnk%2FykKBEh2xs9s%2Fs1365%2F27.JPG&container=blogger&gadget=a&rewriteMime=image%2F*" border="0" alt="" width="640" height="339"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Happy Coding!!!!!!!!!!!!!!!!!!</p>

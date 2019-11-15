@@ -193,11 +193,11 @@ End&nbsp;Class&nbsp;
 </div>
 </div>
 </div>
-<p><img id="122379" src="122379-spm.png" alt="" width="534" height="259"><br>
+<p><img id="122379" src="http://i1.code.msdn.s-msft.com/practical-asynchronous-ebd00ae1/image/file/122379/1/spm.png" alt="" width="534" height="259"><br>
 <br>
 <span style="font-size:small"><strong>Update 8/7/2014</strong>, noticed that between projects I was not consistent with some variable names, fixed.</span></p>
 <p><span style="font-size:small"><strong>Update 8/12/2014</strong>, original solution had all data operations in a class project done in C# and have added a VB.NET version.</span></p>
-<p><span style="font-size:small"><img id="123691" src="123691-pm.png" alt="" width="296" height="280"><br>
+<p><span style="font-size:small"><img id="123691" src="http://i1.code.msdn.s-msft.com/practical-asynchronous-ebd00ae1/image/file/123691/1/pm.png" alt="" width="296" height="280"><br>
 </span></p>
 <h1>More Information</h1>
 <p><span style="font-size:small">More demos will be added as time permits</span></p>

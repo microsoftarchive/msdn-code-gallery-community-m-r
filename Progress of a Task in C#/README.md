@@ -79,7 +79,7 @@ BackgroundWorker</a> does. But that doesn&rsquo;t mean we can&rsquo;t get a prog
 <table class="tr-caption-container" cellspacing="0" cellpadding="0" align="center" style="text-align:center; margin-left:auto; margin-right:auto">
 <tbody>
 <tr>
-<td><a href="http://lh5.ggpht.com/-zCBWB6mqjos/UeLQ5TLtFZI/AAAAAAAABrM/Ep5hJh1rUio/s1600-h/image%25255B2%25255D.png" style="margin-left:auto; margin-right:auto"><img title="image" src="-image_thumb.png?imgmax=800" alt="image" width="158" height="158" style="border-width:0px; padding-top:0px; padding-left:0px; display:inline; padding-right:0px; border-style:solid"></a></td>
+<td><a href="http://lh5.ggpht.com/-zCBWB6mqjos/UeLQ5TLtFZI/AAAAAAAABrM/Ep5hJh1rUio/s1600-h/image%25255B2%25255D.png" style="margin-left:auto; margin-right:auto"><img title="image" src="http://lh6.ggpht.com/-uCBzwOLh1Sk/UeLQ6bayRuI/AAAAAAAABrU/0w07Xdr_VxQ/image_thumb.png?imgmax=800" alt="image" width="158" height="158" style="border-width:0px; padding-top:0px; padding-left:0px; display:inline; padding-right:0px; border-style:solid"></a></td>
 </tr>
 <tr>
 <td class="tr-caption">Result</td>

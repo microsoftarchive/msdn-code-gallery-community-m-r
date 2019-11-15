@@ -34,12 +34,12 @@ Now we will implement a simple silverlight application using MVVM pattern.This e
 <br>
 <br>
 </p>
-<div class="separator" style="clear:both; text-align:center"><a href="http://1.bp.blogspot.com/-Eok6Tm4LuIc/Tqzt1zti6CI/AAAAAAAAAXA/JpcLLcVfB7A/s1600/FinalOutput.JPG" style="margin-left:1em; margin-right:1em"><img src="-finaloutput.jpg" border="0" alt="" width="400" height="207"></a></div>
+<div class="separator" style="clear:both; text-align:center"><a href="http://1.bp.blogspot.com/-Eok6Tm4LuIc/Tqzt1zti6CI/AAAAAAAAAXA/JpcLLcVfB7A/s1600/FinalOutput.JPG" style="margin-left:1em; margin-right:1em"><img src="http://1.bp.blogspot.com/-Eok6Tm4LuIc/Tqzt1zti6CI/AAAAAAAAAXA/JpcLLcVfB7A/s400/FinalOutput.JPG" border="0" alt="" width="400" height="207"></a></div>
 <p><br>
 <br>
 <strong>Solution :</strong><br>
 1. Create a new Silverlight application and name it as MVVMSample.Now Visual Studio will create Silverlight project and Web Application project for you.</p>
-<div class="separator" style="clear:both; text-align:center"><a href="http://1.bp.blogspot.com/-8DgbvFpoCxE/TqzvoulNT-I/AAAAAAAAAXI/OlOR5kL8WP4/s1600/1.JPG" style="margin-left:1em; margin-right:1em"><img src="-1.jpg" border="0" alt=""></a></div>
+<div class="separator" style="clear:both; text-align:center"><a href="http://1.bp.blogspot.com/-8DgbvFpoCxE/TqzvoulNT-I/AAAAAAAAAXI/OlOR5kL8WP4/s1600/1.JPG" style="margin-left:1em; margin-right:1em"><img src="http://1.bp.blogspot.com/-8DgbvFpoCxE/TqzvoulNT-I/AAAAAAAAAXI/OlOR5kL8WP4/s1600/1.JPG" border="0" alt=""></a></div>
 <p><br>
 <br>
 2<strong>. </strong>Now right click on the MVVMSample.Web project and add New Class named by PersonData and implement the class as bellow.<br>
@@ -100,7 +100,7 @@ Now we will implement a simple silverlight application using MVVM pattern.This e
  WCF Service and name it as PersonDataService.svc and click on the Add button.<br>
 <br>
 </p>
-<div class="separator" style="clear:both; text-align:center"><a href="http://3.bp.blogspot.com/-5JznMwS1oto/Tqz1Eh97khI/AAAAAAAAAXQ/KJ4AHnEybHQ/s1600/2.JPG" style="margin-left:1em; margin-right:1em"><img src="-2.jpg" border="0" alt="" width="640" height="388"></a></div>
+<div class="separator" style="clear:both; text-align:center"><a href="http://3.bp.blogspot.com/-5JznMwS1oto/Tqz1Eh97khI/AAAAAAAAAXQ/KJ4AHnEybHQ/s1600/2.JPG" style="margin-left:1em; margin-right:1em"><img src="http://3.bp.blogspot.com/-5JznMwS1oto/Tqz1Eh97khI/AAAAAAAAAXQ/KJ4AHnEybHQ/s640/2.JPG" border="0" alt="" width="640" height="388"></a></div>
 <p><br>
 <br>
 Now implement the service class as bellow. <br>

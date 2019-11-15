@@ -35,7 +35,7 @@
 <p><em>VisualStudio 2015 update 1 or later , Windows 10 SDK</em></p>
 <p><span style="font-size:20px; font-weight:bold">Description</span></p>
 <p><span>The syntax turns out to be equally simple. You just need to make a display request</span><span>&nbsp;call.</span></p>
-<p><img id="156499" src="156499-screenshot%20(69).png" alt="" width="499" height="352"></p>
+<p><img id="156499" src="https://i1.code.msdn.s-msft.com/prevent-lock-screen-in-e3bc260c/image/file/156499/1/screenshot%20(69).png" alt="" width="499" height="352"></p>
 <p>&nbsp;</p>
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">

@@ -37,9 +37,9 @@
 <p>Following are the screenshots of the sample resumes in PDF and Text file format. The supported formats for resumes are doc, docx, PDF, RTF and txt. For PDF files, we are using
 <a href="http://goo.gl/smJX1C" target="_blank">Aspose.Pdf for .NET</a> to convert the PDF files to Doc Files and then process them.</p>
 <p>&nbsp;</p>
-<p><img id="122279" src="122279-sample1.png" alt="" width="596" height="648" style="border:1px solid black"></p>
+<p><img id="122279" src="http://i1.code.msdn.s-msft.com/online-resume-parsing-1f6717c9/image/file/122279/1/sample1.png" alt="" width="596" height="648" style="border:1px solid black"></p>
 <p>&nbsp;</p>
-<p><img id="122280" src="122280-sample2.png" alt="" width="668" height="583"></p>
+<p><img id="122280" src="http://i1.code.msdn.s-msft.com/online-resume-parsing-1f6717c9/image/file/122280/1/sample2.png" alt="" width="668" height="583"></p>
 <h2>How Resume Parser Works</h2>
 <p>Following is a screenshot of the main screen of the application:</p>
 <p><img id="122220" src="122220-main.png" alt="" width="750" height="406"></p>
@@ -51,10 +51,10 @@
 <p>Now, to parse resumes, you can select multiple files and upload them.</p>
 <p><img id="122223" src="122223-uploaded.png" alt="" width="726" height="327"></p>
 <p>Once the resumes are uploaded, you can simply press the &ldquo;Parse&rdquo; button to parse and extract the information from the files.</p>
-<p><img id="122274" src="122274-parsed.png" alt="" width="716" height="398"></p>
+<p><img id="122274" src="http://i1.code.msdn.s-msft.com/online-resume-parsing-1f6717c9/image/file/122274/1/parsed.png" alt="" width="716" height="398"></p>
 <p>As you can see in the above screenshot, the summary of different candidates is shown like Name, Email, Skills etc. Now, if you want to view and edit the information extracted from resumes, you can simply press &ldquo;Edit&rdquo; button and a popup screen
  will appear with details of the specific resume as shown below.</p>
-<p><img id="122281" src="122281-details.png" alt="" width="710" height="400"></p>
+<p><img id="122281" src="http://i1.code.msdn.s-msft.com/online-resume-parsing-1f6717c9/image/file/122281/1/details.png" alt="" width="710" height="400"></p>
 <p>You can view or modify any information and press &ldquo;Update&rdquo; button. This will update the information for the specific candidate.&nbsp;</p>
 <p>As mentioned above, this is a sample project created with Aspose.Words for .NET to extract information from resumes which are in LinkedIn format. However, you can modify it further to support other formats as per your requirement. You can download the application
  with complete source code and check how it works with LinkedIn resumes. Also, you can further modify the features as per your requirement to incorporate different formats. You can also suggest any improvements or let us know about any specific requirements

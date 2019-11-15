@@ -54,7 +54,7 @@
  are using Windows Azure Active Directory to support Single-Sign-On between all the applications in the suite.The companies can also federate the directory service with their on-premises directories (corporate Active Directory) to support SSO using the on-premises
  corporate AD credentials.A few of the web apps can also be integrated as apps for SharePoint within Office 365.<br>
 In summary, different technologies are used depending on the business application scenarios: Web Apps, Windows Store, Windows Phone, WPF desktop, etc.</em></em></p>
-<p><em><em><img id="101437" src="101437-visitors%20logo.png" alt="" width="296" height="109"><br>
+<p><em><em><img id="101437" src="http://i1.code.msdn.s-msft.com/mycompany-visitors-demo-776d9447/image/file/101437/1/visitors%20logo.png" alt="" width="296" height="109"><br>
 </em></em></p>
 <p><em><em>This concrete business application is called <strong>VISITORS </strong>
 and it is described below.</em></em></p>
@@ -71,12 +71,12 @@ and it is described below.</em></em></p>
  the process to handle a visitor&rsquo;s arrival thru NFC communication. The Windows 8 application is an application that targets security staff so they manage visits and visitors information from a security staff point of view.Email notifications are sent
  in some circumstances and there are also web notifications using SignalR. The Visits and Visitors pictures and info are also sync by using SignalR.</p>
 <p><span style="font-size:small"><strong>Visitors Web App (SPA - Single Page Application):</strong></span></p>
-<p><img id="101446" src="101446-visitors_web_app.png" alt="" width="743" height="500"></p>
+<p><img id="101446" src="http://i1.code.msdn.s-msft.com/mycompany-visitors-demo-776d9447/image/file/101446/1/visitors_web_app.png" alt="" width="743" height="500"></p>
 <p>&nbsp;</p>
 <p><span style="font-size:small"><strong>Visitors Windows 8.1 Store App (C#/XAML):</strong></span></p>
-<h1><img id="101435" src="101435-visitors_windows_store_app.png" alt="" width="702" height="450"></h1>
+<h1><img id="101435" src="http://i1.code.msdn.s-msft.com/mycompany-visitors-demo-776d9447/image/file/101435/1/visitors_windows_store_app.png" alt="" width="702" height="450"></h1>
 <p><span style="font-size:small"><strong>Visitors Windows 8.1 Store App&nbsp;<strong>(C#/XAML):</strong></strong></span></p>
-<p><span style="font-size:small"><strong><img id="101436" src="101436-visitors_windows_phone_app.png" alt="" width="258" height="459"><br>
+<p><span style="font-size:small"><strong><img id="101436" src="http://i1.code.msdn.s-msft.com/mycompany-visitors-demo-776d9447/image/file/101436/1/visitors_windows_phone_app.png" alt="" width="258" height="459"><br>
 </strong></span></p>
 <h1><span>Simplified Architecture Diagram</span></h1>
 <p><img id="101338" src="101338-simplified%20architecture.png" alt="" width="405" height="559"></p>

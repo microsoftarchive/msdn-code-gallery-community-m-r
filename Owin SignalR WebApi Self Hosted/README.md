@@ -70,7 +70,7 @@ The solution that I propose? &ndash; Implement<strong> one standalone/isolated</
 <br>
 Here is a graph of how the Website/Web Application connects and receives data.</p>
 <h2><a name="ProjectOutline"></a>Project Outline</h2>
-<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6574.Graph.png"><img src="-6574.graph.png" alt="" style="border-width:0px; border-style:solid"></a><br>
+<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6574.Graph.png"><img src="http://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/6574.Graph.png" alt="" style="border-width:0px; border-style:solid"></a><br>
 <br>
 The solution consists of the following projects:<br>
 <br>
@@ -95,27 +95,27 @@ The solution consists of the following projects:<br>
 <h2><a name="SettingUpTheProject"></a>Setting up the project:</h2>
 <ol>
 <li>Step1: Download and build the application to resolve the packages </li><li>Step2: Run the CreateDatabase.sql script found in the root on your SQL server instance. This will create the database structure and will also insert a test application with the relevant information
-</li><li>Step3: Right click on the solution and select &ldquo;Multiple startup projects&rdquo;, it should look similar to this:<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/0624.startup--projects.png"><img src="-0624.startup--projects.png" alt="" style="border-width:0px; border-style:solid"></a>
+</li><li>Step3: Right click on the solution and select &ldquo;Multiple startup projects&rdquo;, it should look similar to this:<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/0624.startup--projects.png"><img src="http://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/0624.startup--projects.png" alt="" style="border-width:0px; border-style:solid"></a>
 </li><li>Step4: Expand the OwinSignalR.Client project and set Demo1.html as the startup page
 </li><li>Step5: Run the solution </li></ol>
 <div>2 console applications should start up and 1 website. After the projects start you should see the following (the line below &ldquo;OwinSignalR&hellip;&rdquo; is a unique id for the SignalR connection. Yours will probably be different)<br>
 <br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6735.PulseHost-Console.png"><img src="-6735.pulsehost-console.png" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6735.PulseHost-Console.png"><img src="http://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/6735.PulseHost-Console.png" alt="" style="border-width:0px; border-style:solid"></a><br>
 <br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/3362.Notificator-Console.png"><img src="-3362.notificator-console.png" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/3362.Notificator-Console.png"><img src="http://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/3362.Notificator-Console.png" alt="" style="border-width:0px; border-style:solid"></a><br>
 <br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/3681.Demo-Html.png"><img src="-3681.demo-html.png" alt="" style="border-width:0px; border-style:solid"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/3681.Demo-Html.png"><img src="http://social.technet.microsoft.com/wiki/resized-image.ashx/__size/550x0/__key/communityserver-wikis-components-files/00-00-00-00-05/3681.Demo-Html.png" alt="" style="border-width:0px; border-style:solid"></a><br>
 <br>
 <p>If you don&rsquo;t see a connection Id in the OwinSignalR.PulseHost console window, please refresh the demo.html page (f5 or ctr&#43;f5)</p>
 <p>When you see the unique Id in the first console window the demo.html page connected successfully with the OwinSignalR.PulseHost. You can now hit the enter key in the OwinSignalR.Notificator console window to start sending the notifications to the demo.html
  page. The gauges should start moving and the&rdquo;Activity feed&rdquo; should start receiving notifications of events as they happen.<br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7875.Gauge.gif" style="font-size:12.1px"><img src="-7875.gauge.gif" alt="" style="border-width:0px; border-style:solid; width:200px"></a><br>
-<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/4530.Activity-Feed.gif" style="font-size:12.1px"><img src="-4530.activity-feed.gif" alt="" style="border-width:0px; border-style:solid; width:200px"></a></p>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7875.Gauge.gif" style="font-size:12.1px"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7875.Gauge.gif" alt="" style="border-width:0px; border-style:solid; width:200px"></a><br>
+<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/4530.Activity-Feed.gif" style="font-size:12.1px"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/4530.Activity-Feed.gif" alt="" style="border-width:0px; border-style:solid; width:200px"></a></p>
 </div>
 </div>
 <p>Let��s discuss the projects:</p>
 <h4><a name="OwinSignalR_Data"></a>OwinSignalR.Data</h4>
-<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/1300.OwinSignalR.Data.png"><img src="-1300.owinsignalr.data.png" alt="" style="border-width:0px; border-style:solid; width:255px"></a></p>
+<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/1300.OwinSignalR.Data.png"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/1300.OwinSignalR.Data.png" alt="" style="border-width:0px; border-style:solid; width:255px"></a></p>
 <ul>
 <li>OwinSignalR.Data /Configuration/AutomapperConfiguration.cs
 <p style="font-size:11px">This file contains the mapping code to map EntityFrOwinSignalR.Pulseamework Models to DTO&rsquo;s</p>
@@ -288,7 +288,7 @@ class</code> <code style="color:#000000">OwinSignalrDbContext</code></span></div
 <p style="font-size:11px">This file is the EntityFramework edmx that is generated from the database. You might have noticed that the
 <span style="font-family:Consolas; color:#5591af">OwinSignalrDbContext</span> is marked as
 <span style="font-family:Consolas; color:#5591af">partial</span>, the EntityFramework edmx contains the other partial class that actually implements the rest of
-<span style="font-family:Consolas; color:#5591af">IOwinSignalrDbContext<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/8105.Edmx-Layout.png"><img src="-8105.edmx-layout.png" alt="" style="border-width:0px; border-style:solid; width:444px"></a></span></p>
+<span style="font-family:Consolas; color:#5591af">IOwinSignalrDbContext<a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/8105.Edmx-Layout.png"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/8105.Edmx-Layout.png" alt="" style="border-width:0px; border-style:solid; width:444px"></a></span></p>
 </li><li>OwinSignalR.Data/Services/ApplicationService.cs
 <p style="font-size:11px">This service is used by all referencing projects to fetch Application related information.</p>
 <div class="reCodeBlock" style="border:1px solid #7f9db9; overflow-y:auto">
@@ -323,7 +323,7 @@ ApplicationService</code></span></div>
 </div>
 </li></ul>
 <h4><a name="OwinSignalR_Pulse"></a>OwinSignalR.Pulse</h4>
-<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/8662.OwinSignalR.Pulse.png"><img src="-8662.owinsignalr.pulse.png" alt="" style="border-width:0px; border-style:solid; width:288px"></a></p>
+<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/8662.OwinSignalR.Pulse.png"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/8662.OwinSignalR.Pulse.png" alt="" style="border-width:0px; border-style:solid; width:288px"></a></p>
 <ul>
 <li>OwinSignalR.Pulse/Attributes/ApiAuthorizeAttribute.cs
 <p style="font-size:11px">This file contains code to check if the API call contains a valid API Token, Application secret or if it is coming from one of the predefined URL's</p>
@@ -1122,7 +1122,7 @@ StructureMapOWINMiddleware</code></span></div>
 </div>
 </li></ul>
 <h4><a name="OwinSignalR_Client"></a>OwinSignalR.Client</h4>
-<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6332.OwinSignalR.Client.png"><img src="-6332.owinsignalr.client.png" alt="" style="border-width:0px; border-style:solid; width:226px"></a></p>
+<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6332.OwinSignalR.Client.png"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6332.OwinSignalR.Client.png" alt="" style="border-width:0px; border-style:solid; width:226px"></a></p>
 <ul>
 <li>OwinSignalR.Client/Content/bootstrap-theme.min.cs
 <p style="font-size:11px">This is the bootstrap theme css file</p>
@@ -1330,7 +1330,7 @@ SignalR</a> library javascript file</p>
 <p>&nbsp;</p>
 </li></ul>
 <h4><a name="OwinSignalR_Notificator"></a>OwinSignalR.Notificator</h4>
-<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6574.OwinSignalR.Notificator.png"><img src="-6574.owinsignalr.notificator.png" alt="" style="border-width:0px; border-style:solid; width:193px"></a></p>
+<p><a href="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6574.OwinSignalR.Notificator.png"><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/6574.OwinSignalR.Notificator.png" alt="" style="border-width:0px; border-style:solid; width:193px"></a></p>
 <ul>
 <li>NotificationHelper.cs
 <p style="font-size:11px">This file contains the code that updates the &quot;Activity Feed&quot;</p>

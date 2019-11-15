@@ -19,7 +19,7 @@
 <span>As promise, I released a SharePoint Framework solution with the Office UI Fabric People Picker, like for the Add-In solution, the App across the SharePoint Search API is able to retrieve people.</span><br>
 </em></p>
 <h1><span>Building the Sample</span></h1>
-<p><img src=":-preview1.gif" alt="" width="700px"></p>
+<p><img src="https://github.com/giuleon/SPFx-OfficeUIFabric-PeoplePicker/raw/master/Preview1.gif" alt="" width="700px"></p>
 <p><em>The solution has been created for SharePoint Framework and the fornt end Framework used is Reactjs.</em></p>
 <p><em><em>Regarding the logic, every time that user will write&nbsp;something in the text field, the App will perform a&nbsp;<a href="https://msdn.microsoft.com/en-us/library/office/jj163876.aspx" target="_blank">REST API call on the SharePoint Search</a>&nbsp;to
  grab a result filtered.</em><br>

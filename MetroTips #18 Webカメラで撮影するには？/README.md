@@ -20,7 +20,7 @@
 <div>これは次の記事のサンプルコードです。</div>
 <blockquote>
 <div>@IT 2012/12/20 掲載<br>
-<img id="68637" src="68637-gyoumu_newallarticle_icon_61_1349480145.gif" alt="" width="80" height="60"><br>
+<img id="68637" src="http://i1.code.msdn.s-msft.com/windowsapps/metrotips-10-cb520e60/image/file/68637/1/gyoumu_newallarticle_icon_61_1349480145.gif" alt="" width="80" height="60"><br>
 <strong><a href="http://www.atmarkit.co.jp/ait/articles/1212/20/news068.html" target="_blank">WinRT／Metro TIPS： Webカメラで撮影するには？［Win 8］</a></strong><br>
 タブレットPCやノートPCの多くには、「Webカメラ」と呼ばれるカメラが搭載されている。これを使ってWindowsストア・アプリで写真や動画を撮影するには、どうしたらよいだろうか？ 本稿では、Webカメラで写真を撮る方法を説明する。</div>
 </blockquote>

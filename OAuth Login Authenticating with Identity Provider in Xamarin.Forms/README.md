@@ -23,14 +23,14 @@
 <p dir="ltr"><span style="font-size:small">In this article I will explain how to implement below oAuth identity provider in xamarin Forms and manage the authentication process in a xamarin Forms application</span></p>
 <ol>
 <li>GOOGLE </li><li>FACEBOOK </li><li>TWITTER </li><li>MICROSOFT </li><li>LINKEDIN </li><li>GITHUB </li><li>FLICKER </li><li>YAHOO </li><li>DROPBOX </li></ol>
-<p dir="ltr"><span><img src=":-b2_8dc1u1v_3e9yf1alsn0rg7wzycbro0hhy8sev1z_vzdbbcwriiuixj5ha1w071_3di6hl5-9vzg6yx0ppljlncau5lzixfubpwz-62mxovdjnjqqfgmijyase9bobm6jpvgvbzendzaxsqg" alt="" width="294" height="567"></span></p>
+<p dir="ltr"><span><img src="https://lh5.googleusercontent.com/B2_8dc1U1v_3e9YF1ALsN0RG7wZYcbrO0hHy8sEV1Z_VzdBBcwRIIuiXj5hA1w071_3Di6hl5-9vZG6yX0pPLjlNcAu5LzIxFuBpWz-62MXovdJNjqqfGMiJyaSe9boBM6JpvgvbzeNdZAXSQg" alt="" width="294" height="567"></span></p>
 <h1 dir="ltr"><span style="font-size:large">Register Mobile App with Identity Provider:</span></h1>
 <p dir="ltr"><span style="font-size:small">You can find my previous article for register mobile app with identity provider from
 <a href="https://code.msdn.microsoft.com/Register-Identity-Provider-41955544">here</a></span></p>
 <h1 dir="ltr"><span style="font-size:large">Step 1: Create New Xamarin.Forms Project:</span></h1>
 <p dir="ltr"><span style="font-size:small">Let Start create new Xamarin Forms Project in Visual studio</span></p>
 <p dir="ltr"><span style="font-size:small">Open Run ➔ Type Devenev.Exe and enter ➔ New Project (Ctrl&#43;Shift&#43;N)➔ select Blank Xamarin.Forms Portable template</span></p>
-<p dir="ltr"><span><img src=":-a7etbvgkpxedewd3xbnzkrokoz1lm9n4sbfa0fdo-unvdrv1umguerfr4r5z7ageqztuya9rsohdvhx37f47doxfve7w1oobyrez6bocsryyakbmk0yfi-mkg1plshyjc0xxcalu3n29na-f1g" alt="" width="624" height="433"></span></p>
+<p dir="ltr"><span><img src="https://lh5.googleusercontent.com/A7etBVGKpxedewD3XBnZKrOkOZ1lM9N4SBFa0FDo-uNVDRV1UMGueRfR4r5Z7ageqzTuYa9rSOHDvHx37F47DOXfve7W1OobYRez6BOcsrYYakbmk0YFI-mKg1PLShYjc0XXCALU3N29NA-F1g" alt="" width="624" height="433"></span></p>
 <p dir="ltr"><span style="font-size:small">It will automatically create multiple project like Portable, Android, iOS, UWP but Here, I will be targeting only Android, as iOS and UWP implementation is similar.</span></p>
 <h1><span style="font-size:large"><strong>Step 2: Install OAuth Client Components</strong></span></h1>
 <p dir="ltr"><span style="font-size:small">Xamarin.Auth is a cross-platform SDK for authenticating users and storing their accounts. It includes OAuth authenticators that provide support for consuming identity providers.</span></p>
@@ -40,7 +40,7 @@
 <p dir="ltr"><span style="font-size:small">If you are not login already, it will show login page.</span></p>
 <p dir="ltr"><span style="font-size:small">Next, Search and double-click on&nbsp;Xamarin.Auth
 <a href="https://components.xamarin.com/view/xamarin.auth">component</a> and click on Add to App</span></p>
-<p dir="ltr"><span><img src=":--geaaddbnds1roeuee6xzh1ndx2n259lotw3jnnfqsr4g09iakqqrugxglakpvxd9mstha2yq8kc-byz6q_sbx-tjsn9qpiq7l_ugimlsxrcsha6e-ueqnlwx-rf-qfb5zhxuyv6os9_if2caw" alt="" width="624" height="234"></span></p>
+<p dir="ltr"><span><img src="https://lh4.googleusercontent.com/-geAaDDbndS1RoEuEE6XZH1nDX2N259Lotw3JNNFqSR4G09IAKqqRuGXGLAkpVxD9MsTHa2yq8Kc-bYZ6q_SBx-tJSn9QPiq7L_uGImLSXRcShA6E-UEQNlWx-Rf-QFB5ZhxUyv6Os9_IF2caw" alt="" width="624" height="234"></span></p>
 <p><br>
 <br>
 </p>
@@ -179,7 +179,7 @@
 </div>
 <p dir="ltr"><span>** In Xaml page no Changes </span></p>
 <h1 dir="ltr"><span style="font-size:large">Step 5: Create Platform Specific Login Renderer</span></h1>
-<p dir="ltr"><span><img src=":--5mamcw8qi5nz35lyjzo6tx2muafl4jiejifsytw4r105noq8x2cunfrsl5uwb9jtsbj8zsnk54z_hdwmlqn0mc_j3no-3s0dis09puyszsllfi_d2k1avxr2ernm7efxyuosxpr2ze9yc85cg" alt="" width="351" height="501"></span></p>
+<p dir="ltr"><span><img src="https://lh5.googleusercontent.com/-5MaMcW8qi5nz35lYJzO6tx2MuAFl4JieJIfSYTw4R105noq8x2cUnfRsl5UWb9JTSBJ8zSNK54z_HdWMlQn0mC_J3NO-3s0DIS09PUYSZSlLfi_d2k1avXR2erNm7eFxYuOSXPR2zE9yc85cg" alt="" width="351" height="501"></span></p>
 <p dir="ltr"><span style="font-size:small">We need to create platform specific LoginRenderer Page so you can create platform specific Login page (loginRenderer.CS) to iOS, Android and UWP project.</span></p>
 <p dir="ltr"><span style="font-size:small">We need to add&nbsp;LoginPageRenderer which will be used by&nbsp;Xamarin.Auth&nbsp;to display web view for OAuth Login Page</span></p>
 <h1 dir="ltr"><span style="font-size:large">Code Snippet Explanation:</span></h1>
@@ -587,6 +587,6 @@
 </div>
 <div class="endscriptcode"><span style="font-size:small">&nbsp;You can download source and replace client ID or AppID and Client secret</span></div>
 <p>&nbsp;</p>
-<p dir="ltr"><span><img src=":-b2_8dc1u1v_3e9yf1alsn0rg7wzycbro0hhy8sev1z_vzdbbcwriiuixj5ha1w071_3di6hl5-9vzg6yx0ppljlncau5lzixfubpwz-62mxovdjnjqqfgmijyase9bobm6jpvgvbzendzaxsqg" alt="" width="206" height="397"></span><span><img src=":-1jig9r0qmo_dpabo53bhm098b228ud1mvtq4mzfp-gqs8xxepebe_5wfqs2jkurr2jagfdantlsovd3jdvc3xaemrniqgqkwm6_3jvmdsdcpwrcymz-l6jdd6qanqpcea5h_yhpqw00sbw-iwa" alt="C:\Users\Suthahar\Pictures\twitter.PNG" width="206" height="401"></span><span><img src=":-tgxarove1h-eqdvguxfiqznjg64snpouks_uotqrui6erqird_xq_d9yvirqk2yddkwvd0swcjpdsznyqyvkmuhycecllxrgepxnvnqwy6odvt59xt4op_todhnll7oienraurm8zfxipspm7a" alt="C:\Users\Suthahar\Pictures\twitterresult.PNG" width="198" height="402"></span></p>
+<p dir="ltr"><span><img src="https://lh5.googleusercontent.com/B2_8dc1U1v_3e9YF1ALsN0RG7wZYcbrO0hHy8sEV1Z_VzdBBcwRIIuiXj5hA1w071_3Di6hl5-9vZG6yX0pPLjlNcAu5LzIxFuBpWz-62MXovdJNjqqfGMiJyaSe9boBM6JpvgvbzeNdZAXSQg" alt="" width="206" height="397"></span><span><img src="https://lh3.googleusercontent.com/1jIG9R0qmO_DPABO53bhM098B228uD1MVTQ4mZfp-GqS8xXePeBe_5wFqS2jKurr2jAGfdANTLsOvd3JdvC3XAEMRnIQgQKWM6_3jvmdSDCpwRCyMz-L6jdd6qanqPcEa5H_YhPQw00SBW-iWA" alt="C:\Users\Suthahar\Pictures\twitter.PNG" width="206" height="401"></span><span><img src="https://lh4.googleusercontent.com/tgxaroVE1h-eQDvGUxfiQznJg64snpOuKs_UotqRUi6erqIrD_Xq_D9yVirqk2YDdKwVd0SWCJPdSzNyQYVKmuhyceClLxRgepXNvNQWY6oDVt59Xt4op_ToDhNlL7oIEnrauRm8zfxIpspM7A" alt="C:\Users\Suthahar\Pictures\twitterresult.PNG" width="198" height="402"></span></p>
 <div><span><br>
 </span></div>

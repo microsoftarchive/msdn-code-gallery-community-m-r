@@ -24,8 +24,8 @@
 - 07/29/2015
 ## Description
 
-<h1><img id="137532" src="137532-visual%20studio.png" alt="" width="224" height="63" style="font-size:2em"></h1>
-<h1><img id="130606" src="130606-myshuttlebiz_logo.png" alt="" width="354" height="82">&nbsp;</h1>
+<h1><img id="137532" src="https://i1.code.msdn.s-msft.com/windowsapps/myshuttle-demo-applications-1a4b68fe/image/file/137532/1/visual%20studio.png" alt="" width="224" height="63" style="font-size:2em"></h1>
+<h1><img id="130606" src="https://i1.code.msdn.s-msft.com/myshuttle-demo-applications-1a4b68fe/image/file/130606/1/myshuttlebiz_logo.png" alt="" width="354" height="82">&nbsp;</h1>
 <p><span style="font-size:small; background-color:#ffff00">[**NEW!! - Updated on&nbsp;July 29th 2015 -
 <strong>Compatible with Visual Studio&nbsp;2015&nbsp;RTM</strong> **]</span></p>
 <h1>Introduction</h1>
@@ -69,7 +69,7 @@ After completing these steps, check that these directories exits:<br>
 <h1>Download and Unblock the .ZIP file first!</h1>
 <p>Once you download the .ZIP file with the code, and BEFORE unzipping, go to the&nbsp;<strong>.ZIP file properties</strong>&nbsp;from&nbsp;<strong>Windows Explorer</strong>&nbsp;and check if it is blocked. If it blocked because Windows detected it was a download
  from the Internet, unblock it before unzipping the files, like in the following image:</p>
-<p><img id="130628" src="130628-unblock_zip.png" alt="" width="250" height="300"></p>
+<p><img id="130628" src="https://i1.code.msdn.s-msft.com/myshuttle-demo-applications-1a4b68fe/image/file/130628/1/unblock_zip.png" alt="" width="250" height="300"></p>
 <p>If you miss this step, you might get warnings and errors when loading the projects in Visual Studio and once you unpackage the code and projects files, if you didn't unblock the .ZIP file, unblocking each of the internal files is a much harder task to do.</p>
 <h2><em>Further information<br>
 </em></h2>
@@ -130,7 +130,7 @@ in VS 2015 Tooling</p>
 </ul>
 <h1>The scenario: Mobile first and Cloud first&nbsp;</h1>
 <p>The global scenario is described in the following image:</p>
-<p><img id="130607" src="130607-mobilefirst_cloudfirst_scenario_small.jpg" alt="" width="733" height="367">In this diagram we have quite a few scenarios, but all are inter-connected
+<p><img id="130607" src="https://i1.code.msdn.s-msft.com/myshuttle-demo-applications-1a4b68fe/image/file/130607/1/mobilefirst_cloudfirst_scenario_small.jpg" alt="" width="733" height="367">In this diagram we have quite a few scenarios, but all are inter-connected
  between them thru Services in the cloud. We have web apps implemented using the brand new
 <strong>ASP.NET 5 (&ldquo;Project K&rdquo;)</strong>, either <strong>MVC</strong>,
 <strong>Web API Services</strong> and even <strong>SignalR </strong>real-time communication services. Then we also have native mobile apps for the customers (based on C#, either
@@ -143,12 +143,12 @@ in VS 2015 Tooling</p>
 <strong>Salesforce REST API</strong> to upload customer&rsquo;s data into the SalesForce CRM.</p>
 <p>Below you can check a few screenshots of the apps, but if you want to have a better introduction to all the apps and scenarios, make sure you check this blog post. TBD *******</p>
 <h2>Public Web Site &ndash; ASP.NET 5 MVC</h2>
-<p><img id="130608" src="130608-01_aspnet5_mvc.png" alt="" width="500" height="450"></p>
+<p><img id="130608" src="https://i1.code.msdn.s-msft.com/myshuttle-demo-applications-1a4b68fe/image/file/130608/1/01_aspnet5_mvc.png" alt="" width="500" height="450"></p>
 <h2><em>SPA web application consuming ASP.NET 5 Web API Services</em></h2>
-<p><img id="130609" src="130609-01_aspnet5_spa.png" alt="" width="480" height="450"></p>
+<p><img id="130609" src="https://i1.code.msdn.s-msft.com/myshuttle-demo-applications-1a4b68fe/image/file/130609/1/01_aspnet5_spa.png" alt="" width="480" height="450"></p>
 <h2>Native Mobile apps for Windows Store, Windows Phone, iOS and Android</h2>
 <h3>With C# cross-platform development powered by .NET and Xamarin</h3>
-<p><img id="130610" src="130610-01_mobile_apps.png" alt="" width="587" height="625"></p>
+<p><img id="130610" src="https://i1.code.msdn.s-msft.com/myshuttle-demo-applications-1a4b68fe/image/file/130610/1/01_mobile_apps.png" alt="" width="587" height="625"></p>
 <p>&nbsp;</p>
 <p>For deeper details and explanations of the new technologies coming in Visual Studio 2015, .NET 2015 and the MyShuttle apps themselves, please, check the blog posts mentioned at the begining of this page.</p>
 <p>&nbsp;</p>

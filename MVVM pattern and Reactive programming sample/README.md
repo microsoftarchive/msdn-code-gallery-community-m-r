@@ -23,9 +23,9 @@ https://rx.codeplex.com/ </li><li>ReactiveProperty<br>
 https://github.com/runceel/ReactiveProperty </li></ul>
 <h2>How to use</h2>
 <p>When 'add' button clicked, a new record is inserted into DataGrid.</p>
-<p><img id="133818" alt="" src="133818-figure1.png" width="398" height="257"></p>
+<p><img id="133818" alt="" src="https://i1.code.msdn.s-msft.com/mvvm-pattern-and-reactive-2f71560a/image/file/133818/1/figure1.png" width="398" height="257"></p>
 <p>When record is selected and 'edit' button is &nbsp;clicked, then edit dialog is displayed..</p>
-<p><img id="133819" alt="" src="133819-figure2.png" width="397" height="257"></p>
+<p><img id="133819" alt="" src="https://i1.code.msdn.s-msft.com/mvvm-pattern-and-reactive-2f71560a/image/file/133819/1/figure2.png" width="397" height="257"></p>
 <ul>
 <li>Update button<br>
 Update data and close window.&nbsp; </li><li>Delete button<br>

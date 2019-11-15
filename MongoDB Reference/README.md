@@ -53,9 +53,9 @@ GITHUB</a> page. <strong>If you are interested in getting more tutorials added i
 <p style="text-align:justify">In order to open and build the project you should have Visual Studio 2010 or above.</p>
 <p style="text-align:justify">MongoDB should be installed on machine for all the samples to work correctly or you will not be able to run samples which require MongoDB connectivity.</p>
 <p style="text-align:justify">Application Look and Feel:</p>
-<p><img id="109437" src="109437-mongoconfiguration.png" alt="" width="399" height="175" style="display:block; margin-left:auto; margin-right:auto"></p>
+<p><img id="109437" src="http://i1.code.msdn.s-msft.com/mongodb-reference-b4136f82/image/file/109437/1/mongoconfiguration.png" alt="" width="399" height="175" style="display:block; margin-left:auto; margin-right:auto"></p>
 <p style="text-align:center">Mongo Configuration Screen</p>
-<p style="text-align:center"><img id="109449" src="109449-mongostart.png" alt="" width="700"></p>
+<p style="text-align:center"><img id="109449" src="http://i1.code.msdn.s-msft.com/mongodb-reference-b4136f82/image/file/109449/1/mongostart.png" alt="" width="700"></p>
 <p style="text-align:center">Mongo Reference (MongoStart) running</p>
 <p style="text-align:center">&nbsp;</p>
 <h3 style="text-align:left">Updates :</h3>

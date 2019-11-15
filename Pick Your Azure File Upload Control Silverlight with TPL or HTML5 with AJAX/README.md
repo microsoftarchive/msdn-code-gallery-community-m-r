@@ -78,21 +78,21 @@ Click to view field note</a>. <br>
 </strong></strong></p>
 <p style="text-align:justify"><span style="text-decoration:underline"><em><span style="font-weight:bold; font-size:small">HTML5 Control</span></em></span></p>
 <p><strong>1. Control Load</strong></p>
-<p><strong><img src="45481-untitled.jpg" alt="" width="934" height="223"><br>
+<p><strong><img src="http://i1.code.msdn.s-msft.com/silverlight/silverlight-azure-blob-3b773e26/image/file/45481/1/untitled.jpg" alt="" width="934" height="223"><br>
 </strong></p>
 <p><strong>2. File Upload in Progress</strong></p>
-<p><strong><img src="45487-capture.jpg" alt="" width="425" height="155"><br>
+<p><strong><img src="http://i1.code.msdn.s-msft.com/silverlight/silverlight-azure-blob-3b773e26/image/file/45487/1/capture.jpg" alt="" width="425" height="155"><br>
 </strong></p>
 <p><strong>3. Successful File Upload (depends on bandwidth)</strong></p>
-<p><img src="45486-start.jpg" alt="" width="425" height="155"></p>
+<p><img src="http://i1.code.msdn.s-msft.com/silverlight/silverlight-azure-blob-3b773e26/image/file/45486/1/start.jpg" alt="" width="425" height="155"></p>
 <p><strong>4. File Upload Cancelled</strong></p>
-<p><strong><img src="45488-capture.jpg" alt="" width="425" height="155"><br>
+<p><strong><img src="http://i1.code.msdn.s-msft.com/silverlight/silverlight-azure-blob-3b773e26/image/file/45488/1/capture.jpg" alt="" width="425" height="155"><br>
 </strong></p>
 <p><strong>5. Retry upload of chunk in case of failure.</strong></p>
-<p><strong><strong><img src="45489-capture.jpg" alt="" width="425" height="155"><br>
+<p><strong><strong><img src="http://i1.code.msdn.s-msft.com/silverlight/silverlight-azure-blob-3b773e26/image/file/45489/1/capture.jpg" alt="" width="425" height="155"><br>
 </strong></strong></p>
 <p><strong>6. Upload failed to resume and retries maxed out.</strong></p>
-<p><strong><strong><img src="45491-capture.jpg" alt="" width="425" height="155"><br>
+<p><strong><strong><img src="http://i1.code.msdn.s-msft.com/silverlight/silverlight-azure-blob-3b773e26/image/file/45491/1/capture.jpg" alt="" width="425" height="155"><br>
 </strong></strong></p>
 <h1><span>Source Code Files</span></h1>
 <ul>

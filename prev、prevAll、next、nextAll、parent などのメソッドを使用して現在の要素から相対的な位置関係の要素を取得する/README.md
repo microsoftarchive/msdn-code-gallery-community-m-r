@@ -81,8 +81,8 @@ $(<span class="js__string">'#iam'</span>)&nbsp;&nbsp;<span class="js__sl_comment
 </div>
 </div>
 </div>
-<p><img src="18627-arrow.gif" alt="" width="35" height="42"></p>
-<p><img src="18631-image001.jpg" alt="図 1" width="337" height="310"></p>
+<p><img src="http://i4.code.msdn.microsoft.com/jquery-howto-5f9ee7a9/image/file/18627/1/arrow.gif" alt="" width="35" height="42"></p>
+<p><img src="http://i1.code.msdn.microsoft.com/jquery-howto-5f9ee7a9/image/file/18631/1/image001.jpg" alt="図 1" width="337" height="310"></p>
 <p>サンプルではそれぞれのメソッドでカレント要素を移動し、スタイル変更した後、基点 (id 属性が &quot;iam&quot;) の要素に戻り、また移動して&hellip;という動作を繰り返しています。それぞれのメソッドの意味については、サンプル内のコメントを参照すれば直感的に理解できると思いますので、注意すべき点のみ以下に補足しておきます。</p>
 <p><strong>(1) prevUntil、nextUntil メソッドの境界</strong></p>
 <p>prevAll、nextAll は、セレクター式に合致する要素が見つかるまで、その兄/弟要素を取得します。ただし、セレクター式に合致した要素そのものは結果に含まれない点に注意してください。よって、サンプルでも「nextUntil('.border')」に合致する要素は存在しないことになります。</p>
@@ -120,14 +120,14 @@ $(<span class="js__string">'#iam'</span>)&nbsp;&nbsp;<span class="js__sl_comment
 </div>
 </div>
 </div>
-<p><img src="18628-arrow.gif" alt="" width="35" height="42"></p>
-<p><img src="18630-image002.jpg" alt="図 2" width="337" height="272"></p>
+<p><img src="http://i1.code.msdn.microsoft.com/jquery-howto-5f9ee7a9/image/file/18628/1/arrow.gif" alt="" width="35" height="42"></p>
+<p><img src="http://i1.code.msdn.microsoft.com/jquery-howto-5f9ee7a9/image/file/18630/1/image002.jpg" alt="図 2" width="337" height="272"></p>
 <hr style="clear:both; margin-bottom:8px; margin-top:20px">
 <table>
 <tbody>
 <tr>
-<td><a href="http://msdn.microsoft.com/ja-jp/samplecode.recipe"><img src="-ff950935.coderecipe_180x70%28ja-jp,msdn.10%29.jpg" border="0" alt="Code Recipe" width="180" height="70" style="margin-top:3px"></a></td>
-<td><a href="http://msdn.microsoft.com/ja-jp/asp.net/" target="_blank"><img src="-ff950935.asp_net_180x70%28ja-jp,msdn.10%29.jpg" border="0" alt="ASP.NET デベロッパーセンター" width="180" height="70" style="margin-top:3px"></a></td>
+<td><a href="http://msdn.microsoft.com/ja-jp/samplecode.recipe"><img src="http://i.msdn.microsoft.com/ff950935.coderecipe_180x70%28ja-jp,MSDN.10%29.jpg" border="0" alt="Code Recipe" width="180" height="70" style="margin-top:3px"></a></td>
+<td><a href="http://msdn.microsoft.com/ja-jp/asp.net/" target="_blank"><img src="http://i.msdn.microsoft.com/ff950935.ASP_NET_180x70%28ja-jp,MSDN.10%29.jpg" border="0" alt="ASP.NET デベロッパーセンター" width="180" height="70" style="margin-top:3px"></a></td>
 <td>
 <ul>
 <li>もっと他のコンテンツを見る &gt;&gt; <a href="http://msdn.microsoft.com/ja-jp/ff363212" target="_blank">
@@ -138,4 +138,4 @@ ASP.NET デベロッパーセンターへ</a> </li></ul>
 </tr>
 </tbody>
 </table>
-<p style="margin-top:20px"><a href="#top"><img src="-top.gif" border="0" alt="">ページのトップへ</a></p>
+<p style="margin-top:20px"><a href="#top"><img src="http://www.microsoft.com/japan/msdn/nodehomes/graphics/top.gif" border="0" alt="">ページのトップへ</a></p>

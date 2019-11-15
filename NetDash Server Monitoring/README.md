@@ -20,7 +20,7 @@
 - 05/16/2014
 ## Description
 
-<p><a href="https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" target="_blank"><img src=":-687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" alt="NetDash Logo"></a></p>
+<p><a href="https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" target="_blank"><img src="https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" alt="NetDash Logo"></a></p>
 <p><a href="https://camo.githubusercontent.com/74af56174bd80da7b7eca4ca203914cb61938973/687474703a2f2f6936302e74696e797069632e636f6d2f3272356474687a2e706e67" target="_blank"></a>A small web-based monitoring dashboard for your Windows pc/server writen in C#
  and MVC &#43; Chart.js.</p>
 <p>The dashboard is built using only C# libraries available in the main C# distribution, trying to create a small list of dependencies without the need of installing many packages or libraries.</p>
@@ -36,7 +36,7 @@
 <pre><code>user: admin
 pass: admin123
 </code></pre>
-<p><a href="https://camo.githubusercontent.com/25acf97487243789a2f982a46e8d5d00f34467bb/687474703a2f2f6935392e74696e797069632e636f6d2f777566316e362e706e67" target="_blank"><img src=":-687474703a2f2f6935392e74696e797069632e636f6d2f777566316e362e706e67" alt="NetDash"></a></p>
+<p><a href="https://camo.githubusercontent.com/25acf97487243789a2f982a46e8d5d00f34467bb/687474703a2f2f6935392e74696e797069632e636f6d2f777566316e362e706e67" target="_blank"><img src="https://camo.githubusercontent.com/25acf97487243789a2f982a46e8d5d00f34467bb/687474703a2f2f6935392e74696e797069632e636f6d2f777566316e362e706e67" alt="NetDash"></a></p>
 <p><strong>NetDash Settings</strong></p>
 <p>The only settings currently available which you can modify are the refresh rates for the different data tables. There are 3 different refresh settings under&nbsp;<em>netdash/App_data/Setting.ini</em>&nbsp;and values are in miliseconds:</p>
 <ul class="task-list">

@@ -857,7 +857,7 @@ __syncthreads()</span> can keep the hardware busy. This recommendation is subjec
 <div style="font-size:small"><img id="95921" src="95921-f4.png" alt="" width="123" height="26"><a href="http://tatourian.files.wordpress.com/2013/09/image84.png"></a></div>
 <div style="font-size:small"></div>
 <div style="font-size:small">where N is a number of processors and <a href="http://tatourian.files.wordpress.com/2013/09/image85.png">
-<img title="image" src="-image_thumb85.png" border="0" alt="image" width="13" height="9" style="padding-top:0; padding-left:0; display:inline; padding-right:0; border:0"></a> the non-parallelizable fraction of code.
+<img title="image" src="http://tatourian.files.wordpress.com/2013/09/image_thumb85.png" border="0" alt="image" width="13" height="9" style="padding-top:0; padding-left:0; display:inline; padding-right:0; border:0"></a> the non-parallelizable fraction of code.
  In other words, speedup cannot be faster than the execution time of a serial code.</div>
 <h3>5.5 Kernel execution model</h3>
 <div style="font-size:small">It is critical to remember that CUDA kernel launches are asynchronous, as are memory-copy functions with the Async suffix on their names; that is, they return control back to the calling CPU thread prior to completing their work.

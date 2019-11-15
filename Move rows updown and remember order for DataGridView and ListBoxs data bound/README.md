@@ -25,7 +25,7 @@
 <p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><strong><span style="background-color:#ffff00">Update 8/2019</span></strong> GitHub repositories for updates examples</span></p>
 <p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><a href="https://github.com/karenpayneoregon/DataGridViewListBoxMoveRowsUpDown_VBNET">VB.NET</a>,
 <a href="https://github.com/karenpayneoregon/WindowsFormsMoveItemsUpDown">C#</a></span></p>
-<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><img id="197910" src="197910-figure13.png" alt="" width="449" height="258"><br>
+<p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:medium"><img id="197910" src="https://i1.code.msdn.s-msft.com/move-rows-updown-and-987fe786/image/file/197910/1/figure13.png" alt="" width="449" height="258"><br>
 </span></p>
 <p><span style="font-size:small"><strong><span style="color:#ff0000">Update 3/5/2014</span></strong> added a simple version in C#.<br>
 <br>
@@ -36,7 +36,7 @@ C# project</a> for second screenshot below (will update the solution here shortl
 <p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:small"><span style="font-family:Calibri; font-size:small"><img id="94383" src="94383-listbox.jpg" alt="" width="512" height="241"></span></span></p>
 <p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-size:medium"><span style="font-family:Calibri">DataGridView</span></span></p>
 <p class="MsoNormal" style="margin:0in 0in 10pt"><span style="font-family:Calibri; font-size:small"><img id="94387" src="94387-datagridview.jpg" alt="" width="734" height="431"><br>
-<img id="110086" src="110086-ccccc.png" alt="" width="418" height="246"></span></p>
+<img id="110086" src="http://i1.code.msdn.s-msft.com/move-rows-updown-and-987fe786/image/file/110086/1/ccccc.png" alt="" width="418" height="246"></span></p>
 <h1><span>Building the Sample</span></h1>
 <p><span style="font-size:small"><em>Build and enjoy</em></span></p>
 <p><span style="font-size:20px; font-weight:bold">Description</span></p>

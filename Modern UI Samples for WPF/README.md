@@ -64,15 +64,15 @@
 <p>&nbsp;</p>
 <p>When we run the sample we will have something like</p>
 <p>&nbsp;</p>
-<p><a href="https://camo.githubusercontent.com/fad596cd3e085712cc933cabf5c1af5b613498d1/687474703a2f2f7331332e706f7374696d672e6f72672f396a3861383036316a2f696d6167652e706e67" target="_blank"><img src=":-687474703a2f2f7331332e706f7374696d672e6f72672f396a3861383036316a2f696d6167652e706e67" alt="" width="450" height="300" style="display:block; margin-left:auto; margin-right:auto"></a></p>
+<p><a href="https://camo.githubusercontent.com/fad596cd3e085712cc933cabf5c1af5b613498d1/687474703a2f2f7331332e706f7374696d672e6f72672f396a3861383036316a2f696d6167652e706e67" target="_blank"><img src="https://camo.githubusercontent.com/fad596cd3e085712cc933cabf5c1af5b613498d1/687474703a2f2f7331332e706f7374696d672e6f72672f396a3861383036316a2f696d6167652e706e67" alt="" width="450" height="300" style="display:block; margin-left:auto; margin-right:auto"></a></p>
 <p>&nbsp;</p>
 <p>&gt;&nbsp;<a href="http://wp.me/p4LXhq-H5">Modern UI for WPF application by example (Blank Window)</a></p>
 <p>&nbsp;</p>
-<p><a href="https://camo.githubusercontent.com/0049af763af5cd93816ac39c8221c511907a627b/687474703a2f2f73392e706f7374696d672e6f72672f356b796935336f767a2f696d6167652e706e67" target="_blank"><img src=":-687474703a2f2f73392e706f7374696d672e6f72672f356b796935336f767a2f696d6167652e706e67" alt="" width="450" height="300" style="display:block; margin-left:auto; margin-right:auto"></a></p>
+<p><a href="https://camo.githubusercontent.com/0049af763af5cd93816ac39c8221c511907a627b/687474703a2f2f73392e706f7374696d672e6f72672f356b796935336f767a2f696d6167652e706e67" target="_blank"><img src="https://camo.githubusercontent.com/0049af763af5cd93816ac39c8221c511907a627b/687474703a2f2f73392e706f7374696d672e6f72672f356b796935336f767a2f696d6167652e706e67" alt="" width="450" height="300" style="display:block; margin-left:auto; margin-right:auto"></a></p>
 <p>&nbsp;</p>
 <p>&gt;&nbsp;<a href="http://wp.me/p4LXhq-Hi">Modern UI for WPF application by example (Default Window without back button)</a></p>
 <p>&nbsp;</p>
-<p><a href="https://camo.githubusercontent.com/3bf4ee7ec60dd66871a8ec3f4ee4f70d6a98ebe6/687474703a2f2f7332392e706f7374696d672e6f72672f6479673335757637622f696d6167652e706e67" target="_blank"><img src=":-687474703a2f2f7332392e706f7374696d672e6f72672f6479673335757637622f696d6167652e706e67" alt="" width="450" height="300" style="display:block; margin-left:auto; margin-right:auto"></a></p>
+<p><a href="https://camo.githubusercontent.com/3bf4ee7ec60dd66871a8ec3f4ee4f70d6a98ebe6/687474703a2f2f7332392e706f7374696d672e6f72672f6479673335757637622f696d6167652e706e67" target="_blank"><img src="https://camo.githubusercontent.com/3bf4ee7ec60dd66871a8ec3f4ee4f70d6a98ebe6/687474703a2f2f7332392e706f7374696d672e6f72672f6479673335757637622f696d6167652e706e67" alt="" width="450" height="300" style="display:block; margin-left:auto; margin-right:auto"></a></p>
 <p>&nbsp;</p>
 <p>&gt;&nbsp;<a href="http://wp.me/p4LXhq-Hj">Modern UI for WPF application by example (Handle Navigation: (Default))</a></p>
 <p><a href="http://wp.me/p4LXhq-Hj"></a>&gt;&nbsp;<a href="http://wp.me/p4LXhq-HI">Modern UI for WPF application by example ( NavigationMessageService - MVVM )</a></p>
@@ -90,8 +90,8 @@ here</a>.</p>
 <p><em><em>Ask me on twitter @saramgsilva</em></em></p>
 <p>&nbsp;</p>
 <h1>Visual Studio extension used</h1>
-<p><a href="https://www.jetbrains.com/resharper/"><img src=":-687474703a2f2f7332382e706f7374696d672e6f72672f6f65766135786f72682f7265736861727065725f6c6f676f2e706e67" alt="resharper" width="88" height="88" style="float:left"></a>&nbsp;
- &nbsp;&nbsp;<a href="http://submain.com/products/ghostdoc.aspx"><img src=":-687474703a2f2f7331352e706f7374696d672e6f72672f623964376a67366a622f315f67686f7374646f63313030783130302e676966" alt="ghostdoc" width="81" height="83"></a>&nbsp;
- &nbsp; &nbsp;&nbsp;<a href="https://stylecop.codeplex.com/"><img src=":-687474703a2f2f7331342e706f7374696d672e6f72672f7a62706875386d64702f5374796c655f436f705f4c6f676f2e706e67" alt="stylecop" width="84" height="84"></a></p>
+<p><a href="https://www.jetbrains.com/resharper/"><img src="https://camo.githubusercontent.com/c3e0923d1ecd7c361e09dcccfc169a69833c1cc0/687474703a2f2f7332382e706f7374696d672e6f72672f6f65766135786f72682f7265736861727065725f6c6f676f2e706e67" alt="resharper" width="88" height="88" style="float:left"></a>&nbsp;
+ &nbsp;&nbsp;<a href="http://submain.com/products/ghostdoc.aspx"><img src="https://camo.githubusercontent.com/080d52bfc141fc57baae9c030cc9f680b5f6ba3c/687474703a2f2f7331352e706f7374696d672e6f72672f623964376a67366a622f315f67686f7374646f63313030783130302e676966" alt="ghostdoc" width="81" height="83"></a>&nbsp;
+ &nbsp; &nbsp;&nbsp;<a href="https://stylecop.codeplex.com/"><img src="https://camo.githubusercontent.com/c52dab41492e48ccc28a0ff940a51e858da392d7/687474703a2f2f7331342e706f7374696d672e6f72672f7a62706875386d64702f5374796c655f436f705f4c6f676f2e706e67" alt="stylecop" width="84" height="84"></a></p>
 <p><em><em><br>
 </em></em></p>

@@ -39,7 +39,7 @@
 <p style="text-align:left">In order for the plug-in to perform authentication/authorization of a connection, it often needs custom data to be supplied by an external authentication/authorization mechanism. In an end-to-end system this is often supplied by a
  web portal, as shown in the flow below:</p>
 <p style="text-align:left">&nbsp;</p>
-<p style="text-align:left"><img width="807" src="111278-flow.png" alt="" height="405" style="width:707px; height:375px"></p>
+<p style="text-align:left"><img width="807" src="http://code.msdn.microsoft.com/site/view/file/111278/1/flow.png" alt="" height="405" style="width:707px; height:375px"></p>
 <p style="text-align:left">&nbsp;</p>
 <p style="text-align:left">In clients before Windows Server 2012 R2 and Windows 8.1, custom authentication and authorization data was provided via IE browser cookie only. In Windows 8.1 and Windows 7 SP1 with the RDP 8.1 Update, this data may be provided as
  part of the .RDP file used to launch a connection, providing cross-browser compatibility as well as scenarios outside of the browser.</p>

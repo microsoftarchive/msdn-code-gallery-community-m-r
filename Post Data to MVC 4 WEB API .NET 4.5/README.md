@@ -195,7 +195,7 @@ Id:<span class="js__num">1</span>,&nbsp;
 </div>
 </div>
 <div class="endscriptcode"><span style="font-family:Verdana">In the following image we can see how the data will be sent via the Post Method:</span></div>
-<p><span style="font-family:Verdana"><span><img src="-postwepapi2.png" alt="PostwepApi2.png"></span></span></p>
+<p><span style="font-family:Verdana"><span><img src="http://www.c-sharpcorner.com/UploadFile/amit12345/post-data-to-mvc-4-web-api-net-4-5/Images/PostwepApi2.png" alt="PostwepApi2.png"></span></span></p>
 <div class="PaddingLeft5"><span style="font-size:x-small"><span style="font-size:x-small">
 <p><span style="font-family:Verdana"><strong>&nbsp;</strong>Happy Coding.</span></p>
 </span></span></div>

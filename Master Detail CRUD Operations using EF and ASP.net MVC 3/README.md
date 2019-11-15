@@ -27,11 +27,11 @@ The code illustrates the following topics:<br>
 Then Go to Sales Tab.</p>
 <p><br>
 <strong>&nbsp;</strong></p>
-<p><img src="25350-save.jpg" alt=""></p>
+<p><img src="http://i1.code.msdn.s-msft.com/detail-crud-operations-fbe935ef/image/file/25350/1/save.jpg" alt=""></p>
 <p>Fig 1: <strong>Creating New Sales Record with multiple sales Sub Record</strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><img src="25351-edit.jpg" alt="" width="836" height="575"></p>
+<p><img src="http://i1.code.msdn.s-msft.com/detail-crud-operations-fbe935ef/image/file/25351/1/edit.jpg" alt="" width="836" height="575"></p>
 <p><strong>Fig 2: Editing existing Sales Record with multiple sales Sub Record</strong><em><br>
 &nbsp;</em></p>
 <p>&nbsp;</p>

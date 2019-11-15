@@ -50,36 +50,36 @@ This is the core of the system and these services are consumed by all the client
 <p><br>
 <strong>Global Web-App (ASP.NET MVC4):</strong><br>
 For potential attendees so they can browse and register to any published event, but also for events' owners, so anyone can create their own events with all the required data (description, tracks, sessions, speakers, etc.).</p>
-<p><img id="66036" src="66036-web%20app.png" alt="" width="611" height="337"><br>
+<p><img id="66036" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66036/1/web%20app.png" alt="" width="611" height="337"><br>
 <strong>&nbsp;</strong></p>
 <p><strong>Organizers WPF App (WPF):</strong><br>
 This is a data entry app which is oriented to organizers, especially when they are creating or updating events or even checking global statistics (simplified dashboard).<br>
-<strong>&nbsp;<img id="66038" src="66038-wpf%20app.png" alt="" width="609" height="403"></strong></p>
+<strong>&nbsp;<img id="66038" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66038/1/wpf%20app.png" alt="" width="609" height="403"></strong></p>
 <p><strong>Organizers Windows 8 Store App (XAML/C#):</strong><br>
 This app is also especially made for events' organizers, but in this case it should be used 'on the go' using a Windows 8 tablet, while running the events. Using this client app the organizers can check comments/feedback coming from attendees, registered people
  to every sessions, etc.</p>
 <p>Windows 8 Store App (XAML/C#)</p>
-<p><img id="66040" src="66040-organizers_xaml_1.png" alt="" width="611" height="316"></p>
-<p><img id="66041" src="66041-organizers_xaml_2.png" alt="" width="602" height="358"><br>
+<p><img id="66040" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66040/1/organizers_xaml_1.png" alt="" width="611" height="316"></p>
+<p><img id="66041" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66041/1/organizers_xaml_2.png" alt="" width="602" height="358"><br>
 <strong>&nbsp;</strong></p>
 <p><strong>Attendees Windows 8 Store App (HTML5/WinJS):</strong><br>
 This app is especially made for attendees and it should be used 'on the go' using a Windows 8 tablet, while attending the events and when jumping from one session to another. This client app is very convenient as the attendess can see the live agenda and schedule
  while checking what friends from FACEBOOK are attending to each session. They can also see the assigned room for each session, manually written notes assigned to some sessions and other information related to the events.</p>
-<p><img id="66042" src="66042-attendees_html5_1.png" alt="" width="602" height="360"></p>
-<p><strong><img id="66043" src="66043-attendees_html5_2.png" alt="" width="604" height="383"></strong></p>
+<p><img id="66042" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66042/1/attendees_html5_1.png" alt="" width="602" height="360"></p>
+<p><strong><img id="66043" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66043/1/attendees_html5_2.png" alt="" width="604" height="383"></strong></p>
 <p><strong>Austin/Journal App (manually written notes app) - C&#43;&#43; Windows Store App</strong><br>
 Although this other sample app is not really part of 'MY EVENTS', you can also use it to create manually written notes using a Tablet, and then
 <strong>share those notes through Windows 8 and assign any note to any specific conference session, so you can see it in the future</strong>.<br>
 <span style="text-decoration:underline">You&nbsp;can download this app (and source code, from CODEPLEX)&nbsp;from a different URL, published by the Microsoft Visual C&#43;&#43; team:
 <a href="http://blogs.msdn.com/b/vcblog/archive/2012/09/11/10348466.aspx?wa=wsignin1.0">
 http://blogs.msdn.com/b/vcblog/archive/2012/09/11/10348466.aspx?wa=wsignin1.0</a></span></p>
-<p><img id="66044" src="66044-austin_3.png" alt="" width="624" height="350"></p>
+<p><img id="66044" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66044/1/austin_3.png" alt="" width="624" height="350"></p>
 <p>&nbsp;</p>
 <p><strong>Virtual Events Application (Avatar &amp; KINECT for WINDOWS app)</strong><br>
 This is a separated download URL, but related to the same apps' context and demos. This is the download URL for this other app:
 <a href="http://code.msdn.microsoft.com/Virtual-Events-Sample-a0228a97">http://code.msdn.microsoft.com/Virtual-Events-Sample-a0228a97</a></p>
 <p>Windows 8 Store app (currently showed in a tablet):</p>
-<p><img id="66045" src="66045-3%20-%20virtual%20events%20-%20client%20with%20event%20description%20speaker%20photo%20avatar%20and%20scenario.png" alt="" width="603" height="362"></p>
+<p><img id="66045" src="http://i1.code.msdn.s-msft.com/my-events-modern-sample-9a42abc6/image/file/66045/1/3%20-%20virtual%20events%20-%20client%20with%20event%20description%20speaker%20photo%20avatar%20and%20scenario.png" alt="" width="603" height="362"></p>
 <p><strong>&nbsp;</strong></p>
 <p><strong>Goals</strong><br>
 This global system and the related client apps are highlighting the following points:<br>
