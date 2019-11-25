@@ -1,0 +1,29 @@
+﻿@model DemoLoginApp.Models.tbl_RegisterUser
+
+<div class="form-group">
+    @Html.TextBoxFor(m => m.sUserName, new { @class = "form-control", id = "sUserName", placeholder = "Enter User Name", tabindex = "1" })
+    @Html.ValidationMessageFor(m => m.sUserName)
+</div>
+<div class="form-group">
+    @Html.TextBoxFor(m => m.sEmail, new { @class = "form-control", id = "sEmail", placeholder = "Email Address", tabindex = "2" })
+    @Html.ValidationMessageFor(m => m.sEmail)
+</div>
+<div class="form-group">
+    @Html.PasswordFor(m => m.sPassword, new { @class = "form-control", id = "sPassword", placeholder = "Password", tabindex = "3" })
+    @Html.ValidationMessageFor(m => m.sPassword)
+</div>
+<div class="form-group">
+    @Html.PasswordFor(m => m.sCnfPassword, new { @class = "form-control", id = "sCnfPassword", placeholder = "Confirm Password", tabindex = "4" })
+    @Html.ValidationMessageFor(m => m.sCnfPassword)
+</div>
+<div class="form-group">
+    @Html.TextBoxFor(m => m.sPhoneNumber, new { @class = "form-control", id = "sPhoneNumber", placeholder = "Enter Phone Number", tabindex = "5" })
+    @Html.ValidationMessageFor(m => m.sPhoneNumber)
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" name="register-submit" id="register-submit" tabindex="5" class="form-control btn btn-default" value="Register Now">
+        </div>
+    </div>
+</div>

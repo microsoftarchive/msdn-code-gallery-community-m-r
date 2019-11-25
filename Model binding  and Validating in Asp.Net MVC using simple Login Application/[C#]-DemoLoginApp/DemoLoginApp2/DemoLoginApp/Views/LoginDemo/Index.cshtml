@@ -1,0 +1,132 @@
+﻿@model DemoLoginApp.Models.tbl_RegisterUser
+@{
+    ViewBag.Title = "Index";
+    var model = Model;
+}
+
+<h2>Welcome To Login Page</h2>
+
+<html>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                @using (Html.BeginForm("Index", "LoginDemo", FormMethod.Post, new { id = "login-form", style = "display:block" }))
+                                {
+                                  
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(m => m.sUserName, new { @class = "form-control", id = "UserName", placeholder = "Enter User Name/EmailId", tabindex = "1" })
+                                        @Html.ValidationMessageFor(m => m.sUserName)
+                                    </div>
+                                    <div class="form-group">
+
+                                        @Html.PasswordFor(m => m.sPassword, new { @class = "form-control", id = "password", placeholder = "Enter Password", tabindex = "2" })
+                                        @Html.ValidationMessageFor(m => m.sPassword)
+                                    </div>
+                                    <div class="form-group col-lg-offset-4">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember"> Remember Me</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4 col-lg-offset-3">
+                                                <input type="submit" name="command" id="login-submit" tabindex="4" class="form-control btn btn-default" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12" style="margin-left:30%">
+                                                    <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    if (ViewBag.count==0)
+                                    {
+                                        Html.ValidationSummary("");
+                                    }
+                                    
+                                }
+                                @using (Ajax .BeginForm("Register", "LoginDemo", new AjaxOptions { OnSuccess = "RegisterSuccess", HttpMethod = "POST", UpdateTargetId = "Message" }, new { id = "register-form", style = "display:none" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                    @Html.Partial("_RegisterPage")
+
+                                }
+                            </div>
+                        </div>
+                        <label style="color:green" id="Message"></label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+  
+    $(function () {
+        debugger;
+        $("#register-form-link").click(function () {
+            debugger;
+            $("#register-form").css('display', 'block');
+            $("#login-form").css('display', 'none');
+            $("#register-form-link").addClass('active');
+            $("#login-form-link").removeClass('active');
+            $(".field-validation-error").css('display', "none");
+            $(".input-validation-error").css("border", "1px solid #cccccc");
+        });
+        $("#login-form-link").click(function () {
+            $("#register-form").css('display', 'none');
+            $("#login-form").css('display', 'block');
+            $("#register-form-link").removeClass('active');
+            $("#login-form-link").addClass('active');
+            $("#Message").hide();
+        });
+    });
+    function RegisterSuccess(data) {
+        debugger;
+        if (data!="") {
+            for (var i = 0; i < data.keys.length; i++) {
+                if (data.ErrorMessage[i]!="") {
+                    document.getElementById(data.keys[i]).nextElementSibling.style.display = "block";
+                    document.getElementById(data.keys[i]).nextElementSibling.textContent = data.ErrorMessage[i];
+                    document.getElementById(data.keys[i]).nextElementSibling.className = "field-validation-error" //field-validation-valid
+                }
+                else
+                {
+                    document.getElementById(data.keys[i]).nextElementSibling.style.display = "none";
+                }
+            }
+           
+        }
+        else
+        {
+            $("#Message").text("Registration successful !!!");
+        }
+       
+    }
+</script>
+
+
