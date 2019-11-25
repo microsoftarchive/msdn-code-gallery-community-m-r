@@ -1,0 +1,3 @@
+@Imports VS2015MVC5ajax.Areas.HelpPage.ModelDescriptions
+@ModelType SimpleTypeModelDescription
+@Model.Documentation
